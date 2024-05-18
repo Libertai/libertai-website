@@ -1,9 +1,11 @@
 <script lang="ts" setup>
-	import PartnersSection from "./PartnersSection.vue";
 	import Hero from "./HeroSection.vue";
-</script>;
+	import PartnersSection from "./PartnersSection.vue";
+	import FooterSection from "./FooterSection.vue";
+</script>
 
 <template>
-	<PartnersSection />
 	<Hero />
-</template>;
+	<PartnersSection />
+	<FooterSection />
+</template>
