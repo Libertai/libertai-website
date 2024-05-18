@@ -1,6 +1,6 @@
 <template>
 	<footer>
-		<div class="w-full relative bg-footer pt-72" style="height: 910px">
+		<div class="w-full relative pt-72" style="height: 910px; background-color: #030014">
 			<div class="flex flex-col items-center justify-center space-y-10">
 				<img alt="logo" src="../../assets/icons/logo_white.svg" style="width: 105px; height: 105px" />
 				<p class="text-center text-primary text-tiny mt-4 body-large">Stay Connected</p>
