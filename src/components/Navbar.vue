@@ -1,5 +1,5 @@
 <template>
-	<header class="w-full px-28 py-4 flex justify-between items-center">
+	<header class="w-full px-28 py-4 flex justify-between items-center bg-neutral-100 fixed z-30">
 		<div class="flex items-center">
 			<RouterLink class="mr-8" to="/">
 				<img alt="Site Logo" height="21" src="/logo.svg" width="120" />
