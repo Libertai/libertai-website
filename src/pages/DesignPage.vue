@@ -1,8 +1,6 @@
-<script setup lang="ts"></script>;
-
 <template>
 	<div class="container mx-auto px-5 w-full text-center flex flex-col space-y-2.5">
-		<div class="w-full py-4 flex gap-2 items-center justify-center px-8 ">
+		<div class="w-full py-4 flex gap-2 items-center justify-center px-8">
 			<div class="size-32 bg-primary flex justify-center items-center text-white">Primary</div>
 			<div class="size-32 bg-secondary flex justify-center items-center">Secondary</div>
 			<div class="size-32 bg-white text-black flex justify-center items-center">White</div>
@@ -33,4 +31,4 @@
 		<p class="body-bold-tiny">This is a body bold tiny text</p>
 		<p class="text-link">This is a link text</p>
 	</div>
-</template>;
+</template>
