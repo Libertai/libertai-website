@@ -26,6 +26,9 @@ else
 
 <template>
 	<button :class="style">
-		{{ text }}
+		<div class="flex space-x-1">
+			<span>{{ text }}</span>
+			<slot></slot>
+		</div>
 	</button>
 </template>

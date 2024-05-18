@@ -25,6 +25,8 @@ export default {
 			primary: "#644DF9",
 			secondary: "#D2DCFF",
 			white: "#F6F8FF",
+			gradientFrom: "#9475FB",
+			gradientTo: "#CAA1FD",
 			neutral: {
 				100: "#FFFFFF",
 				200: "#F9F9F9",
