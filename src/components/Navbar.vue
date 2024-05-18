@@ -3,7 +3,7 @@
 		<header class="w-full py-4 flex justify-between items-center px-8">
 			<div class="flex items-center">
 				<RouterLink to="/">
-					<img alt="Site Logo" src="../assets/logo.svg" />
+					<img alt="Site Logo" src="/logo.svg" />
 				</RouterLink>
 				<nav class="flex space-x-4 font-medium">
 					<RouterLink class="hover:text-theme-secondary" to="/company">
@@ -26,4 +26,3 @@
 		</header>
 	</div>
 </template>;
-<script lang="ts" setup></script>;
