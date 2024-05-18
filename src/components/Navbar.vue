@@ -29,14 +29,17 @@
 				</div>
 			</nav>
 		</div>
-		<button class="bg-primary text-white body-default font-bold py-2 px-4 rounded-full">
-			<a href="https://chat.libertai.io">Chat APP</a>
-		</button>
+		<a href="https://chat.libertai.io">
+			<l-button class="w-fit" small text="Chat APP">
+				<img alt="Message" src="../assets/message.svg" />
+			</l-button>
+		</a>
 	</header>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
+import LButton from "./LButton.vue";
 
 const showApps = ref(false);
 </script>
