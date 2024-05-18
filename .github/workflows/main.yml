@@ -6,7 +6,6 @@ jobs:
   build:
     name: "Build"
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -23,3 +22,31 @@ jobs:
 
       - name: Build
         run: npm run build
+
+  lint:
+    name: "Lint"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Use Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+          cache-dependency-path: 'package-lock.json'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Run ESLint
+        run: npm run lint > eslint-results
+
+      - name: Get eslint results
+        uses: actions/upload-artifact@v4
+        if: failure()
+        with:
+          name: eslint-results
+          path: eslint-results
+          retention-days: 5
