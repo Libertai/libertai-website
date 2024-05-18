@@ -5,13 +5,13 @@
 				<img alt="Site Logo" height="21" src="/logo.svg" width="120" />
 			</RouterLink>
 			<nav class="flex space-x-8 body-small text-neutral-800">
-				<RouterLink to="/company"> Company </RouterLink>
+				<RouterLink to="/company"> Company</RouterLink>
 				<a href="#"> Earn </a>
 				<a href="#"> APIs </a>
 				<div @mouseenter="showApps = true" @mouseleave="showApps = false">
 					<div class="flex">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
-						<img alt="Chevron down" src="../assets/chevron-down.svg" />
+						<img alt="Chevron down" src="../assets/chevron_down.svg" />
 					</div>
 
 					<div class="absolute pt-2">
