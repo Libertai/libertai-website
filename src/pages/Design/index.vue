@@ -1,4 +1,5 @@
-<script setup lang="ts"></script>;
+<script lang="ts" setup>
+</script>;
 
 <template>
 	<div class="container mx-auto px-5 w-full text-center flex flex-col space-y-2.5">
