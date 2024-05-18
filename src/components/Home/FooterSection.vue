@@ -21,7 +21,7 @@
           <img src="../../assets/ALEPH.IM.svg" alt="linkedin" style="width: 36px; height: 36px" />
         </a>
       </div>
-      <p class="text-center text-neutral-300 text-tiny mt-2 body-large">
+      <p class="text-center text-neutral-300 text-tiny mt-2 body-large max-sm:body-tiny max-lg:body-default">
         Be part of a pioneering community valuing individual privacy and autonomy<br/>
         Join a vibrant community of AI enthusiasts,developers, and innovators who<br/>
         share a common commitment to privacy and decentralization. Collaborate,<br/>
