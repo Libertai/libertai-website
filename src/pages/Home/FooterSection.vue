@@ -15,12 +15,11 @@
 						<img alt="Aleph.im" src="../../assets/icons/aleph.svg" style="width: 36px; height: 36px" />
 					</a>
 				</div>
-				<p class="text-center text-neutral-300 text-tiny mt-2 body-large max-sm:body-tiny max-lg:body-default">
-					Be part of a pioneering community valuing individual privacy and autonomy<br />
-					Join a vibrant community of AI enthusiasts,developers, and innovators who<br />
-					share a common commitment to privacy and decentralization. Collaborate,<br />
-					share insights, and contribute to the continuous evolution of Libertai's AI<br />
-					ecosystem, shaping the future of decentralized intelligence.
+				<p class="text-center text-neutral-300 text-tiny mt-2 body-small max-sm:body-tiny">
+					Be part of a pioneering community valuing individual privacy and autonomy Join a vibrant<br />
+					community of AI enthusiasts,developers, and innovators who share a common commitment to<br />
+					privacy and decentralization. Collaborate, share insights, and contribute to the continuous evolution<br />
+					of Libertai's AI ecosystem, shaping the future of decentralized intelligence.
 				</p>
 			</div>
 		</div>
