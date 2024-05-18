@@ -5,15 +5,9 @@
 				<img alt="Site Logo" height="21" src="/logo.svg" width="120" />
 			</RouterLink>
 			<nav class="flex space-x-8 body-small text-neutral-800">
-				<RouterLink to="/company">
-					Company
-				</RouterLink>
-				<a href="#">
-					Earn
-				</a>
-				<a href="#">
-					APIs
-				</a>
+				<RouterLink to="/company"> Company </RouterLink>
+				<a href="#"> Earn </a>
+				<a href="#"> APIs </a>
 				<div @mouseenter="showApps = true" @mouseleave="showApps = false">
 					<div class="flex">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
@@ -27,12 +21,8 @@
 							role="menu"
 						>
 							<div class="py-1">
-								<a class="dropdown-item" href="https://chat.libertai.io" target="_blank">
-									Chat dApp
-								</a>
-								<a class="dropdown-item" href="https://t.me/liberchat_bot" target="_blank">
-									Telegram bot
-								</a>
+								<a class="dropdown-item" href="https://chat.libertai.io" target="_blank"> Chat dApp </a>
+								<a class="dropdown-item" href="https://t.me/liberchat_bot" target="_blank"> Telegram bot </a>
 							</div>
 						</div>
 					</div>
@@ -53,6 +43,6 @@ const showApps = ref(false);
 
 <style lang="postcss" scoped>
 .dropdown-item {
-	@apply text-neutral-800 block px-4 py-2 text-sm hover:text-primary hover:bg-secondary
+	@apply text-neutral-800 block px-4 py-2 text-sm hover:text-primary hover:bg-secondary;
 }
 </style>
