@@ -80,26 +80,30 @@
 }
 
 @layer components {
-  .body-large {
-    font-size: 24px;
-    line-height: 38px;
-    font-weight: 500;
-  }
-  .body-default {
-    font-size: 18px;
-    line-height: 30px;
-    font-weight: 500;
-  }
-  .body-small {
-    font-size: 14px;
-    line-height: 24px;
-    font-weight: 500;
-  }
-  .body-tiny {
-    font-size: 12px;
-    line-height: 20px;
-    font-weight: 500;
-  }
+    .body-large {
+        font-size: 24px;
+        line-height: 38px;
+        font-weight: 500;
+    }
+
+    .body-default {
+        font-size: 18px;
+        line-height: 30px;
+        font-weight: 500;
+    }
+
+    .body-small {
+        font-size: 14px;
+        line-height: 24px;
+        font-weight: 500;
+    }
+
+    .body-tiny {
+        font-size: 12px;
+        line-height: 20px;
+        font-weight: 500;
+    }
+
   .text-link {
     color: #644DF9;
     text-decoration: underline;
@@ -110,43 +114,43 @@
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 300;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 300;
 }
 
 h1 {
-  font-size: 72px;
-  line-height: 84px;
+    font-size: 72px;
+    line-height: 84px;
 }
 
 h2 {
-  font-size: 54px;
-  line-height: 66px;
+    font-size: 54px;
+    line-height: 66px;
 }
 
 h3 {
-  font-size: 38px;
-  line-height: 50px;
+    font-size: 38px;
+    line-height: 50px;
 }
 
 h4 {
-  font-size: 24px;
-  line-height: 34px;
+    font-size: 24px;
+    line-height: 34px;
 }
 
 h5 {
-  font-size: 22px;
-  line-height: 28px;
+    font-size: 22px;
+    line-height: 28px;
 }
 
 h6 {
-  font-size: 16px;
-  line-height: 22px;
+    font-size: 16px;
+    line-height: 22px;
 }
 
 p {
-  font-family: 'Mulish', sans-serif;
-  font-weight: 500;
-  font-size: 18px;
-  line-height: 30px;
+    font-family: 'Mulish', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 30px;
 }
