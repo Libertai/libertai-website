@@ -7,19 +7,19 @@ import Design from "./pages/Design/index.vue";
 const routes = [
 	{
 		path: "/",
-		component: Home
+		component: Home,
 	},
 	{
 		path: "/company",
-		component: Company
+		component: Company,
 	},
 	{
 		path: "/design",
-		component: Design
-	}
+		component: Design,
+	},
 ];
 
 export const router = createRouter({
 	history: createWebHistory(),
-	routes
+	routes,
 });

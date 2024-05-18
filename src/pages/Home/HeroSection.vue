@@ -9,8 +9,8 @@ import LButton from "../../components/LButton.vue";
 			<p class="body-small">
 				Experience the privacy of LibertAI's decentralized AI platform - chat freely, without data logging. Explore
 				various Chat-GPT like open-source models, like Llama 3 70b, for free. Create personalized AI assistants for
-				enhanced productivity.<br>
-				<br>
+				enhanced productivity.<br />
+				<br />
 				Your AI journey, your privacy!
 			</p>
 			<a href="https://chat.libertai.io">
