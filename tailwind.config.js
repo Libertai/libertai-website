@@ -25,6 +25,7 @@ export default {
       primary: "#644DF9",
       secondary: "#D2DCFF",
       white: "#F6F8FF",
+      footer: "#030014",
       neutral: {
         100: "#FFFFFF",
         200: "#F9F9F9",
