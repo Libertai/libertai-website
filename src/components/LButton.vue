@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { twMerge } from "tailwind-merge";
 
-export type LButtonProps = {
+type LButtonProps = {
 	text: string;
 	variant?: "primary" | "secondary";
 	light?: boolean;

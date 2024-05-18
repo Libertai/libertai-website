@@ -35,6 +35,17 @@ export default {
 				700: "#212438",
 				800: "#0E1435",
 			},
+			purple: {
+				100: "#F0EDFF",
+				200: "#D2CFFF",
+				300: "#B4B1FF",
+				400: "#7A6AFF",
+				500: "#4032FF",
+				600: "#3A2DE6",
+				700: "#251B99",
+				800: "#1B1473",
+				900: "#120E4D",
+			},
 		},
 		fontFamily: {
 			sans: ["Mulish", "sans-serif"],
