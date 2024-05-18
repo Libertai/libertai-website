@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-	<div class="relative w-full flex flex-col items-center text-center justify-center space-y-16" style="height: 1440px">
+	<div class="relative w-full flex flex-col items-center text-center justify-center space-y-16 pt-32 pb-40">
 		<div class="absolute top-0 w-full h-3/5 flex flex-col items-center text-center justify-center" />
 		<div
 			class="absolute bottom-0 w-full h-2/5 flex items-center text-center justify-center"
