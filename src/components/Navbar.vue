@@ -20,7 +20,9 @@
 					</a>
 				</nav>
 			</div>
-			<button class="bg-purple-700 text-white font-bold py-2 px-4 rounded-full">Chat APP</button>
+			<button class="bg-purple-700 text-white font-bold py-2 px-4 rounded-full">
+				<a href="https://chat.libertai.io">Chat APP</a>
+			</button>
 		</header>
 	</div>
 </template>;
