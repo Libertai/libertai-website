@@ -20,10 +20,6 @@ export default {
 		fontFamily: {
 			sans: ["Mulish", "sans-serif"],
 		},
-		fontSize: {
-			h1: ["48px", "56px"],
-			h2: ["36px", "44px"],
-		},
 		extend: {},
 	},
 	plugins: [],
