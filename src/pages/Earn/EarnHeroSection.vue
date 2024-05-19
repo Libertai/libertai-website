@@ -8,6 +8,6 @@
 				and innovative LibertAI ecosystem.
 			</p>
 		</div>
-		<img alt="Earn" class="max-md:max-h-80 m-auto" src="../../assets/earn.svg" />
+		<img alt="Earn" class="max-md:max-h-80 m-auto" src="../../assets/earn.png" />
 	</div>
 </template>

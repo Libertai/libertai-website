@@ -7,6 +7,6 @@
 				and collective innovation. Be part of a vibrant ecosystem that shapes the future of AI.
 			</p>
 		</div>
-		<img alt="Company" class="max-md:max-h-80 m-auto" src="../../assets/developer.svg" />
+		<img alt="Company" class="max-md:max-h-80 m-auto" src="../../assets/developer.png" />
 	</div>
 </template>
