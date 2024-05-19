@@ -21,8 +21,18 @@
 							role="menu"
 						>
 							<div class="py-1">
-								<a class="dropdown-item" href="https://chat.libertai.io" target="_blank"> Chat dApp </a>
-								<a class="dropdown-item" href="https://t.me/liberchat_bot" target="_blank"> Telegram bot </a>
+								<div class="dropdown-item flex">
+									<div class="mr-1">
+										<a href="https://chat.libertai.io" target="_blank">Chat dApp</a>
+									</div>
+									<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
+								</div>
+								<div class="dropdown-item flex">
+									<div class="mr-1">
+										<a href="https://t.me/liberchat_bot" target="_blank">Telegram bot</a>
+									</div>
+									<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
+								</div>
 							</div>
 						</div>
 					</div>
@@ -46,6 +56,6 @@ const showApps = ref(false);
 
 <style lang="postcss" scoped>
 .dropdown-item {
-	@apply text-neutral-800 block px-4 py-2 text-sm hover:text-primary hover:bg-secondary;
+	@apply text-neutral-800 px-4 py-2 text-sm hover:text-primary hover:bg-secondary;
 }
 </style>
