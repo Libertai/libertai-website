@@ -1,0 +1,13 @@
+<template>
+	<div class="bg-white grid md:grid-cols-[50%_50%]">
+		<div class="flex flex-col justify-center items-center text-center max-w-xl m-auto gap-y-6">
+			<h2>Decentralize everything and earn LibertAI Tokens</h2>
+			<p class="body-small">
+				Are you ready to dive into a new world of decentralized computing, where your contributions are rewarded with
+				tangible benefits? Look no further than Libertai Tokens! These Tokens play an essential role within the exciting
+				and innovative LibertAI ecosystem.
+			</p>
+		</div>
+		<img alt="Earn" class="max-md:max-h-80 m-auto" src="../../assets/earn.svg" />
+	</div>
+</template>
