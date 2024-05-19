@@ -5,9 +5,9 @@
 				<img alt="Site Logo" height="21" src="/logo.svg" width="120" />
 			</RouterLink>
 			<nav class="flex space-x-8 body-small text-neutral-800">
-				<RouterLink to="/company"> Company</RouterLink>
-				<a href="#"> Earn </a>
-				<a href="#"> APIs </a>
+				<RouterLink to="/company">Company</RouterLink>
+				<a href="#">Earn</a>
+				<RouterLink to="/developer">Developer</RouterLink>
 				<div @mouseenter="showApps = true" @mouseleave="showApps = false">
 					<div class="flex">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
