@@ -1,3 +1,9 @@
+<script lang="ts" setup>
+import ProductTextsSection from "./ProductTextsSection.vue";
+import TeamTextsSection from "./TeamTextsSection.vue";
+</script>
+
 <template>
-	<p>Company page content</p>
+	<ProductTextsSection />
+	<TeamTextsSection />
 </template>
