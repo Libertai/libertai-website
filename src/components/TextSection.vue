@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-type TextSectionProps = {
+export type TextSectionProps = {
 	items: { title: string; description: string }[];
 };
 
