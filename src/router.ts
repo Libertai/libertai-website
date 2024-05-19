@@ -4,6 +4,7 @@ import Home from "./pages/Home/index.vue";
 import Company from "./pages/Company/index.vue";
 import Design from "./pages/Design/index.vue";
 import Developer from "./pages/Developer/index.vue";
+import Earn from "./pages/Earn/index.vue";
 
 const routes = [
 	{
@@ -21,6 +22,10 @@ const routes = [
 	{
 		path: "/developer",
 		component: Developer,
+	},
+	{
+		path: "/earn",
+		component: Earn,
 	},
 ];
 

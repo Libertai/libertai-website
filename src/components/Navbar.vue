@@ -6,7 +6,7 @@
 			</RouterLink>
 			<nav class="flex space-x-8 body-small text-neutral-800">
 				<RouterLink to="/company">Company</RouterLink>
-				<a href="#">Earn</a>
+				<RouterLink to="/earn">Earn</RouterLink>
 				<RouterLink to="/developer">Developer</RouterLink>
 				<div @mouseenter="showApps = true" @mouseleave="showApps = false">
 					<div class="flex">
