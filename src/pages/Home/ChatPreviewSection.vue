@@ -11,7 +11,7 @@
 			<h2 class="block max-lg:hidden">Private AI Secured by Blockchain,</h2>
 			<h3 class="hidden max-lg:block">Private AI Secured by Blockchain,</h3>
 			<h2
-				class="block bg-gradient-to-tr from-gradientFrom to-gradientTo bg-clip-text text-primary text-opacity-0 max-lg:hidden"
+				class="block bg-gradient-to-tr from-[#9475FB] to-[#CAA1FD] bg-clip-text text-primary text-opacity-0 max-lg:hidden"
 			>
 				Powerful Results
 			</h2>
