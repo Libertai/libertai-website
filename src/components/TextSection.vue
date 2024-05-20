@@ -7,10 +7,10 @@ const { items } = defineProps<TextSectionProps>();
 </script>
 
 <template>
-	<div class="w-full my-44 grid md:grid-cols-2 justify-evenly">
-		<div v-for="item in items" :key="item.title" class="p-6 mx-8">
-			<div class="max-w-md m-auto">
-				<p class="body-large font-bold mb-6">{{ item.title }}</p>
+	<div class="my-44 grid w-full justify-evenly md:grid-cols-2">
+		<div v-for="item in items" :key="item.title" class="mx-8 p-6">
+			<div class="m-auto max-w-md">
+				<p class="body-large mb-6 font-bold">{{ item.title }}</p>
 				<p class="body-small">
 					{{ item.description }}
 				</p>

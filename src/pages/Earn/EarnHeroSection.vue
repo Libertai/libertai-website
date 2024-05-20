@@ -1,6 +1,6 @@
 <template>
-	<div class="bg-white grid md:grid-cols-[50%_50%]">
-		<div class="flex flex-col justify-center items-center text-center max-w-xl m-auto gap-y-6">
+	<div class="grid bg-white md:grid-cols-[50%_50%]">
+		<div class="m-auto flex max-w-xl flex-col items-center justify-center gap-y-6 text-center">
 			<h2>Decentralize everything and earn LibertAI Tokens</h2>
 			<p class="body-small">
 				Are you ready to dive into a new world of decentralized computing, where your contributions are rewarded with
@@ -8,6 +8,6 @@
 				and innovative LibertAI ecosystem.
 			</p>
 		</div>
-		<img alt="Earn" class="max-md:max-h-80 m-auto" src="../../assets/earn.png" />
+		<img alt="Earn" class="m-auto max-md:max-h-80" src="../../assets/earn.png" />
 	</div>
 </template>
