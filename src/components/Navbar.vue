@@ -1,10 +1,24 @@
 <template>
-	<header class="sticky top-0 z-30 flex w-full items-center justify-between bg-neutral-100 px-28 py-4">
-		<div class="flex items-center">
+	<header
+		class="relative sticky top-0 z-30 flex w-full select-none items-center justify-between bg-neutral-100 px-28 py-4 max-lg:px-4"
+	>
+		<div v-show="showSidebar" class="absolute top-20 w-auto rounded-xl bg-white shadow">
+			<div class="flex flex-col">
+				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-500" to="/company">Company</RouterLink>
+				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-500" to="/earn">Earn</RouterLink>
+				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-500" to="/developer">Developer</RouterLink>
+			</div>
+		</div>
+		<div class="flex">
+			<button class="mr-8 lg:hidden" @click="showSidebar = !showSidebar">
+				<img class="w-8" alt="Menu" src="../assets/icons/menu.svg" style="filter: invert(1)" />
+			</button>
 			<RouterLink class="mr-8" to="/">
-				<img alt="Site Logo" height="21" src="/logo.svg" width="120" />
+				<img class="block max-lg:hidden" alt="Site Logo" height="21" src="../assets/logos/libertAI.svg" width="120" />
+				<img class="hidden h-10 max-lg:block" alt="Site Logo" src="../assets/logos/libertAI.svg" />
 			</RouterLink>
-			<nav class="body-small flex space-x-8 text-neutral-800">
+
+			<nav class="body-small flex hidden space-x-8 text-neutral-800">
 				<RouterLink to="/company">Company</RouterLink>
 				<RouterLink to="/earn">Earn</RouterLink>
 				<RouterLink to="/developer">Developer</RouterLink>
@@ -40,9 +54,12 @@
 			</nav>
 		</div>
 		<a href="https://chat.libertai.io">
-			<l-button class="w-fit" small text="Chat APP">
-				<img alt="Message" src="../assets/message.svg" />
-			</l-button>
+			<button class="body-default body-tiny w-fit rounded-full bg-primary px-6 py-3 font-bold text-neutral-100">
+				<div class="flex gap-1">
+					<span class="max-lg:hidden">Chat APP</span>
+					<img alt="Message" src="../assets/message.svg" />
+				</div>
+			</button>
 		</a>
 	</header>
 </template>
@@ -52,6 +69,7 @@ import { ref } from "vue";
 import LButton from "./LButton.vue";
 
 const showApps = ref(false);
+const showSidebar = ref(false);
 </script>
 
 <style lang="postcss" scoped>
