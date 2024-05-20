@@ -1,10 +1,10 @@
 <template>
-	<header class="w-full px-28 py-4 flex justify-between items-center bg-neutral-100 sticky top-0 z-30">
+	<header class="sticky top-0 z-30 flex w-full items-center justify-between bg-neutral-100 px-28 py-4">
 		<div class="flex items-center">
 			<RouterLink class="mr-8" to="/">
 				<img alt="Site Logo" height="21" src="/logo.svg" width="120" />
 			</RouterLink>
-			<nav class="flex space-x-8 body-small text-neutral-800">
+			<nav class="body-small flex space-x-8 text-neutral-800">
 				<RouterLink to="/company">Company</RouterLink>
 				<RouterLink to="/earn">Earn</RouterLink>
 				<RouterLink to="/developer">Developer</RouterLink>
@@ -17,7 +17,7 @@
 					<div class="absolute pt-2">
 						<div
 							v-show="showApps"
-							class="z-10 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5"
+							class="ring-black z-10 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-opacity-5"
 							role="menu"
 						>
 							<div class="py-1">
@@ -56,6 +56,6 @@ const showApps = ref(false);
 
 <style lang="postcss" scoped>
 .dropdown-item {
-	@apply text-neutral-800 px-4 py-2 text-sm hover:text-primary hover:bg-secondary;
+	@apply px-4 py-2 text-sm text-neutral-800 hover:bg-secondary hover:text-primary;
 }
 </style>

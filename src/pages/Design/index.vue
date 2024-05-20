@@ -1,19 +1,19 @@
 <template>
-	<div class="container mx-auto px-5 w-full text-center flex flex-col space-y-2.5">
-		<div class="w-full py-4 flex gap-2 items-center justify-center px-8">
-			<div class="size-32 bg-primary flex justify-center items-center text-white">Primary</div>
-			<div class="size-32 bg-secondary flex justify-center items-center">Secondary</div>
-			<div class="size-32 bg-white text-black flex justify-center items-center">White</div>
+	<div class="container mx-auto flex w-full flex-col space-y-2.5 px-5 text-center">
+		<div class="flex w-full items-center justify-center gap-2 px-8 py-4">
+			<div class="flex size-32 items-center justify-center bg-primary text-white">Primary</div>
+			<div class="flex size-32 items-center justify-center bg-secondary">Secondary</div>
+			<div class="text-black flex size-32 items-center justify-center bg-white">White</div>
 		</div>
-		<div class="py-4 flex gap-2 items-center justify-center px-8 bg-secondary">
-			<div class="size-32 bg-neutral-100 flex justify-center items-center text-black">Neutral 100</div>
-			<div class="size-32 bg-neutral-200 flex justify-center items-center text-black">Neutral 200</div>
-			<div class="size-32 bg-neutral-300 flex justify-center items-center text-black">Neutral 300</div>
-			<div class="size-32 bg-neutral-400 flex justify-center items-center text-black">Neutral 400</div>
-			<div class="size-32 bg-neutral-500 flex justify-center items-center text-black">Neutral 500</div>
-			<div class="size-32 bg-neutral-600 flex justify-center items-center text-white">Neutral 600</div>
-			<div class="size-32 bg-neutral-700 flex justify-center items-center text-white">Neutral 700</div>
-			<div class="size-32 bg-neutral-800 flex justify-center items-center text-white">Neutral 800</div>
+		<div class="flex items-center justify-center gap-2 bg-secondary px-8 py-4">
+			<div class="text-black flex size-32 items-center justify-center bg-neutral-100">Neutral 100</div>
+			<div class="text-black flex size-32 items-center justify-center bg-neutral-200">Neutral 200</div>
+			<div class="text-black flex size-32 items-center justify-center bg-neutral-300">Neutral 300</div>
+			<div class="text-black flex size-32 items-center justify-center bg-neutral-400">Neutral 400</div>
+			<div class="text-black flex size-32 items-center justify-center bg-neutral-500">Neutral 500</div>
+			<div class="flex size-32 items-center justify-center bg-neutral-600 text-white">Neutral 600</div>
+			<div class="flex size-32 items-center justify-center bg-neutral-700 text-white">Neutral 700</div>
+			<div class="flex size-32 items-center justify-center bg-neutral-800 text-white">Neutral 800</div>
 		</div>
 		<h1>This is a H1 text</h1>
 		<h2>This is a H2 text</h2>

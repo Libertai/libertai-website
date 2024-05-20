@@ -1,8 +1,8 @@
 <template>
 	<div class="h-96 bg-white">
-		<div class="flex flex-col items-center justify-center h-full">
-			<p class="body-large font-bold text-center">Proudly supported by</p>
-			<div class="flex mt-6 space-x-9">
+		<div class="flex h-full flex-col items-center justify-center">
+			<p class="body-large text-center font-bold">Proudly supported by</p>
+			<div class="mt-6 flex max-sm:flex-col max-sm:space-y-4 sm:space-x-9">
 				<img alt="Aleph.im logo" src="../../assets/logos/aleph.svg" />
 				<img alt="TwentySixCloud logo" src="../../assets/logos/twentysix.svg" />
 			</div>
