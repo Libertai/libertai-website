@@ -4,80 +4,155 @@ export type LFlashCardProps = {
 	title: string;
 	description: string;
 };
-const { variant, title, description } = withDefaults(defineProps<LFlashCardProps>(), {
+withDefaults(defineProps<LFlashCardProps>(), {
 	variant: "regular",
+	hoverAnimation: "default",
 });
 </script>
 
 <template>
-	<div :class="`card-${variant} rounded-3xl relative overflow-hidden group group-transition`">
+	<div :class="`card-${variant} ha-${hoverAnimation} rounded-3xl relative overflow-hidden group group-transition`">
 		<slot />
-		<div :class="`text-neutral-100 text-left absolute bottom-0 group-hover:translate-y-0 group-transition`">
+		<div :class="`text-neutral-100 text-left absolute bottom-0 group group-transition`">
 			<h4 class="!font-bold group-transition">
 				{{ title }}
 			</h4>
-			<p class="opacity-0 group-hover:opacity-100 group-transition">
+			<p class="group-transition">
 				{{ description }}
 			</p>
 		</div>
 	</div>
 </template>
 
-<style lang="postcss" scoped>
-div.card-regular {
-	@apply w-80 h-80;
-	@apply bg-primary hover:bg-[#231271];
-}
+<style lang="scss" scoped>
+div.card {
+	&-regular {
+		@apply w-80 h-80;
 
-div.card-regular h4 {
-	@apply body-default;
-	@apply mb-6 group-hover:mb-4;
-}
+		div {
+			@apply pb-12 px-3;
+		}
 
-div.card-regular p {
-	@apply body-tiny;
-	@apply w-3/4;
-}
+		h4 {
+			@apply body-default;
+		}
 
-div.card-regular div {
-	@apply pb-12 px-3;
-	@apply translate-y-40;
-}
+		p {
+			@apply body-tiny;
+			@apply w-3/4;
+		}
 
-div.card-small {
-	@apply w-[18.75rem] h-[18.75rem];
-}
+		&.ha-default {
+			@apply bg-primary;
 
-div.card-small div {
-	@apply translate-y-48;
-}
+			div {
+				@apply translate-y-40;
+			}
 
-div.card-large {
-	@apply w-[27.5rem] h-[27.5rem];
-}
+			h4 {
+				@apply mb-6;
+			}
 
-div.card-large,
-div.card-small {
-	@apply bg-gradient-to-b from-[rgba(0,0,0,0)_78%] to-[rgba(0,0,0,.3)] hover:bg-primary;
-}
+			p {
+				@apply opacity-0;
+			}
 
-div.card-large h4,
-div.card-small h4 {
-	@apply mb-8;
-}
+			&:hover {
+				@apply bg-[#231271];
 
-div.card-large p,
-div.card-small p {
-	@apply body-small;
-}
+				div {
+					@apply translate-y-0;
+				}
 
-div.card-small div,
-div.card-large div {
-	@apply px-6 pb-20;
-}
+				h4 {
+					@apply mb-5;
+				}
 
-div.card-large div {
-	@apply translate-y-40;
+				p {
+					@apply opacity-100;
+				}
+			}
+		}
+
+		&.ha-none {
+			@apply bg-primary;
+
+			div {
+				@apply translate-y-40;
+			}
+
+			h4 {
+				@apply mb-6;
+			}
+		}
+
+		&.ha-blocked {
+			@apply bg-[#231271];
+
+			h4 {
+				@apply mb-5;
+			}
+		}
+	}
+
+	&-small {
+		@apply w-[18.75rem] h-[18.75rem];
+
+		&.ha-default,
+		&.ha-none {
+			div {
+				@apply translate-y-48;
+			}
+		}
+	}
+
+	&-large {
+		@apply w-[27.5rem] h-[27.5rem];
+
+		&.ha-default,
+		&.ha-none {
+			div {
+				@apply translate-y-40;
+			}
+		}
+	}
+
+	&-small,
+	&-large {
+		div {
+			@apply px-6 pb-20;
+		}
+
+		h4 {
+			@apply mb-8;
+		}
+
+		p {
+			@apply body-small;
+		}
+
+		&.ha-default {
+			@apply bg-gradient-to-b from-[rgba(0,0,0,0)_78%] to-[rgba(0,0,0,.3)];
+
+			&:hover {
+				@apply bg-primary;
+
+				div {
+					@apply translate-y-0;
+				}
+			}
+		}
+
+		&.ha-none {
+			@apply bg-gradient-to-b from-[rgba(0,0,0,0)_78%] to-[rgba(0,0,0,.3)];
+			@apply cursor-pointer;
+		}
+
+		&.ha-blocked {
+			@apply bg-primary;
+			@apply cursor-pointer;
+		}
+	}
 }
 
 :slotted(img) {
