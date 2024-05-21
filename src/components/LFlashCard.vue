@@ -3,6 +3,7 @@ export type LFlashCardProps = {
 	variant?: "small" | "regular" | "large";
 	title: string;
 	description: string;
+	hoverAnimation?: "default" | "none" | "blocked";
 };
 withDefaults(defineProps<LFlashCardProps>(), {
 	variant: "regular",
