@@ -27,6 +27,10 @@ const routes = [
 		path: "/earn",
 		component: Earn,
 	},
+	{
+		path: "/:pathMatch(.*)*",
+		redirect: "/",
+	},
 ];
 
 export const router = createRouter({
