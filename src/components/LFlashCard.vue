@@ -18,8 +18,8 @@ withDefaults(defineProps<LFlashCardProps>(), {
 		:class="`card-${variant} ha-${hoverAnimation} ${light ? 'light' : 'dark'} rounded-3xl relative overflow-hidden group group-transition`"
 	>
 		<slot />
-		<div :class="`text-left absolute bottom-0 group group-transition`">
-			<h4 class="!font-bold group-transition">
+		<div :class="`flex-col text-left absolute top-0 group group-transition`">
+			<h4 class="align-bottom !font-bold group-transition table-cell table-fixed">
 				{{ title }}
 			</h4>
 			<p class="group-transition">
@@ -35,17 +35,16 @@ div.card {
 		@apply w-80 h-80;
 
 		div {
-			@apply pb-12 px-3;
+			@apply pl-3 w-4/5;
 		}
 
 		h4 {
 			@apply body-default;
-			@apply w-3/5;
+			@apply h-[18.5rem] w-[13rem];
 		}
 
 		p {
-			@apply body-tiny;
-			@apply w-3/4;
+			@apply body-tiny text-balance;
 		}
 
 		&.light {
@@ -57,16 +56,8 @@ div.card {
 				@apply bg-primary text-neutral-100;
 			}
 
-			div {
-				@apply translate-y-40;
-			}
-
-			h4 {
-				@apply mb-6;
-			}
-
 			p {
-				@apply opacity-0;
+				@apply opacity-0 mt-6;
 			}
 
 			&:hover {
@@ -74,16 +65,12 @@ div.card {
 					@apply bg-[#231271];
 				}
 
-				div {
-					@apply translate-y-0;
-				}
-
 				h4 {
-					@apply mb-5;
+					@apply h-[10.125rem];
 				}
 
 				p {
-					@apply opacity-100;
+					@apply opacity-100 mt-5;
 				}
 			}
 		}
@@ -93,12 +80,8 @@ div.card {
 				@apply bg-primary text-neutral-100;
 			}
 
-			div {
-				@apply translate-y-40;
-			}
-
-			h4 {
-				@apply mb-6;
+			p {
+				@apply mt-6;
 			}
 		}
 
@@ -108,7 +91,11 @@ div.card {
 			}
 
 			h4 {
-				@apply mb-5;
+				@apply h-[10.125rem];
+			}
+
+			p {
+				@apply mt-5;
 			}
 		}
 	}
@@ -118,8 +105,18 @@ div.card {
 
 		&.ha-default,
 		&.ha-none {
-			div {
-				@apply translate-y-48;
+			h4 {
+				@apply h-[17rem];
+			}
+		}
+
+		&.ha-default:hover h4 {
+			@apply h-[6rem];
+		}
+
+		&.ha-blocked {
+			h4 {
+				@apply h-[6rem];
 			}
 		}
 	}
@@ -129,8 +126,22 @@ div.card {
 
 		&.ha-default,
 		&.ha-none {
-			div {
-				@apply translate-y-40;
+			h4 {
+				@apply h-[24.75rem];
+			}
+		}
+
+		&.ha-default {
+			&:hover {
+				h4 {
+					@apply h-[14.875rem];
+				}
+			}
+		}
+
+		&.ha-blocked {
+			h4 {
+				@apply h-[14.875rem];
 			}
 		}
 	}
@@ -138,15 +149,12 @@ div.card {
 	&-small,
 	&-large {
 		div {
-			@apply px-6 pb-20;
-		}
-
-		h4 {
-			@apply mb-8;
+			@apply px-6;
 		}
 
 		p {
 			@apply body-small;
+			@apply mt-10;
 		}
 
 		&.dark,
@@ -170,10 +178,6 @@ div.card {
 						@apply text-purple-400;
 					}
 				}
-
-				div {
-					@apply translate-y-0;
-				}
 			}
 		}
 
@@ -183,7 +187,19 @@ div.card {
 		}
 
 		&.ha-blocked {
-			@apply bg-primary;
+			&.light {
+				@apply bg-purple-100;
+
+				h4,
+				p {
+					@apply text-purple-400;
+				}
+			}
+
+			&.dark {
+				@apply bg-primary;
+			}
+
 			@apply cursor-pointer;
 		}
 	}
