@@ -4,17 +4,21 @@ export type LFlashCardProps = {
 	title: string;
 	description: string;
 	hoverAnimation?: "default" | "none" | "blocked";
+	light?: boolean;
 };
 withDefaults(defineProps<LFlashCardProps>(), {
 	variant: "regular",
 	hoverAnimation: "default",
+	light: false,
 });
 </script>
 
 <template>
-	<div :class="`card-${variant} ha-${hoverAnimation} rounded-3xl relative overflow-hidden group group-transition`">
+	<div
+		:class="`card-${variant} ha-${hoverAnimation} ${light ? 'light' : 'dark'} rounded-3xl relative overflow-hidden group group-transition`"
+	>
 		<slot />
-		<div :class="`text-neutral-100 text-left absolute bottom-0 group group-transition`">
+		<div :class="`text-left absolute bottom-0 group group-transition`">
 			<h4 class="!font-bold group-transition">
 				{{ title }}
 			</h4>
@@ -36,6 +40,7 @@ div.card {
 
 		h4 {
 			@apply body-default;
+			@apply w-3/5;
 		}
 
 		p {
@@ -43,8 +48,14 @@ div.card {
 			@apply w-3/4;
 		}
 
+		&.light {
+			@apply bg-purple-100 text-purple-400;
+		}
+
 		&.ha-default {
-			@apply bg-primary;
+			&.dark {
+				@apply bg-primary text-neutral-100;
+			}
 
 			div {
 				@apply translate-y-40;
@@ -59,7 +70,9 @@ div.card {
 			}
 
 			&:hover {
-				@apply bg-[#231271];
+				&.dark {
+					@apply bg-[#231271];
+				}
 
 				div {
 					@apply translate-y-0;
@@ -76,7 +89,9 @@ div.card {
 		}
 
 		&.ha-none {
-			@apply bg-primary;
+			&.dark {
+				@apply bg-primary text-neutral-100;
+			}
 
 			div {
 				@apply translate-y-40;
@@ -88,7 +103,9 @@ div.card {
 		}
 
 		&.ha-blocked {
-			@apply bg-[#231271];
+			&.dark {
+				@apply bg-[#231271] text-neutral-100;
+			}
 
 			h4 {
 				@apply mb-5;
@@ -132,11 +149,27 @@ div.card {
 			@apply body-small;
 		}
 
+		&.dark,
+		&.light {
+			@apply text-neutral-100;
+		}
+
 		&.ha-default {
 			@apply bg-gradient-to-b from-[rgba(0,0,0,0)_78%] to-[rgba(0,0,0,.3)];
 
 			&:hover {
-				@apply bg-primary;
+				&.dark {
+					@apply bg-primary;
+				}
+
+				&.light {
+					@apply bg-purple-100;
+
+					h4,
+					p {
+						@apply text-purple-400;
+					}
+				}
 
 				div {
 					@apply translate-y-0;
