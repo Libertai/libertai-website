@@ -74,6 +74,7 @@
 	* {
 		@apply border-border;
 	}
+
 	body {
 		@apply bg-background text-foreground;
 	}
@@ -85,21 +86,25 @@
 		line-height: 38px;
 		font-weight: 500;
 	}
+
 	.body-default {
 		font-size: 18px;
 		line-height: 30px;
 		font-weight: 500;
 	}
+
 	.body-small {
 		font-size: 14px;
 		line-height: 24px;
 		font-weight: 500;
 	}
+
 	.body-tiny {
 		font-size: 12px;
-		line-height: 20px;
+		line-height: 15px;
 		font-weight: 500;
 	}
+
 	.text-link {
 		color: #644df9;
 		text-decoration: underline;

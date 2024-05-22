@@ -1,6 +1,6 @@
 <template>
 	<section class="relative flex w-full justify-center bg-white">
-		<div class="grid bg-white py-44 pl-12 max-lg:pb-0 max-lg:pt-16 lg:grid-cols-[40%_60%]" style="width: 1440px">
+		<div class="grid bg-white py-44 max-lg:pb-0 max-lg:pt-16 lg:grid-cols-[40%_60%] lg:pl-12" style="width: 1440px">
 			<div
 				class="w-xl m-auto mx-4 flex flex-col items-center justify-center gap-y-6 text-left max-lg:px-4 max-lg:text-center"
 			>
