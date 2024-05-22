@@ -10,11 +10,11 @@
 					showApps = false;
 				"
 			>
-				<img class="w-8" alt="Menu" src="../assets/icons/menu.svg" style="filter: invert(1)" />
+				<img class="w-6" alt="Menu" src="../assets/icons/menu.svg" style="filter: invert(1)" />
 			</button>
 			<RouterLink class="mr-8" to="/">
 				<img class="block max-lg:hidden" alt="Site Logo" height="21" src="../assets/logos/libertAI.svg" width="120" />
-				<img class="hidden h-10 max-lg:block" alt="Site Logo" src="../assets/logos/libertAI.svg" />
+				<img class="hidden h-8 max-lg:block" alt="Site Logo" src="../assets/logos/libertAI.svg" />
 			</RouterLink>
 
 			<nav class="body-small flex space-x-8 text-neutral-800 max-lg:hidden">
@@ -53,9 +53,11 @@
 			</nav>
 		</div>
 		<a href="https://chat.libertai.io">
-			<button class="body-default body-tiny w-fit rounded-full bg-primary px-6 py-3 font-bold text-neutral-100">
+			<button
+				class="body-default body-tiny w-fit rounded-full bg-primary px-6 py-3 font-bold text-neutral-100 max-lg:px-4 max-lg:py-2"
+			>
 				<div class="flex gap-2">
-					<span>Chat APP</span>
+					<p class="body-small max-lg:body-tiny">Chat APP</p>
 					<img alt="Message" src="../assets/message.svg" />
 				</div>
 			</button>
