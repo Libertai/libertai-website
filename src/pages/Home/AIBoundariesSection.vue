@@ -7,8 +7,8 @@ import InfoCard from "../../components/InfoCard.vue";
 		<div class="flex items-center justify-center px-24 py-32 max-2xl:pt-12" style="width: 1440px">
 			<div class="grid grid-cols-4 gap-4 max-xl:w-5/6 max-xl:grid-cols-2 max-lg:w-2/3 max-lg:grid-cols-1">
 				<div class="col-span-2 h-40 w-full justify-center p-8 max-2xl:col-span-4 max-xl:col-span-2 max-lg:col-span-1">
-					<h2 class="text-majorelle-800 text-left max-lg:text-center">Redefining AI Boundaries</h2>
-					<p class="body-small text-majorelle-800 items-center max-lg:text-center max-sm:w-1/2">
+					<h2 class="text-left text-majorelle-800 max-lg:text-center">Redefining AI Boundaries</h2>
+					<p class="body-small items-center text-majorelle-800 max-lg:text-center max-sm:w-1/2">
 						LibertAI’s unique edge lies in its decentralized approach to AI, which offers privacy, security,
 						flexibility, and accessibility while promoting openness, collaboration, and innovation in the AI space.
 					</p>
