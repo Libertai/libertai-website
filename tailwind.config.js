@@ -18,7 +18,7 @@ export default {
 			center: true,
 			padding: "2rem",
 			screens: {
-				"2xl": "1400px",
+				"2xl": "1440px",
 			},
 		},
 		colors: {
@@ -36,6 +36,16 @@ export default {
 				600: "#474B64",
 				700: "#212438",
 				800: "#0E1435",
+			},
+			majorelle: {
+				100: "#F7F6FF",
+				200: "#EEEEF8",
+				300: "#DEE1FF",
+				400: "#9895BA",
+				500: "#644DF9",
+				600: "#3A2986",
+				700: "#231271",
+				800: "#16122C",
 			},
 		},
 		fontFamily: {
