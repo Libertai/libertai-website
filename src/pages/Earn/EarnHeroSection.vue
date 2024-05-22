@@ -1,5 +1,5 @@
 <template>
-	<div class="image-background grid overflow-hidden bg-white lg:grid-cols-[50%_50%]">
+	<div class="image-background relative grid overflow-hidden bg-white lg:grid-cols-[50%_50%]">
 		<div class="absolute left-0 top-0 z-10 h-full w-full bg-white max-lg:hidden"></div>
 		<div
 			class="z-10 m-auto flex max-w-xl flex-col items-center justify-center gap-y-6 text-center max-lg:gap-y-12 max-lg:px-4 max-lg:py-40 max-lg:text-neutral-100"
@@ -12,7 +12,7 @@
 				and innovative LibertAI ecosystem.
 			</p>
 		</div>
-		<img alt="Earn" class="m-auto max-lg:hidden" src="../../assets/earn.png" />
+		<img alt="Earn" class="z-10 m-auto max-lg:hidden" src="../../assets/earn.png" />
 	</div>
 </template>
 
