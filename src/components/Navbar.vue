@@ -69,30 +69,30 @@
 			</button>
 		</a>
 		<!-- Navbar buttons for small screens -->
-		<div v-show="showSidebar" class="absolute left-0 top-16 w-full translate-y-1 border-y bg-neutral-100 shadow">
-			<div class="flex flex-col">
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/company">Company</RouterLink>
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/earn">Earn</RouterLink>
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/developer">Developer</RouterLink>
-				<div class="body-default focus:bg-neutral-200">
-					<button @click="showApps = !showApps" class="flex items-center px-8 py-4">
-						<span class="mr-1.5 cursor-pointer">Apps</span>
-						<img alt="Chevron up" src="../assets/chevron_down.svg" />
-					</button>
-					<div v-show="showApps" class="flex flex-col border-y">
-						<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
-							<a href="https://chat.libertai.io"> Chat dApp </a>
-							<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
-						</div>
-						<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
-							<a href="https://t.me/liberchat_bot"> Telegram bot </a>
-							<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
-						</div>
+	</header>
+	<div v-show="showSidebar" class="sticky top-16 w-full border-y bg-neutral-100 shadow">
+		<div class="flex flex-col">
+			<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/company">Company</RouterLink>
+			<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/earn">Earn</RouterLink>
+			<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/developer">Developer</RouterLink>
+			<div class="body-default focus:bg-neutral-200">
+				<button @click="showApps = !showApps" class="flex items-center px-8 py-4">
+					<span class="mr-1.5 cursor-pointer">Apps</span>
+					<img alt="Chevron up" src="../assets/chevron_down.svg" />
+				</button>
+				<div v-show="showApps" class="flex flex-col border-y">
+					<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
+						<a href="https://chat.libertai.io"> Chat dApp </a>
+						<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
+					</div>
+					<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
+						<a href="https://t.me/liberchat_bot"> Telegram bot </a>
+						<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
 					</div>
 				</div>
 			</div>
 		</div>
-	</header>
+	</div>
 </template>
 
 <script lang="ts" setup>
