@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-	<section class="relative flex justify-center bg-white">
+	<section class="relative flex justify-center bg-neutral-100">
 		<div
 			class="flex w-full flex-col items-center justify-center space-y-16 pb-40 pt-32 text-center max-lg:space-y-12 max-lg:pb-16 max-lg:pt-16"
 			style="width: 1440px"
