@@ -3,6 +3,7 @@
 		class="sticky top-0 z-30 flex w-full select-none items-center justify-between bg-neutral-100 px-28 py-4 max-lg:px-4"
 	>
 		<div class="flex items-center">
+			<!-- Burger menu button for small screens -->
 			<button
 				class="mr-4 lg:hidden"
 				@click="
@@ -12,11 +13,14 @@
 			>
 				<img class="w-6" alt="Menu" src="../assets/icons/menu.svg" style="filter: invert(1)" />
 			</button>
+
+			<!-- Site logo -->
 			<RouterLink class="mr-8" to="/">
 				<img class="block max-lg:hidden" alt="Site Logo" height="21" src="../assets/logos/libertAI.svg" width="120" />
 				<img class="hidden h-8 max-lg:block" alt="Site Logo" src="../assets/logos/libertAI.svg" />
 			</RouterLink>
 
+			<!-- Navbar buttons for large screens -->
 			<nav class="body-small flex space-x-8 text-neutral-800 max-lg:hidden">
 				<RouterLink to="/company">Company</RouterLink>
 				<RouterLink to="/earn">Earn</RouterLink>
@@ -52,6 +56,8 @@
 				</div>
 			</nav>
 		</div>
+
+		<!-- Button for the chat app -->
 		<a href="https://chat.libertai.io">
 			<button
 				class="body-default body-tiny w-fit rounded-full bg-primary px-6 py-3 font-bold text-neutral-100 max-lg:px-4 max-lg:py-2"
@@ -63,6 +69,8 @@
 			</button>
 		</a>
 	</header>
+
+	<!-- Navbar buttons for small screens -->
 	<div v-show="showSidebar" class="w-full border-y bg-neutral-100 shadow">
 		<div class="flex flex-col">
 			<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/company">Company</RouterLink>
