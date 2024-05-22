@@ -4,8 +4,8 @@
 	<section class="flex justify-center bg-white">
 		<div class="grid grid-cols-4 px-24 py-32 max-lg:grid-cols-2" style="width: 1440px">
 			<div class="col-span-2 h-40 w-full">
-				<h2 class="text-majorelle-800 text-left">Redefining AI Boundaries</h2>
-				<p class="text-majorelle-800 body-small">
+				<h2 class="text-left text-majorelle-800">Redefining AI Boundaries</h2>
+				<p class="body-small text-majorelle-800">
 					LibertAI’s unique edge lies in its decentralized approach to AI, which offers privacy, security, flexibility,
 					and accessibility while promoting openness, collaboration, and innovation in the AI space.
 				</p>
