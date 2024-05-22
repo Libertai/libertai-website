@@ -4,6 +4,7 @@ import PartnersSection from "./PartnersSection.vue";
 import FooterSection from "./FooterSection.vue";
 import ChatPreviewSection from "./ChatPreviewSection.vue";
 import DataSecuritySection from "./DataSecuritySection.vue";
+import FeedbacksSection from "./FeedbacksSection.vue";
 import AIBoundariesSection from "./AIBoundariesSection.vue";
 </script>
 
@@ -11,6 +12,7 @@ import AIBoundariesSection from "./AIBoundariesSection.vue";
 	<Hero />
 	<PartnersSection />
 	<ChatPreviewSection />
+	<FeedbacksSection />
 	<DataSecuritySection />
 	<AIBoundariesSection />
 	<FooterSection />
