@@ -1,16 +1,15 @@
 <template>
 	<header
-		class="relative sticky top-0 z-30 flex w-full select-none items-center justify-between bg-neutral-100 px-28 py-4 max-lg:px-4"
+		class="sticky top-0 z-30 flex w-full select-none items-center justify-between bg-neutral-100 px-28 py-4 max-lg:px-4"
 	>
-		<div v-show="showSidebar" class="absolute top-20 w-auto rounded-xl bg-white shadow">
-			<div class="flex flex-col">
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-500" to="/company">Company</RouterLink>
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-500" to="/earn">Earn</RouterLink>
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-500" to="/developer">Developer</RouterLink>
-			</div>
-		</div>
-		<div class="flex">
-			<button class="mr-8 lg:hidden" @click="showSidebar = !showSidebar">
+		<div class="flex items-center">
+			<button
+				class="mr-4 lg:hidden"
+				@click="
+					showSidebar = !showSidebar;
+					showApps = false;
+				"
+			>
 				<img class="w-8" alt="Menu" src="../assets/icons/menu.svg" style="filter: invert(1)" />
 			</button>
 			<RouterLink class="mr-8" to="/">
@@ -18,7 +17,7 @@
 				<img class="hidden h-10 max-lg:block" alt="Site Logo" src="../assets/logos/libertAI.svg" />
 			</RouterLink>
 
-			<nav class="body-small flex hidden space-x-8 text-neutral-800">
+			<nav class="body-small flex space-x-8 text-neutral-800 max-lg:hidden">
 				<RouterLink to="/company">Company</RouterLink>
 				<RouterLink to="/earn">Earn</RouterLink>
 				<RouterLink to="/developer">Developer</RouterLink>
@@ -31,17 +30,17 @@
 					<div class="absolute pt-2">
 						<div
 							v-show="showApps"
-							class="ring-black z-10 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-opacity-5"
+							class="ring-black z-10 w-36 origin-top-right rounded-md border border-primary bg-white shadow-lg"
 							role="menu"
 						>
 							<div class="py-1">
-								<div class="dropdown-item flex">
+								<div class="dropdown-item flex justify-between">
 									<div class="mr-1">
-										<a href="https://chat.libertai.io" target="_blank">Chat dApp</a>
+										<a href="https://chat.libertai.io" target="_blank">Chat App</a>
 									</div>
 									<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
 								</div>
-								<div class="dropdown-item flex">
+								<div class="dropdown-item flex justify-between">
 									<div class="mr-1">
 										<a href="https://t.me/liberchat_bot" target="_blank">Telegram bot</a>
 									</div>
@@ -55,18 +54,40 @@
 		</div>
 		<a href="https://chat.libertai.io">
 			<button class="body-default body-tiny w-fit rounded-full bg-primary px-6 py-3 font-bold text-neutral-100">
-				<div class="flex gap-1">
-					<span class="max-lg:hidden">Chat APP</span>
+				<div class="flex gap-2">
+					<span>Chat APP</span>
 					<img alt="Message" src="../assets/message.svg" />
 				</div>
 			</button>
 		</a>
 	</header>
+	<div v-show="showSidebar" class="w-full border-y bg-neutral-100 shadow">
+		<div class="flex flex-col">
+			<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/company">Company</RouterLink>
+			<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/earn">Earn</RouterLink>
+			<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/developer">Developer</RouterLink>
+			<div class="body-default focus:bg-neutral-200">
+				<button @click="showApps = !showApps" class="flex items-center px-8 py-4">
+					<span class="mr-1.5 cursor-pointer">Apps</span>
+					<img alt="Chevron up" src="../assets/chevron_down.svg" />
+				</button>
+				<div v-show="showApps" class="flex flex-col border-y">
+					<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
+						<a href="https://chat.libertai.io"> Chat App </a>
+						<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
+					</div>
+					<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
+						<a href="https://t.me/liberchat_bot"> Telegram bot </a>
+						<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </template>
 
 <script lang="ts" setup>
 import { ref } from "vue";
-import LButton from "./LButton.vue";
 
 const showApps = ref(false);
 const showSidebar = ref(false);
