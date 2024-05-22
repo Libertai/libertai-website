@@ -12,7 +12,7 @@ const { text, variant, light, small } = withDefaults(defineProps<LButtonProps>()
 	light: false,
 	small: false,
 });
-let style = twMerge("rounded-full font-bold", small ? "body-tiny px-6 py-3" : "body-default px-8 py-4");
+let style = twMerge("rounded-full font-bold w-fit", small ? "body-tiny px-6 py-3" : "body-default px-8 py-4");
 
 if (variant === "primary")
 	style = twMerge(style, light ? "bg-neutral-100 text-primary" : "bg-primary text-neutral-100");
