@@ -1,4 +1,4 @@
-<script setup lang="ts"></script>
+<script lang="ts" setup></script>
 
 <template>
 	<div class="relative flex w-full flex-col items-center justify-center space-y-16 pb-40 pt-32 text-center">
@@ -27,8 +27,8 @@
 				</p>
 			</div>
 		</div>
-		<img src="../../assets/chat.png" alt="arrow down" class="z-0 w-1/2 max-lg:w-4/5 max-lg:pb-32" />
+		<img alt="arrow down" class="z-0 w-1/2 max-lg:w-4/5 max-lg:pb-32" src="../../assets/chat.png" />
 	</div>
 </template>
 
-<style scoped lang="postcss"></style>
+<style lang="postcss" scoped></style>

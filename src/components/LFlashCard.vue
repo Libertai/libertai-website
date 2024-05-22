@@ -15,11 +15,11 @@ withDefaults(defineProps<LFlashCardProps>(), {
 
 <template>
 	<div
-		:class="`card-${variant} ha-${hoverAnimation} ${light ? 'light' : 'dark'} rounded-3xl relative overflow-hidden group group-transition`"
+		:class="`card-${variant} ha-${hoverAnimation} ${light ? 'light' : 'dark'} group-transition group relative overflow-hidden rounded-3xl`"
 	>
 		<slot />
-		<div :class="`flex-col text-left absolute top-0 group group-transition`">
-			<h4 class="align-bottom !font-bold group-transition table-cell table-fixed">
+		<div :class="`group-transition group absolute top-0 flex-col text-left`">
+			<h4 class="group-transition table-cell table-fixed align-bottom !font-bold">
 				{{ title }}
 			</h4>
 			<p class="group-transition">
@@ -32,10 +32,10 @@ withDefaults(defineProps<LFlashCardProps>(), {
 <style lang="scss" scoped>
 div.card {
 	&-regular {
-		@apply w-80 h-80;
+		@apply h-80 w-80;
 
 		div {
-			@apply pl-3 w-4/5;
+			@apply w-4/5 pl-3;
 		}
 
 		h4 {
@@ -57,7 +57,7 @@ div.card {
 			}
 
 			p {
-				@apply opacity-0 mt-6;
+				@apply mt-6 opacity-0;
 			}
 
 			&:hover {
@@ -70,7 +70,7 @@ div.card {
 				}
 
 				p {
-					@apply opacity-100 mt-5;
+					@apply mt-5 opacity-100;
 				}
 			}
 		}
@@ -101,7 +101,7 @@ div.card {
 	}
 
 	&-small {
-		@apply w-[18.75rem] h-[18.75rem];
+		@apply h-[18.75rem] w-[18.75rem];
 
 		&.ha-default,
 		&.ha-none {
@@ -122,7 +122,7 @@ div.card {
 	}
 
 	&-large {
-		@apply w-[27.5rem] h-[27.5rem];
+		@apply h-[27.5rem] w-[27.5rem];
 
 		&.ha-default,
 		&.ha-none {
@@ -206,10 +206,10 @@ div.card {
 }
 
 :slotted(img) {
-	@apply w-full h-full object-cover group-hover:scale-105 group-transition -z-10 relative block;
+	@apply group-transition relative -z-10 block h-full w-full object-cover group-hover:scale-105;
 }
 
 .group-transition {
-	@apply transition-all ease-in-out duration-500;
+	@apply transition-all duration-500 ease-in-out;
 }
 </style>
