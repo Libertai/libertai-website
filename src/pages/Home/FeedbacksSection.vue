@@ -1,25 +1,29 @@
 <script setup lang="ts">
+import nicolasBacca from "../../assets/icons/NicolasBacca.png";
+import jonathanSchemoul from "../../assets/icons/JonathanSchemoul.png";
+import shaneP from "../../assets/icons/ShaneP.png";
+
 const feedbacks = [
 	{
 		name: "Nicolas Bacca",
 		title: "Ledger Co-Founder",
 		quote:
 			'"The world of technology thrives best when individuals are left alone to be different, creative, and disobedient."',
-		image: "../../assets/icons/NicolasBacca.png",
+		image: nicolasBacca,
 	},
 	{
 		name: "Jonathan Schemoul",
 		title: "aleph.im CEO and Co-Founder",
 		quote:
 			'"The world of technology thrives best when individuals are left alone to be different, creative, and disobedient."',
-		image: "../../assets/icons/JonathanSchemoul.png",
+		image: jonathanSchemoul,
 	},
 	{
 		name: "Shane P",
 		title: "LibertAI Co-Founder",
 		quote:
 			'"The world of technology thrives best when individuals are left alone to be different, creative, and disobedient."',
-		image: "../../assets/icons/ShaneP.png",
+		image: shaneP,
 	},
 ];
 </script>
