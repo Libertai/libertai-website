@@ -1,10 +1,27 @@
 <template>
-	<header class="sticky top-0 z-30 flex w-full items-center justify-between bg-neutral-100 px-28 py-4">
+	<header
+		class="sticky top-0 z-30 flex w-full select-none items-center justify-between border-b bg-neutral-100 px-28 py-4 max-lg:px-4"
+	>
 		<div class="flex items-center">
+			<!-- Burger menu button for small screens -->
+			<button
+				class="mr-4 lg:hidden"
+				@click="
+					showSidebar = !showSidebar;
+					showApps = false;
+				"
+			>
+				<img class="w-6" alt="Menu" src="../assets/icons/menu.svg" style="filter: invert(1)" />
+			</button>
+
+			<!-- Site logo -->
 			<RouterLink class="mr-8" to="/">
-				<img alt="Site Logo" height="21" src="/logo.svg" width="120" />
+				<img class="block max-lg:hidden" alt="Site Logo" height="21" src="../assets/logos/libertAI.svg" width="120" />
+				<img class="hidden h-8 max-lg:block" alt="Site Logo" src="../assets/logos/libertAI.svg" />
 			</RouterLink>
-			<nav class="body-small flex space-x-8 text-neutral-800">
+
+			<!-- Navbar buttons for large screens -->
+			<nav class="body-small flex space-x-8 text-neutral-800 max-lg:hidden">
 				<RouterLink to="/company">Company</RouterLink>
 				<RouterLink to="/earn">Earn</RouterLink>
 				<RouterLink to="/developer">Developer</RouterLink>
@@ -17,17 +34,17 @@
 					<div class="absolute pt-2">
 						<div
 							v-show="showApps"
-							class="ring-black z-10 w-36 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-opacity-5"
+							class="ring-black z-10 w-36 origin-top-right rounded-md border border-primary bg-white shadow-lg"
 							role="menu"
 						>
 							<div class="py-1">
-								<div class="dropdown-item flex">
+								<div class="dropdown-item flex justify-between">
 									<div class="mr-1">
 										<a href="https://chat.libertai.io" target="_blank">Chat dApp</a>
 									</div>
 									<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
 								</div>
-								<div class="dropdown-item flex">
+								<div class="dropdown-item flex justify-between">
 									<div class="mr-1">
 										<a href="https://t.me/liberchat_bot" target="_blank">Telegram bot</a>
 									</div>
@@ -39,19 +56,75 @@
 				</div>
 			</nav>
 		</div>
+
+		<!-- Button for the chat app -->
 		<a href="https://chat.libertai.io">
-			<l-button class="w-fit" small text="Chat APP">
-				<img alt="Message" src="../assets/message.svg" />
-			</l-button>
+			<button
+				class="body-default body-tiny w-fit rounded-full bg-primary px-6 py-3 font-bold text-neutral-100 max-lg:px-4 max-lg:py-2"
+			>
+				<div class="flex gap-2">
+					<p class="body-small max-lg:body-tiny">Chat APP</p>
+					<img alt="Message" src="../assets/message.svg" />
+				</div>
+			</button>
 		</a>
+		<!-- Navbar buttons for small screens -->
+		<div v-show="showSidebar" class="absolute left-0 top-16 w-full translate-y-1 border-y bg-neutral-100 shadow">
+			<div class="flex flex-col">
+				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/company">Company</RouterLink>
+				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/earn">Earn</RouterLink>
+				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/developer">Developer</RouterLink>
+				<div class="body-default focus:bg-neutral-200">
+					<button @click="showApps = !showApps" class="flex items-center px-8 py-4">
+						<span class="mr-1.5 cursor-pointer">Apps</span>
+						<img alt="Chevron up" src="../assets/chevron_down.svg" />
+					</button>
+					<div v-show="showApps" class="flex flex-col border-y">
+						<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
+							<a href="https://chat.libertai.io"> Chat dApp </a>
+							<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
+						</div>
+						<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
+							<a href="https://t.me/liberchat_bot"> Telegram bot </a>
+							<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</header>
 </template>
 
 <script lang="ts" setup>
-import { ref } from "vue";
-import LButton from "./LButton.vue";
+import { ref, onMounted, onUnmounted } from "vue";
+import { useRouter } from "vue-router";
 
 const showApps = ref(false);
+const showSidebar = ref(false);
+
+const handleScroll = () => {
+	showApps.value = false;
+	showSidebar.value = false;
+};
+
+const router = useRouter();
+
+const closeNavbars = () => {
+	showApps.value = false;
+	showSidebar.value = false;
+};
+
+onMounted(() => {
+	window.addEventListener("scroll", handleScroll);
+	router.beforeEach((_a, _b, next) => {
+		closeNavbars();
+		next();
+	});
+});
+
+onUnmounted(() => {
+	window.removeEventListener("scroll", handleScroll);
+});
 </script>
 
 <style lang="postcss" scoped>
