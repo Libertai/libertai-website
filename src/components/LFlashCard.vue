@@ -18,7 +18,7 @@ withDefaults(defineProps<LFlashCardProps>(), {
 		:class="`card-${variant} ha-${hoverAnimation} ${light ? 'light' : 'dark'} group-transition group relative overflow-hidden rounded-3xl`"
 	>
 		<slot />
-		<div :class="`group-transition group absolute top-0 flex-col text-left`">
+		<div class="group-transition group absolute top-0 flex-col text-left">
 			<h4 class="group-transition table-cell table-fixed align-bottom !font-bold">
 				{{ title }}
 			</h4>
