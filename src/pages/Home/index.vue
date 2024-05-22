@@ -4,6 +4,7 @@ import PartnersSection from "./PartnersSection.vue";
 import FooterSection from "./FooterSection.vue";
 import ChatPreviewSection from "./ChatPreviewSection.vue";
 import DataSecuritySection from "./DataSecuritySection.vue";
+import AIBoundariesSection from "./AIBoundariesSection.vue";
 </script>
 
 <template>
@@ -11,5 +12,6 @@ import DataSecuritySection from "./DataSecuritySection.vue";
 	<PartnersSection />
 	<ChatPreviewSection />
 	<DataSecuritySection />
+	<AIBoundariesSection />
 	<FooterSection />
 </template>
