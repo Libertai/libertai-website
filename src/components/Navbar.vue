@@ -40,7 +40,7 @@
 							<div class="py-1">
 								<div class="dropdown-item flex justify-between">
 									<div class="mr-1">
-										<a href="https://chat.libertai.io" target="_blank">Chat App</a>
+										<a href="https://chat.libertai.io" target="_blank">Chat dApp</a>
 									</div>
 									<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
 								</div>
@@ -83,7 +83,7 @@
 				</button>
 				<div v-show="showApps" class="flex flex-col border-y">
 					<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
-						<a href="https://chat.libertai.io"> Chat App </a>
+						<a href="https://chat.libertai.io"> Chat dApp </a>
 						<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
 					</div>
 					<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
