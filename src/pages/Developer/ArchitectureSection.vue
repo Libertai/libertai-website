@@ -9,14 +9,15 @@ const paragraphs = ref([
 </script>
 
 <template>
-	<div class="my-20 text-center">
-		<div class="mb-24">
-			<h2 class="mb-6">Unlock the Power of Decentralized AI</h2>
+	<div class="mx-8 my-20 text-center">
+		<div class="mb-24 max-lg:mb-12">
+			<h2 class="mb-6 max-lg:hidden">Unlock the Power of Decentralized AI</h2>
+			<h3 class="mb-6 hidden max-lg:block">Unlock the Power of Decentralized AI</h3>
 			<p class="body-small">Build Next-Gen Applications on Libertai's Decentralized Platform</p>
 		</div>
 
-		<div class="grid md:grid-cols-3">
-			<p v-for="text in paragraphs" :key="text" class="body-small mx-auto my-5 max-w-96">
+		<div class="grid gap-8 md:grid-cols-3">
+			<p v-for="text in paragraphs" :key="text" class="body-small max-lg:body-tiny mx-auto my-5 max-w-96">
 				{{ text }}
 			</p>
 		</div>
