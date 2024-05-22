@@ -101,16 +101,9 @@ import { ref, onMounted, onUnmounted } from "vue";
 const showApps = ref(false);
 const showSidebar = ref(false);
 
-let scrollTimeout: number | null = null;
-
 const handleScroll = () => {
-	if (scrollTimeout !== null) {
-		clearTimeout(scrollTimeout);
-	}
-	scrollTimeout = window.setTimeout(() => {
-		showApps.value = false;
-		showSidebar.value = false;
-	}, 100); // Ajustez le délai en millisecondes selon vos besoins
+	showApps.value = false;
+	showSidebar.value = false;
 };
 
 onMounted(() => {
@@ -119,9 +112,6 @@ onMounted(() => {
 
 onUnmounted(() => {
 	window.removeEventListener("scroll", handleScroll);
-	if (scrollTimeout !== null) {
-		clearTimeout(scrollTimeout);
-	}
 });
 </script>
 
