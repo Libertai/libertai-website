@@ -97,6 +97,7 @@
 
 <script lang="ts" setup>
 import { ref, onMounted, onUnmounted } from "vue";
+import { useRoute, useRouter } from "vue-router";
 
 const showApps = ref(false);
 const showSidebar = ref(false);
@@ -106,8 +107,19 @@ const handleScroll = () => {
 	showSidebar.value = false;
 };
 
+const router = useRouter();
+
+const closeNavbars = () => {
+	showApps.value = false;
+	showSidebar.value = false;
+};
+
 onMounted(() => {
 	window.addEventListener("scroll", handleScroll);
+	router.beforeEach((to, from, next) => {
+		closeNavbars();
+		next();
+	});
 });
 
 onUnmounted(() => {
