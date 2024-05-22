@@ -116,7 +116,7 @@ const closeNavbars = () => {
 
 onMounted(() => {
 	window.addEventListener("scroll", handleScroll);
-	router.beforeEach((_, _, next) => {
+	router.beforeEach((_a, _b, next) => {
 		closeNavbars();
 		next();
 	});
