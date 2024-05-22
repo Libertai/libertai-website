@@ -4,6 +4,7 @@ import PartnersSection from "./PartnersSection.vue";
 import FooterSection from "./FooterSection.vue";
 import ChatPreviewSection from "./ChatPreviewSection.vue";
 import DataSecuritySection from "./DataSecuritySection.vue";
+import OpenSourceModelsSection from "./OpenSourceModelsSection.vue";
 import FeedbacksSection from "./FeedbacksSection.vue";
 </script>
 
@@ -11,6 +12,7 @@ import FeedbacksSection from "./FeedbacksSection.vue";
 	<Hero />
 	<PartnersSection />
 	<ChatPreviewSection />
+	<OpenSourceModelsSection />
 	<FeedbacksSection />
 	<DataSecuritySection />
 	<FooterSection />
