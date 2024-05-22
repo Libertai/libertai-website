@@ -16,7 +16,7 @@
 				Powerful Results
 			</h2>
 			<h3
-				class="hidden bg-gradient-to-tr from-gradientFrom to-gradientTo bg-clip-text font-bold text-primary text-opacity-0 max-lg:block"
+				class="hidden bg-gradient-to-tr from-[#9475FB] to-[#CAA1FD] bg-clip-text font-bold text-primary text-opacity-0 max-lg:block"
 			>
 				Powerful Results
 			</h3>
