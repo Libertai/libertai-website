@@ -1,7 +1,9 @@
 <template>
-	<section class="relative flex justify-center bg-white">
+	<section class="relative flex w-full justify-center bg-white">
 		<div class="grid bg-white py-44 max-lg:pb-0 max-lg:pt-16 lg:grid-cols-[40%_60%]" style="width: 1440px">
-			<div class="m-auto mx-4 flex max-w-xl flex-col items-center justify-center gap-y-6 text-left max-lg:text-center">
+			<div
+				class="w-xl m-auto mx-4 flex flex-col items-center justify-center gap-y-6 text-left max-lg:px-4 max-lg:text-center"
+			>
 				<h2 class="max-lg:hidden">Be a Part of the AI Revolution</h2>
 				<h3 class="hidden max-lg:block">Be a Part of the AI Revolution</h3>
 				<p class="body-small">
