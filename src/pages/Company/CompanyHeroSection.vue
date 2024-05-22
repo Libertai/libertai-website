@@ -2,7 +2,7 @@
 	<div class="relative grid overflow-hidden bg-white lg:grid-cols-[60%_40%]">
 		<img
 			alt="Company"
-			class="m-auto max-lg:absolute max-lg:h-screen max-lg:opacity-65 max-lg:blur-sm lg:hidden"
+			class="m-auto max-lg:absolute max-lg:h-screen max-lg:opacity-75 max-lg:blur-sm lg:hidden"
 			src="../../assets/company.png"
 		/>
 		<div

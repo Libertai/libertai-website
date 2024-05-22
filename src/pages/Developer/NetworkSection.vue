@@ -1,5 +1,5 @@
 <template>
-	<div class="architecture py-96 text-neutral-100">
+	<div class="architecture py-96 text-neutral-100 max-lg:py-32">
 		<div class="mb-24 text-center">
 			<h2 class="mb-6">An unstoppable inter planetary network.</h2>
 			<p class="body-small">
