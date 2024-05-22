@@ -5,21 +5,21 @@ const feedbacks = [
 		title: "Ledger Co-Founder",
 		quote:
 			'"The world of technology thrives best when individuals are left alone to be different, creative, and disobedient."',
-		image: "src/assets/icons/NicolasBacca.png",
+		image: "../../assets/icons/NicolasBacca.png",
 	},
 	{
 		name: "Jonathan Schemoul",
 		title: "aleph.im CEO and Co-Founder",
 		quote:
 			'"The world of technology thrives best when individuals are left alone to be different, creative, and disobedient."',
-		image: "src/assets/icons/JonathanSchemoul.png",
+		image: "../../assets/icons/JonathanSchemoul.png",
 	},
 	{
 		name: "Shane P",
 		title: "LibertAI Co-Founder",
 		quote:
 			'"The world of technology thrives best when individuals are left alone to be different, creative, and disobedient."',
-		image: "src/assets/icons/ShaneP.png",
+		image: "../../assets/icons/ShaneP.png",
 	},
 ];
 </script>
