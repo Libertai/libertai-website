@@ -1,4 +1,7 @@
 <script lang="ts" setup>
+import LFlashCard from "../../components/LFlashCard.vue";
+import { models } from "../../texts.ts";
+
 const paragraphs = [
 	"Libertai works on top of the aleph.im network. It uses its on-demand virtual machines (serverless). When you do a call to the API, it's going to one of the load balancers of the network that distributes your request to one of the available CRN (computing resource nodes, you can also call the API directly on one). This CRN then looks at the path (or domain) and redirects it to a specific virtual machine.",
 	"Depending on the inference stack and type of API (text generation, image generation, TTS, STT...) the inference stack will be different. On-demand, the virtual machine is started, with the inference app already on the main volume, and the model is loaded as a volume (from IPFS).",
@@ -7,17 +10,24 @@ const paragraphs = [
 </script>
 
 <template>
-	<section class="relative flex justify-center bg-neutral-100">
-		<div class="mx-8 my-20 text-center" style="width: 1440px">
-			<div class="mb-24 max-lg:mb-12">
-				<h2 class="mb-6 max-lg:hidden">Unlock the Power of Decentralized AI</h2>
-				<h3 class="mb-6 hidden max-lg:block">Unlock the Power of Decentralized AI</h3>
-				<p class="body-small">Build Next-Gen Applications on Libertai's Decentralized Platform</p>
-			</div>
-
-			<div class="grid gap-8 md:grid-cols-3">
-				<p v-for="text in paragraphs" :key="text" class="body-small max-lg:body-tiny mx-auto my-5 max-w-96">
-					{{ text }}
+	<section class="mx-8 my-20 flex flex-col items-center">
+		<div class="mb-20 max-lg:mb-12 text-center">
+			<h2 class="mb-6 max-lg:hidden">Unlock the Power of Decentralized AI</h2>
+			<h3 class="mb-6 hidden max-lg:block">Unlock the Power of Decentralized AI</h3>
+			<p class="body-small">Build Next-Gen Applications on Libertai's Decentralized Platform</p>
+		</div>
+		<div
+			class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(4,20rem)] 2xl:grid-rows-[repeat(2,20rem)] gap-x-6 gap-y-10 mb-36">
+			<LFlashCard v-for="model in models" :key="model.title" :description="model.description" :title="model.title" />
+			<LFlashCard description="" hover-animation="none" light title="Coming Soon" />
+		</div>
+		<div>
+			<h2>
+				How it works
+			</h2>
+			<div class="grid gap-8 md:grid-cols-3 mt-12 text-balance">
+				<p v-for="text in paragraphs" :key="text" class="body-small max-lg:body-tiny max-w-96">
+				{{ text }}
 				</p>
 			</div>
 		</div>
