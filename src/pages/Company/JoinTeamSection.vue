@@ -11,7 +11,7 @@
 					want to be a part of a pioneering team that is transforming the AI landscape? Look no further than Libertai!
 				</p>
 				<a class="w-full max-lg:mb-6" href="mailto:hello@libertai.io" target="_blank">
-					<l-button small text="Join Now" />
+					<LButton small text="Join Now" />
 				</a>
 			</div>
 			<img alt="Company" class="m-auto max-lg:w-full lg:rounded-2xl" src="../../assets/team.webp" width="730px" />
