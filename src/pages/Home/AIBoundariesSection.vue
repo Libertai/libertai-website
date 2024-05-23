@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import InfoCard from "../../components/InfoCard.vue";
+import LSimpleCard from "../../components/LSimpleCard.vue";
 </script>
 
 <template>
@@ -22,22 +22,22 @@ import InfoCard from "../../components/InfoCard.vue";
 						flexibility, and accessibility while promoting openness, collaboration, and innovation in the AI space.
 					</p>
 				</div>
-				<InfoCard
+				<LSimpleCard
 					title="Serverless"
 					description="Offers open source models and custom models on top of serveless GPUs and CPUs for fast confidential inferences. Leverages open-source models (using fast CPU inference)"
 				/>
 				<div class="row-span-2 flex size-full items-center justify-center p-3 max-xl:hidden">
 					<div class="image-background h-full w-72 rounded-2xl" />
 				</div>
-				<InfoCard
+				<LSimpleCard
 					title="Confidential"
 					description="LibertAI supports confidential inference through its decentralized architecture, enabling users to securely run AI workloads with sensitive data."
 				/>
-				<InfoCard
+				<LSimpleCard
 					title="Security Incentives"
 					description="Crypto-economics security incentives for data providers, model developers, network operators and training contributors / AI alignement."
 				/>
-				<InfoCard
+				<LSimpleCard
 					title="Autonomous Workflows"
 					description="Facilitates confidential AI tasks and autonomous workflows. No need for huge GPU farms."
 				/>
