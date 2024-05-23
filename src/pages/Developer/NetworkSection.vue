@@ -1,5 +1,5 @@
 <template>
-	<section class="bg-[#030014] relative flex justify-center">
+	<section class="relative flex justify-center bg-[#030014]">
 		<div class="bg-[#030014] px-8 py-96 text-neutral-100 max-lg:py-32" style="width: 1440px">
 			<div class="mb-24 text-center">
 				<h2 class="mb-6 max-lg:hidden">An unstoppable inter planetary network.</h2>
