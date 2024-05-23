@@ -17,7 +17,7 @@ import LButton from "../../components/LButton.vue";
 					Your AI journey, your privacy!
 				</p>
 				<a class="max-lg:mt-8" href="https://chat.libertai.io">
-					<l-button class="w-fit" light text="TRY FOR FREE" />
+					<LButton class="w-fit" light text="TRY FOR FREE" />
 				</a>
 			</div>
 		</div>
