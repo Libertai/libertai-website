@@ -11,23 +11,22 @@ const paragraphs = [
 
 <template>
 	<section class="mx-8 my-20 flex flex-col items-center">
-		<div class="mb-20 max-lg:mb-12 text-center">
+		<div class="mb-20 text-center max-lg:mb-12">
 			<h2 class="mb-6 max-lg:hidden">Unlock the Power of Decentralized AI</h2>
 			<h3 class="mb-6 hidden max-lg:block">Unlock the Power of Decentralized AI</h3>
 			<p class="body-small">Build Next-Gen Applications on Libertai's Decentralized Platform</p>
 		</div>
 		<div
-			class="grid md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(4,20rem)] 2xl:grid-rows-[repeat(2,20rem)] gap-x-6 gap-y-10 mb-36">
+			class="mb-36 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(4,20rem)] 2xl:grid-rows-[repeat(2,20rem)]"
+		>
 			<LFlashCard v-for="model in models" :key="model.title" :description="model.description" :title="model.title" />
 			<LFlashCard description="" hover-animation="none" light title="Coming Soon" />
 		</div>
 		<div>
-			<h2>
-				How it works
-			</h2>
-			<div class="grid gap-8 md:grid-cols-3 mt-12 text-balance">
+			<h2>How it works</h2>
+			<div class="mt-12 grid gap-8 text-balance md:grid-cols-3">
 				<p v-for="text in paragraphs" :key="text" class="body-small max-lg:body-tiny max-w-96">
-				{{ text }}
+					{{ text }}
 				</p>
 			</div>
 		</div>
