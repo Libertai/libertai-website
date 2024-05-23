@@ -6,6 +6,7 @@ import ChatPreviewSection from "./ChatPreviewSection.vue";
 import DataSecuritySection from "./DataSecuritySection.vue";
 import OpenSourceModelsSection from "./OpenSourceModelsSection.vue";
 import FeedbacksSection from "./FeedbacksSection.vue";
+import AIBoundariesSection from "./AIBoundariesSection.vue";
 </script>
 
 <template>
@@ -15,5 +16,6 @@ import FeedbacksSection from "./FeedbacksSection.vue";
 	<OpenSourceModelsSection />
 	<FeedbacksSection />
 	<DataSecuritySection />
+	<AIBoundariesSection />
 	<FooterSection />
 </template>
