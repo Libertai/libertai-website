@@ -3,7 +3,7 @@ import LSimpleCard from "../../components/LSimpleCard.vue";
 </script>
 
 <template>
-	<section class="flex flex-col items-center justify-center overflow-hidden bg-white max-xl:px-24">
+	<section class="flex flex-col items-center justify-center overflow-hidden max-xl:px-24">
 		<div class="flex flex-col items-center justify-center px-24 py-32 max-xl:pt-12 max-lg:pt-0" style="width: 1440px">
 			<div class="h-auto justify-center p-8 max-lg:max-w-md max-md:max-w-sm md:hidden">
 				<h3 class="text-left text-majorelle-800 max-lg:text-center">Redefining AI Boundaries</h3>

@@ -1,9 +1,9 @@
 <template>
-	<section class="image-background relative flex justify-center bg-white">
+	<section class="relative flex justify-center">
 		<div class="image-background relative grid overflow-hidden lg:grid-cols-[40%_60%]" style="width: 1440px">
-			<div class="absolute left-0 top-0 z-10 h-full w-full bg-white max-lg:hidden" />
+			<div class="absolute left-0 top-0 z-10 h-full w-full bg-tertiary max-lg:hidden" />
 			<div
-				class="z-10 m-auto flex max-w-xl flex-col items-center justify-center gap-y-6 pl-8 text-center text-majorelle-800 max-lg:gap-y-12 max-lg:px-4 max-lg:py-40 max-lg:text-neutral-100"
+				class="z-10 m-auto flex max-w-xl flex-col items-center justify-center gap-y-6 pl-8 text-center text-majorelle-800 max-lg:gap-y-12 max-lg:px-4 max-lg:py-40 max-lg:text-neutral-white"
 			>
 				<h2 class="block text-left max-lg:text-center max-sm:hidden">Where AI Meets Freedom</h2>
 				<h3 class="hidden max-sm:block">Where AI Meets Freedom</h3>

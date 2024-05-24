@@ -31,8 +31,7 @@ export default {
 		colors: {
 			primary: "#644DF9",
 			secondary: "#D2DCFF",
-			white: "#F6F8FF",
-			background: "#FFFFFF",
+			tertiary: "#F6F8FF",
 			neutral: {
 				black: "#000000",
 				grey: "#B4B4B4",
@@ -63,10 +62,6 @@ export default {
 				400: "#D288FF",
 				500: "#9747FF",
 			},
-			purple: {
-				100: "#DEE1FF",
-				400: "#837AFF"
-			}
 		},
 		fontFamily: {
 			sans: ["Mulish", "sans-serif"]

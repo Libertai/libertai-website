@@ -38,12 +38,12 @@ const actions: [Action, Action, Action] = [
 ];
 </script>
 <template>
-	<section class="flex flex-col items-center gap-6 py-36">
+	<section class="flex flex-col items-center gap-6 bg-gradient-to-b from-neutral-white to-majorelle-100 py-36">
 		<p class="body-small text-center max-sm:px-16 sm:px-20 lg:px-28">
 			So, are you ready to join this revolutionary journey and unlock the power of LibertAI Tokens? Let's get started
 			together and shape the future of decentralized cloud technology!
 		</p>
-		<div class="my-[4.5rem] flex justify-center gap-6 max-lg:hidden max-md:flex max-md:flex-col lg:flex-row">
+		<div class="z-10 my-[4.5rem] flex justify-center gap-6 max-lg:hidden max-md:flex max-md:flex-col lg:flex-row">
 			<div v-for="action in actions" :key="action.cardTitle" class="flex flex-col items-center gap-7">
 				<LFlashCard
 					:description="action.cardDescription"

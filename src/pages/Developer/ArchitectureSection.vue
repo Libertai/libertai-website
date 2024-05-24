@@ -10,8 +10,8 @@ const paragraphs = [
 </script>
 
 <template>
-	<section class="mx-8 my-20 flex flex-col items-center">
-		<div class="mb-20 text-center max-lg:mb-12">
+	<section class="mx-8 flex flex-col items-center bg-gradient-to-b from-neutral-white to-tertiary py-20">
+		<div class="mb-20 text-center text-majorelle-800 max-lg:mb-12">
 			<h2 class="mb-6 max-lg:hidden">Unlock the Power of Decentralized AI</h2>
 			<h3 class="mb-6 hidden max-lg:block">Unlock the Power of Decentralized AI</h3>
 			<p class="body-small">Build Next-Gen Applications on Libertai's Decentralized Platform</p>
@@ -22,7 +22,7 @@ const paragraphs = [
 			<LFlashCard v-for="model in models" :key="model.title" :description="model.description" :title="model.title" />
 			<LFlashCard description="" hover-animation="none" light title="Coming Soon" />
 		</div>
-		<div>
+		<div class="text-majorelle-800">
 			<h2>How it works</h2>
 			<div class="mt-12 grid gap-8 text-balance md:grid-cols-3">
 				<p v-for="text in paragraphs" :key="text" class="body-small max-lg:body-tiny max-w-96">

@@ -9,7 +9,7 @@ import { models } from "../../texts.ts";
 		<div
 			class="md:grid-cols-[repeat(2,20rem) grid gap-x-6 gap-y-10 max-md:grid-cols-[20rem] max-md:grid-rows-[repeat(7,20rem)] md:grid-rows-[repeat(4,20rem)] lg:grid-cols-[repeat(3,20rem)] lg:grid-rows-[repeat(3,20rem)] 2xl:grid-cols-[repeat(4,20rem)] 2xl:grid-rows-[repeat(2,20rem)]"
 		>
-			<div class="heading pt-6 text-neutral-800 lg:px-6">
+			<div class="heading pt-6 text-majorelle-800 lg:px-6">
 				<h2 class="mb-6 font-light max-lg:text-center max-md:hidden">Explore Free <br />Open-Source Models</h2>
 				<h3 class="mb-6 font-light max-lg:text-center md:hidden">Explore Free <br />Open-Source Models</h3>
 				<p class="body-small max-lg:text-center">
