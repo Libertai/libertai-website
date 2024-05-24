@@ -15,7 +15,12 @@ const { text, variant, light, small } = withDefaults(defineProps<LButtonProps>()
 let style = twMerge("rounded-full font-bold w-fit", small ? "body-tiny px-6 py-3" : "body-default px-8 py-4");
 
 if (variant === "primary")
-	style = twMerge(style, light ? "bg-neutral-white text-majorelle-500" : "bg-majorelle-500 text-neutral-white");
+	style = twMerge(
+		style,
+		light
+			? "bg-neutral-white text-majorelle-500"
+			: "bg-majorelle-500 hover:bg-majorelle-700 duration-300 ease-out text-neutral-white",
+	);
 else
 	style = twMerge(
 		style,
