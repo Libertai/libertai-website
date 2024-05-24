@@ -1,6 +1,6 @@
 <template>
 	<header
-		class="sticky top-0 z-30 flex w-full select-none items-center justify-between border-b bg-neutral-100 px-28 py-4 max-lg:px-4"
+		class="sticky top-0 z-30 flex w-full select-none items-center justify-between border-b bg-neutral-white px-28 py-4 max-lg:px-4"
 	>
 		<div class="flex items-center">
 			<!-- Burger menu button for small screens -->
@@ -34,7 +34,7 @@
 					<div class="absolute pt-2">
 						<div
 							v-show="showApps"
-							class="ring-black z-10 w-36 origin-top-right rounded-md border border-primary bg-white shadow-lg"
+							class="ring-black z-10 w-36 origin-top-right rounded-md border border-majorelle-500 bg-tertiary shadow-lg"
 							role="menu"
 						>
 							<div class="py-1">
@@ -60,7 +60,7 @@
 		<!-- Button for the chat app -->
 		<a href="https://chat.libertai.io">
 			<button
-				class="body-default body-tiny w-fit rounded-full bg-primary px-6 py-3 font-bold text-neutral-100 max-lg:px-4 max-lg:py-2"
+				class="body-bold-default body-tiny w-fit rounded-full bg-majorelle-500 px-6 py-3 text-neutral-white max-lg:px-4 max-lg:py-2"
 			>
 				<div class="flex gap-2">
 					<p class="body-small max-lg:body-tiny">Chat APP</p>
@@ -69,7 +69,7 @@
 			</button>
 		</a>
 		<!-- Navbar buttons for small screens -->
-		<div v-show="showSidebar" class="absolute left-0 top-16 w-full translate-y-1 border-y bg-neutral-100 shadow">
+		<div v-show="showSidebar" class="absolute left-0 top-16 w-full translate-y-1 border-y bg-neutral-white shadow">
 			<div class="flex flex-col">
 				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/company">Company</RouterLink>
 				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/earn">Earn</RouterLink>
@@ -129,6 +129,6 @@ onUnmounted(() => {
 
 <style lang="postcss" scoped>
 .dropdown-item {
-	@apply px-4 py-2 text-sm text-neutral-800 hover:bg-secondary hover:text-primary;
+	@apply px-4 py-2 text-sm text-neutral-800 hover:bg-secondary hover:text-majorelle-500;
 }
 </style>

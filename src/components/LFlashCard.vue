@@ -48,12 +48,12 @@ div.card {
 		}
 
 		&.light {
-			@apply bg-purple-100 text-purple-400;
+			@apply bg-majorelle-300 text-[#837AFF];
 		}
 
 		&.ha-default {
 			&.dark {
-				@apply bg-primary text-neutral-100;
+				@apply bg-majorelle-500 text-neutral-white;
 			}
 
 			p {
@@ -77,7 +77,7 @@ div.card {
 
 		&.ha-none {
 			&.dark {
-				@apply bg-primary text-neutral-100;
+				@apply bg-majorelle-500 text-neutral-white;
 			}
 
 			p {
@@ -87,7 +87,7 @@ div.card {
 
 		&.ha-blocked {
 			&.dark {
-				@apply bg-[#231271] text-neutral-100;
+				@apply bg-[#231271] text-neutral-white;
 			}
 
 			h4 {
@@ -159,7 +159,7 @@ div.card {
 
 		&.dark,
 		&.light {
-			@apply text-neutral-100;
+			@apply text-neutral-white;
 		}
 
 		&.ha-default {
@@ -167,15 +167,15 @@ div.card {
 
 			&:hover {
 				&.dark {
-					@apply bg-primary;
+					@apply bg-majorelle-500;
 				}
 
 				&.light {
-					@apply bg-purple-100;
+					@apply bg-majorelle-300;
 
 					h4,
 					p {
-						@apply text-purple-400;
+						@apply text-[#837AFF];
 					}
 				}
 			}
@@ -188,16 +188,16 @@ div.card {
 
 		&.ha-blocked {
 			&.light {
-				@apply bg-purple-100;
+				@apply bg-majorelle-300;
 
 				h4,
 				p {
-					@apply text-purple-400;
+					@apply text-[#837AFF];
 				}
 			}
 
 			&.dark {
-				@apply bg-primary;
+				@apply bg-majorelle-500;
 			}
 
 			@apply cursor-pointer;

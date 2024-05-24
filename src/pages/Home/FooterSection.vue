@@ -3,7 +3,7 @@
 		<div class="relative w-full pt-72" style="height: 910px; width: 1440px">
 			<div class="flex flex-col items-center justify-center space-y-10">
 				<img alt="logo" src="../../assets/icons/logo_white.svg" style="width: 105px; height: 105px" />
-				<p class="text-tiny body-large mt-4 text-center text-primary">Stay Connected</p>
+				<p class="text-tiny body-large mt-4 text-center text-majorelle-500">Stay Connected</p>
 				<div class="flex flex-row space-x-7">
 					<a href="https://x.com/Libertai_DAI" target="_blank">
 						<img alt="Twitter / X" src="../../assets/icons/x.svg" style="width: 36px; height: 36px" />
