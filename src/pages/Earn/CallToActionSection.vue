@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import LFlashCard from "../../components/LFlashCard.vue";
-import EarnImage from "../../assets/earn.png";
+import StakeImage from "../../assets/stake.png";
+import CoreNodeImage from "../../assets/core-node.png";
+import ComputeNodeImage from "../../assets/compute-node.png";
 import LButton from "../../components/LButton.vue";
 
 type Action = {
@@ -17,7 +19,7 @@ const actions: [Action, Action, Action] = [
 			"Staking 10K or more Aleph tokens ($ALEPH) - By showing your commitment to the future of decentralized cloud technology, you earn Libertai Points that reflect your trust in the platform.",
 		buttonText: "STAKE ALEPH",
 		buttonLink: "https://account.aleph.im/earn/staking/",
-		imagePath: EarnImage,
+		imagePath: StakeImage,
 	},
 	{
 		cardTitle: "Core Channel Node Operator",
@@ -25,7 +27,7 @@ const actions: [Action, Action, Action] = [
 			"Running an Aleph.im Core Channel Node - Become a part of the backbone that supports cross-chain interactions and enjoy the perks of being a node operator with Libertai Points as your reward!",
 		buttonText: "RUN CORE NODE",
 		buttonLink: "https://docs.aleph.im/nodes/core/",
-		imagePath: EarnImage,
+		imagePath: CoreNodeImage,
 	},
 	{
 		cardTitle: "Resource Node Operator",
@@ -33,7 +35,7 @@ const actions: [Action, Action, Action] = [
 			"Operating an Aleph.im Resource Node - Contribute to data storage, compute capabilities, and decentralized applications by running a resource node and reap the benefits through Libertai Points!",
 		buttonText: "RUN RESOURCE NODE",
 		buttonLink: "https://docs.aleph.im/nodes/compute/",
-		imagePath: EarnImage,
+		imagePath: ComputeNodeImage,
 	},
 ];
 </script>
@@ -51,10 +53,10 @@ const actions: [Action, Action, Action] = [
 					class="max-2xl:hidden"
 					variant="large"
 				>
-					<img :alt="`${action.cardTitle} image`" :src="action.imagePath" />
+					<img :alt="action.cardTitle" :src="action.imagePath" />
 				</LFlashCard>
 				<LFlashCard :description="action.cardDescription" :title="action.cardTitle" class="2xl:hidden" variant="small">
-					<img :alt="`${action.cardTitle} image`" :src="action.imagePath" />
+					<img :alt="action.cardTitle" :src="action.imagePath" />
 				</LFlashCard>
 				<a :href="action.buttonLink">
 					<LButton :text="action.buttonText" class="max-md:hidden" small />
@@ -69,7 +71,7 @@ const actions: [Action, Action, Action] = [
 					class="max-2xl:hidden"
 					variant="large"
 				>
-					<img :alt="`${actions[0].cardTitle} image`" :src="actions[0].imagePath" />
+					<img :alt="actions[0].cardTitle" :src="actions[0].imagePath" />
 				</LFlashCard>
 				<LFlashCard
 					:description="actions[0].cardDescription"
@@ -77,7 +79,7 @@ const actions: [Action, Action, Action] = [
 					class="2xl:hidden"
 					variant="small"
 				>
-					<img :alt="`${actions[0].cardTitle} image`" :src="actions[0].imagePath" />
+					<img :alt="actions[0].cardTitle" :src="actions[0].imagePath" />
 				</LFlashCard>
 				<a :href="actions[0].buttonLink">
 					<LButton :text="actions[0].buttonText" class="max-md:hidden" small />
@@ -91,7 +93,7 @@ const actions: [Action, Action, Action] = [
 						class="max-2xl:hidden"
 						variant="large"
 					>
-						<img :alt="`${actions[i].cardTitle} image`" :src="actions[i].imagePath" />
+						<img :alt="actions[i].cardTitle" :src="actions[i].imagePath" />
 					</LFlashCard>
 					<LFlashCard
 						:description="actions[i].cardDescription"
@@ -99,7 +101,7 @@ const actions: [Action, Action, Action] = [
 						class="2xl:hidden"
 						variant="small"
 					>
-						<img :alt="`${actions[i].cardTitle} image`" :src="actions[i].imagePath" />
+						<img :alt="actions[i].cardTitle" :src="actions[i].imagePath" />
 					</LFlashCard>
 					<a :href="actions[i].buttonLink">
 						<LButton :text="actions[i].buttonText" class="max-md:hidden" small />
@@ -111,6 +113,8 @@ const actions: [Action, Action, Action] = [
 			Staking $ALEPH or running an aleph node? Connect your associated reward wallet to start earning LibertAI $LTAI
 			tokens.
 		</p>
-		<LButton small text="CONNECT NOW" />
+		<a href="https://chat.libertai.io">
+			<LButton small text="CONNECT NOW" />
+		</a>
 	</section>
 </template>
