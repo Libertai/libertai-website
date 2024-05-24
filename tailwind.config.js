@@ -32,7 +32,11 @@ export default {
 			primary: "#644DF9",
 			secondary: "#D2DCFF",
 			white: "#F6F8FF",
+			background: "#FFFFFF",
 			neutral: {
+				black: "#000000",
+				grey: "#B4B4B4",
+				white: "#FFFFFF",
 				100: "#FFFFFF",
 				200: "#F9F9F9",
 				300: "#ECF0FA",
@@ -51,6 +55,13 @@ export default {
 				600: "#3A2986",
 				700: "#231271",
 				800: "#16122C",
+			},
+			lavander: {
+				100: "#FFF6FF",
+				200: "#FDE1FF",
+				300: "#FCCBFF",
+				400: "#D288FF",
+				500: "#9747FF",
 			},
 			purple: {
 				100: "#DEE1FF",
