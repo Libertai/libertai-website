@@ -18,6 +18,6 @@ import AddToTelegramSection from "./AddToTelegramSection.vue";
 	<FeedbacksSection />
 	<DataSecuritySection />
 	<AIBoundariesSection />
-  <AddToTelegramSection />
+	<AddToTelegramSection />
 	<FooterSection />
 </template>
