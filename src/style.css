@@ -105,6 +105,60 @@
 		font-weight: 500;
 	}
 
+	.body-bold-large {
+		font-size: 24px;
+		line-height: 38px;
+		font-weight: 700;
+	}
+
+	.body-bold-default {
+		font-size: 18px;
+		line-height: 30px;
+		font-weight: 700;
+	}
+
+	.body-bold-small {
+		font-size: 14px;
+		line-height: 24px;
+		font-weight: 700;
+	}
+
+	.body-bold-tiny {
+		font-size: 12px;
+		line-height: 15px;
+		font-weight: 700;
+	}
+
+	.rich-bold-24 {
+		font-size: 24px;
+		font-weight: 700;
+	}
+
+	.rich-bold-18 {
+		font-size: 18px;
+		font-weight: 700;
+	}
+
+	.rich-bold-12 {
+		font-size: 12px;
+		font-weight: 700;
+	}
+
+	.button-large {
+		font-size: 24px;
+		font-weight: 900;
+	}
+
+	.button-regular {
+		font-size: 18px;
+		font-weight: 900;
+	}
+
+	.button-small {
+		font-size: 12px;
+		font-weight: 900;
+	}
+
 	.text-link {
 		color: #644df9;
 		text-decoration: underline;
