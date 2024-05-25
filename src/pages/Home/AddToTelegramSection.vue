@@ -39,7 +39,7 @@ import LButton from "../../components/LButton.vue";
 				</div>
 				<div class="row-span-2 size-full px-4 py-8 max-sm:hidden max-sm:py-3">
 					<div
-						class="max-xl:h-136 relative flex size-76 h-full items-end overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-white to-[#D4CDFF] shadow-xl max-md:size-64 max-md:h-72 max-md:items-center max-md:justify-center max-md:pr-4 max-md:text-center"
+						class="relative flex size-76 h-full items-end overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-white to-[#D4CDFF] shadow-xl max-xl:h-136 max-md:size-64 max-md:h-72 max-md:items-center max-md:justify-center max-md:pr-4 max-md:text-center"
 					>
 						<div class="flex w-full flex-col pb-6 pl-4 max-md:hidden">
 							<h3 class="text-majorelle-500">Always there</h3>
