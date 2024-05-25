@@ -54,7 +54,16 @@ onMounted(() => {
 			<div class="absolute left-0 z-10 h-full w-64 bg-gradient-to-r from-neutral-white" />
 			<div class="absolute right-full z-20 h-full w-full bg-neutral-white" />
 			<div class="absolute left-full z-20 h-full w-full bg-neutral-white" />
-			<div class="relative h-full w-3/5">
+			<div class="relative flex h-full w-3/5 flex-col max-lg:w-full">
+				<div class="w-full items-center space-y-6 bg-neutral-white py-8 text-center max-lg:px-96 lg:hidden">
+					<h3 class="px-12 max-sm:px-32">AI Customization, Privacy-First with Libertai</h3>
+
+					<p class="body-small px-12 max-sm:px-32">
+						Customize AI assistants for smooth integration into your workflows without compromising your privacy,
+						keeping your data encrypted and under your control.
+					</p>
+					<LButton text="Customize Now" small />
+				</div>
 				<div
 					class="card-container flex gap-6 transition-transform duration-500 ease-in-out"
 					@transitionend="isTransitioning = false"
@@ -81,8 +90,8 @@ onMounted(() => {
 						:key="index"
 						class="card flex w-72 flex-col items-center justify-center"
 					>
-						<div class="h-140 flex w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
-							<div class="h-124 relative top-0 w-full">
+						<div class="flex h-140 w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
+							<div class="relative top-0 h-124 w-full">
 								<img :src="ai.image" class="absolute left-0 top-0 size-full object-cover" :alt="ai.text" />
 							</div>
 							<p class="rich-bold-18 mt-4 text-majorelle-800">{{ ai.text }}</p>
@@ -90,9 +99,10 @@ onMounted(() => {
 					</div>
 				</div>
 			</div>
-			<div class="z-20 h-full w-2/5 bg-neutral-white">
-				<div class="w-128 py space-y-8 px-6 py-24">
-					<h2>AI Customization, Privacy-First with Libertai</h2>
+			<div class="z-20 h-full w-2/5 bg-neutral-white max-lg:hidden">
+				<div class="py w-128 space-y-8 px-6 py-24 max-xl:w-96">
+					<h2 class="max-xl:hidden">AI Customization, Privacy-First with Libertai</h2>
+					<h3 class="xl:hidden">AI Customization, Privacy-First with Libertai</h3>
 					<p class="body-small">
 						Customize AI assistants for smooth integration into your workflows without compromising your privacy,
 						keeping your data encrypted and under your control.
