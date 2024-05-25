@@ -23,10 +23,10 @@ import LButton from "../../components/LButton.vue";
 						<p class="body-small y w-7/12 px-8 text-neutral-white max-md:w-8/12 max-sm:w-full">
 							Experience the future of AI-driven conversations on Telegram with Libertai.
 						</p>
-						<a href="https://t.me/libertai" target="_blank">
+						<a href="https://t.me/liberchat_bot" target="_blank">
 							<LButton light text="ADD TO TELEGRAM" class="absolute bottom-4 left-4 p-8 max-md:hidden" />
 						</a>
-						<a href="https://t.me/libertai" target="_blank">
+						<a href="https://t.me/liberchat_bot" target="_blank">
 							<LButton
 								small
 								light
@@ -39,7 +39,7 @@ import LButton from "../../components/LButton.vue";
 				</div>
 				<div class="row-span-2 size-full px-4 py-8 max-sm:hidden max-sm:py-3">
 					<div
-						class="relative flex size-76 h-full items-end overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-white to-[#D4CDFF] shadow-xl max-xl:h-136 max-md:size-64 max-md:h-72 max-md:items-center max-md:justify-center max-md:pr-4 max-md:text-center"
+						class="max-xl:h-136 relative flex size-76 h-full items-end overflow-hidden rounded-3xl bg-gradient-to-br from-neutral-white to-[#D4CDFF] shadow-xl max-md:size-64 max-md:h-72 max-md:items-center max-md:justify-center max-md:pr-4 max-md:text-center"
 					>
 						<div class="flex w-full flex-col pb-6 pl-4 max-md:hidden">
 							<h3 class="text-majorelle-500">Always there</h3>
