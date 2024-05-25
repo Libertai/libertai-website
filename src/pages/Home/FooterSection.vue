@@ -7,7 +7,7 @@
 					<a href="https://x.com/Libertai_DAI" target="_blank">
 						<img alt="Twitter / X" src="../../assets/icons/x.svg" style="width: 36px; height: 36px" />
 					</a>
-					<a href="https://t.me/liberchat_bot" target="_blank">
+					<a href="https://t.me/libertai" target="_blank">
 						<img alt="Telegram" src="../../assets/icons/telegram.svg" style="width: 36px; height: 36px" />
 					</a>
 					<a href="https://aleph.im/" target="_blank">

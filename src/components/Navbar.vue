@@ -113,7 +113,7 @@ const handleScroll = () => {
 
 const router = useRouter();
 
-const closeNavbars = () => {
+const closeNavbar = () => {
 	showApps.value = false;
 	showSidebar.value = false;
 };
@@ -121,7 +121,7 @@ const closeNavbars = () => {
 onMounted(() => {
 	window.addEventListener("scroll", handleScroll);
 	router.beforeEach((_a, _b, next) => {
-		closeNavbars();
+		closeNavbar();
 		next();
 	});
 });
