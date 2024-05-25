@@ -8,6 +8,7 @@ import OpenSourceModelsSection from "./OpenSourceModelsSection.vue";
 import FeedbacksSection from "./FeedbacksSection.vue";
 import AIBoundariesSection from "./AIBoundariesSection.vue";
 import AddToTelegramSection from "./AddToTelegramSection.vue";
+import TheresMoreSection from "./TheresMoreSection.vue";
 </script>
 
 <template>
@@ -19,5 +20,6 @@ import AddToTelegramSection from "./AddToTelegramSection.vue";
 	<DataSecuritySection />
 	<AIBoundariesSection />
 	<AddToTelegramSection />
+	<TheresMoreSection />
 	<FooterSection />
 </template>
