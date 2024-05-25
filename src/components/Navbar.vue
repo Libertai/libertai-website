@@ -11,13 +11,13 @@
 					showApps = false;
 				"
 			>
-				<img class="w-6" alt="Menu" src="../assets/icons/menu.svg" style="filter: invert(1)" />
+				<img alt="Menu" class="w-6" src="../assets/icons/menu.svg" style="filter: invert(1)" />
 			</button>
 
 			<!-- Site logo -->
 			<RouterLink class="mr-8" to="/">
-				<img class="block max-lg:hidden" alt="Site Logo" height="21" src="../assets/logos/libertAI.svg" width="120" />
-				<img class="hidden h-8 max-lg:block" alt="Site Logo" src="../assets/logos/libertAI.svg" />
+				<img alt="Site Logo" class="block max-lg:hidden" height="21" src="../assets/logos/libertAI.svg" width="120" />
+				<img alt="Site Logo" class="hidden h-8 max-lg:block" src="../assets/logos/libertAI.svg" />
 			</RouterLink>
 
 			<!-- Navbar buttons for large screens -->
@@ -38,18 +38,18 @@
 							role="menu"
 						>
 							<div class="py-1">
-								<div class="dropdown-item flex justify-between">
-									<div class="mr-1">
-										<a href="https://chat.libertai.io" target="_blank">Chat dApp</a>
+								<a href="https://chat.libertai.io" target="_blank">
+									<div class="dropdown-item flex justify-between">
+										<span class="mr-1">Chat dApp</span>
+										<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
 									</div>
-									<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
-								</div>
-								<div class="dropdown-item flex justify-between">
-									<div class="mr-1">
-										<a href="https://t.me/liberchat_bot" target="_blank">Telegram bot</a>
+								</a>
+								<a href="https://t.me/liberchat_bot" target="_blank">
+									<div class="dropdown-item flex justify-between">
+										<span class="mr-1">Telegram bot</span>
+										<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
 									</div>
-									<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
-								</div>
+								</a>
 							</div>
 						</div>
 					</div>
@@ -75,19 +75,23 @@
 				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/earn">Earn</RouterLink>
 				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/developer">Developer</RouterLink>
 				<div class="body-default focus:bg-neutral-200">
-					<button @click="showApps = !showApps" class="flex items-center px-8 py-4">
+					<button class="flex items-center px-8 py-4" @click="showApps = !showApps">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
 						<img alt="Chevron up" src="../assets/chevron_down.svg" />
 					</button>
 					<div v-show="showApps" class="flex flex-col border-y">
-						<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
-							<a href="https://chat.libertai.io"> Chat dApp </a>
-							<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
-						</div>
-						<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
-							<a href="https://t.me/liberchat_bot"> Telegram bot </a>
-							<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
-						</div>
+						<a href="https://chat.libertai.io" target="_blank">
+							<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
+								<span>Chat dApp</span>
+								<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
+							</div>
+						</a>
+						<a href="https://t.me/liberchat_bot" target="_blank">
+							<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
+								<span>Telegram bot</span>
+								<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
+							</div>
+						</a>
 					</div>
 				</div>
 			</div>
@@ -96,7 +100,7 @@
 </template>
 
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from "vue";
+import { onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
 
 const showApps = ref(false);
