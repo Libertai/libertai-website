@@ -12,7 +12,7 @@ const timeLeft = dayjs.duration(countdownEnd.diff(dayjs()));
 </script>
 
 <template>
-	<section class="image-background relative flex justify-center text-center">
+	<section class="image-background relative flex min-h-screen justify-center text-center">
 		<div class="flex w-full py-20 backdrop-blur-sm max-lg:px-0">
 			<div class="m-auto flex max-w-4xl flex-col gap-6 px-6 py-9 text-neutral-white max-lg:py-0 max-lg:text-center">
 				<h1 class="max-lg:hidden">Discover the Freedom of Decentralized AI</h1>
@@ -28,7 +28,7 @@ const timeLeft = dayjs.duration(countdownEnd.diff(dayjs()));
 						<div class="grid grid-cols-2 gap-x-1.5">
 							<div v-for="digit of timeLeft.format('DD').toString().split('')" :key="digit">
 								<div class="countdown-digit flex">
-									<p class="m-auto text-7xl">{{ digit }}</p>
+									<p class="m-auto select-none text-7xl">{{ digit }}</p>
 								</div>
 							</div>
 						</div>
@@ -39,7 +39,7 @@ const timeLeft = dayjs.duration(countdownEnd.diff(dayjs()));
 						<div class="grid grid-cols-2 gap-x-1.5">
 							<div v-for="digit of timeLeft.format('HH').toString().split('')" :key="digit">
 								<div class="countdown-digit flex">
-									<p class="m-auto text-7xl">{{ digit }}</p>
+									<p class="m-auto select-none text-7xl">{{ digit }}</p>
 								</div>
 							</div>
 						</div>
@@ -50,7 +50,7 @@ const timeLeft = dayjs.duration(countdownEnd.diff(dayjs()));
 						<div class="grid grid-cols-2 gap-x-1.5">
 							<div v-for="digit of timeLeft.format('mm').toString().split('')" :key="digit">
 								<div class="countdown-digit flex">
-									<p class="m-auto text-7xl">{{ digit }}</p>
+									<p class="m-auto select-none text-7xl">{{ digit }}</p>
 								</div>
 							</div>
 						</div>
