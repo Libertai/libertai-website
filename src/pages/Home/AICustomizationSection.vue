@@ -49,7 +49,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<section class="flex justify-center py-24">
+	<section class="flex justify-center overflow-hidden py-24">
 		<div class="relative flex h-full" style="width: 1440px">
 			<div class="absolute left-0 z-10 h-full w-64 bg-gradient-to-r from-neutral-white" />
 			<div class="absolute right-full z-20 h-full w-full bg-neutral-white" />
