@@ -8,10 +8,10 @@ import Iphone from "../../assets/Iphone_chat.png";
 			<img :src="Iphone" alt="Iphone" class="h-140 max-lg:hidden" />
 			<div class="flex w-132 flex-col space-y-6 pt-8 max-lg:items-center max-lg:pb-8 max-lg:pt-0 max-lg:text-center">
 				<h3 class="text-majorelle-800 max-lg:hidden">
-					Experience the Freedom of libertAI's Decentralized AI Platform.
+					Experience the Freedom of LibertAI's Decentralized AI Platform.
 				</h3>
 				<h4 class="text-majorelle-800 max-sm:w-96 lg:hidden">
-					Experience the Freedom of libertAI's Decentralized AI Platform.
+					Experience the Freedom of LibertAI's Decentralized AI Platform.
 				</h4>
 
 				<div class="w-90 space-y-2 rounded-xl bg-tertiary p-2.5">

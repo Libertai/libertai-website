@@ -16,7 +16,7 @@ const actions: [Action, Action, Action] = [
 	{
 		cardTitle: "Stake ALEPH",
 		cardDescription:
-			"Staking 10K or more Aleph tokens ($ALEPH) - By showing your commitment to the future of decentralized cloud technology, you earn libertAI Points that reflect your trust in the platform.",
+			"Staking 10K or more Aleph tokens ($ALEPH) - By showing your commitment to the future of decentralized cloud technology, you earn LibertAI Points that reflect your trust in the platform.",
 		buttonText: "STAKE ALEPH",
 		buttonLink: "https://account.aleph.im/earn/staking/",
 		imagePath: StakeImage,
@@ -24,7 +24,7 @@ const actions: [Action, Action, Action] = [
 	{
 		cardTitle: "Core Channel Node Operator",
 		cardDescription:
-			"Running an Aleph.im Core Channel Node - Become a part of the backbone that supports cross-chain interactions and enjoy the perks of being a node operator with libertAI Points as your reward!",
+			"Running an Aleph.im Core Channel Node - Become a part of the backbone that supports cross-chain interactions and enjoy the perks of being a node operator with LibertAI Points as your reward!",
 		buttonText: "RUN CORE NODE",
 		buttonLink: "https://docs.aleph.im/nodes/core/",
 		imagePath: CoreNodeImage,
@@ -32,7 +32,7 @@ const actions: [Action, Action, Action] = [
 	{
 		cardTitle: "Resource Node Operator",
 		cardDescription:
-			"Operating an Aleph.im Resource Node - Contribute to data storage, compute capabilities, and decentralized applications by running a resource node and reap the benefits through libertAI Points!",
+			"Operating an Aleph.im Resource Node - Contribute to data storage, compute capabilities, and decentralized applications by running a resource node and reap the benefits through LibertAI Points!",
 		buttonText: "RUN RESOURCE NODE",
 		buttonLink: "https://docs.aleph.im/nodes/compute/",
 		imagePath: ComputeNodeImage,
@@ -42,7 +42,7 @@ const actions: [Action, Action, Action] = [
 <template>
 	<section class="flex flex-col items-center gap-6 bg-gradient-to-b from-neutral-white to-majorelle-100 py-36">
 		<p class="body-small text-center max-sm:px-16 sm:px-20 lg:px-28">
-			So, are you ready to join this revolutionary journey and unlock the power of libertAI Tokens? Let's get started
+			So, are you ready to join this revolutionary journey and unlock the power of LibertAI Tokens? Let's get started
 			together and shape the future of decentralized cloud technology!
 		</p>
 		<div class="z-10 my-[4.5rem] flex justify-center gap-6 max-lg:hidden max-md:flex max-md:flex-col lg:flex-row">
@@ -110,7 +110,7 @@ const actions: [Action, Action, Action] = [
 			</div>
 		</div>
 		<p class="body-small text-center max-sm:px-16 sm:px-20 lg:px-28">
-			Staking $ALEPH or running an aleph node? Connect your associated reward wallet to start earning libertAI $LTAI
+			Staking $ALEPH or running an aleph node? Connect your associated reward wallet to start earning LibertAI $LTAI
 			tokens.
 		</p>
 		<a href="https://chat.libertai.io">

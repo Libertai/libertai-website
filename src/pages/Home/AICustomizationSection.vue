@@ -56,7 +56,7 @@ onMounted(() => {
 			<div class="absolute left-full z-20 h-full w-full bg-neutral-white" />
 			<div class="relative flex h-full w-3/5 flex-col max-lg:w-full">
 				<div class="w-full items-center space-y-6 bg-neutral-white py-8 text-center max-lg:px-96 lg:hidden">
-					<h3 class="px-12 max-sm:px-32">AI Customization, Privacy-First with libertAI</h3>
+					<h3 class="px-12 max-sm:px-32">AI Customization, Privacy-First with LibertAI</h3>
 
 					<p class="body-small px-12 max-sm:px-32">
 						Customize AI assistants for smooth integration into your workflows without compromising your privacy,
@@ -105,8 +105,8 @@ onMounted(() => {
 			</div>
 			<div class="z-20 h-full w-2/5 bg-neutral-white max-lg:hidden">
 				<div class="py w-128 space-y-8 px-6 py-24 max-xl:w-96">
-					<h2 class="max-xl:hidden">AI Customization, Privacy-First with libertAI</h2>
-					<h3 class="xl:hidden">AI Customization, Privacy-First with libertAI</h3>
+					<h2 class="max-xl:hidden">AI Customization, Privacy-First with LibertAI</h2>
+					<h3 class="xl:hidden">AI Customization, Privacy-First with LibertAI</h3>
 					<p class="body-small">
 						Customize AI assistants for smooth integration into your workflows without compromising your privacy,
 						keeping your data encrypted and under your control.

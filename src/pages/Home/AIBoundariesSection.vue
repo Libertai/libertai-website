@@ -8,7 +8,7 @@ import LSimpleCard from "../../components/LSimpleCard.vue";
 			<div class="h-auto justify-center p-8 max-lg:max-w-md max-md:max-w-sm md:hidden">
 				<h3 class="text-left text-majorelle-800 max-lg:text-center">Redefining AI Boundaries</h3>
 				<p class="body-tiny items-center text-majorelle-800 max-lg:text-center">
-					libertAI’s unique edge lies in its decentralized approach to AI, which offers privacy, security, flexibility,
+					LibertAI’s unique edge lies in its decentralized approach to AI, which offers privacy, security, flexibility,
 					and accessibility while promoting openness, collaboration, and innovation in the AI space.
 				</p>
 			</div>
@@ -18,7 +18,7 @@ import LSimpleCard from "../../components/LSimpleCard.vue";
 				<div class="col-span-2 h-auto w-full justify-center p-8 max-md:hidden">
 					<h2 class="text-left text-majorelle-800 max-lg:text-center">Redefining AI Boundaries</h2>
 					<p class="body-small items-center text-majorelle-800 max-lg:text-center max-sm:w-1/2">
-						libertAI’s unique edge lies in its decentralized approach to AI, which offers privacy, security,
+						LibertAI’s unique edge lies in its decentralized approach to AI, which offers privacy, security,
 						flexibility, and accessibility while promoting openness, collaboration, and innovation in the AI space.
 					</p>
 				</div>
@@ -31,7 +31,7 @@ import LSimpleCard from "../../components/LSimpleCard.vue";
 				</div>
 				<LSimpleCard
 					title="Confidential"
-					description="libertAI supports confidential inference through its decentralized architecture, enabling users to securely run AI workloads with sensitive data."
+					description="LibertAI supports confidential inference through its decentralized architecture, enabling users to securely run AI workloads with sensitive data."
 				/>
 				<LSimpleCard
 					title="Security Incentives"

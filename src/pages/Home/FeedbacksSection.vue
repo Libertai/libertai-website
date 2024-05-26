@@ -12,7 +12,7 @@ const feedbacks = [
 	// },
 	{
 		name: "Shane P",
-		title: "libertAI Co-Founder",
+		title: "LibertAI Co-Founder",
 		quote:
 			"“The future of AI should be open, transparent, and community-driven. Decentralization is the only way that makes that possible.”",
 		image: shaneP,
@@ -21,7 +21,7 @@ const feedbacks = [
 		name: "Jonathan Schemoul",
 		title: "aleph.im CEO and Co-Founder",
 		quote:
-			"“We built aleph.im to empower a new generation of apps. libertAI's decentralized AI vision was a perfect match. Together, we can create a robust ecosystem that puts AI power in the hands of the people.”",
+			"“We built aleph.im to empower a new generation of apps. LibertAI's decentralized AI vision was a perfect match. Together, we can create a robust ecosystem that puts AI power in the hands of the people.”",
 		image: jonathanSchemoul,
 	},
 ];

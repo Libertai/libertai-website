@@ -21,7 +21,7 @@ import LButton from "../../components/LButton.vue";
 						</h3>
 						<h4 class="hidden px-8 pb-2 pt-8 text-neutral-white max-sm:block">Not your average AI assistant</h4>
 						<p class="body-small y w-7/12 px-8 text-neutral-white max-md:w-8/12 max-sm:w-full">
-							Experience the future of AI-driven conversations on Telegram with libertAI.
+							Experience the future of AI-driven conversations on Telegram with LibertAI.
 						</p>
 						<a href="https://t.me/liberchat_bot" target="_blank">
 							<LButton light text="ADD TO TELEGRAM" class="absolute bottom-4 left-4 p-8 max-md:hidden" />

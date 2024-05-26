@@ -8,8 +8,8 @@
 				<h2 class="block text-left max-lg:text-center max-sm:hidden">A Pioneering Force in Decentralized AI</h2>
 				<h3 class="hidden max-sm:block">A Pioneering Force in Decentralized AI</h3>
 				<p class="body-small text-left max-lg:text-center">
-					libertAI is a revolutionary company that is transforming the AI landscape by developing decentralized AI
-					solutions. Founded on the principles of transparency, security, and community-driven innovation, libertAI is
+					LibertAI is a revolutionary company that is transforming the AI landscape by developing decentralized AI
+					solutions. Founded on the principles of transparency, security, and community-driven innovation, LibertAI is
 					committed to creating a new paradigm for artificial intelligence.
 				</p>
 			</div>
