@@ -126,11 +126,11 @@ onMounted(() => {
 
 				<div class="relative flex w-full flex-col items-center justify-center overflow-x-hidden">
 					<div
-						class="Tcard-container w-310 max-xl:w-260 flex transform flex-row gap-6 transition-transform duration-500 ease-in-out"
+						class="Tcard-container flex w-310 transform flex-row gap-6 transition-transform duration-500 ease-in-out max-xl:w-260"
 					>
 						<div v-for="card in cards" :key="card.title" :class="{ 'card-active': card.active, card: true }">
 							<div
-								class="Tcard h-104 relative flex w-72 select-none rounded-2xl bg-majorelle-400 px-6 pt-80"
+								class="Tcard relative flex h-104 w-72 select-none rounded-2xl bg-majorelle-400 px-6 pt-80"
 								:style="`background-image: url(${card.image}); background-size: cover; background-position: center; background-repeat: no-repeat;`"
 							>
 								<div
