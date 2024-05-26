@@ -107,7 +107,9 @@ onMounted(() => {
 						Customize AI assistants for smooth integration into your workflows without compromising your privacy,
 						keeping your data encrypted and under your control.
 					</p>
-					<LButton text="Customize Now" small />
+					<a href="https://chat.libertai.io/" class="text-majorelle-500">
+						<LButton text="Customize Now" small />
+					</a>
 				</div>
 			</div>
 		</div>
