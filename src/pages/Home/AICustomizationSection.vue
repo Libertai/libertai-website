@@ -19,9 +19,9 @@ const roll = ref(1);
 const isTransitioning = ref(false);
 
 const centerActiveCard = () => {
-	const cardContainer = document.querySelector(".card-container") as HTMLElement;
+	const cardContainer = document.querySelector(".AIcard-container") as HTMLElement;
 	if (!cardContainer) return;
-	const cardQuery = cardContainer.querySelector(".card") as HTMLElement;
+	const cardQuery = cardContainer.querySelector(".AIcard") as HTMLElement;
 	if (!cardQuery) return;
 	const cardWidth = cardQuery.offsetWidth;
 	const containerWidth = cardContainer.offsetWidth;
@@ -69,7 +69,7 @@ onMounted(() => {
 					</div>
 				</div>
 				<div
-					class="card-container flex gap-6 transition-transform duration-500 ease-in-out"
+					class="AIcard-container flex gap-6 transition-transform duration-500 ease-in-out"
 					@transitionend="isTransitioning = false"
 				>
 					<div
@@ -92,14 +92,14 @@ onMounted(() => {
 							...AIs,
 						]"
 						:key="index"
-						class="card flex w-72 flex-col items-center justify-center"
+						class="AIcard flex w-72 flex-col items-center justify-center"
 					>
-						<div class="h-140 flex w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
+						<card class="h-140 flex w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
 							<div class="h-124 relative top-0 w-full">
 								<img :src="ai.image" class="absolute left-0 top-0 size-full object-cover" :alt="ai.text" />
 							</div>
 							<p class="rich-bold-18 mt-4 text-majorelle-800">{{ ai.text }}</p>
-						</div>
+						</card>
 					</div>
 				</div>
 			</div>
