@@ -32,18 +32,10 @@ const feedbacks = [
 		<div class="flex gap-8 max-lg:grid max-lg:grid-cols-2 max-sm:grid-cols-1">
 			<div v-for="feedback in feedbacks" :key="feedback.name" class="flex flex-col">
 				<div
-					class="flex flex-col justify-end rounded-2xl border bg-majorelle-500 p-4 text-neutral-white max-lg:hidden"
+					class="flex flex-col justify-end rounded-2xl border bg-majorelle-500 p-4 text-neutral-white"
 					style="height: 477px; width: 300px"
 				>
 					<p class="body-default my-auto text-center font-bold">{{ feedback.quote }}</p>
-					<img :src="feedback.image" alt="User" class="m-auto mb-2 mt-6 h-16 w-16 rounded-full" />
-					<p class="body-bold-default text-center">{{ feedback.name }}</p>
-					<p class="body-tiny text-center">{{ feedback.title }}</p>
-				</div>
-				<div
-					class="flex h-96 w-72 flex-col justify-end rounded-2xl border bg-majorelle-500 p-4 text-neutral-white lg:hidden"
-				>
-					<p class="body-default mt-auto text-center">{{ feedback.quote }}</p>
 					<img :src="feedback.image" alt="User" class="m-auto mb-2 mt-6 h-16 w-16 rounded-full" />
 					<p class="body-bold-default text-center">{{ feedback.name }}</p>
 					<p class="body-tiny text-center">{{ feedback.title }}</p>
