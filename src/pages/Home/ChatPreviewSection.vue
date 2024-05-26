@@ -6,7 +6,7 @@ import Iphone from "../../assets/Iphone_chat.png";
 	<section class="relative flex justify-center bg-neutral-white">
 		<div class="relative flex h-full justify-center overflow-hidden pt-8" style="width: 1440px">
 			<img :src="Iphone" alt="Iphone" class="h-140 max-lg:hidden" />
-			<div class="w-132 flex flex-col space-y-6 pt-8 max-lg:items-center max-lg:pb-8 max-lg:pt-0 max-lg:text-center">
+			<div class="flex w-132 flex-col space-y-6 pt-8 max-lg:items-center max-lg:pb-8 max-lg:pt-0 max-lg:text-center">
 				<h3 class="text-majorelle-800 max-lg:hidden">
 					Experience the Freedom of LibertAI's Decentralized AI Platform.
 				</h3>
@@ -33,7 +33,7 @@ import Iphone from "../../assets/Iphone_chat.png";
 						data.
 					</p>
 				</div>
-				<div class="w-90 max-sm:w-90 space-y-2 rounded-xl bg-tertiary p-2.5">
+				<div class="w-90 space-y-2 rounded-xl bg-tertiary p-2.5 max-sm:w-90">
 					<div class="flex items-center space-x-3 pl-2.5 max-lg:justify-center max-lg:px-0">
 						<svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
 							<path
