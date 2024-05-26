@@ -5,7 +5,7 @@
 				<h2 class="mb-6 block text-left max-xl:hidden">No Harvesting: You are in Control of Your Data</h2>
 				<h3 class="mb-6 hidden text-center max-xl:block">No Harvesting: You are in Control of Your Data</h3>
 				<p class="body-small text-left max-lg:text-center">
-					Enjoy the peace of mind that comes with Libertai's robust security measures. Advanced encryption protocols,
+					Enjoy the peace of mind that comes with libertAI's robust security measures. Advanced encryption protocols,
 					distributed data storage, and rigorous access controls ensure that your data remains safeguarded against
 					unauthorized access, surveillance, or exploitation.
 				</p>

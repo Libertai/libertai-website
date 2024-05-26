@@ -19,7 +19,7 @@ const timeLeft = dayjs.duration(countdownEnd.diff(dayjs()));
 				<h2 class="hidden sm:max-lg:block">Discover the Freedom of Decentralized AI</h2>
 				<h3 class="hidden font-bold max-sm:block">Discover the Freedom of Decentralized AI</h3>
 				<p class="body-small">
-					Join the AI revolution and support LibertAI to empower a decentralized, democratic, and liberating future,
+					Join the AI revolution and support libertAI to empower a decentralized, democratic, and liberating future,
 					where collective intelligence converges to unlock unprecedented possibilities.
 				</p>
 				<div class="grid gap-x-12 max-lg:space-y-12 max-sm:grid-cols-1 lg:grid-cols-3">

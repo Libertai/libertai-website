@@ -13,7 +13,7 @@ import { models } from "../../texts.ts";
 				<h2 class="mb-6 font-light max-lg:text-center max-md:hidden">Explore Free <br />Open-Source Models</h2>
 				<h3 class="mb-6 font-light max-lg:text-center md:hidden">Explore Free <br />Open-Source Models</h3>
 				<p class="body-small max-lg:text-center">
-					Explore LibertAI's ever-expanding LLM model library to match your specific needs from <br />creative writing
+					Explore libertAI's ever-expanding LLM model library to match your specific needs from <br />creative writing
 					to coding, data analysis to everyday tasks, offering privacy-preserving <br />
 					AI solutions.
 				</p>

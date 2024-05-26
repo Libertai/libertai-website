@@ -1,1 +1,1 @@
-# Libertai website
+# LibertAI website

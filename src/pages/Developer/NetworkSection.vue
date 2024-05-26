@@ -5,7 +5,7 @@
 				<h2 class="mb-6 max-lg:hidden">An unstoppable inter planetary network.</h2>
 				<h3 class="mb-6 hidden max-lg:block">An unstoppable inter planetary network.</h3>
 				<p class="body-small max-lg:body-tiny">
-					Libertai large language models are running on a set of technologies such as IPFS in combination with aleph.im.
+					libertAI large language models are running on a set of technologies such as IPFS in combination with aleph.im.
 					It effectively runs on a fully decentralized, uncensored, secure and resilient computing network that is
 					practically unstoppable.
 				</p>
