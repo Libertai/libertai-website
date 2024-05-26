@@ -126,11 +126,11 @@ onMounted(() => {
 
 				<div class="relative flex w-full flex-col items-center justify-center overflow-x-hidden">
 					<div
-						class="Tcard-container flex w-310 transform flex-row gap-6 transition-transform duration-500 ease-in-out max-xl:w-260"
+						class="Tcard-container w-310 max-xl:w-260 flex transform flex-row gap-6 transition-transform duration-500 ease-in-out"
 					>
 						<div v-for="card in cards" :key="card.title" :class="{ 'card-active': card.active, card: true }">
-							<card
-								class="Tcard relative flex h-104 w-72 select-none rounded-2xl bg-majorelle-400 px-6 pt-80"
+							<div
+								class="Tcard h-104 relative flex w-72 select-none rounded-2xl bg-majorelle-400 px-6 pt-80"
 								:style="`background-image: url(${card.image}); background-size: cover; background-position: center; background-repeat: no-repeat;`"
 							>
 								<div
@@ -143,7 +143,7 @@ onMounted(() => {
 									<p v-if="card.enabled" class="rich-bold-12 px-4">LIVE</p>
 								</div>
 								<p class="rich-bold-24 text-left text-neutral-white">{{ card.title }}</p>
-							</card>
+							</div>
 						</div>
 					</div>
 				</div>

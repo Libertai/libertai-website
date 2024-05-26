@@ -94,12 +94,12 @@ onMounted(() => {
 						:key="index"
 						class="AIcard flex w-72 flex-col items-center justify-center"
 					>
-						<card class="flex h-140 w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
-							<div class="relative top-0 h-124 w-full">
+						<div class="h-140 flex w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
+							<div class="h-124 relative top-0 w-full">
 								<img :src="ai.image" class="absolute left-0 top-0 size-full object-cover" :alt="ai.text" />
 							</div>
 							<p class="rich-bold-18 mt-4 text-majorelle-800">{{ ai.text }}</p>
-						</card>
+						</div>
 					</div>
 				</div>
 			</div>
