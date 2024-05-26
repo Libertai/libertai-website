@@ -62,7 +62,11 @@ onMounted(() => {
 						Customize AI assistants for smooth integration into your workflows without compromising your privacy,
 						keeping your data encrypted and under your control.
 					</p>
-					<LButton text="Customize Now" small />
+					<div>
+						<a href="https://chat.libertai.io/" class="text-majorelle-500">
+							<LButton text="Customize Now" small />
+						</a>
+					</div>
 				</div>
 				<div
 					class="card-container flex gap-6 transition-transform duration-500 ease-in-out"
@@ -90,8 +94,8 @@ onMounted(() => {
 						:key="index"
 						class="card flex w-72 flex-col items-center justify-center"
 					>
-						<div class="flex h-140 w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
-							<div class="relative top-0 h-124 w-full">
+						<div class="h-140 flex w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
+							<div class="h-124 relative top-0 w-full">
 								<img :src="ai.image" class="absolute left-0 top-0 size-full object-cover" :alt="ai.text" />
 							</div>
 							<p class="rich-bold-18 mt-4 text-majorelle-800">{{ ai.text }}</p>
@@ -107,9 +111,11 @@ onMounted(() => {
 						Customize AI assistants for smooth integration into your workflows without compromising your privacy,
 						keeping your data encrypted and under your control.
 					</p>
-					<a href="https://chat.libertai.io/" class="text-majorelle-500">
-						<LButton text="Customize Now" small />
-					</a>
+					<div>
+						<a href="https://chat.libertai.io/" class="text-majorelle-500">
+							<LButton text="Customize Now" small />
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
