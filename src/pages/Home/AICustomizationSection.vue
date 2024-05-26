@@ -19,9 +19,9 @@ const roll = ref(1);
 const isTransitioning = ref(false);
 
 const centerActiveCard = () => {
-	const cardContainer = document.querySelector(".card-container") as HTMLElement;
+	const cardContainer = document.querySelector(".AIcard-container") as HTMLElement;
 	if (!cardContainer) return;
-	const cardQuery = cardContainer.querySelector(".card") as HTMLElement;
+	const cardQuery = cardContainer.querySelector(".AIcard") as HTMLElement;
 	if (!cardQuery) return;
 	const cardWidth = cardQuery.offsetWidth;
 	const containerWidth = cardContainer.offsetWidth;
@@ -49,7 +49,7 @@ onMounted(() => {
 </script>
 
 <template>
-	<section class="flex justify-center py-24">
+	<section class="flex justify-center overflow-hidden py-24">
 		<div class="relative flex h-full" style="width: 1440px">
 			<div class="absolute left-0 z-10 h-full w-64 bg-gradient-to-r from-neutral-white" />
 			<div class="absolute right-full z-20 h-full w-full bg-neutral-white" />
@@ -62,10 +62,14 @@ onMounted(() => {
 						Customize AI assistants for smooth integration into your workflows without compromising your privacy,
 						keeping your data encrypted and under your control.
 					</p>
-					<LButton text="Customize Now" small />
+					<div>
+						<a href="https://chat.libertai.io/" class="text-majorelle-500">
+							<LButton text="Customize Now" small />
+						</a>
+					</div>
 				</div>
 				<div
-					class="card-container flex gap-6 transition-transform duration-500 ease-in-out"
+					class="AIcard-container flex gap-6 transition-transform duration-500 ease-in-out"
 					@transitionend="isTransitioning = false"
 				>
 					<div
@@ -88,7 +92,7 @@ onMounted(() => {
 							...AIs,
 						]"
 						:key="index"
-						class="card flex w-72 flex-col items-center justify-center"
+						class="AIcard flex w-72 flex-col items-center justify-center"
 					>
 						<div class="flex h-140 w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
 							<div class="relative top-0 h-124 w-full">
@@ -107,7 +111,11 @@ onMounted(() => {
 						Customize AI assistants for smooth integration into your workflows without compromising your privacy,
 						keeping your data encrypted and under your control.
 					</p>
-					<LButton text="Customize Now" small />
+					<div>
+						<a href="https://chat.libertai.io/" class="text-majorelle-500">
+							<LButton text="Customize Now" small />
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>

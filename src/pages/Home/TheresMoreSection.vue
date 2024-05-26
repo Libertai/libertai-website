@@ -6,6 +6,7 @@ import image_2 from "../../assets/image_2.jpg";
 import image_3 from "../../assets/image_3.jpg";
 import image_4 from "../../assets/image_4.jpg";
 import image_5 from "../../assets/image_5.jpg";
+import image_6 from "../../assets/image_6.jpg";
 
 const cards = ref([
 	{
@@ -38,6 +39,12 @@ const cards = ref([
 		image: image_5,
 		enabled: false,
 	},
+	{
+		active: false,
+		title: "Agent",
+		image: image_6,
+		enabled: false,
+	},
 ]);
 
 const activeIndex = ref(0);
@@ -50,9 +57,9 @@ const updateCards = () => {
 
 const centerActiveCard = () => {
 	const windowWidth = window.innerWidth;
-	const cardContainer = document.querySelector(".card-container") as HTMLElement;
+	const cardContainer = document.querySelector(".Tcard-container") as HTMLElement;
 	if (!cardContainer) return;
-	const cardQuery = cardContainer.querySelector(".card") as HTMLElement;
+	const cardQuery = cardContainer.querySelector(".Tcard") as HTMLElement;
 	if (!cardQuery) return;
 	const cardWidth = cardQuery.offsetWidth;
 	const containerWidth = cardContainer.offsetWidth;
@@ -119,17 +126,16 @@ onMounted(() => {
 
 				<div class="relative flex w-full flex-col items-center justify-center overflow-x-hidden">
 					<div
-						class="card-container flex w-310 transform flex-row gap-6 transition-transform duration-500 ease-in-out max-xl:w-260"
+						class="Tcard-container flex w-310 transform flex-row gap-6 transition-transform duration-500 ease-in-out max-xl:w-260"
 					>
 						<div v-for="card in cards" :key="card.title" :class="{ 'card-active': card.active, card: true }">
-							<card
-								class="relative flex h-104 w-72 select-none rounded-2xl bg-majorelle-400 px-6 pt-80"
+							<div
+								class="Tcard relative flex h-104 w-72 select-none rounded-2xl bg-majorelle-400 px-6 pt-80"
 								:style="`background-image: url(${card.image}); background-size: cover; background-position: center; background-repeat: no-repeat;`"
 							>
 								<div
 									:class="
-										'bg-' +
-										(card.enabled ? 'gradient-to-tr from-majorelle-500 to-[#FCCBFF]' : 'neutral-500') +
+										(card.enabled ? 'bg-gradient-to-tr from-majorelle-500 to-[#FCCBFF]' : 'bg-neutral-500') +
 										' absolute right-4 top-4 flex h-12 w-24 select-none items-center justify-center rounded-full py-3 text-center text-tertiary'
 									"
 								>
@@ -137,7 +143,7 @@ onMounted(() => {
 									<p v-if="card.enabled" class="rich-bold-12 px-4">LIVE</p>
 								</div>
 								<p class="rich-bold-24 text-left text-neutral-white">{{ card.title }}</p>
-							</card>
+							</div>
 						</div>
 					</div>
 				</div>
