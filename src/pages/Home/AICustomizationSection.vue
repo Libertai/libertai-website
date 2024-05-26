@@ -8,11 +8,11 @@ import Tromp from "../../assets/Tromp.png";
 import { ref, onMounted, watch } from "vue";
 
 const AIs = [
-	{ text: "Tromp", image: Tromp },
+	{ text: "Donald Tromp", image: Tromp },
 	{ text: "Virtual Boyfriend", image: VirtualBoyfriend },
 	{ text: "Virtual Girlfriend", image: VirtualGirlfriend },
-	{ text: "AI-Lon Musk", image: AilonMusk },
-	{ text: "Therapist", image: Therapist },
+	{ text: "AI-lon Musk", image: AilonMusk },
+	{ text: "Anna the Therapist", image: Therapist },
 ];
 
 const roll = ref(1);
