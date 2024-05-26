@@ -43,7 +43,7 @@ watch(roll, () => {
 
 onMounted(() => {
 	centerActiveCard();
-	setInterval(updateRoll, 2000);
+	setInterval(updateRoll, 3000);
 	centerActiveCard();
 });
 </script>
