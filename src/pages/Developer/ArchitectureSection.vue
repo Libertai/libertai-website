@@ -10,7 +10,7 @@ const paragraphs = [
 </script>
 
 <template>
-	<section class="mx-8 flex flex-col items-center bg-gradient-to-b from-neutral-white to-tertiary py-20">
+	<section class="flex flex-col items-center bg-gradient-to-b from-neutral-white to-tertiary px-8 py-20">
 		<div class="mb-20 text-center text-majorelle-800 max-lg:mb-12">
 			<h2 class="mb-6 max-lg:hidden">Unlock the Power of Decentralized AI</h2>
 			<h3 class="mb-6 hidden max-lg:block">Unlock the Power of Decentralized AI</h3>
