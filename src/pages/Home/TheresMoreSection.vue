@@ -80,7 +80,7 @@ onMounted(() => {
 		if (windowWidth < 1024) {
 			activeIndex.value = (activeIndex.value + 1) % cards.value.length;
 		}
-	}, 2000);
+	}, 3000);
 	centerActiveCard();
 });
 </script>

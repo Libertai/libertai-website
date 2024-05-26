@@ -8,7 +8,7 @@
 				<h3 class="hidden max-lg:block">Be a Part of the AI Revolution</h3>
 				<p class="body-small">
 					Are you passionate about artificial intelligence, decentralization, and community-driven innovation? Do you
-					want to be a part of a pioneering team that is transforming the AI landscape? Look no further than Libertai!
+					want to be a part of a pioneering team that is transforming the AI landscape? Look no further than LibertAI!
 				</p>
 				<a class="w-full max-lg:mb-6" href="mailto:hello@libertai.io" target="_blank">
 					<LButton small text="Join Now" />

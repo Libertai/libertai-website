@@ -8,7 +8,7 @@
 				<h2 class="block max-sm:hidden lg:text-left">Where AI Meets Freedom</h2>
 				<h3 class="hidden max-sm:block">Where AI Meets Freedom</h3>
 				<p class="body-small lg:text-left">
-					Libertai fosters a community-driven approach to AI development, encouraging collaboration, knowledge sharing,
+					LibertAI fosters a community-driven approach to AI development, encouraging collaboration, knowledge sharing,
 					and collective innovation. Be part of a vibrant ecosystem that shapes the future of AI.
 				</p>
 				<a href="https://docs.libertai.io">

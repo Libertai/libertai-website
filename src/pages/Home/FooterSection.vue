@@ -18,7 +18,7 @@
 				<p class="text-tiny body-small max-sm:body-tiny mt-2 max-w-xl px-8 text-center text-neutral-300">
 					Be part of a pioneering community valuing individual privacy and autonomy Join a vibrant community of AI
 					enthusiasts,developers, and innovators who share a common commitment to privacy and decentralization.
-					Collaborate, share insights, and contribute to the continuous evolution of Libertai's AI ecosystem, shaping
+					Collaborate, share insights, and contribute to the continuous evolution of LibertAI's AI ecosystem, shaping
 					the future of decentralized intelligence.
 				</p>
 			</div>
