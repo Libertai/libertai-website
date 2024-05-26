@@ -14,7 +14,7 @@ const displaySite = () => {
 </script>
 
 <template>
-	<LAnnouncementBanner text="Mark your calendars, June 18th 12:00 CET is the official launch date of $LTAI on Base" />
+	<LAnnouncementBanner text="Mark your calendars, June 18th 12:00 GMT is the official launch date of $LTAI on Base" />
 	<Navbar v-show="!store.isCountdownDisplayed" />
 	<CountdownSection v-if="store.isCountdownDisplayed" :action="displaySite" />
 
