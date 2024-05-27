@@ -22,8 +22,9 @@ const paragraphs = [
 			<LFlashCard v-for="model in models" :key="model.title" :description="model.description" :title="model.title" />
 			<LFlashCard description="" hover-animation="none" light title="Coming Soon" />
 		</div>
-		<div class="text-majorelle-800">
-			<h2>How it works</h2>
+		<div class="text-majorelle-800 max-lg:text-center">
+			<h2 class="max-lg:hidden">How it works</h2>
+			<h3 class="hidden max-lg:block">How it works</h3>
 			<div class="mt-12 grid gap-8 text-balance md:grid-cols-3">
 				<p v-for="text in paragraphs" :key="text" class="body-small max-lg:body-tiny max-w-96">
 					{{ text }}
