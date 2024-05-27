@@ -11,12 +11,14 @@ import LButton from "../../components/LButton.vue";
 			<div
 				class="grid h-full w-auto grid-cols-4 flex-col items-center justify-center px-8 py-12 max-xl:grid-cols-2 max-md:pt-0 max-sm:grid-cols-1"
 			>
-				<div class="col-span-2 row-span-2 flex justify-center py-8 max-xl:row-span-1 max-sm:col-span-1 max-sm:py-3">
+				<div
+					class="col-span-2 row-span-2 flex justify-center py-8 max-xl:row-span-1 max-sm:col-span-1 max-sm:pb-20 max-sm:pt-6"
+				>
 					<div
-						class="mas-sm:h-72 max-sm:-72 relative size-156 overflow-hidden rounded-3xl bg-gradient-to-bl from-[#FCCBFF] to-majorelle-500 shadow-2xl max-md:size-136 max-md:h-72 max-sm:size-72 max-sm:items-center max-sm:justify-center max-sm:text-center"
+						class="relative size-156 overflow-hidden rounded-3xl bg-gradient-to-bl from-[#FCCBFF] to-majorelle-500 shadow-2xl max-md:size-136 max-md:h-72 max-sm:h-136 max-sm:w-72 max-sm:items-center max-sm:justify-center max-sm:space-y-4 max-sm:text-center"
 					>
 						<h2 class="left-0 top-0 block p-8 text-neutral-white max-md:hidden">Not your average AI assistant</h2>
-						<h3 class="left-0 top-0 block p-8 text-neutral-white max-sm:hidden lg:hidden">
+						<h3 class="left-0 top-0 block p-8 text-neutral-white max-sm:hidden md:hidden">
 							Not your average AI assistant
 						</h3>
 						<h4 class="hidden px-8 pb-2 pt-8 text-neutral-white max-sm:block">Not your average AI assistant</h4>
@@ -31,7 +33,7 @@ import LButton from "../../components/LButton.vue";
 								small
 								light
 								text="ADD TO TELEGRAM"
-								class="absolute bottom-8 right-8 mt-4 p-8 max-sm:static lg:hidden"
+								class="absolute bottom-8 right-8 mt-4 p-8 max-sm:static max-sm:mt-60 lg:hidden"
 							/>
 						</a>
 						<img :src="iphone_1" alt="iphone" class="absolute bottom-0 right-0 max-md:hidden" />
@@ -45,7 +47,7 @@ import LButton from "../../components/LButton.vue";
 							<h3 class="text-majorelle-500">Always there</h3>
 							<h3 class="text-majorelle-800">to answer your requests</h3>
 						</div>
-						<div class="flex size-full flex-col justify-center p-6 lg:hidden">
+						<div class="flex size-full flex-col justify-center p-6 md:hidden">
 							<h4 class="text-majorelle-500">Always there</h4>
 							<h4 class="text-majorelle-800">to answer your requests</h4>
 						</div>
