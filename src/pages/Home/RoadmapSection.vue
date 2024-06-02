@@ -11,7 +11,7 @@
 			<h3 class="my-9">{{ milestone.title }}</h3>
 			<div
 				v-if="milestone.features !== undefined"
-				:class="`grid gap-6 lg:grid-cols-2 lg:grid-rows-${Math.ceil(milestone.features.length / 2)} 2xl:grid-cols-3 2xl:grid-rows-3 ${milestone.features.length > 3 ? 'lg:grid-flow-col' : ''}`"
+				:class="`grid gap-6 lg:grid-cols-2 lg:grid-rows-${Math.ceil(milestone.features.length / 2)} 2xl:grid-cols-3 2xl:grid-rows-${Math.ceil(milestone.features.length / 3)} ${milestone.features.length > 3 ? 'lg:grid-flow-col' : ''}`"
 			>
 				<div v-for="feature of milestone.features" :key="feature.name">
 					<RoadmapFeatureCard :status="feature.status" :title="feature.name" />
