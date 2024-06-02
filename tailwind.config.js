@@ -1,9 +1,9 @@
 const animate = require("tailwindcss-animate");
 
-/** @type {import('tailwindcss').Config} */
+/** @type {import("tailwindcss").Config} */
 export default {
 	darkMode: ["class"],
-	safelist: ["dark"],
+	safelist: ["dark", "lg:grid-rows-4"],
 	prefix: "",
 
 	content: [
