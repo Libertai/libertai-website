@@ -10,6 +10,7 @@ import AddToTelegramSection from "./AddToTelegramSection.vue";
 import AICustomizationSection from "./AICustomizationSection.vue";
 import TheresMoreSection from "./TheresMoreSection.vue";
 import FeedbacksSection from "./FeedbacksSection.vue";
+import RoadmapSection from "./RoadmapSection.vue";
 </script>
 
 <template>
@@ -23,5 +24,6 @@ import FeedbacksSection from "./FeedbacksSection.vue";
 	<AIBoundariesSection />
 	<AddToTelegramSection />
 	<TheresMoreSection />
+	<RoadmapSection />
 	<FooterSection />
 </template>
