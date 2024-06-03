@@ -1,5 +1,5 @@
 <template>
-	<section class="px-20 py-44">
+	<section class="mx-auto px-20 py-44" style="max-width: 1440px">
 		<div class="space-y-6 text-center">
 			<h2 class="text-majorelle-500">Roadmap</h2>
 			<p>
