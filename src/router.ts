@@ -5,7 +5,7 @@ import Company from "./pages/Company/index.vue";
 import Design from "./pages/Design/index.vue";
 import Developer from "./pages/Developer/index.vue";
 import Earn from "./pages/Earn/index.vue";
-import Tokenomix from "./pages/Tokenomix/index.vue";
+import Tokenomics from "./pages/Tokenomix/index.vue";
 
 const routes = [
 	{
@@ -29,8 +29,8 @@ const routes = [
 		component: Earn,
 	},
 	{
-		path: "/tokenomix",
-		component: Tokenomix,
+		path: "/tokenomics",
+		component: Tokenomics,
 	},
 	{
 		path: "/:pathMatch(.*)*",

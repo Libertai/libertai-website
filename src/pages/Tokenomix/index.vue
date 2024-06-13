@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import TokenomicsHeroSection from "./TokenomicsHeroSection.vue";
+</script>
 
 <template>
-	<div>test</div>
+	<TokenomicsHeroSection />
 </template>
