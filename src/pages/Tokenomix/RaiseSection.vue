@@ -21,10 +21,12 @@ const textSections = [
 
 <template>
 	<section class="relative flex justify-center py-8">
-		<div class="relative grid overflow-hidden pt-16" style="width: 1440px">
+		<div class="relative overflow-hidden px-20 pt-16 max-lg:px-12" style="width: 1440px">
 			<div v-for="section in textSections" :key="section.title">
-				<h3 class="pb-4 font-light text-majorelle-500">{{ section.title }}</h3>
-				<p class="body-default pb-16 text-majorelle-800">{{ section.text }}</p>
+				<h3 class="pb-4 text-left font-light text-majorelle-500 max-lg:hidden">{{ section.title }}</h3>
+				<h4 class="pb-4 text-center font-light text-majorelle-500 lg:hidden">{{ section.title }}</h4>
+				<p class="body-default pb-16 text-left text-majorelle-800 max-lg:hidden">{{ section.text }}</p>
+				<p class="body-small pb-16 text-center text-majorelle-800 lg:hidden">{{ section.text }}</p>
 			</div>
 		</div>
 	</section>
