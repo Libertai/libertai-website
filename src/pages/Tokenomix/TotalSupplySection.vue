@@ -1,23 +1,25 @@
 <script setup lang="ts">
+const totalSupply = 60000000;
+const actualSupply = 21000000;
 const stats = [
 	{
 		name: "Raise",
-		percent: 36,
+		value: 7500000,
 		color: "bg-[#644DF9]",
 	},
 	{
 		name: "Raise",
-		percent: 31,
+		value: 6600000,
 		color: "bg-[#D288FF]",
 	},
 	{
 		name: "Raise",
-		percent: 28,
+		value: 6000000,
 		color: "bg-[#FCCBFF]",
 	},
 	{
 		name: "Raise",
-		percent: 5,
+		value: 1000000,
 		color: "bg-majorelle-700",
 	},
 ];
@@ -34,8 +36,8 @@ const stats = [
 							v-for="stat in stats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (1000 / 3) * (stat.percent / 100) + 'px' }"
-						/>
+							:style="{ width: (1000 * stat.value) / totalSupply + 'px' }"
+						></div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 max-lg:hidden xl:hidden" style="width: 800px">
@@ -43,7 +45,7 @@ const stats = [
 							v-for="stat in stats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (800 / 3) * (stat.percent / 100) + 'px' }"
+							:style="{ width: (800 * stat.value) / totalSupply + 'px' }"
 						/>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
@@ -52,7 +54,7 @@ const stats = [
 							v-for="stat in stats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (500 / 3) * (stat.percent / 100) + 'px' }"
+							:style="{ width: (500 * stat.value) / totalSupply + 'px' }"
 						/>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
@@ -61,7 +63,7 @@ const stats = [
 							v-for="stat in stats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (400 / 3) * (stat.percent / 100) + 'px' }"
+							:style="{ width: (400 * stat.value) / totalSupply + 'px' }"
 						/>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
@@ -70,7 +72,7 @@ const stats = [
 							v-for="stat in stats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (300 / 3) * (stat.percent / 100) + 'px' }"
+							:style="{ width: (200 * stat.value) / totalSupply + 'px' }"
 						/>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
