@@ -3,7 +3,7 @@ import TokenomicsHeroSection from "./TokenomicsHeroSection.vue";
 import LiveSupplySection from "./LiveSupplySection.vue";
 import OverallTotalSupplySection from "./OverallTotalSupplySection.vue";
 import VestingScheduleSection from "./VestingScheduleSection.vue";
-import RaiseSection from "./RaiseSection.vue";
+import ExplanationSection from "./ExplanationSection.vue";
 import AirdropNetworkSection from "./AirdropNetworkSection.vue";
 import TokenUseSection from "./TokenUseSection.vue";
 </script>
@@ -13,7 +13,7 @@ import TokenUseSection from "./TokenUseSection.vue";
 	<LiveSupplySection />
 	<OverallTotalSupplySection />
 	<VestingScheduleSection />
-	<RaiseSection />
+	<ExplanationSection />
 	<AirdropNetworkSection />
 	<TokenUseSection />
 </template>
