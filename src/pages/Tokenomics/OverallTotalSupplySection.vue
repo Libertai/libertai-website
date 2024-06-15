@@ -12,6 +12,11 @@
 					following ecosystem contributors:
 				</p>
 			</div>
+			<div class="grid md:grid-cols-2">
+				<div class="justify-center rounded-xl px-12 py-6 shadow-lg max-lg:px-4">
+					<img alt="Total supply" src="../../assets/total_supply_chart.png" />
+				</div>
+			</div>
 		</div>
 	</section>
 </template>

@@ -1,28 +1,28 @@
 <script lang="ts" setup>
-const totalSupply = 60000000;
+// const totalSupply = 60000000;
 // const actualSupply = 21000000;
-const stats = [
-	{
-		name: "Raise",
-		value: 7500000,
-		color: "bg-[#644DF9]"
-	},
-	{
-		name: "Raise",
-		value: 6600000,
-		color: "bg-[#D288FF]"
-	},
-	{
-		name: "Raise",
-		value: 6000000,
-		color: "bg-[#FCCBFF]"
-	},
-	{
-		name: "Raise",
-		value: 1000000,
-		color: "bg-majorelle-700"
-	}
-];
+// const stats = [
+// 	{
+// 		name: "Raise",
+// 		value: 7500000,
+// 		color: "bg-[#644DF9]"
+// 	},
+// 	{
+// 		name: "Raise",
+// 		value: 6600000,
+// 		color: "bg-[#D288FF]"
+// 	},
+// 	{
+// 		name: "Raise",
+// 		value: 6000000,
+// 		color: "bg-[#FCCBFF]"
+// 	},
+// 	{
+// 		name: "Raise",
+// 		value: 1000000,
+// 		color: "bg-majorelle-700"
+// 	}
+// ];
 </script>
 
 <template>

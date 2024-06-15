@@ -2,40 +2,40 @@
 const cardContents = [
 	{
 		type: "User",
-		description: "Access to premium features (client-side encrypted knowledge database)"
+		description: "Access to premium features (client-side encrypted knowledge database)",
 	},
 	{
 		type: "User",
-		description: "Better models and longer context and confidential inference"
+		description: "Better models and longer context and confidential inference",
 	},
 	{
 		type: "User",
-		description: "Persona and knowledge database sharing (with revenue splitting in the future for paid combos)"
+		description: "Persona and knowledge database sharing (with revenue splitting in the future for paid combos)",
 	},
 	{
 		type: "User",
-		description: "Earn tokens by sharing feedback on model answers"
+		description: "Earn tokens by sharing feedback on model answers",
 	},
 	{
 		type: "API",
-		description: "Pay for API calls to models over the free tier"
+		description: "Pay for API calls to models over the free tier",
 	},
 	{
 		type: "API",
-		description: "Run private AI inference"
+		description: "Run private AI inference",
 	},
 	{
 		type: "Agents",
-		description: "Deploy agents"
+		description: "Deploy agents",
 	},
 	{
 		type: "Agents",
-		description: "Agents can pay for their own computing (confidential/TEE or not) through the aleph.im network"
+		description: "Agents can pay for their own computing (confidential/TEE or not) through the aleph.im network",
 	},
 	{
 		type: "Agents",
-		description: "Pay for interactions with the blockchain (access indexers and RPCs on base)"
-	}
+		description: "Pay for interactions with the blockchain (access indexers and RPCs on base)",
+	},
 ];
 </script>
 
