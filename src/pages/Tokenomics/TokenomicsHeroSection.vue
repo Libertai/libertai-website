@@ -27,5 +27,3 @@ div.image-background {
 	background-repeat: no-repeat;
 }
 </style>
-
-<script setup lang="ts"></script>

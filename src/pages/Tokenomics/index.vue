@@ -1,6 +1,6 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import TokenomicsHeroSection from "./TokenomicsHeroSection.vue";
-import TotalSupplySection from "./TotalSupplySection.vue";
+import LiveSupplySection from "./LiveSupplySection.vue";
 import OverallTotalSupplySection from "./OverallTotalSupplySection.vue";
 import VestingScheduleSection from "./VestingScheduleSection.vue";
 import RaiseSection from "./RaiseSection.vue";
@@ -10,7 +10,7 @@ import TokenUseSection from "./TokenUseSection.vue";
 
 <template>
 	<TokenomicsHeroSection />
-	<TotalSupplySection />
+	<LiveSupplySection />
 	<OverallTotalSupplySection />
 	<VestingScheduleSection />
 	<RaiseSection />

@@ -5,37 +5,37 @@ import Company from "./pages/Company/index.vue";
 import Design from "./pages/Design/index.vue";
 import Developer from "./pages/Developer/index.vue";
 import Earn from "./pages/Earn/index.vue";
-import Tokenomics from "./pages/Tokenomix/index.vue";
+import Tokenomics from "./pages/Tokenomics/index.vue";
 
 const routes = [
 	{
 		path: "/",
-		component: Home,
+		component: Home
 	},
 	{
 		path: "/company",
-		component: Company,
+		component: Company
 	},
 	{
 		path: "/design",
-		component: Design,
+		component: Design
 	},
 	{
 		path: "/developer",
-		component: Developer,
+		component: Developer
 	},
 	{
 		path: "/earn",
-		component: Earn,
+		component: Earn
 	},
 	{
 		path: "/tokenomics",
-		component: Tokenomics,
+		component: Tokenomics
 	},
 	{
 		path: "/:pathMatch(.*)*",
-		redirect: "/",
-	},
+		redirect: "/"
+	}
 ];
 
 export const router = createRouter({
@@ -47,5 +47,5 @@ export const router = createRouter({
 		} else {
 			return { top: 0 };
 		}
-	},
+	}
 });

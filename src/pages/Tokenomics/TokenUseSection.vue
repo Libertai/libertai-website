@@ -1,41 +1,41 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 const cardContents = [
 	{
 		type: "User",
-		description: "Access to premium features (client-side encrypted knowledge database)",
+		description: "Access to premium features (client-side encrypted knowledge database)"
 	},
 	{
 		type: "User",
-		description: "Better models and longer context and confidential inference",
+		description: "Better models and longer context and confidential inference"
 	},
 	{
 		type: "User",
-		description: "Persona and knowledge database sharing (with revenue splitting in the future for paid combos)",
+		description: "Persona and knowledge database sharing (with revenue splitting in the future for paid combos)"
 	},
 	{
 		type: "User",
-		description: "Earn tokens by sharing feedback on model answers",
+		description: "Earn tokens by sharing feedback on model answers"
 	},
 	{
 		type: "API",
-		description: "Pay for API calls to models over the free tier",
+		description: "Pay for API calls to models over the free tier"
 	},
 	{
 		type: "API",
-		description: "Run private AI inference",
+		description: "Run private AI inference"
 	},
 	{
 		type: "Agents",
-		description: "Deploy agents",
+		description: "Deploy agents"
 	},
 	{
 		type: "Agents",
-		description: "Agents can pay for their own computing (confidential/TEE or not) through the aleph.im network",
+		description: "Agents can pay for their own computing (confidential/TEE or not) through the aleph.im network"
 	},
 	{
 		type: "Agents",
-		description: "Pay for interactions with the blockchain (access indexers and RPCs on base)",
-	},
+		description: "Pay for interactions with the blockchain (access indexers and RPCs on base)"
+	}
 ];
 </script>
 
@@ -45,8 +45,8 @@ const cardContents = [
 			<h2 class="pb-6 text-neutral-white max-sm:hidden">What will tokens be used for?</h2>
 			<h3 class="pb-6 text-center font-light text-neutral-white sm:hidden">What will tokens be used for?</h3>
 			<p class="body-default px-32 pb-20 text-majorelle-800 max-lg:px-12">
-				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut id eleifend nulla. Donec quis accumsan massa, vitae
-				convallis risus. Duis lectus ipsum, rhoncus vitae faucibus in, feugiat id metus.
+				Access premium features, elevate computing power, and drive the evolution of decentralized AI with $LTAI token.
+				Reward yourself with $LTAI - the token that fuels AI agents onchain.
 			</p>
 			<div
 				class="col-span-4 m-4 flex min-h-72 flex-col items-center justify-center rounded-3xl border-t border-neutral-white bg-neutral-100 bg-opacity-20 p-10 backdrop-blur max-xl:col-span-3 max-lg:col-span-2 max-sm:col-span-1"
