@@ -5,7 +5,7 @@ import Company from "./pages/Company/index.vue";
 import Design from "./pages/Design/index.vue";
 import Developer from "./pages/Developer/index.vue";
 import Earn from "./pages/Earn/index.vue";
-import Tokenomics from "./pages/Tokenomix/index.vue";
+import Tokenomics from "./pages/Tokenomics/index.vue";
 
 const routes = [
 	{

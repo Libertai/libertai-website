@@ -18,6 +18,8 @@
 	</section>
 </template>
 
+<script lang="ts" setup></script>
+
 <style scoped>
 div.image-background {
 	background-image: url("../../assets/company.png");
@@ -26,5 +28,3 @@ div.image-background {
 	background-repeat: no-repeat;
 }
 </style>
-
-<script lang="ts" setup></script>
