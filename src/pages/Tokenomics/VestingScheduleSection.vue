@@ -42,7 +42,7 @@ const stats = [
 					</p>
 					<p class="body-default px-36 text-center text-majorelle-800 max-lg:px-4">
 						LibertAI's implementation of a linear vesting schedule ensures stability, long-term viability, and community
-						trust.  Tokens are released gradually over specified periods, as described below:
+						trust. Tokens are released gradually over specified periods, as described below:
 					</p>
 				</div>
 
