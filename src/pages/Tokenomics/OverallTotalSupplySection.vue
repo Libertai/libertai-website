@@ -42,7 +42,7 @@ const stats = [
 				</p>
 			</div>
 			<div class="grid md:grid-cols-2">
-				<div class="flex items-center justify-center rounded-3xl py-6 shadow-lg max-lg:px-4">
+				<div class="flex items-center justify-center rounded-2xl py-6 shadow-lg max-lg:px-4">
 					<div>
 						<img alt="Total supply" src="../../assets/total_supply_chart.png" width="368" height="368" />
 					</div>
@@ -51,7 +51,7 @@ const stats = [
 					<div
 						v-for="stat in stats"
 						:key="stat.name"
-						class="relative ml-5 mr-3 flex flex-col justify-center rounded-3xl py-2 shadow-lg max-md:mx-0"
+						class="relative ml-5 mr-3 flex flex-col justify-center rounded-2xl py-2 shadow-lg max-md:mx-0"
 					>
 						<div :class="stat.color + ' absolute left-0 top-0 flex h-full w-5 items-center justify-center'" />
 						<p class="body-bold-default pb-6 text-center text-majorelle-700">{{ stat.name }}</p>
