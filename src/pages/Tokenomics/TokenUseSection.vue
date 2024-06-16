@@ -2,23 +2,23 @@
 const cardContents = [
 	{
 		type: "User",
-		description: "Access to premium features (client-side encrypted knowledge database)",
+		description: "Access to exclusive client-side encrypted knowledge database.",
 	},
 	{
 		type: "User",
-		description: "Better models and longer context and confidential inference",
+		description: "Upgrade to advanced models, extended context, and confidential inference.",
 	},
 	{
 		type: "User",
-		description: "Persona and knowledge database sharing (with revenue splitting in the future for paid combos)",
+		description: "Unlock personas and knowledge database sharing with revenue split.",
 	},
 	{
 		type: "User",
-		description: "Earn tokens by sharing feedback on model answers",
+		description: "Earn $LTAI tokens by sharing feedback on model answers",
 	},
 	{
 		type: "API",
-		description: "Pay for API calls to models over the free tier",
+		description: "$LTAI allows API calls to premium models or those exceeding the free daily limit",
 	},
 	{
 		type: "API",
@@ -26,15 +26,16 @@ const cardContents = [
 	},
 	{
 		type: "Agents",
-		description: "Deploy agents",
+		description: "Deploy private AI agents onchain",
 	},
 	{
 		type: "Agents",
-		description: "Agents can pay for their own computing (confidential/TEE or not) through the aleph.im network",
+		description:
+			"AI Agents can purchase their own computing power, TEE confidential or not, through  Aleph.im DePIN network.",
 	},
 	{
 		type: "Agents",
-		description: "Pay for interactions with the blockchain (access indexers and RPCs on base)",
+		description: "AI access to blockchain data using indexers and RPCs in the Base network.",
 	},
 ];
 </script>
