@@ -26,7 +26,7 @@
 </script>
 
 <template>
-	<section class="relative flex justify-center">
+	<section class="relative flex justify-center bg-neutral-white">
 		<div class="relative overflow-hidden px-20 py-12 max-lg:px-12" style="width: 1440px">
 			<div class="justify-center rounded-xl px-12 py-6 shadow-lg max-lg:px-4">
 				<p class="body-bold-large pb-4 text-center text-majorelle-700">Live Circulating Total Supply</p>
