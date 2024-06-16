@@ -38,7 +38,7 @@ const stats = [
 					<h2 class="text-majorelle-500 max-lg:hidden">Vesting Schedule</h2>
 					<h3 class="hidden text-majorelle-500 max-lg:block">Vesting Schedule</h3>
 					<p class="body-default text-center text-majorelle-800">
-						Total supply at TGE (Token Generation Event): 21.1M LTAI. Max supply over 10+ years: 60M LTAI.
+						Total supply at TGE (Token Generation Event): 20.6M LTAI. Max supply over 10+ years: 60M LTAI.
 					</p>
 					<p class="body-default px-36 text-center text-majorelle-800 max-lg:px-4">
 						LibertAI's implementation of a linear vesting schedule ensures stability, long-term viability, and community

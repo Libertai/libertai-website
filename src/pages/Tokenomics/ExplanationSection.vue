@@ -6,7 +6,7 @@ const textSections = [
 	},
 	{
 		title: "Raise",
-		text: "25% of the tokens (15M) are allocated for the pre-launch raise. These tokens are distributed at the Token Generation Event (TGE) and over 24 months to raise initial funds and ensure early supporters have a stake in the project. 50% are available at TGE, with the rest vested gradually.",
+		text: "25% of the tokens (15M) are allocated for the pre-launch raise. These tokens are distributed at the Token Generation Event (TGE) and over 24 months to raise initial funds and ensure early supporters have a stake in the project. Any unsold tokens from the raise will be allocated to reserves. At the TGE, 50% of the tokens will be available, with the remainder being gradually vested. ",
 	},
 	{
 		title: "Reserves + Community",
