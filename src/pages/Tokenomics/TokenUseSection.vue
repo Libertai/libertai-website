@@ -53,8 +53,8 @@ const cardContents = [
 				class="col-span-4 m-4 flex min-h-72 flex-col items-center justify-center rounded-3xl border-t border-neutral-white bg-neutral-100 bg-opacity-20 p-10 backdrop-blur max-xl:col-span-3 max-lg:col-span-2 max-sm:col-span-1"
 			>
 				<img alt="Twitter / X" src="../../assets/icons/lock-Open.svg" style="width: 50px; height: 50px" />
-				<p class="body-bold-large py-6">Unlock advanced models and features.</p>
-				<p class="body-small">
+				<p class="body-bold-large py-6 text-majorelle-700">Unlock advanced models and features.</p>
+				<p class="body-small text-majorelle-700">
 					Crypto-economics security incentives for data providers, model developers, network operators and training
 					contributors / AI alignement.
 				</p>
