@@ -6,6 +6,7 @@ import VestingScheduleSection from "./VestingScheduleSection.vue";
 import ExplanationSection from "./ExplanationSection.vue";
 import AirdropNetworkSection from "./AirdropNetworkSection.vue";
 import TokenUseSection from "./TokenUseSection.vue";
+import DisclaimerSection from "./DisclaimerSection.vue";
 </script>
 
 <template>
@@ -16,4 +17,5 @@ import TokenUseSection from "./TokenUseSection.vue";
 	<ExplanationSection />
 	<AirdropNetworkSection />
 	<TokenUseSection />
+	<DisclaimerSection />
 </template>
