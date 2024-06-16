@@ -25,6 +25,7 @@
 				<RouterLink to="/company">Company</RouterLink>
 				<RouterLink to="/earn">Earn</RouterLink>
 				<RouterLink to="/developer">Developer</RouterLink>
+				<RouterLink to="/tokenomics">Tokenomics</RouterLink>
 				<div @mouseenter="showApps = true" @mouseleave="showApps = false">
 					<div class="flex">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
@@ -74,6 +75,7 @@
 				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/company">Company</RouterLink>
 				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/earn">Earn</RouterLink>
 				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/developer">Developer</RouterLink>
+				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/tokenomics">Tokenomics</RouterLink>
 				<div class="body-default focus:bg-neutral-200">
 					<button class="flex items-center px-8 py-4" @click="showApps = !showApps">
 						<span class="mr-1.5 cursor-pointer">Apps</span>

@@ -5,26 +5,23 @@
 			<div
 				class="z-20 m-auto flex max-w-xl flex-col items-center justify-center gap-y-6 text-center text-majorelle-800 max-lg:gap-y-12 max-lg:px-4 max-lg:py-40 max-lg:text-neutral-white"
 			>
-				<h2 class="block text-left max-lg:text-center max-sm:hidden">
-					Decentralize everything and earn LibertAI Tokens
+				<h2 class="block w-full text-left max-lg:text-center max-sm:hidden lg:text-majorelle-500">
+					LibertAI Tokenomics
 				</h2>
-				<h3 class="hidden text-neutral-white max-sm:block">Decentralize everything and earn LibertAI Tokens</h3>
+				<h3 class="hidden text-neutral-white max-sm:block">LibertAI Tokenomics</h3>
 				<p class="body-small text-left max-lg:text-center">
-					Are you ready to dive into a new world of decentralized computing, where your contributions are rewarded with
-					tangible benefits? Look no further than LibertAI Tokens! These Tokens play an essential role within the
-					exciting and innovative LibertAI ecosystem.
+					These tokenomics components work together to create a balanced and incentive-driven ecosystem that encourages
+					participation, innovation, and growth within the LibertAI platform.
 				</p>
 			</div>
-			<img alt="Earn" class="z-10 m-auto max-lg:hidden" src="../../assets/earn.png" />
+			<img alt="Earn" class="z-10 m-auto max-lg:hidden" src="../../assets/image 32.png" />
 		</div>
 	</section>
 </template>
 
-<script setup lang="ts"></script>
-
 <style scoped>
 div.image-background {
-	background-image: url("../../assets/earn.png");
+	background-image: url("../../assets/image 32.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
