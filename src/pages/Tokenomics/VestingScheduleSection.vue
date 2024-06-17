@@ -38,7 +38,11 @@ const stats = [
 					<h2 class="text-majorelle-500 max-lg:hidden">Vesting Schedule</h2>
 					<h3 class="hidden text-majorelle-500 max-lg:block">Vesting Schedule</h3>
 					<p class="body-default text-center text-majorelle-800">
-						Total supply at TGE (Token Generation Event): 20.6M LTAI. Max supply over 10+ years: 60M LTAI.
+						The token $LTAI will be minted linearly with an initial supply of 60 million, and 21 million will be
+						distributed gradually over a decade through an airdrop. There will be a 25% raise at the Token Generation
+						Event (TGE), with the remaining tokens released gradually over 24 months. Community reserves will be vested
+						for 7 years, and the team tokens will have 1 million tokens released upfront, with the rest vested over 7
+						years.
 					</p>
 					<p class="body-default px-36 text-center text-majorelle-800 max-lg:px-4">
 						LibertAI's implementation of a linear vesting schedule ensures stability, long-term viability, and community

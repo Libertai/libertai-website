@@ -10,7 +10,7 @@ const textSections = [
 	},
 	{
 		title: "Reserves + Community",
-		text: "25% of the tokens (15M) are set aside as reserves for future incentives, marketing, and community rewards. Initially, 5 million tokens are available as reserves, with the total reserves reaching 15 million over 7 years. Part of these reserves will be added to Uniswap V3 pools liquidity.",
+		text: "25% of the tokens (15M) are available initially as reserves, with the total reserves reaching to 15 million over 7 years. A portion of these reserves will be dedicated to enhancing Uniswap V3 pools for liquidity, while the remainder will be accessible for future fundraising, market making, and other critical purposes.",
 	},
 	{
 		title: "Team",
