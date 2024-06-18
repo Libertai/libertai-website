@@ -13,7 +13,7 @@ const stats = [
 		color: "bg-[#FCCBFF]",
 	},
 	{
-		name: "Initial Reserves + Community",
+		name: "Initial Reserves",
 		value: "5M",
 		percent: "24%",
 		color: "bg-[#D288FF]",

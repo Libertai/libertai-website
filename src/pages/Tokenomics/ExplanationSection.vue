@@ -9,7 +9,7 @@ const textSections = [
 		text: "25% of the tokens (15M) are allocated for the pre-launch raise. These tokens are distributed at the Token Generation Event (TGE) and over 24 months to raise initial funds and ensure early supporters have a stake in the project. Any unsold tokens from the raise will be allocated to reserves. At the TGE, 50% of the tokens will be available, with the remainder being gradually vested. ",
 	},
 	{
-		title: "Reserves + Community",
+		title: "Reserves",
 		text: "25% of the tokens (15M) are available initially as reserves, with the total reserves reaching to 15 million over 7 years. A portion of these reserves will be dedicated to enhancing Uniswap V3 pools for liquidity, while the remainder will be accessible for future fundraising, market making, and other critical purposes.",
 	},
 	{
@@ -17,7 +17,7 @@ const textSections = [
 		text: "15% of the tokens (9M) are allocated to the team, including early contributors and advisors, with a release schedule over 7 years. This incentivizes the team to continue developing the project. Initially, 1 million tokens are available at TGE, with the remainder distributed over 7 years.",
 	},
 	{
-		title: "Airdrop and Incentives/Network",
+		title: "Airdrop and Incentives",
 		text: "35% of the tokens (21M) are reserved for community airdrops, including the Aleph airdrop and future campaigns to reward and engage community members. These tokens are released gradually over 10+ years to ensure stability and sustained community involvement.",
 	},
 ];
