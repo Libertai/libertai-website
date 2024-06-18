@@ -26,6 +26,7 @@
 				<RouterLink to="/earn">Earn</RouterLink>
 				<RouterLink to="/developer">Developer</RouterLink>
 				<RouterLink to="/tokenomics">Tokenomics</RouterLink>
+				<a href="/Litepaper_0624_v2.pdf" alt="LibertAi Litepaper" target="_blank">Litepaper</a>
 				<div @mouseenter="showApps = true" @mouseleave="showApps = false">
 					<div class="flex">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
