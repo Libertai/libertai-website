@@ -17,7 +17,7 @@ const textSections = [
 		text: "15% of the tokens (9M) are allocated to the team, including early contributors and advisors, with a release schedule over 7 years. This incentivizes the team to continue developing the project. Initially, 1 million tokens are available at TGE, with the remainder distributed over 7 years.",
 	},
 	{
-		title: "Airdrop/Network",
+		title: "Airdrop and Incentives/Network",
 		text: "35% of the tokens (21M) are reserved for community airdrops, including the Aleph airdrop and future campaigns to reward and engage community members. These tokens are released gradually over 10+ years to ensure stability and sustained community involvement.",
 	},
 ];

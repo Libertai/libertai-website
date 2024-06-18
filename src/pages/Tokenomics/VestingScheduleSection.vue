@@ -7,7 +7,7 @@ const stats = [
 		color: "bg-majorelle-700",
 	},
 	{
-		name: "Initial Airdrop",
+		name: "Initial Airdrop and Incentives",
 		value: "7.1M",
 		percent: "35%",
 		color: "bg-[#FCCBFF]",
