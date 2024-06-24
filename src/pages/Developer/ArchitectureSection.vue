@@ -1,6 +1,8 @@
 <script lang="ts" setup>
 import LFlashCard from "../../components/LFlashCard.vue";
 import { models } from "../../texts.ts";
+import LTinyHeading from "../../components/LTinyHeading.vue";
+import LButton from "../../components/LButton.vue";
 
 const paragraphs = [
 	"LibertAI works on top of the aleph.im network. It uses its on-demand virtual machines (serverless). When you do a call to the API, it's going to one of the load balancers of the network that distributes your request to one of the available CRN (computing resource nodes, you can also call the API directly on one). This CRN then looks at the path (or domain) and redirects it to a specific virtual machine.",
@@ -10,23 +12,26 @@ const paragraphs = [
 </script>
 
 <template>
-	<section class="flex flex-col items-center bg-gradient-to-b from-neutral-white to-tertiary px-8 py-20">
-		<div class="mb-20 text-center text-majorelle-800 max-lg:mb-12">
-			<h2 class="mb-6 max-lg:hidden">Unlock the Power of Decentralized AI</h2>
-			<h3 class="mb-6 hidden max-lg:block">Unlock the Power of Decentralized AI</h3>
-			<p class="body-small">Build Next-Gen Applications on LibertAI's Decentralized Platform</p>
+	<section class="flex flex-col items-center bg-neutral-white px-8 pb-20 pt-36">
+		<div class="text-center text-primary max-lg:mb-12">
+			<LTinyHeading>Transparent to the core</LTinyHeading>
+			<h2 class="my-6 max-lg:hidden">Unlock the Power of Decentralized AI</h2>
+			<h3 class="my-6 hidden max-lg:block">Unlock the Power of Decentralized AI</h3>
+			<p class="text-majorelle-800">Build Next-Gen Applications on LibertAI's Decentralized Platform</p>
 		</div>
 		<div
-			class="mb-36 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(4,20rem)] 2xl:grid-rows-[repeat(2,20rem)]"
+			class="my-20 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(3,20rem)] 2xl:grid-rows-[repeat(2,20rem)]"
 		>
 			<LFlashCard v-for="model in models" :key="model.title" :description="model.description" :title="model.title" />
-			<LFlashCard description="" hover-animation="none" light title="Coming Soon" />
 		</div>
-		<div class="text-majorelle-800 max-lg:text-center">
-			<h2 class="max-lg:hidden">How it works</h2>
-			<h3 class="hidden max-lg:block">How it works</h3>
+		<a class="mb-36" href="#">
+			<LButton text="Find Out More" />
+		</a>
+		<div class="pt-20 text-primary">
+			<h2 class="text-center max-lg:hidden">How it works</h2>
+			<h3 class="hidden text-center max-lg:block">How it works</h3>
 			<div class="mt-12 grid gap-8 text-balance md:grid-cols-3">
-				<p v-for="text in paragraphs" :key="text" class="body-small max-lg:body-tiny max-w-96">
+				<p v-for="text in paragraphs" :key="text" class="body-small max-lg:body-tiny max-w-96 text-majorelle-800">
 					{{ text }}
 				</p>
 			</div>
