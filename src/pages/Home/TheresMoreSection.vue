@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 
 import image_1 from "../../assets/image_1.jpg";
 import image_2 from "../../assets/image_2.jpg";
@@ -87,10 +87,7 @@ onMounted(() => {
 
 <template>
 	<section class="relative flex justify-center bg-neutral-white">
-		<div
-			class="flex w-full flex-col items-center justify-center gap-6 overflow-x-hidden pb-56 pt-24"
-			style="width: 1440px"
-		>
+		<div class="flex w-[1440px] flex-col items-center justify-center gap-6 overflow-x-hidden pb-56 pt-24">
 			<div class="flex w-full flex-col justify-start gap-4 px-24 py-8 max-lg:px-12">
 				<div class="flex text-majorelle-800 max-lg:hidden">
 					<h2>But wait, there’s</h2>

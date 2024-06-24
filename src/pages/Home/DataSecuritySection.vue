@@ -1,6 +1,6 @@
 <template>
 	<section class="flex justify-center">
-		<div class="flex justify-center gap-x-6 px-24 py-16 max-lg:px-6 max-lg:pb-72" style="width: 1440px">
+		<div class="flex w-[1440px] justify-center gap-x-6 px-24 py-16 max-lg:px-6 max-lg:pb-72">
 			<div class="z-10 w-1/2 max-lg:w-full max-lg:space-y-8">
 				<h2 class="mb-6 block text-left max-xl:hidden">No Harvesting: You are in Control of Your Data</h2>
 				<h3 class="mb-6 hidden text-center max-xl:block">No Harvesting: You are in Control of Your Data</h3>

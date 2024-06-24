@@ -1,6 +1,6 @@
 <template>
-	<footer class="flex justify-center" style="background-color: #030014">
-		<div class="relative w-full pt-72" style="height: 910px; width: 1440px">
+	<footer class="flex justify-center bg-[#030014]">
+		<div class="relative h-[910px] w-[1440px] pt-72">
 			<div class="flex flex-col items-center justify-center space-y-10">
 				<img alt="logo" src="../../assets/icons/logo_white.svg" style="width: 105px; height: 105px" />
 				<div class="flex flex-row space-x-7">

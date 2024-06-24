@@ -4,7 +4,7 @@ import LButton from "../../components/LButton.vue";
 
 <template>
 	<section class="image-background relative flex justify-center">
-		<div class="flex py-60 pl-16 max-lg:px-0 max-lg:py-56" style="width: 1440px">
+		<div class="flex w-[1440px] py-60 pl-16 max-lg:px-0 max-lg:py-56">
 			<div class="flex max-w-4xl flex-col gap-6 px-6 py-9 text-neutral-white max-lg:py-0 max-lg:text-center">
 				<h1 class="max-lg:hidden">Discover the Freedom of Decentralized AI</h1>
 				<h2 class="hidden sm:max-lg:block">Discover the Freedom of Decentralized AI</h2>

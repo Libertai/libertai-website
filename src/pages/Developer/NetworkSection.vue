@@ -1,6 +1,6 @@
 <template>
 	<section class="relative flex justify-center bg-[#030014]">
-		<div class="bg-[#030014] px-8 py-96 text-neutral-white max-lg:py-32" style="width: 1440px">
+		<div class="w-[1440px] bg-[#030014] px-8 py-96 text-neutral-white max-lg:py-32">
 			<div class="mb-24 text-center">
 				<h2 class="mb-6 max-lg:hidden">An unstoppable inter planetary network.</h2>
 				<h3 class="mb-6 hidden max-lg:block">An unstoppable inter planetary network.</h3>

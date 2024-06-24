@@ -25,7 +25,7 @@ const textSections = [
 
 <template>
 	<section class="relative flex justify-center py-8">
-		<div class="relative overflow-hidden px-20 pt-16 max-lg:px-12" style="width: 1440px">
+		<div class="relative w-[1440px] overflow-hidden px-20 pt-16 max-lg:px-12">
 			<div v-for="section in textSections" :key="section.title">
 				<h3 class="pb-4 text-left font-light text-majorelle-500 max-lg:hidden">{{ section.title }}</h3>
 				<h4 class="pb-4 text-center font-light text-majorelle-500 lg:hidden">{{ section.title }}</h4>
