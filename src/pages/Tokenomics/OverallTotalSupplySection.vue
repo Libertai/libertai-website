@@ -1,4 +1,6 @@
 <script lang="ts" setup>
+import LTinyHeading from "../../components/LTinyHeading.vue";
+
 const stats = [
 	{
 		name: "Raise",
@@ -31,9 +33,7 @@ const stats = [
 	<section class="relative flex justify-center bg-gradient-to-b from-neutral-white py-8">
 		<div class="relative w-[1440px] overflow-hidden px-20 py-12 max-lg:px-12">
 			<div class="x-12 justify-center space-y-6 py-6 text-center max-lg:px-4">
-				<div class="mx-auto flex w-40 justify-center bg-majorelle-500 bg-opacity-10 px-2 py-1">
-					<p class="body-small">Let's break it down</p>
-				</div>
+				<LTinyHeading>Let's break it down</LTinyHeading>
 				<h2 class="text-majorelle-500 max-lg:hidden">Overall total supply and distribution</h2>
 				<h3 class="hidden text-majorelle-500 max-lg:block">Overall total supply and distribution</h3>
 				<p class="body-default text-center text-majorelle-800">
