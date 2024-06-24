@@ -1,6 +1,6 @@
 <template>
 	<section class="relative flex justify-center">
-		<div class="image-background relative grid overflow-hidden lg:grid-cols-[40%_60%]" style="width: 1440px">
+		<div class="image-background relative grid w-[1440px] overflow-hidden lg:grid-cols-[40%_60%]">
 			<div class="absolute left-0 top-0 z-10 h-full w-full bg-tertiary max-lg:hidden" />
 			<div
 				class="z-10 m-auto flex max-w-xl flex-col items-center justify-center gap-y-6 pl-8 text-center text-majorelle-800 max-lg:gap-y-12 max-lg:px-4 max-lg:py-40 max-lg:text-neutral-white"

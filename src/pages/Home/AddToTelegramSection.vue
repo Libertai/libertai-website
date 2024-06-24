@@ -7,7 +7,7 @@ import LButton from "../../components/LButton.vue";
 
 <template>
 	<section class="relative flex justify-center">
-		<div class="flex justify-center" style="width: 1440px">
+		<div class="flex w-[1440px] justify-center">
 			<div
 				class="grid h-full w-auto grid-cols-4 flex-col items-center justify-center px-8 py-12 max-xl:grid-cols-2 max-md:pt-0 max-sm:grid-cols-1"
 			>

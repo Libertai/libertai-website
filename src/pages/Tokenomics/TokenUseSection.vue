@@ -42,7 +42,7 @@ const cardContents = [
 
 <template>
 	<section class="relative flex justify-center bg-gradient-to-tr from-[#644DF9] to-[#FCCBFF] py-8">
-		<div class="relative overflow-hidden px-12 py-52 text-center max-lg:px-4 max-lg:py-40" style="width: 1440px">
+		<div class="relative w-[1440px] overflow-hidden px-12 py-52 text-center max-lg:px-4 max-lg:py-40">
 			<h2 class="pb-6 text-neutral-white max-sm:hidden">What will tokens be used for?</h2>
 			<h3 class="pb-6 text-center font-light text-neutral-white sm:hidden">What will tokens be used for?</h3>
 			<p class="body-default px-32 pb-20 text-majorelle-800 max-lg:px-12">

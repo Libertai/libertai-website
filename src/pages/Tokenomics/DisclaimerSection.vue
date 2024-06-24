@@ -1,6 +1,6 @@
 <template>
 	<section class="relative flex justify-center">
-		<div class="relative overflow-hidden px-20 py-12 max-lg:px-12" style="width: 1440px">
+		<div class="relative w-[1440px] overflow-hidden px-20 py-12 max-lg:px-12">
 			<div class="justify-center rounded-xl px-12 py-6 max-lg:px-4">
 				<p class="body-bold-large pb-4 text-center text-majorelle-700">Disclaimer</p>
 				<p class="body-bold-small pb-4 text-center text-majorelle-700">

@@ -4,7 +4,7 @@ import LSimpleCard from "../../components/LSimpleCard.vue";
 
 <template>
 	<section class="flex flex-col items-center justify-center overflow-hidden max-xl:px-24">
-		<div class="flex flex-col items-center justify-center px-24 py-32 max-xl:pt-12 max-lg:pt-0" style="width: 1440px">
+		<div class="flex w-[1440px] flex-col items-center justify-center px-24 py-32 max-xl:pt-12 max-lg:pt-0">
 			<div class="h-auto justify-center p-8 max-lg:max-w-md max-md:max-w-sm md:hidden">
 				<h3 class="text-left text-majorelle-800 max-lg:text-center">Redefining AI Boundaries</h3>
 				<p class="body-tiny items-center text-majorelle-800 max-lg:text-center">

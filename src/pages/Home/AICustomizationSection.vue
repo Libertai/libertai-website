@@ -5,7 +5,7 @@ import Therapist from "../../assets/Therapist.png";
 import VirtualBoyfriend from "../../assets/VirtualBoyfriend.png";
 import VirtualGirlfriend from "../../assets/VirtualGirlfriend.png";
 import Tromp from "../../assets/Tromp.png";
-import { ref, onMounted, watch } from "vue";
+import { onMounted, ref, watch } from "vue";
 
 const AIs = [
 	{ text: "Donald Tromp", image: Tromp },
@@ -50,7 +50,7 @@ onMounted(() => {
 
 <template>
 	<section class="flex justify-center overflow-hidden py-24">
-		<div class="relative flex h-full" style="width: 1440px">
+		<div class="relative flex h-full w-[1440px]">
 			<div class="absolute left-0 z-10 h-full w-64 bg-gradient-to-r from-neutral-white" />
 			<div class="absolute right-full z-20 h-full w-full bg-neutral-white" />
 			<div class="absolute left-full z-20 h-full w-full bg-neutral-white" />

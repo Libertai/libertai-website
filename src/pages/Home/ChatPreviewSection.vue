@@ -4,7 +4,7 @@ import Iphone from "../../assets/Iphone_chat.png";
 
 <template>
 	<section class="relative flex justify-center bg-neutral-white">
-		<div class="relative flex h-full justify-center overflow-hidden pt-8" style="width: 1440px">
+		<div class="relative flex h-full w-[1440px] justify-center overflow-hidden pt-8">
 			<img :src="Iphone" alt="Iphone" class="h-140 max-lg:hidden" />
 			<div class="flex w-132 flex-col space-y-6 pt-8 max-lg:items-center max-lg:pb-32 max-lg:pt-16 max-lg:text-center">
 				<h3 class="text-majorelle-800 max-lg:hidden">
