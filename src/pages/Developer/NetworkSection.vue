@@ -10,7 +10,7 @@
 					practically unstoppable.
 				</p>
 			</div>
-			<img alt="Architecture" class="m-auto" src="../../assets/architecture.svg" />
+			<img alt="Architecture" class="m-auto" src="../../assets/architecture.png" />
 		</div>
 	</section>
 </template>
