@@ -1,13 +1,21 @@
 <script setup>
 import Navbar from "./components/Navbar.vue";
 import Footer from "./components/Footer.vue";
-import LAnnouncementBanner from "./components/LAnnouncementBanner.vue";
+import { useGeneralStore } from "./stores/general";
+import Countdown from "./Countdown.vue";
+
+const store = useGeneralStore();
+const displaySite = () => {
+	store.showCountdown = false;
+	window.scrollTo(0, 0);
+};
 </script>
 
 <template>
-	<LAnnouncementBanner text="Mark your calendars, June 18th 12:00 GMT is the official launch date of $LTAI on Base" />
-	<Navbar />
+	<Navbar v-show="!store.isCountdownDisplayed" />
+	<Countdown v-if="store.isCountdownDisplayed" :action="displaySite" />
 
-	<RouterView />
+	<RouterView v-else />
+
 	<Footer />
 </template>
