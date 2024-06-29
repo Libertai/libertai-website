@@ -52,8 +52,8 @@ const stats = [
 
 				<div class="grid md:grid-cols-[60%,40%]">
 					<div class="flex items-center justify-center rounded-xl px-12 py-8 shadow-lg max-lg:px-4">
-						<img alt="Vesting" class="max-sm:hidden" src="../../assets/vesting.png" />
-						<img alt="Vesting" class="mx-auto sm:hidden" src="../../assets/vesting_mobile.png" />
+						<img alt="Vesting" class="max-sm:hidden" src="../../assets/tokenomics/vesting.png" />
+						<img alt="Vesting" class="mx-auto sm:hidden" src="../../assets/tokenomics/vesting_mobile.png" />
 					</div>
 					<div class="flex flex-col justify-center space-y-4 max-md:pt-5">
 						<div
