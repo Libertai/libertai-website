@@ -44,7 +44,7 @@ const stats = [
 			<div class="grid md:grid-cols-2">
 				<div class="flex items-center justify-center rounded-2xl py-6 shadow-lg max-lg:px-4">
 					<div>
-						<img alt="Total supply" src="../../assets/total_supply_chart.png" width="368" height="368" />
+						<img alt="Total supply" height="368" src="../../assets/tokenomics/total_supply_chart.png" width="368" />
 					</div>
 				</div>
 				<div class="flex flex-col justify-center space-y-4 max-lg:px-4 max-md:pt-5">

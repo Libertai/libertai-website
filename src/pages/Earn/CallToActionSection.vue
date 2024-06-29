@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import LFlashCard from "../../components/LFlashCard.vue";
-import StakeImage from "../../assets/stake.png";
-import CoreNodeImage from "../../assets/core-node.png";
-import ComputeNodeImage from "../../assets/compute-node.png";
+import StakeImage from "../../assets/earn/staking.svg";
+import CoreNodeImage from "../../assets/earn/core-channel-node-operator.svg";
+import ResourceNodeImage from "../../assets/earn/resource-node-operator.svg";
+import ConnectAccountsImage from "../../assets/earn/connect-accounts.svg";
 import LButton from "../../components/LButton.vue";
 
 type Action = {
@@ -12,30 +12,38 @@ type Action = {
 	buttonLink: string;
 	imagePath: string;
 };
-const actions: [Action, Action, Action] = [
+const actions: Action[] = [
 	{
-		cardTitle: "Stake ALEPH",
+		cardTitle: "Staking",
 		cardDescription:
-			"Staking 10K or more Aleph tokens ($ALEPH) - By showing your commitment to the future of decentralized cloud technology, you earn LibertAI Points that reflect your trust in the platform.",
-		buttonText: "STAKE ALEPH",
+			"Staking 10K or more Aleph tokens ($ALEPH) - By showing your commitment to the future of decentralized cloud technology, you earn LibertAI tokens that reflect your trust in the platform.",
+		buttonText: "Stake ALEPH",
 		buttonLink: "https://account.aleph.im/earn/staking/",
 		imagePath: StakeImage,
 	},
 	{
 		cardTitle: "Core Channel Node Operator",
 		cardDescription:
-			"Running an Aleph.im Core Channel Node - Become a part of the backbone that supports cross-chain interactions and enjoy the perks of being a node operator with LibertAI Points as your reward!",
-		buttonText: "RUN CORE NODE",
+			"Running an Aleph.im Core Channel Node - Become a part of the backbone that supports cross-chain interactions and enjoy the perks of being a node operator with LibertAI tokens as your reward!",
+		buttonText: "Run Core Node",
 		buttonLink: "https://docs.aleph.im/nodes/core/",
 		imagePath: CoreNodeImage,
 	},
 	{
 		cardTitle: "Resource Node Operator",
 		cardDescription:
-			"Operating an Aleph.im Resource Node - Contribute to data storage, compute capabilities, and decentralized applications by running a resource node and reap the benefits through LibertAI Points!",
-		buttonText: "RUN RESOURCE NODE",
+			"Operating an Aleph.im Resource Node - Contribute to data storage, compute capabilities, and decentralized applications by running a resource node and reap the benefits through LibertAI tokens!",
+		buttonText: "Run Resource Node",
 		buttonLink: "https://docs.aleph.im/nodes/compute/",
-		imagePath: ComputeNodeImage,
+		imagePath: ResourceNodeImage,
+	},
+	{
+		cardTitle: "Connect Accounts",
+		cardDescription:
+			"Staking $ALEPH or running an aleph node? Connect your associated reward wallet to start earning LibertAI $LTAI tokens.",
+		buttonText: "Connect now",
+		buttonLink: "https://chat.libertai.io",
+		imagePath: ConnectAccountsImage,
 	},
 ];
 </script>
@@ -45,76 +53,25 @@ const actions: [Action, Action, Action] = [
 			So, are you ready to join this revolutionary journey and unlock the power of LibertAI Tokens? Let's get started
 			together and shape the future of decentralized cloud technology!
 		</p>
-		<div class="z-10 my-[4.5rem] flex justify-center gap-6 max-lg:hidden max-md:flex max-md:flex-col lg:flex-row">
-			<div v-for="action in actions" :key="action.cardTitle" class="flex flex-col items-center gap-7">
-				<LFlashCard
-					:description="action.cardDescription"
-					:title="action.cardTitle"
-					class="max-2xl:hidden"
-					variant="large"
-				>
-					<img :alt="action.cardTitle" :src="action.imagePath" />
-				</LFlashCard>
-				<LFlashCard :description="action.cardDescription" :title="action.cardTitle" class="2xl:hidden" variant="small">
-					<img :alt="action.cardTitle" :src="action.imagePath" />
-				</LFlashCard>
-				<a :href="action.buttonLink">
-					<LButton :text="action.buttonText" class="max-md:hidden" small />
+		<div class="grid gap-6 md:grid-cols-2 xl:mx-3 xl:grid-cols-4 2xl:mx-20">
+			<div
+				v-for="action in actions"
+				:key="action.cardTitle"
+				class="earn-card flex h-96 w-72 flex-col items-center justify-center gap-4 rounded-2xl border-[0.5px] border-majorelle-300 bg-neutral-white px-6 py-9 text-center text-majorelle-800"
+			>
+				<img :src="action.imagePath" alt="card image" />
+				<p class="body-bold-default text-primary">{{ action.cardTitle }}</p>
+				<p class="body-tiny w-56">{{ action.cardDescription }}</p>
+				<a :href="action.buttonLink" target="_blank">
+					<LButton :text="action.buttonText" small />
 				</a>
 			</div>
 		</div>
-		<div class="my-[4.5rem] hidden flex-col justify-center gap-20 md:flex lg:hidden">
-			<div class="flex flex-col items-center gap-7">
-				<LFlashCard
-					:description="actions[0].cardDescription"
-					:title="actions[0].cardTitle"
-					class="max-2xl:hidden"
-					variant="large"
-				>
-					<img :alt="actions[0].cardTitle" :src="actions[0].imagePath" />
-				</LFlashCard>
-				<LFlashCard
-					:description="actions[0].cardDescription"
-					:title="actions[0].cardTitle"
-					class="2xl:hidden"
-					variant="small"
-				>
-					<img :alt="actions[0].cardTitle" :src="actions[0].imagePath" />
-				</LFlashCard>
-				<a :href="actions[0].buttonLink">
-					<LButton :text="actions[0].buttonText" class="max-md:hidden" small />
-				</a>
-			</div>
-			<div class="flex justify-center gap-6">
-				<div v-for="i in [1, 2]" :key="actions[i].cardTitle" class="flex flex-col items-center gap-7">
-					<LFlashCard
-						:description="actions[i].cardDescription"
-						:title="actions[i].cardTitle"
-						class="max-2xl:hidden"
-						variant="large"
-					>
-						<img :alt="actions[i].cardTitle" :src="actions[i].imagePath" />
-					</LFlashCard>
-					<LFlashCard
-						:description="actions[i].cardDescription"
-						:title="actions[i].cardTitle"
-						class="2xl:hidden"
-						variant="small"
-					>
-						<img :alt="actions[i].cardTitle" :src="actions[i].imagePath" />
-					</LFlashCard>
-					<a :href="actions[i].buttonLink">
-						<LButton :text="actions[i].buttonText" class="max-md:hidden" small />
-					</a>
-				</div>
-			</div>
-		</div>
-		<p class="body-small text-center max-sm:px-16 sm:px-20 lg:px-28">
-			Staking $ALEPH or running an aleph node? Connect your associated reward wallet to start earning LibertAI $LTAI
-			tokens.
-		</p>
-		<a href="https://chat.libertai.io">
-			<LButton small text="CONNECT NOW" />
-		</a>
 	</section>
 </template>
+
+<style scoped>
+.earn-card {
+	box-shadow: 0 20px 20px 0 rgba(100, 77, 249, 0.1);
+}
+</style>
