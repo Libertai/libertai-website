@@ -11,6 +11,7 @@ import AICustomizationSection from "./AICustomizationSection.vue";
 import TheresMoreSection from "./TheresMoreSection.vue";
 import FeedbacksSection from "./FeedbacksSection.vue";
 import RoadmapSection from "./RoadmapSection.vue";
+import BallVideoSection from "./BallVideoSection.vue";
 </script>
 
 <template>
@@ -25,5 +26,6 @@ import RoadmapSection from "./RoadmapSection.vue";
 	<AddToTelegramSection />
 	<TheresMoreSection />
 	<RoadmapSection />
+	<BallVideoSection />
 	<FooterSection />
 </template>
