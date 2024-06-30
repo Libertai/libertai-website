@@ -30,7 +30,7 @@
 				<div @mouseenter="showApps = true" @mouseleave="showApps = false">
 					<div class="flex">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
-						<img alt="Chevron down" src="../assets/chevron_down.svg" />
+						<img alt="Chevron down" src="../assets/icons/chevron_down.svg" />
 					</div>
 
 					<div class="absolute pt-2">
@@ -66,7 +66,7 @@
 			>
 				<div class="flex gap-2">
 					<p class="body-small max-lg:body-tiny">Chat APP</p>
-					<img alt="Message" src="../assets/message.svg" />
+					<img alt="Message" src="../assets/icons/message.svg" />
 				</div>
 			</button>
 		</a>
@@ -80,7 +80,7 @@
 				<div class="body-default focus:bg-neutral-200">
 					<button class="flex items-center px-8 py-4" @click="showApps = !showApps">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
-						<img alt="Chevron up" src="../assets/chevron_down.svg" />
+						<img alt="Chevron up" src="../assets/icons/chevron_down.svg" />
 					</button>
 					<div v-show="showApps" class="flex flex-col border-y">
 						<a href="https://chat.libertai.io" target="_blank">

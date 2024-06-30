@@ -14,14 +14,14 @@
 					participation, innovation, and growth within the LibertAI platform.
 				</p>
 			</div>
-			<img alt="Earn" class="z-10 m-auto max-lg:hidden" src="../../assets/image 32.png" />
+			<img alt="Earn" class="z-10 m-auto max-lg:hidden" src="../../assets/tokenomics/hero.png" />
 		</div>
 	</section>
 </template>
 
 <style scoped>
 div.image-background {
-	background-image: url("../../assets/image 32.png");
+	background-image: url("../../assets/tokenomics/hero.png");
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
