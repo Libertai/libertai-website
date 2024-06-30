@@ -23,7 +23,7 @@ import { onMounted, onUnmounted } from "vue";
 const onTiltedImageMove = (event: MouseEvent) => {
 	const imageX = 622;
 	const imageY = 622;
-	const ANGLE_COMPENSATION = 15;
+	const ANGLE_COMPENSATION = 35;
 	let mouseX = event.clientX;
 	let mouseY = event.clientY;
 
