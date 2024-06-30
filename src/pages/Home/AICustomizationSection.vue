@@ -1,10 +1,10 @@
 <script lang="ts" setup>
 import LButton from "../../components/LButton.vue";
-import AilonMusk from "../../assets/AilonMusk.png";
-import Therapist from "../../assets/Therapist.png";
-import VirtualBoyfriend from "../../assets/VirtualBoyfriend.png";
-import VirtualGirlfriend from "../../assets/VirtualGirlfriend.png";
-import Tromp from "../../assets/Tromp.png";
+import AilonMusk from "../../assets/home/personas/AilonMusk.png";
+import Therapist from "../../assets/home/personas/Therapist.png";
+import VirtualBoyfriend from "../../assets/home/personas/VirtualBoyfriend.png";
+import VirtualGirlfriend from "../../assets/home/personas/VirtualGirlfriend.png";
+import Tromp from "../../assets/home/personas/Tromp.png";
 import { onMounted, ref, watch } from "vue";
 
 const AIs = [
