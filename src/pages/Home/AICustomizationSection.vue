@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import LButton from "../../components/LButton.vue";
 import AilonMusk from "../../assets/AilonMusk.png";
 import Therapist from "../../assets/Therapist.png";
@@ -63,8 +63,8 @@ onMounted(() => {
 						keeping your data encrypted and under your control.
 					</p>
 					<div>
-						<a href="https://chat.libertai.io/" class="text-majorelle-500">
-							<LButton text="Customize Now" small />
+						<a class="text-majorelle-500" href="https://chat.libertai.io/">
+							<LButton small text="Customize Now" />
 						</a>
 					</div>
 				</div>
@@ -96,7 +96,7 @@ onMounted(() => {
 					>
 						<div class="flex h-140 w-72 flex-col items-center overflow-hidden rounded-2xl border bg-neutral-white">
 							<div class="relative top-0 h-124 w-full">
-								<img :src="ai.image" class="absolute left-0 top-0 size-full object-cover" :alt="ai.text" />
+								<img :alt="ai.text" :src="ai.image" class="absolute left-0 top-0 size-full object-cover" />
 							</div>
 							<p class="rich-bold-18 mt-4 text-majorelle-800">{{ ai.text }}</p>
 						</div>
@@ -112,8 +112,8 @@ onMounted(() => {
 						keeping your data encrypted and under your control.
 					</p>
 					<div>
-						<a href="https://chat.libertai.io/" class="text-majorelle-500">
-							<LButton text="Customize Now" small />
+						<a class="text-majorelle-500" href="https://chat.libertai.io/#/persona-management">
+							<LButton small text="Customize Now" />
 						</a>
 					</div>
 				</div>
@@ -121,11 +121,3 @@ onMounted(() => {
 		</div>
 	</section>
 </template>
-
-<style scoped>
-.card-container {
-	display: flex;
-	transition: transform 0.5s ease-in-out;
-	will-change: transform;
-}
-</style>
