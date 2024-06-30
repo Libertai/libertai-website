@@ -1,6 +1,7 @@
 <template>
 	<section class="mx-auto max-w-[1440px] px-20 pb-5 pt-44">
 		<div class="space-y-6 text-center">
+			<LTinyHeading>DeAI solutions for now and the future</LTinyHeading>
 			<h2 class="text-majorelle-500">Roadmap</h2>
 			<p>
 				The LibertAI roadmap focuses on expanding the decentralized LLM's capabilities, enhancing user experience, and
@@ -34,6 +35,7 @@
 <script lang="ts" setup>
 import { RoadmapFeatureStatus } from "../../types/roadmap.ts";
 import RoadmapFeatureCard from "../../components/RoadmapFeatureCard.vue";
+import LTinyHeading from "../../components/LTinyHeading.vue";
 
 type RoadmapFeature = { name: string; status: RoadmapFeatureStatus };
 type RoadmapSection = {
