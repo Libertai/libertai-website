@@ -41,8 +41,7 @@ import Iphone from "../../assets/Iphone_chat.png";
 								fill="#3A2986"
 							/>
 						</svg>
-
-						<p class="rich-bold-18 text-majorelle-800">Powerfull</p>
+						<p class="rich-bold-18 text-majorelle-800">Powerful</p>
 					</div>
 					<p class="body-tiny px-2 pb-1">
 						Explore various Chat-GPT like open-source models, such as Llama 3 70b, for free.
