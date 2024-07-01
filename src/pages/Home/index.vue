@@ -12,11 +12,13 @@ import TheresMoreSection from "./TheresMoreSection.vue";
 import FeedbacksSection from "./FeedbacksSection.vue";
 import RoadmapSection from "./RoadmapSection.vue";
 import BallVideoSection from "./BallVideoSection.vue";
+import PressSection from "./PressSection.vue";
 </script>
 
 <template>
 	<Hero />
 	<PartnersSection />
+	<PressSection />
 	<ChatPreviewSection />
 	<OpenSourceModelsSection />
 	<AICustomizationSection />
