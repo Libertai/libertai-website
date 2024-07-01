@@ -29,7 +29,7 @@ const paragraphs = [
 				:type="model.type"
 			/>
 		</div>
-		<a class="mb-36" href="#">
+		<a class="mb-36" href="https://docs.libertai.io">
 			<LButton text="Find Out More" />
 		</a>
 		<div class="pt-20 text-primary">
