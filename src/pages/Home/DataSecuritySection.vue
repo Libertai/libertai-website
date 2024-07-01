@@ -9,8 +9,16 @@
 					distributed data storage, and rigorous access controls ensure that your data remains safeguarded against
 					unauthorized access, surveillance, or exploitation.
 				</p>
-				<div class="tilted-image mx-auto">
-					<img alt="shield" class="rounded-3xl" height="622" src="../../assets/home/shield.png" width="622" />
+				<div
+					class="tilted-image mx-auto flex items-center justify-center rounded-3xl bg-neutral-white md:h-156 md:w-156"
+				>
+					<img
+						alt="shield"
+						class="shield-image rounded-3xl"
+						height="500"
+						src="../../assets/home/shield.png"
+						width="500"
+					/>
 				</div>
 			</div>
 		</div>
@@ -40,7 +48,7 @@ const onTiltedImageMove = (event: MouseEvent) => {
 
 const onTiltedImageLeave = () => {
 	// @ts-ignore
-	document.querySelector(".tilted-image img")!.style.transform = "rotateX(0deg) rotateY(0deg)";
+	document.querySelector(".tilted-image .shield-image")!.style.transform = "rotateX(0deg) rotateY(0deg)";
 };
 
 onMounted(() => {
