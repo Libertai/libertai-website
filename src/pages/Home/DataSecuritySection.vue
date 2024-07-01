@@ -13,8 +13,15 @@
 					class="tilted-image mx-auto flex items-center justify-center rounded-3xl bg-neutral-white md:h-156 md:w-156"
 				>
 					<img
+						alt="container"
+						class="rounded-3xl"
+						height="622"
+						src="../../assets/home/shield_container.png"
+						width="622"
+					/>
+					<img
 						alt="shield"
-						class="shield-image rounded-3xl"
+						class="shield-image absolute rounded-3xl md:left-16 md:top-16"
 						height="500"
 						src="../../assets/home/shield.png"
 						width="500"
@@ -31,18 +38,18 @@ import { onMounted, onUnmounted } from "vue";
 const onTiltedImageMove = (event: MouseEvent) => {
 	const imageX = 622;
 	const imageY = 622;
-	const ANGLE_COMPENSATION = 35;
+	const ANGLE_COMPENSATION = 25;
 	let mouseX = event.clientX;
 	let mouseY = event.clientY;
 
 	let xOffset = imageX - mouseX;
 	let yOffset = imageY - mouseY;
 
-	let xRotationAngle = (yOffset / ANGLE_COMPENSATION) * -1;
-	let yRotationAngle = (xOffset / ANGLE_COMPENSATION) * -1;
+	let xRotationAngle = yOffset / ANGLE_COMPENSATION;
+	let yRotationAngle = xOffset / (ANGLE_COMPENSATION * -1);
 
 	// @ts-ignore
-	document.querySelector(".tilted-image img")!.style.transform =
+	document.querySelector(".tilted-image .shield-image")!.style.transform =
 		"rotateX(" + xRotationAngle + "deg) rotateY(" + yRotationAngle + "deg) ";
 };
 
