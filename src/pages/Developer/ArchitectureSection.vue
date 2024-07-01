@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import LFlashCard from "../../components/LFlashCard.vue";
+import LModelCard from "../../components/LModelCard.vue";
 import { models } from "../../texts.ts";
 import LTinyHeading from "../../components/LTinyHeading.vue";
 import LButton from "../../components/LButton.vue";
@@ -19,10 +19,15 @@ const paragraphs = [
 			<h3 class="my-6 hidden max-lg:block">Unlock the Power of Decentralized AI</h3>
 			<p class="text-majorelle-800">Build Next-Gen Applications on LibertAI's Decentralized Platform</p>
 		</div>
-		<div
-			class="my-20 grid gap-x-6 gap-y-10 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-[repeat(3,20rem)] 2xl:grid-rows-[repeat(2,20rem)]"
-		>
-			<LFlashCard v-for="model in models" :key="model.title" :description="model.description" :title="model.title" />
+		<div class="my-20 grid gap-x-6 gap-y-12 md:grid-cols-2 md:grid-rows-3 xl:grid-cols-3 xl:grid-rows-2">
+			<LModelCard
+				v-for="model in models"
+				:key="model.name"
+				:description="model.description"
+				:name="model.name"
+				:subtitle="model.subtitle"
+				:type="model.type"
+			/>
 		</div>
 		<a class="mb-36" href="#">
 			<LButton text="Find Out More" />
@@ -31,7 +36,11 @@ const paragraphs = [
 			<h2 class="text-center max-lg:hidden">How it works</h2>
 			<h3 class="hidden text-center max-lg:block">How it works</h3>
 			<div class="mt-12 grid gap-8 text-balance md:grid-cols-3">
-				<p v-for="text in paragraphs" :key="text" class="body-small max-lg:body-tiny max-w-96 text-majorelle-800">
+				<p
+					v-for="text in paragraphs"
+					:key="text"
+					class="body-small max-lg:body-tiny max-w-96 text-majorelle-800 max-md:text-justify"
+				>
 					{{ text }}
 				</p>
 			</div>
