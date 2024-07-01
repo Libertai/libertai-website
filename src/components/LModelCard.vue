@@ -18,7 +18,9 @@ defineProps<LModelCardProps>();
 				<br />
 				<span class="body-small text-lavander-400">({{ subtitle }})</span>
 			</p>
-			<span class="body-small h-fit rounded-full border-[1px] border-majorelle-300 px-6 uppercase text-lavander-400">
+			<span
+				class="body-small h-fit rounded-full border-[1px] border-majorelle-300 px-6 text-center uppercase text-lavander-400"
+			>
 				{{ type }}
 			</span>
 		</div>
