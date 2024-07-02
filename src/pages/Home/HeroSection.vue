@@ -11,7 +11,7 @@ import LButton from "../../components/LButton.vue";
 			class="absolute inset-0 h-full w-full object-cover"
 			src="../../assets/videos/HomeHeroBanner.mp4"
 		/>
-		<div class="z-20 flex w-[1440px] justify-center py-60 pl-16 max-lg:px-0 max-lg:py-56">
+		<div class="z-20 flex w-[1440px] justify-center py-60 max-lg:px-0 max-lg:py-56">
 			<div
 				class="mx-20 flex w-full flex-col gap-6 rounded-3xl border-t bg-primary bg-opacity-10 px-6 py-10 text-center text-neutral-white max-lg:mx-5"
 				:style="{ backdropFilter: 'blur(20px)' }"
