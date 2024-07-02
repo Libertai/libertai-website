@@ -47,6 +47,7 @@ const feedbacks = [
 			</div>
 			<div
 				v-for="feedback in feedbacks"
+				:key="feedback.id"
 				class="flex h-100 w-72 flex-col justify-center rounded-3xl border-t bg-neutral-white bg-opacity-20 px-6 py-10 text-center lg:hidden"
 				:style="{ backdropFilter: 'blur(20px)' }"
 			>
