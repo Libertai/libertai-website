@@ -29,6 +29,7 @@ const feedbacks = [
 			class="absolute inset-0 h-full w-full object-cover"
 			loop
 			muted
+			playsinline
 			src="../../assets/videos/HomeFeedbacks.mp4"
 		/>
 		<div class="z-20 flex w-[1440px] items-center justify-center gap-6 py-60 max-lg:flex-col max-lg:px-0 max-lg:py-24">
