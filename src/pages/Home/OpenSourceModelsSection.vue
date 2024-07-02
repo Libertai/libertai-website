@@ -7,7 +7,7 @@ import LTinyHeading from "../../components/LTinyHeading.vue";
 
 <template>
 	<section class="flex flex-col items-center gap-16 pb-36 pt-40 max-lg:pb-20 max-lg:pt-32">
-		<div class="space-y-6 text-center">
+		<div class="space-y-6 px-8 text-center">
 			<LTinyHeading>Transparent to the core</LTinyHeading>
 			<h2 class="text-majorelle-500">Explore Free Open-Source Models</h2>
 			<p>
