@@ -1,7 +1,6 @@
 <script lang="ts" setup>
 import ShanePhoto from "../../assets/icons/ShaneP.png";
 import JonathanPhoto from "../../assets/icons/JonathanSchemoul.png";
-import LButton from "../../components/LButton.vue";
 
 const feedbacks = [
 	{
