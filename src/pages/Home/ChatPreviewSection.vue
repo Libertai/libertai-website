@@ -5,7 +5,7 @@ import LTinyHeading from "../../components/LTinyHeading.vue";
 
 <template>
 	<section class="relative flex justify-center bg-neutral-white">
-		<div class="relative flex h-full w-[1440px] flex-col items-center justify-center overflow-hidden pt-8">
+		<div class="relative flex h-full w-[1440px] flex-col items-center justify-center overflow-hidden pt-8 max-lg:my-16">
 			<LTinyHeading class="mb-12 mt-20 max-lg:mb-0 max-lg:mt-8">Liberty for all</LTinyHeading>
 			<div class="flex">
 				<img :src="Iphone" alt="Iphone" class="h-140 max-lg:hidden" />

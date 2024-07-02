@@ -1,11 +1,15 @@
 <template>
 	<section class="flex justify-center">
 		<div class="flex w-[1440px] flex-col justify-center gap-x-6 px-24 py-16 max-lg:px-6 max-lg:pb-24 max-lg:pt-48">
-			<LTinyHeading class="mb-12 mt-12">Intelligent pocket rocket</LTinyHeading>
+			<LTinyHeading class="mb-12 mt-12">No Harvesting</LTinyHeading>
 			<div class="flex">
 				<div class="z-10 w-1/2 max-lg:w-full max-lg:space-y-8">
-					<h2 class="mb-6 block text-left max-xl:hidden">No Harvesting: You are in Control of Your Data</h2>
-					<h3 class="mb-6 hidden text-center max-xl:block">No Harvesting: You are in Control of Your Data</h3>
+					<h2 class="mb-6 block text-left text-primary max-xl:hidden">
+						No Harvesting: You are in Control of Your Data
+					</h2>
+					<h3 class="mb-6 hidden text-center text-primary max-xl:block">
+						No Harvesting: You are in Control of Your Data
+					</h3>
 					<p class="body-small text-left max-lg:text-center">
 						Enjoy the peace of mind that comes with LibertAI's robust security measures. Advanced encryption protocols,
 						distributed data storage, and rigorous access controls ensure that your data remains safeguarded against
