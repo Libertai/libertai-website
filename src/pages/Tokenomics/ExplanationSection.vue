@@ -10,7 +10,7 @@ const { getPoolsStats } = storeToRefs(tokensStore);
 const textSections = computed(() => [
 	{
 		title: "Initial Token Supply",
-		text: "The total token supply is 60 million, with 20.6 million available at the TGE. Over the next 24 months, 45.5 million tokens will be distributed among investors, the development team, and the community to ensure gradual and stable distribution.",
+		text: "The total token supply is 60 million, with 13.1 million available at the TGE. Over the next 10 years, the rest will be distributed among investors, the development team, and the community to ensure gradual and stable distribution.",
 	},
 	{
 		title: "Raise",
@@ -18,7 +18,7 @@ const textSections = computed(() => [
 	},
 	{
 		title: "Reserves",
-		text: `${getPoolsStats.value.find((s) => s.name === "reserves")?.totalPercentage.toFixed(0)}% of the tokens (${getPoolsStats.value.find((s) => s.name === "reserves")?.prettyTotal}) are available initially as reserves, with the total reserves reaching to 15 million over 7 years. A portion of these reserves will be dedicated to enhancing Uniswap V3 pools for liquidity, while the remainder will be accessible for future fundraising, market making, and other critical purposes.`,
+		text: `${getPoolsStats.value.find((s) => s.name === "reserves")?.totalPercentage.toFixed(0)}% of the tokens (${getPoolsStats.value.find((s) => s.name === "reserves")?.prettyTotal}) are available as reserves, including 5M at the Token Generation Event (TGE). A portion of these reserves will be dedicated to enhancing Uniswap V3 pools for liquidity, while the remainder will be accessible for future fundraising, market making, and other critical purposes.`,
 	},
 	{
 		title: "Team",
