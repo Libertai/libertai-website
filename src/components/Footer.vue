@@ -1,23 +1,27 @@
 <template>
-	<div class="z-30 items-center justify-center bg-neutral-800">
-		<div class="mb-32 grid grid-cols-1 pt-14 max-md:mx-10 md:mx-28 md:grid-cols-2">
-			<img alt="white logo" class="m-2 mb-12 md:hidden" src="../assets/logos/libertAI_white.png" />
-			<div class="grid grid-cols-2">
-				<div v-for="section of sections" :key="section.title" class="space-y-2">
-					<p class="body-regular text-neutral-white">{{ section.title }}</p>
-					<a v-for="item of section.items" :key="item.title" :href="item.link" target="_blank">
-						<p class="body-small text-neutral-white">{{ item.title }}</p>
-					</a>
+	<div class="z-3 flex items-center justify-center bg-neutral-800">
+		<div class="w-[1440px]">
+			<div class="mb-32 grid grid-cols-1 pt-14 max-md:mx-10 md:mx-28 md:grid-cols-2">
+				<img alt="white logo" class="m-2 mb-12 md:hidden" src="../assets/logos/libertAI_white.png" />
+				<div class="grid grid-cols-2">
+					<div v-for="section of sections" :key="section.title" class="space-y-2">
+						<p class="body-regular text-neutral-white">{{ section.title }}</p>
+						<a v-for="item of section.items" :key="item.title" :href="item.link" target="_blank">
+							<p class="body-small text-neutral-white">{{ item.title }}</p>
+						</a>
+					</div>
 				</div>
+				<img alt="white logo" class="m-2 max-md:hidden" src="../assets/logos/libertAI_white.png" />
 			</div>
-			<img alt="white logo" class="m-2 max-md:hidden" src="../assets/logos/libertAI_white.png" />
-		</div>
 
-		<div class="flex justify-center space-x-2 pb-10">
-			<p class="rich-bold-18 max-lg:body-small mt-2 text-center text-tertiary">Copyright © LibertAI.io | Powered by</p>
-			<a href="https://aleph.im/" target="_blank">
-				<p class="rich-bold-18 max-lg:body-small mt-2 text-center text-majorelle-500">aleph.im</p>
-			</a>
+			<div class="flex justify-center space-x-2 pb-10">
+				<p class="rich-bold-18 max-lg:body-small mt-2 text-center text-tertiary">
+					Copyright © LibertAI.io | Powered by
+				</p>
+				<a href="https://aleph.im/" target="_blank">
+					<p class="rich-bold-18 max-lg:body-small mt-2 text-center text-majorelle-500">aleph.im</p>
+				</a>
+			</div>
 		</div>
 	</div>
 </template>
