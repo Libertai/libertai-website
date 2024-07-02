@@ -1,7 +1,6 @@
 <script lang="ts" setup>
-import { PoolType, useTokensStore } from "../../stores/tokens.ts";
-import { storeToRefs } from "pinia";
-import { computed, onMounted } from "vue";
+import { useTokensStore } from "../../stores/tokens.ts";
+import { onMounted } from "vue";
 
 const tokensStore = useTokensStore();
 
@@ -10,41 +9,6 @@ onMounted(() => {
 		tokensStore.fetchTokenPools();
 	}
 });
-
-tokensStore.fetchTokenPools();
-
-const { pools } = storeToRefs(tokensStore);
-
-const totalSupply = computed(() =>
-	pools.value
-		? pools.value.airdrop.total + pools.value.raise.total + pools.value.reserves.total + pools.value.team.total
-		: 0,
-);
-const circulatingSupply = computed(() =>
-	pools.value
-		? pools.value.airdrop.distributed +
-			pools.value.raise.distributed +
-			pools.value.reserves.distributed +
-			pools.value.team.distributed
-		: 0,
-);
-
-type PoolStat = {
-	name: PoolType;
-	amount: number;
-	color: string;
-};
-
-const poolStats = computed<PoolStat[]>(() =>
-	pools.value
-		? [
-				{ name: "team", amount: pools.value.team.distributed, color: "bg-[#644DF9]" },
-				{ name: "reserves", amount: pools.value.reserves.distributed, color: "bg-[#D288FF]" },
-				{ name: "airdrop", amount: pools.value.airdrop.distributed, color: "bg-[#FCCBFF]" },
-				{ name: "raise", amount: pools.value.raise.distributed, color: "bg-majorelle-700" },
-			]
-		: [],
-);
 </script>
 
 <template>
@@ -55,52 +19,53 @@ const poolStats = computed<PoolStat[]>(() =>
 				<div class="flex items-center justify-center max-2xl:flex-col">
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 max-xl:hidden" style="width: 1000px">
 						<div
-							v-for="stat in poolStats"
+							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (1000 * stat.amount) / totalSupply + 'px' }"
+							:style="{ width: (1000 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						></div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 max-lg:hidden xl:hidden" style="width: 800px">
 						<div
-							v-for="stat in poolStats"
+							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (800 * stat.amount) / totalSupply + 'px' }"
+							:style="{ width: (800 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						/>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 max-md:hidden lg:hidden" style="width: 500px">
 						<div
-							v-for="stat in poolStats"
+							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (500 * stat.amount) / totalSupply + 'px' }"
+							:style="{ width: (500 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						/>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 max-sm:hidden md:hidden" style="width: 400px">
 						<div
-							v-for="stat in poolStats"
+							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (400 * stat.amount) / totalSupply + 'px' }"
+							:style="{ width: (400 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						/>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 sm:hidden" style="width: 200px">
 						<div
-							v-for="stat in poolStats"
+							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
 							:class="stat.color"
-							:style="{ width: (200 * stat.amount) / totalSupply + 'px' }"
+							:style="{ width: (200 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						/>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 
 					<p class="body-default w-64 text-center">
-						{{ new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(circulatingSupply) }} LTAI
+						{{ new Intl.NumberFormat("en-US", { maximumFractionDigits: 0 }).format(tokensStore.getCirculatingSupply) }}
+						LTAI
 					</p>
 				</div>
 			</div>
