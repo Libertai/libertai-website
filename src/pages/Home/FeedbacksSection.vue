@@ -34,6 +34,7 @@ const feedbacks = [
 		<div class="z-20 flex w-[1440px] items-center justify-center gap-6 py-60 max-lg:flex-col max-lg:px-0 max-lg:py-24">
 			<div
 				v-for="feedback in feedbacks"
+				:key="feedback.id"
 				class="flex h-100 w-72 flex-col justify-center rounded-3xl border-t bg-neutral-white bg-opacity-20 px-6 py-10 text-center max-lg:hidden"
 				:style="{
 					backdropFilter: 'blur(20px)',
