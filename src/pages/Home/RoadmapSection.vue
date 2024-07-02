@@ -1,7 +1,5 @@
 <template>
-	<section
-		class="mx-auto flex items-center justify-center bg-gradient-to-b from-majorelle-100 to-majorelle-300 px-20 pb-5 pt-44"
-	>
+	<section class="mx-auto flex items-center justify-center px-20 pb-5 pt-44">
 		<div class="max-w-[1440px]">
 			<div class="space-y-6 text-center">
 				<LTinyHeading>DeAI solutions for now and the future</LTinyHeading>
