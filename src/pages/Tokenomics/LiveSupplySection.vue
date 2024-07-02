@@ -21,45 +21,55 @@ onMounted(() => {
 						<div
 							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
-							:class="stat.color"
+							:class="`tooltip ${stat.color}`"
 							:style="{ width: (1000 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
-						></div>
+						>
+							<span class="tooltip-text">{{ stat.prettyName }}</span>
+						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 max-lg:hidden xl:hidden" style="width: 800px">
 						<div
 							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
-							:class="stat.color"
+							:class="`tooltip ${stat.color}`"
 							:style="{ width: (800 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
-						/>
+						>
+							<span class="tooltip-text">{{ stat.prettyName }}</span>
+						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 max-md:hidden lg:hidden" style="width: 500px">
 						<div
 							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
-							:class="stat.color"
+							:class="`tooltip ${stat.color}`"
 							:style="{ width: (500 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
-						/>
+						>
+							<span class="tooltip-text">{{ stat.prettyName }}</span>
+						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 max-sm:hidden md:hidden" style="width: 400px">
 						<div
 							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
-							:class="stat.color"
+							:class="`tooltip ${stat.color}`"
 							:style="{ width: (400 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
-						/>
+						>
+							<span class="tooltip-text">{{ stat.prettyName }}</span>
+						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 sm:hidden" style="width: 200px">
 						<div
 							v-for="stat in tokensStore.getPoolsStats"
 							:key="stat.name"
-							:class="stat.color"
+							:class="`tooltip ${stat.color}`"
 							:style="{ width: (200 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
-						/>
+						>
+							<span class="tooltip-text">{{ stat.prettyName }}</span>
+						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
 
@@ -72,3 +82,47 @@ onMounted(() => {
 		</div>
 	</section>
 </template>
+
+<style scoped>
+.tooltip {
+	position: relative;
+	display: inline-block;
+}
+
+.tooltip .tooltip-text {
+	visibility: hidden;
+	width: 120px;
+	background-color: #555;
+	color: #fff;
+	text-align: center;
+	padding: 5px 0;
+	border-radius: 6px;
+
+	/* Position the tooltip text */
+	position: absolute;
+	z-index: 1;
+	bottom: 125%;
+	left: 50%;
+	margin-left: -60px;
+
+	/* Fade in tooltip */
+	opacity: 0;
+	transition: opacity 0.3s;
+}
+
+.tooltip .tooltip-text::after {
+	content: "";
+	position: absolute;
+	top: 100%;
+	left: 50%;
+	margin-left: -5px;
+	border-width: 5px;
+	border-style: solid;
+	border-color: #555 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+	visibility: visible;
+	opacity: 1;
+}
+</style>
