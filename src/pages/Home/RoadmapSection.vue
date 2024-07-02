@@ -1,31 +1,35 @@
 <template>
-	<section class="mx-auto max-w-[1440px] px-20 pb-5 pt-44">
-		<div class="space-y-6 text-center">
-			<LTinyHeading>DeAI solutions for now and the future</LTinyHeading>
-			<h2 class="text-majorelle-500">Roadmap</h2>
-			<p>
-				The LibertAI roadmap focuses on expanding the decentralized LLM's capabilities, enhancing user experience, and
-				integrating with more open-source models to promote transparency and collaboration within the network.
-			</p>
-		</div>
-		<div v-for="milestone of roadmap" :key="milestone.title">
-			<h3 class="my-9">{{ milestone.title }}</h3>
-			<div
-				v-if="milestone.features !== undefined"
-				:class="`grid gap-6 lg:grid-cols-2 lg:grid-rows-${Math.ceil(milestone.features.length / 2)} 2xl:grid-cols-3 2xl:grid-rows-${Math.ceil(milestone.features.length / 3)} ${milestone.features.length > 3 ? 'lg:grid-flow-col' : ''}`"
-			>
-				<div v-for="feature of milestone.features" :key="feature.name">
-					<RoadmapFeatureCard :status="feature.status" :title="feature.name" />
-				</div>
+	<section
+		class="mx-auto flex items-center justify-center bg-gradient-to-b from-majorelle-100 to-majorelle-300 px-20 pb-5 pt-44"
+	>
+		<div class="max-w-[1440px]">
+			<div class="space-y-6 text-center">
+				<LTinyHeading>DeAI solutions for now and the future</LTinyHeading>
+				<h2 class="text-majorelle-500">Roadmap</h2>
+				<p>
+					The LibertAI roadmap focuses on expanding the decentralized LLM's capabilities, enhancing user experience, and
+					integrating with more open-source models to promote transparency and collaboration within the network.
+				</p>
 			</div>
-			<div
-				v-else-if="milestone.sections !== undefined"
-				:class="`gap-6 lg:grid lg:grid-cols-2 2xl:grid-flow-col 2xl:grid-cols-${milestone.sections.length}`"
-			>
-				<div v-for="section of milestone.sections" :key="section.title" class="my-6 space-y-6">
-					<p class="body-large font-bold">{{ section.title }}</p>
-					<div v-for="feature of section.features" :key="feature.name">
+			<div v-for="milestone of roadmap" :key="milestone.title">
+				<h3 class="my-9">{{ milestone.title }}</h3>
+				<div
+					v-if="milestone.features !== undefined"
+					:class="`grid gap-6 lg:grid-cols-2 lg:grid-rows-${Math.ceil(milestone.features.length / 2)} 2xl:grid-cols-3 2xl:grid-rows-${Math.ceil(milestone.features.length / 3)} ${milestone.features.length > 3 ? 'lg:grid-flow-col' : ''}`"
+				>
+					<div v-for="feature of milestone.features" :key="feature.name">
 						<RoadmapFeatureCard :status="feature.status" :title="feature.name" />
+					</div>
+				</div>
+				<div
+					v-else-if="milestone.sections !== undefined"
+					:class="`gap-6 lg:grid lg:grid-cols-2 2xl:grid-flow-col 2xl:grid-cols-${milestone.sections.length}`"
+				>
+					<div v-for="section of milestone.sections" :key="section.title" class="my-6 space-y-6">
+						<p class="body-large font-bold">{{ section.title }}</p>
+						<div v-for="feature of section.features" :key="feature.name">
+							<RoadmapFeatureCard :status="feature.status" :title="feature.name" />
+						</div>
 					</div>
 				</div>
 			</div>
