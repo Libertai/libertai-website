@@ -1,56 +1,72 @@
-<script setup lang="ts">
-import LSimpleCard from "../../components/LSimpleCard.vue";
+<script lang="ts" setup>
+import lockClosedIcon from "../../assets/icons/lock-closed.svg";
+import botIcon from "../../assets/icons/bot.svg";
+import globeIcon from "../../assets/icons/globe.svg";
+import confidentialIcon from "../../assets/icons/confidential.svg";
+import LTinyHeading from "../../components/LTinyHeading.vue";
+
+const cards = [
+	{
+		icon: lockClosedIcon,
+		title: "Security Incentives",
+		description:
+			"Crypto-economics security incentives for data providers, model developers, network operators and training contributors / AI alignement.",
+	},
+	{
+		icon: botIcon,
+		title: "Autonomous Workflows",
+		description: "Facilitates confidential AI tasks and autonomous workflows. No need for huge GPU farms.",
+	},
+	{
+		icon: globeIcon,
+		title: "Serverless",
+		description:
+			"Offers open source models and custom models on top of serveless GPUs and CPUs for fast confidential inferences. Leverages open-source models (using fast CPU inference)",
+	},
+	{
+		icon: confidentialIcon,
+		title: "Confidential",
+		description:
+			"LibertAI supports confidential inference through its decentralized architecture, enabling users to securely run AI workloads with sensitive data.",
+	},
+];
 </script>
 
 <template>
-	<section class="flex flex-col items-center justify-center overflow-hidden max-xl:px-24">
-		<div class="flex w-[1440px] flex-col items-center justify-center px-24 py-32 max-xl:pt-12 max-lg:pt-0">
-			<div class="h-auto justify-center p-8 max-lg:max-w-md max-md:max-w-sm md:hidden">
-				<h3 class="text-left text-majorelle-800 max-lg:text-center">Redefining AI Boundaries</h3>
-				<p class="body-tiny items-center text-majorelle-800 max-lg:text-center">
-					LibertAI’s unique edge lies in its decentralized approach to AI, which offers privacy, security, flexibility,
-					and accessibility while promoting openness, collaboration, and innovation in the AI space.
-				</p>
-			</div>
-			<div
-				class="grid grid-cols-4 gap-4 max-xl:w-5/6 max-xl:grid-cols-3 max-lg:w-2/3 max-lg:grid-cols-2 max-md:grid-cols-1"
-			>
-				<div class="col-span-2 h-auto w-full justify-center p-8 max-md:hidden">
-					<h2 class="text-left text-majorelle-800 max-lg:text-center">Redefining AI Boundaries</h2>
-					<p class="body-small items-center text-majorelle-800 max-lg:text-center max-sm:w-1/2">
+	<section class="relative flex justify-center">
+		<video
+			autoplay
+			class="absolute inset-0 h-full w-full object-cover"
+			loop
+			muted
+			src="../../assets/videos/HomeAiBoundaries.mp4"
+		/>
+		<div class="z-20 flex w-full items-center justify-center bg-gradient-to-b from-majorelle-100">
+			<div class="flex max-w-[1440px] flex-col justify-center py-60 pl-16 max-lg:px-0 max-lg:py-56">
+				<div class="flex flex-col items-center justify-center gap-6 px-64 pb-16 text-center max-lg:px-8">
+					<LTinyHeading>Decentralized from the ground up</LTinyHeading>
+					<h2 class="text-primary max-lg:hidden">Redefining AI Boundaries</h2>
+					<h3 class="hidden text-primary max-lg:block">Redefining AI Boundaries</h3>
+					<p class="body-default text-center">
 						LibertAI’s unique edge lies in its decentralized approach to AI, which offers privacy, security,
 						flexibility, and accessibility while promoting openness, collaboration, and innovation in the AI space.
 					</p>
 				</div>
-				<LSimpleCard
-					title="Serverless"
-					description="Offers open source models and custom models on top of serveless GPUs and CPUs for fast confidential inferences. Leverages open-source models (using fast CPU inference)"
-				/>
-				<div class="row-span-2 flex size-full items-center justify-center p-3 max-xl:hidden">
-					<div class="image-background h-full w-72 rounded-2xl" />
+				<div class="flex items-center justify-center gap-6 max-lg:flex-col">
+					<div
+						v-for="card in cards"
+						:key="card.title"
+						:style="{ backdropFilter: 'blur(25px)' }"
+						class="flex h-96 w-72 flex-col items-center rounded-2xl border-t border-neutral-white bg-neutral-white bg-opacity-10 px-6 pt-24 text-center text-majorelle-700 shadow-lg max-lg:w-104 max-sm:h-64 max-sm:w-72 max-sm:pt-12"
+					>
+						<img :src="card.icon" alt="Lock" class="mb-4 h-[50px] w-[50px]" />
+						<p class="body-default pb-2">{{ card.title }}</p>
+						<p class="body-tiny">{{ card.description }}</p>
+					</div>
 				</div>
-				<LSimpleCard
-					title="Confidential"
-					description="LibertAI supports confidential inference through its decentralized architecture, enabling users to securely run AI workloads with sensitive data."
-				/>
-				<LSimpleCard
-					title="Security Incentives"
-					description="Crypto-economics security incentives for data providers, model developers, network operators and training contributors / AI alignement."
-				/>
-				<LSimpleCard
-					title="Autonomous Workflows"
-					description="Facilitates confidential AI tasks and autonomous workflows. No need for huge GPU farms."
-				/>
 			</div>
 		</div>
 	</section>
 </template>
 
-<style scoped>
-div.image-background {
-	background-image: url("../../assets/element.webp");
-	background-size: cover;
-	background-position: center;
-	background-repeat: no-repeat;
-}
-</style>
+<style scoped></style>
