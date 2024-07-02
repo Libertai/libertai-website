@@ -39,6 +39,7 @@ const cards = [
 			class="absolute inset-0 h-full w-full object-cover"
 			loop
 			muted
+			playsinline
 			src="../../assets/videos/HomeAiBoundaries.mp4"
 		/>
 		<div class="z-20 flex w-full items-center justify-center bg-gradient-to-b from-majorelle-100">
