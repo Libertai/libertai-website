@@ -3,17 +3,17 @@ import iphone_1 from "../../assets/Iphone_1.png";
 import iphone_2 from "../../assets/Iphone_2.png";
 import iphone_3 from "../../assets/Iphone_3.png";
 import LButton from "../../components/LButton.vue";
+import LTinyHeading from "../../components/LTinyHeading.vue";
 </script>
 
 <template>
 	<section class="relative flex justify-center">
-		<div class="flex w-[1440px] justify-center">
+		<div class="mt-20 flex w-[1440px] flex-col items-center justify-center">
+			<LTinyHeading class="mt-20">Intelligent pocket rocket</LTinyHeading>
 			<div
-				class="grid h-full w-auto grid-cols-4 flex-col items-center justify-center px-8 py-12 max-xl:grid-cols-2 max-md:pt-0 max-sm:grid-cols-1"
+				class="my-6 grid h-full w-auto grid-cols-4 flex-col items-center justify-center px-8 max-xl:grid-cols-2 max-md:pt-0 max-sm:grid-cols-1"
 			>
-				<div
-					class="col-span-2 row-span-2 flex justify-center py-8 max-xl:row-span-1 max-sm:col-span-1 max-sm:pb-20 max-sm:pt-6"
-				>
+				<div class="col-span-2 row-span-2 flex justify-center py-8 max-xl:row-span-1 max-sm:col-span-1">
 					<div
 						class="relative size-156 overflow-hidden rounded-3xl bg-gradient-to-bl from-[#FCCBFF] to-majorelle-500 shadow-2xl max-md:size-136 max-md:h-72 max-sm:h-136 max-sm:w-72 max-sm:items-center max-sm:justify-center max-sm:space-y-4 max-sm:text-center"
 					>
