@@ -26,20 +26,20 @@ const feedbacks = [
 	<section class="relative flex justify-center">
 		<video
 			autoplay
-			muted
-			loop
 			class="absolute inset-0 h-full w-full object-cover"
-			src="../../assets/videos/Feedbacks.mp4"
+			loop
+			muted
+			src="../../assets/videos/HomeFeedbacks.mp4"
 		/>
 		<div class="z-20 flex w-[1440px] items-center justify-center gap-6 py-60 max-lg:flex-col max-lg:px-0 max-lg:py-24">
 			<div
 				v-for="feedback in feedbacks"
 				:key="feedback.id"
-				class="flex h-100 w-72 flex-col justify-center rounded-3xl border-t bg-neutral-white bg-opacity-20 px-6 py-10 text-center max-lg:hidden"
 				:style="{
 					backdropFilter: 'blur(20px)',
 					transform: 'translateY(' + (feedback.id % 2 === 0 ? 1 : -1) * 10 + '%)',
 				}"
+				class="flex h-100 w-72 flex-col justify-center rounded-3xl border-t bg-neutral-white bg-opacity-20 px-6 py-10 text-center max-lg:hidden"
 			>
 				<p class="body-small text-majorelle-800">{{ feedback.feedback }}</p>
 				<img :src="feedback.photo" alt="Shane P." class="mx-auto mb-4 mt-8 h-16 w-16 rounded-full" />
@@ -49,8 +49,8 @@ const feedbacks = [
 			<div
 				v-for="feedback in feedbacks"
 				:key="feedback.id"
-				class="flex h-100 w-72 flex-col justify-center rounded-3xl border-t bg-neutral-white bg-opacity-20 px-6 py-10 text-center lg:hidden"
 				:style="{ backdropFilter: 'blur(20px)' }"
+				class="flex h-100 w-72 flex-col justify-center rounded-3xl border-t bg-neutral-white bg-opacity-20 px-6 py-10 text-center lg:hidden"
 			>
 				<p class="body-small">{{ feedback.feedback }}</p>
 				<img :src="feedback.photo" alt="Shane P." class="mx-auto mb-4 mt-8 h-16 w-16 rounded-full" />
