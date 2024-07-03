@@ -2,26 +2,26 @@
 const stats = [
 	{
 		name: "Initial Raise",
-		value: "7.5M",
-		percent: "36%",
+		value: "1M",
+		percent: "8%",
 		color: "bg-majorelle-700",
 	},
 	{
 		name: "Initial Airdrop and Incentives",
-		value: "7.1M",
-		percent: "35%",
+		value: "6.1M",
+		percent: "46%",
 		color: "bg-[#FCCBFF]",
 	},
 	{
 		name: "Initial Reserves",
 		value: "5M",
-		percent: "24%",
+		percent: "38%",
 		color: "bg-[#D288FF]",
 	},
 	{
 		name: "Initial Team",
 		value: "1M",
-		percent: "5%",
+		percent: "8%",
 		color: "bg-primary",
 	},
 ];
@@ -39,7 +39,7 @@ const stats = [
 					<h3 class="hidden text-majorelle-500 max-lg:block">Vesting Schedule</h3>
 					<p class="body-default text-center text-majorelle-800">
 						The token $LTAI will be minted linearly with an initial supply of 60 million, and 21 million will be
-						distributed gradually over a decade through an airdrop. There will be a 25% raise at the Token Generation
+						distributed gradually over a decade through an airdrop. There will be an 8% raise at the Token Generation
 						Event (TGE), with the remaining tokens released gradually over 24 months. Community reserves will be vested
 						for 7 years, and the team tokens will have 1 million tokens released upfront, with the rest vested over 7
 						years.
