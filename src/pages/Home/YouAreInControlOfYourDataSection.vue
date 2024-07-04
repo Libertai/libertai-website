@@ -2,9 +2,10 @@
 import { ref, onMounted, onUnmounted } from "vue";
 import LTinyHeading from "../../components/LTinyHeading.vue";
 
-const shieldRef = ref(null);
+// Use a more specific type for shieldRef
+const shieldRef = ref<HTMLElement | null>(null);
 
-const handleMouseMove = (event) => {
+const handleMouseMove = (event: MouseEvent) => {
 	const shield = shieldRef.value;
 	if (!shield) return;
 
