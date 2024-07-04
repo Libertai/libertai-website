@@ -15,8 +15,8 @@ const handleMouseMove = (event: MouseEvent) => {
 	const centerX = rect.width / 2;
 	const centerY = rect.height / 2;
 
-	const rotateX = ((centerY - y) / centerY) * 30; // Inverse the direction
-	const rotateY = ((x - centerX) / centerX) * 30; // Inverse the direction
+	const rotateX = ((centerY - y) / centerY) * 20;
+	const rotateY = ((x - centerX) / centerX) * 20;
 
 	shield.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
 };
