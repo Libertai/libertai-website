@@ -24,7 +24,7 @@ onMounted(() => {
 							:class="`tooltip ${stat.color}`"
 							:style="{ width: (1000 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						>
-							<span class="tooltip-text">{{ stat.prettyName }}</span>
+							<span class="tooltip-text">{{ stat.prettyName }}: {{ stat.prettyDistributed }}</span>
 						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
@@ -35,7 +35,7 @@ onMounted(() => {
 							:class="`tooltip ${stat.color}`"
 							:style="{ width: (800 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						>
-							<span class="tooltip-text">{{ stat.prettyName }}</span>
+							<span class="tooltip-text">{{ stat.prettyName }}: {{ stat.prettyDistributed }}</span>
 						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
@@ -46,7 +46,7 @@ onMounted(() => {
 							:class="`tooltip ${stat.color}`"
 							:style="{ width: (500 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						>
-							<span class="tooltip-text">{{ stat.prettyName }}</span>
+							<span class="tooltip-text">{{ stat.prettyName }}: {{ stat.prettyDistributed }}</span>
 						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
@@ -57,7 +57,7 @@ onMounted(() => {
 							:class="`tooltip ${stat.color}`"
 							:style="{ width: (400 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						>
-							<span class="tooltip-text">{{ stat.prettyName }}</span>
+							<span class="tooltip-text">{{ stat.prettyName }}: {{ stat.prettyDistributed }}</span>
 						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
@@ -68,7 +68,7 @@ onMounted(() => {
 							:class="`tooltip ${stat.color}`"
 							:style="{ width: (200 * stat.distributed) / tokensStore.getTotalSupply + 'px' }"
 						>
-							<span class="tooltip-text">{{ stat.prettyName }}</span>
+							<span class="tooltip-text">{{ stat.prettyName }}: {{ stat.prettyDistributed }}</span>
 						</div>
 						<div class="h-8 -translate-y-2 bg-neutral-black" style="width: 1px" />
 					</div>
