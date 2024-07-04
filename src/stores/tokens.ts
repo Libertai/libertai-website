@@ -12,6 +12,7 @@ type PoolStat = {
 	name: PoolType;
 	prettyName: string;
 	distributed: number;
+	prettyDistributed: string;
 	total: number;
 	totalPercentage: number;
 	prettyTotal: string;
@@ -56,6 +57,7 @@ export const useTokensStore = defineStore("tokens", {
 					name: "raise",
 					prettyName: poolTypeToPrettyName.raise,
 					distributed: this.pools.raise.distributed,
+					prettyDistributed: Intl.NumberFormat("en", { notation: "compact" }).format(this.pools.raise.distributed),
 					total: this.pools.raise.total,
 					totalPercentage: (this.pools.raise.total / totalSupply) * 100,
 					prettyTotal: Intl.NumberFormat("en", { notation: "compact" }).format(this.pools.raise.total),
@@ -65,6 +67,7 @@ export const useTokensStore = defineStore("tokens", {
 					name: "airdrop",
 					prettyName: poolTypeToPrettyName.airdrop,
 					distributed: this.pools.airdrop.distributed,
+					prettyDistributed: Intl.NumberFormat("en", { notation: "compact" }).format(this.pools.airdrop.distributed),
 					total: this.pools.airdrop.total,
 					totalPercentage: (this.pools.airdrop.total / totalSupply) * 100,
 					prettyTotal: Intl.NumberFormat("en", { notation: "compact" }).format(this.pools.airdrop.total),
@@ -74,6 +77,7 @@ export const useTokensStore = defineStore("tokens", {
 					name: "reserves",
 					prettyName: poolTypeToPrettyName.reserves,
 					distributed: this.pools.reserves.distributed,
+					prettyDistributed: Intl.NumberFormat("en", { notation: "compact" }).format(this.pools.reserves.distributed),
 					total: this.pools.reserves.total,
 					totalPercentage: (this.pools.reserves.total / totalSupply) * 100,
 					prettyTotal: Intl.NumberFormat("en", { notation: "compact" }).format(this.pools.reserves.total),
@@ -83,6 +87,7 @@ export const useTokensStore = defineStore("tokens", {
 					name: "team",
 					prettyName: poolTypeToPrettyName.team,
 					distributed: this.pools.team.distributed,
+					prettyDistributed: Intl.NumberFormat("en", { notation: "compact" }).format(this.pools.team.distributed),
 					total: this.pools.team.total,
 					totalPercentage: (this.pools.team.total / totalSupply) * 100,
 					prettyTotal: Intl.NumberFormat("en", { notation: "compact" }).format(this.pools.team.total),
