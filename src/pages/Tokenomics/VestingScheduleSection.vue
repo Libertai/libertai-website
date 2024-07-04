@@ -1,27 +1,29 @@
 <script lang="ts" setup>
+import LTinyHeading from "../../components/LTinyHeading.vue";
+
 const stats = [
 	{
 		name: "Initial Raise",
-		value: "7.5M",
-		percent: "36%",
+		value: "1M",
+		percent: "8%",
 		color: "bg-majorelle-700",
 	},
 	{
 		name: "Initial Airdrop and Incentives",
-		value: "7.1M",
-		percent: "35%",
+		value: "6.1M",
+		percent: "46%",
 		color: "bg-[#FCCBFF]",
 	},
 	{
 		name: "Initial Reserves",
 		value: "5M",
-		percent: "24%",
+		percent: "38%",
 		color: "bg-[#D288FF]",
 	},
 	{
 		name: "Initial Team",
 		value: "1M",
-		percent: "5%",
+		percent: "8%",
 		color: "bg-primary",
 	},
 ];
@@ -31,15 +33,13 @@ const stats = [
 	<section>
 		<div class="relative flex justify-center py-8">
 			<div class="relative flex w-[1440px] flex-col overflow-hidden px-20 py-12 max-lg:px-12">
-				<div class="x-12 justify-center space-y-6 py-6 text-center max-lg:px-4">
-					<div class="mx-auto flex w-32 justify-center bg-majorelle-500 bg-opacity-10 px-2 py-1">
-						<p class="body-small">Gradual release</p>
-					</div>
+				<div class="justify-center space-y-6 py-6 text-center max-lg:px-4">
+					<LTinyHeading>Gradual release</LTinyHeading>
 					<h2 class="text-majorelle-500 max-lg:hidden">Vesting Schedule</h2>
 					<h3 class="hidden text-majorelle-500 max-lg:block">Vesting Schedule</h3>
 					<p class="body-default text-center text-majorelle-800">
 						The token $LTAI will be minted linearly with an initial supply of 60 million, and 21 million will be
-						distributed gradually over a decade through an airdrop. There will be a 25% raise at the Token Generation
+						distributed gradually over a decade through an airdrop. There will be an 8% raise at the Token Generation
 						Event (TGE), with the remaining tokens released gradually over 24 months. Community reserves will be vested
 						for 7 years, and the team tokens will have 1 million tokens released upfront, with the rest vested over 7
 						years.

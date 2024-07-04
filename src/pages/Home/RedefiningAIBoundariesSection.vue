@@ -43,7 +43,7 @@ const cards = [
 			src="../../assets/videos/HomeAiBoundaries.mp4"
 		/>
 		<div class="z-20 flex w-full items-center justify-center bg-gradient-to-b from-majorelle-100">
-			<div class="flex max-w-[1440px] flex-col justify-center py-60 pl-16 max-lg:px-0 max-lg:py-56">
+			<div class="flex max-w-[1440px] flex-col justify-center pb-44 pt-60 max-lg:px-0 max-lg:py-56">
 				<div class="flex flex-col items-center justify-center gap-6 px-64 pb-16 text-center max-lg:px-8">
 					<LTinyHeading>Decentralized from the ground up</LTinyHeading>
 					<h2 class="text-primary max-lg:hidden">Redefining AI Boundaries</h2>

@@ -49,7 +49,7 @@ const cards: FeatureCard[] = [
 </script>
 
 <template>
-	<section class="mx-auto max-w-[1440px] px-20 py-44">
+	<section class="mx-auto max-w-[1440px] px-20 pb-20 pt-56 max-lg:px-8 max-lg:pb-0 max-lg:pt-32">
 		<div class="mb-12 space-y-6 text-center">
 			<LTinyHeading>Intelligent pocket rocket</LTinyHeading>
 			<h2 class="text-majorelle-500">But wait, there’s more</h2>
