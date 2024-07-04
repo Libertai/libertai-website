@@ -6,9 +6,9 @@ import LButton from "../../components/LButton.vue";
 
 <template>
 	<section class="relative flex justify-center">
-		<div class="mt-20 flex w-[1440px] flex-col items-center justify-center">
+		<div class="mt-20 flex w-[1440px] flex-col items-center justify-center overflow-hidden">
 			<LTinyHeading class="mb-6 mt-20">Intelligent pocket rocket</LTinyHeading>
-			<div class="flex flex-col px-64">
+			<div class="flex flex-col px-64 max-lg:px-4">
 				<h2 class="text-center text-primary max-lg:hidden">Not your average AI assistant</h2>
 				<h3 class="text-center text-primary lg:hidden">Not your average AI assistant</h3>
 				<p class="body-default p-6 text-center">
