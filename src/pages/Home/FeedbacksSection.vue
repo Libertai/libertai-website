@@ -32,7 +32,7 @@ const feedbacks = [
 			playsinline
 			src="../../assets/videos/HomeFeedbacks.mp4"
 		/>
-		<div class="z-20 flex w-[1440px] items-center justify-center gap-6 py-60 max-lg:flex-col max-lg:px-0 max-lg:py-24">
+		<div class="z-20 flex w-[1440px] items-center justify-center gap-6 py-32 max-lg:flex-col max-lg:px-0 max-lg:py-24">
 			<div
 				v-for="feedback in feedbacks"
 				:key="feedback.id"
