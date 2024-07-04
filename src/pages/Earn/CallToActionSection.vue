@@ -59,7 +59,7 @@ const actions: Action[] = [
 				:key="action.cardTitle"
 				class="earn-card flex h-96 w-72 flex-col items-center justify-center gap-4 rounded-2xl border-[0.5px] border-majorelle-300 bg-neutral-white px-6 py-9 text-center text-majorelle-800"
 			>
-				<img :src="action.imagePath" alt="card image" />
+				<img :src="action.imagePath" alt="card" />
 				<p class="body-bold-default text-primary">{{ action.cardTitle }}</p>
 				<p class="body-tiny w-56">{{ action.cardDescription }}</p>
 				<a :href="action.buttonLink" target="_blank">

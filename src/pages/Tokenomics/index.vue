@@ -7,11 +7,13 @@ import ExplanationSection from "./ExplanationSection.vue";
 import AirdropNetworkSection from "./AirdropNetworkSection.vue";
 import TokenUseSection from "./TokenUseSection.vue";
 import DisclaimerSection from "./DisclaimerSection.vue";
+import ContractAddressSection from "./ContractAddressSection.vue";
 </script>
 
 <template>
 	<TokenomicsHeroSection />
 	<LiveSupplySection />
+	<ContractAddressSection />
 	<OverallTotalSupplySection />
 	<VestingScheduleSection />
 	<ExplanationSection />
