@@ -4,7 +4,7 @@ import LTinyHeading from "../../components/LTinyHeading.vue";
 
 <template>
 	<section class="flex justify-center">
-		<div class="w-[1440px] select-none justify-center px-24 pb-16 pt-52 text-center max-lg:px-6 max-lg:pb-72">
+		<div class="w-[1440px] select-none justify-center px-24 pb-8 pt-52 text-center max-lg:px-6 max-lg:pb-72">
 			<div class="flex flex-col gap-y-6 px-40">
 				<LTinyHeading>No Harvesting</LTinyHeading>
 				<h2 class="block text-primary">You are in Control of Your Data</h2>
