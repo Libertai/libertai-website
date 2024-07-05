@@ -1,52 +1,10 @@
 <script lang="ts" setup>
-import { ref, onMounted, onUnmounted } from "vue";
 import LTinyHeading from "../../components/LTinyHeading.vue";
-
-// Use a more specific type for shieldRef
-const shieldRef = ref<HTMLElement | null>(null);
-
-const handleMouseMove = (event: MouseEvent) => {
-	const shield = shieldRef.value;
-	if (!shield) return;
-
-	const rect = shield.getBoundingClientRect();
-	const x = event.clientX - rect.left;
-	const y = event.clientY - rect.top;
-	const centerX = rect.width / 2;
-	const centerY = rect.height / 2;
-
-	const rotateX = ((centerY - y) / centerY) * 20;
-	const rotateY = ((x - centerX) / centerX) * 20;
-
-	shield.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
-};
-
-const handleMouseLeave = () => {
-	const shield = shieldRef.value;
-	if (!shield) return;
-	shield.style.transform = "rotateX(0) rotateY(0)";
-};
-
-onMounted(() => {
-	const shieldContainer = shieldRef.value?.parentElement;
-	if (shieldContainer) {
-		shieldContainer.addEventListener("mousemove", handleMouseMove);
-		shieldContainer.addEventListener("mouseleave", handleMouseLeave);
-	}
-});
-
-onUnmounted(() => {
-	const shieldContainer = shieldRef.value?.parentElement;
-	if (shieldContainer) {
-		shieldContainer.removeEventListener("mousemove", handleMouseMove);
-		shieldContainer.removeEventListener("mouseleave", handleMouseLeave);
-	}
-});
 </script>
 
 <template>
 	<section class="flex justify-center">
-		<div class="w-[1440px] justify-center px-24 pb-16 pt-52 text-center max-lg:px-6 max-lg:pb-72">
+		<div class="w-[1440px] select-none justify-center px-24 pb-16 pt-52 text-center max-lg:px-6 max-lg:pb-72">
 			<div class="flex flex-col gap-y-6 px-40">
 				<LTinyHeading>No Harvesting</LTinyHeading>
 				<h2 class="block text-primary">You are in Control of Your Data</h2>
