@@ -10,9 +10,9 @@
 					Are you passionate about artificial intelligence, decentralization, and community-driven innovation? Do you
 					want to be a part of a pioneering team that is transforming the AI landscape? Look no further than LibertAI!
 				</p>
-				<a class="w-full max-lg:mb-6" href="mailto:hello@libertai.io" target="_blank">
+				<LLink class="w-full max-lg:mb-6" href="mailto:hello@libertai.io" target="_blank">
 					<LButton small text="Join Now" />
-				</a>
+				</LLink>
 			</div>
 			<img alt="Company" class="m-auto max-lg:w-full lg:rounded-2xl" src="../../assets/team.webp" width="730px" />
 		</div>
@@ -20,4 +20,5 @@
 </template>
 <script lang="ts" setup>
 import LButton from "@/components/LButton.vue";
+import LLink from "@/components/LLink.vue";
 </script>

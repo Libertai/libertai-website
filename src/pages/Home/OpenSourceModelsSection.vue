@@ -3,6 +3,7 @@ import LModelCard from "@/components/LModelCard.vue";
 import LButton from "@/components/LButton.vue";
 import { models } from "@/texts.ts";
 import LTinyHeading from "@/components/LTinyHeading.vue";
+import LLink from "@/components/LLink.vue";
 </script>
 
 <template>
@@ -26,9 +27,9 @@ import LTinyHeading from "@/components/LTinyHeading.vue";
 				:type="model.type"
 			/>
 		</div>
-		<RouterLink to="/developer">
+		<LLink href="/developer">
 			<LButton small text="Find Out More" />
-		</RouterLink>
+		</LLink>
 	</section>
 </template>
 

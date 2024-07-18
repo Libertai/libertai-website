@@ -7,6 +7,7 @@ import VirtualGirlfriend from "../../assets/home/personas/VirtualGirlfriend.png"
 import Tromp from "../../assets/home/personas/Tromp.png";
 import { onMounted, ref, watch } from "vue";
 import LTinyHeading from "@/components/LTinyHeading.vue";
+import LLink from "@/components/LLink.vue";
 
 const AIs = [
 	{ text: "Donald Tromp", image: Tromp },
@@ -67,9 +68,9 @@ onMounted(() => {
 							keeping your data encrypted and under your control.
 						</p>
 						<div>
-							<a class="text-majorelle-500" href="https://chat.libertai.io/">
+							<LLink class="text-majorelle-500" href="https://chat.libertai.io/">
 								<LButton small text="Customize Now" />
-							</a>
+							</LLink>
 						</div>
 					</div>
 					<div
@@ -116,9 +117,9 @@ onMounted(() => {
 							keeping your data encrypted and under your control.
 						</p>
 						<div>
-							<a class="text-majorelle-500" href="https://chat.libertai.io/#/persona-management">
+							<LLink class="text-majorelle-500" href="https://chat.libertai.io/#/persona-management">
 								<LButton small text="Customize Now" />
-							</a>
+							</LLink>
 						</div>
 					</div>
 				</div>

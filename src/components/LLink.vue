@@ -3,21 +3,27 @@ import { LinkHTMLAttributes, ref } from "vue";
 import { AlertDialog, AlertDialogContent, AlertDialogTrigger } from "@/components/ui/alert-dialog";
 import { AlertDialogOverlay, AlertDialogPortal } from "radix-vue";
 import LButton from "@/components/LButton.vue";
+import { ClassProp } from "class-variance-authority/types";
 
 interface IProps extends /* @vue-ignore */ LinkHTMLAttributes {}
 
-withDefaults(defineProps<IProps>(), {});
+withDefaults(defineProps<IProps & ClassProp>(), {});
 
 const open = ref(false);
 </script>
 
 <template>
-	<RouterLink v-if="$attrs.href && ($attrs.href as string).startsWith('/')" :to="$attrs.href">
+	<RouterLink
+		v-if="$attrs.href && ($attrs.href as string).startsWith('/')"
+		:class="$props.class ?? $props.className"
+		:to="$attrs.href"
+		class="w-fit"
+	>
 		<slot />
 	</RouterLink>
 	<AlertDialog v-else v-model:open="open">
 		<AlertDialogTrigger as-child>
-			<a class="cursor-pointer">
+			<a :class="$props.class ?? $props.className" class="w-fit cursor-pointer">
 				<slot />
 			</a>
 		</AlertDialogTrigger>

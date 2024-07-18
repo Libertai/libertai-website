@@ -4,6 +4,7 @@ import CoreNodeImage from "../../assets/earn/core-channel-node-operator.svg";
 import ResourceNodeImage from "../../assets/earn/resource-node-operator.svg";
 import ConnectAccountsImage from "../../assets/earn/connect-accounts.svg";
 import LButton from "@/components/LButton.vue";
+import LLink from "@/components/LLink.vue";
 
 type Action = {
 	cardTitle: string;
@@ -62,9 +63,9 @@ const actions: Action[] = [
 				<img :src="action.imagePath" alt="card" />
 				<p class="body-bold-default text-primary">{{ action.cardTitle }}</p>
 				<p class="body-tiny w-56">{{ action.cardDescription }}</p>
-				<a :href="action.buttonLink" target="_blank">
+				<LLink :href="action.buttonLink" target="_blank">
 					<LButton :text="action.buttonText" small />
-				</a>
+				</LLink>
 			</div>
 		</div>
 	</section>

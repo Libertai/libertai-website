@@ -2,6 +2,7 @@
 import iphone from "../../assets/home/notYourAverageAIAssistantIphone.png";
 import LTinyHeading from "@/components/LTinyHeading.vue";
 import LButton from "@/components/LButton.vue";
+import LLink from "@/components/LLink.vue";
 </script>
 
 <template>
@@ -19,9 +20,9 @@ import LButton from "@/components/LButton.vue";
 			<div class="relative mt-48 flex h-[346px] w-[837px] rounded-3xl bg-gradient-to-tr from-[#644DF9] to-[#FCCBFF]">
 				<img :src="iphone" alt="iphone" class="absolute bottom-0 left-0 right-0 mx-auto" />
 			</div>
-			<a href="https://t.me/liberchat_bot" target="_blank">
+			<LLink href="https://t.me/liberchat_bot" target="_blank">
 				<LButton text="Add to Telegram" class="mt-12" />
-			</a>
+			</LLink>
 		</div>
 	</section>
 </template>

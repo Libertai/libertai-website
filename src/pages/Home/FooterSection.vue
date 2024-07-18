@@ -18,18 +18,20 @@
 					the future of decentralized intelligence.
 				</p>
 				<div class="flex flex-row space-x-7">
-					<a href="https://x.com/Libertai_DAI" target="_blank">
+					<LLink href="https://x.com/Libertai_DAI" target="_blank">
 						<img alt="Twitter / X" src="../../assets/icons/x.svg" style="width: 36px; height: 36px" />
-					</a>
-					<a href="https://t.me/libertai" target="_blank">
+					</LLink>
+					<LLink href="https://t.me/libertai" target="_blank">
 						<img alt="Telegram" src="../../assets/icons/telegram.svg" style="width: 36px; height: 36px" />
-					</a>
-					<a href="https://aleph.im/" target="_blank">
+					</LLink>
+					<LLink href="https://aleph.im/" target="_blank">
 						<img alt="Aleph.im" src="../../assets/icons/aleph.svg" style="width: 36px; height: 36px" />
-					</a>
+					</LLink>
 				</div>
 			</div>
 		</div>
 	</footer>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import LLink from "@/components/LLink.vue";
+</script>
