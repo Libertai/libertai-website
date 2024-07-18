@@ -34,5 +34,5 @@
 	</section>
 </template>
 <script setup lang="ts">
-import LTinyHeading from "../../components/LTinyHeading.vue";
+import LTinyHeading from "@/components/LTinyHeading.vue";
 </script>

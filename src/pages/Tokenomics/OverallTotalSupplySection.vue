@@ -1,6 +1,6 @@
 <script lang="ts" setup>
-import LTinyHeading from "../../components/LTinyHeading.vue";
-import { useTokensStore } from "../../stores/tokens.ts";
+import LTinyHeading from "@/components/LTinyHeading.vue";
+import { useTokensStore } from "@/stores/tokens.ts";
 
 const tokensStore = useTokensStore();
 </script>

@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import LTinyHeading from "../../components/LTinyHeading.vue";
+import LTinyHeading from "@/components/LTinyHeading.vue";
 
 const stats = [
 	{

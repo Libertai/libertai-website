@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import LModelCard from "../../components/LModelCard.vue";
-import { models } from "../../texts.ts";
-import LTinyHeading from "../../components/LTinyHeading.vue";
-import LButton from "../../components/LButton.vue";
+import LModelCard from "@/components/LModelCard.vue";
+import { models } from "@/texts.ts";
+import LTinyHeading from "@/components/LTinyHeading.vue";
+import LButton from "@/components/LButton.vue";
 
 const paragraphs = [
 	"LibertAI works on top of the aleph.im network. It uses its on-demand virtual machines (serverless). When you do a call to the API, it's going to one of the load balancers of the network that distributes your request to one of the available CRN (computing resource nodes, you can also call the API directly on one). This CRN then looks at the path (or domain) and redirects it to a specific virtual machine.",

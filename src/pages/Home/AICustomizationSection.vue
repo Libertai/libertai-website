@@ -1,12 +1,12 @@
 <script lang="ts" setup>
-import LButton from "../../components/LButton.vue";
+import LButton from "@/components/LButton.vue";
 import AilonMusk from "../../assets/home/personas/AilonMusk.png";
 import Therapist from "../../assets/home/personas/Therapist.png";
 import VirtualBoyfriend from "../../assets/home/personas/VirtualBoyfriend.png";
 import VirtualGirlfriend from "../../assets/home/personas/VirtualGirlfriend.png";
 import Tromp from "../../assets/home/personas/Tromp.png";
 import { onMounted, ref, watch } from "vue";
-import LTinyHeading from "../../components/LTinyHeading.vue";
+import LTinyHeading from "@/components/LTinyHeading.vue";
 
 const AIs = [
 	{ text: "Donald Tromp", image: Tromp },

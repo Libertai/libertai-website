@@ -3,7 +3,7 @@ import StakeImage from "../../assets/earn/staking.svg";
 import CoreNodeImage from "../../assets/earn/core-channel-node-operator.svg";
 import ResourceNodeImage from "../../assets/earn/resource-node-operator.svg";
 import ConnectAccountsImage from "../../assets/earn/connect-accounts.svg";
-import LButton from "../../components/LButton.vue";
+import LButton from "@/components/LButton.vue";
 
 type Action = {
 	cardTitle: string;

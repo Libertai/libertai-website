@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { useTokensStore } from "../../stores/tokens.ts";
+import { useTokensStore } from "@/stores/tokens.ts";
 import { onMounted } from "vue";
 
 const tokensStore = useTokensStore();

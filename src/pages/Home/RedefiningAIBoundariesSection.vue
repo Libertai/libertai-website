@@ -3,7 +3,7 @@ import lockClosedIcon from "../../assets/icons/lock-closed.svg";
 import botIcon from "../../assets/icons/bot.svg";
 import globeIcon from "../../assets/icons/globe.svg";
 import confidentialIcon from "../../assets/icons/confidential.svg";
-import LTinyHeading from "../../components/LTinyHeading.vue";
+import LTinyHeading from "@/components/LTinyHeading.vue";
 
 const cards = [
 	{

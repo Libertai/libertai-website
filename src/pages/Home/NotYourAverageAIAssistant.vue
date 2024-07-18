@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import iphone from "../../assets/home/notYourAverageAIAssistantIphone.png";
-import LTinyHeading from "../../components/LTinyHeading.vue";
-import LButton from "../../components/LButton.vue";
+import LTinyHeading from "@/components/LTinyHeading.vue";
+import LButton from "@/components/LButton.vue";
 </script>
 
 <template>

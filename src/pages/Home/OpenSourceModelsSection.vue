@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-import LModelCard from "../../components/LModelCard.vue";
-import LButton from "../../components/LButton.vue";
-import { models } from "../../texts.ts";
-import LTinyHeading from "../../components/LTinyHeading.vue";
+import LModelCard from "@/components/LModelCard.vue";
+import LButton from "@/components/LButton.vue";
+import { models } from "@/texts.ts";
+import LTinyHeading from "@/components/LTinyHeading.vue";
 </script>
 
 <template>

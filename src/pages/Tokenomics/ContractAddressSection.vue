@@ -26,6 +26,6 @@
 	</section>
 </template>
 <script lang="ts" setup>
-import LTinyHeading from "../../components/LTinyHeading.vue";
-import LButton from "../../components/LButton.vue";
+import LTinyHeading from "@/components/LTinyHeading.vue";
+import LButton from "@/components/LButton.vue";
 </script>

@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { computed } from "vue";
-import { useTokensStore } from "../../stores/tokens.ts";
+import { useTokensStore } from "@/stores/tokens.ts";
 import { storeToRefs } from "pinia";
 
 const tokensStore = useTokensStore();
