@@ -12,12 +12,12 @@ const open = ref(false);
 </script>
 
 <template>
-	<RouterLink v-if="href && href.startsWith('/')" :to="href">
+	<RouterLink v-if="$attrs.href && ($attrs.href as string).startsWith('/')" :to="$attrs.href">
 		<slot />
 	</RouterLink>
-	<AlertDialog v-model:open="open">
+	<AlertDialog v-else v-model:open="open">
 		<AlertDialogTrigger as-child>
-			<a>
+			<a class="cursor-pointer">
 				<slot />
 			</a>
 		</AlertDialogTrigger>
