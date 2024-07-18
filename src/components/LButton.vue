@@ -12,7 +12,10 @@ const { text, variant, light, small } = withDefaults(defineProps<LButtonProps>()
 	light: false,
 	small: false,
 });
-let style = twMerge("rounded-full font-bold w-fit", small ? "body-tiny px-6 py-3" : "body-default px-8 py-4");
+let style = twMerge(
+	"rounded-full font-bold w-fit flex justify-center space-x-1",
+	small ? "body-tiny px-6 py-3" : "body-default px-8 py-4",
+);
 
 if (variant === "primary")
 	style = twMerge(
@@ -31,9 +34,7 @@ else
 
 <template>
 	<button :class="style">
-		<div class="flex space-x-1">
-			<span>{{ text }}</span>
-			<slot></slot>
-		</div>
+		<span class="text-center">{{ text }}</span>
+		<slot></slot>
 	</button>
 </template>
