@@ -65,7 +65,7 @@ const roadmap: RoadmapSection[] = [
 			{
 				title: "Q2",
 				features: [
-					{ name: "Token Launch (In Progress)", status: "in_progress" },
+					{ name: "Token Launch", status: "completed" },
 					{ name: "Knowledge DB beta", status: "todo" },
 					{ name: "Text to speech", status: "todo" },
 				],
