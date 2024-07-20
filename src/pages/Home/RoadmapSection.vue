@@ -35,9 +35,9 @@
 	</section>
 </template>
 <script lang="ts" setup>
-import { RoadmapFeatureStatus } from "../../types/roadmap.ts";
-import RoadmapFeatureCard from "../../components/RoadmapFeatureCard.vue";
-import LTinyHeading from "../../components/LTinyHeading.vue";
+import { RoadmapFeatureStatus } from "@/types/roadmap.ts";
+import RoadmapFeatureCard from "@/components/RoadmapFeatureCard.vue";
+import LTinyHeading from "@/components/LTinyHeading.vue";
 
 type RoadmapFeature = { name: string; status: RoadmapFeatureStatus };
 type RoadmapSection = {

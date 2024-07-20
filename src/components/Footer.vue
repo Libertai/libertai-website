@@ -6,9 +6,9 @@
 				<div class="grid grid-cols-2">
 					<div v-for="section of sections" :key="section.title" class="space-y-2">
 						<p class="body-regular text-neutral-white">{{ section.title }}</p>
-						<a v-for="item of section.items" :key="item.title" :href="item.link" target="_blank">
+						<LLink v-for="item of section.items" :key="item.title" :href="item.link" target="_blank">
 							<p class="body-small text-neutral-white">{{ item.title }}</p>
-						</a>
+						</LLink>
 					</div>
 				</div>
 				<img alt="white logo" class="m-2 max-md:hidden" src="../assets/logos/libertAI_white.png" />
@@ -18,14 +18,16 @@
 				<p class="rich-bold-18 max-lg:body-small mt-2 text-center text-tertiary">
 					Copyright © LibertAI.io | Powered by
 				</p>
-				<a href="https://aleph.im/" target="_blank">
+				<LLink href="https://aleph.im/" target="_blank">
 					<p class="rich-bold-18 max-lg:body-small mt-2 text-center text-majorelle-500">aleph.im</p>
-				</a>
+				</LLink>
 			</div>
 		</div>
 	</div>
 </template>
 <script lang="ts" setup>
+import LLink from "@/components/LLink.vue";
+
 type FooterSection = {
 	title: string;
 	items: { title: string; link: string }[];

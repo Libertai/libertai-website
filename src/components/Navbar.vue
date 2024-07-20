@@ -15,18 +15,18 @@
 			</button>
 
 			<!-- Site logo -->
-			<RouterLink class="mr-8" to="/">
+			<LLink class="mr-8" href="/">
 				<img alt="Site Logo" class="block max-lg:hidden" height="21" src="../assets/logos/libertAI.svg" width="120" />
 				<img alt="Site Logo" class="hidden h-8 max-lg:block" src="../assets/logos/libertAI.svg" />
-			</RouterLink>
+			</LLink>
 
 			<!-- Navbar buttons for large screens -->
 			<nav class="body-small flex space-x-8 text-neutral-800 max-lg:hidden">
-				<RouterLink to="/company">Company</RouterLink>
-				<RouterLink to="/earn">Earn</RouterLink>
-				<RouterLink to="/developer">Developer</RouterLink>
-				<RouterLink to="/tokenomics">Tokenomics</RouterLink>
-				<a href="/Litepaper_0624_v2.pdf" target="_blank">Litepaper</a>
+				<LLink href="/company">Company</LLink>
+				<LLink href="/earn">Earn</LLink>
+				<LLink href="/developer">Developer</LLink>
+				<LLink href="/tokenomics">Tokenomics</LLink>
+				<LLink href="/Litepaper_0624_v2.pdf" target="_blank">Litepaper</LLink>
 				<div @mouseenter="showApps = true" @mouseleave="showApps = false">
 					<div class="flex">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
@@ -40,18 +40,18 @@
 							role="menu"
 						>
 							<div class="py-1">
-								<a href="https://chat.libertai.io" target="_blank">
+								<LLink href="https://chat.libertai.io" target="_blank">
 									<div class="dropdown-item flex justify-between">
 										<span class="mr-1">Chat dApp</span>
 										<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
 									</div>
-								</a>
-								<a href="https://t.me/liberchat_bot" target="_blank">
+								</LLink>
+								<LLink href="https://t.me/liberchat_bot" target="_blank">
 									<div class="dropdown-item flex justify-between">
 										<span class="mr-1">Telegram bot</span>
 										<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
 									</div>
-								</a>
+								</LLink>
 							</div>
 						</div>
 					</div>
@@ -60,7 +60,7 @@
 		</div>
 
 		<!-- Button for the chat app -->
-		<a href="https://chat.libertai.io">
+		<LLink href="https://chat.libertai.io">
 			<button
 				class="body-bold-default body-tiny w-fit rounded-full bg-majorelle-500 px-6 py-3 text-neutral-white max-lg:px-4 max-lg:py-2"
 			>
@@ -69,32 +69,32 @@
 					<img alt="Message" src="../assets/icons/message.svg" />
 				</div>
 			</button>
-		</a>
+		</LLink>
 		<!-- Navbar buttons for small screens -->
 		<div v-show="showSidebar" class="absolute left-0 top-16 w-full translate-y-1 border-y bg-neutral-white shadow">
 			<div class="flex flex-col">
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/company">Company</RouterLink>
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/earn">Earn</RouterLink>
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/developer">Developer</RouterLink>
-				<RouterLink class="body-default px-8 py-4 focus:bg-neutral-300" to="/tokenomics">Tokenomics</RouterLink>
+				<LLink class="body-default px-8 py-4 focus:bg-neutral-300" href="/company">Company</LLink>
+				<LLink class="body-default px-8 py-4 focus:bg-neutral-300" href="/earn">Earn</LLink>
+				<LLink class="body-default px-8 py-4 focus:bg-neutral-300" href="/developer">Developer</LLink>
+				<LLink class="body-default px-8 py-4 focus:bg-neutral-300" href="/tokenomics">Tokenomics</LLink>
 				<div class="body-default focus:bg-neutral-200">
 					<button class="flex items-center px-8 py-4" @click="showApps = !showApps">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
 						<img alt="Chevron up" src="../assets/icons/chevron_down.svg" />
 					</button>
 					<div v-show="showApps" class="flex flex-col border-y">
-						<a href="https://chat.libertai.io" target="_blank">
+						<LLink href="https://chat.libertai.io" target="_blank">
 							<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
 								<span>Chat dApp</span>
 								<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
 							</div>
-						</a>
-						<a href="https://t.me/liberchat_bot" target="_blank">
+						</LLink>
+						<LLink href="https://t.me/liberchat_bot" target="_blank">
 							<div class="body-default flex justify-between bg-neutral-200 px-16 py-4 focus:bg-neutral-300">
 								<span>Telegram bot</span>
 								<img alt="Open" src="../assets/icons/open_in_new.svg" width="20" />
 							</div>
-						</a>
+						</LLink>
 					</div>
 				</div>
 			</div>
@@ -105,6 +105,7 @@
 <script lang="ts" setup>
 import { onMounted, onUnmounted, ref } from "vue";
 import { useRouter } from "vue-router";
+import LLink from "@/components/LLink.vue";
 
 const showApps = ref(false);
 const showSidebar = ref(false);

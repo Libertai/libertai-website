@@ -4,15 +4,17 @@
 			<div class="flex h-full flex-col items-center justify-center">
 				<p class="body-bold-large text-center text-majorelle-800">Proudly supported by</p>
 				<div class="mt-6 flex max-sm:flex-col max-sm:space-y-4 sm:space-x-9">
-					<a href="https://aleph.im" target="_blank">
+					<LLink href="https://aleph.im" target="_blank">
 						<img alt="Aleph.im logo" src="../../assets/logos/aleph.svg" />
-					</a>
-					<a href="https://twentysix.cloud" target="_blank">
+					</LLink>
+					<LLink href="https://twentysix.cloud" target="_blank">
 						<img alt="TwentySixCloud logo" src="../../assets/logos/twentysix.svg" />
-					</a>
+					</LLink>
 				</div>
 			</div>
 		</div>
 	</section>
 </template>
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+import LLink from "@/components/LLink.vue";
+</script>
