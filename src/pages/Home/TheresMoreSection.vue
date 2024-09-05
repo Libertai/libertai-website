@@ -33,7 +33,7 @@ const cards: FeatureCard[] = [
 	{
 		title: "Knowledge Bases",
 		image: KnowledgeBasesImage,
-		live: false,
+		live: true,
 	},
 	{
 		title: "Multi-modal Inference",
