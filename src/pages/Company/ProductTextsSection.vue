@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { ref } from "vue";
-import TextSection from "../../components/TextSection.vue";
+import TextSection from "@/components/TextSection.vue";
 
 const items = ref<{ title: string; description: string }[]>([
 	{

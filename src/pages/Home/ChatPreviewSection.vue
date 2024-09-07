@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import Iphone from "../../assets/Iphone_chat.png";
-import LTinyHeading from "../../components/LTinyHeading.vue";
+import LTinyHeading from "@/components/LTinyHeading.vue";
 </script>
 
 <template>

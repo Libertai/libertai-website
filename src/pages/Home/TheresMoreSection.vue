@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import LTinyHeading from "../../components/LTinyHeading.vue";
+import LTinyHeading from "@/components/LTinyHeading.vue";
 
 import ChatBotImage from "../../assets/home/more_features/chat_bot.png";
 import VoiceTranscriptionImage from "../../assets/home/more_features/voice_transcription.png";
