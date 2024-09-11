@@ -21,6 +21,11 @@ const cards: FeatureCard[] = [
 		live: true,
 	},
 	{
+		title: "Knowledge Bases",
+		image: KnowledgeBasesImage,
+		live: true,
+	},
+	{
 		title: "Voice Transcription",
 		image: VoiceTranscriptionImage,
 		live: false,
@@ -30,11 +35,7 @@ const cards: FeatureCard[] = [
 		image: ImageGenerationImage,
 		live: false,
 	},
-	{
-		title: "Knowledge Bases",
-		image: KnowledgeBasesImage,
-		live: true,
-	},
+
 	{
 		title: "Multi-modal Inference",
 		image: MultiModalInference,
