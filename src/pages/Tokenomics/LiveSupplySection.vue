@@ -12,10 +12,12 @@ onMounted(() => {
 </script>
 
 <template>
-	<section class="relative flex justify-center bg-neutral-white">
+	<section id="supply" class="relative flex justify-center bg-neutral-white">
 		<div class="relative w-[1440px] overflow-hidden px-20 py-12 max-lg:px-12">
 			<div class="justify-center rounded-xl px-12 py-6 shadow-lg max-lg:px-4">
-				<p class="body-bold-large pb-4 text-center text-majorelle-700">Live Circulating Total Supply</p>
+				<a href="#supply">
+					<h2 class="body-bold-large pb-4 text-center text-majorelle-700">Live Circulating Total Supply</h2>
+				</a>
 				<div class="flex items-center justify-center max-2xl:flex-col">
 					<div class="my-2 flex h-4 justify-start bg-majorelle-300 max-xl:hidden" style="width: 1000px">
 						<div

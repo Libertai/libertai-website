@@ -1,9 +1,12 @@
 <template>
-	<section class="mx-auto flex items-center justify-center px-20 pb-5 pt-44">
+	<section id="roadmap" class="mx-auto flex items-center justify-center px-20 pb-5 pt-44">
 		<div class="max-w-[1440px]">
 			<div class="space-y-6 text-center">
 				<LTinyHeading>DeAI solutions for now and the future</LTinyHeading>
-				<h2 class="text-majorelle-500">Roadmap</h2>
+				<a href="#roadmap">
+					<h2 class="text-majorelle-500">Roadmap</h2>
+				</a>
+
 				<p>
 					The LibertAI roadmap focuses on expanding the decentralized LLM's capabilities, enhancing user experience, and
 					integrating with more open-source models to promote transparency and collaboration within the network.
