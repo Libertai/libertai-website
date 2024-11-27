@@ -76,7 +76,7 @@ const roadmap: RoadmapSection[] = [
 			{
 				title: "Q3",
 				features: [
-					{ name: "Agents pre-version", status: "in_progress" },
+					{ name: "Agents pre-version", status: "completed" },
 					{ name: "Speech to text", status: "todo" },
 					{ name: "Image input on LLMs", status: "todo" },
 				],
