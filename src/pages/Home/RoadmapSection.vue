@@ -82,6 +82,7 @@ const roadmap: RoadmapSection[] = [
 				features: [
                                        { name: "Text to speech", status: "todo" },
                                        { name: "Speech to text", status: "todo" },
+                                       { name: "Text to video", status: "todo" },
 				],
 			},
 			{
