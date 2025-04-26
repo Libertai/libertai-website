@@ -31,7 +31,7 @@ const cardContents = [
 	{
 		type: "Agents",
 		description:
-			"AI Agents can purchase their own computing power, TEE confidential or not, through  Aleph.im DePIN network.",
+			"AI Agents can purchase their own computing power, TEE confidential or not, through  Aleph Cloud DePIN network.",
 	},
 	{
 		type: "Agents",

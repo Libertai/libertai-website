@@ -14,9 +14,9 @@ const feedbacks = [
 	{
 		id: 2,
 		name: "Jonathan Schemoul",
-		title: "aleph.im CEO and Co-Founder",
+		title: "Aleph Cloud CEO and Co-Founder",
 		feedback:
-			"“We built aleph.im to empower a new generation of apps. LibertAI's decentralized AI vision was a perfect match. Together, we can create a robust ecosystem that puts AI power in the hands of the people.”",
+			"“We built Aleph Cloud to empower a new generation of apps. LibertAI's decentralized AI vision was a perfect match. Together, we can create a robust ecosystem that puts AI power in the hands of the people.”",
 		photo: JonathanPhoto,
 	},
 ];

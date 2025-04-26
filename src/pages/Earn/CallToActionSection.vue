@@ -18,23 +18,23 @@ const actions: Action[] = [
 		cardDescription:
 			"Staking 10K or more Aleph tokens ($ALEPH) - By showing your commitment to the future of decentralized cloud technology, you earn LibertAI tokens that reflect your trust in the platform.",
 		buttonText: "Stake ALEPH",
-		buttonLink: "https://account.aleph.im/earn/staking/",
+		buttonLink: "https://app.aleph.cloud/account/earn/staking/",
 		imagePath: StakeImage,
 	},
 	{
 		cardTitle: "Core Channel Node Operator",
 		cardDescription:
-			"Running an Aleph.im Core Channel Node - Become a part of the backbone that supports cross-chain interactions and enjoy the perks of being a node operator with LibertAI tokens as your reward!",
+			"Running an Aleph Cloud Core Channel Node - Become a part of the backbone that supports cross-chain interactions and enjoy the perks of being a node operator with LibertAI tokens as your reward!",
 		buttonText: "Run Core Node",
-		buttonLink: "https://docs.aleph.im/nodes/core/",
+		buttonLink: "https://docs.aleph.cloud/nodes/core/",
 		imagePath: CoreNodeImage,
 	},
 	{
 		cardTitle: "Resource Node Operator",
 		cardDescription:
-			"Operating an Aleph.im Resource Node - Contribute to data storage, compute capabilities, and decentralized applications by running a resource node and reap the benefits through LibertAI tokens!",
+			"Operating an Aleph Cloud Resource Node - Contribute to data storage, compute capabilities, and decentralized applications by running a resource node and reap the benefits through LibertAI tokens!",
 		buttonText: "Run Resource Node",
-		buttonLink: "https://docs.aleph.im/nodes/compute/",
+		buttonLink: "https://docs.aleph.cloud/nodes/compute/",
 		imagePath: ResourceNodeImage,
 	},
 	{

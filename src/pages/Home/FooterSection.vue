@@ -24,8 +24,8 @@
 					<a href="https://t.me/libertai" target="_blank">
 						<img alt="Telegram" src="../../assets/icons/telegram.svg" style="width: 36px; height: 36px" />
 					</a>
-					<a href="https://aleph.im/" target="_blank">
-						<img alt="Aleph.im" src="../../assets/icons/aleph.svg" style="width: 36px; height: 36px" />
+					<a href="https://aleph.cloud/" target="_blank">
+						<img alt="Aleph Cloud" src="../../assets/icons/aleph.svg" style="width: 36px; height: 36px" />
 					</a>
 				</div>
 			</div>
