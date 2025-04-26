@@ -1,34 +1,60 @@
 <script lang="ts" setup>
 import LModelCard from "../../components/LModelCard.vue";
-import LButton from "../../components/LButton.vue";
-import { models } from "../../texts.ts";
-import LTinyHeading from "../../components/LTinyHeading.vue";
+type OpenSourceModelSection = {
+	id: number;
+	name: string;
+	imageRotation: number;
+	description: string;
+}
+
+const sections: OpenSourceModelSection[] = [
+	{
+		id: 1,
+		name: "Hermes 3",
+		imageRotation: 0,
+		description: "Chat freely with default privacy protection. Your AI journey, your privacy! We don't log or train models with your data."
+	},
+	{
+		id: 2,
+		name: "Hermes 3",
+		imageRotation: 90,
+		description: "Chat freely with default privacy protection. Your AI journey, your privacy! We don't log or train models with your data."
+	},
+	{
+		id: 3,
+		name: "Hermes 3",
+		imageRotation: 180,
+		description: "Chat freely with default privacy protection. Your AI journey, your privacy! We don't log or train models with your data."
+	},
+	{
+		id: 4,
+		name: "Hermes 3",
+		imageRotation: -90,
+		description: "Chat freely with default privacy protection. Your AI journey, your privacy! We don't log or train models with your data."
+	}
+]
 </script>
 
 <template>
-	<section class="flex flex-col items-center gap-16 pb-36 pt-40 max-lg:pb-20 max-lg:pt-32">
-		<div class="space-y-6 px-8 text-center">
-			<LTinyHeading>Transparent to the core</LTinyHeading>
-			<h2 class="text-majorelle-500">Explore Free Open-Source Models</h2>
-			<p>
-				Explore LibertAI's ever-expanding LLM model library to match your specific needs from <br />creative writing to
-				coding, data analysis to everyday tasks, offering privacy-preserving <br />
-				AI solutions.
-			</p>
+	<section class="bg-neutral-black pb-36 pt-40 max-lg:pb-20 max-lg:pt-32">
+		<div class="flex justify-between px-32">
+			<div>
+				<p class="text-[#6A7089] text-[14px]">[ By the people, for the people ]</p>
+				<h3 class="mt-2 text-neutral-white">Latest Open-Source Models</h3>
+			</div>
+			<a href="https://docs.libertai.io" class="flex items-center justify-center mt-5 border rounded-[20px] border-[#6A7089] w-28 h-10">
+				<p class="text-neutral-white 11px lg:text-[13px]">Learn More</p>
+			</a>
 		</div>
-		<div class="grid gap-x-6 gap-y-12 md:grid-cols-2 md:grid-rows-3 xl:grid-cols-3 xl:grid-rows-2">
+		<div class="grid gap-x-2 gap-y-12 md:grid-cols-2 md:grid-rows-4 xl:grid-cols-4 xl:grid-rows-2 mt-24 px-24 ml-2">
 			<LModelCard
-				v-for="model in models"
-				:key="model.name"
+				v-for="model in sections"
+				:key="model.id"
 				:description="model.description"
 				:name="model.name"
-				:subtitle="model.subtitle"
-				:type="model.type"
+				:imageRotation="model.imageRotation"
 			/>
 		</div>
-		<RouterLink to="/developer">
-			<LButton small text="Find Out More" />
-		</RouterLink>
 	</section>
 </template>
 

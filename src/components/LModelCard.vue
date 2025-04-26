@@ -1,32 +1,38 @@
 <script lang="ts" setup>
+import LSimpleCard from "./LSimpleCard.vue";
+
 export type LModelCardProps = {
 	name: string;
-	subtitle: string;
 	description: string;
-	type: string;
+	imageRotation: number
 };
 defineProps<LModelCardProps>();
 </script>
 
 <template>
-	<div
-		class="model-card flex flex-col gap-y-3 rounded-[12px] border-[0.5px] border-majorelle-300 bg-neutral-white px-6 py-9 max-lg:h-[250px] max-lg:w-[300px] lg:h-[200px] lg:w-[400px]"
-	>
-		<div class="flex justify-between">
-			<p>
-				<span class="body-default font-bold text-primary">{{ name }}</span>
-				<br />
-				<span class="body-small text-lavander-400">({{ subtitle }})</span>
-			</p>
-			<span
-				class="body-small h-fit rounded-full border-[1px] border-majorelle-300 px-6 text-center uppercase text-lavander-400"
-			>
-				{{ type }}
-			</span>
+	<div class="flex flex-col gap-y-4 px-6 py-9 max-lg:h-auto max-lg:w-[200px] lg:h-auto lg:w-[300px]">
+		<div class="relative flex items-center justify-center h-[250px] overflow-hidden">
+			<img
+				src="../assets/home/open-source-model-background.png"
+				class="absolute inset-0 object-cover w-full h-full"
+				:style="{ transform: `rotate(${imageRotation}deg)` }"
+			/>
+			<div class="relative flex items-center justify-center bg-[#0E0F18] w-[150px] h-[40px]">
+				<h4 class="text-[#F7F6FF]">{{ name }}</h4>
+			</div>
 		</div>
-		<p class="body-tiny text-majorelle-800">{{ description }}</p>
+
+		<LSimpleCard
+			:title="name"
+			:description="description"
+			:link-name="'Docs'"
+			:link-path="'https://docs.libertai.io/agents/'"
+			:icon-path="'/icon-chat.svg'"
+		/>
 	</div>
 </template>
+
+
 
 <style scoped>
 .model-card {

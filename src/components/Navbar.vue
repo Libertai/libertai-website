@@ -1,8 +1,8 @@
 <template>
 	<header
-		class="sticky top-0 z-30 flex w-full select-none items-center justify-between border-b bg-neutral-white px-28 py-4 max-lg:px-4"
+		class="sticky top-0 z-30 flex w-full select-none items-center justify-between  px-28 py-4 max-lg:px-4 "
 	>
-		<div class="flex items-center">
+		<div class="flex items-center lg:ml-16">
 			<!-- Burger menu button for small screens -->
 			<button
 				class="mr-4 lg:hidden"
@@ -16,17 +16,14 @@
 
 			<!-- Site logo -->
 			<RouterLink class="mr-8" to="/">
-				<img alt="Site Logo" class="block max-lg:hidden" height="21" src="../assets/logos/libertAI.svg" width="120" />
-				<img alt="Site Logo" class="hidden h-8 max-lg:block" src="../assets/logos/libertAI.svg" />
+				<img alt="Site Logo" class="h-5" src="../assets/white-logo.png" />
 			</RouterLink>
 
 			<!-- Navbar buttons for large screens -->
-			<nav class="body-small flex space-x-8 text-neutral-800 max-lg:hidden">
+			<nav class="body-small flex space-x-8 text-[#B5B6BA] max-lg:hidden text-[#6A7089]">
 				<RouterLink to="/company">Company</RouterLink>
 				<RouterLink to="/earn">Earn</RouterLink>
 				<RouterLink to="/developer">Developer</RouterLink>
-				<RouterLink to="/tokenomics">Tokenomics</RouterLink>
-				<a href="/Litepaper_0624_v2.pdf" target="_blank">Litepaper</a>
 				<div @mouseenter="showApps = true" @mouseleave="showApps = false">
 					<div class="flex">
 						<span class="mr-1.5 cursor-pointer">Apps</span>
