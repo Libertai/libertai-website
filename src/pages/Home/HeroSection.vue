@@ -20,13 +20,15 @@ import LButton from "../../components/LButton.vue";
 		<div class="absolute inset-0 flex flex-col justify-center">
 			<div class="container mx-auto px-5 md:px-20">
 				<div class="max-w-xs sm:max-w-md md:max-w-xl">
-					<h1 class="mb-6 text-4xl font-bold text-neutral-white sm:text-5xl md:text-6xl">Private Inference API</h1>
+					<h1 class="mb-6 text-4xl font-bold text-neutral-white sm:text-5xl md:text-6xl">
+						Unleash apps with Confidential AI API
+					</h1>
 					<p class="mb-8 text-base text-neutral-white sm:text-lg">
-						Libertai API offers decentralized, secure access to advanced AI models, enabling developers to build
+						LibertAI API offers decentralized, secure access to advanced AI models, enabling developers to build
 						scalable, privacy-preserving applications.
 					</p>
-					<a href="https://docs.libertai.io/apis" target="_blank">
-						<LButton light text="LibertAI API Docs" />
+					<a href="https://console.libertai.io" target="_blank">
+						<LButton light text="Build with the API" />
 					</a>
 				</div>
 			</div>
