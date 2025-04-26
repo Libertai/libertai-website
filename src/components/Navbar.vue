@@ -46,6 +46,12 @@
 										<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
 									</div>
 								</a>
+								<a href="https://console.libertai.io" target="_blank">
+									<div class="dropdown-item flex justify-between">
+										<span class="mr-1">Developer console</span>
+										<img alt="Open" src="../assets/icons/open_in_new.svg" width="16" />
+									</div>
+								</a>
 								<a href="https://t.me/liberchat_bot" target="_blank">
 									<div class="dropdown-item flex justify-between">
 										<span class="mr-1">Telegram bot</span>

@@ -52,18 +52,18 @@ const roadmap: RoadmapSection[] = [
 	{
 		title: "Completed",
 		features: [
-                       { name: "Decentralized inference", status: "completed" },
-                       { name: "7-14B parameters models available", status: "completed" },
-                       { name: "Chat dApp", status: "completed" },
-                       { name: "Telegram bot", status: "completed" },
-                       { name: "MoE and 34B parameters model available", status: "completed" },
-                       { name: "70B parameters model available", status: "completed" },
-                       { name: "Embeddings model available", status: "completed" },
-                       { name: "Brand Refresh", status: "completed" },
-                       { name: "Token Launch", status: "completed" },
-                       { name: "Knowledge DB beta", status: "completed" },
-                       { name: "Agents pre-version", status: "completed" },
-                       { name: "Agents deployer beta", status: "in_progress" },
+			{ name: "Decentralized inference", status: "completed" },
+			{ name: "7-14B parameters models available", status: "completed" },
+			{ name: "Chat dApp", status: "completed" },
+			{ name: "Telegram bot", status: "completed" },
+			{ name: "MoE and 34B parameters model available", status: "completed" },
+			{ name: "70B parameters model available", status: "completed" },
+			{ name: "Embeddings model available", status: "completed" },
+			{ name: "Brand Refresh", status: "completed" },
+			{ name: "Token Launch", status: "completed" },
+			{ name: "Knowledge DB beta", status: "completed" },
+			{ name: "Agents pre-version", status: "completed" },
+			{ name: "Agents deployer beta", status: "in_progress" },
 		],
 	},
 	{
@@ -72,17 +72,17 @@ const roadmap: RoadmapSection[] = [
 			{
 				title: "Q2",
 				features: [
-                                       { name: "Confidential inference", status: "todo" },
-                                       { name: "Agents paying for computing beta", status: "todo" },
-                                       { name: "Persona marketplace", status: "todo" },
+					{ name: "Confidential inference", status: "todo" },
+					{ name: "Agents paying for computing beta", status: "todo" },
+					{ name: "Persona marketplace", status: "todo" },
 				],
 			},
 			{
 				title: "Q3",
 				features: [
-                                       { name: "Text to speech", status: "todo" },
-                                       { name: "Speech to text", status: "todo" },
-                                       { name: "Text to video", status: "todo" },
+					{ name: "Text to speech", status: "todo" },
+					{ name: "Speech to text", status: "todo" },
+					{ name: "Text to video", status: "todo" },
 				],
 			},
 			{
@@ -90,7 +90,7 @@ const roadmap: RoadmapSection[] = [
 				features: [
 					{ name: "Image generation", status: "todo" },
 					{ name: "Image input on LLMs", status: "todo" },
-                                        { name: "Multi-modal inference", status: "todo" },
+					{ name: "Multi-modal inference", status: "todo" },
 				],
 			},
 		],

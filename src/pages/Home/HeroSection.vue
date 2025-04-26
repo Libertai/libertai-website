@@ -3,27 +3,32 @@ import LButton from "../../components/LButton.vue";
 </script>
 
 <template>
-	<section class="relative flex justify-center">
-		<video
-			autoplay
-			class="absolute inset-0 h-full w-full object-cover"
-			loop
-			muted
-			playsinline
-			src="../../assets/videos/HomeHeroBanner.mp4"
+	<section class="relative flex justify-center overflow-hidden">
+		<!-- Desktop Image -->
+		<img
+			alt="Private Inference API"
+			class="hidden h-auto w-full object-cover md:block"
+			src="../../assets/home/new_hero_desktop.png"
 		/>
-		<div class="z-20 flex w-[1440px] justify-center py-60 max-lg:px-0 max-lg:py-56">
-			<div
-				:style="{ backdropFilter: 'blur(20px)' }"
-				class="mx-20 flex w-full flex-col gap-6 rounded-3xl border-t bg-primary bg-opacity-10 px-6 py-10 text-center text-neutral-white max-lg:mx-5"
-			>
-				<h1 class="max-lg:hidden">Discover the Freedom of Decentralized AI</h1>
-				<h2 class="hidden sm:max-lg:block">Discover the Freedom of Decentralized AI</h2>
-				<h3 class="hidden font-bold max-sm:block">Discover the Freedom of Decentralized AI</h3>
-				<p class="body-small">Use decentralized AI and keep your data private and secure with blockchain.</p>
-				<a href="https://chat.libertai.io">
-					<LButton class="w-fit" light text="TRY FOR FREE" />
-				</a>
+		<!-- Mobile Image -->
+		<img
+			alt="Private Inference API"
+			class="block h-auto w-full object-cover md:hidden"
+			src="../../assets/home/new_hero_mobile.png"
+		/>
+
+		<div class="absolute inset-0 flex flex-col justify-center">
+			<div class="container mx-auto px-5 md:px-20">
+				<div class="max-w-xs sm:max-w-md md:max-w-xl">
+					<h1 class="mb-6 text-4xl font-bold text-neutral-white sm:text-5xl md:text-6xl">Private Inference API</h1>
+					<p class="mb-8 text-base text-neutral-white sm:text-lg">
+						Libertai API offers decentralized, secure access to advanced AI models, enabling developers to build
+						scalable, privacy-preserving applications.
+					</p>
+					<a href="https://docs.libertai.io/apis" target="_blank">
+						<LButton light text="LibertAI API Docs" />
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>
