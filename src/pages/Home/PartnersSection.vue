@@ -7,10 +7,7 @@
 				</a>
 				<div class="mt-6 flex max-sm:flex-col max-sm:space-y-4 sm:space-x-9">
 					<a href="https://aleph.cloud" target="_blank">
-						<img alt="Aleph Cloud logo" src="../../assets/logos/aleph.svg" />
-					</a>
-					<a href="https://twentysix.cloud" target="_blank">
-						<img alt="TwentySixCloud logo" src="../../assets/logos/twentysix.svg" />
+						<img alt="Aleph Cloud logo" height="44" src="../../assets/logos/alephcloud.png" width="200" />
 					</a>
 				</div>
 			</div>
