@@ -5,42 +5,41 @@ import {
 	NavigationMenuList,
 } from "@/components/ui/navigation-menu";
 import { Link } from "@tanstack/react-router";
-import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { ExternalLink, Menu } from "lucide-react";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 export function Navbar() {
-	const [isMenuOpen, setIsMenuOpen] = useState(false);
-
 	const navItems = [
-		{ href: "/", label: "About" },
-		{ href: "/", label: "Private AI" },
-		{ href: "/", label: "API" },
-		{ href: "/", label: "Tokenomics" },
-		{ href: "/", label: "Blog" },
-		{ href: "/", label: "Apps" },
+		{ href: "/a", label: "About" },
+		{ href: "/b", label: "Private AI" },
+		{ href: "/c", label: "API" },
+		{ href: "/d", label: "Tokenomics" },
+		{ href: "/e", label: "Blog" },
+		{ href: "/f", label: "Apps" },
 	];
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 bg-background">
+		<header className="fixed top-0 left-0 right-0 z-50 bg-background/10 backdrop-blur-sm">
 			<div className="mx-auto lg:mx-12 xl:mx-20 px-4 md:px-6 lg:px-8">
-				<div className="flex items-center h-16">
+				<div className="flex items-center justify-between h-16">
+					{/* Logo - visible on both mobile and desktop */}
+					<Link to="/" className="text-white font-bold text-xl z-10">
+						LibertAI
+					</Link>
+
 					{/* Desktop Navigation */}
-					<div className="hidden md:flex items-center justify-between w-full">
+					<div className="hidden md:flex items-center justify-between flex-1 ml-8">
 						<NavigationMenu>
 							<NavigationMenuList className="md:gap-4 lg:gap-10">
-								{/* Logo */}
-								<Link to="/" className="text-white font-bold text-xl z-10">
-									LibertAI
-								</Link>
-
 								{navItems.map((item) => (
 									<NavigationMenuItem key={item.href}>
-										<Link to={item.href}>
-											<NavigationMenuLink className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent">
-												{item.label}
-											</NavigationMenuLink>
-										</Link>
+										<NavigationMenuLink
+											className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent"
+											href={item.href}
+										>
+											{item.label}
+										</NavigationMenuLink>
 									</NavigationMenuItem>
 								))}
 							</NavigationMenuList>
@@ -52,43 +51,39 @@ export function Navbar() {
 						</Button>
 					</div>
 
-					{/* Mobile Menu Button */}
-					<Button
-						variant="ghost"
-						size="icon"
-						className="md:hidden text-white"
-						onClick={() => setIsMenuOpen(!isMenuOpen)}
-					>
-						{isMenuOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
-					</Button>
-				</div>
-			</div>
+					{/* Mobile Actions */}
+					<div className="flex items-center gap-2 md:hidden">
+						{/* Try Now Button */}
+						<Button variant="glass" size="pill" className="text-sm flex items-center gap-1">
+							Try Now <ExternalLink className="h-3.5 w-3.5" />
+						</Button>
 
-			{/* Mobile Menu */}
-			{isMenuOpen && (
-				<div className="fixed inset-0 top-16 z-40 bg-background/95 backdrop-blur-sm md:hidden">
-					<div className="container mx-auto px-4 py-8">
-						<NavigationMenu orientation="vertical" className="w-full">
-							<NavigationMenuList className="flex-col items-start w-full gap-5">
-								{navItems.map((item) => (
-									<NavigationMenuItem key={item.href} className="w-full">
-										<Link to={item.href} onClick={() => setIsMenuOpen(false)}>
-											<NavigationMenuLink className="bg-transparent text-white hover:text-primary text-lg w-full hover:bg-transparent focus:bg-transparent">
-												{item.label}
-											</NavigationMenuLink>
+						{/* Mobile Menu Sheet */}
+						<Sheet>
+							<SheetTrigger asChild>
+								<Button variant="ghost" size="icon" className="text-white">
+									<Menu className="h-5 w-5" />
+								</Button>
+							</SheetTrigger>
+							<SheetContent side="right" className="bg-background/95 backdrop-blur-sm border-l-0 p-6">
+								<SheetHeader className="text-left">
+									<SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+								</SheetHeader>
+								<nav className="flex flex-col space-y-6 mt-6">
+									{navItems.map((item) => (
+										<Link to={item.href} key={item.href} className="text-white hover:text-primary text-lg">
+											{item.label}
 										</Link>
-									</NavigationMenuItem>
-								))}
-								<NavigationMenuItem className="w-full mt-4">
-									<Button variant="glass" size="pill" className="w-full justify-start">
+									))}
+									<Button variant="glass" size="pill" className="w-full justify-start mt-2">
 										Join the Revolution →
 									</Button>
-								</NavigationMenuItem>
-							</NavigationMenuList>
-						</NavigationMenu>
+								</nav>
+							</SheetContent>
+						</Sheet>
 					</div>
 				</div>
-			)}
+			</div>
 		</header>
 	);
 }
