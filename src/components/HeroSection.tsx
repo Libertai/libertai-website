@@ -7,9 +7,9 @@ export function HeroSection() {
 			{/* Background with gradient overlay */}
 			<div className="absolute inset-0 z-0">
 				{/* Hero image with overlay */}
-				<img 
-					src={heroImage} 
-					alt="Hero background" 
+				<img
+					src={heroImage}
+					alt="Hero background"
 					className="absolute h-full w-full object-cover md:object-right opacity-90"
 				/>
 				{/* Lighter gradient that doesn't obscure the image as much */}
@@ -30,11 +30,7 @@ export function HeroSection() {
 							className="w-full h-10 px-4 py-3 rounded-full bg-white/10 border border-white/20 text-white placeholder:text-white/50 focus:outline-none focus:ring-1 focus:ring-primary pr-28 md:pr-32 text-sm md:text-base"
 						/>
 						<div className="absolute right-1 top-[3px]">
-							<Button 
-								variant="default" 
-								size="pill-sm"
-								className="text-white"
-							>
+							<Button variant="default" size="pill-sm" className="text-white">
 								Generate
 							</Button>
 						</div>
@@ -45,7 +41,13 @@ export function HeroSection() {
 						<a href="#" className="flex items-center gap-1.5 hover:text-white group">
 							<span className="w-5 h-5 flex items-center justify-center bg-primary rounded-full group-hover:bg-primary/80 transition-colors">
 								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M6 1L11 6L6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+									<path
+										d="M6 1L11 6L6 11"
+										stroke="currentColor"
+										strokeWidth="1.5"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+									/>
 								</svg>
 							</span>
 							<span>Build a new bot</span>
@@ -53,7 +55,13 @@ export function HeroSection() {
 						<a href="#" className="flex items-center gap-1.5 hover:text-white group">
 							<span className="w-5 h-5 flex items-center justify-center bg-primary rounded-full group-hover:bg-primary/80 transition-colors">
 								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M6 1L11 6L6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+									<path
+										d="M6 1L11 6L6 11"
+										stroke="currentColor"
+										strokeWidth="1.5"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+									/>
 								</svg>
 							</span>
 							<span>Get your API key</span>
@@ -61,7 +69,13 @@ export function HeroSection() {
 						<a href="#" className="flex items-center gap-1.5 hover:text-white group">
 							<span className="w-5 h-5 flex items-center justify-center bg-primary rounded-full group-hover:bg-primary/80 transition-colors">
 								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path d="M6 1L11 6L6 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+									<path
+										d="M6 1L11 6L6 11"
+										stroke="currentColor"
+										strokeWidth="1.5"
+										strokeLinecap="round"
+										strokeLinejoin="round"
+									/>
 								</svg>
 							</span>
 							<span>Developer Docs</span>
