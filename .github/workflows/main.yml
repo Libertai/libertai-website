@@ -1,72 +1,44 @@
-name: Build
+name: CI
 
-on: [ push ]
+on:
+  push:
+  pull_request:
 
 jobs:
-  build:
-    name: "Build"
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
-        with:
-          node-version: 20
-          cache: 'npm'
-          cache-dependency-path: 'package-lock.json'
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Build
-        run: npm run build
-
   lint:
     name: "Lint"
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Use Node.js 20
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version-file: '.nvmrc'
           cache-dependency-path: 'package-lock.json'
-
       - name: Install dependencies
-        run: npm install
-
+        run: npm ci
       - name: Run ESLint
-        run: npm run lint > eslint-results
+        run: npm run lint
 
-      - name: Get eslint results
-        uses: actions/upload-artifact@v4
-        if: failure()
-        with:
-          name: eslint-results
-          path: eslint-results
-          retention-days: 5
-
-  format:
-    name: "Format"
+  build:
+    name: "Build"
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
-      - name: Checkout repository
+      - name: Checkout code
         uses: actions/checkout@v4
-
-      - name: Use Node.js 20
+      - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
+          node-version-file: '.nvmrc'
           cache-dependency-path: 'package-lock.json'
-
       - name: Install dependencies
-        run: npm install
+        run: npm ci
+      - name: Build project
+        run: npm run build
 
-      - name: Run Prettier
-        run: npm run format
+      - name: Deploy preview on Aleph
+        if: ${{ github.event_name == 'pull_request' }}
+        uses: aleph-im/web3-hosting-action@v1.0.0
+        with:
+          path: 'dist'
