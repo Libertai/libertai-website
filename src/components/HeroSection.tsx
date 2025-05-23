@@ -1,4 +1,5 @@
 import heroImage from "@/assets/hero.png";
+import heroImageMobile from "@/assets/hero-mobile.png";
 import { Button } from "@/components/ui/button";
 
 export function HeroSection() {
@@ -10,17 +11,24 @@ export function HeroSection() {
 				<img
 					src={heroImage}
 					alt="Hero background"
-					className="absolute h-full w-full object-cover md:object-right opacity-90"
+					className="absolute h-full w-full object-cover md:object-right opacity-90 hidden md:block"
 				/>
-				{/* Lighter gradient that doesn't obscure the image as much */}
-				<div className="absolute inset-0 bg-gradient-to-r from-background via-background/50 to-transparent md:via-transparent"></div>
+				<img
+					src={heroImageMobile}
+					alt="Hero background"
+					className="absolute h-full w-full object-cover md:object-right opacity-90 md:hidden max-sm:block"
+				/>
+				{/* Custom gradient background */}
+				<div className="absolute inset-0 md:bg-gradient-to-r md:from-background md:via-background/50 md:to-transparent xl:bg-[linear-gradient(90deg,_var(--background)_50%,_rgba(14,_15,_24,_0.00)_75.07%)]"></div>
 			</div>
 
 			{/* Content container */}
 			<div className="container mx-auto px-4 md:px-6 lg:px-8 z-10 flex flex-col md:flex-row items-center justify-between min-h-screen pt-20 md:pt-16 pb-12">
 				{/* Left side with text */}
 				<div className="w-full md:w-1/2 space-y-6 md:space-y-8">
-					<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">Private AI, Unleashed</h1>
+					<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-satoshi">
+						Private AI, Unleashed
+					</h1>
 
 					{/* Email input form */}
 					<div className="relative max-w-full md:max-w-md">
@@ -34,52 +42,6 @@ export function HeroSection() {
 								Generate
 							</Button>
 						</div>
-					</div>
-
-					{/* Bottom links */}
-					<div className="flex flex-wrap gap-4 md:gap-8 items-center text-xs md:text-sm text-white/70 pt-4 md:pt-8">
-						<a href="#" className="flex items-center gap-1.5 hover:text-white group">
-							<span className="w-5 h-5 flex items-center justify-center bg-primary rounded-full group-hover:bg-primary/80 transition-colors">
-								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M6 1L11 6L6 11"
-										stroke="currentColor"
-										strokeWidth="1.5"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-									/>
-								</svg>
-							</span>
-							<span>Build a new bot</span>
-						</a>
-						<a href="#" className="flex items-center gap-1.5 hover:text-white group">
-							<span className="w-5 h-5 flex items-center justify-center bg-primary rounded-full group-hover:bg-primary/80 transition-colors">
-								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M6 1L11 6L6 11"
-										stroke="currentColor"
-										strokeWidth="1.5"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-									/>
-								</svg>
-							</span>
-							<span>Get your API key</span>
-						</a>
-						<a href="#" className="flex items-center gap-1.5 hover:text-white group">
-							<span className="w-5 h-5 flex items-center justify-center bg-primary rounded-full group-hover:bg-primary/80 transition-colors">
-								<svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-									<path
-										d="M6 1L11 6L6 11"
-										stroke="currentColor"
-										strokeWidth="1.5"
-										strokeLinecap="round"
-										strokeLinejoin="round"
-									/>
-								</svg>
-							</span>
-							<span>Developer Docs</span>
-						</a>
 					</div>
 				</div>
 			</div>
