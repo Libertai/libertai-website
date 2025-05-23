@@ -2,14 +2,52 @@ import heroImage from "@/assets/home/hero.png";
 import heroImageMobile from "@/assets/home/hero-mobile.png";
 import { ArrowDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 export function HeroSection() {
+	const desktopButtonRef = useRef<HTMLButtonElement>(null);
+	const mobileButtonRef = useRef<HTMLButtonElement>(null);
+
 	const scrollToServices = () => {
 		const servicesSection = document.getElementById("services");
 		if (servicesSection) {
 			servicesSection.scrollIntoView({ behavior: "smooth" });
 		}
 	};
+
+	useEffect(() => {
+		// Create floating animation for both buttons
+		if (desktopButtonRef.current) {
+			gsap.fromTo(
+				desktopButtonRef.current,
+				{ y: -8 },
+				{
+					y: 18,
+					duration: 2.5,
+					repeat: -1,
+					yoyo: true,
+					ease: "sine.inOut",
+					repeatDelay: 0,
+				},
+			);
+		}
+
+		if (mobileButtonRef.current) {
+			gsap.fromTo(
+				mobileButtonRef.current,
+				{ y: -8 },
+				{
+					y: 16,
+					duration: 2.5,
+					repeat: -1,
+					yoyo: true,
+					ease: "sine.inOut",
+					repeatDelay: 0,
+				},
+			);
+		}
+	}, []);
 
 	return (
 		<section className="relative w-full min-h-screen flex items-center bg-background text-white overflow-hidden">
@@ -53,7 +91,13 @@ export function HeroSection() {
 
 				{/* Bottom buttons - desktop */}
 				<div className="hidden md:flex flex-wrap gap-3 justify-center justify-start font-satoshi">
-					<Button variant="ghost" size="pill" className="hover:bg-transparent" onClick={scrollToServices}>
+					<Button
+						ref={desktopButtonRef}
+						variant="ghost"
+						size="pill"
+						className="hover:bg-transparent"
+						onClick={scrollToServices}
+					>
 						<ArrowDown />
 						<span>Scroll if you are human</span>
 					</Button>
@@ -89,7 +133,7 @@ export function HeroSection() {
 					</div>
 
 					<div className="flex justify-center">
-						<Button variant="ghost" size="lg" onClick={scrollToServices}>
+						<Button ref={mobileButtonRef} variant="ghost" size="lg" onClick={scrollToServices}>
 							<ArrowDown />
 							<span>Scroll if you are human</span>
 						</Button>
