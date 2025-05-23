@@ -80,7 +80,7 @@ export function Navbar() {
 											{item.label}
 										</Link>
 									))}
-									<Button variant="glass" size="pill" className="w-full justify-start mt-2">
+									<Button variant="glass" size="pill" className="w-full justify-start mt-2 text-center">
 										{ctaText}
 									</Button>
 								</nav>

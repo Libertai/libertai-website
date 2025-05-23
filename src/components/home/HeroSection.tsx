@@ -1,5 +1,5 @@
-import heroImage from "@/assets/hero.png";
-import heroImageMobile from "@/assets/hero-mobile.png";
+import heroImage from "@/assets/home/hero.png";
+import heroImageMobile from "@/assets/home/hero-mobile.png";
 import { ArrowDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 
