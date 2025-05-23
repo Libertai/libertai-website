@@ -3,7 +3,7 @@ import { Bot, Code, ExternalLink, MessageSquare } from "lucide-react";
 
 export function ServicesSection() {
 	return (
-		<section className="w-full bg-background text-white py-20 px-4 md:px-6 lg:px-8">
+		<section id="services" className="w-full bg-background text-white py-20 px-4 md:px-6 lg:px-8">
 			<div className="container mx-auto">
 				{/* Section Header */}
 				<div className="text-center mb-16">
