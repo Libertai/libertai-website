@@ -1,5 +1,5 @@
-import heroImage from "@/assets/home/hero.png";
-import heroImageMobile from "@/assets/home/hero-mobile.png";
+import heroImage from "@/assets/home/hero/hero.png";
+import heroImageMobile from "@/assets/home/hero/hero-mobile.png";
 import { ArrowDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { useEffect, useRef } from "react";
@@ -50,7 +50,7 @@ export function HeroSection() {
 	}, []);
 
 	return (
-		<section className="relative w-full min-h-screen flex items-center bg-background text-white overflow-hidden">
+		<section className="relative w-full min-h-screen flex items-center bg-background overflow-hidden">
 			{/* Background with gradient overlay */}
 			<div className="absolute inset-0 z-0">
 				{/* Hero image with overlay */}
@@ -74,9 +74,7 @@ export function HeroSection() {
 				<div className="flex flex-col md:flex-row items-center justify-center md:justify-between flex-1">
 					{/* Left side with text */}
 					<div className="w-full md:w-1/2 space-y-6 md:space-y-8 text-center md:text-left">
-						<h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight font-satoshi">
-							Private AI, Unleashed
-						</h1>
+						<h1 className="font-bold leading-tight">Private AI, Unleashed</h1>
 
 						{/* Fake input */}
 						<div className="hidden md:block relative max-w-full md:max-w-md">
@@ -95,7 +93,7 @@ export function HeroSection() {
 						ref={desktopButtonRef}
 						variant="ghost"
 						size="pill"
-						className="hover:bg-transparent"
+						className="hover:bg-transparent text-white"
 						onClick={scrollToServices}
 					>
 						<ArrowDown />
@@ -116,16 +114,16 @@ export function HeroSection() {
 				</div>
 
 				{/* Bottom buttons - mobile */}
-				<div className="md:hidden space-y-4">
+				<div className="md:hidden space-y-4 text-white">
 					<div className="font-satoshi flex justify-center gap-3">
 						<a href="https://console.libertai.io" target="_blank">
-							<Button variant="ghost" size="lg" className="border border-ltai-grey">
+							<Button variant="outline" size="lg">
 								<span>API</span>
 								<ExternalLink />
 							</Button>
 						</a>
 						<a href="https://docs.libertai.io" target="_blank">
-							<Button variant="ghost" size="lg" className="border border-ltai-grey">
+							<Button variant="outline" size="lg">
 								<span>Dev Docs</span>
 								<ExternalLink />
 							</Button>
