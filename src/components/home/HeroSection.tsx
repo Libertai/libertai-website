@@ -4,6 +4,13 @@ import { ArrowDown, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 
 export function HeroSection() {
+	const scrollToServices = () => {
+		const servicesSection = document.getElementById("services");
+		if (servicesSection) {
+			servicesSection.scrollIntoView({ behavior: "smooth" });
+		}
+	};
+
 	return (
 		<section className="relative w-full min-h-screen flex items-center bg-background text-white overflow-hidden">
 			{/* Background with gradient overlay */}
@@ -46,7 +53,7 @@ export function HeroSection() {
 
 				{/* Bottom buttons - desktop */}
 				<div className="hidden md:flex flex-wrap gap-3 justify-center justify-start font-satoshi">
-					<Button variant="ghost" size="pill" className="hover:bg-transparent">
+					<Button variant="ghost" size="pill" className="hover:bg-transparent" onClick={scrollToServices}>
 						<ArrowDown />
 						<span>Scroll if you are human</span>
 					</Button>
@@ -82,7 +89,7 @@ export function HeroSection() {
 					</div>
 
 					<div className="flex justify-center">
-						<Button variant="ghost" size="lg">
+						<Button variant="ghost" size="lg" onClick={scrollToServices}>
 							<ArrowDown />
 							<span>Scroll if you are human</span>
 						</Button>

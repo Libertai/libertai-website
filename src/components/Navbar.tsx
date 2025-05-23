@@ -7,7 +7,7 @@ import {
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Menu } from "lucide-react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 export function Navbar() {
 	const navItems = [
@@ -73,6 +73,7 @@ export function Navbar() {
 							<SheetContent side="right" className="bg-background/95 backdrop-blur-sm border-l-0 p-6">
 								<SheetHeader className="text-left">
 									<SheetTitle className="sr-only">Navigation Menu</SheetTitle>
+									<SheetDescription className="sr-only">Navigate through LibertAI website sections</SheetDescription>
 								</SheetHeader>
 								<nav className="flex flex-col space-y-6 mt-6">
 									{navItems.map((item) => (
