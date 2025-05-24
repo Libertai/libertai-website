@@ -2,6 +2,22 @@ import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
 import backgroundImage from "@/assets/home/background-left.png";
 
+const footerLinks = [
+	{ text: "Home", href: "#" },
+	{ text: "About", href: "#" },
+	{ text: "Features", href: "#" },
+	{ text: "Roadmap", href: "#" },
+	{ text: "Sign Up", href: "#" },
+	{ text: "Litepaper", href: "#" },
+	{ text: "Docs", href: "https://docs.libertai.io" },
+	{ text: "Telegram Bot", href: "#" },
+	{ text: "Blog", href: "https://blog.libertai.io" },
+	{ text: "Privacy Policy", href: "#" },
+];
+
+const firstRowLinks = footerLinks.slice(0, 5);
+const secondRowLinks = footerLinks.slice(5);
+
 export function FooterSection() {
 	return (
 		<footer className="w-full">
@@ -41,42 +57,34 @@ export function FooterSection() {
 				<div className="container mx-auto">
 					{/* Footer Links */}
 					<div className="flex flex-col items-center space-y-4">
-						{/* First Row of Links */}
-						<div className="flex flex-wrap justify-center gap-8 text-sm">
-							<a href="#" className="hover:text-white transition-colors">
-								Home
-							</a>
-							<a href="#" className="hover:text-white transition-colors">
-								About
-							</a>
-							<a href="#" className="hover:text-white transition-colors">
-								Features
-							</a>
-							<a href="#" className="hover:text-white transition-colors">
-								Roadmap
-							</a>
-							<a href="#" className="hover:text-white transition-colors">
-								Sign Up
-							</a>
+						{/* Mobile: Responsive flex wrap */}
+						<div className="flex flex-wrap justify-center gap-4 md:hidden text-sm">
+							{footerLinks.map((link) => (
+								<a key={link.text} href={link.href} className="hover:text-white transition-colors">
+									{link.text}
+								</a>
+							))}
 						</div>
 
-						{/* Second Row of Links */}
-						<div className="flex flex-wrap justify-center gap-8 text-sm">
-							<a href="#" className="hover:text-white transition-colors">
-								Litepaper
-							</a>
-							<a href="https://docs.libertai.io" className="hover:text-white transition-colors">
-								Docs
-							</a>
-							<a href="#" className="hover:text-white transition-colors">
-								Telegram Bot
-							</a>
-							<a href="https://blog.libertai.io" className="hover:text-white transition-colors">
-								Blog
-							</a>
-							<a href="#" className="hover:text-white transition-colors">
-								Privacy Policy
-							</a>
+						{/* Desktop: Two rows */}
+						<div className="hidden md:flex flex-col space-y-4">
+							{/* First Row of Links */}
+							<div className="flex flex-wrap justify-center gap-8 text-sm">
+								{firstRowLinks.map((link) => (
+									<a key={link.text} href={link.href} className="hover:text-white transition-colors">
+										{link.text}
+									</a>
+								))}
+							</div>
+
+							{/* Second Row of Links */}
+							<div className="flex flex-wrap justify-center gap-8 text-sm">
+								{secondRowLinks.map((link) => (
+									<a key={link.text} href={link.href} className="hover:text-white transition-colors">
+										{link.text}
+									</a>
+								))}
+							</div>
 						</div>
 
 						{/* Copyright */}
