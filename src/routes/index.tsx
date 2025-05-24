@@ -6,6 +6,7 @@ import { FeaturesSection } from "@/components/home/FeaturesSection.tsx";
 import { APISection } from "@/components/home/APISection.tsx";
 import { ModelsSection } from "@/components/home/ModelsSection.tsx";
 import { FAQSection } from "@/components/home/FAQSection.tsx";
+import { FooterSection } from "@/components/home/FooterSection.tsx";
 
 export const Route = createFileRoute("/")({
 	component: Index,
@@ -21,6 +22,7 @@ function Index() {
 			<APISection />
 			<ModelsSection />
 			<FAQSection />
+			<FooterSection />
 		</main>
 	);
 }
