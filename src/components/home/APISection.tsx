@@ -13,7 +13,7 @@ const features = [
 		icon: GitPullRequestArrow,
 		title: "Developer Freedom",
 		description:
-			"Dare to build with no KYC verification needed. Your private AI playground comes with developer support, a console for tracking token based usage and spending.",
+			"Dare to build with no KYC verification needed. Your private AI playground comes with developer support and a console for tracking token based usage and spending.",
 	},
 	{
 		icon: Rocket,

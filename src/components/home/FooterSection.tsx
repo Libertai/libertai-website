@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
-import backgroundImage from "@/assets/home/background-left.png";
+import backgroundImage from "@/assets/footer-background.png";
+import footerVideo from "@/assets/footer.mp4";
 
 const footerLinks = [
 	{ text: "Home", href: "#" },
@@ -23,10 +24,24 @@ export function FooterSection() {
 		<footer className="w-full">
 			{/* Main Footer Section with Background */}
 			<section
-				className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
+				className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative overflow-hidden"
 				style={{ backgroundImage: `url(${backgroundImage})` }}
 			>
-				<div className="container mx-auto text-center">
+				{/* Background Video */}
+				<video
+					className="hidden md:block absolute inset-0 w-full h-full object-cover pointer-events-none opacity-80"
+					style={{
+						mixBlendMode: "color-dodge",
+						filter: "blur(1px)",
+					}}
+					autoPlay
+					muted
+					loop
+					playsInline
+				>
+					<source src={footerVideo} type="video/mp4" />
+				</video>
+				<div className="container mx-auto text-center relative z-10">
 					{/* Section Header */}
 					<div className="mb-16 space-y-6">
 						<div className="text-sm">[ Above all else ]</div>
