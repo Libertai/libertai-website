@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button.tsx";
 import { Cpu, ExternalLink, GitPullRequestArrow, Rocket } from "lucide-react";
-import backgroundImage from "@/assets/home/api/background.png";
+import backgroundImage from "@/assets/home/background-right.png";
 
 const features = [
 	{
