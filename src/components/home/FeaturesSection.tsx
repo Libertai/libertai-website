@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button.tsx";
 import { Brain, ExternalLink, Image, MessageSquare, Users } from "lucide-react";
-import backgroundImage from "@/assets/home/features/background.png";
+import backgroundImage from "@/assets/home/background-left.png";
 import chatImage from "@/assets/home/features/chat.png";
 import personasImage from "@/assets/home/features/personas.png";
 import imgGenImage from "@/assets/home/features/image.png";
