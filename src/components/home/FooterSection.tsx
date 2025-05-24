@@ -31,7 +31,7 @@ export function FooterSection() {
 					<div className="mb-16 space-y-6">
 						<div className="text-sm">[ Above all else ]</div>
 						<h2 className="text-2xl md:text-5xl lg:text-6xl xl:text-7xl font-bold">Liberty | Community | Privacy</h2>
-						<p className="text-lg font-satoshi text-gray-300 max-w-md mx-auto">Break free, join the liberation.</p>
+						<p className="text-lg font-satoshi max-w-md mx-auto">Break free, join the liberation.</p>
 
 						{/* Action Buttons */}
 						<div className="flex gap-4 justify-center pt-4">

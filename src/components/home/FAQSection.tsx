@@ -57,14 +57,14 @@ export function FAQSection() {
 								<AccordionTrigger className="text-left text-lg text-white hover:no-underline py-6 [&[data-state=open]>svg]:rotate-180">
 									{faq.question}
 								</AccordionTrigger>
-								<AccordionContent className="text-gray-300 text-sm leading-relaxed pb-6">{faq.answer}</AccordionContent>
+								<AccordionContent className="text-sm leading-relaxed pb-6">{faq.answer}</AccordionContent>
 							</AccordionItem>
 						))}
 					</Accordion>
 				</div>
 
 				{/* Footer */}
-				<div className="text-center text-sm text-gray-400">
+				<div className="text-center text-sm">
 					Got more questions? Ask the team on{" "}
 					<a href="https://t.me/libertai" className="text-[#EA7AF4] hover:underline">
 						Telegram
