@@ -20,7 +20,7 @@ export function AlephSection() {
 					<div className="w-full max-w-lg">
 						<MuxPlayer
 							playbackId="9Pusq66jUu501jcYVqisWOksfuIsHymy7vS4EKCvRfuw"
-							autoPlay
+							// autoPlay
 							muted
 							loop
 							metadata={{
