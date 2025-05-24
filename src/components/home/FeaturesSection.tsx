@@ -10,7 +10,7 @@ const features = [
 	{
 		icon: MessageSquare,
 		title: "Chat",
-		description: "Chat freely with privacy by design. For your protection and theirs.",
+		description: "Chat freely with privacy by default for your protection.",
 		image: chatImage,
 		buttonText: "Chat Now",
 		buttonHref: "#",
@@ -30,7 +30,7 @@ const features = [
 		icon: Image,
 		title: "Image Generation",
 		description:
-			"Unleash your creativity with stunning, high-quality AI-generated images. Experience the future of artistic expression!",
+			"Unleash your creativity with stunning, uncensored AI-generated images. Experience the future of artistic expression!",
 		image: imgGenImage,
 		buttonText: "[Coming Soon]",
 		buttonHref: "#",
@@ -40,7 +40,7 @@ const features = [
 		icon: Brain,
 		title: "Knowledge Bases 2.0",
 		description:
-			"Think of knowledge bases as a place where you can create folders and upload documents, train your AI assistant with context.",
+			"Think of Knowledge bases as a drive where you can create folders and upload documents, and your AI assistant can access it.",
 		image: knowledgeImage,
 		buttonText: "[Coming Soon]",
 		buttonHref: "#",
