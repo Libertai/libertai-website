@@ -40,9 +40,9 @@ export function ServicesSection() {
 			<div className="container mx-auto">
 				{/* Section Header */}
 				<div className="mb-16 space-y-6">
-					<div className="text-sm text-gray-400">[ Services ]</div>
+					<div className="text-sm">[ Services ]</div>
 					<h2>Privacy is Freedom</h2>
-					<p className="text-lg max-w-2xl">
+					<p className="text-lg max-w-2xl font-satoshi">
 						Break free with LibertAI, the decentralized AI platform that puts you in control.
 					</p>
 				</div>

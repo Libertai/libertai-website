@@ -24,7 +24,7 @@ export function HeroSection() {
 				{ y: -8 },
 				{
 					y: 18,
-					duration: 2.5,
+					duration: 1.5,
 					repeat: -1,
 					yoyo: true,
 					ease: "sine.inOut",
@@ -38,8 +38,8 @@ export function HeroSection() {
 				mobileButtonRef.current,
 				{ y: -8 },
 				{
-					y: 16,
-					duration: 2.5,
+					y: 18,
+					duration: 1.5,
 					repeat: -1,
 					yoyo: true,
 					ease: "sine.inOut",
