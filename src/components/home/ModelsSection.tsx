@@ -40,20 +40,20 @@ const features = [
 export function ModelsSection() {
 	return (
 		<section
-			className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
+			className="w-full lg:min-h-225 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat flex items-center"
 			style={{ backgroundImage: `url(${backgroundImage})` }}
 		>
 			<div className="container mx-auto">
 				{/* Section Header */}
-				<div className="mb-16 flex justify-between items-start">
-					<div className="space-y-6 max-w-2xl">
-						<div className="text-sm">[ By the people, for the people ]</div>
-						<h2>Unleash Open-Source Power</h2>
+				<div className="mb-16 space-y-6">
+					<div className="flex justify-between items-start">
+						<div className="text-sm max-sm:max-w-40">[ By the people, for the people ]</div>
+						<Button variant="outline" size="lg" className="text-white">
+							Explore More
+							<ExternalLink className="w-4 h-4" />
+						</Button>
 					</div>
-					<Button variant="outline" size="lg" className="text-white">
-						Explore More
-						<ExternalLink className="w-4 h-4" />
-					</Button>
+					<h2>Unleash Open-Source Power</h2>
 				</div>
 
 				{/* Features Grid */}

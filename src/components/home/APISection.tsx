@@ -26,7 +26,7 @@ const features = [
 export function APISection() {
 	return (
 		<section
-			className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
+			className="w-full lg:min-h-200 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat flex items-center"
 			style={{ backgroundImage: `url(${backgroundImage})` }}
 		>
 			<div className="container mx-auto">
@@ -63,7 +63,7 @@ export function APISection() {
 							<div key={feature.title} className="space-y-4">
 								<div className="flex items-center gap-3">
 									<IconComponent className="w-6 h-6 text-[#EA7AF4]" />
-									<h3 className="text-2xl font-satoshi">{feature.title}</h3>
+									<h3 className="text-2xl font-regular font-satoshi">{feature.title}</h3>
 								</div>
 								<p className="text-sm leading-relaxed">{feature.description}</p>
 							</div>
