@@ -3,6 +3,8 @@ import { Bot, Code, ExternalLink, MessageSquare } from "lucide-react";
 import chatImage from "@/assets/home/services/chat.png";
 import apiImage from "@/assets/home/services/api.png";
 import agentsImage from "@/assets/home/services/agents.png";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const services = [
 	{
@@ -35,6 +37,41 @@ const services = [
 ];
 
 export function ServicesSection() {
+	const gridRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const grid = gridRef.current;
+		if (!grid) return;
+
+		// Hover effects for service cards
+		const cardElements = grid.children;
+		Array.from(cardElements).forEach((card) => {
+			const cardElement = card as HTMLElement;
+			const image = cardElement.querySelector('img');
+			const icon = cardElement.querySelector('svg');
+			
+			cardElement.addEventListener('mouseenter', () => {
+				gsap.to(cardElement, { y: -10, duration: 0.4, ease: "power2.out" });
+				if (image) {
+					gsap.to(image, { scale: 1.03, duration: 0.4, ease: "power2.out" });
+				}
+				if (icon) {
+					gsap.to(icon, { rotate: 3, duration: 0.3, ease: "power2.out" });
+				}
+			});
+			
+			cardElement.addEventListener('mouseleave', () => {
+				gsap.to(cardElement, { y: 0, duration: 0.4, ease: "power2.out" });
+				if (image) {
+					gsap.to(image, { scale: 1, duration: 0.4, ease: "power2.out" });
+				}
+				if (icon) {
+					gsap.to(icon, { rotate: 0, duration: 0.3, ease: "power2.out" });
+				}
+			});
+		});
+	}, []);
+
 	return (
 		<section id="services" className="w-full bg-background py-20 px-4 md:px-6 lg:px-8">
 			<div className="container mx-auto">
@@ -48,7 +85,7 @@ export function ServicesSection() {
 				</div>
 
 				{/* Services Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-3 gap-28 md:gap-8 lg:gap-16 mb-16">
+				<div ref={gridRef} className="grid grid-cols-1 md:grid-cols-3 gap-28 md:gap-8 lg:gap-16 mb-16">
 					{services.map((service) => {
 						const IconComponent = service.icon;
 						return (

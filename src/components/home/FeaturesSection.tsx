@@ -5,6 +5,8 @@ import chatImage from "@/assets/home/features/chat.png";
 import personasImage from "@/assets/home/features/personas.png";
 import imgGenImage from "@/assets/home/features/image.png";
 import knowledgeImage from "@/assets/home/features/knowledge.png";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const features = [
 	{
@@ -49,6 +51,41 @@ const features = [
 ];
 
 export function FeaturesSection() {
+	const gridRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const grid = gridRef.current;
+		if (!grid) return;
+
+		// Hover effects for feature cards
+		const cardElements = grid.children;
+		Array.from(cardElements).forEach((card) => {
+			const cardElement = card as HTMLElement;
+			const image = cardElement.querySelector('img');
+			const icon = cardElement.querySelector('svg');
+			
+			cardElement.addEventListener('mouseenter', () => {
+				gsap.to(cardElement, { y: -12, duration: 0.4, ease: "power2.out" });
+				if (image) {
+					gsap.to(image, { scale: 1.03, duration: 0.4, ease: "power2.out" });
+				}
+				if (icon) {
+					gsap.to(icon, { rotate: 5, duration: 0.3, ease: "power2.out" });
+				}
+			});
+			
+			cardElement.addEventListener('mouseleave', () => {
+				gsap.to(cardElement, { y: 0, duration: 0.4, ease: "power2.out" });
+				if (image) {
+					gsap.to(image, { scale: 1, duration: 0.4, ease: "power2.out" });
+				}
+				if (icon) {
+					gsap.to(icon, { rotate: 0, duration: 0.3, ease: "power2.out" });
+				}
+			});
+		});
+	}, []);
+
 	return (
 		<section
 			className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
@@ -66,7 +103,7 @@ export function FeaturesSection() {
 				</div>
 
 				{/* Features Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-28 md:gap-8 lg:gap-16 mb-16">
+				<div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-28 md:gap-8 lg:gap-16 mb-16">
 					{features.map((feature) => {
 						const IconComponent = feature.icon;
 						return (
