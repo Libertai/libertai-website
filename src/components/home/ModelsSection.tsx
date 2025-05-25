@@ -5,6 +5,8 @@ import textModelImage from "@/assets/home/models/text.png";
 import creativityModelImage from "@/assets/home/models/creativity.png";
 import brainModelImage from "@/assets/home/models/brain.png";
 import codeModelImage from "@/assets/home/models/code.png";
+import { useEffect, useRef } from "react";
+import { gsap } from "gsap";
 
 const features = [
 	{
@@ -38,6 +40,34 @@ const features = [
 ];
 
 export function ModelsSection() {
+	const cardsRef = useRef<HTMLDivElement>(null);
+
+	useEffect(() => {
+		const cards = cardsRef.current;
+		if (!cards) return;
+
+		// Hover animations for cards
+		const cardElements = cards.children;
+		Array.from(cardElements).forEach((card) => {
+			const cardElement = card as HTMLElement;
+			const image = cardElement.querySelector('img');
+			
+			cardElement.addEventListener('mouseenter', () => {
+				gsap.to(cardElement, { y: -8, duration: 0.3, ease: "power2.out" });
+				if (image) {
+					gsap.to(image, { scale: 1.05, duration: 0.3, ease: "power2.out" });
+				}
+			});
+			
+			cardElement.addEventListener('mouseleave', () => {
+				gsap.to(cardElement, { y: 0, duration: 0.3, ease: "power2.out" });
+				if (image) {
+					gsap.to(image, { scale: 1, duration: 0.3, ease: "power2.out" });
+				}
+			});
+		});
+	}, []);
+
 	return (
 		<section
 			className="w-full lg:min-h-225 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat flex items-center"
@@ -57,7 +87,7 @@ export function ModelsSection() {
 				</div>
 
 				{/* Features Grid */}
-				<div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+				<div ref={cardsRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
 					{features.map((feature) => {
 						const IconComponent = feature.icon;
 						return (
