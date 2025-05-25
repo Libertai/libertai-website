@@ -19,7 +19,8 @@ export function Navbar() {
 		{ href: "/f", label: "Apps" },
 	];
 
-	const ctaText = "Join the Revolution →";
+	const ctaText = "Try LibertAI chat";
+	const ctaLink = "https://chat.libertai.io";
 
 	return (
 		<header className="fixed top-0 left-0 right-0 z-50 bg-background/10 backdrop-blur-sm">
@@ -48,12 +49,18 @@ export function Navbar() {
 						</NavigationMenu>
 
 						{/* Right side: Button */}
-						<Button variant="glass" size="pill" className="hidden lg:block">
-							{ctaText}
-						</Button>
-						<Button variant="glass" size="pill-sm" className="lg:hidden">
-							{ctaText}
-						</Button>
+						<a href={ctaLink} target="_blank">
+							<Button variant="glass" size="pill" className="hidden lg:flex">
+								<span>{ctaText}</span>
+								<ExternalLink className="w-4 h-4" />
+							</Button>
+						</a>
+						<a href={ctaLink} target="_blank">
+							<Button variant="glass" size="pill-sm" className="lg:hidden">
+								<span>{ctaText}</span>
+								<ExternalLink className="w-4 h-4" />
+							</Button>
+						</a>
 					</div>
 
 					{/* Mobile Actions */}
@@ -81,9 +88,12 @@ export function Navbar() {
 											{item.label}
 										</Link>
 									))}
-									<Button variant="glass" size="pill" className="w-full justify-start mt-2 text-center">
-										{ctaText}
-									</Button>
+									<a href={ctaLink} target="_blank">
+										<Button variant="glass" size="pill" className="w-full justify-start mt-2 text-center">
+											<span>{ctaText}</span>
+											<ExternalLink className="w-4 h-4" />
+										</Button>
+									</a>
 								</nav>
 							</SheetContent>
 						</Sheet>

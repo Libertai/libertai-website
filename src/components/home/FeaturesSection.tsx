@@ -13,7 +13,7 @@ const features = [
 		description: "Chat freely with privacy by default for your protection.",
 		image: chatImage,
 		buttonText: "Chat Now",
-		buttonHref: "#",
+		buttonHref: "https://chat.libertai.io",
 		live: true,
 	},
 	{
@@ -89,7 +89,6 @@ export function FeaturesSection() {
 									) : (
 										<Button variant="ghost" size="lg" className="text-white p-[0]!" disabled>
 											{feature.buttonText}
-											<ExternalLink className="w-4 h-4" />
 										</Button>
 									)}
 								</div>

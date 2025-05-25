@@ -24,7 +24,7 @@ export function FooterSection() {
 		<footer className="w-full">
 			{/* Main Footer Section with Background */}
 			<section
-				className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative overflow-hidden"
+				className="w-full lg:min-h-175 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative overflow-hidden flex items-center"
 				style={{ backgroundImage: `url(${backgroundImage})` }}
 			>
 				{/* Background Video */}
@@ -103,12 +103,21 @@ export function FooterSection() {
 						</div>
 
 						{/* Copyright */}
-						<div className="text-center text-sm text-white mt-5 w-full">
-							Powered by{" "}
+						<div className="text-center text-sm text-white mt-5 w-full hidden md:block">
+							© 2025 LibertAI.io | Powered by{" "}
 							<a href="https://aleph.cloud" target="_blank">
 								Aleph Cloud
-							</a>{" "}
-							| © 2025 LibertAI.io
+							</a>
+						</div>
+						<div className="text-center text-sm text-white mt-5 w-full md:hidden">
+							<span>© 2025 LibertAI.io</span>
+							<br />
+							<span>
+								Powered by{" "}
+								<a href="https://aleph.cloud" target="_blank">
+									Aleph Cloud
+								</a>
+							</span>
 						</div>
 					</div>
 				</div>
