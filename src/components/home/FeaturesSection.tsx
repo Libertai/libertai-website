@@ -60,10 +60,10 @@ export function FeaturesSection() {
 		const cardElements = grid.children;
 		Array.from(cardElements).forEach((card) => {
 			const cardElement = card as HTMLElement;
-			const image = cardElement.querySelector('img');
-			const icon = cardElement.querySelector('svg');
-			
-			cardElement.addEventListener('mouseenter', () => {
+			const image = cardElement.querySelector("img");
+			const icon = cardElement.querySelector("svg");
+
+			cardElement.addEventListener("mouseenter", () => {
 				gsap.to(cardElement, { y: -12, duration: 0.4, ease: "power2.out" });
 				if (image) {
 					gsap.to(image, { scale: 1.03, duration: 0.4, ease: "power2.out" });
@@ -72,8 +72,8 @@ export function FeaturesSection() {
 					gsap.to(icon, { rotate: 5, duration: 0.3, ease: "power2.out" });
 				}
 			});
-			
-			cardElement.addEventListener('mouseleave', () => {
+
+			cardElement.addEventListener("mouseleave", () => {
 				gsap.to(cardElement, { y: 0, duration: 0.4, ease: "power2.out" });
 				if (image) {
 					gsap.to(image, { scale: 1, duration: 0.4, ease: "power2.out" });
@@ -86,9 +86,7 @@ export function FeaturesSection() {
 	}, []);
 
 	return (
-		<section
-			className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat ltai-bg-left"
-		>
+		<section className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat ltai-bg-left">
 			<div className="container mx-auto">
 				{/* Section Header */}
 				<div className="mb-24 space-y-6">

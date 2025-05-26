@@ -49,16 +49,16 @@ export function ModelsSection() {
 		const cardElements = cards.children;
 		Array.from(cardElements).forEach((card) => {
 			const cardElement = card as HTMLElement;
-			const image = cardElement.querySelector('img');
-			
-			cardElement.addEventListener('mouseenter', () => {
+			const image = cardElement.querySelector("img");
+
+			cardElement.addEventListener("mouseenter", () => {
 				gsap.to(cardElement, { y: -8, duration: 0.3, ease: "power2.out" });
 				if (image) {
 					gsap.to(image, { scale: 1.05, duration: 0.3, ease: "power2.out" });
 				}
 			});
-			
-			cardElement.addEventListener('mouseleave', () => {
+
+			cardElement.addEventListener("mouseleave", () => {
 				gsap.to(cardElement, { y: 0, duration: 0.3, ease: "power2.out" });
 				if (image) {
 					gsap.to(image, { scale: 1, duration: 0.3, ease: "power2.out" });
@@ -68,9 +68,7 @@ export function ModelsSection() {
 	}, []);
 
 	return (
-		<section
-			className="w-full lg:min-h-225 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat flex items-center ltai-bg-left"
-		>
+		<section className="w-full lg:min-h-225 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat flex items-center ltai-bg-left">
 			<div className="container mx-auto">
 				{/* Section Header */}
 				<div className="mb-16 space-y-6">

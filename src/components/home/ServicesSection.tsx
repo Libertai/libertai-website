@@ -47,10 +47,10 @@ export function ServicesSection() {
 		const cardElements = grid.children;
 		Array.from(cardElements).forEach((card) => {
 			const cardElement = card as HTMLElement;
-			const image = cardElement.querySelector('img');
-			const icon = cardElement.querySelector('svg');
-			
-			cardElement.addEventListener('mouseenter', () => {
+			const image = cardElement.querySelector("img");
+			const icon = cardElement.querySelector("svg");
+
+			cardElement.addEventListener("mouseenter", () => {
 				gsap.to(cardElement, { y: -10, duration: 0.4, ease: "power2.out" });
 				if (image) {
 					gsap.to(image, { scale: 1.03, duration: 0.4, ease: "power2.out" });
@@ -59,8 +59,8 @@ export function ServicesSection() {
 					gsap.to(icon, { rotate: 3, duration: 0.3, ease: "power2.out" });
 				}
 			});
-			
-			cardElement.addEventListener('mouseleave', () => {
+
+			cardElement.addEventListener("mouseleave", () => {
 				gsap.to(cardElement, { y: 0, duration: 0.4, ease: "power2.out" });
 				if (image) {
 					gsap.to(image, { scale: 1, duration: 0.4, ease: "power2.out" });
