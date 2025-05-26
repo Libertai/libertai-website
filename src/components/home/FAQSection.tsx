@@ -1,5 +1,4 @@
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import backgroundImage from "@/assets/home/background-right.png";
 
 const faqs = [
 	{
@@ -35,8 +34,7 @@ const faqs = [
 export function FAQSection() {
 	return (
 		<section
-			className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
-			style={{ backgroundImage: `url(${backgroundImage})` }}
+			className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat ltai-bg-right"
 		>
 			<div className="container mx-auto max-w-2xl">
 				{/* Section Header */}

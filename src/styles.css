@@ -118,3 +118,23 @@
     font-weight: normal;
     font-style: normal;
 }
+
+/* Background utility classes */
+.ltai-bg-left {
+    background-image: url('/src/assets/home/background-left-mobile.png');
+}
+
+.ltai-bg-right {
+    background-image: url('/src/assets/home/background-right-mobile.png');
+}
+
+/* md */
+@media (width >= 48rem) {
+    .ltai-bg-left {
+        background-image: url('/src/assets/home/background-left.png');
+    }
+
+    .ltai-bg-right {
+        background-image: url('/src/assets/home/background-right.png');
+    }
+}

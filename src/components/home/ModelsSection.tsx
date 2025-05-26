@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button.tsx";
 import { Brain, Code, ExternalLink, MessageSquare, Sparkles } from "lucide-react";
-import backgroundImage from "@/assets/home/background-left.png";
 import textModelImage from "@/assets/home/models/text.png";
 import creativityModelImage from "@/assets/home/models/creativity.png";
 import brainModelImage from "@/assets/home/models/brain.png";
@@ -70,8 +69,7 @@ export function ModelsSection() {
 
 	return (
 		<section
-			className="w-full lg:min-h-225 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat flex items-center"
-			style={{ backgroundImage: `url(${backgroundImage})` }}
+			className="w-full lg:min-h-225 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat flex items-center ltai-bg-left"
 		>
 			<div className="container mx-auto">
 				{/* Section Header */}
