@@ -66,7 +66,7 @@ export function HeroSection() {
 					className="absolute h-full w-full object-cover md:object-right opacity-90 md:hidden max-sm:block"
 				/>
 				{/* Custom gradient background */}
-				<div className="absolute inset-0 bg-[linear-gradient(180deg,_rgba(14,_15,_24,_0.00)_0%,_#0E0F18_85%)] md:bg-gradient-to-r md:from-background md:via-background/50 md:to-transparent xl:bg-[linear-gradient(90deg,_var(--background)_50%,_rgba(14,_15,_24,_0.00)_75.07%)]"></div>
+				<div className="absolute inset-0"></div>
 			</div>
 
 			{/* Content container */}
