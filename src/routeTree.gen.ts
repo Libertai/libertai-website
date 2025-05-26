@@ -11,9 +11,16 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as PrivateAiImport } from './routes/private-ai'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const PrivateAiRoute = PrivateAiImport.update({
+  id: '/private-ai',
+  path: '/private-ai',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const IndexRoute = IndexImport.update({
   id: '/',
@@ -32,6 +39,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/private-ai': {
+      id: '/private-ai'
+      path: '/private-ai'
+      fullPath: '/private-ai'
+      preLoaderRoute: typeof PrivateAiImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -39,32 +53,37 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/private-ai': typeof PrivateAiRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/private-ai': typeof PrivateAiRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/private-ai': typeof PrivateAiRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/private-ai'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/private-ai'
+  id: '__root__' | '/' | '/private-ai'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  PrivateAiRoute: typeof PrivateAiRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  PrivateAiRoute: PrivateAiRoute,
 }
 
 export const routeTree = rootRoute
@@ -77,11 +96,15 @@ export const routeTree = rootRoute
     "__root__": {
       "filePath": "__root.tsx",
       "children": [
-        "/"
+        "/",
+        "/private-ai"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/private-ai": {
+      "filePath": "private-ai.tsx"
     }
   }
 }
