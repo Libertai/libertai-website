@@ -1,6 +1,5 @@
 import { Button } from "@/components/ui/button.tsx";
 import { Brain, ExternalLink, Image, MessageSquare, Users } from "lucide-react";
-import backgroundImage from "@/assets/home/background-left.png";
 import chatImage from "@/assets/home/features/chat.png";
 import personasImage from "@/assets/home/features/personas.png";
 import imgGenImage from "@/assets/home/features/image.png";
@@ -88,8 +87,7 @@ export function FeaturesSection() {
 
 	return (
 		<section
-			className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
-			style={{ backgroundImage: `url(${backgroundImage})` }}
+			className="w-full bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat ltai-bg-left"
 		>
 			<div className="container mx-auto">
 				{/* Section Header */}
