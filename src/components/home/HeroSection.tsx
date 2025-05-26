@@ -1,54 +1,17 @@
 import heroImage from "@/assets/home/hero/hero.png";
 import heroImageMobile from "@/assets/home/hero/hero-mobile.png";
-import { ArrowDown, ExternalLink } from "lucide-react";
+import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { TypewriterEffect } from "@/components/TypewriterEffect.tsx";
-import { useEffect, useRef } from "react";
-import { gsap } from "gsap";
+import { ScrollHuman } from "@/components/ScrollHuman.tsx";
 
 export function HeroSection() {
-	const desktopButtonRef = useRef<HTMLButtonElement>(null);
-	const mobileButtonRef = useRef<HTMLButtonElement>(null);
-
 	const scrollToServices = () => {
 		const servicesSection = document.getElementById("services");
 		if (servicesSection) {
 			servicesSection.scrollIntoView({ behavior: "smooth" });
 		}
 	};
-
-	useEffect(() => {
-		// Create floating animation for both buttons
-		if (desktopButtonRef.current) {
-			gsap.fromTo(
-				desktopButtonRef.current,
-				{ y: -8 },
-				{
-					y: 18,
-					duration: 1.5,
-					repeat: -1,
-					yoyo: true,
-					ease: "sine.inOut",
-					repeatDelay: 0,
-				},
-			);
-		}
-
-		if (mobileButtonRef.current) {
-			gsap.fromTo(
-				mobileButtonRef.current,
-				{ y: -8 },
-				{
-					y: 18,
-					duration: 1.5,
-					repeat: -1,
-					yoyo: true,
-					ease: "sine.inOut",
-					repeatDelay: 0,
-				},
-			);
-		}
-	}, []);
 
 	return (
 		<section className="relative w-full min-h-screen flex items-center bg-background overflow-hidden">
@@ -101,16 +64,7 @@ export function HeroSection() {
 
 				{/* Bottom buttons - desktop */}
 				<div className="hidden md:flex flex-wrap gap-3 justify-center justify-start font-satoshi">
-					<Button
-						ref={desktopButtonRef}
-						variant="ghost"
-						size="pill"
-						className="hover:bg-transparent text-white"
-						onClick={scrollToServices}
-					>
-						<ArrowDown />
-						<span>Scroll if you are human</span>
-					</Button>
+					<ScrollHuman onScroll={scrollToServices} />
 					<a href="https://console.libertai.io" target="_blank">
 						<Button variant="glass" size="pill">
 							<span>Build with the API</span>
@@ -143,10 +97,7 @@ export function HeroSection() {
 					</div>
 
 					<div className="flex justify-center">
-						<Button ref={mobileButtonRef} variant="ghost" size="lg" onClick={scrollToServices}>
-							<ArrowDown />
-							<span>Scroll if you are human</span>
-						</Button>
+						<ScrollHuman onScroll={scrollToServices} variant="ghost" size="lg" />
 					</div>
 				</div>
 			</div>
