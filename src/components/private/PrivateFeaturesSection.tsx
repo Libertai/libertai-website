@@ -1,5 +1,5 @@
-import backgroundLeft from "@/assets/home/background-left.png";
-import backgroundLeftMobile from "@/assets/home/background-left-mobile.png";
+import backgroundLeft from "@/assets/background-left.png";
+import backgroundLeftMobile from "@/assets/background-left-mobile.png";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
