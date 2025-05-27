@@ -1,4 +1,5 @@
 import heroImage from "@/assets/private/hero.png";
+import heroImageMobile from "@/assets/private/hero-mobile.png";
 import { ScrollHuman } from "@/components/ScrollHuman.tsx";
 
 export function PrivateAIHero() {
@@ -11,11 +12,22 @@ export function PrivateAIHero() {
 		<section className="relative w-full min-h-screen flex items-center bg-background overflow-hidden">
 			{/* Background with gradient overlay */}
 			<div className="absolute inset-0 z-0">
+				{/* Desktop image */}
 				<img
 					src={heroImage}
 					alt="Private AI background"
-					className="absolute h-full w-full object-cover md:object-right"
+					className="absolute h-full w-full object-cover md:object-right hidden md:block"
 				/>
+				{/* Mobile image */}
+				<img
+					src={heroImageMobile}
+					alt="Private AI background"
+					className="absolute h-full w-full object-cover md:hidden"
+				/>
+				{/* Desktop gradient overlay */}
+				<div className="absolute inset-0 hidden md:block bg-gradient-to-r from-[#0E0F18] from-[2.15%] to-transparent to-[75.07%]"></div>
+				{/* Mobile gradient overlay */}
+				<div className="absolute inset-0 md:hidden bg-gradient-to-b from-transparent to-[#0E0F18]"></div>
 			</div>
 
 			{/* Content container */}

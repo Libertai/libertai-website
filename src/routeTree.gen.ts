@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as PrivateAiImport } from './routes/private-ai'
+import { Route as ApiImport } from './routes/api'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
@@ -19,6 +20,12 @@ import { Route as IndexImport } from './routes/index'
 const PrivateAiRoute = PrivateAiImport.update({
   id: '/private-ai',
   path: '/private-ai',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ApiRoute = ApiImport.update({
+  id: '/api',
+  path: '/api',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -39,6 +46,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/api': {
+      id: '/api'
+      path: '/api'
+      fullPath: '/api'
+      preLoaderRoute: typeof ApiImport
+      parentRoute: typeof rootRoute
+    }
     '/private-ai': {
       id: '/private-ai'
       path: '/private-ai'
@@ -53,36 +67,41 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
 }
 
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/private-ai'
+  fullPaths: '/' | '/api' | '/private-ai'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/private-ai'
-  id: '__root__' | '/' | '/private-ai'
+  to: '/' | '/api' | '/private-ai'
+  id: '__root__' | '/' | '/api' | '/private-ai'
   fileRoutesById: FileRoutesById
 }
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  ApiRoute: typeof ApiRoute
   PrivateAiRoute: typeof PrivateAiRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  ApiRoute: ApiRoute,
   PrivateAiRoute: PrivateAiRoute,
 }
 
@@ -97,11 +116,15 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/api",
         "/private-ai"
       ]
     },
     "/": {
       "filePath": "index.tsx"
+    },
+    "/api": {
+      "filePath": "api.tsx"
     },
     "/private-ai": {
       "filePath": "private-ai.tsx"
