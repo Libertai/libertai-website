@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { APIHero } from "@/components/api/APIHero.tsx";
 import { APIGetStarted } from "@/components/api/APIGetStarted.tsx";
 import { APIModelsAndPricing } from "@/components/api/APIModelsAndPricing.tsx";
+import { APIUseCases } from "@/components/api/APIUseCases.tsx";
 import { FooterSection } from "@/components/FooterSection.tsx";
 
 export const Route = createFileRoute("/api")({
@@ -14,6 +15,7 @@ function API() {
 			<APIHero />
 			<APIGetStarted />
 			<APIModelsAndPricing />
+			<APIUseCases />
 			<FooterSection />
 		</main>
 	);
