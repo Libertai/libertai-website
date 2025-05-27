@@ -13,7 +13,7 @@ export function Navbar() {
 	const navItems = [
 		{ href: "/a", label: "About" },
 		{ href: "/private-ai", label: "Private AI" },
-		{ href: "/c", label: "API" },
+		{ href: "/api", label: "API" },
 		{ href: "/d", label: "Tokenomics" },
 		{ href: "/e", label: "Blog" },
 		{ href: "/f", label: "Apps" },
