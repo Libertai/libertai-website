@@ -22,9 +22,7 @@ export function GenericAccordion({ faqs }: GenericAccordionProps) {
 					<AccordionTrigger className="text-left text-lg text-white hover:no-underline py-6 [&[data-state=open]>svg]:rotate-180">
 						{faq.question}
 					</AccordionTrigger>
-					<AccordionContent className="text-sm leading-relaxed pb-6 text-white/80">
-						{faq.answer}
-					</AccordionContent>
+					<AccordionContent className="text-sm leading-relaxed pb-6 text-white/80">{faq.answer}</AccordionContent>
 				</AccordionItem>
 			))}
 		</Accordion>
