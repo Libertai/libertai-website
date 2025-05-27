@@ -26,29 +26,33 @@ export function Navbar() {
 		<header className="fixed top-0 left-0 right-0 z-50 bg-background/10 backdrop-blur-sm">
 			<div className="mx-auto lg:mx-12 xl:mx-20 px-4 md:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
-					{/* Logo - visible on both mobile and desktop */}
-					<Link to="/" className="text-white font-bold text-xl z-10">
-						LibertAI
-					</Link>
+					{/* Left side: Logo + Navigation */}
+					<div className="flex items-center">
+						<Link to="/" className="text-white font-bold text-xl">
+							LibertAI
+						</Link>
 
-					{/* Desktop Navigation */}
-					<div className="hidden md:flex items-center justify-between flex-1 ml-8">
-						<NavigationMenu>
-							<NavigationMenuList className="md:gap-4 xl:gap-6">
-								{navItems.map((item) => (
-									<NavigationMenuItem key={item.href}>
-										<NavigationMenuLink
-											className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent max-lg:text-xs lg:text-sm"
-											href={item.href}
-										>
-											{item.label}
-										</NavigationMenuLink>
-									</NavigationMenuItem>
-								))}
-							</NavigationMenuList>
-						</NavigationMenu>
+						{/* Desktop Navigation */}
+						<div className="hidden md:flex ml-8">
+							<NavigationMenu>
+								<NavigationMenuList className="md:gap-4 xl:gap-6">
+									{navItems.map((item) => (
+										<NavigationMenuItem key={item.href}>
+											<NavigationMenuLink
+												className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent max-lg:text-xs lg:text-sm"
+												href={item.href}
+											>
+												{item.label}
+											</NavigationMenuLink>
+										</NavigationMenuItem>
+									))}
+								</NavigationMenuList>
+							</NavigationMenu>
+						</div>
+					</div>
 
-						{/* Right side: Button */}
+					{/* Right side: CTA Button (Desktop only) */}
+					<div className="hidden md:flex">
 						<a href={ctaLink} target="_blank">
 							<Button variant="glass" size="pill" className="hidden lg:flex">
 								<span>{ctaText}</span>
