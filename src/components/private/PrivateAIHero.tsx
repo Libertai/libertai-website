@@ -16,7 +16,7 @@ export function PrivateAIHero() {
 				<img
 					src={heroImage}
 					alt="Private AI background"
-					className="absolute h-full w-full object-cover md:object-right hidden md:block"
+					className="absolute h-full w-full object-cover object-right hidden md:block"
 				/>
 				{/* Mobile image */}
 				<img

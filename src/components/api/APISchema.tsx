@@ -1,4 +1,5 @@
 import schemaImage from "@/assets/api/schema.png";
+import schemaMobileImage from "@/assets/api/schema-mobile.png";
 
 export function APISchema() {
 	return (
@@ -16,7 +17,16 @@ export function APISchema() {
 
 				{/* Schema Image */}
 				<div className="flex justify-center">
-					<img src={schemaImage} alt="LibertAI API Architecture Schema" className="max-w-full h-auto" />
+					<img 
+						src={schemaImage} 
+						alt="LibertAI API Architecture Schema" 
+						className="max-w-full h-auto hidden md:block" 
+					/>
+					<img 
+						src={schemaMobileImage} 
+						alt="LibertAI API Architecture Schema" 
+						className="max-w-full h-auto block md:hidden" 
+					/>
 				</div>
 			</div>
 		</section>

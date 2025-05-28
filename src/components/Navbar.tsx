@@ -14,9 +14,9 @@ export function Navbar() {
 		{ href: "/a", label: "About" },
 		{ href: "/private-ai", label: "Private AI" },
 		{ href: "/api", label: "API" },
-		{ href: "/d", label: "Tokenomics" },
-		{ href: "/e", label: "Blog" },
-		{ href: "/f", label: "Apps" },
+		{ href: "/tokenomics", label: "Tokenomics" },
+		{ href: "https://blog.libertai.io", label: "Blog" },
+		{ href: "/roadmap", label: "Roadmap" },
 	];
 
 	const ctaText = "Try LibertAI chat";
