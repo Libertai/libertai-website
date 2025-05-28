@@ -11,11 +11,18 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as RoadmapImport } from './routes/roadmap'
 import { Route as PrivateAiImport } from './routes/private-ai'
 import { Route as ApiImport } from './routes/api'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const RoadmapRoute = RoadmapImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const PrivateAiRoute = PrivateAiImport.update({
   id: '/private-ai',
@@ -60,6 +67,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PrivateAiImport
       parentRoute: typeof rootRoute
     }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -69,12 +83,14 @@ export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
+  '/roadmap': typeof RoadmapRoute
 }
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
+  '/roadmap': typeof RoadmapRoute
 }
 
 export interface FileRoutesById {
@@ -82,14 +98,15 @@ export interface FileRoutesById {
   '/': typeof IndexRoute
   '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
+  '/roadmap': typeof RoadmapRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api' | '/private-ai'
+  fullPaths: '/' | '/api' | '/private-ai' | '/roadmap'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api' | '/private-ai'
-  id: '__root__' | '/' | '/api' | '/private-ai'
+  to: '/' | '/api' | '/private-ai' | '/roadmap'
+  id: '__root__' | '/' | '/api' | '/private-ai' | '/roadmap'
   fileRoutesById: FileRoutesById
 }
 
@@ -97,12 +114,14 @@ export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   ApiRoute: typeof ApiRoute
   PrivateAiRoute: typeof PrivateAiRoute
+  RoadmapRoute: typeof RoadmapRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   ApiRoute: ApiRoute,
   PrivateAiRoute: PrivateAiRoute,
+  RoadmapRoute: RoadmapRoute,
 }
 
 export const routeTree = rootRoute
@@ -117,7 +136,8 @@ export const routeTree = rootRoute
       "children": [
         "/",
         "/api",
-        "/private-ai"
+        "/private-ai",
+        "/roadmap"
       ]
     },
     "/": {
@@ -128,6 +148,9 @@ export const routeTree = rootRoute
     },
     "/private-ai": {
       "filePath": "private-ai.tsx"
+    },
+    "/roadmap": {
+      "filePath": "roadmap.tsx"
     }
   }
 }
