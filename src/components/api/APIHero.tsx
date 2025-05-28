@@ -1,4 +1,5 @@
 import heroImage from "@/assets/api/hero.png";
+import heroImageMobile from "@/assets/api/hero-mobile.png";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { ScrollHuman } from "@/components/ScrollHuman.tsx";
@@ -13,7 +14,18 @@ export function APIHero() {
 		<section className="relative w-full min-h-screen flex items-center bg-background overflow-hidden">
 			{/* Background with gradient overlay */}
 			<div className="absolute inset-0 z-0">
-				<img src={heroImage} alt="API background" className="absolute h-full w-full object-cover object-right" />
+				{/* Desktop image */}
+				<img
+					src={heroImage}
+					alt="API background"
+					className="absolute h-full w-full object-cover object-right hidden md:block"
+				/>
+				{/* Mobile image */}
+				<img
+					src={heroImageMobile}
+					alt="Private AI background"
+					className="absolute h-full w-full object-cover md:hidden"
+				/>
 			</div>
 
 			{/* Content container */}

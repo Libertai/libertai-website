@@ -1,6 +1,7 @@
 import backgroundImage from "@/assets/background-sides.png";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
+import backgroundImageMobile from "@/assets/background-right-mobile.png";
 
 const getStartedData = [
 	{
@@ -38,7 +39,8 @@ export function APIGetStarted() {
 		<section className="relative w-full py-20 md:py-32 bg-background overflow-hidden">
 			{/* Background */}
 			<div className="absolute inset-0 z-0">
-				<img src={backgroundImage} alt="Background" className="absolute h-full w-full object-cover" />
+				<img src={backgroundImage} alt="Background" className="absolute h-full w-full object-cover hidden md:block" />
+				<img src={backgroundImageMobile} alt="Background" className="absolute h-full w-full object-cover md:hidden" />
 			</div>
 
 			{/* Content container */}
