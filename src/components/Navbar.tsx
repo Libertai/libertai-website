@@ -11,7 +11,7 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 
 export function Navbar() {
 	const navItems = [
-		{ href: "/a", label: "About" },
+		// { href: "/a", label: "About" },
 		{ href: "/private-ai", label: "Private AI" },
 		{ href: "/api", label: "API" },
 		{ href: "/tokenomics", label: "Tokenomics" },
