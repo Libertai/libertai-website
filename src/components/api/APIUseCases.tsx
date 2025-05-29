@@ -7,37 +7,37 @@ const useCases = [
 		id: 1,
 		question: "Financial Services",
 		answer:
-			"The platform can be used to develop AI-powered tools for fraud detection, credit risk assessment, and personalized financial planning. These applications require handling sensitive financial data, making the decentralized and privacy-focused infrastructure ideal and confidential environment.",
+			"The platform can be used to develop AI-powered tools for fraud detection, credit risk assessment, and personalized financial planning. These applications require handling sensitive financial data, and LibertAI ensures that the AI models operate in a secure and confidential environment.",
 	},
 	{
 		id: 2,
 		question: "Healthcare",
 		answer:
-			"Build AI solutions for medical diagnosis, treatment recommendations, and patient data analysis while maintaining strict privacy and compliance with healthcare regulations.",
+			"In the healthcare sector, LibertAI can be utilized to create AI-driven tools for medical diagnosis, drug discovery, and personalized treatment plans. These applications often involve handling highly sensitive patient data, and LibertAI provides the necessary security measures to protect this information.",
 	},
 	{
 		id: 3,
 		question: "Legal Services",
 		answer:
-			"Develop AI tools for contract analysis, legal research, and document review with complete confidentiality and privacy protection for sensitive legal information.",
+			"LibertAI can be employed to build AI-powered tools for legal research, contract analysis, and case prediction. These applications require access to confidential legal documents and case data, and LibertAI ensures that the AI models operate in a secure and compliant manner.",
 	},
 	{
 		id: 4,
 		question: "Government and Public Sector",
 		answer:
-			"Create AI applications for public service optimization, policy analysis, and citizen services while ensuring data sovereignty and privacy compliance.",
+			"LibertAI can be used to develop AI-based tools for public safety, national security, and policy analysis. These applications often involve handling sensitive government data, and LibertAI provides the necessary security and privacy guarantees to protect this information.",
 	},
 	{
 		id: 5,
 		question: "Enterprise Applications",
 		answer:
-			"Build custom AI solutions for internal business processes, customer service automation, and decision support systems with full control over data and infrastructure.",
+			"Within enterprises, LibertAI can be utilized to create AI-driven tools for HR analytics, customer sentiment analysis, and supply chain optimization. These applications involve handling proprietary company data, and LibertAI ensures that the AI models operate in a secure and confidential environment.",
 	},
 	{
 		id: 6,
 		question: "Cybersecurity",
 		answer:
-			"Develop AI-powered security tools for threat detection, vulnerability assessment, and incident response with enhanced privacy and security measures.",
+			"LibertAI can be employed to develop AI-powered tools for threat detection, intrusion prevention, and vulnerability assessment. These applications require access to sensitive network and system data, and LibertAI provides the necessary security measures to protect this information.",
 	},
 ];
 
