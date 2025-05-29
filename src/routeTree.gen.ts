@@ -11,12 +11,19 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as TokenomicsImport } from './routes/tokenomics'
 import { Route as RoadmapImport } from './routes/roadmap'
 import { Route as PrivateAiImport } from './routes/private-ai'
 import { Route as ApiImport } from './routes/api'
 import { Route as IndexImport } from './routes/index'
 
 // Create/Update Routes
+
+const TokenomicsRoute = TokenomicsImport.update({
+  id: '/tokenomics',
+  path: '/tokenomics',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const RoadmapRoute = RoadmapImport.update({
   id: '/roadmap',
@@ -74,6 +81,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RoadmapImport
       parentRoute: typeof rootRoute
     }
+    '/tokenomics': {
+      id: '/tokenomics'
+      path: '/tokenomics'
+      fullPath: '/tokenomics'
+      preLoaderRoute: typeof TokenomicsImport
+      parentRoute: typeof rootRoute
+    }
   }
 }
 
@@ -84,6 +98,7 @@ export interface FileRoutesByFullPath {
   '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
+  '/tokenomics': typeof TokenomicsRoute
 }
 
 export interface FileRoutesByTo {
@@ -91,6 +106,7 @@ export interface FileRoutesByTo {
   '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
+  '/tokenomics': typeof TokenomicsRoute
 }
 
 export interface FileRoutesById {
@@ -99,14 +115,15 @@ export interface FileRoutesById {
   '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
+  '/tokenomics': typeof TokenomicsRoute
 }
 
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/api' | '/private-ai' | '/roadmap'
+  fullPaths: '/' | '/api' | '/private-ai' | '/roadmap' | '/tokenomics'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/api' | '/private-ai' | '/roadmap'
-  id: '__root__' | '/' | '/api' | '/private-ai' | '/roadmap'
+  to: '/' | '/api' | '/private-ai' | '/roadmap' | '/tokenomics'
+  id: '__root__' | '/' | '/api' | '/private-ai' | '/roadmap' | '/tokenomics'
   fileRoutesById: FileRoutesById
 }
 
@@ -115,6 +132,7 @@ export interface RootRouteChildren {
   ApiRoute: typeof ApiRoute
   PrivateAiRoute: typeof PrivateAiRoute
   RoadmapRoute: typeof RoadmapRoute
+  TokenomicsRoute: typeof TokenomicsRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -122,6 +140,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiRoute: ApiRoute,
   PrivateAiRoute: PrivateAiRoute,
   RoadmapRoute: RoadmapRoute,
+  TokenomicsRoute: TokenomicsRoute,
 }
 
 export const routeTree = rootRoute
@@ -137,7 +156,8 @@ export const routeTree = rootRoute
         "/",
         "/api",
         "/private-ai",
-        "/roadmap"
+        "/roadmap",
+        "/tokenomics"
       ]
     },
     "/": {
@@ -151,6 +171,9 @@ export const routeTree = rootRoute
     },
     "/roadmap": {
       "filePath": "roadmap.tsx"
+    },
+    "/tokenomics": {
+      "filePath": "tokenomics.tsx"
     }
   }
 }
