@@ -5,7 +5,7 @@ import footerVideo from "@/assets/footer.mp4";
 
 const footerLinks = [
 	{ text: "Home", href: "#" },
-	{ text: "About", href: "#" },
+	// { text: "About", href: "#" },
 	{ text: "Features", href: "#" },
 	{ text: "Roadmap", href: "#" },
 	{ text: "Sign Up", href: "#" },
