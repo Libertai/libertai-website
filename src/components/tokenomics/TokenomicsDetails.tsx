@@ -1,29 +1,27 @@
 import { Coins, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
 
-const tokenData = [
-	{
-		label: "Price per Token",
-		value: "$0.15",
-		numericValue: 0.15,
-		prefix: "$",
-	},
-	{
-		label: "Market Cap",
-		value: "$2.5M",
-		numericValue: 2.5,
-		suffix: "M",
-		prefix: "$",
-	},
-	{
-		label: "Total Supply",
-		value: "22.2M",
-		numericValue: 22.2,
-		suffix: "M",
-	},
-];
+interface TokenData {
+	label: string;
+	value: string;
+	numericValue: number;
+	prefix?: string;
+	suffix?: string;
+}
+
+interface CoinGeckoResponse {
+	market_data: {
+		current_price: {
+			usd: number;
+		};
+		market_cap: {
+			usd: number;
+		};
+		total_supply: number;
+	};
+}
 
 const supplyBreakdown = [
 	{ label: "Raise", value: "1.4M", percentage: 6.3, color: "#6A7089" },
@@ -43,6 +41,69 @@ export function TokenomicsDetails() {
 	const totalSupplyRefMobile = useRef<HTMLDivElement>(null);
 	const barsRef = useRef<(HTMLDivElement | null)[]>([]);
 	const barsMobileRef = useRef<(HTMLDivElement | null)[]>([]);
+
+	const [tokenData, setTokenData] = useState<TokenData[]>([
+		{
+			label: "Price per Token",
+			value: "$0.00",
+			numericValue: 0,
+			prefix: "$",
+		},
+		{
+			label: "Market Cap",
+			value: "$0.0M",
+			numericValue: 0,
+			suffix: "M",
+			prefix: "$",
+		},
+		{
+			label: "Total Supply",
+			value: "22.2M",
+			numericValue: 22.2,
+			suffix: "M",
+		},
+	]);
+
+	const fetchTokenData = async () => {
+		try {
+			const response = await fetch(
+				"https://api.coingecko.com/api/v3/coins/libertai?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false&sparkline=false",
+			);
+			const data: CoinGeckoResponse = await response.json();
+
+			if (data.market_data) {
+				const price = data.market_data.current_price.usd;
+				const marketCap = data.market_data.market_cap.usd;
+				const totalSupply = data.market_data.total_supply;
+				const marketCapInMillions = marketCap / 1000000;
+				const totalSupplyInMillions = totalSupply / 1000000;
+
+				setTokenData((prev) => [
+					{
+						...prev[0],
+						value: `$${price.toFixed(2)}`,
+						numericValue: price,
+					},
+					{
+						...prev[1],
+						value: `$${marketCapInMillions.toFixed(1)}M`,
+						numericValue: marketCapInMillions,
+					},
+					{
+						...prev[2],
+						value: `${totalSupplyInMillions.toFixed(1)}M`,
+						numericValue: totalSupplyInMillions,
+					},
+				]);
+			}
+		} catch (error) {
+			console.error("Failed to fetch token data:", error);
+		}
+	};
+
+	useEffect(() => {
+		fetchTokenData().then();
+	}, []);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -178,7 +239,7 @@ export function TokenomicsDetails() {
 		}
 
 		return () => observer.disconnect();
-	}, []);
+	}, [tokenData]);
 
 	return (
 		<section ref={sectionRef} className="w-full bg-background py-20 px-4 md:px-6 lg:px-8">
@@ -200,7 +261,7 @@ export function TokenomicsDetails() {
 								<h3 className="text-lg font-satoshi">{tokenData[0].label}</h3>
 							</div>
 							<div ref={priceRef} className="text-7xl lg:text-8xl font-bold">
-								$0.00
+								{tokenData[0].value}
 							</div>
 						</div>
 
@@ -211,7 +272,7 @@ export function TokenomicsDetails() {
 								<h3 className="text-lg font-satoshi">{tokenData[1].label}</h3>
 							</div>
 							<div ref={marketCapRef} className="text-4xl font-bold">
-								$0.0M
+								{tokenData[1].value}
 							</div>
 						</div>
 						<div className="space-y-4">
@@ -220,7 +281,7 @@ export function TokenomicsDetails() {
 								<h3 className="text-lg font-satoshi">{tokenData[2].label}</h3>
 							</div>
 							<div ref={totalSupplyRef} className="text-4xl font-bold">
-								0.0M
+								{tokenData[2].value}
 							</div>
 						</div>
 
@@ -287,7 +348,7 @@ export function TokenomicsDetails() {
 									ref={index === 0 ? priceRefMobile : index === 1 ? marketCapRefMobile : totalSupplyRefMobile}
 									className="text-5xl font-bold"
 								>
-									{index === 0 ? "$0.00" : index === 1 ? "$0.0M" : "0.0M"}
+									{tokenData[index].value}
 								</div>
 							</div>
 						))}
