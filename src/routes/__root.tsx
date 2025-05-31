@@ -1,5 +1,6 @@
 import { createRootRoute, Outlet } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar.tsx";
+import { NotFound } from "@/components/NotFound.tsx";
 import ReactLenis from "lenis/react";
 
 export const Route = createRootRoute({
@@ -15,4 +16,5 @@ export const Route = createRootRoute({
 			<Outlet />
 		</ReactLenis>
 	),
+	notFoundComponent: NotFound,
 });
