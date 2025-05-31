@@ -30,7 +30,7 @@ function AccordionTrigger({ className, children, ...props }: React.ComponentProp
 				{...props}
 			>
 				{children}
-				<ChevronDownIcon className="text-[#EA7AF4] pointer-events-none size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
+				<ChevronDownIcon className="text-[#EA7AF4] cursor-pointer size-4 shrink-0 translate-y-0.5 transition-transform duration-200" />
 			</AccordionPrimitive.Trigger>
 		</AccordionPrimitive.Header>
 	);

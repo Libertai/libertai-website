@@ -1,16 +1,29 @@
 import burnImage from "@/assets/tokenomics/burn.png";
+import burnImageMobile from "@/assets/tokenomics/burn-mobile.png";
 
 export function BurnSection() {
 	return (
 		<section className="relative w-full min-h-screen flex items-center bg-background overflow-hidden">
 			{/* Background with gradient overlay */}
 			<div className="absolute inset-0 z-0">
-				<img
-					src={burnImage}
-					alt="Liberty's Flame background"
-					className="absolute h-full w-full object-cover object-right"
-				/>
-				<div className="absolute inset-0 bg-gradient-to-r from-background from-15% to-transparent to-75%"></div>
+				{/* Desktop image with gradient */}
+				<div className="absolute h-full w-full hidden md:block">
+					<img
+						src={burnImage}
+						alt="Liberty's Flame background"
+						className="absolute h-full w-full object-cover object-right"
+					/>
+					<div className="absolute inset-0 bg-gradient-to-r from-background from-15% to-transparent to-75%"></div>
+				</div>
+				{/* Mobile image with gradient */}
+				<div className="absolute h-full w-full md:hidden">
+					<img 
+						src={burnImageMobile} 
+						alt="Liberty's Flame background" 
+						className="absolute h-full w-full object-cover" 
+					/>
+					<div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% to-background to-100%"></div>
+				</div>
 			</div>
 
 			{/* Content container */}
