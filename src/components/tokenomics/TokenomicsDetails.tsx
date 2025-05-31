@@ -2,6 +2,7 @@ import { Coins, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
+import { useTokenData } from "@/hooks/useTokenData";
 
 interface TokenData {
 	label: string;
@@ -23,14 +24,6 @@ interface CoinGeckoResponse {
 	};
 }
 
-const supplyBreakdown = [
-	{ label: "Raise", value: "1.4M", percentage: 6.3, color: "#6A7089" },
-	{ label: "Airdrop", value: "7.7M", percentage: 34.7, color: "#B5B6BA" },
-	{ label: "Reserves", value: "7.9M", percentage: 35.6, color: "#D288FF" },
-	{ label: "Team", value: "2.7M", percentage: 12.2, color: "#644DF9" },
-	{ label: "Total", value: "19.7M", percentage: 88.8, color: "#FFF" },
-];
-
 export function TokenomicsDetails() {
 	const sectionRef = useRef<HTMLDivElement>(null);
 	const priceRef = useRef<HTMLDivElement>(null);
@@ -41,6 +34,8 @@ export function TokenomicsDetails() {
 	const totalSupplyRefMobile = useRef<HTMLDivElement>(null);
 	const barsRef = useRef<(HTMLDivElement | null)[]>([]);
 	const barsMobileRef = useRef<(HTMLDivElement | null)[]>([]);
+
+	const { poolsStats } = useTokenData();
 
 	const [tokenData, setTokenData] = useState<TokenData[]>([
 		{
@@ -198,12 +193,12 @@ export function TokenomicsDetails() {
 
 						// Animate bars
 						barsRef.current.forEach((bar, index) => {
-							if (bar) {
+							if (bar && poolsStats[index]) {
 								gsap.fromTo(
 									bar,
 									{ width: "0%" },
 									{
-										width: `${supplyBreakdown[index].percentage}%`,
+										width: `${poolsStats[index].totalPercentage}%`,
 										duration: 2,
 										delay: index * 0.1,
 										ease: "power2.out",
@@ -213,12 +208,12 @@ export function TokenomicsDetails() {
 						});
 
 						barsMobileRef.current.forEach((bar, index) => {
-							if (bar) {
+							if (bar && poolsStats[index]) {
 								gsap.fromTo(
 									bar,
 									{ width: "0%" },
 									{
-										width: `${supplyBreakdown[index].percentage}%`,
+										width: `${poolsStats[index].totalPercentage}%`,
 										duration: 2,
 										delay: index * 0.1,
 										ease: "power2.out",
@@ -239,7 +234,7 @@ export function TokenomicsDetails() {
 		}
 
 		return () => observer.disconnect();
-	}, [tokenData]);
+	}, [tokenData, poolsStats]);
 
 	return (
 		<section ref={sectionRef} className="w-full bg-background py-20 px-4 md:px-6 lg:px-8">
@@ -315,9 +310,9 @@ export function TokenomicsDetails() {
 					<div className="col-span-5 space-y-6">
 						<h3 className="text-2xl font-bold text-white">Live Circulating Supply</h3>
 						<div className="space-y-3">
-							{supplyBreakdown.map((item, index) => (
-								<div key={item.label} className="flex justify-between items-center text-sm">
-									<span className="font-satoshi w-20">{item.label}</span>
+							{poolsStats.map((item, index) => (
+								<div key={item.name} className="flex justify-between items-center text-sm">
+									<span className="font-satoshi w-20">{item.prettyName}</span>
 									<div className="flex items-center gap-3 flex-1">
 										<div className="flex-1 bg-white/10 rounded-full h-1">
 											<div
@@ -326,7 +321,7 @@ export function TokenomicsDetails() {
 												style={{ backgroundColor: item.color, width: "0%" }}
 											/>
 										</div>
-										<span className="font-mono w-12 text-right">{item.value}</span>
+										<span className="font-mono w-12 text-right">{item.prettyDistributed}</span>
 									</div>
 								</div>
 							))}
@@ -358,9 +353,9 @@ export function TokenomicsDetails() {
 					<div className="space-y-6">
 						<h3 className="text-2xl font-bold text-white">Live Circulating Supply</h3>
 						<div className="space-y-4">
-							{supplyBreakdown.map((item, index) => (
-								<div key={item.label} className="flex justify-between items-center">
-									<span className="text-white font-satoshi">{item.label}</span>
+							{poolsStats.map((item, index) => (
+								<div key={item.name} className="flex justify-between items-center">
+									<span className="text-white font-satoshi">{item.prettyName}</span>
 									<div className="flex items-center gap-4">
 										<div className="w-32 bg-white/10 rounded-full h-2">
 											<div
@@ -369,7 +364,7 @@ export function TokenomicsDetails() {
 												style={{ backgroundColor: item.color, width: "0%" }}
 											/>
 										</div>
-										<span className="text-white font-mono w-16 text-right">{item.value}</span>
+										<span className="text-white font-mono w-20 text-right text-xs">{item.prettyDistributed}</span>
 									</div>
 								</div>
 							))}
