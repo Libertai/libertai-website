@@ -45,15 +45,15 @@ export function HeroSection() {
 							<div className="w-full h-12 px-4 py-3 rounded-full border border-white/20 text-white flex items-center text-sm md:text-base">
 								<TypewriterEffect
 									phrases={[
-										"What are the best practices for securing sensitive customer data?",
-										'What is the "right to be forgotten" and how can I use it?',
-										"Generate a daily routine to improve my privacy habits for online accounts.",
-										"What should I do if an AI company misuses my data?",
-										"How do I encrypt sensitive files on my computer?",
-										"Write a script for a YouTube video about online privacy for beginners.",
-										"What are the privacy risks of using ChatGPT as fitness tracker?",
-										"Suggest 10 ideas for a campaign to raise awareness about online privacy.",
-										"Create a marketing strategy for a secure cloud storage service.",
+										"Analyze my confidential R&D notes",
+										"Summarize my patient data for a report",
+										"Draft action items for my private meeting follow-up email",
+										"Summarize my customer support chat logs",
+										"Create an NPC dialogue for my game",
+										"Simulate a private investor pitch",
+										"Organize my medical bills for insurance claims",
+										"Simulate a therapy session using role-play techniques",
+										"Analyze my investment returns for tax filing",
 									]}
 									className="text-white text-sm"
 								/>
