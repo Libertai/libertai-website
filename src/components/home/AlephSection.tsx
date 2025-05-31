@@ -1,10 +1,35 @@
 import alephLogo from "@/assets/home/aleph/logo.svg";
 import backgroundImage from "@/assets/home/aleph/background.png";
 import MuxPlayer from "@mux/mux-player-react";
+import { useEffect, useRef, useState } from "react";
 
 export function AlephSection() {
+	const sectionRef = useRef<HTMLElement>(null);
+	const [shouldAutoPlay, setShouldAutoPlay] = useState(false);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setShouldAutoPlay(true);
+						observer.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.3 },
+		);
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current);
+		}
+
+		return () => observer.disconnect();
+	}, []);
+
 	return (
 		<section
+			ref={sectionRef}
 			className="w-full py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
 			style={{ backgroundImage: `url(${backgroundImage})` }}
 		>
@@ -24,7 +49,7 @@ export function AlephSection() {
 					<div className="w-full max-w-lg">
 						<MuxPlayer
 							playbackId="9Pusq66jUu501jcYVqisWOksfuIsHymy7vS4EKCvRfuw"
-							// autoPlay
+							autoPlay={shouldAutoPlay}
 							muted
 							loop
 							metadata={{
