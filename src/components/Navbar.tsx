@@ -11,12 +11,12 @@ import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTr
 
 export function Navbar() {
 	const navItems = [
-		// { href: "/a", label: "About" },
-		{ href: "/private-ai", label: "Private AI" },
-		{ href: "/api", label: "API" },
-		{ href: "/tokenomics", label: "Tokenomics" },
-		{ href: "https://blog.libertai.io", label: "Blog" },
-		{ href: "/roadmap", label: "Roadmap" },
+		// { href: "/a", label: "About", external: false },
+		{ href: "/private-ai", label: "Private AI", external: false },
+		{ href: "/api", label: "API", external: false },
+		{ href: "/tokenomics", label: "Tokenomics", external: false },
+		{ href: "https://blog.libertai.io", label: "Blog", external: true },
+		{ href: "/roadmap", label: "Roadmap", external: false },
 	];
 
 	const ctaText = "Try LibertAI chat";
@@ -38,12 +38,22 @@ export function Navbar() {
 								<NavigationMenuList className="md:gap-4 xl:gap-6">
 									{navItems.map((item) => (
 										<NavigationMenuItem key={item.href}>
-											<NavigationMenuLink
-												className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent max-lg:text-xs lg:text-sm"
-												href={item.href}
-											>
-												{item.label}
-											</NavigationMenuLink>
+											{item.external ? (
+												<NavigationMenuLink
+													className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent max-lg:text-xs lg:text-sm"
+													href={item.href}
+													target="_blank"
+												>
+													{item.label}
+												</NavigationMenuLink>
+											) : (
+												<Link
+													to={item.href}
+													className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent max-lg:text-xs lg:text-sm px-3 py-2 rounded-md transition-colors"
+												>
+													{item.label}
+												</Link>
+											)}
 										</NavigationMenuItem>
 									))}
 								</NavigationMenuList>
@@ -88,9 +98,15 @@ export function Navbar() {
 								</SheetHeader>
 								<nav className="flex flex-col space-y-6 mt-6">
 									{navItems.map((item) => (
-										<Link to={item.href} key={item.href} className="text-white hover:text-primary text-lg">
-											{item.label}
-										</Link>
+										item.external ? (
+											<a href={item.href} key={item.href} target="_blank" className="text-white hover:text-primary text-lg">
+												{item.label}
+											</a>
+										) : (
+											<Link to={item.href} key={item.href} className="text-white hover:text-primary text-lg">
+												{item.label}
+											</Link>
+										)
 									))}
 									<a href={ctaLink} target="_blank">
 										<Button variant="glass" size="pill" className="w-full justify-start mt-2 text-center">
