@@ -4,6 +4,7 @@ import { TokenomicsDetails } from "@/components/tokenomics/TokenomicsDetails";
 import { TokenDistribution } from "@/components/tokenomics/TokenDistribution";
 import { ContractAddresses } from "@/components/tokenomics/ContractAddresses";
 import { BurnSection } from "@/components/tokenomics/BurnSection";
+import { DecentralizedSection } from "@/components/tokenomics/DecentralizedSection";
 import { TokenDetails } from "@/components/tokenomics/TokenDetails";
 import { FooterSection } from "@/components/FooterSection.tsx";
 
@@ -17,6 +18,7 @@ function TokenomicsPage() {
 			<TokenomicsHero />
 			<TokenomicsDetails />
 			<ContractAddresses />
+			<DecentralizedSection />
 			<TokenDistribution />
 			<BurnSection />
 			<TokenDetails />
