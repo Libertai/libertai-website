@@ -1,19 +1,20 @@
 import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import backgroundImage from "@/assets/footer-background.png";
 import footerVideo from "@/assets/footer.mp4";
 
 const footerLinks = [
-	{ text: "Home", href: "/" },
-	// { text: "About", href: "#" },
-	// { text: "Features", href: "#" },
-	{ text: "Roadmap", href: "/roadmap" },
-	// { text: "Sign Up", href: "#" },
-	{ text: "Litepaper", href: "/litepaper.pdf" },
-	{ text: "Docs", href: "https://docs.libertai.io" },
-	{ text: "Telegram Bot", href: "https://t.me/liberchat_bot" },
-	{ text: "Blog", href: "https://blog.libertai.io" },
-	// { text: "Privacy Policy", href: "#" },
+	{ text: "Home", href: "/", external: false },
+	// { text: "About", href: "#", external: false },
+	// { text: "Features", href: "#", external: false },
+	{ text: "Roadmap", href: "/roadmap", external: false },
+	// { text: "Sign Up", href: "#", external: false },
+	{ text: "Litepaper", href: "/litepaper.pdf", external: true },
+	{ text: "Docs", href: "https://docs.libertai.io", external: true },
+	{ text: "Telegram Bot", href: "https://t.me/liberchat_bot", external: true },
+	{ text: "Blog", href: "https://blog.libertai.io", external: true },
+	// { text: "Privacy Policy", href: "#", external: false },
 ];
 
 const firstRowLinks = footerLinks.slice(0, 3);
@@ -75,9 +76,15 @@ export function FooterSection() {
 						{/* Mobile: Responsive flex wrap */}
 						<div className="flex flex-wrap justify-center gap-4 md:hidden text-sm">
 							{footerLinks.map((link) => (
-								<a key={link.text} href={link.href} className="hover:text-white transition-colors">
-									{link.text}
-								</a>
+								link.external ? (
+									<a key={link.text} href={link.href} target="_blank" className="hover:text-white transition-colors">
+										{link.text}
+									</a>
+								) : (
+									<Link key={link.text} to={link.href} className="hover:text-white transition-colors">
+										{link.text}
+									</Link>
+								)
 							))}
 						</div>
 
@@ -86,18 +93,30 @@ export function FooterSection() {
 							{/* First Row of Links */}
 							<div className="flex flex-wrap justify-center gap-8 text-sm">
 								{firstRowLinks.map((link) => (
-									<a key={link.text} href={link.href} className="hover:text-white transition-colors">
-										{link.text}
-									</a>
+									link.external ? (
+										<a key={link.text} href={link.href} target="_blank" className="hover:text-white transition-colors">
+											{link.text}
+										</a>
+									) : (
+										<Link key={link.text} to={link.href} className="hover:text-white transition-colors">
+											{link.text}
+										</Link>
+									)
 								))}
 							</div>
 
 							{/* Second Row of Links */}
 							<div className="flex flex-wrap justify-center gap-8 text-sm">
 								{secondRowLinks.map((link) => (
-									<a key={link.text} href={link.href} className="hover:text-white transition-colors">
-										{link.text}
-									</a>
+									link.external ? (
+										<a key={link.text} href={link.href} target="_blank" className="hover:text-white transition-colors">
+											{link.text}
+										</a>
+									) : (
+										<Link key={link.text} to={link.href} className="hover:text-white transition-colors">
+											{link.text}
+										</Link>
+									)
 								))}
 							</div>
 						</div>
