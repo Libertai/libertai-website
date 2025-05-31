@@ -4,20 +4,20 @@ import backgroundImage from "@/assets/footer-background.png";
 import footerVideo from "@/assets/footer.mp4";
 
 const footerLinks = [
-	{ text: "Home", href: "#" },
+	{ text: "Home", href: "/" },
 	// { text: "About", href: "#" },
-	{ text: "Features", href: "#" },
-	{ text: "Roadmap", href: "#" },
-	{ text: "Sign Up", href: "#" },
-	{ text: "Litepaper", href: "#" },
+	// { text: "Features", href: "#" },
+	{ text: "Roadmap", href: "/roadmap" },
+	// { text: "Sign Up", href: "#" },
+	{ text: "Litepaper", href: "/litepaper.pdf" },
 	{ text: "Docs", href: "https://docs.libertai.io" },
-	{ text: "Telegram Bot", href: "#" },
+	{ text: "Telegram Bot", href: "https://t.me/liberchat_bot" },
 	{ text: "Blog", href: "https://blog.libertai.io" },
-	{ text: "Privacy Policy", href: "#" },
+	// { text: "Privacy Policy", href: "#" },
 ];
 
-const firstRowLinks = footerLinks.slice(0, 5);
-const secondRowLinks = footerLinks.slice(5);
+const firstRowLinks = footerLinks.slice(0, 3);
+const secondRowLinks = footerLinks.slice(3);
 
 export function FooterSection() {
 	return (
