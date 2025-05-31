@@ -34,6 +34,7 @@ export function TokenomicsDetails() {
 	const totalSupplyRefMobile = useRef<HTMLDivElement>(null);
 	const barsRef = useRef<(HTMLDivElement | null)[]>([]);
 	const barsMobileRef = useRef<(HTMLDivElement | null)[]>([]);
+	const hasAnimatedBars = useRef(false);
 
 	const { poolsStats } = useTokenData();
 
@@ -99,6 +100,65 @@ export function TokenomicsDetails() {
 	useEffect(() => {
 		fetchTokenData().then();
 	}, []);
+
+	useEffect(() => {
+		// Only animate if we have complete data and haven't animated yet
+		if (poolsStats.length === 0 || hasAnimatedBars.current) return;
+		
+		// Check if all poolsStats have valid data (not loading)
+		const hasCompleteData = poolsStats.every(stat => stat.totalPercentage > 0);
+		if (!hasCompleteData) return;
+
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting && !hasAnimatedBars.current) {
+						hasAnimatedBars.current = true;
+						
+						// Animate bars
+						barsRef.current.forEach((bar, index) => {
+							if (bar && poolsStats[index]) {
+								gsap.fromTo(
+									bar,
+									{ width: "0%" },
+									{
+										width: `${poolsStats[index].totalPercentage}%`,
+										duration: 2,
+										delay: index * 0.1,
+										ease: "power2.out",
+									},
+								);
+							}
+						});
+
+						barsMobileRef.current.forEach((bar, index) => {
+							if (bar && poolsStats[index]) {
+								gsap.fromTo(
+									bar,
+									{ width: "0%" },
+									{
+										width: `${poolsStats[index].totalPercentage}%`,
+										duration: 2,
+										delay: index * 0.1,
+										ease: "power2.out",
+									},
+								);
+							}
+						});
+
+						observer.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.5 },
+		);
+
+		if (sectionRef.current) {
+			observer.observe(sectionRef.current);
+		}
+
+		return () => observer.disconnect();
+	}, [poolsStats]);
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -191,37 +251,6 @@ export function TokenomicsDetails() {
 							});
 						}
 
-						// Animate bars
-						barsRef.current.forEach((bar, index) => {
-							if (bar && poolsStats[index]) {
-								gsap.fromTo(
-									bar,
-									{ width: "0%" },
-									{
-										width: `${poolsStats[index].totalPercentage}%`,
-										duration: 2,
-										delay: index * 0.1,
-										ease: "power2.out",
-									},
-								);
-							}
-						});
-
-						barsMobileRef.current.forEach((bar, index) => {
-							if (bar && poolsStats[index]) {
-								gsap.fromTo(
-									bar,
-									{ width: "0%" },
-									{
-										width: `${poolsStats[index].totalPercentage}%`,
-										duration: 2,
-										delay: index * 0.1,
-										ease: "power2.out",
-									},
-								);
-							}
-						});
-
 						observer.unobserve(entry.target);
 					}
 				});
@@ -234,7 +263,7 @@ export function TokenomicsDetails() {
 		}
 
 		return () => observer.disconnect();
-	}, [tokenData, poolsStats]);
+	}, [tokenData]);
 
 	return (
 		<section ref={sectionRef} className="w-full bg-background py-20 px-4 md:px-6 lg:px-8">
