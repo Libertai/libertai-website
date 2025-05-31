@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { TokenomicsHero } from "@/components/tokenomics/TokenomicsHero";
 import { TokenomicsDetails } from "@/components/tokenomics/TokenomicsDetails";
+import { TokenDistribution } from "@/components/tokenomics/TokenDistribution";
 import { ContractAddresses } from "@/components/tokenomics/ContractAddresses";
 import { FooterSection } from "@/components/FooterSection.tsx";
 
@@ -14,6 +15,7 @@ function TokenomicsPage() {
 			<TokenomicsHero />
 			<TokenomicsDetails />
 			<ContractAddresses />
+			<TokenDistribution />
 			<FooterSection />
 		</div>
 	);
