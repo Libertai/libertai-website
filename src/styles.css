@@ -138,3 +138,11 @@
         background-image: url('/src/assets/background-right.png');
     }
 }
+
+mux-player {
+    /* Remove useless controls for the video player */
+    --seek-backward-button: none;
+    --seek-forward-button: none;
+    --playback-rate-button: none;
+    --pip-button: none;
+}

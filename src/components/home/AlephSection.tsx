@@ -30,6 +30,8 @@ export function AlephSection() {
 							metadata={{
 								video_title: "libertai-landing",
 							}}
+							disableTracking
+							disableCookies
 						/>
 					</div>
 					<div className="flex space-x-3">
