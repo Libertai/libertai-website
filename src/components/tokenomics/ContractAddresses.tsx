@@ -49,7 +49,7 @@ export function ContractAddresses() {
 					{/* Left side - Contract addresses */}
 					<div className="space-y-8">
 						<div className="space-y-6 mb-20">
-							<div className="text-sm">[ Doubly, Triple check ]</div>
+							<div className="text-sm">[ Double, Triple check ]</div>
 							<h2 className="text-4xl md:text-5xl font-bold text-white">Contract Addresses</h2>
 						</div>
 
@@ -89,7 +89,7 @@ export function ContractAddresses() {
 
 					{/* Right side - Contract addresses image */}
 					<div className="hidden lg:block">
-						<img 
+						<img
 							src={contractAddressesImage}
 							alt="Contract addresses illustration"
 							className="w-full h-auto rounded-lg"
