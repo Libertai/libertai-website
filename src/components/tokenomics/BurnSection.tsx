@@ -1,4 +1,4 @@
-import burnImage from "@/assets/tokenomics/burn.png";
+import burnImage from "@/assets/tokenomics/burn.webp";
 import burnImageMobile from "@/assets/tokenomics/burn-mobile.png";
 
 export function BurnSection() {
@@ -17,11 +17,7 @@ export function BurnSection() {
 				</div>
 				{/* Mobile image with gradient */}
 				<div className="absolute h-full w-full md:hidden">
-					<img 
-						src={burnImageMobile} 
-						alt="Liberty's Flame background" 
-						className="absolute h-full w-full object-cover" 
-					/>
+					<img src={burnImageMobile} alt="Liberty's Flame background" className="absolute h-full w-full object-cover" />
 					<div className="absolute inset-0 bg-gradient-to-b from-transparent from-0% to-background to-100%"></div>
 				</div>
 			</div>

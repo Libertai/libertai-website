@@ -1,4 +1,4 @@
-import heroImage from "@/assets/api/hero.png";
+import heroImage from "@/assets/api/hero.webp";
 import heroImageMobile from "@/assets/api/hero-mobile.png";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";

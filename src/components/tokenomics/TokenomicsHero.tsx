@@ -1,4 +1,4 @@
-import heroImage from "@/assets/tokenomics/hero.png";
+import heroImage from "@/assets/tokenomics/hero.webp";
 import heroImageMobile from "@/assets/tokenomics/hero-mobile.png";
 import { ScrollHuman } from "@/components/ScrollHuman.tsx";
 

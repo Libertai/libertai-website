@@ -1,9 +1,9 @@
 import { Button } from "@/components/ui/button.tsx";
 import { Brain, ExternalLink, Image, MessageSquare, Users } from "lucide-react";
-import chatImage from "@/assets/home/features/chat.png";
-import personasImage from "@/assets/home/features/personas.png";
-import imgGenImage from "@/assets/home/features/image.png";
-import knowledgeImage from "@/assets/home/features/knowledge.png";
+import chatImage from "@/assets/home/features/chat.webp";
+import personasImage from "@/assets/home/features/personas.webp";
+import imgGenImage from "@/assets/home/features/image.webp";
+import knowledgeImage from "@/assets/home/features/knowledge.webp";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
