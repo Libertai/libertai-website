@@ -39,9 +39,10 @@ export function AlephSection() {
 					<div className="text-sm">[ Freedom Unleashed ]</div>
 					<h2>Freedom to Create, Code, and Connect</h2>
 					<p className="text-lg max-w-4xl font-satoshi mx-auto">
-						Break free with LibertAI, the decentralized AI platform that puts you in control. Powered by Aleph Cloud’s
-						secure, distributed computing, our open-source models and tools—chat, characters, agents, API and
-						more—deliver confidential intelligence without compromising your privacy.
+						Break free with LibertAI, the decentralized AI platform that puts you in control.
+						<br />
+						Powered by Aleph Cloud’s secure, distributed computing, our open-source models and tools—chat, characters,
+						agents, API and more—deliver confidential intelligence without compromising your privacy.
 					</p>
 				</div>
 

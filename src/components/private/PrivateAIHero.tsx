@@ -37,7 +37,8 @@ export function PrivateAIHero() {
 					<div className="space-y-6 md:space-y-8">
 						<h1 className="font-bold leading-tight text-white text-4xl md:text-6xl lg:text-7xl">Evolve Today</h1>
 						<p className="text-lg max-w-2xl font-satoshi text-white">
-							Experience the Freedom of LibertAI's Decentralized AI Platform.
+							Embrace the next chapter in human-AI interaction, where freedom and security harmoniously coexist.
+							Experience the evolution today!
 						</p>
 					</div>
 				</div>

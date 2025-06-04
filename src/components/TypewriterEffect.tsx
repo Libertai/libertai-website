@@ -38,7 +38,7 @@ export function TypewriterEffect({ phrases, className = "", prefix = "" }: Typew
 					if (charIndex < chars.length) {
 						textElement.textContent = prefix + phrase.substring(0, charIndex + 1);
 						charIndex++;
-						gsap.delayedCall(0.1, typeChar);
+						gsap.delayedCall(0.07, typeChar);
 					} else {
 						gsap.delayedCall(2, resolve); // Pause before erasing
 					}
