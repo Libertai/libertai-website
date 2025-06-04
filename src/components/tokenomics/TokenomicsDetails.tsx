@@ -104,9 +104,9 @@ export function TokenomicsDetails() {
 	useEffect(() => {
 		// Only animate if we have complete data and haven't animated yet
 		if (poolsStats.length === 0 || hasAnimatedBars.current) return;
-		
+
 		// Check if all poolsStats have valid data (not loading)
-		const hasCompleteData = poolsStats.every(stat => stat.totalPercentage > 0);
+		const hasCompleteData = poolsStats.every((stat) => stat.totalPercentage > 0);
 		if (!hasCompleteData) return;
 
 		const observer = new IntersectionObserver(
@@ -114,7 +114,7 @@ export function TokenomicsDetails() {
 				entries.forEach((entry) => {
 					if (entry.isIntersecting && !hasAnimatedBars.current) {
 						hasAnimatedBars.current = true;
-						
+
 						// Animate bars
 						barsRef.current.forEach((bar, index) => {
 							if (bar && poolsStats[index]) {
@@ -266,7 +266,7 @@ export function TokenomicsDetails() {
 	}, [tokenData]);
 
 	return (
-		<section ref={sectionRef} className="w-full bg-background py-20 px-4 md:px-6 lg:px-8">
+		<section ref={sectionRef} className="w-full bg-background py-20 lg:py-40 px-4 md:px-6 lg:px-8">
 			<div className="container mx-auto max-w-6xl">
 				{/* Section Header */}
 				<div className="mb-16 space-y-6">

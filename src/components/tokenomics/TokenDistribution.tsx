@@ -87,7 +87,7 @@ export function TokenDistribution() {
 	}, [distributionData]);
 
 	return (
-		<section ref={sectionRef} className="w-full bg-background py-20 px-4 md:px-6 lg:px-8">
+		<section ref={sectionRef} className="w-full bg-background py-20 lg:py-40 px-4 md:px-6 lg:px-8">
 			<div className="container mx-auto max-w-6xl">
 				{/* Section Header */}
 				<div className="mb-16 space-y-6">

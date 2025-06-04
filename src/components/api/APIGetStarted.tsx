@@ -36,7 +36,7 @@ const getStartedData = [
 
 export function APIGetStarted() {
 	return (
-		<section className="relative w-full py-20 md:py-32 bg-background overflow-hidden">
+		<section className="relative w-full py-20 lg:py-40 md:py-32 bg-background overflow-hidden">
 			{/* Background */}
 			<div className="absolute inset-0 z-0">
 				<img src={backgroundImage} alt="Background" className="absolute h-full w-full object-cover hidden md:block" />

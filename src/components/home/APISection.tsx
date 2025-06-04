@@ -24,7 +24,7 @@ const features = [
 
 export function APISection() {
 	return (
-		<section className="w-full lg:min-h-200 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat flex items-center ltai-bg-right">
+		<section className="w-full bg-background py-20 lg:py-40 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat flex items-center ltai-bg-right">
 			<div className="container mx-auto">
 				{/* Section Header */}
 				<div className="mb-20 space-y-9 max-w-2xl">

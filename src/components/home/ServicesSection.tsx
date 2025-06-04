@@ -73,7 +73,7 @@ export function ServicesSection() {
 	}, []);
 
 	return (
-		<section id="services" className="w-full bg-background py-20 px-4 md:px-6 lg:px-8">
+		<section id="services" className="w-full bg-background py-20 lg:py-40 px-4 md:px-6 lg:px-8">
 			<div className="container mx-auto">
 				{/* Section Header */}
 				<div className="mb-24 space-y-6">
