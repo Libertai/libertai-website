@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { Home } from "lucide-react";
-import heroImage from "@/assets/404/hero.png";
+import heroImage from "@/assets/404/hero.webp";
 import heroImageMobile from "@/assets/404/hero-mobile.png";
 
 export function NotFound() {

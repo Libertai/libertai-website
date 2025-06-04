@@ -2,7 +2,7 @@ import { type ReactNode, useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Coins, ExternalLink, Network, Server } from "lucide-react";
-import backgroundImage from "@/assets/tokenomics/decentralized.png";
+import backgroundImage from "@/assets/tokenomics/decentralized.webp";
 import { Button } from "@/components/ui/button.tsx";
 
 gsap.registerPlugin(ScrollTrigger);
