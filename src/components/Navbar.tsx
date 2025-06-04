@@ -8,6 +8,7 @@ import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import logoSvg from "@/assets/logo.svg";
 
 export function Navbar() {
 	const navItems = [
@@ -28,8 +29,8 @@ export function Navbar() {
 				<div className="flex items-center justify-between h-16">
 					{/* Left side: Logo + Navigation */}
 					<div className="flex items-center">
-						<Link to="/" className="text-white font-bold text-xl">
-							LibertAI
+						<Link to="/" className="flex items-center">
+							<img src={logoSvg} alt="LibertAI" className="h-6 w-auto" />
 						</Link>
 
 						{/* Desktop Navigation */}
@@ -97,17 +98,22 @@ export function Navbar() {
 									<SheetDescription className="sr-only">Navigate through LibertAI website sections</SheetDescription>
 								</SheetHeader>
 								<nav className="flex flex-col space-y-6 mt-6">
-									{navItems.map((item) => (
+									{navItems.map((item) =>
 										item.external ? (
-											<a href={item.href} key={item.href} target="_blank" className="text-white hover:text-primary text-lg">
+											<a
+												href={item.href}
+												key={item.href}
+												target="_blank"
+												className="text-white hover:text-primary text-lg"
+											>
 												{item.label}
 											</a>
 										) : (
 											<Link to={item.href} key={item.href} className="text-white hover:text-primary text-lg">
 												{item.label}
 											</Link>
-										)
-									))}
+										),
+									)}
 									<a href={ctaLink} target="_blank">
 										<Button variant="glass" size="pill" className="w-full justify-start mt-2 text-center">
 											<span>{ctaText}</span>
