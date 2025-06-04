@@ -30,7 +30,7 @@ export function AlephSection() {
 	return (
 		<section
 			ref={sectionRef}
-			className="w-full py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
+			className="w-full py-20 lg:py-40 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat"
 			style={{ backgroundImage: `url(${backgroundImage})` }}
 		>
 			<div className="container mx-auto">

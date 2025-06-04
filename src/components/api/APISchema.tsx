@@ -3,7 +3,7 @@ import schemaMobileImage from "@/assets/api/schema-mobile.png";
 
 export function APISchema() {
 	return (
-		<section className="w-full bg-background py-20 px-4 md:px-6 lg:px-8">
+		<section className="w-full bg-background py-20 lg:py-40 px-4 md:px-6 lg:px-8">
 			<div className="container mx-auto max-w-6xl">
 				{/* Section Header */}
 				<div className="mb-16 space-y-6">
@@ -17,15 +17,11 @@ export function APISchema() {
 
 				{/* Schema Image */}
 				<div className="flex justify-center">
-					<img 
-						src={schemaImage} 
-						alt="LibertAI API Architecture Schema" 
-						className="max-w-full h-auto hidden md:block" 
-					/>
-					<img 
-						src={schemaMobileImage} 
-						alt="LibertAI API Architecture Schema" 
-						className="max-w-full h-auto block md:hidden" 
+					<img src={schemaImage} alt="LibertAI API Architecture Schema" className="max-w-full h-auto hidden md:block" />
+					<img
+						src={schemaMobileImage}
+						alt="LibertAI API Architecture Schema"
+						className="max-w-full h-auto block md:hidden"
 					/>
 				</div>
 			</div>
