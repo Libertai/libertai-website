@@ -42,7 +42,7 @@ export function APISection() {
 								<ExternalLink className="w-4 h-4" />
 							</Button>
 						</a>
-						<a href="#" target="_blank">
+						<a href="https://docs.libertai.io/apis/text/#pricing" target="_blank">
 							<Button variant="outline" size="lg" className="text-white">
 								Pricing
 								<ExternalLink className="w-4 h-4" />

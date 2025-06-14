@@ -24,7 +24,7 @@ const features = [
 			"Integrate AI companions effortlessly into your tasks, ensuring privacy, data security, and user sovereignty.",
 		image: personasImage,
 		buttonText: "Customize",
-		buttonHref: "#",
+		buttonHref: "https://chat.libertai.io/#/persona-management",
 		live: true,
 	},
 	{
