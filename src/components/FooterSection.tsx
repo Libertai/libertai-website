@@ -3,6 +3,8 @@ import { ExternalLink } from "lucide-react";
 import { Link } from "@tanstack/react-router";
 import backgroundImage from "@/assets/footer-background.png";
 import footerVideo from "@/assets/footer.mp4";
+import { FaDiscord, FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 
 const footerLinks = [
 	{ text: "Home", href: "/", external: false },
@@ -57,7 +59,7 @@ export function FooterSection() {
 									<ExternalLink className="w-4 h-4" />
 								</Button>
 							</a>
-							<a href="#" target="_blank">
+							<a href="https://docs.libertai.io/apis/text/#pricing" target="_blank">
 								<Button variant="outline" size="lg" className="text-white">
 									Pricing
 									<ExternalLink className="w-4 h-4" />
@@ -75,7 +77,7 @@ export function FooterSection() {
 					<div className="flex flex-col items-center space-y-4">
 						{/* Mobile: Responsive flex wrap */}
 						<div className="flex flex-wrap justify-center gap-4 md:hidden text-sm">
-							{footerLinks.map((link) => (
+							{footerLinks.map((link) =>
 								link.external ? (
 									<a key={link.text} href={link.href} target="_blank" className="hover:text-white transition-colors">
 										{link.text}
@@ -84,15 +86,15 @@ export function FooterSection() {
 									<Link key={link.text} to={link.href} className="hover:text-white transition-colors">
 										{link.text}
 									</Link>
-								)
-							))}
+								),
+							)}
 						</div>
 
 						{/* Desktop: Two rows */}
 						<div className="hidden md:flex flex-col space-y-4">
 							{/* First Row of Links */}
 							<div className="flex flex-wrap justify-center gap-8 text-sm">
-								{firstRowLinks.map((link) => (
+								{firstRowLinks.map((link) =>
 									link.external ? (
 										<a key={link.text} href={link.href} target="_blank" className="hover:text-white transition-colors">
 											{link.text}
@@ -101,13 +103,13 @@ export function FooterSection() {
 										<Link key={link.text} to={link.href} className="hover:text-white transition-colors">
 											{link.text}
 										</Link>
-									)
-								))}
+									),
+								)}
 							</div>
 
 							{/* Second Row of Links */}
 							<div className="flex flex-wrap justify-center gap-8 text-sm">
-								{secondRowLinks.map((link) => (
+								{secondRowLinks.map((link) =>
 									link.external ? (
 										<a key={link.text} href={link.href} target="_blank" className="hover:text-white transition-colors">
 											{link.text}
@@ -116,9 +118,32 @@ export function FooterSection() {
 										<Link key={link.text} to={link.href} className="hover:text-white transition-colors">
 											{link.text}
 										</Link>
-									)
-								))}
+									),
+								)}
 							</div>
+						</div>
+
+						{/* Social Media Icons */}
+						<div className="flex justify-center gap-6 pt-4">
+							<a href="https://t.me/libertai" target="_blank" className="hover:text-white transition-colors">
+								<FaTelegram size={24} />
+							</a>
+							<a href="https://x.com/Libertai_DAI" target="_blank" className="hover:text-white transition-colors">
+								<FaXTwitter size={24} />
+							</a>
+							<a href="https://github.com/libertai" target="_blank" className="hover:text-white transition-colors">
+								<FaGithub size={24} />
+							</a>
+							<a
+								href="https://linkedin.com/company/libertai"
+								target="_blank"
+								className="hover:text-white transition-colors"
+							>
+								<FaLinkedin size={24} />
+							</a>
+							<a href="https://discord.gg/alephcloud" target="_blank" className="hover:text-white transition-colors">
+								<FaDiscord size={24} />
+							</a>
 						</div>
 
 						{/* Copyright */}

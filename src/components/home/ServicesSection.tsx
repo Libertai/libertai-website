@@ -29,10 +29,10 @@ const services = [
 		icon: Bot,
 		title: "Agents",
 		description:
-			"LibertAI Agents are highly customizable assistants that operates in a decentralized and confidential environment.",
+			"Build custom user-owned AI agents that act and transact autonomously with their own wallets, all within a decentralized, and verifiable confidential environment.",
 		image: agentsImage,
 		buttonText: "Awaken your Agent",
-		buttonHref: "https://console.libertai.io",
+		buttonHref: "https://console.libertai.io/agents",
 	},
 ];
 
@@ -80,7 +80,8 @@ export function ServicesSection() {
 					<div className="text-sm">[ Services ]</div>
 					<h2>Privacy is Freedom</h2>
 					<p className="text-lg max-w-2xl font-satoshi">
-						Break free with LibertAI, the decentralized AI platform that puts you in control.
+						Break free from centralized control. LibertAI runs AI privately on your terms, your data is fully encrypted
+						and owned by you.
 					</p>
 				</div>
 
