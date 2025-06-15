@@ -42,7 +42,7 @@ export function AlephSection() {
 						Break free with LibertAI, the decentralized AI platform that puts you in control.
 						<br />
 						Powered by Aleph Cloud’s secure, distributed computing, our open-source models and tools—chat, characters,
-						agents, API and more—deliver confidential intelligence without compromising your privacy.
+						agents, API and more—brings confidential intelligence with privacy you can verify..
 					</p>
 				</div>
 

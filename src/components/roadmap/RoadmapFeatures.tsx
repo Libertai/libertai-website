@@ -1,5 +1,5 @@
 import { Bot, Code, Database, Image, Lock, MessageSquare, Mic, Users } from "lucide-react";
-import backgroundImage from "@/assets/background-right.png";
+import backgroundImage from "@/assets/background-right.webp";
 import backgroundImageMobile from "@/assets/background-right-mobile.png";
 
 const liveFeatures = [

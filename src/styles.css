@@ -131,11 +131,11 @@
 /* md */
 @media (width >= 48rem) {
     .ltai-bg-left {
-        background-image: url('/src/assets/background-left.png');
+        background-image: url('/src/assets/background-left.webp');
     }
 
     .ltai-bg-right {
-        background-image: url('/src/assets/background-right.png');
+        background-image: url('/src/assets/background-right.webp');
     }
 }
 
