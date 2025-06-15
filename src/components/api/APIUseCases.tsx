@@ -1,4 +1,4 @@
-import backgroundImage from "@/assets/background-right.png";
+import backgroundImage from "@/assets/background-right.webp";
 import backgroundImageMobile from "@/assets/background-right-mobile.png";
 import { GenericAccordion } from "@/components/GenericAccordion.tsx";
 

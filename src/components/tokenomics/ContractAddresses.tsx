@@ -1,7 +1,7 @@
 import { Check, Copy, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { useState } from "react";
-import backgroundImage from "@/assets/background-right.png";
+import backgroundImage from "@/assets/background-right.webp";
 import backgroundImageMobile from "@/assets/background-right-mobile.png";
 import baseLogo from "@/assets/tokenomics/base.png";
 import solanaLogo from "@/assets/tokenomics/solana.png";

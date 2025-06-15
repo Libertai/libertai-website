@@ -1,4 +1,4 @@
-import backgroundImage from "@/assets/background-left.png";
+import backgroundImage from "@/assets/background-left.webp";
 import backgroundImageMobile from "@/assets/background-left-mobile.png";
 import { Brain, ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
