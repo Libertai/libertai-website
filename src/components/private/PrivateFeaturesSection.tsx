@@ -1,4 +1,4 @@
-import backgroundLeft from "@/assets/background-left.webp";
+import backgroundLeft from "@/assets/background-left.png";
 import backgroundLeftMobile from "@/assets/background-left-mobile.png";
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";

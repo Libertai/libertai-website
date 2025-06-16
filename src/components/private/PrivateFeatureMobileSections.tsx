@@ -1,4 +1,4 @@
-import backgroundLeft from "@/assets/background-left.webp";
+import backgroundLeft from "@/assets/background-left.png";
 import backgroundLeftMobile from "@/assets/background-left-mobile.png";
 import { privateFeatures } from "@/data/private-features.ts";
 import { PrivateFeatureContent } from "./PrivateFeatureContent.tsx";
