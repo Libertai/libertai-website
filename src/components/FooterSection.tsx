@@ -1,8 +1,8 @@
 import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
 import { Link } from "@tanstack/react-router";
-import backgroundImage from "@/assets/footer-background.png";
-import footerVideo from "@/assets/footer.mp4";
+import footerVideo from "@/assets/footer.webm";
+import footerVideoMobile from "@/assets/footer-mobile.webm";
 import { FaDiscord, FaGithub, FaLinkedin, FaTelegram } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
 
@@ -26,24 +26,25 @@ export function FooterSection() {
 	return (
 		<footer className="w-full">
 			{/* Main Footer Section with Background */}
-			<section
-				className="w-full lg:min-h-175 bg-background py-20 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat relative overflow-hidden flex items-center"
-				style={{ backgroundImage: `url(${backgroundImage})` }}
-			>
+			<section className="w-full lg:min-h-175 bg-background py-20 px-4 md:px-6 lg:px-8 relative overflow-hidden flex items-center">
 				{/* Background Video */}
 				<video
-					className="hidden md:block absolute inset-0 w-full h-full object-cover pointer-events-none opacity-80"
-					style={{
-						mixBlendMode: "color-dodge",
-						filter: "blur(1px)",
-					}}
+					src={footerVideo}
+					className="hidden md:block absolute inset-0 w-full h-full object-cover pointer-events-none"
 					autoPlay
 					muted
 					loop
 					playsInline
-				>
-					<source src={footerVideo} type="video/mp4" />
-				</video>
+				/>
+				{/* Background Video Mobile */}
+				<video
+					src={footerVideoMobile}
+					className="md:hidden absolute inset-0 w-full h-full object-cover pointer-events-none"
+					autoPlay
+					muted
+					loop
+					playsInline
+				/>
 				<div className="container mx-auto text-center relative z-10">
 					{/* Section Header */}
 					<div className="mb-16 space-y-6">
