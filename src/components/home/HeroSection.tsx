@@ -1,5 +1,5 @@
-import heroImage from "@/assets/home/hero/hero.png";
-import heroImageMobile from "@/assets/home/hero/hero-mobile.png";
+import heroVideoDesktop from "@/assets/home/hero/desktop.webm";
+import heroVideoMobile from "@/assets/home/hero/mobile.webm";
 import { ExternalLink } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { TypewriterEffect } from "@/components/TypewriterEffect.tsx";
@@ -15,21 +15,26 @@ export function HeroSection() {
 
 	return (
 		<section className="relative w-full min-h-screen flex items-center bg-background overflow-hidden">
-			{/* Background with gradient overlay */}
+			{/* Background videos */}
 			<div className="absolute inset-0 z-0">
-				{/* Hero image with overlay */}
-				<img
-					src={heroImage}
-					alt="Hero background"
+				{/* Hero video desktop */}
+				<video
+					src={heroVideoDesktop}
+					autoPlay
+					muted
+					loop
+					playsInline
 					className="absolute h-full w-full object-cover md:object-right opacity-90 hidden md:block"
 				/>
-				<img
-					src={heroImageMobile}
-					alt="Hero background"
+				{/* Hero video mobile */}
+				<video
+					src={heroVideoMobile}
+					autoPlay
+					muted
+					loop
+					playsInline
 					className="absolute h-full w-full object-cover md:object-right opacity-90 md:hidden max-sm:block"
 				/>
-				{/* Custom gradient background */}
-				<div className="absolute inset-0"></div>
 			</div>
 
 			{/* Content container */}

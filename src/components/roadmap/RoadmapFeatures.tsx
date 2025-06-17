@@ -39,7 +39,7 @@ const comingSoonFeatures = [
 	{
 		icon: Mic,
 		title: "Text-to-speech",
-		description: "TODO",
+		description: "Private, decentralized AI-driven speech synthesis for secure audio content creation",
 	},
 	{
 		icon: Image,
