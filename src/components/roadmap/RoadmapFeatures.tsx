@@ -1,4 +1,17 @@
-import { Bot, Code, Database, Image, Lock, MessageSquare, Mic, Users } from "lucide-react";
+import {
+	Bot,
+	Code,
+	Database,
+	Image,
+	Lock,
+	MessageSquare,
+	Mic,
+	Package,
+	Palette,
+	Smartphone,
+	Store,
+	Users,
+} from "lucide-react";
 import backgroundImage from "@/assets/background-right.png";
 import backgroundImageMobile from "@/assets/background-right-mobile.png";
 
@@ -45,6 +58,26 @@ const comingSoonFeatures = [
 		icon: Image,
 		title: "Image generation",
 		description: "Multimodal inference & image inputs for LLMs",
+	},
+	{
+		icon: Store,
+		title: "Agent Marketplace",
+		description: "Discover, deploy, and monetize AI agents in a decentralized marketplace",
+	},
+	{
+		icon: Palette,
+		title: "Chat UI Revamp",
+		description: "Enhanced user experience with modern design and improved functionality",
+	},
+	{
+		icon: Package,
+		title: "SDKs & Libraries",
+		description: "Pre-built integrations and development kits for popular frameworks",
+	},
+	{
+		icon: Smartphone,
+		title: "Mobile Apps",
+		description: "Native iOS and Android applications for private AI on the go",
 	},
 ];
 
