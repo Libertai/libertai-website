@@ -90,7 +90,7 @@ export const PrivateFeatureContent = forwardRef<HTMLDivElement, PrivateFeatureCo
 						ref={imageRef}
 						src={feature.image.src}
 						alt={feature.image.alt}
-						className="w-80 h-auto max-w-full rounded-lg object-contain"
+						className="w-80 lg:w-96 h-auto max-w-full rounded-lg object-contain"
 					/>
 				</div>
 			</div>

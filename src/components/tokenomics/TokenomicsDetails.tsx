@@ -272,6 +272,9 @@ export function TokenomicsDetails() {
 				<div className="mb-16 space-y-6">
 					<div className="text-sm">[ Secrets kept Private ]</div>
 					<h2 className="text-4xl md:text-5xl font-bold text-white">LTAI is Your Ticket to Freedom</h2>
+					<p className="text-lg">
+						The $LTAI token powers decentralized AI computations for private AI inference on LibertAI's platform.
+					</p>
 				</div>
 
 				{/* Desktop Layout */}
