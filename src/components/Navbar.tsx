@@ -9,8 +9,11 @@ import { Button } from "@/components/ui/button";
 import { ExternalLink, Menu } from "lucide-react";
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import logoSvg from "@/assets/logo.svg";
+import { useState } from "react";
 
 export function Navbar() {
+	const [isSheetOpen, setIsSheetOpen] = useState(false);
+
 	const navItems = [
 		// { href: "/a", label: "About", external: false },
 		{ href: "/private-ai", label: "Private AI", external: false },
@@ -22,6 +25,10 @@ export function Navbar() {
 
 	const ctaText = "Try LibertAI chat";
 	const ctaLink = "https://chat.libertai.io";
+
+	const handleNavClick = () => {
+		setIsSheetOpen(false);
+	};
 
 	return (
 		<header className="fixed top-0 left-0 right-0 z-50 bg-background/10 backdrop-blur-sm">
@@ -86,7 +93,7 @@ export function Navbar() {
 						</Button>
 
 						{/* Mobile Menu Sheet */}
-						<Sheet>
+						<Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
 							<SheetTrigger asChild>
 								<Button variant="ghost" size="icon" className="text-white">
 									<Menu className="h-5 w-5" />
@@ -105,16 +112,17 @@ export function Navbar() {
 												key={item.href}
 												target="_blank"
 												className="text-white hover:text-primary text-lg"
+												onClick={handleNavClick}
 											>
 												{item.label}
 											</a>
 										) : (
-											<Link to={item.href} key={item.href} className="text-white hover:text-primary text-lg">
+											<Link to={item.href} key={item.href} className="text-white hover:text-primary text-lg" onClick={handleNavClick}>
 												{item.label}
 											</Link>
 										),
 									)}
-									<a href={ctaLink} target="_blank">
+									<a href={ctaLink} target="_blank" onClick={handleNavClick}>
 										<Button variant="glass" size="pill" className="w-full justify-start mt-2 text-center">
 											<span>{ctaText}</span>
 											<ExternalLink className="w-4 h-4" />
