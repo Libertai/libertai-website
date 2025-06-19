@@ -17,7 +17,7 @@ export function GenericAccordion({ faqs }: GenericAccordionProps) {
 				<AccordionItem
 					key={faq.id}
 					value={`item-${faq.id}`}
-					className="bg-transparent border border-foreground/20 rounded-2xl px-6 py-2 data-[state=open]:bg-black/5 data-[state=open]:border-white data-[state=open]:border-[1px]"
+					className="bg-transparent border border-foreground/20 rounded-2xl px-6 py-2 data-[state=open]:bg-black/5 data-[state=open]:border-white data-[state=open]:border-[1px] last:border-b"
 				>
 					<AccordionTrigger className="text-left text-lg text-white hover:no-underline py-6 [&[data-state=open]>svg]:rotate-180">
 						{faq.question}

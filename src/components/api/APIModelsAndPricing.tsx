@@ -1,6 +1,6 @@
 import backgroundImage from "@/assets/background-left.png";
 import backgroundImageMobile from "@/assets/background-left-mobile.png";
-import { Brain, ExternalLink } from "lucide-react";
+import { Brain, ExternalLink, MessageCircle, ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 
 const modelsData = [
@@ -8,7 +8,13 @@ const modelsData = [
 		name: "Hermes 3",
 		description:
 			"General-purpose models that handle most workloads. Your AI assistant, code assistant, or creative tools can all thrive with this data.",
-		capabilities: "💬 ➔ 💬",
+		capabilities: (
+			<div className="flex items-center justify-center gap-2">
+				<MessageCircle className="w-5 h-5 text-[#EA7AF4]" />
+				<ArrowRight className="w-4 h-4 text-[#EA7AF4]" />
+				<MessageCircle className="w-5 h-5 text-[#EA7AF4]" />
+			</div>
+		),
 		inputTokens: "$0.15",
 		outputTokens: "$0.60",
 		badge: null,
@@ -60,7 +66,7 @@ export function APIModelsAndPricing() {
 												</div>
 											</div>
 										</td>
-										<td className="py-6 text-center text-2xl text-white">{model.capabilities}</td>
+										<td className="py-6 text-center">{model.capabilities}</td>
 										<td className="py-6 text-center text-2xl text-white">{model.inputTokens}</td>
 										<td className="py-6 text-center text-2xl text-white">{model.outputTokens}</td>
 									</tr>
