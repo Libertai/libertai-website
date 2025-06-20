@@ -88,9 +88,11 @@ export function Navbar() {
 					{/* Mobile Actions */}
 					<div className="flex items-center gap-2 md:hidden">
 						{/* Try Now Button */}
-						<Button variant="glass" size="pill" className="text-sm flex items-center gap-1">
-							Try Now <ExternalLink className="h-3.5 w-3.5" />
-						</Button>
+						<a href={ctaLink} target="_blank">
+							<Button variant="glass" size="pill" className="text-sm flex items-center gap-1">
+								Try Now <ExternalLink className="h-3.5 w-3.5" />
+							</Button>
+						</a>
 
 						{/* Mobile Menu Sheet */}
 						<Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
@@ -117,7 +119,12 @@ export function Navbar() {
 												{item.label}
 											</a>
 										) : (
-											<Link to={item.href} key={item.href} className="text-white hover:text-primary text-lg" onClick={handleNavClick}>
+											<Link
+												to={item.href}
+												key={item.href}
+												className="text-white hover:text-primary text-lg"
+												onClick={handleNavClick}
+											>
 												{item.label}
 											</Link>
 										),
