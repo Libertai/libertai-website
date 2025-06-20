@@ -3,31 +3,33 @@ import { GenericAccordion } from "@/components/GenericAccordion.tsx";
 const faqs = [
 	{
 		id: 1,
-		question: "Why choose LibertAI over other AI platforms?",
+		question: "What is LibertAI?",
 		answer:
-			"LibertAI is decentralized, open-source, and privacy-first. Aleph Cloud’s distributed encrypted computing ensures no data logging or training, unlike walled gardens like ChatGPT or Claude.",
+			"LibertAI is a confidential AI platform fully decentralized that provides safe user-owned AI conversations. Chat or create privately, free from Big Tech tracking. Start at chat.libertai.io.",
 	},
 	{
 		id: 2,
-		question: "How do I create AI characters?",
+		question: "Are LibertAI privacy claims secure and verifiable?",
 		answer:
-			"Shape personalities, backstories, and dialogues in our interface. Use models like Nous Hermes 3 for creative role-play, all secured on Aleph Cloud’s network.",
+			"Yes, your privacy is verifiable via Trusted Execution Environments (TEEs). We don’t have logs or access to your information, your account is yours only with blockchain security. All of our code is open source & auditable on GitHub.",
 	},
 	{
 		id: 3,
-		question: "What's the deal with context length?",
-		answer: "Up to 32,768 tokens, handling epic conversations, complex code, and detailed character interactions.",
+		question: "How do I begin?",
+		answer:
+			"Start chatting for free at chat.libertai.io, no sign-up required! Developers can also use console.libertai.io to access the API.",
 	},
 	{
 		id: 4,
-		question: "Where is my data processed?",
+		question: "What’s the price?",
 		answer:
-			"On Aleph Cloud’s decentralized network with distributed encrypted computing—safe, private, and untouchable.",
+			"Basic access is free at chat.libertai.io. Premium features have dedicated pricing & require LibertAI native AI token $LTAI (20% discount); You can get credits with crypto (ETH, USDC), or pay by debit or credit card.",
 	},
 	{
 		id: 5,
-		question: "When is image generation dropping?",
-		answer: "Image generation and multi-modal inference will be live in Q4 2025.",
+		question: "How can I get help or updates?",
+		answer:
+			"Contact support@libertai.io or join t.me/libertai. Follow @libertai_dai on X or subscribe at blog.libertai.io/subscribe.",
 	},
 ];
 
