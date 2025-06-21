@@ -42,6 +42,6 @@ jobs:
 
       - name: Deploy preview on Aleph
         if: ${{ github.event_name == 'pull_request' }}
-        uses: aleph-im/web3-hosting-action@debug-upload
+        uses: aleph-im/web3-hosting-action@c782cb1f2aa6e70248db3e5693e9283e6d9de240
         with:
           path: 'dist'
