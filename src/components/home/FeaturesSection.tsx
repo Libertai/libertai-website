@@ -11,7 +11,7 @@ const features = [
 	{
 		icon: MessageSquare,
 		title: "Chat",
-		description: "Chat freely with privacy by default for your protection.",
+		description: "Chat with encrypted privacy, at LibertAI your data never leaves your control.",
 		image: chatImage,
 		buttonText: "Chat Now",
 		buttonHref: "https://chat.libertai.io",
