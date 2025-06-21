@@ -4,6 +4,9 @@ on:
   push:
   pull_request:
 
+env:
+  ACTIONS_STEP_DEBUG: true
+
 jobs:
   lint:
     name: "Lint"
@@ -39,6 +42,6 @@ jobs:
 
       - name: Deploy preview on Aleph
         if: ${{ github.event_name == 'pull_request' }}
-        uses: aleph-im/web3-hosting-action@v1.0.0
+        uses: aleph-im/web3-hosting-action@debug-upload
         with:
           path: 'dist'
