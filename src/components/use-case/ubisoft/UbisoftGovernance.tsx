@@ -71,7 +71,7 @@ export function UbisoftGovernance() {
 				{/* Section Header */}
 				<div className="mb-16 lg:mb-24 space-y-6">
 					<div className="text-sm">[ Synthetic Agents ]</div>
-					<h2 className="text-4xl md:text-5xl lg:text-6xl font-satoshi text-white">Web3 Governance</h2>
+					<h2 className="text-5xl">Web3 Governance</h2>
 					<div className="space-y-4">
 						<p className="text-lg font-satoshi max-w-4xl">
 							Launched in partnership with LibertAI, Eden’s governance system combines decentralized infrastructure,
