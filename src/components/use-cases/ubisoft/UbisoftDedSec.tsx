@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
-import dedSecBackground from "@/assets/use-case/ubisoft/dedsec/dedsec-background.png";
-import dedSecLogo from "@/assets/use-case/ubisoft/dedsec/dedsec.png";
+import dedSecBackground from "@/assets/use-cases/ubisoft/dedsec/dedsec-background.png";
+import dedSecLogo from "@/assets/use-cases/ubisoft/dedsec/dedsec.png";
 
 export function UbisoftDedSec() {
 	return (
@@ -48,11 +48,6 @@ export function UbisoftDedSec() {
 				{/* Right content - DedSec Logo */}
 				<div className="hidden xl:flex items-center justify-center flex-shrink-0 ml-12">
 					<img src={dedSecLogo} alt="DedSec" className="h-80 w-auto" />
-				</div>
-
-				{/* Mobile DedSec Logo */}
-				<div className="xl:hidden absolute right-4 top-1/2 transform -translate-y-1/2 opacity-30">
-					<img src={dedSecLogo} alt="DedSec" className="h-32 w-auto" />
 				</div>
 			</div>
 		</section>
