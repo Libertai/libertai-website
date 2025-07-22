@@ -1,6 +1,6 @@
-import heroBackground from "@/assets/use-case/ubisoft/hero/laserhawk-background.png";
-import captainLaserhawkLogo from "@/assets/use-case/ubisoft/hero/captain-laserhawk-logo.png";
-import ubisoftLogo from "@/assets/use-case/ubisoft/hero/ubisoft.svg";
+import heroBackground from "@/assets/use-cases/ubisoft/hero/laserhawk-background.png";
+import captainLaserhawkLogo from "@/assets/use-cases/ubisoft/hero/captain-laserhawk-logo.png";
+import ubisoftLogo from "@/assets/use-cases/ubisoft/hero/ubisoft.svg";
 import { ScrollHuman } from "@/components/ScrollHuman.tsx";
 
 export function UbisoftHero() {
@@ -42,7 +42,7 @@ export function UbisoftHero() {
 
 				{/* Right content - Captain Laserhawk Logo (medium screens and up) */}
 				<div className="hidden md:flex items-center justify-center flex-shrink-0 ml-12">
-					<img src={captainLaserhawkLogo} alt="Captain Laserhawk" className="h-48 lg:h-64 w-auto" />
+					<img src={captainLaserhawkLogo} alt="Captain Laserhawk" className="h-48 lg:h-64 xl:h-80 w-auto" />
 				</div>
 			</div>
 

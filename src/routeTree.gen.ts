@@ -16,7 +16,7 @@ import { Route as RoadmapImport } from './routes/roadmap'
 import { Route as PrivateAiImport } from './routes/private-ai'
 import { Route as ApiImport } from './routes/api'
 import { Route as IndexImport } from './routes/index'
-import { Route as UseCaseUbisoftImport } from './routes/use-case/ubisoft'
+import { Route as UseCasesUbisoftImport } from './routes/use-cases/ubisoft'
 
 // Create/Update Routes
 
@@ -50,9 +50,9 @@ const IndexRoute = IndexImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
-const UseCaseUbisoftRoute = UseCaseUbisoftImport.update({
-  id: '/use-case/ubisoft',
-  path: '/use-case/ubisoft',
+const UseCasesUbisoftRoute = UseCasesUbisoftImport.update({
+  id: '/use-cases/ubisoft',
+  path: '/use-cases/ubisoft',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -95,11 +95,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TokenomicsImport
       parentRoute: typeof rootRoute
     }
-    '/use-case/ubisoft': {
-      id: '/use-case/ubisoft'
-      path: '/use-case/ubisoft'
-      fullPath: '/use-case/ubisoft'
-      preLoaderRoute: typeof UseCaseUbisoftImport
+    '/use-cases/ubisoft': {
+      id: '/use-cases/ubisoft'
+      path: '/use-cases/ubisoft'
+      fullPath: '/use-cases/ubisoft'
+      preLoaderRoute: typeof UseCasesUbisoftImport
       parentRoute: typeof rootRoute
     }
   }
@@ -113,7 +113,7 @@ export interface FileRoutesByFullPath {
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
   '/tokenomics': typeof TokenomicsRoute
-  '/use-case/ubisoft': typeof UseCaseUbisoftRoute
+  '/use-cases/ubisoft': typeof UseCasesUbisoftRoute
 }
 
 export interface FileRoutesByTo {
@@ -122,7 +122,7 @@ export interface FileRoutesByTo {
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
   '/tokenomics': typeof TokenomicsRoute
-  '/use-case/ubisoft': typeof UseCaseUbisoftRoute
+  '/use-cases/ubisoft': typeof UseCasesUbisoftRoute
 }
 
 export interface FileRoutesById {
@@ -132,7 +132,7 @@ export interface FileRoutesById {
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
   '/tokenomics': typeof TokenomicsRoute
-  '/use-case/ubisoft': typeof UseCaseUbisoftRoute
+  '/use-cases/ubisoft': typeof UseCasesUbisoftRoute
 }
 
 export interface FileRouteTypes {
@@ -143,7 +143,7 @@ export interface FileRouteTypes {
     | '/private-ai'
     | '/roadmap'
     | '/tokenomics'
-    | '/use-case/ubisoft'
+    | '/use-cases/ubisoft'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -151,7 +151,7 @@ export interface FileRouteTypes {
     | '/private-ai'
     | '/roadmap'
     | '/tokenomics'
-    | '/use-case/ubisoft'
+    | '/use-cases/ubisoft'
   id:
     | '__root__'
     | '/'
@@ -159,7 +159,7 @@ export interface FileRouteTypes {
     | '/private-ai'
     | '/roadmap'
     | '/tokenomics'
-    | '/use-case/ubisoft'
+    | '/use-cases/ubisoft'
   fileRoutesById: FileRoutesById
 }
 
@@ -169,7 +169,7 @@ export interface RootRouteChildren {
   PrivateAiRoute: typeof PrivateAiRoute
   RoadmapRoute: typeof RoadmapRoute
   TokenomicsRoute: typeof TokenomicsRoute
-  UseCaseUbisoftRoute: typeof UseCaseUbisoftRoute
+  UseCasesUbisoftRoute: typeof UseCasesUbisoftRoute
 }
 
 const rootRouteChildren: RootRouteChildren = {
@@ -178,7 +178,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivateAiRoute: PrivateAiRoute,
   RoadmapRoute: RoadmapRoute,
   TokenomicsRoute: TokenomicsRoute,
-  UseCaseUbisoftRoute: UseCaseUbisoftRoute,
+  UseCasesUbisoftRoute: UseCasesUbisoftRoute,
 }
 
 export const routeTree = rootRoute
@@ -196,7 +196,7 @@ export const routeTree = rootRoute
         "/private-ai",
         "/roadmap",
         "/tokenomics",
-        "/use-case/ubisoft"
+        "/use-cases/ubisoft"
       ]
     },
     "/": {
@@ -214,8 +214,8 @@ export const routeTree = rootRoute
     "/tokenomics": {
       "filePath": "tokenomics.tsx"
     },
-    "/use-case/ubisoft": {
-      "filePath": "use-case/ubisoft.tsx"
+    "/use-cases/ubisoft": {
+      "filePath": "use-cases/ubisoft.tsx"
     }
   }
 }

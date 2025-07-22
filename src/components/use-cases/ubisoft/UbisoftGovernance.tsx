@@ -1,7 +1,7 @@
 import { Brain, Users, Zap } from "lucide-react";
-import niji1Image from "@/assets/use-case/ubisoft/governance/niji-1.png";
-import niji2Image from "@/assets/use-case/ubisoft/governance/niji-2.png";
-import niji3Image from "@/assets/use-case/ubisoft/governance/niji-3.png";
+import niji1Image from "@/assets/use-cases/ubisoft/governance/niji-1.png";
+import niji2Image from "@/assets/use-cases/ubisoft/governance/niji-2.png";
+import niji3Image from "@/assets/use-cases/ubisoft/governance/niji-3.png";
 import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
