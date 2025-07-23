@@ -1,4 +1,5 @@
-import { Target, Vote, Zap } from "lucide-react";
+import { Target, Vote, Zap, ExternalLink } from "lucide-react";
+import { Button } from "@/components/ui/button.tsx";
 
 const features = [
 	{
@@ -59,6 +60,22 @@ export function UbisoftPlayer() {
 						Autonomous Niji opinions can contribute to debates on governance proposals, enriching the decision-making
 						process and guiding player choices.
 					</p>
+				</div>
+
+				{/* Action Buttons */}
+				<div className="flex flex-wrap gap-4 justify-center mt-12">
+					<a href="https://medium.com/@Ubisoft-Captain-Laserhawk/from-passive-collectibles-to-autonomous-citizens-how-eden-online-unlocked-ai-governed-nfts-2422934e5f97" target="_blank">
+						<Button variant="outline" size="lg" className="text-white border-white">
+							<span>Learn more</span>
+							<ExternalLink />
+						</Button>
+					</a>
+					<a href="https://magiceden.io/launchpad/arbitrum/niji_warrior" target="_blank">
+						<Button variant="outline" size="lg" className="text-white border-white">
+							<span>Get you own Niji</span>
+							<ExternalLink />
+						</Button>
+					</a>
 				</div>
 			</div>
 		</section>

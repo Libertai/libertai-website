@@ -2,6 +2,8 @@ import heroBackground from "@/assets/use-cases/ubisoft/hero/laserhawk-background
 import captainLaserhawkLogo from "@/assets/use-cases/ubisoft/hero/captain-laserhawk-logo.png";
 import ubisoftLogo from "@/assets/use-cases/ubisoft/hero/ubisoft.svg";
 import { ScrollHuman } from "@/components/ScrollHuman.tsx";
+import { Button } from "@/components/ui/button.tsx";
+import { ExternalLink } from "lucide-react";
 
 export function UbisoftHero() {
 	const scrollToNext = () => {
@@ -32,6 +34,16 @@ export function UbisoftHero() {
 						produced by Ubisoft for Netflix and featuring iconic characters from Ubisoft IPs. Featuring the DedSec
 						Console, an immersive hacking challenge powered by LibertAI privacy-first AI where every gameplay is unique.
 					</p>
+
+					{/* Captain Laserhawk Universe Button */}
+					<div className="mt-6">
+						<a href="https://x.com/EdenOnline_exe" target="_blank">
+							<Button variant="outline" size="lg" className="text-white border-white">
+								<span>Captain Laserhawk Universe</span>
+								<ExternalLink />
+							</Button>
+						</a>
+					</div>
 
 					{/* Logos - responsive layout */}
 					<div className="mt-8 flex items-center space-x-6 md:block md:space-x-0 max-md:mx-auto">

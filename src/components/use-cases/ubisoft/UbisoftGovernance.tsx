@@ -1,4 +1,5 @@
-import { Brain, Users, Zap } from "lucide-react";
+import { Brain, ExternalLink, Users, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button.tsx";
 import niji1Image from "@/assets/use-cases/ubisoft/governance/niji-1.png";
 import niji2Image from "@/assets/use-cases/ubisoft/governance/niji-2.png";
 import niji3Image from "@/assets/use-cases/ubisoft/governance/niji-3.png";
@@ -69,7 +70,7 @@ export function UbisoftGovernance() {
 		<section className="w-full bg-background py-20 lg:py-32 px-4 md:px-6 lg:px-8">
 			<div className="container mx-auto">
 				{/* Section Header */}
-				<div className="mb-16 lg:mb-24 space-y-6">
+				<div className="mb-16 space-y-6">
 					<div className="text-sm">[ Synthetic Agents ]</div>
 					<h2 className="text-5xl">Web3 Governance</h2>
 					<div className="space-y-4">
@@ -84,6 +85,22 @@ export function UbisoftGovernance() {
 							proposals, votes, and logs actions on-chain.
 						</p>
 					</div>
+				</div>
+
+				{/* Action Buttons */}
+				<div className="flex flex-wrap gap-4 mb-16">
+					<a href="https://snapshot.box/#/s:edenonline.eth" target="_blank">
+						<Button variant="outline" size="lg" className="text-white border-white">
+							<span>Governance in Action</span>
+							<ExternalLink />
+						</Button>
+					</a>
+					<a href="https://discord.gg/edenonline" target="_blank">
+						<Button variant="outline" size="lg" className="text-white border-white">
+							<span>Discord</span>
+							<ExternalLink />
+						</Button>
+					</a>
 				</div>
 
 				{/* Features Grid */}

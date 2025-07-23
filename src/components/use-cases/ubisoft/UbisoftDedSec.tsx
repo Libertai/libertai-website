@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
 import dedSecBackground from "@/assets/use-cases/ubisoft/dedsec/dedsec-background.png";
-import dedSecLogo from "@/assets/use-cases/ubisoft/dedsec/dedsec.png";
+import dedSecLogo from "@/assets/use-cases/ubisoft/dedsec/dedsec.gif";
 
 export function UbisoftDedSec() {
 	return (
