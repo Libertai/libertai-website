@@ -1,8 +1,10 @@
 import {
 	NavigationMenu,
+	NavigationMenuContent,
 	NavigationMenuItem,
 	NavigationMenuLink,
 	NavigationMenuList,
+	NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
@@ -42,7 +44,7 @@ export function Navbar() {
 
 						{/* Desktop Navigation */}
 						<div className="hidden md:flex ml-8">
-							<NavigationMenu>
+							<NavigationMenu viewport={false}>
 								<NavigationMenuList className="md:gap-4 xl:gap-6">
 									{navItems.map((item) => (
 										<NavigationMenuItem key={item.href}>
@@ -64,6 +66,24 @@ export function Navbar() {
 											)}
 										</NavigationMenuItem>
 									))}
+									<NavigationMenuItem>
+										<NavigationMenuTrigger className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent! data-[state=open]:text-white max-lg:text-xs lg:text-sm px-3 py-2">
+											Use cases
+										</NavigationMenuTrigger>
+										<NavigationMenuContent className="bg-background backdrop-blur-sm border border-white/10 rounded-lg">
+											<div className="min-w-80 p-3">
+												<Link
+													to="/use-cases/ubisoft"
+													className="block select-none rounded-lg p-3 leading-none no-underline outline-none transition-all focus:bg-white/10 text-white"
+												>
+													<p className="text-md font-medium leading-none text-white">Ubisoft</p>
+													<p className="text-xs leading-snug text-white/70 mt-1">
+														Gaming partnership showcasing decentralized AI for immersive experiences
+													</p>
+												</Link>
+											</div>
+										</NavigationMenuContent>
+									</NavigationMenuItem>
 								</NavigationMenuList>
 							</NavigationMenu>
 						</div>
@@ -129,6 +149,16 @@ export function Navbar() {
 											</Link>
 										),
 									)}
+									<div className="space-y-3">
+										<div className="text-white text-lg font-medium">Use cases</div>
+										<Link
+											to="/use-cases/ubisoft"
+											className="hover:text-primary text-base ml-4 block"
+											onClick={handleNavClick}
+										>
+											Ubisoft
+										</Link>
+									</div>
 									<a href={ctaLink} target="_blank" onClick={handleNavClick}>
 										<Button variant="glass" size="pill" className="w-full justify-start mt-2 text-center">
 											<span>{ctaText}</span>
