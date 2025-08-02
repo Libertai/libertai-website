@@ -70,15 +70,12 @@ export function Navbar() {
 										<NavigationMenuTrigger className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent data-[state=open]:bg-transparent! data-[state=open]:text-white max-lg:text-xs lg:text-sm px-3 py-2">
 											Use cases
 										</NavigationMenuTrigger>
-										<NavigationMenuContent className="bg-background backdrop-blur-sm border border-white/10 rounded-lg">
-											<div className="min-w-80 p-3">
-												<Link
-													to="/use-cases/ubisoft"
-													className="block select-none rounded-lg p-3 leading-none no-underline outline-none transition-all focus:bg-white/10 text-white"
-												>
+										<NavigationMenuContent className="text-white border border-white/20 backdrop-blur-sm rounded-[2vw]!">
+											<div className="min-w-80 p-4">
+												<Link to="/use-cases/ubisoft" className="block p-4">
 													<p className="text-md font-medium leading-none text-white">Ubisoft</p>
 													<p className="text-xs leading-snug text-white/70 mt-1">
-														Gaming partnership showcasing decentralized AI for immersive experiences
+														Decentralized AI: Gaming Meets Autonomous Citizens
 													</p>
 												</Link>
 											</div>
