@@ -1,0 +1,32 @@
+name: Production deployment
+
+on:
+  workflow_dispatch:
+
+
+jobs:
+  deploy:
+    name: "Deploy to production"
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: '.nvmrc'
+          cache-dependency-path: 'package-lock.json'
+      - name: Install dependencies
+        run: npm ci
+      - name: Build project
+        run: npm run build
+
+      - name: Deploy with Aleph
+        uses: aleph-im/web3-hosting-action@v1.1.2
+        with:
+          path: 'dist'
+          private-key: ${{ secrets.ALEPH_CLOUD_LTAI_LANDING_PROD }}
+          domain: test.libertai.io
+          retention_days: 1
