@@ -66,7 +66,7 @@ export function ContractAddresses() {
 										</a>
 									</div>
 									<div className="flex items-center gap-3 bg-white/5 rounded-lg p-4">
-										<code className="font-mono md:text-sm flex-1 break-all">{contract.address}</code>
+										<code className="md:text-sm flex-1 break-all">{contract.address}</code>
 										<Button
 											variant="ghost"
 											size="sm"
