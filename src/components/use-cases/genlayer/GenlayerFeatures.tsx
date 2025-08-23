@@ -28,7 +28,7 @@ export function GenlayerFeatures() {
 				<div className="w-full max-w-2xl md:max-w-xl lg:max-w-2xl">
 					{/* Header */}
 					<div className="mb-16">
-						<div className="text-sm font-mono mb-4">[ Trustless Arbitration, Verifiable Decisions ]</div>
+						<div className="text-sm mb-4">[ Trustless Arbitration, Verifiable Decisions ]</div>
 						<h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
 							Private Inference, Public Trust
 						</h2>

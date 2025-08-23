@@ -353,7 +353,7 @@ export function TokenomicsDetails() {
 												style={{ backgroundColor: item.color, width: "0%" }}
 											/>
 										</div>
-										<span className="font-mono w-12 text-right">{item.prettyDistributed}</span>
+										<span className="w-12 text-right">{item.prettyDistributed}</span>
 									</div>
 								</div>
 							))}
@@ -396,7 +396,7 @@ export function TokenomicsDetails() {
 												style={{ backgroundColor: item.color, width: "0%" }}
 											/>
 										</div>
-										<span className="text-white font-mono w-20 text-right text-xs">{item.prettyDistributed}</span>
+										<span className="text-white w-20 text-right text-xs">{item.prettyDistributed}</span>
 									</div>
 								</div>
 							))}

@@ -21,7 +21,7 @@ export function UbisoftHero() {
 			<div className="container mx-auto px-4 md:px-6 lg:px-8 z-10 flex items-center justify-between min-h-screen pt-20 md:pt-16 pb-12">
 				{/* Left content */}
 				<div className="flex flex-col justify-center space-y-6 max-w-2xl">
-					<div className="text-sm font-mono">[ Gaming Evolved ]</div>
+					<div className="text-sm">[ Gaming Evolved ]</div>
 
 					{/* Title */}
 					<h1 className="font-bold leading-tight text-white text-4xl md:text-6xl lg:text-6xl">
