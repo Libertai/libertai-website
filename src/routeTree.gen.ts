@@ -17,6 +17,7 @@ import { Route as PrivateAiImport } from './routes/private-ai'
 import { Route as ApiImport } from './routes/api'
 import { Route as IndexImport } from './routes/index'
 import { Route as UseCasesUbisoftImport } from './routes/use-cases/ubisoft'
+import { Route as UseCasesGenlayerImport } from './routes/use-cases/genlayer'
 
 // Create/Update Routes
 
@@ -53,6 +54,12 @@ const IndexRoute = IndexImport.update({
 const UseCasesUbisoftRoute = UseCasesUbisoftImport.update({
   id: '/use-cases/ubisoft',
   path: '/use-cases/ubisoft',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const UseCasesGenlayerRoute = UseCasesGenlayerImport.update({
+  id: '/use-cases/genlayer',
+  path: '/use-cases/genlayer',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -95,6 +102,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof TokenomicsImport
       parentRoute: typeof rootRoute
     }
+    '/use-cases/genlayer': {
+      id: '/use-cases/genlayer'
+      path: '/use-cases/genlayer'
+      fullPath: '/use-cases/genlayer'
+      preLoaderRoute: typeof UseCasesGenlayerImport
+      parentRoute: typeof rootRoute
+    }
     '/use-cases/ubisoft': {
       id: '/use-cases/ubisoft'
       path: '/use-cases/ubisoft'
@@ -113,6 +127,7 @@ export interface FileRoutesByFullPath {
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
   '/tokenomics': typeof TokenomicsRoute
+  '/use-cases/genlayer': typeof UseCasesGenlayerRoute
   '/use-cases/ubisoft': typeof UseCasesUbisoftRoute
 }
 
@@ -122,6 +137,7 @@ export interface FileRoutesByTo {
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
   '/tokenomics': typeof TokenomicsRoute
+  '/use-cases/genlayer': typeof UseCasesGenlayerRoute
   '/use-cases/ubisoft': typeof UseCasesUbisoftRoute
 }
 
@@ -132,6 +148,7 @@ export interface FileRoutesById {
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
   '/tokenomics': typeof TokenomicsRoute
+  '/use-cases/genlayer': typeof UseCasesGenlayerRoute
   '/use-cases/ubisoft': typeof UseCasesUbisoftRoute
 }
 
@@ -143,6 +160,7 @@ export interface FileRouteTypes {
     | '/private-ai'
     | '/roadmap'
     | '/tokenomics'
+    | '/use-cases/genlayer'
     | '/use-cases/ubisoft'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -151,6 +169,7 @@ export interface FileRouteTypes {
     | '/private-ai'
     | '/roadmap'
     | '/tokenomics'
+    | '/use-cases/genlayer'
     | '/use-cases/ubisoft'
   id:
     | '__root__'
@@ -159,6 +178,7 @@ export interface FileRouteTypes {
     | '/private-ai'
     | '/roadmap'
     | '/tokenomics'
+    | '/use-cases/genlayer'
     | '/use-cases/ubisoft'
   fileRoutesById: FileRoutesById
 }
@@ -169,6 +189,7 @@ export interface RootRouteChildren {
   PrivateAiRoute: typeof PrivateAiRoute
   RoadmapRoute: typeof RoadmapRoute
   TokenomicsRoute: typeof TokenomicsRoute
+  UseCasesGenlayerRoute: typeof UseCasesGenlayerRoute
   UseCasesUbisoftRoute: typeof UseCasesUbisoftRoute
 }
 
@@ -178,6 +199,7 @@ const rootRouteChildren: RootRouteChildren = {
   PrivateAiRoute: PrivateAiRoute,
   RoadmapRoute: RoadmapRoute,
   TokenomicsRoute: TokenomicsRoute,
+  UseCasesGenlayerRoute: UseCasesGenlayerRoute,
   UseCasesUbisoftRoute: UseCasesUbisoftRoute,
 }
 
@@ -196,6 +218,7 @@ export const routeTree = rootRoute
         "/private-ai",
         "/roadmap",
         "/tokenomics",
+        "/use-cases/genlayer",
         "/use-cases/ubisoft"
       ]
     },
@@ -213,6 +236,9 @@ export const routeTree = rootRoute
     },
     "/tokenomics": {
       "filePath": "tokenomics.tsx"
+    },
+    "/use-cases/genlayer": {
+      "filePath": "use-cases/genlayer.tsx"
     },
     "/use-cases/ubisoft": {
       "filePath": "use-cases/ubisoft.tsx"
