@@ -79,6 +79,12 @@ export function Navbar() {
 													</p>
 												</Link>
 											</div>
+											<div className="min-w-80 p-4">
+												<Link to="/use-cases/genlayer" className="block p-4">
+													<p className="text-md font-medium leading-none text-white">GenLayer</p>
+													<p className="text-xs leading-snug text-white/70 mt-1">Private AI for onchain disputes</p>
+												</Link>
+											</div>
 										</NavigationMenuContent>
 									</NavigationMenuItem>
 								</NavigationMenuList>

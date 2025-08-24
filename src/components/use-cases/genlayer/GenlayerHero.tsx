@@ -1,11 +1,10 @@
-import heroBackground from "@/assets/use-cases/ubisoft/hero/laserhawk-background.png";
-import captainLaserhawkLogo from "@/assets/use-cases/ubisoft/hero/captain-laserhawk-logo.png";
-import ubisoftLogo from "@/assets/use-cases/ubisoft/hero/ubisoft.svg";
+import heroBackground from "@/assets/background-left.png";
+import genlayerLogo from "@/assets/use-cases/genlayer/logo.png";
 import { ScrollHuman } from "@/components/ScrollHuman.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
 
-export function UbisoftHero() {
+export function GenlayerHero() {
 	const scrollToNext = () => {
 		window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
 	};
@@ -21,25 +20,23 @@ export function UbisoftHero() {
 			<div className="container mx-auto px-4 md:px-6 lg:px-8 z-10 flex items-center justify-between min-h-screen pt-20 md:pt-16 pb-12">
 				{/* Left content */}
 				<div className="flex flex-col justify-center space-y-6 max-w-2xl">
-					<div className="text-sm">[ Gaming Evolved ]</div>
+					<div className="text-sm">[ Fairness, Automated ]</div>
 
 					{/* Title */}
-					<h1 className="font-bold leading-tight text-white text-4xl md:text-6xl lg:text-6xl">
-						Captain Laserhawk: the G.A.M.E
-					</h1>
+					<h1 className="font-bold leading-tight text-white text-4xl md:text-6xl lg:text-6xl">Genlayer</h1>
 
 					{/* Description */}
 					<p className="text-lg max-w-2xl font-satoshi">
-						Captain Laserhawk: the G.A.M.E. expands the universe of Captain Laserhawk: A Blood Dragon Remix series -
-						produced by Ubisoft for Netflix and featuring iconic characters from Ubisoft IPs. Featuring the DedSec
-						Console, an immersive hacking challenge powered by LibertAI privacy-first AI where every gameplay is unique.
+						GenLayer's innovative protocol uses AI models as fair judges for onchain disputes, powering intelligent
+						contracts and ensuring neutral, fair and rapid arbitration in decentralized ecosystems like DAOs and
+						prediction markets.
 					</p>
 
-					{/* Captain Laserhawk Universe Button */}
+					{/* GenLayer Button */}
 					<div className="mt-6">
-						<a href="https://x.com/EdenOnline_exe" target="_blank">
+						<a href="https://www.genlayer.com/" target="_blank">
 							<Button variant="outline" size="lg" className="text-white border-white">
-								<span>Captain Laserhawk Universe</span>
+								<span>GenLayer</span>
 								<ExternalLink />
 							</Button>
 						</a>
@@ -47,14 +44,13 @@ export function UbisoftHero() {
 
 					{/* Logos - responsive layout */}
 					<div className="mt-8 flex items-center space-x-6 md:block md:space-x-0 max-md:mx-auto">
-						<img src={ubisoftLogo} alt="Ubisoft" className="max-sm:h-12 md:h-18 lg:h-24 w-auto" />
-						<img src={captainLaserhawkLogo} alt="Captain Laserhawk" className="h-30 w-auto md:hidden" />
+						<img src={genlayerLogo} alt="Captain Laserhawk" className="h-36 w-auto md:hidden" />
 					</div>
 				</div>
 
-				{/* Right content - Captain Laserhawk Logo (medium screens and up) */}
+				{/* Right content - GenLayer Logo (medium screens and up) */}
 				<div className="hidden md:flex items-center justify-center flex-shrink-0 ml-12">
-					<img src={captainLaserhawkLogo} alt="Captain Laserhawk" className="h-48 lg:h-64 xl:h-80 w-auto" />
+					<img src={genlayerLogo} alt="Captain Laserhawk" className="h-48 lg:h-64 xl:h-80 w-auto" />
 				</div>
 			</div>
 
