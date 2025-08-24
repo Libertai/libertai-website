@@ -1,5 +1,7 @@
 import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
+import rezaImage from "@/assets/use-cases/genlayer/reza.jpeg";
+import jonathanImage from "@/assets/use-cases/genlayer/jonathan.jpeg";
 
 export function GenlayerTestimonials() {
 	return (
@@ -29,6 +31,7 @@ export function GenlayerTestimonials() {
 						{/* Testimonial 1 */}
 						<div className="text-left">
 							<div className="flex items-center mb-4">
+								<img src={rezaImage} alt="Reza Rahemtola" className="w-12 h-12 rounded-full mr-3" />
 								<div className="text-white text-xl">Reza Rahemtola, Lead Developer at LibertAI</div>
 							</div>
 							<blockquote className="text-sm leading-relaxed">
@@ -41,6 +44,7 @@ export function GenlayerTestimonials() {
 						{/* Testimonial 2 */}
 						<div className="text-left">
 							<div className="flex items-center mb-4">
+								<img src={jonathanImage} alt="Jonathan Schemoul" className="w-12 h-12 rounded-full mr-3" />
 								<div className="text-white text-xl">Jonathan Schemoul, CEO at Aleph Cloud</div>
 							</div>
 							<blockquote className="text-sm leading-relaxed">
