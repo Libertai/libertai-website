@@ -17,6 +17,9 @@ import { Route as PrivateAiImport } from './routes/private-ai'
 import { Route as ApiImport } from './routes/api'
 import { Route as IndexImport } from './routes/index'
 import { Route as UseCasesUbisoftImport } from './routes/use-cases/ubisoft'
+import { Route as UseCasesLiberclawResearchAgentImport } from './routes/use-cases/liberclaw-research-agent'
+import { Route as UseCasesLiberclawPersonalAssistantImport } from './routes/use-cases/liberclaw-personal-assistant'
+import { Route as UseCasesLiberclawCodeReviewImport } from './routes/use-cases/liberclaw-code-review'
 import { Route as UseCasesGenlayerImport } from './routes/use-cases/genlayer'
 
 // Create/Update Routes
@@ -56,6 +59,27 @@ const UseCasesUbisoftRoute = UseCasesUbisoftImport.update({
   path: '/use-cases/ubisoft',
   getParentRoute: () => rootRoute,
 } as any)
+
+const UseCasesLiberclawResearchAgentRoute =
+  UseCasesLiberclawResearchAgentImport.update({
+    id: '/use-cases/liberclaw-research-agent',
+    path: '/use-cases/liberclaw-research-agent',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const UseCasesLiberclawPersonalAssistantRoute =
+  UseCasesLiberclawPersonalAssistantImport.update({
+    id: '/use-cases/liberclaw-personal-assistant',
+    path: '/use-cases/liberclaw-personal-assistant',
+    getParentRoute: () => rootRoute,
+  } as any)
+
+const UseCasesLiberclawCodeReviewRoute =
+  UseCasesLiberclawCodeReviewImport.update({
+    id: '/use-cases/liberclaw-code-review',
+    path: '/use-cases/liberclaw-code-review',
+    getParentRoute: () => rootRoute,
+  } as any)
 
 const UseCasesGenlayerRoute = UseCasesGenlayerImport.update({
   id: '/use-cases/genlayer',
@@ -109,6 +133,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof UseCasesGenlayerImport
       parentRoute: typeof rootRoute
     }
+    '/use-cases/liberclaw-code-review': {
+      id: '/use-cases/liberclaw-code-review'
+      path: '/use-cases/liberclaw-code-review'
+      fullPath: '/use-cases/liberclaw-code-review'
+      preLoaderRoute: typeof UseCasesLiberclawCodeReviewImport
+      parentRoute: typeof rootRoute
+    }
+    '/use-cases/liberclaw-personal-assistant': {
+      id: '/use-cases/liberclaw-personal-assistant'
+      path: '/use-cases/liberclaw-personal-assistant'
+      fullPath: '/use-cases/liberclaw-personal-assistant'
+      preLoaderRoute: typeof UseCasesLiberclawPersonalAssistantImport
+      parentRoute: typeof rootRoute
+    }
+    '/use-cases/liberclaw-research-agent': {
+      id: '/use-cases/liberclaw-research-agent'
+      path: '/use-cases/liberclaw-research-agent'
+      fullPath: '/use-cases/liberclaw-research-agent'
+      preLoaderRoute: typeof UseCasesLiberclawResearchAgentImport
+      parentRoute: typeof rootRoute
+    }
     '/use-cases/ubisoft': {
       id: '/use-cases/ubisoft'
       path: '/use-cases/ubisoft'
@@ -128,6 +173,9 @@ export interface FileRoutesByFullPath {
   '/roadmap': typeof RoadmapRoute
   '/tokenomics': typeof TokenomicsRoute
   '/use-cases/genlayer': typeof UseCasesGenlayerRoute
+  '/use-cases/liberclaw-code-review': typeof UseCasesLiberclawCodeReviewRoute
+  '/use-cases/liberclaw-personal-assistant': typeof UseCasesLiberclawPersonalAssistantRoute
+  '/use-cases/liberclaw-research-agent': typeof UseCasesLiberclawResearchAgentRoute
   '/use-cases/ubisoft': typeof UseCasesUbisoftRoute
 }
 
@@ -138,6 +186,9 @@ export interface FileRoutesByTo {
   '/roadmap': typeof RoadmapRoute
   '/tokenomics': typeof TokenomicsRoute
   '/use-cases/genlayer': typeof UseCasesGenlayerRoute
+  '/use-cases/liberclaw-code-review': typeof UseCasesLiberclawCodeReviewRoute
+  '/use-cases/liberclaw-personal-assistant': typeof UseCasesLiberclawPersonalAssistantRoute
+  '/use-cases/liberclaw-research-agent': typeof UseCasesLiberclawResearchAgentRoute
   '/use-cases/ubisoft': typeof UseCasesUbisoftRoute
 }
 
@@ -149,6 +200,9 @@ export interface FileRoutesById {
   '/roadmap': typeof RoadmapRoute
   '/tokenomics': typeof TokenomicsRoute
   '/use-cases/genlayer': typeof UseCasesGenlayerRoute
+  '/use-cases/liberclaw-code-review': typeof UseCasesLiberclawCodeReviewRoute
+  '/use-cases/liberclaw-personal-assistant': typeof UseCasesLiberclawPersonalAssistantRoute
+  '/use-cases/liberclaw-research-agent': typeof UseCasesLiberclawResearchAgentRoute
   '/use-cases/ubisoft': typeof UseCasesUbisoftRoute
 }
 
@@ -161,6 +215,9 @@ export interface FileRouteTypes {
     | '/roadmap'
     | '/tokenomics'
     | '/use-cases/genlayer'
+    | '/use-cases/liberclaw-code-review'
+    | '/use-cases/liberclaw-personal-assistant'
+    | '/use-cases/liberclaw-research-agent'
     | '/use-cases/ubisoft'
   fileRoutesByTo: FileRoutesByTo
   to:
@@ -170,6 +227,9 @@ export interface FileRouteTypes {
     | '/roadmap'
     | '/tokenomics'
     | '/use-cases/genlayer'
+    | '/use-cases/liberclaw-code-review'
+    | '/use-cases/liberclaw-personal-assistant'
+    | '/use-cases/liberclaw-research-agent'
     | '/use-cases/ubisoft'
   id:
     | '__root__'
@@ -179,6 +239,9 @@ export interface FileRouteTypes {
     | '/roadmap'
     | '/tokenomics'
     | '/use-cases/genlayer'
+    | '/use-cases/liberclaw-code-review'
+    | '/use-cases/liberclaw-personal-assistant'
+    | '/use-cases/liberclaw-research-agent'
     | '/use-cases/ubisoft'
   fileRoutesById: FileRoutesById
 }
@@ -190,6 +253,9 @@ export interface RootRouteChildren {
   RoadmapRoute: typeof RoadmapRoute
   TokenomicsRoute: typeof TokenomicsRoute
   UseCasesGenlayerRoute: typeof UseCasesGenlayerRoute
+  UseCasesLiberclawCodeReviewRoute: typeof UseCasesLiberclawCodeReviewRoute
+  UseCasesLiberclawPersonalAssistantRoute: typeof UseCasesLiberclawPersonalAssistantRoute
+  UseCasesLiberclawResearchAgentRoute: typeof UseCasesLiberclawResearchAgentRoute
   UseCasesUbisoftRoute: typeof UseCasesUbisoftRoute
 }
 
@@ -200,6 +266,10 @@ const rootRouteChildren: RootRouteChildren = {
   RoadmapRoute: RoadmapRoute,
   TokenomicsRoute: TokenomicsRoute,
   UseCasesGenlayerRoute: UseCasesGenlayerRoute,
+  UseCasesLiberclawCodeReviewRoute: UseCasesLiberclawCodeReviewRoute,
+  UseCasesLiberclawPersonalAssistantRoute:
+    UseCasesLiberclawPersonalAssistantRoute,
+  UseCasesLiberclawResearchAgentRoute: UseCasesLiberclawResearchAgentRoute,
   UseCasesUbisoftRoute: UseCasesUbisoftRoute,
 }
 
@@ -219,6 +289,9 @@ export const routeTree = rootRoute
         "/roadmap",
         "/tokenomics",
         "/use-cases/genlayer",
+        "/use-cases/liberclaw-code-review",
+        "/use-cases/liberclaw-personal-assistant",
+        "/use-cases/liberclaw-research-agent",
         "/use-cases/ubisoft"
       ]
     },
@@ -239,6 +312,15 @@ export const routeTree = rootRoute
     },
     "/use-cases/genlayer": {
       "filePath": "use-cases/genlayer.tsx"
+    },
+    "/use-cases/liberclaw-code-review": {
+      "filePath": "use-cases/liberclaw-code-review.tsx"
+    },
+    "/use-cases/liberclaw-personal-assistant": {
+      "filePath": "use-cases/liberclaw-personal-assistant.tsx"
+    },
+    "/use-cases/liberclaw-research-agent": {
+      "filePath": "use-cases/liberclaw-research-agent.tsx"
     },
     "/use-cases/ubisoft": {
       "filePath": "use-cases/ubisoft.tsx"
