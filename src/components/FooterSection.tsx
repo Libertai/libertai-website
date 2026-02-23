@@ -10,7 +10,7 @@ const footerLinks = [
 	{ text: "Home", href: "/", external: false },
 	// { text: "About", href: "#", external: false },
 	// { text: "Features", href: "#", external: false },
-	{ text: "Roadmap", href: "/roadmap", external: false },
+	{ text: "LiberClaw", href: "https://liberclaw.ai", external: true },
 	// { text: "Sign Up", href: "#", external: false },
 	{ text: "Litepaper", href: "/litepaper.pdf", external: true },
 	{ text: "Docs", href: "https://docs.libertai.io", external: true },

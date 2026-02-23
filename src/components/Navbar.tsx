@@ -72,6 +72,14 @@ export function Navbar() {
 										</NavigationMenuTrigger>
 										<NavigationMenuContent className="text-white border border-white/20 backdrop-blur-sm rounded-[2vw]!">
 											<div className="min-w-80 p-4">
+												<a href="https://liberclaw.ai" target="_blank" className="block p-4">
+													<p className="text-md font-medium leading-none text-white">LiberClaw</p>
+													<p className="text-xs leading-snug text-white/70 mt-1">
+														Sovereign AI agents on decentralized infrastructure
+													</p>
+												</a>
+											</div>
+											<div className="min-w-80 p-4">
 												<Link to="/use-cases/ubisoft" className="block p-4">
 													<p className="text-md font-medium leading-none text-white">Ubisoft</p>
 													<p className="text-xs leading-snug text-white/70 mt-1">
