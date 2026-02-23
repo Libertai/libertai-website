@@ -78,6 +78,17 @@ export function Navbar() {
 														Sovereign AI agents on decentralized infrastructure
 													</p>
 												</a>
+												<div className="ml-4 space-y-1">
+													<Link to="/use-cases/liberclaw-code-review" className="block px-4 py-2">
+														<p className="text-sm leading-none text-white/80 hover:text-white transition-colors">AI Code Review Agent</p>
+													</Link>
+													<Link to="/use-cases/liberclaw-personal-assistant" className="block px-4 py-2">
+														<p className="text-sm leading-none text-white/80 hover:text-white transition-colors">AI Personal Assistant</p>
+													</Link>
+													<Link to="/use-cases/liberclaw-research-agent" className="block px-4 py-2">
+														<p className="text-sm leading-none text-white/80 hover:text-white transition-colors">AI Research Agent</p>
+													</Link>
+												</div>
 											</div>
 											<div className="min-w-80 p-4">
 												<Link to="/use-cases/ubisoft" className="block p-4">
@@ -162,12 +173,48 @@ export function Navbar() {
 									)}
 									<div className="space-y-3">
 										<div className="text-white text-lg font-medium">Use cases</div>
+										<a
+											href="https://liberclaw.ai"
+											target="_blank"
+											className="hover:text-primary text-base ml-4 block"
+											onClick={handleNavClick}
+										>
+											LiberClaw
+										</a>
+										<Link
+											to="/use-cases/liberclaw-code-review"
+											className="hover:text-primary text-sm ml-8 block"
+											onClick={handleNavClick}
+										>
+											AI Code Review Agent
+										</Link>
+										<Link
+											to="/use-cases/liberclaw-personal-assistant"
+											className="hover:text-primary text-sm ml-8 block"
+											onClick={handleNavClick}
+										>
+											AI Personal Assistant
+										</Link>
+										<Link
+											to="/use-cases/liberclaw-research-agent"
+											className="hover:text-primary text-sm ml-8 block"
+											onClick={handleNavClick}
+										>
+											AI Research Agent
+										</Link>
 										<Link
 											to="/use-cases/ubisoft"
 											className="hover:text-primary text-base ml-4 block"
 											onClick={handleNavClick}
 										>
 											Ubisoft
+										</Link>
+										<Link
+											to="/use-cases/genlayer"
+											className="hover:text-primary text-base ml-4 block"
+											onClick={handleNavClick}
+										>
+											GenLayer
 										</Link>
 									</div>
 									<a href={ctaLink} target="_blank" onClick={handleNavClick}>
