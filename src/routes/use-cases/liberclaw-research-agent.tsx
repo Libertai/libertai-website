@@ -7,15 +7,7 @@ import { ComparisonTable } from "@/components/use-cases/liberclaw/ComparisonTabl
 import { FAQSection } from "@/components/use-cases/liberclaw/FAQSection.tsx";
 import { CTASection } from "@/components/use-cases/liberclaw/CTASection.tsx";
 import { RelatedPages } from "@/components/use-cases/liberclaw/RelatedPages.tsx";
-import {
-	Search,
-	Eye,
-	TrendingUp,
-	FileText,
-	GitBranch,
-	Globe,
-	AlertTriangle,
-} from "lucide-react";
+import { Search, Eye, TrendingUp, FileText, GitBranch, Globe, AlertTriangle } from "lucide-react";
 
 interface LimitationsSectionProps {
 	limitations: { title: string; description: string }[];
@@ -25,19 +17,17 @@ function LimitationsSection({ limitations }: LimitationsSectionProps) {
 	return (
 		<section className="w-full bg-background py-20 lg:py-32">
 			<div className="container mx-auto px-4 md:px-6 lg:px-8">
-				<div className="mb-16">
-					<div className="text-sm mb-4">[ Limitations ]</div>
-					<h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-						Limitations Worth Knowing
-					</h2>
+				<div className="mb-16 space-y-6">
+					<div className="text-sm">[ Limitations ]</div>
+					<h2>Limitations Worth Knowing</h2>
 				</div>
 				<div className="max-w-3xl space-y-6">
 					{limitations.map((item, i) => (
 						<div key={i} className="flex items-start gap-4">
 							<AlertTriangle className="w-5 h-5 text-[#EA7AF4] flex-shrink-0 mt-0.5" />
 							<div>
-								<h3 className="text-base font-bold text-white mb-1">{item.title}</h3>
-								<p className="text-sm font-satoshi">{item.description}</p>
+								<h3 className="text-base font-bold mb-1">{item.title}</h3>
+								<p className="text-sm leading-relaxed">{item.description}</p>
 							</div>
 						</div>
 					))}
@@ -62,7 +52,7 @@ const modes = [
 		icon: Eye,
 		title: "Continuous Monitoring",
 		description:
-			"Define what the agent should watch, and it checks on a recurring schedule using the heartbeat system. On each cycle, the agent fetches your sources, compares against what it knew before, reasons about what changed, and alerts you if something is worth your attention. A price drop is not just \"text changed on line 47\" -- the agent tells you what changed and why it matters.",
+			'Define what the agent should watch, and it checks on a recurring schedule using the heartbeat system. On each cycle, the agent fetches your sources, compares against what it knew before, reasons about what changed, and alerts you if something is worth your attention. A price drop is not just "text changed on line 47" -- the agent tells you what changed and why it matters.',
 	},
 ];
 
@@ -112,13 +102,7 @@ If any price decreased by more than 10%, send a Telegram alert immediately.`,
 	},
 ];
 
-const comparisonHeaders = [
-	"LiberClaw",
-	"GPT Researcher",
-	"Huginn",
-	"Browse AI",
-	"changedetection.io",
-];
+const comparisonHeaders = ["LiberClaw", "GPT Researcher", "Huginn", "Browse AI", "changedetection.io"];
 const comparisonRows = [
 	{
 		feature: "AI reasoning",
@@ -183,16 +167,19 @@ const useCaseExamples = [
 
 const faqs = [
 	{
+		id: 1,
 		question: "What is an AI research agent?",
 		answer:
 			"An AI research agent is software that can autonomously search the web, read and analyze content, and produce structured research output without step-by-step human guidance. Unlike a chatbot that answers a single question, a research agent can plan a multi-step investigation, gather information from multiple sources, and synthesize findings into a report. LiberClaw research agents run on their own VMs and can operate continuously, combining one-off deep research with ongoing web monitoring.",
 	},
 	{
+		id: 2,
 		question: "How do I monitor websites with AI?",
 		answer:
 			"With LiberClaw, you deploy an agent and give it a skill file that lists the URLs or topics to monitor and what to look for. The agent uses its heartbeat system to check on a recurring schedule. When it detects changes, it reads the new content, compares against what it knew before using persistent memory, and writes a summary explaining what changed and whether it is significant. Results can be pushed to Telegram or stored on the agent's filesystem.",
 	},
 	{
+		id: 3,
 		question: "What is the best open source alternative to OpenAI Deep Research?",
 		answer:
 			"OpenAI's Deep Research is a $200/month feature that performs multi-step web research. GPT Researcher is a popular open source option, but it requires your own API keys and runs locally without persistence or monitoring. LiberClaw provides a deployable open source AI research agent that runs on its own VM with persistent memory, uses open models through LibertAI with no external API keys, and adds continuous monitoring on top of one-off research.",
@@ -237,23 +224,14 @@ function LiberClawResearchAgent() {
 				features={modes}
 				columns={2}
 			/>
-			<HowItWorks
-				label="Setup"
-				title="How It Works"
-				steps={steps}
-			/>
+			<HowItWorks label="Setup" title="How It Works" steps={steps} />
 			<ComparisonTable
 				title="How LiberClaw Compares"
 				headers={comparisonHeaders}
 				rows={comparisonRows}
 				footnote="GPT Researcher is strong for one-off research but requires your own API keys and has no monitoring. Huginn is powerful but rule-based, not AI. Browse AI handles extraction well but is closed-source SaaS. changedetection.io detects diffs but does not reason about them. LiberClaw combines AI reasoning with autonomous scheduling, persistent memory, and a dedicated VM."
 			/>
-			<FeatureGrid
-				label="Use Cases"
-				title="Use Case Examples"
-				features={useCaseExamples}
-				columns={2}
-			/>
+			<FeatureGrid label="Use Cases" title="Use Case Examples" features={useCaseExamples} columns={2} />
 			<FAQSection faqs={faqs} />
 			<LimitationsSection limitations={limitations} />
 			{/* Cross-links */}
@@ -263,7 +241,8 @@ function LiberClawResearchAgent() {
 						Read the full guide on{" "}
 						<a href="https://liberclaw.ai/ai-research-agent" target="_blank" className="text-[#EA7AF4] hover:underline">
 							liberclaw.ai
-						</a>.
+						</a>
+						.
 					</p>
 				</div>
 			</section>

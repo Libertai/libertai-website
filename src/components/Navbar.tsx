@@ -80,13 +80,19 @@ export function Navbar() {
 												</a>
 												<div className="ml-4 space-y-1">
 													<Link to="/use-cases/liberclaw-code-review" className="block px-4 py-2">
-														<p className="text-sm leading-none text-white/80 hover:text-white transition-colors">AI Code Review Agent</p>
+														<p className="text-sm leading-none text-white/80 hover:text-white transition-colors">
+															AI Code Review Agent
+														</p>
 													</Link>
 													<Link to="/use-cases/liberclaw-personal-assistant" className="block px-4 py-2">
-														<p className="text-sm leading-none text-white/80 hover:text-white transition-colors">AI Personal Assistant</p>
+														<p className="text-sm leading-none text-white/80 hover:text-white transition-colors">
+															AI Personal Assistant
+														</p>
 													</Link>
 													<Link to="/use-cases/liberclaw-research-agent" className="block px-4 py-2">
-														<p className="text-sm leading-none text-white/80 hover:text-white transition-colors">AI Research Agent</p>
+														<p className="text-sm leading-none text-white/80 hover:text-white transition-colors">
+															AI Research Agent
+														</p>
 													</Link>
 												</div>
 											</div>

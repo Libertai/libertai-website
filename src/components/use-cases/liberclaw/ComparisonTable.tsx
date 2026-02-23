@@ -39,14 +39,10 @@ export function ComparisonTable({
 		<section className="w-full bg-background py-20 lg:py-32">
 			<div className="container mx-auto px-4 md:px-6 lg:px-8">
 				{/* Header */}
-				<div className="mb-16">
-					<div className="text-sm mb-4">[ {label} ]</div>
-					<h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-						{title}
-					</h2>
-					{subtitle && (
-						<p className="text-lg mt-6 max-w-3xl font-satoshi">{subtitle}</p>
-					)}
+				<div className="mb-16 space-y-6">
+					<div className="text-sm">[ {label} ]</div>
+					<h2>{title}</h2>
+					{subtitle && <p className="text-lg max-w-3xl font-satoshi">{subtitle}</p>}
 				</div>
 
 				{/* Table */}
@@ -54,12 +50,9 @@ export function ComparisonTable({
 					<table className="w-full text-left">
 						<thead>
 							<tr className="border-b border-white/10">
-								<th className="py-4 pr-4 text-sm font-bold text-white min-w-[160px]" />
+								<th className="py-4 px-4 text-sm font-bold text-white min-w-[160px]" />
 								{headers.map((header) => (
-									<th
-										key={header}
-										className="py-4 px-4 text-sm font-bold text-white text-center min-w-[120px]"
-									>
+									<th key={header} className="py-4 px-4 text-sm font-bold text-white text-center min-w-[120px]">
 										{header}
 									</th>
 								))}
@@ -67,13 +60,8 @@ export function ComparisonTable({
 						</thead>
 						<tbody>
 							{rows.map((row, i) => (
-								<tr
-									key={row.feature}
-									className={`border-b border-white/5 ${i % 2 === 0 ? "bg-white/5" : ""}`}
-								>
-									<td className="py-4 pr-4 text-sm font-medium text-white">
-										{row.feature}
-									</td>
+								<tr key={row.feature} className={`border-b border-white/5 ${i % 2 === 0 ? "bg-white/5" : ""}`}>
+									<td className="py-4 px-4 text-sm font-medium text-white">{row.feature}</td>
 									{row.values.map((value, j) => (
 										<td key={`${row.feature}-${headers[j]}`} className="py-4 px-4 text-center">
 											<CellContent value={value} />
@@ -86,9 +74,7 @@ export function ComparisonTable({
 				</div>
 
 				{/* Footnote */}
-				{footnote && (
-					<p className="text-sm font-satoshi mt-8 max-w-4xl">{footnote}</p>
-				)}
+				{footnote && <p className="text-sm font-satoshi mt-8 max-w-4xl">{footnote}</p>}
 			</div>
 		</section>
 	);

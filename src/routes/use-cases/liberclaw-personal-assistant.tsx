@@ -19,11 +19,9 @@ function ProblemSection({ label, title, paragraphs }: ProblemSectionProps) {
 	return (
 		<section className="w-full bg-background py-20 lg:py-32">
 			<div className="container mx-auto px-4 md:px-6 lg:px-8">
-				<div className="max-w-3xl">
-					<div className="text-sm mb-4">[ {label} ]</div>
-					<h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight mb-8">
-						{title}
-					</h2>
+				<div className="max-w-3xl space-y-6">
+					<div className="text-sm">[ {label} ]</div>
+					<h2>{title}</h2>
 					{paragraphs.map((p, i) => (
 						<p key={i} className="text-lg font-satoshi mb-6 last:mb-0">
 							{p}
@@ -35,11 +33,9 @@ function ProblemSection({ label, title, paragraphs }: ProblemSectionProps) {
 	);
 }
 
-export const Route = createFileRoute("/use-cases/liberclaw-personal-assistant")(
-	{
-		component: LiberClawPersonalAssistant,
-	},
-);
+export const Route = createFileRoute("/use-cases/liberclaw-personal-assistant")({
+	component: LiberClawPersonalAssistant,
+});
 
 const useCases = [
 	{
@@ -101,12 +97,7 @@ const steps = [
 	},
 ];
 
-const comparisonHeaders = [
-	"LiberClaw",
-	"OpenClaw",
-	"Cloud Assistants",
-	"Self-Hosted (Leon, SEPIA)",
-];
+const comparisonHeaders = ["LiberClaw", "OpenClaw", "Cloud Assistants", "Self-Hosted (Leon, SEPIA)"];
 const comparisonRows = [
 	{
 		feature: "Open source",
@@ -140,16 +131,19 @@ const comparisonRows = [
 
 const faqs = [
 	{
+		id: 1,
 		question: "How do I run an AI assistant 24/7?",
 		answer:
 			"Deploy your assistant on infrastructure that does not depend on your laptop being open. With LiberClaw, each agent runs on its own virtual machine on a decentralized compute network. You create the agent, write a skill file describing what it should do, and deploy it. The agent stays running 24/7 with a heartbeat system that handles background tasks on a schedule. The free tier gives you 2 agents with no credit card required.",
 	},
 	{
+		id: 2,
 		question: "What is the best open source personal AI assistant?",
 		answer:
 			"It depends on what you need. If you want full control and are comfortable managing your own server, OpenClaw has a large community and ecosystem. If you want a self-hosted AI assistant that runs 24/7 without you managing infrastructure, LiberClaw deploys each agent on its own managed VM with persistent memory, background task execution, and open-source inference through LibertAI. The entire codebase is on GitHub.",
 	},
 	{
+		id: 3,
 		question: "Can I deploy an AI agent without OpenAI API keys?",
 		answer:
 			"Yes. LiberClaw agents use LibertAI for inference, which runs open models (Qwen3 Coder and GLM-4.7) on decentralized infrastructure. You do not need API keys from OpenAI, Anthropic, or any other centralized provider. This also means no usage tracking by third parties and no risk of account suspensions for running agents through someone else's API.",
@@ -173,17 +167,8 @@ function LiberClawPersonalAssistant() {
 					"LiberClaw gives each agent its own VM on a network of independent compute nodes. Your assistant runs whether your laptop is open or not, whether you are online or not, whether any single company decides to change its terms of service or not.",
 				]}
 			/>
-			<FeatureGrid
-				label="Capabilities"
-				title="What Your Assistant Can Do"
-				features={useCases}
-				columns={2}
-			/>
-			<HowItWorks
-				label="Setup"
-				title="How It Works"
-				steps={steps}
-			/>
+			<FeatureGrid label="Capabilities" title="What Your Assistant Can Do" features={useCases} columns={2} />
+			<HowItWorks label="Setup" title="How It Works" steps={steps} />
 			<ComparisonTable
 				title="Why LiberClaw vs. the Alternatives"
 				headers={comparisonHeaders}
@@ -196,13 +181,22 @@ function LiberClawPersonalAssistant() {
 				<div className="container mx-auto max-w-3xl text-center">
 					<p className="text-lg font-satoshi text-white/60">
 						Read the full guide on{" "}
-						<a href="https://liberclaw.ai/ai-personal-assistant-agent" target="_blank" className="text-[#EA7AF4] hover:underline">
+						<a
+							href="https://liberclaw.ai/ai-personal-assistant-agent"
+							target="_blank"
+							className="text-[#EA7AF4] hover:underline"
+						>
 							liberclaw.ai
-						</a>
-						{" "}or explore the{" "}
-						<a href="https://liberclaw.ai/openclaw-alternative" target="_blank" className="text-[#EA7AF4] hover:underline">
+						</a>{" "}
+						or explore the{" "}
+						<a
+							href="https://liberclaw.ai/openclaw-alternative"
+							target="_blank"
+							className="text-[#EA7AF4] hover:underline"
+						>
 							OpenClaw alternative comparison
-						</a>.
+						</a>
+						.
 					</p>
 				</div>
 			</section>

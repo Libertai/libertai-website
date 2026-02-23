@@ -18,7 +18,7 @@ const steps = [
 		number: 1,
 		title: "Create an Agent",
 		description:
-			"Sign in at app.liberclaw.ai and create a new agent. Give it a name like \"PR Reviewer\" and connect it to your GitHub repository.",
+			'Sign in at app.liberclaw.ai and create a new agent. Give it a name like "PR Reviewer" and connect it to your GitHub repository.',
 	},
 	{
 		number: 2,
@@ -93,7 +93,10 @@ const features = [
 const comparisonHeaders = ["LiberClaw", "CodeRabbit", "Qodo / PR-Agent", "Manual Review"];
 const comparisonRows = [
 	{ feature: "Open source", values: ["Yes, fully", "Partially", "yes", "N/A"] as const },
-	{ feature: "Self-hosted", values: ["Yes (own VM per agent)", "No (SaaS only)", "Yes (self-managed)", "N/A"] as const },
+	{
+		feature: "Self-hosted",
+		values: ["Yes (own VM per agent)", "No (SaaS only)", "Yes (self-managed)", "N/A"] as const,
+	},
 	{ feature: "No API keys needed", values: ["yes", "no", "no", "N/A"] as const },
 	{ feature: "Runs 24/7", values: ["Yes (managed VM)", "Yes (SaaS)", "Requires your own infra", "no"] as const },
 	{ feature: "Setup time", values: ["Under 5 minutes", "Minutes", "Hours (self-hosted)", "N/A"] as const },
@@ -103,16 +106,19 @@ const comparisonRows = [
 
 const faqs = [
 	{
+		id: 1,
 		question: "How do I automate code review with AI?",
 		answer:
 			"Deploy an AI pull request reviewer that watches your repository for new PRs. With LiberClaw, you create an agent, define a review skill in a markdown file, and deploy it to a dedicated VM. The agent checks for new PRs on a schedule, reads the diff, and posts review comments on GitHub. The entire setup takes under 5 minutes, and you do not need an API key from any provider.",
 	},
 	{
+		id: 2,
 		question: "What is the best open source AI code review tool?",
 		answer:
 			"It depends on what you need. Qodo's PR-Agent is a solid open source option if you want to bring your own API keys and manage your own infrastructure. LiberClaw is a good fit if you want an open source AI code review agent that runs on a managed VM with open-model inference and no API keys. CodeRabbit is strong but not fully open source.",
 	},
 	{
+		id: 3,
 		question: "Can I run AI code review without an API key?",
 		answer:
 			"Yes. LiberClaw agents use LibertAI for inference, which runs open models (Qwen3 Coder, GLM-4.7) on decentralized infrastructure. You can deploy a self-hosted AI code review agent without configuring API keys from OpenAI, Anthropic, or any other provider. The inference is included.",
@@ -127,17 +133,8 @@ function LiberClawCodeReview() {
 				title="Ship an AI Code Review Agent That Runs on Your Infrastructure"
 				description="AI-generated code is flooding pull requests faster than your team can read them. LiberClaw lets you deploy an AI code review agent that runs on its own VM, uses open models, and reviews every PR around the clock. Fully open source, self-hosted, and ready in minutes."
 			/>
-			<HowItWorks
-				label="Setup"
-				title="How It Works"
-				steps={steps}
-			/>
-			<FeatureGrid
-				label="Why LiberClaw"
-				title="Why LiberClaw"
-				features={features}
-				columns={3}
-			/>
+			<HowItWorks label="Setup" title="How It Works" steps={steps} />
+			<FeatureGrid label="Why LiberClaw" title="Why LiberClaw" features={features} columns={3} />
 			<ComparisonTable
 				title="How LiberClaw Compares"
 				headers={comparisonHeaders}
@@ -150,13 +147,22 @@ function LiberClawCodeReview() {
 				<div className="container mx-auto max-w-3xl text-center">
 					<p className="text-lg font-satoshi text-white/60">
 						Read the full guide on{" "}
-						<a href="https://liberclaw.ai/ai-code-review-agent" target="_blank" className="text-[#EA7AF4] hover:underline">
+						<a
+							href="https://liberclaw.ai/ai-code-review-agent"
+							target="_blank"
+							className="text-[#EA7AF4] hover:underline"
+						>
 							liberclaw.ai
-						</a>
-						{" "}or explore the{" "}
-						<a href="https://liberclaw.ai/openclaw-alternative" target="_blank" className="text-[#EA7AF4] hover:underline">
+						</a>{" "}
+						or explore the{" "}
+						<a
+							href="https://liberclaw.ai/openclaw-alternative"
+							target="_blank"
+							className="text-[#EA7AF4] hover:underline"
+						>
 							OpenClaw alternative comparison
-						</a>.
+						</a>
+						.
 					</p>
 				</div>
 			</section>
