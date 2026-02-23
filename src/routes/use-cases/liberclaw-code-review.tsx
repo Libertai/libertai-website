@@ -142,9 +142,24 @@ function LiberClawCodeReview() {
 				title="How LiberClaw Compares"
 				headers={comparisonHeaders}
 				rows={comparisonRows}
-				footnote="CodeRabbit is polished and works well if you are comfortable with a SaaS model and proprietary inference. Qodo's PR-Agent is genuinely self-hostable, but you need to bring your own API keys and manage the infrastructure yourself. LiberClaw sits in the middle: open source with managed deployment, open-model inference, and no API keys to configure."
+				footnote="CodeRabbit is polished and works well if you are comfortable with a SaaS model and proprietary inference. Qodo's PR-Agent is genuinely self-hostable, but you need to bring your own API keys and manage the infrastructure yourself. LiberClaw sits in the middle: open source with managed deployment, open-model inference, and no API keys to configure. For a detailed comparison with OpenClaw, see our OpenClaw alternative guide at liberclaw.ai/openclaw-alternative."
 			/>
 			<FAQSection faqs={faqs} />
+			{/* Cross-links */}
+			<section className="w-full bg-background py-12 px-4 md:px-6 lg:px-8">
+				<div className="container mx-auto max-w-3xl text-center">
+					<p className="text-lg font-satoshi text-white/60">
+						Read the full guide on{" "}
+						<a href="https://liberclaw.ai/ai-code-review-agent" target="_blank" className="text-[#EA7AF4] hover:underline">
+							liberclaw.ai
+						</a>
+						{" "}or explore the{" "}
+						<a href="https://liberclaw.ai/openclaw-alternative" target="_blank" className="text-[#EA7AF4] hover:underline">
+							OpenClaw alternative comparison
+						</a>.
+					</p>
+				</div>
+			</section>
 			<CTASection
 				title="Deploy Your Code Review Agent"
 				subtitle="The free tier includes 2 agents. No credit card required."

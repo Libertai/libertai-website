@@ -256,6 +256,17 @@ function LiberClawResearchAgent() {
 			/>
 			<FAQSection faqs={faqs} />
 			<LimitationsSection limitations={limitations} />
+			{/* Cross-links */}
+			<section className="w-full bg-background py-12 px-4 md:px-6 lg:px-8">
+				<div className="container mx-auto max-w-3xl text-center">
+					<p className="text-lg font-satoshi text-white/60">
+						Read the full guide on{" "}
+						<a href="https://liberclaw.ai/ai-research-agent" target="_blank" className="text-[#EA7AF4] hover:underline">
+							liberclaw.ai
+						</a>.
+					</p>
+				</div>
+			</section>
 			<CTASection
 				title="Deploy Your Research Agent"
 				subtitle="LiberClaw's free tier gives you 2 agents with no credit card required. Deploy your first research agent in under 5 minutes."

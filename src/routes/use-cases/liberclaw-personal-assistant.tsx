@@ -188,9 +188,24 @@ function LiberClawPersonalAssistant() {
 				title="Why LiberClaw vs. the Alternatives"
 				headers={comparisonHeaders}
 				rows={comparisonRows}
-				footnote="OpenClaw proved that personal AI agents could work. LiberClaw handles the infrastructure so you get an always-on AI agent without managing a server. Cloud assistants handle infrastructure but are closed-source SaaS products. Self-hosted options like Leon give you control but you manage everything."
+				footnote="OpenClaw proved that personal AI agents could work. LiberClaw handles the infrastructure so you get an always-on AI agent without managing a server. Cloud assistants handle infrastructure but are closed-source SaaS products. Self-hosted options like Leon give you control but you manage everything. For a detailed comparison, see our OpenClaw alternative guide at liberclaw.ai/openclaw-alternative."
 			/>
 			<FAQSection faqs={faqs} />
+			{/* Cross-links */}
+			<section className="w-full bg-background py-12 px-4 md:px-6 lg:px-8">
+				<div className="container mx-auto max-w-3xl text-center">
+					<p className="text-lg font-satoshi text-white/60">
+						Read the full guide on{" "}
+						<a href="https://liberclaw.ai/ai-personal-assistant-agent" target="_blank" className="text-[#EA7AF4] hover:underline">
+							liberclaw.ai
+						</a>
+						{" "}or explore the{" "}
+						<a href="https://liberclaw.ai/openclaw-alternative" target="_blank" className="text-[#EA7AF4] hover:underline">
+							OpenClaw alternative comparison
+						</a>.
+					</p>
+				</div>
+			</section>
 			<CTASection
 				title="Deploy Your AI Personal Assistant"
 				subtitle="Deploy an AI personal assistant that runs 24/7 in under 5 minutes. The free tier includes 2 agents with no credit card required."
