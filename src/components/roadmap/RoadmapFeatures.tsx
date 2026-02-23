@@ -36,6 +36,16 @@ const liveFeatures = [
 		title: "Agents",
 		description: "Autonomous task runners in beta",
 	},
+	{
+		icon: Image,
+		title: "Image generation",
+		description: "Multimodal inference & image inputs for LLMs",
+	},
+	{
+		icon: Palette,
+		title: "Chat UI Revamp",
+		description: "Enhanced user experience with modern design and improved functionality",
+	},
 ];
 
 const comingSoonFeatures = [
@@ -55,19 +65,9 @@ const comingSoonFeatures = [
 		description: "Private, decentralized AI-driven speech synthesis for secure audio content creation",
 	},
 	{
-		icon: Image,
-		title: "Image generation",
-		description: "Multimodal inference & image inputs for LLMs",
-	},
-	{
 		icon: Store,
 		title: "Agent Marketplace",
 		description: "Discover, deploy, and monetize AI agents in a decentralized marketplace",
-	},
-	{
-		icon: Palette,
-		title: "Chat UI Revamp",
-		description: "Enhanced user experience with modern design and improved functionality",
 	},
 	{
 		icon: Package,
