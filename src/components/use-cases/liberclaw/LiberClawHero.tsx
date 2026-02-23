@@ -1,3 +1,4 @@
+import heroBackground from "@/assets/background-left.png";
 import { ScrollHuman } from "@/components/ScrollHuman.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
@@ -23,9 +24,9 @@ export function LiberClawHero({
 
 	return (
 		<section className="relative w-full min-h-screen flex items-center bg-background overflow-hidden">
-			{/* Subtle gradient background */}
+			{/* Background image */}
 			<div className="absolute inset-0 z-0">
-				<div className="absolute inset-0 bg-gradient-to-br from-[#EA7AF4]/5 via-transparent to-[#EA7AF4]/3" />
+				<img src={heroBackground} alt="" className="absolute h-full w-full object-cover" />
 			</div>
 
 			{/* Content container */}
@@ -33,13 +34,9 @@ export function LiberClawHero({
 				<div className="flex flex-col justify-center space-y-6 max-w-3xl">
 					<div className="text-sm">[ {label} ]</div>
 
-					<h1 className="font-bold leading-tight text-white text-4xl md:text-5xl lg:text-6xl">
-						{title}
-					</h1>
+					<h1 className="font-bold leading-tight text-white text-4xl md:text-5xl lg:text-6xl">{title}</h1>
 
-					<p className="text-lg max-w-2xl font-satoshi">
-						{description}
-					</p>
+					<p className="text-lg max-w-2xl font-satoshi">{description}</p>
 
 					<div className="mt-6">
 						<a href={ctaLink} target="_blank">

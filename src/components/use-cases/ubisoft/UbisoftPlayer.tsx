@@ -64,7 +64,10 @@ export function UbisoftPlayer() {
 
 				{/* Action Buttons */}
 				<div className="flex flex-wrap gap-4 justify-center mt-12">
-					<a href="https://medium.com/@Ubisoft-Captain-Laserhawk/from-passive-collectibles-to-autonomous-citizens-how-eden-online-unlocked-ai-governed-nfts-2422934e5f97" target="_blank">
+					<a
+						href="https://medium.com/@Ubisoft-Captain-Laserhawk/from-passive-collectibles-to-autonomous-citizens-how-eden-online-unlocked-ai-governed-nfts-2422934e5f97"
+						target="_blank"
+					>
 						<Button variant="outline" size="lg" className="text-white border-white">
 							<span>Learn more</span>
 							<ExternalLink />

@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Code, Bot, Search } from "lucide-react";
+import { Code, Bot, Search, ArrowRight } from "lucide-react";
 import type { LucideIcon } from "lucide-react";
 
 interface RelatedPage {
@@ -48,30 +48,29 @@ export function RelatedPages({ current }: RelatedPagesProps) {
 		<section className="w-full bg-background py-20 lg:py-32">
 			<div className="container mx-auto px-4 md:px-6 lg:px-8">
 				{/* Header */}
-				<div className="mb-16">
-					<div className="text-sm mb-4">[ More Use Cases ]</div>
-					<h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-						Other Agents You Can Deploy
-					</h2>
+				<div className="mb-16 space-y-6">
+					<div className="text-sm">[ More Use Cases ]</div>
+					<h2>Other Agents You Can Deploy</h2>
 				</div>
 
 				{/* Cards */}
-				<div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+				<div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
 					{pages.map((page) => {
 						const Icon = page.icon;
 						return (
 							<Link
 								key={page.slug}
 								to={page.path}
-								className="group block p-6 rounded-lg border border-white/10 bg-white/5 hover:bg-white/10 transition-colors"
+								className="group block space-y-4 p-6 rounded-2xl border border-foreground/20 hover:border-white transition-colors"
 							>
-								<div className="flex items-center space-x-3 mb-3">
-									<Icon className="w-5 h-5 text-[#EA7AF4] flex-shrink-0" />
-									<h3 className="text-lg font-bold text-white group-hover:text-[#EA7AF4] transition-colors">
-										{page.title}
-									</h3>
+								<div className="flex items-center gap-3">
+									<Icon className="w-6 h-6 text-[#EA7AF4] flex-shrink-0" />
+									<h3 className="text-2xl font-satoshi">{page.title}</h3>
 								</div>
-								<p className="text-sm font-satoshi">{page.description}</p>
+								<p className="text-sm leading-relaxed">{page.description}</p>
+								<span className="inline-flex items-center gap-2 text-sm text-[#EA7AF4] group-hover:gap-3 transition-all">
+									Learn more <ArrowRight className="w-4 h-4" />
+								</span>
 							</Link>
 						);
 					})}

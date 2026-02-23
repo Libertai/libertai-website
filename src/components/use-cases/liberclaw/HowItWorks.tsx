@@ -12,24 +12,15 @@ interface HowItWorksProps {
 	steps: Step[];
 }
 
-export function HowItWorks({
-	label = "How It Works",
-	title = "How It Works",
-	subtitle,
-	steps,
-}: HowItWorksProps) {
+export function HowItWorks({ label = "How It Works", title = "How It Works", subtitle, steps }: HowItWorksProps) {
 	return (
 		<section className="w-full bg-background py-20 lg:py-32">
 			<div className="container mx-auto px-4 md:px-6 lg:px-8">
 				{/* Header */}
-				<div className="mb-16">
-					<div className="text-sm mb-4">[ {label} ]</div>
-					<h2 className="font-bold text-3xl md:text-4xl lg:text-5xl text-white leading-tight">
-						{title}
-					</h2>
-					{subtitle && (
-						<p className="text-lg mt-6 max-w-3xl font-satoshi">{subtitle}</p>
-					)}
+				<div className="mb-16 space-y-6">
+					<div className="text-sm">[ {label} ]</div>
+					<h2>{title}</h2>
+					{subtitle && <p className="text-lg max-w-3xl font-satoshi">{subtitle}</p>}
 				</div>
 
 				{/* Steps */}
@@ -41,8 +32,8 @@ export function HowItWorks({
 									{step.number}
 								</span>
 								<div className="space-y-2">
-									<h3 className="text-xl font-bold text-white">{step.title}</h3>
-									<p className="text-sm font-satoshi">{step.description}</p>
+									<h3 className="text-2xl font-satoshi">{step.title}</h3>
+									<p className="text-sm leading-relaxed">{step.description}</p>
 								</div>
 							</div>
 							{step.code && (
