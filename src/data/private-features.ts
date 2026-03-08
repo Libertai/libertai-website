@@ -52,7 +52,7 @@ export const privateFeatures = [
 		},
 		button: {
 			text: "Generate Images",
-			comingSoon: true,
+			href: "https://chat.libertai.io/images",
 		},
 		image: {
 			src: imagesImage,

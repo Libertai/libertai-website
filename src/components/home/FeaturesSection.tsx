@@ -33,9 +33,9 @@ const features = [
 		description:
 			"Unleash your creativity with stunning, uncensored AI-generated images. Experience the future of artistic expression!",
 		image: imgGenImage,
-		buttonText: "[Coming Soon]",
-		buttonHref: "#",
-		live: false,
+		buttonText: "Generate Images",
+		buttonHref: "https://chat.libertai.io/images",
+		live: true,
 	},
 	{
 		icon: Brain,
