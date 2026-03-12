@@ -53,6 +53,7 @@ export function AlephSection() {
 							autoPlay={shouldAutoPlay}
 							muted
 							loop
+							title="LibertAI — Decentralized AI Platform Overview"
 							metadata={{
 								video_title: "libertai-landing",
 							}}

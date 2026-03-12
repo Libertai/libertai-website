@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SEO } from "@/components/SEO.tsx";
 import { FooterSection } from "@/components/FooterSection.tsx";
 import { LiberClawHero } from "@/components/use-cases/liberclaw/LiberClawHero.tsx";
 import { HowItWorks } from "@/components/use-cases/liberclaw/HowItWorks.tsx";
@@ -212,6 +213,11 @@ const limitations = [
 function LiberClawResearchAgent() {
 	return (
 		<main className="flex flex-col min-h-screen">
+			<SEO
+				title="AI Research Agent"
+				description="Deploy an autonomous AI research agent that monitors the web, tracks changes, and delivers structured summaries 24/7. Open source, no API keys, ready in minutes."
+				path="/use-cases/liberclaw-research-agent"
+			/>
 			<LiberClawHero
 				label="Research Agent"
 				title="An AI Research Agent That Monitors the Web While You Sleep"

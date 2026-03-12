@@ -110,6 +110,7 @@
     src: url('assets/fonts/Satoshi-Medium.woff2') format('woff2');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 @font-face {
@@ -117,6 +118,7 @@
     src: url('assets/fonts/InputSansNormal.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 /* Background utility classes */

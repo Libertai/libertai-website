@@ -24,6 +24,7 @@ export function HeroSection() {
 					muted
 					loop
 					playsInline
+					aria-hidden="true"
 					className="absolute h-full w-full object-cover md:object-right opacity-90 hidden md:block"
 				/>
 				{/* Hero video mobile */}
@@ -33,6 +34,7 @@ export function HeroSection() {
 					muted
 					loop
 					playsInline
+					aria-hidden="true"
 					className="absolute h-full w-full object-cover md:object-right opacity-90 md:hidden max-sm:block"
 				/>
 			</div>

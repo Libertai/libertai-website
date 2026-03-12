@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SEO } from "@/components/SEO.tsx";
 import { FooterSection } from "@/components/FooterSection.tsx";
 import { LiberClawHero } from "@/components/use-cases/liberclaw/LiberClawHero.tsx";
 import { HowItWorks } from "@/components/use-cases/liberclaw/HowItWorks.tsx";
@@ -153,6 +154,11 @@ const faqs = [
 function LiberClawPersonalAssistant() {
 	return (
 		<main className="flex flex-col min-h-screen">
+			<SEO
+				title="AI Personal Assistant Agent"
+				description="Deploy an always-on AI personal assistant that runs 24/7 on its own VM. Research, task management, monitoring, and persistent memory. No API keys needed."
+				path="/use-cases/liberclaw-personal-assistant"
+			/>
 			<LiberClawHero
 				label="Personal Assistant"
 				title="An AI Personal Assistant That Never Stops Running"

@@ -35,6 +35,7 @@ export function FooterSection() {
 					muted
 					loop
 					playsInline
+					aria-hidden="true"
 				/>
 				{/* Background Video Mobile */}
 				<video
@@ -44,6 +45,7 @@ export function FooterSection() {
 					muted
 					loop
 					playsInline
+					aria-hidden="true"
 				/>
 				<div className="container mx-auto text-center relative z-10">
 					{/* Section Header */}
