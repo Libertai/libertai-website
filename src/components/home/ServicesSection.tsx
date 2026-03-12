@@ -100,7 +100,7 @@ export function ServicesSection() {
 								<div className="flex flex-col items-start">
 									<img src={service.image} alt={service.title} className="mb-8 w-full" />
 
-									<a href={service.buttonHref} target="_blank">
+									<a href={service.buttonHref} target="_blank" rel="noopener noreferrer">
 										<Button variant="outline" size="lg" className="text-white">
 											{service.buttonText}
 											<ExternalLink className="w-4 h-4" />

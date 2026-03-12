@@ -259,7 +259,7 @@ export function APIModelsAndPricing() {
 
 					{/* Show all models button */}
 					<div className="mt-8 text-center md:text-left">
-						<a href="https://docs.libertai.io/apis/text/#available-models" target="_blank">
+						<a href="https://docs.libertai.io/apis/text/#available-models" target="_blank" rel="noopener noreferrer">
 							<Button variant="glass" size="pill" className="font-satoshi text-white">
 								<span>Show all models</span>
 								<ExternalLink className="ml-2 h-4 w-4" />

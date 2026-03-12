@@ -89,13 +89,13 @@ export function UbisoftGovernance() {
 
 				{/* Action Buttons */}
 				<div className="flex flex-wrap gap-4 mb-16">
-					<a href="https://snapshot.box/#/s:edenonline.eth" target="_blank">
+					<a href="https://snapshot.box/#/s:edenonline.eth" target="_blank" rel="noopener noreferrer">
 						<Button variant="outline" size="lg" className="text-white border-white">
 							<span>Governance in Action</span>
 							<ExternalLink />
 						</Button>
 					</a>
-					<a href="https://discord.gg/edenonline" target="_blank">
+					<a href="https://discord.gg/edenonline" target="_blank" rel="noopener noreferrer">
 						<Button variant="outline" size="lg" className="text-white border-white">
 							<span>Discord</span>
 							<ExternalLink />

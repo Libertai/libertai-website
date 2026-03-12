@@ -36,13 +36,13 @@ export function APISection() {
 
 					{/* Action Buttons */}
 					<div className="flex gap-4 pt-4">
-						<a href="https://console.libertai.io" target="_blank">
+						<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg" className="text-white">
 								Console
 								<ExternalLink className="w-4 h-4" />
 							</Button>
 						</a>
-						<a href="https://docs.libertai.io/apis/text/#pricing" target="_blank">
+						<a href="https://docs.libertai.io/apis/text/#pricing" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg" className="text-white">
 								Pricing
 								<ExternalLink className="w-4 h-4" />

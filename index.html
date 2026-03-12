@@ -13,15 +13,50 @@
 	<meta property="og:site_name" content="LibertAI" />
 	<meta property="og:title" content="LibertAI — Private AI, Unleashed" />
 	<meta property="og:description" content="Decentralized, private AI platform. Open-source models, confidential inference, and AI agents with verifiable privacy." />
-	<meta property="og:image" content="https://libertai.io/og-default.png" />
 	<meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:site" content="@Libertai_DAI" />
 
 	<!-- Font preloading -->
 	<link rel="preload" href="/src/assets/fonts/Satoshi-Medium.woff2" as="font" type="font/woff2" crossorigin />
 	<link rel="preload" href="/src/assets/fonts/InputSansNormal.woff" as="font" type="font/woff" crossorigin />
+
+	<!-- Structured data -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@graph": [
+			{
+				"@type": "Organization",
+				"name": "LibertAI",
+				"url": "https://libertai.io",
+				"logo": "https://libertai.io/favicon.svg",
+				"description": "Decentralized, private AI platform powered by Aleph Cloud. Open-source models, confidential inference API, and AI agents.",
+				"sameAs": [
+					"https://x.com/Libertai_DAI",
+					"https://github.com/libertai",
+					"https://t.me/libertai",
+					"https://linkedin.com/company/libertai",
+					"https://discord.gg/alephcloud"
+				]
+			},
+			{
+				"@type": "WebSite",
+				"name": "LibertAI",
+				"url": "https://libertai.io"
+			}
+		]
+	}
+	</script>
 </head>
 <body>
+<noscript>
+	<div style="padding:2rem;text-align:center;color:#fff;background:#0E0F18;min-height:100vh;font-family:sans-serif">
+		<h1>LibertAI — Private AI, Unleashed</h1>
+		<p>LibertAI is a decentralized, private AI platform powered by Aleph Cloud. Open-source models, confidential inference API, and AI agents — with privacy you can verify.</p>
+		<p>Please enable JavaScript to use this application.</p>
+		<p><a href="https://docs.libertai.io" style="color:#EA7AF4">Developer Docs</a> · <a href="https://console.libertai.io" style="color:#EA7AF4">API Console</a> · <a href="https://chat.libertai.io" style="color:#EA7AF4">Chat</a></p>
+	</div>
+</noscript>
 <div id="root"></div>
 <script src="/src/main.tsx" type="module"></script>
 </body>

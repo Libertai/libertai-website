@@ -66,7 +66,7 @@ export function APIGetStarted() {
 							</div>
 							<div className="font-satoshi flex gap-3">
 								{section.buttons.map((button) => (
-									<a key={button.text} href={button.href} target="_blank">
+									<a key={button.text} href={button.href} target="_blank" rel="noopener noreferrer">
 										<Button variant="glass" size="pill">
 											<span>{button.text}</span>
 											<ExternalLink />

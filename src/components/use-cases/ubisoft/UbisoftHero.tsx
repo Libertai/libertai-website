@@ -37,7 +37,7 @@ export function UbisoftHero() {
 
 					{/* Captain Laserhawk Universe Button */}
 					<div className="mt-6">
-						<a href="https://x.com/EdenOnline_exe" target="_blank">
+						<a href="https://x.com/EdenOnline_exe" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg" className="text-white border-white">
 								<span>Captain Laserhawk Universe</span>
 								<ExternalLink />

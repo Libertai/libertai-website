@@ -59,7 +59,7 @@ export function ContractAddresses() {
 									<div className="flex items-center gap-3">
 										<img src={contract.logo} alt={`${contract.network} logo`} className="w-8 h-8 rounded-full" />
 										<span className="text-white font-satoshi text-lg">{contract.network}</span>
-										<a href={contract.link} target="_blank">
+										<a href={contract.link} target="_blank" rel="noopener noreferrer">
 											<Button variant="glass" size="sm">
 												<ExternalLink className="w-4 h-4" />
 											</Button>

@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { GenericAccordion } from "@/components/GenericAccordion.tsx";
 
 const faqs = [
@@ -34,8 +35,24 @@ const faqs = [
 ];
 
 export function FAQSection() {
+	const faqSchema = {
+		"@context": "https://schema.org",
+		"@type": "FAQPage",
+		mainEntity: faqs.map((faq) => ({
+			"@type": "Question",
+			name: faq.question,
+			acceptedAnswer: {
+				"@type": "Answer",
+				text: faq.answer,
+			},
+		})),
+	};
+
 	return (
 		<section className="w-full bg-background py-20 lg:py-40 px-4 md:px-6 lg:px-8 bg-cover bg-center bg-no-repeat ltai-bg-right">
+			<Helmet>
+				<script type="application/ld+json">{JSON.stringify(faqSchema)}</script>
+			</Helmet>
 			<div className="container mx-auto max-w-2xl">
 				{/* Section Header */}
 				<div className="mb-20 space-y-6 text-center">

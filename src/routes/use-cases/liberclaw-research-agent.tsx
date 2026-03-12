@@ -245,7 +245,7 @@ function LiberClawResearchAgent() {
 				<div className="container mx-auto max-w-3xl text-center">
 					<p className="text-lg font-satoshi text-white/60">
 						Read the full guide on{" "}
-						<a href="https://liberclaw.ai/ai-research-agent" target="_blank" className="text-[#EA7AF4] hover:underline">
+						<a href="https://liberclaw.ai/ai-research-agent" target="_blank" rel="noopener" className="text-[#EA7AF4] hover:underline">
 							liberclaw.ai
 						</a>
 						.

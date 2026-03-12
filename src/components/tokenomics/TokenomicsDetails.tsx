@@ -316,20 +316,20 @@ export function TokenomicsDetails() {
 						<div className="col-span-2 flex gap-4 mt-8 font-satoshi text-white">
 							<a
 								href="https://app.uniswap.org/explore/tokens/base/0xf8b1b47aa748f5c7b5d0e80c726a843913eb573a?chain=base"
-								target="_blank"
+								target="_blank" rel="noopener noreferrer"
 							>
 								<Button variant="outline" size="lg">
 									<span>Buy on Uniswap</span>
 									<ExternalLink className="w-4 h-4" />
 								</Button>
 							</a>
-							<a href="https://jup.ag/swap/SOL-mntpN8z1d29f3MWhMD7VqZFpeYmbD88MgwS3Bkz8y7u" target="_blank">
+							<a href="https://jup.ag/swap/SOL-mntpN8z1d29f3MWhMD7VqZFpeYmbD88MgwS3Bkz8y7u" target="_blank" rel="noopener noreferrer">
 								<Button variant="outline" size="lg">
 									<span>Buy on Jupiter</span>
 									<ExternalLink className="w-4 h-4" />
 								</Button>
 							</a>
-							<a href="https://www.coingecko.com/en/coins/libertai" target="_blank">
+							<a href="https://www.coingecko.com/en/coins/libertai" target="_blank" rel="noopener noreferrer">
 								<Button variant="outline" size="lg">
 									<span>Coingecko</span>
 									<ExternalLink className="w-4 h-4" />
@@ -407,20 +407,20 @@ export function TokenomicsDetails() {
 					<div className="flex flex-col gap-4 font-satoshi text-white">
 						<a
 							href="https://app.uniswap.org/explore/tokens/base/0xf8b1b47aa748f5c7b5d0e80c726a843913eb573a?chain=base"
-							target="_blank"
+							target="_blank" rel="noopener noreferrer"
 						>
 							<Button variant="outline" size="lg" className="w-full">
 								<span>Buy on Uniswap</span>
 								<ExternalLink className="w-4 h-4" />
 							</Button>
 						</a>
-						<a href="https://jup.ag/swap/SOL-mntpN8z1d29f3MWhMD7VqZFpeYmbD88MgwS3Bkz8y7u" target="_blank">
+						<a href="https://jup.ag/swap/SOL-mntpN8z1d29f3MWhMD7VqZFpeYmbD88MgwS3Bkz8y7u" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg" className="w-full">
 								<span>Buy on Jupiter</span>
 								<ExternalLink className="w-4 h-4" />
 							</Button>
 						</a>
-						<a href="https://www.coingecko.com/en/coins/libertai" target="_blank">
+						<a href="https://www.coingecko.com/en/coins/libertai" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg" className="w-full">
 								<span>Coingecko</span>
 								<ExternalLink className="w-4 h-4" />

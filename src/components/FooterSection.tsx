@@ -56,13 +56,13 @@ export function FooterSection() {
 
 						{/* Action Buttons */}
 						<div className="flex gap-4 justify-center pt-4">
-							<a href="https://console.libertai.io" target="_blank">
+							<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer">
 								<Button variant="outline" size="lg" className="text-white">
 									Console
 									<ExternalLink className="w-4 h-4" />
 								</Button>
 							</a>
-							<a href="https://docs.libertai.io/apis/text/#pricing" target="_blank">
+							<a href="https://docs.libertai.io/apis/text/#pricing" target="_blank" rel="noopener noreferrer">
 								<Button variant="outline" size="lg" className="text-white">
 									Pricing
 									<ExternalLink className="w-4 h-4" />
@@ -82,7 +82,7 @@ export function FooterSection() {
 						<div className="flex flex-wrap justify-center gap-4 md:hidden text-sm">
 							{footerLinks.map((link) =>
 								link.external ? (
-									<a key={link.text} href={link.href} target="_blank" className="hover:text-white transition-colors">
+									<a key={link.text} href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
 										{link.text}
 									</a>
 								) : (
@@ -99,7 +99,7 @@ export function FooterSection() {
 							<div className="flex flex-wrap justify-center gap-8 text-sm">
 								{firstRowLinks.map((link) =>
 									link.external ? (
-										<a key={link.text} href={link.href} target="_blank" className="hover:text-white transition-colors">
+										<a key={link.text} href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
 											{link.text}
 										</a>
 									) : (
@@ -114,7 +114,7 @@ export function FooterSection() {
 							<div className="flex flex-wrap justify-center gap-8 text-sm">
 								{secondRowLinks.map((link) =>
 									link.external ? (
-										<a key={link.text} href={link.href} target="_blank" className="hover:text-white transition-colors">
+										<a key={link.text} href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
 											{link.text}
 										</a>
 									) : (
@@ -128,23 +128,23 @@ export function FooterSection() {
 
 						{/* Social Media Icons */}
 						<div className="flex justify-center gap-6 pt-4">
-							<a href="https://t.me/libertai" target="_blank" className="hover:text-white transition-colors">
+							<a href="https://t.me/libertai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
 								<FaTelegram size={24} />
 							</a>
-							<a href="https://x.com/Libertai_DAI" target="_blank" className="hover:text-white transition-colors">
+							<a href="https://x.com/Libertai_DAI" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
 								<FaXTwitter size={24} />
 							</a>
-							<a href="https://github.com/libertai" target="_blank" className="hover:text-white transition-colors">
+							<a href="https://github.com/libertai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
 								<FaGithub size={24} />
 							</a>
 							<a
 								href="https://linkedin.com/company/libertai"
-								target="_blank"
+								target="_blank" rel="noopener noreferrer"
 								className="hover:text-white transition-colors"
 							>
 								<FaLinkedin size={24} />
 							</a>
-							<a href="https://discord.gg/alephcloud" target="_blank" className="hover:text-white transition-colors">
+							<a href="https://discord.gg/alephcloud" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
 								<FaDiscord size={24} />
 							</a>
 						</div>
@@ -152,7 +152,7 @@ export function FooterSection() {
 						{/* Copyright */}
 						<div className="text-center text-sm text-white mt-5 w-full hidden md:block">
 							© 2025 LibertAI.io | Powered by{" "}
-							<a href="https://aleph.cloud" target="_blank">
+							<a href="https://aleph.cloud" target="_blank" rel="noopener">
 								Aleph Cloud
 							</a>
 						</div>
@@ -161,7 +161,7 @@ export function FooterSection() {
 							<br />
 							<span>
 								Powered by{" "}
-								<a href="https://aleph.cloud" target="_blank">
+								<a href="https://aleph.cloud" target="_blank" rel="noopener">
 									Aleph Cloud
 								</a>
 							</span>

@@ -52,7 +52,7 @@ export function Navbar() {
 												<NavigationMenuLink
 													className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent max-lg:text-xs lg:text-sm"
 													href={item.href}
-													target="_blank"
+													target="_blank" rel="noopener noreferrer"
 												>
 													{item.label}
 												</NavigationMenuLink>
@@ -72,7 +72,7 @@ export function Navbar() {
 										</NavigationMenuTrigger>
 										<NavigationMenuContent className="text-white border border-white/20 backdrop-blur-sm rounded-[2vw]!">
 											<div className="min-w-80 p-4">
-												<a href="https://liberclaw.ai" target="_blank" className="block p-4">
+												<a href="https://liberclaw.ai" target="_blank" rel="noopener" className="block p-4">
 													<p className="text-md font-medium leading-none text-white">LiberClaw</p>
 													<p className="text-xs leading-snug text-white/70 mt-1">
 														Sovereign AI agents on decentralized infrastructure
@@ -119,13 +119,13 @@ export function Navbar() {
 
 					{/* Right side: CTA Button (Desktop only) */}
 					<div className="hidden md:flex">
-						<a href={ctaLink} target="_blank">
+						<a href={ctaLink} target="_blank" rel="noopener noreferrer">
 							<Button variant="glass" size="pill" className="hidden lg:flex">
 								<span>{ctaText}</span>
 								<ExternalLink className="w-4 h-4" />
 							</Button>
 						</a>
-						<a href={ctaLink} target="_blank">
+						<a href={ctaLink} target="_blank" rel="noopener noreferrer">
 							<Button variant="glass" size="pill-sm" className="lg:hidden">
 								<span>{ctaText}</span>
 								<ExternalLink className="w-4 h-4" />
@@ -136,7 +136,7 @@ export function Navbar() {
 					{/* Mobile Actions */}
 					<div className="flex items-center gap-2 md:hidden">
 						{/* Try Now Button */}
-						<a href={ctaLink} target="_blank">
+						<a href={ctaLink} target="_blank" rel="noopener noreferrer">
 							<Button variant="glass" size="pill" className="text-sm flex items-center gap-1">
 								Try Now <ExternalLink className="h-3.5 w-3.5" />
 							</Button>
@@ -160,7 +160,7 @@ export function Navbar() {
 											<a
 												href={item.href}
 												key={item.href}
-												target="_blank"
+												target="_blank" rel="noopener noreferrer"
 												className="text-white hover:text-primary text-lg"
 												onClick={handleNavClick}
 											>
@@ -181,7 +181,7 @@ export function Navbar() {
 										<div className="text-white text-lg font-medium">Use cases</div>
 										<a
 											href="https://liberclaw.ai"
-											target="_blank"
+											target="_blank" rel="noopener"
 											className="hover:text-primary text-base ml-4 block"
 											onClick={handleNavClick}
 										>
@@ -223,7 +223,7 @@ export function Navbar() {
 											GenLayer
 										</Link>
 									</div>
-									<a href={ctaLink} target="_blank" onClick={handleNavClick}>
+									<a href={ctaLink} target="_blank" rel="noopener noreferrer" onClick={handleNavClick}>
 										<Button variant="glass" size="pill" className="w-full justify-start mt-2 text-center">
 											<span>{ctaText}</span>
 											<ExternalLink className="w-4 h-4" />

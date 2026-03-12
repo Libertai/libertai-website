@@ -39,7 +39,7 @@ export function LiberClawHero({
 					<p className="text-lg max-w-2xl font-satoshi">{description}</p>
 
 					<div className="mt-6">
-						<a href={ctaLink} target="_blank">
+						<a href={ctaLink} target="_blank" rel="noopener">
 							<Button variant="outline" size="lg" className="text-white border-white">
 								<span>{ctaText}</span>
 								<ExternalLink />

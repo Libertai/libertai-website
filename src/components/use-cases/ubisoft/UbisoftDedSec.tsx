@@ -30,13 +30,13 @@ export function UbisoftDedSec() {
 
 					{/* Action buttons */}
 					<div className="flex flex-wrap gap-4 pt-4">
-						<a href="https://dedsec.edenonline.xyz/" target="_blank">
+						<a href="https://dedsec.edenonline.xyz/" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg" className="text-white border-white">
 								DedSec Console
 								<ExternalLink className="w-4 h-4" />
 							</Button>
 						</a>
-						<a href="https://edenonline.ubisoft.com/" target="_blank">
+						<a href="https://edenonline.ubisoft.com/" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg" className="text-white border-white">
 								Eden Online
 								<ExternalLink className="w-4 h-4" />
