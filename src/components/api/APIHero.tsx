@@ -49,13 +49,13 @@ export function APIHero() {
 				{/* Bottom buttons - desktop */}
 				<div className="hidden md:flex flex-wrap gap-3 justify-center justify-start font-satoshi">
 					<ScrollHuman onScroll={scrollToNext} />
-					<a href="https://console.libertai.io" target="_blank">
+					<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer">
 						<Button variant="glass" size="pill">
 							<span>Console</span>
 							<ExternalLink />
 						</Button>
 					</a>
-					<a href="https://docs.libertai.io/apis/" target="_blank">
+					<a href="https://docs.libertai.io/apis/" target="_blank" rel="noopener noreferrer">
 						<Button variant="glass" size="pill">
 							<span>Documentation</span>
 							<ExternalLink />
@@ -66,13 +66,13 @@ export function APIHero() {
 				{/* Bottom buttons - mobile */}
 				<div className="md:hidden space-y-4 text-white">
 					<div className="font-satoshi flex justify-center gap-3">
-						<a href="https://console.libertai.io" target="_blank">
+						<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg">
 								<span>Console</span>
 								<ExternalLink />
 							</Button>
 						</a>
-						<a href="https://docs.libertai.io" target="_blank">
+						<a href="https://docs.libertai.io" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg">
 								<span>Dev Docs</span>
 								<ExternalLink />

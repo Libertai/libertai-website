@@ -56,7 +56,7 @@ export function GenlayerTestimonials() {
 					</div>
 
 					{/* Learn more button */}
-					<a href="https://genlayer.com" target="_blank">
+					<a href="https://genlayer.com" target="_blank" rel="noopener noreferrer">
 						<Button variant="outline" size="lg" className="text-white border-white">
 							<span>Learn more</span>
 							<ExternalLink />

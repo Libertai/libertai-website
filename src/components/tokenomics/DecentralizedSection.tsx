@@ -137,7 +137,7 @@ export function DecentralizedSection() {
 								<p className="text-sm leading-relaxed mb-6">{feature.description}</p>
 
 								{/* CTA Button */}
-								<a href={feature.buttonLink} target="_blank">
+								<a href={feature.buttonLink} target="_blank" rel="noopener">
 									<Button variant="outline" size="lg" className="text-white">
 										{feature.buttonText}
 										<ExternalLink className="w-4 h-4" />

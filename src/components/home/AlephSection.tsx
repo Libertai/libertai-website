@@ -63,7 +63,7 @@ export function AlephSection() {
 					</div>
 					<div className="flex space-x-3">
 						<p className="font-satoshi text-lg">Proudly powered by</p>
-						<a href="https://aleph.cloud" target="_blank">
+						<a href="https://aleph.cloud" target="_blank" rel="noopener">
 							<img src={alephLogo} alt="Aleph Cloud" />
 						</a>
 					</div>

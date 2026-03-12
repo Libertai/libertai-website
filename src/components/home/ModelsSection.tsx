@@ -74,7 +74,7 @@ export function ModelsSection() {
 				<div className="mb-16 space-y-6">
 					<div className="flex justify-between items-start">
 						<div className="text-sm max-sm:max-w-40">[ By the people, for the people ]</div>
-						<a href="https://docs.libertai.io/apis/text/#available-models" target="_blank">
+						<a href="https://docs.libertai.io/apis/text/#available-models" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg" className="text-white">
 								Explore More
 								<ExternalLink className="w-4 h-4" />

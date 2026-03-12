@@ -155,7 +155,7 @@ function LiberClawCodeReview() {
 						Read the full guide on{" "}
 						<a
 							href="https://liberclaw.ai/ai-code-review-agent"
-							target="_blank"
+							target="_blank" rel="noopener"
 							className="text-[#EA7AF4] hover:underline"
 						>
 							liberclaw.ai
@@ -163,7 +163,7 @@ function LiberClawCodeReview() {
 						or explore the{" "}
 						<a
 							href="https://liberclaw.ai/openclaw-alternative"
-							target="_blank"
+							target="_blank" rel="noopener"
 							className="text-[#EA7AF4] hover:underline"
 						>
 							OpenClaw alternative comparison

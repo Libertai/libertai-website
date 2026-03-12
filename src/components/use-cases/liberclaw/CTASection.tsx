@@ -27,13 +27,13 @@ export function CTASection({
 					<p className="text-lg font-satoshi mb-10">{subtitle}</p>
 
 					<div className="flex flex-col sm:flex-row gap-4 justify-center">
-						<a href={appLink} target="_blank">
+						<a href={appLink} target="_blank" rel="noopener">
 							<Button variant="outline" size="lg" className="text-white border-white">
 								<span>{appText}</span>
 								<ExternalLink />
 							</Button>
 						</a>
-						<a href={githubLink} target="_blank">
+						<a href={githubLink} target="_blank" rel="noopener">
 							<Button variant="outline" size="lg" className="text-white border-white">
 								<span>{githubText}</span>
 								<ExternalLink />

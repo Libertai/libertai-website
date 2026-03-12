@@ -72,13 +72,13 @@ export function HeroSection() {
 				{/* Bottom buttons - desktop */}
 				<div className="hidden md:flex flex-wrap gap-3 justify-center justify-start font-satoshi">
 					<ScrollHuman onScroll={scrollToServices} />
-					<a href="https://console.libertai.io" target="_blank">
+					<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer">
 						<Button variant="glass" size="pill">
 							<span>Build with the API</span>
 							<ExternalLink />
 						</Button>
 					</a>
-					<a href="https://docs.libertai.io" target="_blank">
+					<a href="https://docs.libertai.io" target="_blank" rel="noopener noreferrer">
 						<Button variant="glass" size="pill">
 							<span>Developer Docs</span>
 							<ExternalLink />
@@ -89,13 +89,13 @@ export function HeroSection() {
 				{/* Bottom buttons - mobile */}
 				<div className="md:hidden space-y-4 text-white">
 					<div className="font-satoshi flex justify-center gap-3">
-						<a href="https://console.libertai.io" target="_blank">
+						<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg">
 								<span>API</span>
 								<ExternalLink />
 							</Button>
 						</a>
-						<a href="https://docs.libertai.io" target="_blank">
+						<a href="https://docs.libertai.io" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg">
 								<span>Dev Docs</span>
 								<ExternalLink />

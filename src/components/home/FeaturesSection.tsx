@@ -113,7 +113,7 @@ export function FeaturesSection() {
 
 								<div className="flex">
 									{feature.live ? (
-										<a href={feature.buttonHref} target="_blank">
+										<a href={feature.buttonHref} target="_blank" rel="noopener noreferrer">
 											<Button variant="outline" size="lg" className="text-white">
 												{feature.buttonText}
 												<ExternalLink className="w-4 h-4" />

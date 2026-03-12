@@ -34,7 +34,7 @@ export function GenlayerHero() {
 
 					{/* GenLayer Button */}
 					<div className="mt-6">
-						<a href="https://www.genlayer.com/" target="_blank">
+						<a href="https://www.genlayer.com/" target="_blank" rel="noopener noreferrer">
 							<Button variant="outline" size="lg" className="text-white border-white">
 								<span>GenLayer</span>
 								<ExternalLink />
