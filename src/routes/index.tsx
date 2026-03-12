@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SEO } from "@/components/SEO.tsx";
 import { HeroSection } from "@/components/home/HeroSection.tsx";
 import { ServicesSection } from "@/components/home/ServicesSection.tsx";
 import { AlephSection } from "@/components/home/AlephSection.tsx";
@@ -15,6 +16,11 @@ export const Route = createFileRoute("/")({
 function Index() {
 	return (
 		<main className="flex flex-col min-h-screen">
+			<SEO
+				title="Private AI, Unleashed"
+				description="LibertAI is a decentralized, private AI platform powered by Aleph Cloud. Open-source models, confidential inference API, and AI agents — with privacy you can verify."
+				path="/"
+			/>
 			<HeroSection />
 			<ServicesSection />
 			<AlephSection />

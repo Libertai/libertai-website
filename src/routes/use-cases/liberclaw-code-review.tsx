@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SEO } from "@/components/SEO.tsx";
 import { FooterSection } from "@/components/FooterSection.tsx";
 import { LiberClawHero } from "@/components/use-cases/liberclaw/LiberClawHero.tsx";
 import { HowItWorks } from "@/components/use-cases/liberclaw/HowItWorks.tsx";
@@ -128,6 +129,11 @@ const faqs = [
 function LiberClawCodeReview() {
 	return (
 		<main className="flex flex-col min-h-screen">
+			<SEO
+				title="AI Code Review Agent"
+				description="Deploy an open-source AI code review agent that runs on its own VM, uses open models, and reviews every PR 24/7. Set up in under 5 minutes with LiberClaw."
+				path="/use-cases/liberclaw-code-review"
+			/>
 			<LiberClawHero
 				label="Code Review"
 				title="Ship an AI Code Review Agent That Runs on Your Infrastructure"

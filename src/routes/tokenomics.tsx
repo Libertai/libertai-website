@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { SEO } from "@/components/SEO.tsx";
 import { TokenomicsHero } from "@/components/tokenomics/TokenomicsHero";
 import { TokenomicsDetails } from "@/components/tokenomics/TokenomicsDetails";
 import { TokenDistribution } from "@/components/tokenomics/TokenDistribution";
@@ -15,6 +16,11 @@ export const Route = createFileRoute("/tokenomics")({
 function TokenomicsPage() {
 	return (
 		<div className="min-h-screen">
+			<SEO
+				title="Tokenomics"
+				description="LTAI token details — distribution, contract addresses, burn mechanism, and decentralized governance. The utility token powering the LibertAI ecosystem."
+				path="/tokenomics"
+			/>
 			<TokenomicsHero />
 			<TokenomicsDetails />
 			<ContractAddresses />
