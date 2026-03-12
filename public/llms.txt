@@ -1,0 +1,43 @@
+# LibertAI
+
+> LibertAI is a decentralized, private AI platform powered by Aleph Cloud. Open-source models, confidential inference API, and AI agents — with privacy you can verify via Trusted Execution Environments.
+
+LibertAI offers three core products: Private Chat, a Confidential Inference API, and autonomous AI Agents (LiberClaw). All run on decentralized infrastructure with no data logging and no model training on user data. Privacy is cryptographically enforced through TEEs (Trusted Execution Environments) and fully auditable open-source code.
+
+- LTAI is the native utility token powering the ecosystem, offering 20% discounts on premium features and governance rights.
+- Payment accepted via crypto (ETH, USDC) or credit/debit card. Basic access is free.
+
+## Products
+
+- [Private AI Chat](https://chat.libertai.io): Free, encrypted AI chat with custom personas, image generation, and knowledge bases. No sign-up required, no data collection.
+- [Confidential Inference API](https://console.libertai.io): OpenAI-compatible, pay-per-token API with open-source models on decentralized infrastructure. No data logging.
+- [LiberClaw Agents](https://console.libertai.io/agents): Autonomous AI agents running 24/7 on their own VMs. Persistent memory, no external API keys needed. Free tier: 2 agents.
+
+## Use Cases
+
+- [Ubisoft — Captain Laserhawk](https://libertai.io/use-cases/ubisoft): Decentralized AI governance and player-driven narratives in Ubisoft's Captain Laserhawk: The G.A.M.E.
+- [GenLayer](https://libertai.io/use-cases/genlayer): Confidential inference for intelligent smart contracts with decentralized, private AI processing.
+- [AI Code Review Agent](https://libertai.io/use-cases/liberclaw-code-review): Open-source AI code review agent that reviews every PR 24/7. Uses Qwen3 Coder, GLM-4.7. Deploys in under 1 minute.
+- [AI Personal Assistant](https://libertai.io/use-cases/liberclaw-personal-assistant): Always-on AI personal assistant with research, task management, monitoring, and Telegram integration.
+- [AI Research Agent](https://libertai.io/use-cases/liberclaw-research-agent): Autonomous research agent for deep web research, competitor monitoring, academic paper tracking, and change detection.
+
+## Documentation & Resources
+
+- [Developer Docs](https://docs.libertai.io): Technical documentation, API reference, and integration guides.
+- [API Console](https://console.libertai.io): Dashboard for API keys, usage, and agent management.
+- [Tokenomics](https://libertai.io/tokenomics): LTAI token distribution, contract addresses, burn mechanism, and governance details.
+- [Roadmap](https://libertai.io/roadmap): Upcoming features for chat, API, agents, and the LTAI ecosystem.
+- [Blog](https://blog.libertai.io): Updates, announcements, and technical deep dives.
+
+## Community
+
+- [GitHub](https://github.com/libertai): Open-source repositories.
+- [Telegram](https://t.me/libertai): Community chat.
+- [Discord](https://discord.gg/alephcloud): Developer community on Aleph Cloud Discord.
+- [X / Twitter](https://x.com/Libertai_DAI): News and updates.
+- [LinkedIn](https://linkedin.com/company/libertai): Company page.
+
+## Optional
+
+- [Sitemap](https://libertai.io/sitemap.xml): XML sitemap of all pages.
+- [Support Email](mailto:support@libertai.io): Direct support contact.
