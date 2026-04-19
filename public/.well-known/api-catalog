@@ -1,0 +1,28 @@
+{
+  "linkset": [
+    {
+      "anchor": "https://api.libertai.io/v1",
+      "service-doc": [
+        {
+          "href": "https://docs.libertai.io",
+          "type": "text/html",
+          "title": "LibertAI Developer Documentation"
+        }
+      ],
+      "service-desc": [
+        {
+          "href": "https://docs.libertai.io/apis/text/",
+          "type": "text/html",
+          "title": "LibertAI Text Inference API Reference (OpenAI-compatible)"
+        }
+      ],
+      "service-meta": [
+        {
+          "href": "https://console.libertai.io",
+          "type": "text/html",
+          "title": "LibertAI API Console"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "$schema": "https://agentskills.io/schema/v0.2.0/index.schema.json",
+  "version": "0.2.0",
+  "skills": [
+    {
+      "name": "libertai-api",
+      "type": "skill",
+      "description": "Call LibertAI's OpenAI-compatible confidential inference API (chat completions, search, image generation) on decentralized infrastructure with TEE-backed privacy and no data logging.",
+      "url": "https://libertai.io/.well-known/agent-skills/libertai-api/SKILL.md",
+      "sha256": "fde96659163f72805e6a3cab5a0db859ade8a0c8bd01d3c07e975460ea5c3f33"
+    }
+  ]
+}
