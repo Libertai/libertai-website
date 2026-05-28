@@ -145,7 +145,7 @@ export function Navbar() {
 						{/* Mobile Menu Sheet */}
 						<Sheet open={isSheetOpen} onOpenChange={setIsSheetOpen}>
 							<SheetTrigger asChild>
-								<Button variant="ghost" size="icon" className="text-white">
+								<Button variant="ghost" size="icon" className="text-white" aria-label="Open menu">
 									<Menu className="h-5 w-5" />
 								</Button>
 							</SheetTrigger>
