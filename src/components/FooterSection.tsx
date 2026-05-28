@@ -128,23 +128,24 @@ export function FooterSection() {
 
 						{/* Social Media Icons */}
 						<div className="flex justify-center gap-6 pt-4">
-							<a href="https://t.me/libertai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+							<a href="https://t.me/libertai" target="_blank" rel="noopener noreferrer" aria-label="LibertAI on Telegram" className="hover:text-white transition-colors">
 								<FaTelegram size={24} />
 							</a>
-							<a href="https://x.com/Libertai_DAI" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+							<a href="https://x.com/Libertai_DAI" target="_blank" rel="noopener noreferrer" aria-label="LibertAI on X" className="hover:text-white transition-colors">
 								<FaXTwitter size={24} />
 							</a>
-							<a href="https://github.com/libertai" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+							<a href="https://github.com/libertai" target="_blank" rel="noopener noreferrer" aria-label="LibertAI on GitHub" className="hover:text-white transition-colors">
 								<FaGithub size={24} />
 							</a>
 							<a
 								href="https://linkedin.com/company/libertai"
 								target="_blank" rel="noopener noreferrer"
+								aria-label="LibertAI on LinkedIn"
 								className="hover:text-white transition-colors"
 							>
 								<FaLinkedin size={24} />
 							</a>
-							<a href="https://discord.gg/alephcloud" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+							<a href="https://discord.gg/alephcloud" target="_blank" rel="noopener noreferrer" aria-label="LibertAI on Discord" className="hover:text-white transition-colors">
 								<FaDiscord size={24} />
 							</a>
 						</div>
