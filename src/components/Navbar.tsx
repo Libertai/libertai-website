@@ -119,13 +119,13 @@ export function Navbar() {
 
 					{/* Right side: CTA Button (Desktop only) */}
 					<div className="hidden md:flex">
-						<a href={ctaLink} target="_blank" rel="noopener noreferrer">
+						<a href={ctaLink} target="_blank" rel="noopener noreferrer" aria-label={ctaText}>
 							<Button variant="glass" size="pill" className="hidden lg:flex">
 								<span>{ctaText}</span>
 								<ExternalLink className="w-4 h-4" />
 							</Button>
 						</a>
-						<a href={ctaLink} target="_blank" rel="noopener noreferrer">
+						<a href={ctaLink} target="_blank" rel="noopener noreferrer" aria-label={ctaText}>
 							<Button variant="glass" size="pill-sm" className="lg:hidden">
 								<span>{ctaText}</span>
 								<ExternalLink className="w-4 h-4" />
