@@ -113,18 +113,14 @@ export function HeroSection() {
 				</div>
 
 				{/* Bottom buttons - mobile */}
-				<div className="w-full max-w-[320px] space-y-4 text-white md:hidden">
-					<div className="font-satoshi flex flex-col gap-3">
+				<div className="w-full space-y-4 text-white md:hidden">
+					<div className="font-satoshi flex flex-col items-center gap-3">
 						{primaryCtas.map((cta) => {
 							const Icon = cta.icon;
 
 							return (
-								<a key={cta.href} href={cta.href} target="_blank" rel="noopener noreferrer" className="block w-full">
-									<Button
-										variant="outline"
-										size="lg"
-										className="w-full gap-2 px-4 text-sm [&_svg]:size-4"
-									>
+								<a key={cta.href} href={cta.href} target="_blank" rel="noopener noreferrer">
+									<Button variant="outline" size="lg" className="gap-2 px-5 text-sm [&_svg]:size-4">
 										<Icon />
 										<span>{cta.label}</span>
 										<ExternalLink />
@@ -134,23 +130,15 @@ export function HeroSection() {
 						})}
 					</div>
 
-					<div className="font-satoshi grid grid-cols-2 gap-3">
-						<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer" className="block min-w-0 w-full">
-							<Button
-								variant="outline"
-								size="lg"
-								className="min-w-0 w-full shrink overflow-hidden gap-1.5 px-2 text-xs sm:text-sm [&_svg]:size-3.5"
-							>
+					<div className="font-satoshi flex justify-center gap-3">
+						<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer">
+							<Button variant="outline" size="lg" className="gap-1.5 px-5 text-xs sm:text-sm [&_svg]:size-3.5">
 								<span>API</span>
 								<ExternalLink />
 							</Button>
 						</a>
-						<a href="https://docs.libertai.io" target="_blank" rel="noopener noreferrer" className="block min-w-0 w-full">
-							<Button
-								variant="outline"
-								size="lg"
-								className="min-w-0 w-full shrink overflow-hidden gap-1.5 px-2 text-xs sm:text-sm [&_svg]:size-3.5"
-							>
+						<a href="https://docs.libertai.io" target="_blank" rel="noopener noreferrer">
+							<Button variant="outline" size="lg" className="gap-1.5 px-5 text-xs sm:text-sm [&_svg]:size-3.5">
 								<span>Dev Docs</span>
 								<ExternalLink />
 							</Button>
