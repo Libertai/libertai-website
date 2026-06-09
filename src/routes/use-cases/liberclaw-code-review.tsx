@@ -75,7 +75,7 @@ const features = [
 		icon: Shield,
 		title: "No API Keys from OpenAI or Anthropic",
 		description:
-			"Inference runs through LibertAI using open models: Qwen3 Coder for code analysis and GLM-4.7 for general reasoning. No usage tracking by third parties. No surprise bills.",
+			"Inference runs through LibertAI using current open models such as Qwen3.6, Qwen3.5 122B, Gemma 4, and DeepSeek V4 Flash. No usage tracking by third parties. No surprise bills.",
 	},
 	{
 		icon: Clock,
@@ -122,7 +122,7 @@ const faqs = [
 		id: 3,
 		question: "Can I run AI code review without an API key?",
 		answer:
-			"Yes. LiberClaw agents use LibertAI for inference, which runs open models (Qwen3 Coder, GLM-4.7) on decentralized infrastructure. You can deploy a self-hosted AI code review agent without configuring API keys from OpenAI, Anthropic, or any other provider. The inference is included.",
+			"Yes. LiberClaw agents use LibertAI for inference, which runs current open models such as Qwen3.6, Qwen3.5 122B, Gemma 4, and DeepSeek V4 Flash on decentralized infrastructure. You can deploy a self-hosted AI code review agent without configuring API keys from OpenAI, Anthropic, or any other provider. The inference is included.",
 	},
 ];
 

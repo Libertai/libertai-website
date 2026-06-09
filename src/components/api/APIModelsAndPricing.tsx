@@ -1,6 +1,6 @@
 import backgroundImage from "@/assets/background-left.png";
 import backgroundImageMobile from "@/assets/background-left-mobile.png";
-import { Brain, Eye, ExternalLink, Image, Lock, Settings, Sparkles } from "lucide-react";
+import { Brain, Database, Eye, ExternalLink, Image, Lock, Search, Settings, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip.tsx";
 import { useEffect, useState } from "react";
@@ -16,6 +16,11 @@ interface TextCapabilities {
 	vision: boolean;
 }
 
+interface EmbeddingCapabilities {
+	context_window: number;
+	dimensions: number;
+}
+
 interface Model {
 	id: string;
 	name: string;
@@ -24,6 +29,7 @@ interface Model {
 		text?: TextCapabilities;
 		image?: boolean;
 		search?: boolean;
+		embedding?: EmbeddingCapabilities;
 	};
 	pricing: {
 		text?: {
@@ -32,6 +38,9 @@ interface Model {
 		};
 		image?: number;
 		search?: number;
+		embedding?: {
+			price_per_million_input_tokens: number;
+		};
 	};
 }
 
@@ -74,6 +83,8 @@ function TextModelCapabilities({ capabilities }: { capabilities: TextCapabilitie
 export function APIModelsAndPricing() {
 	const [textModels, setTextModels] = useState<Model[]>([]);
 	const [imageModels, setImageModels] = useState<Model[]>([]);
+	const [embeddingModels, setEmbeddingModels] = useState<Model[]>([]);
+	const [searchModels, setSearchModels] = useState<Model[]>([]);
 	const [visible, setVisible] = useState(false);
 
 	useEffect(() => {
@@ -83,9 +94,13 @@ export function APIModelsAndPricing() {
 				const models = data.data.LTAI_PRICING.models;
 				const text = models.filter((m) => m.capabilities.text && m.pricing.text);
 				const image = models.filter((m) => m.capabilities.image && m.pricing.image);
-				if (text.length > 0 || image.length > 0) {
+				const embedding = models.filter((m) => m.capabilities.embedding && m.pricing.embedding);
+				const search = models.filter((m) => m.capabilities.search && m.pricing.search);
+				if (text.length > 0 || image.length > 0 || embedding.length > 0 || search.length > 0) {
 					setTextModels(text);
 					setImageModels(image);
+					setEmbeddingModels(embedding);
+					setSearchModels(search);
 					setVisible(true);
 				}
 			})
@@ -249,6 +264,142 @@ export function APIModelsAndPricing() {
 											<div className="text-sm">
 												<span>Price per image:</span>
 												<div className="text-white">${model.pricing.image!.toFixed(3)}</div>
+											</div>
+										</div>
+									</div>
+								))}
+							</div>
+						</>
+					)}
+
+					{/* Embedding Models */}
+					{embeddingModels.length > 0 && (
+						<>
+							<h3 className="text-2xl font-bold text-white mb-6 mt-16">Embeddings</h3>
+
+							{/* Desktop Table */}
+							<div className="hidden md:block">
+								<table className="w-full">
+									<thead>
+										<tr className="border-b border-white/20">
+											<th className="text-left py-4 text-sm font-satoshi">Model</th>
+											<th className="text-center py-4 text-sm font-satoshi">Dimensions</th>
+											<th className="text-center py-4 text-sm font-satoshi">Context</th>
+											<th className="text-center py-4 text-sm font-satoshi">Input (per 1M tokens)</th>
+										</tr>
+									</thead>
+									<tbody>
+										{embeddingModels.map((model, index) => (
+											<tr key={model.id} className={index !== embeddingModels.length - 1 ? "border-b border-white/10" : ""}>
+												<td className="py-6">
+													<div className="flex items-center gap-3">
+														<div>
+															<div className="flex items-center gap-2">
+																<Database className="w-6 h-6 text-[#EA7AF4]" />
+																<h3 className="text-white text-2xl">{model.name}</h3>
+															</div>
+															<p className="text-sm font-satoshi mt-1 max-w-md text-white/60">{model.id}</p>
+														</div>
+													</div>
+												</td>
+												<td className="py-6 text-center text-2xl text-white">{model.capabilities.embedding!.dimensions}</td>
+												<td className="py-6 text-center text-2xl text-white">
+													{model.capabilities.embedding!.context_window.toLocaleString()}
+												</td>
+												<td className="py-6 text-center text-2xl text-white">
+													${model.pricing.embedding!.price_per_million_input_tokens.toFixed(2)}
+												</td>
+											</tr>
+										))}
+									</tbody>
+								</table>
+							</div>
+
+							{/* Mobile Cards */}
+							<div className="md:hidden space-y-6">
+								{embeddingModels.map((model) => (
+									<div key={model.id} className="border border-white/10 rounded-lg p-6 bg-white/5 backdrop-blur-sm">
+										<div className="space-y-4">
+											<div className="flex items-center gap-3">
+												<Database className="w-6 h-6 text-[#EA7AF4]" />
+												<div>
+													<h3 className="text-white">{model.name}</h3>
+													<p className="text-xs text-white/60">{model.id}</p>
+												</div>
+											</div>
+											<div className="grid grid-cols-2 gap-4 text-sm">
+												<div>
+													<span>Dimensions:</span>
+													<div className="text-white">{model.capabilities.embedding!.dimensions}</div>
+												</div>
+												<div>
+													<span>Context:</span>
+													<div className="text-white">{model.capabilities.embedding!.context_window.toLocaleString()}</div>
+												</div>
+												<div>
+													<span>Input Tokens:</span>
+													<div className="text-white">
+														${model.pricing.embedding!.price_per_million_input_tokens.toFixed(2)}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								))}
+							</div>
+						</>
+					)}
+
+					{/* Search Models */}
+					{searchModels.length > 0 && (
+						<>
+							<h3 className="text-2xl font-bold text-white mb-6 mt-16">Search</h3>
+
+							{/* Desktop Table */}
+							<div className="hidden md:block">
+								<table className="w-full">
+									<thead>
+										<tr className="border-b border-white/20">
+											<th className="text-left py-4 text-sm font-satoshi">Model</th>
+											<th className="text-center py-4 text-sm font-satoshi">Price per request</th>
+										</tr>
+									</thead>
+									<tbody>
+										{searchModels.map((model, index) => (
+											<tr key={model.id} className={index !== searchModels.length - 1 ? "border-b border-white/10" : ""}>
+												<td className="py-6">
+													<div className="flex items-center gap-3">
+														<div>
+															<div className="flex items-center gap-2">
+																<Search className="w-6 h-6 text-[#EA7AF4]" />
+																<h3 className="text-white text-2xl">{model.name}</h3>
+															</div>
+															<p className="text-sm font-satoshi mt-1 max-w-md text-white/60">{model.id}</p>
+														</div>
+													</div>
+												</td>
+												<td className="py-6 text-center text-2xl text-white">${model.pricing.search!.toFixed(3)}</td>
+											</tr>
+										))}
+									</tbody>
+								</table>
+							</div>
+
+							{/* Mobile Cards */}
+							<div className="md:hidden space-y-6">
+								{searchModels.map((model) => (
+									<div key={model.id} className="border border-white/10 rounded-lg p-6 bg-white/5 backdrop-blur-sm">
+										<div className="space-y-4">
+											<div className="flex items-center gap-3">
+												<Search className="w-6 h-6 text-[#EA7AF4]" />
+												<div>
+													<h3 className="text-white">{model.name}</h3>
+													<p className="text-xs text-white/60">{model.id}</p>
+												</div>
+											</div>
+											<div className="text-sm">
+												<span>Price per request:</span>
+												<div className="text-white">${model.pricing.search!.toFixed(3)}</div>
 											</div>
 										</div>
 									</div>

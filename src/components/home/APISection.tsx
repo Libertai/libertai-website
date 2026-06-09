@@ -16,9 +16,9 @@ const features = [
 	},
 	{
 		icon: Rocket,
-		title: "Advanced Features",
+		title: "Production Features",
 		description:
-			"More models and features such as web search, function calling and deep reasoning are coming soon to expand your toolkit.",
+			"Use current text, image, embedding, and search models with function calling, vision, and reasoning support where available.",
 	},
 ];
 

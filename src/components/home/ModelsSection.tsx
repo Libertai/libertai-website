@@ -11,30 +11,30 @@ const features = [
 	{
 		image: textModelImage,
 		icon: MessageSquare,
-		title: "Text That Talks Back",
+		title: "Qwen3.6 for Daily Work",
 		description:
-			"Write epic stories, dig into research, or debate big ideas with a model that outshines most open-source chat benchmarks.",
+			"Use Qwen3.6-35B-A3B or Qwen3.6-27B for long-context chat, tool use, vision, and reasoning-heavy product workflows.",
 	},
 	{
 		image: creativityModelImage,
 		icon: Sparkles,
-		title: "Creativity That Sparks",
+		title: "Gemma 4 Multimodal",
 		description:
-			"Fast, flexible, and perfect for crafting stories, calling functions, or crushing everyday tasks with a tuned dataset.",
+			"Bring Gemma 4 31B into multimodal apps with a 262K context window, vision support, reasoning, and function calling.",
 	},
 	{
 		image: brainModelImage,
 		icon: Brain,
-		title: "Brains for Big Tasks",
+		title: "DeepSeek V4 Flash",
 		description:
-			"Multitask like a pro with a sparse mixture of experts model built for reasoning, creativity, and complex workflows.",
+			"Handle fast reasoning and agent workflows with DeepSeek V4 Flash, including an optional thinking variant in the API.",
 	},
 	{
 		image: codeModelImage,
 		icon: Code,
-		title: "Code That Clicks",
+		title: "Private TEE Inference",
 		description:
-			"Crank out clean code in 80+ languages, fueled by a model trained on 87% code data, ready for English and Chinese projects.",
+			"Use Hermes 3 8B in a Trusted Execution Environment when verifiable privacy matters more than raw model size.",
 	},
 ];
 

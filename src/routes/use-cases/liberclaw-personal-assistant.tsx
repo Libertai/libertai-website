@@ -147,7 +147,7 @@ const faqs = [
 		id: 3,
 		question: "Can I deploy an AI agent without OpenAI API keys?",
 		answer:
-			"Yes. LiberClaw agents use LibertAI for inference, which runs open models (Qwen3 Coder and GLM-4.7) on decentralized infrastructure. You do not need API keys from OpenAI, Anthropic, or any other centralized provider. This also means no usage tracking by third parties and no risk of account suspensions for running agents through someone else's API.",
+			"Yes. LiberClaw agents use LibertAI for inference, which runs current open models such as Qwen3.6, Qwen3.5 122B, Gemma 4, and DeepSeek V4 Flash on decentralized infrastructure. You do not need API keys from OpenAI, Anthropic, or any other centralized provider. This also means no usage tracking by third parties and no risk of account suspensions for running agents through someone else's API.",
 	},
 ];
 

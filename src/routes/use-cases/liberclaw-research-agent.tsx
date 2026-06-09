@@ -206,7 +206,7 @@ const limitations = [
 	{
 		title: "Open model capabilities",
 		description:
-			"LiberClaw uses open models (Qwen3 Coder, GLM-4.7) through LibertAI. These are strong models, but they may not match the largest proprietary models on every task. For most research and monitoring use cases, they work well.",
+			"LiberClaw uses current open models through LibertAI, including Qwen3.6, Qwen3.5 122B, Gemma 4, and DeepSeek V4 Flash. These are strong models, but they may not match the largest proprietary models on every task. For most research and monitoring use cases, they work well.",
 	},
 ];
 

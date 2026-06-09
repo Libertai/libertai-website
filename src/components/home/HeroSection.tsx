@@ -1,9 +1,22 @@
 import heroVideoDesktop from "@/assets/home/hero/desktop.webm";
 import heroVideoMobile from "@/assets/home/hero/mobile.webm";
-import { ExternalLink } from "lucide-react";
+import { Bot, ExternalLink, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { TypewriterEffect } from "@/components/TypewriterEffect.tsx";
 import { ScrollHuman } from "@/components/ScrollHuman.tsx";
+
+const primaryCtas = [
+	{
+		href: "https://app.liberclaw.ai",
+		label: "Launch Personal Agent",
+		icon: Bot,
+	},
+	{
+		href: "https://chat.libertai.io",
+		label: "Chat with AI Assistant",
+		icon: MessageCircle,
+	},
+];
 
 export function HeroSection() {
 	const scrollToServices = () => {
@@ -72,6 +85,19 @@ export function HeroSection() {
 				{/* Bottom buttons - desktop */}
 				<div className="hidden md:flex flex-wrap gap-3 justify-center justify-start font-satoshi">
 					<ScrollHuman onScroll={scrollToServices} />
+					{primaryCtas.map((cta) => {
+						const Icon = cta.icon;
+
+						return (
+							<a key={cta.href} href={cta.href} target="_blank" rel="noopener noreferrer">
+								<Button variant="glass" size="pill">
+									<Icon />
+									<span>{cta.label}</span>
+									<ExternalLink />
+								</Button>
+							</a>
+						);
+					})}
 					<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer">
 						<Button variant="glass" size="pill">
 							<span>Build with the API</span>
@@ -87,16 +113,44 @@ export function HeroSection() {
 				</div>
 
 				{/* Bottom buttons - mobile */}
-				<div className="md:hidden space-y-4 text-white">
-					<div className="font-satoshi flex justify-center gap-3">
-						<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer">
-							<Button variant="outline" size="lg">
+				<div className="w-full max-w-[320px] space-y-4 text-white md:hidden">
+					<div className="font-satoshi flex flex-col gap-3">
+						{primaryCtas.map((cta) => {
+							const Icon = cta.icon;
+
+							return (
+								<a key={cta.href} href={cta.href} target="_blank" rel="noopener noreferrer" className="block w-full">
+									<Button
+										variant="outline"
+										size="lg"
+										className="w-full gap-2 px-4 text-sm [&_svg]:size-4"
+									>
+										<Icon />
+										<span>{cta.label}</span>
+										<ExternalLink />
+									</Button>
+								</a>
+							);
+						})}
+					</div>
+
+					<div className="font-satoshi grid grid-cols-2 gap-3">
+						<a href="https://console.libertai.io" target="_blank" rel="noopener noreferrer" className="block min-w-0 w-full">
+							<Button
+								variant="outline"
+								size="lg"
+								className="min-w-0 w-full shrink overflow-hidden gap-1.5 px-2 text-xs sm:text-sm [&_svg]:size-3.5"
+							>
 								<span>API</span>
 								<ExternalLink />
 							</Button>
 						</a>
-						<a href="https://docs.libertai.io" target="_blank" rel="noopener noreferrer">
-							<Button variant="outline" size="lg">
+						<a href="https://docs.libertai.io" target="_blank" rel="noopener noreferrer" className="block min-w-0 w-full">
+							<Button
+								variant="outline"
+								size="lg"
+								className="min-w-0 w-full shrink overflow-hidden gap-1.5 px-2 text-xs sm:text-sm [&_svg]:size-3.5"
+							>
 								<span>Dev Docs</span>
 								<ExternalLink />
 							</Button>
