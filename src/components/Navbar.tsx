@@ -20,6 +20,7 @@ export function Navbar() {
 		// { href: "/a", label: "About", external: false },
 		{ href: "/private-ai", label: "Private AI", external: false },
 		{ href: "/api", label: "API", external: false },
+		{ href: "/search", label: "Search", external: false },
 		{ href: "/tokenomics", label: "Tokenomics", external: false },
 		{ href: "https://blog.libertai.io", label: "Blog", external: true },
 		{ href: "/roadmap", label: "Roadmap", external: false },

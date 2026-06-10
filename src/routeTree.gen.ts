@@ -12,6 +12,7 @@
 
 import { Route as rootRoute } from './routes/__root'
 import { Route as TokenomicsImport } from './routes/tokenomics'
+import { Route as SearchImport } from './routes/search'
 import { Route as RoadmapImport } from './routes/roadmap'
 import { Route as PrivateAiImport } from './routes/private-ai'
 import { Route as ApiImport } from './routes/api'
@@ -27,6 +28,12 @@ import { Route as UseCasesGenlayerImport } from './routes/use-cases/genlayer'
 const TokenomicsRoute = TokenomicsImport.update({
   id: '/tokenomics',
   path: '/tokenomics',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const SearchRoute = SearchImport.update({
+  id: '/search',
+  path: '/search',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -119,6 +126,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof RoadmapImport
       parentRoute: typeof rootRoute
     }
+    '/search': {
+      id: '/search'
+      path: '/search'
+      fullPath: '/search'
+      preLoaderRoute: typeof SearchImport
+      parentRoute: typeof rootRoute
+    }
     '/tokenomics': {
       id: '/tokenomics'
       path: '/tokenomics'
@@ -171,6 +185,7 @@ export interface FileRoutesByFullPath {
   '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
+  '/search': typeof SearchRoute
   '/tokenomics': typeof TokenomicsRoute
   '/use-cases/genlayer': typeof UseCasesGenlayerRoute
   '/use-cases/liberclaw-code-review': typeof UseCasesLiberclawCodeReviewRoute
@@ -184,6 +199,7 @@ export interface FileRoutesByTo {
   '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
+  '/search': typeof SearchRoute
   '/tokenomics': typeof TokenomicsRoute
   '/use-cases/genlayer': typeof UseCasesGenlayerRoute
   '/use-cases/liberclaw-code-review': typeof UseCasesLiberclawCodeReviewRoute
@@ -198,6 +214,7 @@ export interface FileRoutesById {
   '/api': typeof ApiRoute
   '/private-ai': typeof PrivateAiRoute
   '/roadmap': typeof RoadmapRoute
+  '/search': typeof SearchRoute
   '/tokenomics': typeof TokenomicsRoute
   '/use-cases/genlayer': typeof UseCasesGenlayerRoute
   '/use-cases/liberclaw-code-review': typeof UseCasesLiberclawCodeReviewRoute
@@ -213,6 +230,7 @@ export interface FileRouteTypes {
     | '/api'
     | '/private-ai'
     | '/roadmap'
+    | '/search'
     | '/tokenomics'
     | '/use-cases/genlayer'
     | '/use-cases/liberclaw-code-review'
@@ -225,6 +243,7 @@ export interface FileRouteTypes {
     | '/api'
     | '/private-ai'
     | '/roadmap'
+    | '/search'
     | '/tokenomics'
     | '/use-cases/genlayer'
     | '/use-cases/liberclaw-code-review'
@@ -237,6 +256,7 @@ export interface FileRouteTypes {
     | '/api'
     | '/private-ai'
     | '/roadmap'
+    | '/search'
     | '/tokenomics'
     | '/use-cases/genlayer'
     | '/use-cases/liberclaw-code-review'
@@ -251,6 +271,7 @@ export interface RootRouteChildren {
   ApiRoute: typeof ApiRoute
   PrivateAiRoute: typeof PrivateAiRoute
   RoadmapRoute: typeof RoadmapRoute
+  SearchRoute: typeof SearchRoute
   TokenomicsRoute: typeof TokenomicsRoute
   UseCasesGenlayerRoute: typeof UseCasesGenlayerRoute
   UseCasesLiberclawCodeReviewRoute: typeof UseCasesLiberclawCodeReviewRoute
@@ -264,6 +285,7 @@ const rootRouteChildren: RootRouteChildren = {
   ApiRoute: ApiRoute,
   PrivateAiRoute: PrivateAiRoute,
   RoadmapRoute: RoadmapRoute,
+  SearchRoute: SearchRoute,
   TokenomicsRoute: TokenomicsRoute,
   UseCasesGenlayerRoute: UseCasesGenlayerRoute,
   UseCasesLiberclawCodeReviewRoute: UseCasesLiberclawCodeReviewRoute,
@@ -287,6 +309,7 @@ export const routeTree = rootRoute
         "/api",
         "/private-ai",
         "/roadmap",
+        "/search",
         "/tokenomics",
         "/use-cases/genlayer",
         "/use-cases/liberclaw-code-review",
@@ -306,6 +329,9 @@ export const routeTree = rootRoute
     },
     "/roadmap": {
       "filePath": "roadmap.tsx"
+    },
+    "/search": {
+      "filePath": "search.tsx"
     },
     "/tokenomics": {
       "filePath": "tokenomics.tsx"
