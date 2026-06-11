@@ -1,6 +1,6 @@
 import backgroundImage from "@/assets/background-left.png";
 import backgroundImageMobile from "@/assets/background-left-mobile.png";
-import { Brain, Database, Eye, ExternalLink, Image, Lock, Search, Settings, Sparkles } from "lucide-react";
+import { AudioLines, Brain, Database, Eye, ExternalLink, Image, Lock, Search, Settings, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button.tsx";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip.tsx";
 import { useEffect, useState } from "react";
@@ -21,6 +21,11 @@ interface EmbeddingCapabilities {
 	dimensions: number;
 }
 
+interface AudioCapabilities {
+	languages: string[];
+	voices: string[];
+}
+
 interface Model {
 	id: string;
 	name: string;
@@ -30,6 +35,7 @@ interface Model {
 		image?: boolean;
 		search?: boolean;
 		embedding?: EmbeddingCapabilities;
+		audio?: AudioCapabilities;
 	};
 	pricing: {
 		text?: {
@@ -40,6 +46,9 @@ interface Model {
 		search?: number;
 		embedding?: {
 			price_per_million_input_tokens: number;
+		};
+		audio?: {
+			price_per_million_input_characters: number;
 		};
 	};
 }
@@ -84,6 +93,7 @@ export function APIModelsAndPricing() {
 	const [textModels, setTextModels] = useState<Model[]>([]);
 	const [imageModels, setImageModels] = useState<Model[]>([]);
 	const [embeddingModels, setEmbeddingModels] = useState<Model[]>([]);
+	const [audioModels, setAudioModels] = useState<Model[]>([]);
 	const [searchModels, setSearchModels] = useState<Model[]>([]);
 	const [visible, setVisible] = useState(false);
 
@@ -95,11 +105,13 @@ export function APIModelsAndPricing() {
 				const text = models.filter((m) => m.capabilities.text && m.pricing.text);
 				const image = models.filter((m) => m.capabilities.image && m.pricing.image);
 				const embedding = models.filter((m) => m.capabilities.embedding && m.pricing.embedding);
+				const audio = models.filter((m) => m.capabilities.audio && m.pricing.audio);
 				const search = models.filter((m) => m.capabilities.search && m.pricing.search);
-				if (text.length > 0 || image.length > 0 || embedding.length > 0 || search.length > 0) {
+				if (text.length > 0 || image.length > 0 || embedding.length > 0 || audio.length > 0 || search.length > 0) {
 					setTextModels(text);
 					setImageModels(image);
 					setEmbeddingModels(embedding);
+					setAudioModels(audio);
 					setSearchModels(search);
 					setVisible(true);
 				}
@@ -340,6 +352,85 @@ export function APIModelsAndPricing() {
 													<span>Input Tokens:</span>
 													<div className="text-white">
 														${model.pricing.embedding!.price_per_million_input_tokens.toFixed(2)}
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								))}
+							</div>
+						</>
+					)}
+
+					{/* Audio Models */}
+					{audioModels.length > 0 && (
+						<>
+							<h3 className="text-2xl font-bold text-white mb-6 mt-16">Text to Speech</h3>
+
+							{/* Desktop Table */}
+							<div className="hidden md:block">
+								<table className="w-full">
+									<thead>
+										<tr className="border-b border-white/20">
+											<th className="text-left py-4 text-sm font-satoshi">Model</th>
+											<th className="text-center py-4 text-sm font-satoshi">Voices</th>
+											<th className="text-center py-4 text-sm font-satoshi">Price per 1M input characters</th>
+										</tr>
+									</thead>
+									<tbody>
+										{audioModels.map((model, index) => (
+											<tr key={model.id} className={index !== audioModels.length - 1 ? "border-b border-white/10" : ""}>
+												<td className="py-6">
+													<div className="flex items-center gap-3">
+														<div>
+															<div className="flex items-center gap-2">
+																<AudioLines className="w-6 h-6 text-[#EA7AF4]" />
+																<h3 className="text-white text-2xl">{model.name}</h3>
+															</div>
+															<p className="text-sm font-satoshi mt-1 max-w-md text-white/60">{model.id}</p>
+														</div>
+													</div>
+												</td>
+												<td className="py-6 text-center text-2xl text-white">
+													<Tooltip>
+														<TooltipTrigger asChild>
+															<span className="cursor-help">{model.capabilities.audio!.voices.length}</span>
+														</TooltipTrigger>
+														<TooltipContent className="max-w-md">
+															{model.capabilities.audio!.voices.join(", ")}
+														</TooltipContent>
+													</Tooltip>
+												</td>
+												<td className="py-6 text-center text-2xl text-white">
+													${model.pricing.audio!.price_per_million_input_characters.toFixed(2)}
+												</td>
+											</tr>
+										))}
+									</tbody>
+								</table>
+							</div>
+
+							{/* Mobile Cards */}
+							<div className="md:hidden space-y-6">
+								{audioModels.map((model) => (
+									<div key={model.id} className="border border-white/10 rounded-lg p-6 bg-white/5 backdrop-blur-sm">
+										<div className="space-y-4">
+											<div className="flex items-center gap-3">
+												<AudioLines className="w-6 h-6 text-[#EA7AF4]" />
+												<div>
+													<h3 className="text-white">{model.name}</h3>
+													<p className="text-xs text-white/60">{model.id}</p>
+												</div>
+											</div>
+											<div className="grid grid-cols-2 gap-4 text-sm">
+												<div>
+													<span>Voices:</span>
+													<div className="text-white">{model.capabilities.audio!.voices.length}</div>
+												</div>
+												<div>
+													<span>Per 1M characters:</span>
+													<div className="text-white">
+														${model.pricing.audio!.price_per_million_input_characters.toFixed(2)}
 													</div>
 												</div>
 											</div>

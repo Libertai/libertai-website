@@ -18,7 +18,7 @@ const features = [
 		icon: Rocket,
 		title: "Production Features",
 		description:
-			"Use current text, image, embedding, and search models with function calling, vision, and reasoning support where available.",
+			"Use current text, image, embedding, speech, and search models with function calling, vision, and reasoning support where available.",
 	},
 ];
 
