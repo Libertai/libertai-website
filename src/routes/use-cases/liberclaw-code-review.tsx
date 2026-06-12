@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SEO } from "@/components/SEO.tsx";
 import { FooterSection } from "@/components/FooterSection.tsx";
-import { LiberClawHero } from "@/components/use-cases/liberclaw/LiberClawHero.tsx";
-import { HowItWorks } from "@/components/use-cases/liberclaw/HowItWorks.tsx";
-import { FeatureGrid } from "@/components/use-cases/liberclaw/FeatureGrid.tsx";
-import { ComparisonTable } from "@/components/use-cases/liberclaw/ComparisonTable.tsx";
-import { FAQSection } from "@/components/use-cases/liberclaw/FAQSection.tsx";
-import { CTASection } from "@/components/use-cases/liberclaw/CTASection.tsx";
+import { LandingHero } from "@/components/landing/LandingHero.tsx";
+import { HowItWorks } from "@/components/landing/HowItWorks.tsx";
+import { FeatureGrid } from "@/components/landing/FeatureGrid.tsx";
+import { ComparisonTable } from "@/components/landing/ComparisonTable.tsx";
+import { FAQSection } from "@/components/landing/FAQSection.tsx";
+import { CTASection } from "@/components/landing/CTASection.tsx";
 import { RelatedPages } from "@/components/use-cases/liberclaw/RelatedPages.tsx";
 import { Code, Server, Clock, Zap, Shield } from "lucide-react";
 
@@ -134,7 +134,7 @@ function LiberClawCodeReview() {
 				description="Deploy an open-source AI code review agent that runs on its own VM, uses open models, and reviews every PR 24/7. Set up in under 5 minutes with LiberClaw."
 				path="/use-cases/liberclaw-code-review"
 			/>
-			<LiberClawHero
+			<LandingHero
 				label="Code Review"
 				title="Ship an AI Code Review Agent That Runs on Your Infrastructure"
 				description="AI-generated code is flooding pull requests faster than your team can read them. LiberClaw lets you deploy an AI code review agent that runs on its own VM, uses open models, and reviews every PR around the clock. Fully open source, self-hosted, and ready in minutes."

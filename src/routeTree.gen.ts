@@ -11,11 +11,19 @@
 // Import Routes
 
 import { Route as rootRoute } from './routes/__root'
+import { Route as UncensoredAiImport } from './routes/uncensored-ai'
 import { Route as TokenomicsImport } from './routes/tokenomics'
 import { Route as SearchImport } from './routes/search'
 import { Route as RoadmapImport } from './routes/roadmap'
+import { Route as PrivateChatgptAlternativeImport } from './routes/private-chatgpt-alternative'
 import { Route as PrivateAiImport } from './routes/private-ai'
+import { Route as OpenaiApiAlternativeImport } from './routes/openai-api-alternative'
+import { Route as OpenSourceAiImport } from './routes/open-source-ai'
+import { Route as DecentralizedLlmImport } from './routes/decentralized-llm'
+import { Route as ConfidentialAiImport } from './routes/confidential-ai'
 import { Route as ApiImport } from './routes/api'
+import { Route as AiFreedomImport } from './routes/ai-freedom'
+import { Route as AgentsImport } from './routes/agents'
 import { Route as IndexImport } from './routes/index'
 import { Route as UseCasesUbisoftImport } from './routes/use-cases/ubisoft'
 import { Route as UseCasesLiberclawResearchAgentImport } from './routes/use-cases/liberclaw-research-agent'
@@ -24,6 +32,12 @@ import { Route as UseCasesLiberclawCodeReviewImport } from './routes/use-cases/l
 import { Route as UseCasesGenlayerImport } from './routes/use-cases/genlayer'
 
 // Create/Update Routes
+
+const UncensoredAiRoute = UncensoredAiImport.update({
+  id: '/uncensored-ai',
+  path: '/uncensored-ai',
+  getParentRoute: () => rootRoute,
+} as any)
 
 const TokenomicsRoute = TokenomicsImport.update({
   id: '/tokenomics',
@@ -43,15 +57,57 @@ const RoadmapRoute = RoadmapImport.update({
   getParentRoute: () => rootRoute,
 } as any)
 
+const PrivateChatgptAlternativeRoute = PrivateChatgptAlternativeImport.update({
+  id: '/private-chatgpt-alternative',
+  path: '/private-chatgpt-alternative',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const PrivateAiRoute = PrivateAiImport.update({
   id: '/private-ai',
   path: '/private-ai',
   getParentRoute: () => rootRoute,
 } as any)
 
+const OpenaiApiAlternativeRoute = OpenaiApiAlternativeImport.update({
+  id: '/openai-api-alternative',
+  path: '/openai-api-alternative',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const OpenSourceAiRoute = OpenSourceAiImport.update({
+  id: '/open-source-ai',
+  path: '/open-source-ai',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const DecentralizedLlmRoute = DecentralizedLlmImport.update({
+  id: '/decentralized-llm',
+  path: '/decentralized-llm',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const ConfidentialAiRoute = ConfidentialAiImport.update({
+  id: '/confidential-ai',
+  path: '/confidential-ai',
+  getParentRoute: () => rootRoute,
+} as any)
+
 const ApiRoute = ApiImport.update({
   id: '/api',
   path: '/api',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AiFreedomRoute = AiFreedomImport.update({
+  id: '/ai-freedom',
+  path: '/ai-freedom',
+  getParentRoute: () => rootRoute,
+} as any)
+
+const AgentsRoute = AgentsImport.update({
+  id: '/agents',
+  path: '/agents',
   getParentRoute: () => rootRoute,
 } as any)
 
@@ -105,6 +161,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexImport
       parentRoute: typeof rootRoute
     }
+    '/agents': {
+      id: '/agents'
+      path: '/agents'
+      fullPath: '/agents'
+      preLoaderRoute: typeof AgentsImport
+      parentRoute: typeof rootRoute
+    }
+    '/ai-freedom': {
+      id: '/ai-freedom'
+      path: '/ai-freedom'
+      fullPath: '/ai-freedom'
+      preLoaderRoute: typeof AiFreedomImport
+      parentRoute: typeof rootRoute
+    }
     '/api': {
       id: '/api'
       path: '/api'
@@ -112,11 +182,46 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ApiImport
       parentRoute: typeof rootRoute
     }
+    '/confidential-ai': {
+      id: '/confidential-ai'
+      path: '/confidential-ai'
+      fullPath: '/confidential-ai'
+      preLoaderRoute: typeof ConfidentialAiImport
+      parentRoute: typeof rootRoute
+    }
+    '/decentralized-llm': {
+      id: '/decentralized-llm'
+      path: '/decentralized-llm'
+      fullPath: '/decentralized-llm'
+      preLoaderRoute: typeof DecentralizedLlmImport
+      parentRoute: typeof rootRoute
+    }
+    '/open-source-ai': {
+      id: '/open-source-ai'
+      path: '/open-source-ai'
+      fullPath: '/open-source-ai'
+      preLoaderRoute: typeof OpenSourceAiImport
+      parentRoute: typeof rootRoute
+    }
+    '/openai-api-alternative': {
+      id: '/openai-api-alternative'
+      path: '/openai-api-alternative'
+      fullPath: '/openai-api-alternative'
+      preLoaderRoute: typeof OpenaiApiAlternativeImport
+      parentRoute: typeof rootRoute
+    }
     '/private-ai': {
       id: '/private-ai'
       path: '/private-ai'
       fullPath: '/private-ai'
       preLoaderRoute: typeof PrivateAiImport
+      parentRoute: typeof rootRoute
+    }
+    '/private-chatgpt-alternative': {
+      id: '/private-chatgpt-alternative'
+      path: '/private-chatgpt-alternative'
+      fullPath: '/private-chatgpt-alternative'
+      preLoaderRoute: typeof PrivateChatgptAlternativeImport
       parentRoute: typeof rootRoute
     }
     '/roadmap': {
@@ -138,6 +243,13 @@ declare module '@tanstack/react-router' {
       path: '/tokenomics'
       fullPath: '/tokenomics'
       preLoaderRoute: typeof TokenomicsImport
+      parentRoute: typeof rootRoute
+    }
+    '/uncensored-ai': {
+      id: '/uncensored-ai'
+      path: '/uncensored-ai'
+      fullPath: '/uncensored-ai'
+      preLoaderRoute: typeof UncensoredAiImport
       parentRoute: typeof rootRoute
     }
     '/use-cases/genlayer': {
@@ -182,11 +294,19 @@ declare module '@tanstack/react-router' {
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/agents': typeof AgentsRoute
+  '/ai-freedom': typeof AiFreedomRoute
   '/api': typeof ApiRoute
+  '/confidential-ai': typeof ConfidentialAiRoute
+  '/decentralized-llm': typeof DecentralizedLlmRoute
+  '/open-source-ai': typeof OpenSourceAiRoute
+  '/openai-api-alternative': typeof OpenaiApiAlternativeRoute
   '/private-ai': typeof PrivateAiRoute
+  '/private-chatgpt-alternative': typeof PrivateChatgptAlternativeRoute
   '/roadmap': typeof RoadmapRoute
   '/search': typeof SearchRoute
   '/tokenomics': typeof TokenomicsRoute
+  '/uncensored-ai': typeof UncensoredAiRoute
   '/use-cases/genlayer': typeof UseCasesGenlayerRoute
   '/use-cases/liberclaw-code-review': typeof UseCasesLiberclawCodeReviewRoute
   '/use-cases/liberclaw-personal-assistant': typeof UseCasesLiberclawPersonalAssistantRoute
@@ -196,11 +316,19 @@ export interface FileRoutesByFullPath {
 
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/agents': typeof AgentsRoute
+  '/ai-freedom': typeof AiFreedomRoute
   '/api': typeof ApiRoute
+  '/confidential-ai': typeof ConfidentialAiRoute
+  '/decentralized-llm': typeof DecentralizedLlmRoute
+  '/open-source-ai': typeof OpenSourceAiRoute
+  '/openai-api-alternative': typeof OpenaiApiAlternativeRoute
   '/private-ai': typeof PrivateAiRoute
+  '/private-chatgpt-alternative': typeof PrivateChatgptAlternativeRoute
   '/roadmap': typeof RoadmapRoute
   '/search': typeof SearchRoute
   '/tokenomics': typeof TokenomicsRoute
+  '/uncensored-ai': typeof UncensoredAiRoute
   '/use-cases/genlayer': typeof UseCasesGenlayerRoute
   '/use-cases/liberclaw-code-review': typeof UseCasesLiberclawCodeReviewRoute
   '/use-cases/liberclaw-personal-assistant': typeof UseCasesLiberclawPersonalAssistantRoute
@@ -211,11 +339,19 @@ export interface FileRoutesByTo {
 export interface FileRoutesById {
   __root__: typeof rootRoute
   '/': typeof IndexRoute
+  '/agents': typeof AgentsRoute
+  '/ai-freedom': typeof AiFreedomRoute
   '/api': typeof ApiRoute
+  '/confidential-ai': typeof ConfidentialAiRoute
+  '/decentralized-llm': typeof DecentralizedLlmRoute
+  '/open-source-ai': typeof OpenSourceAiRoute
+  '/openai-api-alternative': typeof OpenaiApiAlternativeRoute
   '/private-ai': typeof PrivateAiRoute
+  '/private-chatgpt-alternative': typeof PrivateChatgptAlternativeRoute
   '/roadmap': typeof RoadmapRoute
   '/search': typeof SearchRoute
   '/tokenomics': typeof TokenomicsRoute
+  '/uncensored-ai': typeof UncensoredAiRoute
   '/use-cases/genlayer': typeof UseCasesGenlayerRoute
   '/use-cases/liberclaw-code-review': typeof UseCasesLiberclawCodeReviewRoute
   '/use-cases/liberclaw-personal-assistant': typeof UseCasesLiberclawPersonalAssistantRoute
@@ -227,11 +363,19 @@ export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/agents'
+    | '/ai-freedom'
     | '/api'
+    | '/confidential-ai'
+    | '/decentralized-llm'
+    | '/open-source-ai'
+    | '/openai-api-alternative'
     | '/private-ai'
+    | '/private-chatgpt-alternative'
     | '/roadmap'
     | '/search'
     | '/tokenomics'
+    | '/uncensored-ai'
     | '/use-cases/genlayer'
     | '/use-cases/liberclaw-code-review'
     | '/use-cases/liberclaw-personal-assistant'
@@ -240,11 +384,19 @@ export interface FileRouteTypes {
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/agents'
+    | '/ai-freedom'
     | '/api'
+    | '/confidential-ai'
+    | '/decentralized-llm'
+    | '/open-source-ai'
+    | '/openai-api-alternative'
     | '/private-ai'
+    | '/private-chatgpt-alternative'
     | '/roadmap'
     | '/search'
     | '/tokenomics'
+    | '/uncensored-ai'
     | '/use-cases/genlayer'
     | '/use-cases/liberclaw-code-review'
     | '/use-cases/liberclaw-personal-assistant'
@@ -253,11 +405,19 @@ export interface FileRouteTypes {
   id:
     | '__root__'
     | '/'
+    | '/agents'
+    | '/ai-freedom'
     | '/api'
+    | '/confidential-ai'
+    | '/decentralized-llm'
+    | '/open-source-ai'
+    | '/openai-api-alternative'
     | '/private-ai'
+    | '/private-chatgpt-alternative'
     | '/roadmap'
     | '/search'
     | '/tokenomics'
+    | '/uncensored-ai'
     | '/use-cases/genlayer'
     | '/use-cases/liberclaw-code-review'
     | '/use-cases/liberclaw-personal-assistant'
@@ -268,11 +428,19 @@ export interface FileRouteTypes {
 
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AgentsRoute: typeof AgentsRoute
+  AiFreedomRoute: typeof AiFreedomRoute
   ApiRoute: typeof ApiRoute
+  ConfidentialAiRoute: typeof ConfidentialAiRoute
+  DecentralizedLlmRoute: typeof DecentralizedLlmRoute
+  OpenSourceAiRoute: typeof OpenSourceAiRoute
+  OpenaiApiAlternativeRoute: typeof OpenaiApiAlternativeRoute
   PrivateAiRoute: typeof PrivateAiRoute
+  PrivateChatgptAlternativeRoute: typeof PrivateChatgptAlternativeRoute
   RoadmapRoute: typeof RoadmapRoute
   SearchRoute: typeof SearchRoute
   TokenomicsRoute: typeof TokenomicsRoute
+  UncensoredAiRoute: typeof UncensoredAiRoute
   UseCasesGenlayerRoute: typeof UseCasesGenlayerRoute
   UseCasesLiberclawCodeReviewRoute: typeof UseCasesLiberclawCodeReviewRoute
   UseCasesLiberclawPersonalAssistantRoute: typeof UseCasesLiberclawPersonalAssistantRoute
@@ -282,11 +450,19 @@ export interface RootRouteChildren {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AgentsRoute: AgentsRoute,
+  AiFreedomRoute: AiFreedomRoute,
   ApiRoute: ApiRoute,
+  ConfidentialAiRoute: ConfidentialAiRoute,
+  DecentralizedLlmRoute: DecentralizedLlmRoute,
+  OpenSourceAiRoute: OpenSourceAiRoute,
+  OpenaiApiAlternativeRoute: OpenaiApiAlternativeRoute,
   PrivateAiRoute: PrivateAiRoute,
+  PrivateChatgptAlternativeRoute: PrivateChatgptAlternativeRoute,
   RoadmapRoute: RoadmapRoute,
   SearchRoute: SearchRoute,
   TokenomicsRoute: TokenomicsRoute,
+  UncensoredAiRoute: UncensoredAiRoute,
   UseCasesGenlayerRoute: UseCasesGenlayerRoute,
   UseCasesLiberclawCodeReviewRoute: UseCasesLiberclawCodeReviewRoute,
   UseCasesLiberclawPersonalAssistantRoute:
@@ -306,11 +482,19 @@ export const routeTree = rootRoute
       "filePath": "__root.tsx",
       "children": [
         "/",
+        "/agents",
+        "/ai-freedom",
         "/api",
+        "/confidential-ai",
+        "/decentralized-llm",
+        "/open-source-ai",
+        "/openai-api-alternative",
         "/private-ai",
+        "/private-chatgpt-alternative",
         "/roadmap",
         "/search",
         "/tokenomics",
+        "/uncensored-ai",
         "/use-cases/genlayer",
         "/use-cases/liberclaw-code-review",
         "/use-cases/liberclaw-personal-assistant",
@@ -321,11 +505,32 @@ export const routeTree = rootRoute
     "/": {
       "filePath": "index.tsx"
     },
+    "/agents": {
+      "filePath": "agents.tsx"
+    },
+    "/ai-freedom": {
+      "filePath": "ai-freedom.tsx"
+    },
     "/api": {
       "filePath": "api.tsx"
     },
+    "/confidential-ai": {
+      "filePath": "confidential-ai.tsx"
+    },
+    "/decentralized-llm": {
+      "filePath": "decentralized-llm.tsx"
+    },
+    "/open-source-ai": {
+      "filePath": "open-source-ai.tsx"
+    },
+    "/openai-api-alternative": {
+      "filePath": "openai-api-alternative.tsx"
+    },
     "/private-ai": {
       "filePath": "private-ai.tsx"
+    },
+    "/private-chatgpt-alternative": {
+      "filePath": "private-chatgpt-alternative.tsx"
     },
     "/roadmap": {
       "filePath": "roadmap.tsx"
@@ -335,6 +540,9 @@ export const routeTree = rootRoute
     },
     "/tokenomics": {
       "filePath": "tokenomics.tsx"
+    },
+    "/uncensored-ai": {
+      "filePath": "uncensored-ai.tsx"
     },
     "/use-cases/genlayer": {
       "filePath": "use-cases/genlayer.tsx"

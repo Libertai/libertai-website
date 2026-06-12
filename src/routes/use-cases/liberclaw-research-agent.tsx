@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SEO } from "@/components/SEO.tsx";
 import { FooterSection } from "@/components/FooterSection.tsx";
-import { LiberClawHero } from "@/components/use-cases/liberclaw/LiberClawHero.tsx";
-import { HowItWorks } from "@/components/use-cases/liberclaw/HowItWorks.tsx";
-import { FeatureGrid } from "@/components/use-cases/liberclaw/FeatureGrid.tsx";
-import { ComparisonTable } from "@/components/use-cases/liberclaw/ComparisonTable.tsx";
-import { FAQSection } from "@/components/use-cases/liberclaw/FAQSection.tsx";
-import { CTASection } from "@/components/use-cases/liberclaw/CTASection.tsx";
+import { LandingHero } from "@/components/landing/LandingHero.tsx";
+import { HowItWorks } from "@/components/landing/HowItWorks.tsx";
+import { FeatureGrid } from "@/components/landing/FeatureGrid.tsx";
+import { ComparisonTable } from "@/components/landing/ComparisonTable.tsx";
+import { FAQSection } from "@/components/landing/FAQSection.tsx";
+import { CTASection } from "@/components/landing/CTASection.tsx";
 import { RelatedPages } from "@/components/use-cases/liberclaw/RelatedPages.tsx";
 import { Search, Eye, TrendingUp, FileText, GitBranch, Globe, AlertTriangle } from "lucide-react";
 
@@ -218,7 +218,7 @@ function LiberClawResearchAgent() {
 				description="Deploy an autonomous AI research agent that monitors the web, tracks changes, and delivers structured summaries 24/7. Open source, no API keys, ready in minutes."
 				path="/use-cases/liberclaw-research-agent"
 			/>
-			<LiberClawHero
+			<LandingHero
 				label="Research Agent"
 				title="An AI Research Agent That Monitors the Web While You Sleep"
 				description="Deploy an autonomous web monitoring agent that researches topics, tracks changes across websites, and delivers structured summaries on a schedule you define. It runs on its own virtual machine, 24/7, whether you are online or not."

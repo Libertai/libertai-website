@@ -22,6 +22,17 @@ const footerLinks = [
 const firstRowLinks = footerLinks.slice(0, 3);
 const secondRowLinks = footerLinks.slice(3);
 
+const learnLinks = [
+	{ text: "Private ChatGPT Alternative", href: "/private-chatgpt-alternative" },
+	{ text: "OpenAI API Alternative", href: "/openai-api-alternative" },
+	{ text: "Confidential AI", href: "/confidential-ai" },
+	{ text: "AI Agents", href: "/agents" },
+	{ text: "Uncensored AI", href: "/uncensored-ai" },
+	{ text: "AI Freedom", href: "/ai-freedom" },
+	{ text: "Decentralized LLMs", href: "/decentralized-llm" },
+	{ text: "Open-Source AI", href: "/open-source-ai" },
+];
+
 export function FooterSection() {
 	return (
 		<footer className="w-full">
@@ -82,7 +93,13 @@ export function FooterSection() {
 						<div className="flex flex-wrap justify-center gap-4 md:hidden text-sm">
 							{footerLinks.map((link) =>
 								link.external ? (
-									<a key={link.text} href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+									<a
+										key={link.text}
+										href={link.href}
+										target="_blank"
+										rel="noopener noreferrer"
+										className="hover:text-white transition-colors"
+									>
 										{link.text}
 									</a>
 								) : (
@@ -91,6 +108,11 @@ export function FooterSection() {
 									</Link>
 								),
 							)}
+							{learnLinks.map((link) => (
+								<Link key={link.text} to={link.href} className="hover:text-white transition-colors">
+									{link.text}
+								</Link>
+							))}
 						</div>
 
 						{/* Desktop: Two rows */}
@@ -99,7 +121,13 @@ export function FooterSection() {
 							<div className="flex flex-wrap justify-center gap-8 text-sm">
 								{firstRowLinks.map((link) =>
 									link.external ? (
-										<a key={link.text} href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+										<a
+											key={link.text}
+											href={link.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="hover:text-white transition-colors"
+										>
 											{link.text}
 										</a>
 									) : (
@@ -114,7 +142,13 @@ export function FooterSection() {
 							<div className="flex flex-wrap justify-center gap-8 text-sm">
 								{secondRowLinks.map((link) =>
 									link.external ? (
-										<a key={link.text} href={link.href} target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
+										<a
+											key={link.text}
+											href={link.href}
+											target="_blank"
+											rel="noopener noreferrer"
+											className="hover:text-white transition-colors"
+										>
 											{link.text}
 										</a>
 									) : (
@@ -124,41 +158,75 @@ export function FooterSection() {
 									),
 								)}
 							</div>
+
+							{/* Learn Row of Links */}
+							<div className="flex flex-wrap justify-center gap-x-8 gap-y-2 text-sm">
+								{learnLinks.map((link) => (
+									<Link key={link.text} to={link.href} className="hover:text-white transition-colors">
+										{link.text}
+									</Link>
+								))}
+							</div>
 						</div>
 
 						{/* Social Media Icons */}
 						<div className="flex justify-center gap-6 pt-4">
-							<a href="https://t.me/libertai" target="_blank" rel="noopener noreferrer" aria-label="LibertAI on Telegram" className="hover:text-white transition-colors">
+							<a
+								href="https://t.me/libertai"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LibertAI on Telegram"
+								className="hover:text-white transition-colors"
+							>
 								<FaTelegram size={24} />
 							</a>
-							<a href="https://x.com/Libertai_DAI" target="_blank" rel="noopener noreferrer" aria-label="LibertAI on X" className="hover:text-white transition-colors">
+							<a
+								href="https://x.com/Libertai_DAI"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LibertAI on X"
+								className="hover:text-white transition-colors"
+							>
 								<FaXTwitter size={24} />
 							</a>
-							<a href="https://github.com/libertai" target="_blank" rel="noopener noreferrer" aria-label="LibertAI on GitHub" className="hover:text-white transition-colors">
+							<a
+								href="https://github.com/libertai"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LibertAI on GitHub"
+								className="hover:text-white transition-colors"
+							>
 								<FaGithub size={24} />
 							</a>
 							<a
 								href="https://linkedin.com/company/libertai"
-								target="_blank" rel="noopener noreferrer"
+								target="_blank"
+								rel="noopener noreferrer"
 								aria-label="LibertAI on LinkedIn"
 								className="hover:text-white transition-colors"
 							>
 								<FaLinkedin size={24} />
 							</a>
-							<a href="https://discord.gg/alephcloud" target="_blank" rel="noopener noreferrer" aria-label="LibertAI on Discord" className="hover:text-white transition-colors">
+							<a
+								href="https://discord.gg/alephcloud"
+								target="_blank"
+								rel="noopener noreferrer"
+								aria-label="LibertAI on Discord"
+								className="hover:text-white transition-colors"
+							>
 								<FaDiscord size={24} />
 							</a>
 						</div>
 
 						{/* Copyright */}
 						<div className="text-center text-sm text-white mt-5 w-full hidden md:block">
-							© 2025 LibertAI.io | Powered by{" "}
+							© 2026 LibertAI.io | Powered by{" "}
 							<a href="https://aleph.cloud" target="_blank" rel="noopener">
 								Aleph Cloud
 							</a>
 						</div>
 						<div className="text-center text-sm text-white mt-5 w-full md:hidden">
-							<span>© 2025 LibertAI.io</span>
+							<span>© 2026 LibertAI.io</span>
 							<br />
 							<span>
 								Powered by{" "}

@@ -1,12 +1,12 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SEO } from "@/components/SEO.tsx";
 import { FooterSection } from "@/components/FooterSection.tsx";
-import { LiberClawHero } from "@/components/use-cases/liberclaw/LiberClawHero.tsx";
-import { HowItWorks } from "@/components/use-cases/liberclaw/HowItWorks.tsx";
-import { FeatureGrid } from "@/components/use-cases/liberclaw/FeatureGrid.tsx";
-import { ComparisonTable } from "@/components/use-cases/liberclaw/ComparisonTable.tsx";
-import { FAQSection } from "@/components/use-cases/liberclaw/FAQSection.tsx";
-import { CTASection } from "@/components/use-cases/liberclaw/CTASection.tsx";
+import { LandingHero } from "@/components/landing/LandingHero.tsx";
+import { HowItWorks } from "@/components/landing/HowItWorks.tsx";
+import { FeatureGrid } from "@/components/landing/FeatureGrid.tsx";
+import { ComparisonTable } from "@/components/landing/ComparisonTable.tsx";
+import { FAQSection } from "@/components/landing/FAQSection.tsx";
+import { CTASection } from "@/components/landing/CTASection.tsx";
 import { RelatedPages } from "@/components/use-cases/liberclaw/RelatedPages.tsx";
 import { Brain, Eye, FileText, Globe, Terminal } from "lucide-react";
 
@@ -159,7 +159,7 @@ function LiberClawPersonalAssistant() {
 				description="Deploy an always-on AI personal assistant that runs 24/7 on its own VM. Research, task management, monitoring, and persistent memory. No API keys needed."
 				path="/use-cases/liberclaw-personal-assistant"
 			/>
-			<LiberClawHero
+			<LandingHero
 				label="Personal Assistant"
 				title="An AI Personal Assistant That Never Stops Running"
 				description="Your AI assistant should not die when you close your laptop. LiberClaw agents run on their own virtual machines, 24/7, on decentralized infrastructure. No API keys, no server to babysit, and no provider that can pull the plug."

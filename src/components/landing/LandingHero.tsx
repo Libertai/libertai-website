@@ -3,7 +3,7 @@ import { ScrollHuman } from "@/components/ScrollHuman.tsx";
 import { Button } from "@/components/ui/button.tsx";
 import { ExternalLink } from "lucide-react";
 
-interface LiberClawHeroProps {
+interface LandingHeroProps {
 	label: string;
 	title: string;
 	description: string;
@@ -11,13 +11,13 @@ interface LiberClawHeroProps {
 	ctaLink?: string;
 }
 
-export function LiberClawHero({
+export function LandingHero({
 	label,
 	title,
 	description,
 	ctaText = "Get Started Free",
 	ctaLink = "https://app.liberclaw.ai",
-}: LiberClawHeroProps) {
+}: LandingHeroProps) {
 	const scrollToNext = () => {
 		window.scrollTo({ top: window.innerHeight, behavior: "smooth" });
 	};
