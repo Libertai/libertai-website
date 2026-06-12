@@ -12,6 +12,18 @@ LibertAI offers three core products: Private Chat, a Confidential Inference API,
 - [Private AI Chat](https://chat.libertai.io): Free, encrypted AI chat with custom personas, image generation, and knowledge bases. No sign-up required, no data collection.
 - [Confidential Inference API](https://console.libertai.io): OpenAI-compatible, pay-per-token API with open-source models on decentralized infrastructure. No data logging.
 - [LiberClaw Agents](https://console.libertai.io/agents): Autonomous AI agents running 24/7 on their own VMs. Persistent memory, no external API keys needed. Free tier: 2 agents.
+- [Private Web Search API](https://libertai.io/search): Privacy-preserving web search API for AI agents. Multi-engine consensus results from Google, Bing, and DuckDuckGo, from $2 per 1,000 queries. No profiling, no stored history.
+
+## Learn
+
+- [Private ChatGPT Alternative](https://libertai.io/private-chatgpt-alternative): Free, encrypted AI chat with no account, no logging, and no training on conversations — compared honestly against ChatGPT and local LLMs.
+- [OpenAI API Alternative](https://libertai.io/openai-api-alternative): Drop-in OpenAI-compatible API — switch the base URL to https://api.libertai.io/v1, keep your code, lose the logging.
+- [Confidential AI](https://libertai.io/confidential-ai): How Trusted Execution Environments and remote attestation make AI privacy verifiable instead of policy-based.
+- [Autonomous AI Agents](https://libertai.io/agents): Deploy always-on agents on dedicated VMs with persistent memory — no API keys needed, open source, free tier of 2 agents.
+- [Uncensored AI](https://libertai.io/uncensored-ai): Open-weight models served as released — no extra corporate filter layer, no surveillance, your system prompt is in control.
+- [AI Freedom](https://libertai.io/ai-freedom): Why user-owned, decentralized AI matters — no lock-in, no surveillance, no single company deciding what you can ask.
+- [Decentralized LLMs](https://libertai.io/decentralized-llm): LLM inference on Aleph Cloud's decentralized network — no single point of failure or control.
+- [Open-Source AI](https://libertai.io/open-source-ai): Open-weight models on an open-source platform — auditable end to end, with a built-in exit.
 
 ## Use Cases
 

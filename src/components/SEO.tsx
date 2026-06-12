@@ -4,13 +4,16 @@ interface SEOProps {
 	title: string;
 	description: string;
 	path: string;
+	image?: string;
 }
 
 const BASE_URL = "https://libertai.io";
+const DEFAULT_OG_IMAGE = `${BASE_URL}/og.png`;
 
-export function SEO({ title, description, path }: SEOProps) {
+export function SEO({ title, description, path, image }: SEOProps) {
 	const fullTitle = path === "/" ? "LibertAI — Private AI, Unleashed" : `${title} | LibertAI`;
 	const url = `${BASE_URL}${path}`;
+	const ogImage = image ? (image.startsWith("http") ? image : `${BASE_URL}${image}`) : DEFAULT_OG_IMAGE;
 
 	return (
 		<Helmet>
@@ -24,12 +27,17 @@ export function SEO({ title, description, path }: SEOProps) {
 			<meta property="og:title" content={fullTitle} />
 			<meta property="og:description" content={description} />
 			<meta property="og:site_name" content="LibertAI" />
+			<meta property="og:image" content={ogImage} />
+			<meta property="og:image:width" content="1200" />
+			<meta property="og:image:height" content="630" />
+			<meta property="og:image:alt" content="LibertAI — Private AI, Unleashed" />
 
 			{/* Twitter */}
 			<meta name="twitter:card" content="summary_large_image" />
 			<meta name="twitter:site" content="@Libertai_DAI" />
 			<meta name="twitter:title" content={fullTitle} />
 			<meta name="twitter:description" content={description} />
+			<meta name="twitter:image" content={ogImage} />
 		</Helmet>
 	);
 }

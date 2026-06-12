@@ -1,12 +1,17 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "@tanstack/react-router";
 import { Home } from "lucide-react";
+import { Helmet } from "react-helmet-async";
 import heroImage from "@/assets/404/hero.webp";
 import heroImageMobile from "@/assets/404/hero-mobile.png";
 
 export function NotFound() {
 	return (
 		<section className="relative w-full min-h-screen flex items-center bg-background overflow-hidden">
+			<Helmet>
+				<title>Page Not Found | LibertAI</title>
+				<meta name="robots" content="noindex" />
+			</Helmet>
 			{/* Background with gradient overlay */}
 			<div className="absolute inset-0 z-0">
 				{/* Desktop image with gradient */}
