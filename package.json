@@ -18,7 +18,7 @@
     "@radix-ui/react-dialog": "^1.1.14",
     "@radix-ui/react-navigation-menu": "^1.2.13",
     "@radix-ui/react-slot": "^1.2.3",
-    "@tailwindcss/vite": "^4.1.7",
+    "@tailwindcss/vite": "^4.3.1",
     "@tanstack/react-router": "^1.120.5",
     "bip39": "^3.1.0",
     "class-variance-authority": "^0.7.1",
@@ -41,7 +41,7 @@
     "@types/node": "^22.15.21",
     "@types/react": "^19.1.5",
     "@types/react-dom": "^19.1.5",
-    "@vitejs/plugin-react": "^4.4.1",
+    "@vitejs/plugin-react": "^6.0.2",
     "eslint": "^9.27.0",
     "eslint-plugin-react": "^7.37.5",
     "eslint-plugin-react-hooks": "^5.2.0",
@@ -51,7 +51,7 @@
     "tw-animate-css": "^1.3.0",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.32.1",
-    "vite": "^6.4.2",
-    "vite-plugin-node-polyfills": "^0.23.0"
+    "vite": "^8.0.16",
+    "vite-plugin-node-polyfills": "^0.28.0"
   }
 }
