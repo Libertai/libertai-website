@@ -21,7 +21,7 @@ jobs:
         run: npm run build
 
       - name: Deploy with Aleph
-        uses: aleph-im/web3-hosting-action@v2.0.0-rc1
+        uses: aleph-im/web3-hosting-action@v2.0.0
         with:
           path: 'dist'
           private-key: ${{ secrets.ALEPH_PRIVATE_KEY }}
