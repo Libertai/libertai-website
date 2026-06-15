@@ -23,6 +23,7 @@ jobs:
     name: "Build"
     runs-on: ubuntu-latest
     permissions:
+      contents: read
       pull-requests: write
     steps:
       - name: Checkout code
@@ -38,7 +39,9 @@ jobs:
         run: npm run build
 
       - name: Deploy preview on Aleph
-        if: ${{ github.event_name == 'pull_request' }}
+        if: ${{ github.event_name == 'pull_request' && github.event.pull_request.head.repo.full_name == github.repository }}
         uses: aleph-im/web3-hosting-action@v2.0.0
         with:
           path: 'dist'
+          private-key: ${{ secrets.ALEPH_PRIVATE_KEY }}
+          owner-address: ${{ vars.ALEPH_OWNER_ADDRESS }}
