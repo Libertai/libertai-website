@@ -6,6 +6,7 @@ import { EcosystemSection } from "@/components/home/EcosystemSection.tsx";
 import { AlephSection } from "@/components/home/AlephSection.tsx";
 import { FeaturesSection } from "@/components/home/FeaturesSection.tsx";
 import { APISection } from "@/components/home/APISection.tsx";
+import { SearchSection } from "@/components/home/SearchSection.tsx";
 import { ModelsSection } from "@/components/home/ModelsSection.tsx";
 import { FAQSection } from "@/components/home/FAQSection.tsx";
 import { FooterSection } from "@/components/FooterSection.tsx";
@@ -28,6 +29,7 @@ function Index() {
 			<AlephSection />
 			<FeaturesSection />
 			<APISection />
+			<SearchSection />
 			<ModelsSection />
 			<FAQSection />
 			<FooterSection />
