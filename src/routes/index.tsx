@@ -9,7 +9,7 @@ import { ComparisonSection } from "@/components/sovereign/ComparisonSection.tsx"
 import { MigrationSection } from "@/components/sovereign/MigrationSection.tsx";
 import { StackSection } from "@/components/sovereign/StackSection.tsx";
 import { FinalCTA } from "@/components/sovereign/FinalCTA.tsx";
-import { FooterSection } from "@/components/FooterSection.tsx";
+import { SovereignFooter } from "@/components/sovereign/SovereignFooter.tsx";
 
 export const Route = createFileRoute("/")({
 	component: Index,
@@ -32,7 +32,7 @@ function Index() {
 			<MigrationSection />
 			<StackSection />
 			<FinalCTA />
-			<FooterSection />
+			<SovereignFooter />
 		</main>
 	);
 }
