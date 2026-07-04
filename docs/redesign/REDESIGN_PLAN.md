@@ -203,6 +203,16 @@ A translation of Bungie's *Marathon* "graphic realism" into LibertAI's world: pr
 - **Copy voice:** "ALL SIGNAL. / ZERO TRACE." — the trust claims as system status rather than marketing; credits reframed as a "supply drop."
 - **Accent use:** deliberately more signal-active than rounds 1–2 (Marathon grammar) while surfaces stay monochrome: CTA fill, status dots, privacy bar, ghost stroke in purple; the logo-gradient pink reserved for the credits line and one ticker item.
 
+### Round 4 — Concept 10 "Sovereign" (Palantir-inspired, dark only)
+
+An institutional translation of Palantir's *Sovereign AIOS*: austere framing, engineered type, schematic data-viz, near-monochrome with color as signal — mapped onto LibertAI's genuine "sovereign AI" thesis (own your data and weights; run on infrastructure no single company controls). File: **`docs/redesign/demos/hero-concepts-4.html`**; screenshots `r4-*`.
+
+- **Type:** IBM Plex Sans (display + body — the governmental/engineered neo-grotesque, distinct from every prior round) + IBM Plex Mono (all technical scaffolding: eyebrows, telemetry, module indices).
+- **Signature visual:** a live **canvas wireframe node-globe** — a Fibonacci sphere of ~118 nodes with proximity-edge wireframe, slow rotation, orthographic depth shading. It literally depicts LibertAI's decentralized Aleph compute: most nodes cool-white, ~1-in-7 pulsing purple ("active inference"), faint edges. Reduced-motion renders a static frame.
+- **Composition:** hairline inset frame with corner ticks, cool near-black ground (`#08090C`) with a faint 64px engineering grid and one purple radial glow, mono telemetry tags annotating the globe (`NODE // AT-07 ACTIVE`, `ATTESTATION ✓ VERIFIED`, `DATA TRACE 0 BYTES`), and a **"sovereign stack"** module strip (Chat / API / Agents / Search as 01–04).
+- **Copy voice:** ownership/independence — headline **"Intelligence you _own_ — not intelligence you _rent_."** with semantic color (owned = bright ink + purple underline; rented = dimmed). Credits reframed as a "Sovereign Program"; secondary CTA "Request a briefing" borrows the enterprise register.
+- **Accent budget:** the most restrained of all rounds — primary CTA is institutional white, and purple appears only as signal (globe active-nodes, the "own" underline, status LED, eyebrow tick, credits link).
+
 ## 10. Open items to confirm internally (from the brief + this work)
 
 1. Final startup-credit amount, conditions, and review process; where applications go (endpoint/CRM).
