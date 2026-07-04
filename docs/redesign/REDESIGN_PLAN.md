@@ -194,6 +194,15 @@ Interactive file: **`docs/redesign/demos/hero-concepts-2.html`** — keys `1–4
 
 Light modes are designed, not inverted: text tiers re-derived for contrast (ink ≈13:1, body ≈8.5:1), grain flips to `multiply`, and the accent switches from the brightened `#9D8FFF` to a darkened `#5334E6` (≈6:1 on the light grounds) — the same two-job accent logic as the dark system, mirrored. Round-2 screenshots live in `docs/redesign/screenshots/` (`r2-*`).
 
+### Round 3 — Concept 09 "Transmission" (Marathon-inspired HUD, dark only)
+
+A translation of Bungie's *Marathon* "graphic realism" into LibertAI's world: private inference as a secure transmission. File: **`docs/redesign/demos/hero-concepts-3.html`**; screenshots `r3-*`.
+
+- **Type:** Anton (ultra-condensed display — solid line + outlined line, purple square full-stops), Archivo (UI), Fragment Mono (HUD data).
+- **Motifs:** top/bottom HUD bars with live status (`SYS.STATUS: ENCRYPTED — 0 BYTES LOGGED`), vertical protocol rails, registration crosses, a spec **readout panel** for GLM-5.2 with segmented bars (privacy row fully lit in purple, scan-sweep animation), CSS barcode + ID plate, ghost outlined "5.2" numeral, hazard stripe, model ticker, glitch-slice hover on the headline (reduced-motion safe).
+- **Copy voice:** "ALL SIGNAL. / ZERO TRACE." — the trust claims as system status rather than marketing; credits reframed as a "supply drop."
+- **Accent use:** deliberately more signal-active than rounds 1–2 (Marathon grammar) while surfaces stay monochrome: CTA fill, status dots, privacy bar, ghost stroke in purple; the logo-gradient pink reserved for the credits line and one ticker item.
+
 ## 10. Open items to confirm internally (from the brief + this work)
 
 1. Final startup-credit amount, conditions, and review process; where applications go (endpoint/CRM).
