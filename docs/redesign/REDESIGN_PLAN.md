@@ -179,6 +179,21 @@ Interactive file: **`docs/redesign/demos/hero-concepts.html`** (self-contained, 
 
 **Recommended composition:** ship **V4 (Continuity)** as the homepage base — lowest risk, keeps brand equity — and merge in **V1's code window + metrics strip** as the hero's right column and footer. Use **V2's benchmark bars** for the comparison section and **V3's treatment** for `/private-ai` and manifesto moments. All figures in the demos (prices, tok/s, context, savings) are **illustrative placeholders**.
 
+### Round 2 — design-led concepts (dark grey + white twins)
+
+A second exploration deliberately steps away from the AI-infrastructure vernacular toward award-site art direction: dark **grey** tonal grounds (not pure black), physical textures (paper grain, film grain, material surfaces), and a fully designed **white version of every concept** — 8 examples total.
+
+Interactive file: **`docs/redesign/demos/hero-concepts-2.html`** — keys `1–4` switch concepts, `M` (or the ☀/☾ button) flips dark/white per concept, `?clean` hides the chrome.
+
+| # | Concept | Fonts | Art direction | Ground (dark / light) | Purple budget |
+|---|---|---|---|---|---|
+| A | **Gallery** | Fraunces + Manrope + Fragment Mono | Museum catalog plate: models as a private collection; rotating attestation seal ("verified, not promised"); numbered trust captions; hairline mat frame; paper grain | `#191817` / `#F6F3ED` warm | seal + two links |
+| B | **Studio** | Syne + Manrope + Fragment Mono | Kinetic poster: edge-to-edge fitted display type (JS fit-to-width), corner metadata, drifting tonal blob, film grain, model-ticker marquee | `#1C1C1E` / `#F1F1EF` cool | the slash, one marquee item, credits link |
+| C | **Proof** | Bricolage Grotesque + Fraunces italic + Manrope | Annotated proof sheet: italic margin notes with dotted leaders, hand-drawn circle on "your data," highlighter stroke, rubber-stamp credits mark, `fig. 1` migration footnote | `#1B1A19` / `#FBF9F4` paper | circle + highlight + stamp |
+| D | **Strata** | Sora + Fragment Mono | Material study: the four products (Chat/API/Agents/Search) as textured layers that expand on hover, with one purple seam running the full height — "privacy runs through every layer" | `#202022` / `#EFEFEC` gallery | the seam + label + credits link |
+
+Light modes are designed, not inverted: text tiers re-derived for contrast (ink ≈13:1, body ≈8.5:1), grain flips to `multiply`, and the accent switches from the brightened `#9D8FFF` to a darkened `#5334E6` (≈6:1 on the light grounds) — the same two-job accent logic as the dark system, mirrored. Round-2 screenshots live in `docs/redesign/screenshots/` (`r2-*`).
+
 ## 10. Open items to confirm internally (from the brief + this work)
 
 1. Final startup-credit amount, conditions, and review process; where applications go (endpoint/CRM).
