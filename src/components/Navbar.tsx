@@ -26,15 +26,17 @@ export function Navbar() {
 		{ href: "/roadmap", label: "Roadmap", external: false },
 	];
 
-	const ctaText = "Try LibertAI chat";
+	const ctaText = "Chat";
 	const ctaLink = "https://chat.libertai.io";
+	const keyText = "Get API key";
+	const keyLink = "https://console.libertai.io";
 
 	const handleNavClick = () => {
 		setIsSheetOpen(false);
 	};
 
 	return (
-		<header className="fixed top-0 left-0 right-0 z-50 bg-background/10 backdrop-blur-sm">
+		<header className="fixed top-0 left-0 right-0 z-50 bg-background/75 backdrop-blur-md border-b border-line">
 			<div className="mx-auto lg:mx-12 xl:mx-20 px-4 md:px-6 lg:px-8">
 				<div className="flex items-center justify-between h-16">
 					{/* Left side: Logo + Navigation */}
@@ -53,7 +55,8 @@ export function Navbar() {
 												<NavigationMenuLink
 													className="bg-transparent text-white/80 hover:text-white hover:bg-transparent focus:bg-transparent max-lg:text-xs lg:text-sm"
 													href={item.href}
-													target="_blank" rel="noopener noreferrer"
+													target="_blank"
+													rel="noopener noreferrer"
 												>
 													{item.label}
 												</NavigationMenuLink>
@@ -118,18 +121,16 @@ export function Navbar() {
 						</div>
 					</div>
 
-					{/* Right side: CTA Button (Desktop only) */}
-					<div className="hidden md:flex">
+					{/* Right side: CTA Buttons (Desktop only) */}
+					<div className="hidden md:flex items-center gap-2">
 						<a href={ctaLink} target="_blank" rel="noopener noreferrer" aria-label={ctaText}>
-							<Button variant="glass" size="pill" className="hidden lg:flex">
+							<Button variant="ghost" size="pill" className="text-white/80 hover:text-white hover:bg-white/5">
 								<span>{ctaText}</span>
-								<ExternalLink className="w-4 h-4" />
 							</Button>
 						</a>
-						<a href={ctaLink} target="_blank" rel="noopener noreferrer" aria-label={ctaText}>
-							<Button variant="glass" size="pill-sm" className="lg:hidden">
-								<span>{ctaText}</span>
-								<ExternalLink className="w-4 h-4" />
+						<a href={keyLink} target="_blank" rel="noopener noreferrer" aria-label={keyText}>
+							<Button variant="default" size="pill" className="rounded-[2px] font-satoshi">
+								<span>{keyText}</span>
 							</Button>
 						</a>
 					</div>
@@ -161,7 +162,8 @@ export function Navbar() {
 											<a
 												href={item.href}
 												key={item.href}
-												target="_blank" rel="noopener noreferrer"
+												target="_blank"
+												rel="noopener noreferrer"
 												className="text-white hover:text-primary text-lg"
 												onClick={handleNavClick}
 											>
@@ -182,7 +184,8 @@ export function Navbar() {
 										<div className="text-white text-lg font-medium">Use cases</div>
 										<a
 											href="https://liberclaw.ai"
-											target="_blank" rel="noopener"
+											target="_blank"
+											rel="noopener"
 											className="hover:text-primary text-base ml-4 block"
 											onClick={handleNavClick}
 										>

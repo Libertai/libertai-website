@@ -1,14 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SEO } from "@/components/SEO.tsx";
-import { HeroSection } from "@/components/home/HeroSection.tsx";
-import { ServicesSection } from "@/components/home/ServicesSection.tsx";
-import { EcosystemSection } from "@/components/home/EcosystemSection.tsx";
-import { AlephSection } from "@/components/home/AlephSection.tsx";
-import { FeaturesSection } from "@/components/home/FeaturesSection.tsx";
-import { APISection } from "@/components/home/APISection.tsx";
-import { SearchSection } from "@/components/home/SearchSection.tsx";
-import { ModelsSection } from "@/components/home/ModelsSection.tsx";
-import { FAQSection } from "@/components/home/FAQSection.tsx";
+import { SovereignHero } from "@/components/sovereign/SovereignHero.tsx";
+import { StatusStrip } from "@/components/sovereign/StatusStrip.tsx";
+import { PrivacySection } from "@/components/sovereign/PrivacySection.tsx";
+import { CreditsSection } from "@/components/sovereign/CreditsSection.tsx";
+import { ModelsShowcase } from "@/components/sovereign/ModelsShowcase.tsx";
+import { ComparisonSection } from "@/components/sovereign/ComparisonSection.tsx";
+import { MigrationSection } from "@/components/sovereign/MigrationSection.tsx";
+import { StackSection } from "@/components/sovereign/StackSection.tsx";
+import { FinalCTA } from "@/components/sovereign/FinalCTA.tsx";
 import { FooterSection } from "@/components/FooterSection.tsx";
 
 export const Route = createFileRoute("/")({
@@ -19,19 +19,19 @@ function Index() {
 	return (
 		<main className="flex flex-col min-h-screen">
 			<SEO
-				title="Private AI, Unleashed"
-				description="LibertAI is a decentralized, private AI platform powered by Aleph Cloud. Open-source models, confidential inference API, and AI agents — with privacy you can verify."
+				title="Intelligence You Own"
+				description="GLM-5.2 and the leading open models on one private, OpenAI-compatible endpoint. Nothing stored, nothing trained on your data — attested in hardware, powered by Aleph Cloud."
 				path="/"
 			/>
-			<HeroSection />
-			<ServicesSection />
-			<EcosystemSection />
-			<AlephSection />
-			<FeaturesSection />
-			<APISection />
-			<SearchSection />
-			<ModelsSection />
-			<FAQSection />
+			<SovereignHero />
+			<StatusStrip />
+			<PrivacySection />
+			<CreditsSection />
+			<ModelsShowcase />
+			<ComparisonSection />
+			<MigrationSection />
+			<StackSection />
+			<FinalCTA />
 			<FooterSection />
 		</main>
 	);

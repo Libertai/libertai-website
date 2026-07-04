@@ -213,6 +213,10 @@ An institutional translation of Palantir's *Sovereign AIOS*: austere framing, en
 - **Copy voice:** ownership/independence — headline **"Intelligence you _own_ — not intelligence you _rent_."** with semantic color (owned = bright ink + purple underline; rented = dimmed). Credits reframed as a "Sovereign Program"; secondary CTA "Request a briefing" borrows the enterprise register.
 - **Accent budget:** the most restrained of all rounds — primary CTA is institutional white, and purple appears only as signal (globe active-nodes, the "own" underline, status LED, eyebrow tick, credits link).
 
+### Implemented — Sovereign homepage (this branch)
+
+The Sovereign direction is now the live homepage implementation (`src/components/sovereign/`, composed in `src/routes/index.tsx`), refined per feedback: **Satoshi stays the primary face** (display/nav/buttons) with Inter body and IBM Plex Mono for the technical layer; the hero was decluttered (eyebrow + "Intelligence you own." + one line + two CTAs + the node-globe) with telemetry relocated to a **StatusStrip** below the fold and the stack modules to their own section. Palantir-style motion: staggered hero entrance, IntersectionObserver scroll reveals, animated comparison bars, canvas globe (all disabled under `prefers-reduced-motion`; Lenis smooth scroll already global). Tokens from §4 are live in `src/styles.css` (cool ground `#08090C`, raised-brightness tiers, `--purple`/`--purple-bright`, hairlines) and exposed as Tailwind colors (`text-ink`, `text-dim`, `border-line`, …). Section order per §6: Hero → Status → Privacy → Credits → Models → Comparison → Migration → Stack → Final CTA → existing footer. Navbar: hairline bottom, ghost Chat + solid "Get API key". All pricing remains illustrative pending §10.3; the credits form endpoint remains §10.1 (CTA routes to Telegram meanwhile). Verified: tsc, ESLint, full build + prerender (20 routes), Playwright desktop/mobile, and existing routes on the new tokens.
+
 ## 10. Open items to confirm internally (from the brief + this work)
 
 1. Final startup-credit amount, conditions, and review process; where applications go (endpoint/CRM).
