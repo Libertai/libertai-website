@@ -1,5 +1,17 @@
 import { useEffect, useRef } from "react";
 
+type P = { sx: number; sy: number };
+
+/** Draw two segments growing from A and B toward the midpoint by fraction `rev`. */
+function strokeReach(ctx: CanvasRenderingContext2D, A: P, B: P, mx: number, my: number, rev: number) {
+	ctx.beginPath();
+	ctx.moveTo(A.sx, A.sy);
+	ctx.lineTo(A.sx + (mx - A.sx) * rev, A.sy + (my - A.sy) * rev);
+	ctx.moveTo(B.sx, B.sy);
+	ctx.lineTo(B.sx + (mx - B.sx) * rev, B.sy + (my - B.sy) * rev);
+	ctx.stroke();
+}
+
 /**
  * The decentralized network, drawn live: a Fibonacci sphere of nodes with
  * proximity-edge wireframing, slow rotation and pulsing "active inference"
@@ -25,13 +37,26 @@ export function NodeGlobe({ className }: { className?: string }) {
 			const theta = i * 2.399963229728653; // golden angle
 			pts.push({ x: Math.cos(theta) * r, y, z: Math.sin(theta) * r, accent: i % 7 === 0, ph: (i % 11) / 11 });
 		}
-		const edges: [number, number][] = [];
+		// edges + per-edge pulse metadata (deterministic, no RNG):
+		//  phase/speed stagger the "reach toward each other" reveal so the mesh
+		//  reads as many independent links forming and releasing — decentralized.
+		const edges: { a: number; b: number; ph: number; sp: number; accent: boolean }[] = [];
+		let ei = 0;
 		for (let a = 0; a < N; a++) {
 			for (let b = a + 1; b < N; b++) {
 				const dx = pts[a].x - pts[b].x;
 				const dy = pts[a].y - pts[b].y;
 				const dz = pts[a].z - pts[b].z;
-				if (dx * dx + dy * dy + dz * dz < 0.19) edges.push([a, b]);
+				if (dx * dx + dy * dy + dz * dz < 0.19) {
+					edges.push({
+						a,
+						b,
+						ph: (ei * 0.61803398875) % 1, // golden-ratio phase spread
+						sp: 0.45 + ((ei * 7) % 5) * 0.16, // varied travel speed
+						accent: pts[a].accent || pts[b].accent, // links touching an active node glow purple
+					});
+					ei++;
+				}
 			}
 		}
 
@@ -76,34 +101,90 @@ export function NodeGlobe({ className }: { className?: string }) {
 				return { sx: cx + x1 * R, sy: cy + y1 * R, depth: (z2 + 1) / 2, accent: p.accent, ph: p.ph };
 			});
 
-			for (const [a, b] of edges) {
-				const A = proj[a];
-				const B = proj[b];
+			// Pass 1 — faint static structure (the "disconnected" base state)
+			ctx.lineWidth = 1;
+			for (const e of edges) {
+				const A = proj[e.a];
+				const B = proj[e.b];
 				const dep = (A.depth + B.depth) / 2;
-				ctx.strokeStyle = `rgba(174,180,196,${(0.03 + dep * 0.16).toFixed(3)})`;
-				ctx.lineWidth = 1;
+				ctx.strokeStyle = `rgba(150,156,174,${(0.015 + dep * 0.05).toFixed(3)})`;
 				ctx.beginPath();
 				ctx.moveTo(A.sx, A.sy);
 				ctx.lineTo(B.sx, B.sy);
 				ctx.stroke();
 			}
 
+			// Pass 2 — reveal strokes growing from each node toward the midpoint,
+			// then releasing: a link reaching to connect. Accent links bloom purple.
+			for (const e of edges) {
+				const A = proj[e.a];
+				const B = proj[e.b];
+				const dep = (A.depth + B.depth) / 2;
+
+				let rev: number;
+				if (reduceMotion) {
+					rev = 1; // static: fully connected
+				} else {
+					let cyc = (t * 0.00016 * e.sp + e.ph) % 1;
+					if (cyc < 0) cyc += 1;
+					// sine hump with a floor so links spend time apart (disconnected)
+					const hump = Math.sin(cyc * Math.PI);
+					rev = (hump - 0.32) / 0.68;
+					if (rev <= 0) continue;
+					rev = rev * rev * (3 - 2 * rev); // smoothstep ease
+				}
+
+				const mx = (A.sx + B.sx) / 2;
+				const my = (A.sy + B.sy) / 2;
+				const alpha = rev * (0.12 + dep * 0.5);
+
+				if (e.accent) {
+					// additive bloom pass (soft, wide) then bright core
+					ctx.globalCompositeOperation = "lighter";
+					ctx.strokeStyle = `rgba(124,100,255,${(alpha * 0.5).toFixed(3)})`;
+					ctx.lineWidth = 3.4;
+					strokeReach(ctx, A, B, mx, my, rev);
+					ctx.strokeStyle = `rgba(176,164,255,${alpha.toFixed(3)})`;
+					ctx.lineWidth = 1.3;
+					strokeReach(ctx, A, B, mx, my, rev);
+					ctx.globalCompositeOperation = "source-over";
+				} else {
+					ctx.strokeStyle = `rgba(220,225,236,${(alpha * 0.8).toFixed(3)})`;
+					ctx.lineWidth = 1.1;
+					strokeReach(ctx, A, B, mx, my, rev);
+				}
+			}
+
+			// Pass 3 — nodes; accent nodes pulse and bloom at their peak
 			for (const q of proj) {
-				const pulse = q.accent && !reduceMotion ? 0.6 + 0.4 * Math.sin(t / 700 + q.ph * 6.28) : 1;
-				const rad = (q.accent ? 2.4 : 1.5) * (0.5 + q.depth) * pulse;
 				if (q.accent) {
-					ctx.fillStyle = `rgba(138,120,255,${(0.35 + q.depth * 0.65).toFixed(3)})`;
-					ctx.shadowColor = "rgba(138,120,255,0.9)";
-					ctx.shadowBlur = 8 * q.depth;
+					const pulse = reduceMotion ? 0.85 : 0.5 + 0.5 * Math.sin(t / 620 + q.ph * 6.283);
+					const peak = pulse * pulse * pulse; // sharpen the bloom to the peak
+					const rad = 2.5 * (0.5 + q.depth) * (0.7 + 0.55 * pulse);
+					// additive glow halo, strongest at peak
+					if (peak > 0.06) {
+						const gr = (7 + 20 * peak) * (0.5 + q.depth);
+						const g = ctx.createRadialGradient(q.sx, q.sy, 0, q.sx, q.sy, gr);
+						g.addColorStop(0, `rgba(140,120,255,${(0.5 * peak).toFixed(3)})`);
+						g.addColorStop(1, "rgba(124,100,255,0)");
+						ctx.globalCompositeOperation = "lighter";
+						ctx.fillStyle = g;
+						ctx.beginPath();
+						ctx.arc(q.sx, q.sy, gr, 0, 6.2832);
+						ctx.fill();
+						ctx.globalCompositeOperation = "source-over";
+					}
+					ctx.fillStyle = `rgba(190,178,255,${(0.45 + q.depth * 0.55).toFixed(3)})`;
+					ctx.beginPath();
+					ctx.arc(q.sx, q.sy, Math.max(0.7, rad), 0, 6.2832);
+					ctx.fill();
 				} else {
 					ctx.fillStyle = `rgba(220,224,232,${(0.15 + q.depth * 0.6).toFixed(3)})`;
-					ctx.shadowBlur = 0;
+					ctx.beginPath();
+					ctx.arc(q.sx, q.sy, Math.max(0.6, 1.5 * (0.5 + q.depth)), 0, 6.2832);
+					ctx.fill();
 				}
-				ctx.beginPath();
-				ctx.arc(q.sx, q.sy, Math.max(0.6, rad), 0, 6.2832);
-				ctx.fill();
 			}
-			ctx.shadowBlur = 0;
 
 			if (!reduceMotion && running) {
 				angle += 0.0016;
