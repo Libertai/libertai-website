@@ -32,27 +32,37 @@ nav.top .key { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 
 .hero { position: relative; min-height: 100vh; min-height: 100dvh; overflow: hidden; }
 .hero .grid-bg { position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .5;
   background-image: repeating-linear-gradient(0deg, transparent 0 63px, rgba(255,255,255,.012) 63px 64px), repeating-linear-gradient(90deg, transparent 0 63px, rgba(255,255,255,.012) 63px 64px); }
-.hero .glow { position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(ellipse 70% 60% at 72% 46%, rgba(100,77,249,.10), transparent 62%); }
+.hero .glow { position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse 60% 55% at 70% 48%, rgba(100,77,249,.10), transparent 62%); }
+/* full-bleed network behind everything */
+.hero #orbit { position: absolute; inset: 0; z-index: 0; width: 100%; height: 100%; }
+/* scrim keeps the copy legible over the network */
+.hero .scrim { position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background:
+    linear-gradient(90deg, var(--bg) 0%, rgba(8,9,12,.82) 30%, rgba(8,9,12,.30) 55%, transparent 72%),
+    radial-gradient(120% 100% at 50% 118%, transparent 58%, rgba(8,9,12,.55)); }
+.hero .read { position: absolute; z-index: 1; left: 70%; top: 49%; transform: translate(-50%,-50%); text-align: center; font-family: "IBM Plex Mono", monospace; pointer-events: none; }
+.hero .read .n { font-size: 12px; letter-spacing: .2em; color: var(--purple-bright); }
+.hero .read .l { font-size: 8.5px; letter-spacing: .24em; color: var(--dim); margin-top: 6px; }
 .hero .in { position: relative; z-index: 2; max-width: 1240px; margin: 0 auto; padding: 0 40px; min-height: 100vh; min-height: 100dvh;
-  display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.05fr); gap: 24px; align-items: center; }
-.hero .copy { max-width: 30ch; }
+  display: flex; flex-direction: column; justify-content: center; }
+.hero .copy { max-width: 660px; }
 .hero .eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 30px; }
 .hero .eyebrow .led { width: 7px; height: 7px; border-radius: 50%; background: var(--purple-bright); box-shadow: 0 0 10px 2px rgba(157,143,255,.9); }
-.hero h1 { font-size: clamp(48px, 6vw, 88px); line-height: .98; margin-bottom: 26px; }
+.hero h1 { font-size: clamp(50px, 6.6vw, 94px); line-height: .98; margin-bottom: 28px; }
+.hero h1 .l2 { white-space: nowrap; }
 .hero h1 .own { position: relative; white-space: nowrap; }
 .hero h1 .own::after { content: ""; position: absolute; left: 0; right: 0; bottom: .06em; height: 3px; background: var(--purple); }
-.hero .sub { font-size: 17px; line-height: 1.6; color: var(--body); max-width: 44ch; margin-bottom: 40px; }
+.hero .sub { font-size: 17px; line-height: 1.6; color: var(--body); max-width: 42ch; margin-bottom: 40px; }
 .hero .ctas { display: flex; flex-wrap: wrap; gap: 16px; align-items: center; }
 .hero .btn-solid { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 15px; color: #0a0a0c; background: var(--ink); padding: 14px 28px; border-radius: 2px; transition: background .2s; }
 .hero .btn-solid:hover { background: #fff; }
 .hero .btn-ghost { font-size: 15px; color: var(--ink); border: 1px solid var(--line-strong); padding: 13px 24px; border-radius: 2px; transition: border-color .2s; }
 .hero .btn-ghost:hover { border-color: rgba(255,255,255,.4); }
-.hero .viz { position: relative; height: 74vh; min-height: 420px; }
-.hero .viz canvas { position: absolute; inset: 0; width: 100%; height: 100%; }
-.hero .viz .read { position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); text-align: center; font-family: "IBM Plex Mono", monospace; pointer-events: none; }
-.hero .viz .read .n { font-size: 12px; letter-spacing: .2em; color: var(--purple-bright); }
-.hero .viz .read .l { font-size: 8.5px; letter-spacing: .24em; color: var(--dim); margin-top: 6px; }
-@media (max-width: 900px) { .hero .in { grid-template-columns: 1fr; } .hero .viz { order: 2; height: 52vh; } .hero .copy { max-width: none; } }
+@media (max-width: 900px) {
+  .hero .copy { max-width: none; }
+  .hero .scrim { background: linear-gradient(180deg, rgba(8,9,12,.55) 0%, rgba(8,9,12,.78) 42%, rgba(8,9,12,.35) 70%, transparent 100%); }
+  .hero .read { display: none; }
+}
 
 .ribbon { position: fixed; bottom: 14px; left: 50%; transform: translateX(-50%); z-index: 60; background: rgba(14,16,21,.9); border: 1px solid var(--line-strong); border-radius: 999px; padding: 8px 16px; font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .1em; color: var(--dim); backdrop-filter: blur(10px); }
 .ribbon b { color: var(--purple-bright); font-weight: 400; }
@@ -71,17 +81,15 @@ nav.top .key { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 
 </div></nav>
 
 <header class="hero">
-  <div class="grid-bg"></div><div class="glow"></div>
+  <canvas id="orbit"></canvas>
+  <div class="grid-bg"></div><div class="glow"></div><div class="scrim"></div>
+  <div class="read"><div class="n">GLM-5.2</div><div class="l">ONLINE · ATTESTED</div></div>
   <div class="in">
     <div class="copy">
-      <div class="eyebrow"><span class="led"></span>Private inference // a global private network</div>
-      <h1>Intelligence you <span class="own">own</span>.</h1>
-      <p class="sub">GLM-5.2 and the leading open models, streaming across a decentralized network — nothing stored, nothing trained on you.</p>
+      <div class="eyebrow"><span class="led"></span>Private inference // Aleph Cloud</div>
+      <h1>Intelligence<br><span class="l2">you <span class="own">own</span>.</span></h1>
+      <p class="sub">GLM-5.2 and the leading open models on one private endpoint. Nothing stored. Nothing trained on you.</p>
       <div class="ctas"><a class="btn-solid" href="#">Deploy GLM-5.2</a><a class="btn-ghost" href="#">Talk to our team</a></div>
-    </div>
-    <div class="viz">
-      <canvas id="orbit"></canvas>
-      <div class="read"><div class="n">GLM-5.2</div><div class="l">ONLINE · ATTESTED</div></div>
     </div>
   </div>
   <div class="ribbon">Globe + orbiting data streams — <b>test</b> · figures illustrative</div>
@@ -111,9 +119,9 @@ nav.top .key { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 
   function cross(a,b){ return [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]]; }
   function ringBasis(n){ n=norm(n); var a=Math.abs(n[1])<0.9?[0,1,0]:[1,0,0]; var u=norm(cross(n,a)); var v=cross(n,u); return {u:u,v:v}; }
   var ringDefs = [
-    { n:[0.15,1,0.12], rr:1.13, count:11, sp:0.0034, accent:0.35 },
-    { n:[1,0.32,0.15], rr:1.22, count:9, sp:-0.0028, accent:0.5 },
-    { n:[0.45,0.55,-0.7], rr:1.07, count:8, sp:0.0044, accent:0.3 }
+    { n:[0.15,1,0.12], rr:1.44, count:12, sp:0.0034, accent:0.35 },
+    { n:[0.82,0.5,0.2], rr:1.5, count:10, sp:-0.0028, accent:0.5 },
+    { n:[0.45,0.55,-0.7], rr:1.28, count:9, sp:0.0044, accent:0.3 }
   ];
   var rings = ringDefs.map(function(d){
     var bas = ringBasis(d.n), parts = [];
@@ -124,7 +132,7 @@ nav.top .key { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 
   });
 
   var W=0, H=0, R=0, cx=0, cy=0, ca=1, sa=0, ct=Math.cos(0.42), st=Math.sin(0.42), ang = reduce?0.6:-0.5;
-  function resize(){ var r=canvas.getBoundingClientRect(); W=r.width; H=r.height; canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); R=Math.min(W,H)*0.55; cx=W/2; cy=H/2; }
+  function resize(){ var r=canvas.getBoundingClientRect(); W=r.width; H=r.height; canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); R=Math.min(W,H)*0.31; cx=(W>900?0.70:0.5)*W; cy=H*0.5; }
   new ResizeObserver(resize).observe(canvas.parentNode); resize();
 
   // project a unit-space vector (already scaled by ring radius) to screen
