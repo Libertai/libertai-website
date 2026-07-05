@@ -1,53 +1,83 @@
 import type { CSSProperties } from "react";
-import { NodeGlobe } from "@/components/sovereign/NodeGlobe.tsx";
+import { NodeGlobeOrbit } from "@/components/sovereign/NodeGlobeOrbit.tsx";
 import { LINKS } from "@/components/sovereign/data.ts";
 
 /**
- * Hero — deliberately quiet: eyebrow, five words, one line, two actions,
- * and the network itself. Telemetry lives in the StatusStrip below.
+ * Hero — the decentralized network runs full-bleed behind the copy (offset
+ * right, dimmed under a left scrim) so the message stays quiet and roomy:
+ * eyebrow, five words, one line, two actions. Telemetry lives in the
+ * StatusStrip below.
  */
 export function SovereignHero() {
 	return (
-		<section className="relative min-h-screen flex flex-col overflow-hidden">
+		<section className="relative min-h-screen overflow-hidden">
+			{/* the network, behind everything */}
+			<NodeGlobeOrbit className="absolute inset-0 z-0 h-full w-full" />
+
 			{/* faint engineering grid + purple presence */}
 			<div
 				aria-hidden="true"
-				className="absolute inset-0 opacity-100 pointer-events-none"
+				className="absolute inset-0 z-[1] pointer-events-none opacity-50"
 				style={{
 					backgroundImage:
-						"repeating-linear-gradient(0deg, transparent 0 63px, rgba(255,255,255,.013) 63px 64px), repeating-linear-gradient(90deg, transparent 0 63px, rgba(255,255,255,.013) 63px 64px)",
+						"repeating-linear-gradient(0deg, transparent 0 63px, rgba(255,255,255,.012) 63px 64px), repeating-linear-gradient(90deg, transparent 0 63px, rgba(255,255,255,.012) 63px 64px)",
 				}}
 			/>
 			<div
 				aria-hidden="true"
-				className="absolute inset-0 pointer-events-none"
-				style={{ background: "radial-gradient(ellipse 85% 65% at 72% 40%, rgba(100,77,249,.09), transparent 62%)" }}
+				className="absolute inset-0 z-[1] pointer-events-none"
+				style={{ background: "radial-gradient(ellipse 60% 55% at 70% 48%, rgba(100,77,249,.10), transparent 62%)" }}
+			/>
+			{/* scrim keeps the copy legible over the network */}
+			<div
+				aria-hidden="true"
+				className="absolute inset-0 z-[1] pointer-events-none hidden md:block"
+				style={{
+					background:
+						"linear-gradient(90deg, var(--background) 0%, rgba(8,9,12,.82) 30%, rgba(8,9,12,.30) 55%, transparent 72%), radial-gradient(120% 100% at 50% 118%, transparent 58%, rgba(8,9,12,.55))",
+				}}
+			/>
+			<div
+				aria-hidden="true"
+				className="absolute inset-0 z-[1] pointer-events-none md:hidden"
+				style={{
+					background:
+						"linear-gradient(180deg, rgba(8,9,12,.55) 0%, rgba(8,9,12,.78) 42%, rgba(8,9,12,.35) 70%, transparent 100%)",
+				}}
 			/>
 
-			<div className="relative z-10 flex-1 max-w-7xl w-full mx-auto px-6 md:px-10 grid lg:grid-cols-[1.05fr_1fr] gap-10 lg:gap-6 items-center pt-28 pb-16">
-				{/* Copy */}
-				<div>
+			{/* GLM-5.2 readout at the globe's centre (desktop only) */}
+			<div className="absolute left-[70%] top-[49%] z-[1] hidden -translate-x-1/2 -translate-y-1/2 text-center font-mono md:block pointer-events-none">
+				<div className="text-[12px] tracking-[0.2em] text-purple-bright">GLM-5.2</div>
+				<div className="text-[8.5px] tracking-[0.24em] text-dim mt-1.5">ONLINE · ATTESTED</div>
+			</div>
+
+			{/* copy */}
+			<div className="relative z-[2] max-w-7xl mx-auto px-6 md:px-10 min-h-screen flex flex-col justify-center">
+				<div className="max-w-[660px]">
 					<div className="hero-fade flex items-center gap-3 sv-mono mb-8" style={{ "--d": "80ms" } as CSSProperties}>
 						<span className="inline-block w-6 h-px bg-purple-bright" aria-hidden="true" />
 						Private inference // Aleph Cloud
 					</div>
 
 					<h1
-						className="hero-fade font-satoshi text-ink text-[clamp(52px,7vw,96px)] leading-[0.98] tracking-[-0.025em] mb-7"
+						className="hero-fade font-satoshi text-ink text-[clamp(50px,6.6vw,94px)] leading-[0.98] tracking-[-0.025em] mb-7"
 						style={{ "--d": "180ms" } as CSSProperties}
 					>
 						Intelligence
 						<br />
-						you{" "}
-						<span className="relative whitespace-nowrap">
-							own
-							<span className="absolute left-0 right-0 bottom-[0.06em] h-[3px] bg-purple" aria-hidden="true" />
+						<span className="whitespace-nowrap">
+							you{" "}
+							<span className="relative">
+								own
+								<span className="absolute left-0 right-0 bottom-[0.06em] h-[3px] bg-purple" aria-hidden="true" />
+							</span>
+							.
 						</span>
-						.
 					</h1>
 
 					<p
-						className="hero-fade text-[17px] leading-relaxed text-foreground max-w-[44ch] mb-10"
+						className="hero-fade text-[17px] leading-relaxed text-foreground max-w-[42ch] mb-10"
 						style={{ "--d": "300ms" } as CSSProperties}
 					>
 						GLM-5.2 and the leading open models on one private endpoint. Nothing stored. Nothing trained on you.
@@ -72,26 +102,10 @@ export function SovereignHero() {
 						</a>
 					</div>
 				</div>
-
-				{/* The network */}
-				<div
-					className="hero-fade relative h-[46vh] min-h-[320px] lg:h-[62vh]"
-					style={{ "--d": "260ms" } as CSSProperties}
-				>
-					<div
-						aria-hidden="true"
-						className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[76%] aspect-square rounded-full border border-line"
-					/>
-					<NodeGlobe className="absolute inset-0 w-full h-full" />
-					<div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 text-center font-mono pointer-events-none">
-						<div className="text-[12px] tracking-[0.2em] text-purple-bright">GLM-5.2</div>
-						<div className="text-[8.5px] tracking-[0.24em] text-dim mt-1.5">ONLINE · ATTESTED</div>
-					</div>
-				</div>
 			</div>
 
 			{/* scroll cue */}
-			<div className="relative z-10 flex flex-col items-center gap-3 pb-7">
+			<div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-[2] flex flex-col items-center gap-3">
 				<span className="sv-mono text-[8.5px]">Scroll</span>
 				<span className="sv-cue" aria-hidden="true" />
 			</div>
