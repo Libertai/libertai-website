@@ -111,9 +111,9 @@ nav.top .key { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 
   function cross(a,b){ return [a[1]*b[2]-a[2]*b[1], a[2]*b[0]-a[0]*b[2], a[0]*b[1]-a[1]*b[0]]; }
   function ringBasis(n){ n=norm(n); var a=Math.abs(n[1])<0.9?[0,1,0]:[1,0,0]; var u=norm(cross(n,a)); var v=cross(n,u); return {u:u,v:v}; }
   var ringDefs = [
-    { n:[0.15,1,0.12], rr:1.32, count:11, sp:0.0034, accent:0.35 },
-    { n:[1,0.32,0.15], rr:1.44, count:9, sp:-0.0028, accent:0.5 },
-    { n:[0.45,0.55,-0.7], rr:1.19, count:8, sp:0.0044, accent:0.3 }
+    { n:[0.15,1,0.12], rr:1.13, count:11, sp:0.0034, accent:0.35 },
+    { n:[1,0.32,0.15], rr:1.22, count:9, sp:-0.0028, accent:0.5 },
+    { n:[0.45,0.55,-0.7], rr:1.07, count:8, sp:0.0044, accent:0.3 }
   ];
   var rings = ringDefs.map(function(d){
     var bas = ringBasis(d.n), parts = [];
@@ -124,7 +124,7 @@ nav.top .key { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 
   });
 
   var W=0, H=0, R=0, cx=0, cy=0, ca=1, sa=0, ct=Math.cos(0.42), st=Math.sin(0.42), ang = reduce?0.6:-0.5;
-  function resize(){ var r=canvas.getBoundingClientRect(); W=r.width; H=r.height; canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); R=Math.min(W,H)*0.29; cx=W/2; cy=H/2; }
+  function resize(){ var r=canvas.getBoundingClientRect(); W=r.width; H=r.height; canvas.width=Math.round(W*dpr); canvas.height=Math.round(H*dpr); ctx.setTransform(dpr,0,0,dpr,0,0); R=Math.min(W,H)*0.55; cx=W/2; cy=H/2; }
   new ResizeObserver(resize).observe(canvas.parentNode); resize();
 
   // project a unit-space vector (already scaled by ring radius) to screen
