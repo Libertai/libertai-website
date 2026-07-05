@@ -371,7 +371,7 @@ footer.site .in { display: flex; flex-wrap: wrap; justify-content: space-between
   for (var a = 0; a < N; a++) for (var b = a + 1; b < N; b++) {
     var dx = pts[a].x - pts[b].x, dy = pts[a].y - pts[b].y, dz = pts[a].z - pts[b].z;
     if (dx*dx + dy*dy + dz*dz < 0.19) {
-      edges.push({ a: a, b: b, ph: (ei * 0.61803398875) % 1, sp: 0.45 + ((ei * 7) % 5) * 0.16, accent: pts[a].accent || pts[b].accent });
+      edges.push({ a: a, b: b, ph: (ei * 0.61803398875) % 1, sp: 0.45 + ((ei * 7) % 5) * 0.16, dir: ei % 2 === 0, accent: pts[a].accent || pts[b].accent });
       ei++;
     }
   }
@@ -383,18 +383,32 @@ footer.site .in { display: flex; flex-wrap: wrap; justify-content: space-between
   }
   new ResizeObserver(resize).observe(canvas.parentNode); resize();
   var ang = reduce ? 0.6 : -0.5, ct = Math.cos(0.42), st = Math.sin(0.42);
-  function reach(A, B, mx, my, rev) {
-    ctx.beginPath();
-    ctx.moveTo(A.sx, A.sy); ctx.lineTo(A.sx + (mx - A.sx) * rev, A.sy + (my - A.sy) * rev);
-    ctx.moveTo(B.sx, B.sy); ctx.lineTo(B.sx + (mx - B.sx) * rev, B.sy + (my - B.sy) * rev);
-    ctx.stroke();
+  // cursor repulsion — nodes part into a hole around the pointer
+  var mX = 0, mY = 0, holeT = 0, hole = 0;
+  if (!reduce) {
+    canvas.addEventListener("pointermove", function (ev) {
+      var r = canvas.getBoundingClientRect(); mX = ev.clientX - r.left; mY = ev.clientY - r.top; holeT = 1;
+    });
+    canvas.addEventListener("pointerleave", function () { holeT = 0; });
+    canvas.addEventListener("pointercancel", function () { holeT = 0; });
   }
+  function line(x0, y0, x1, y1) { ctx.beginPath(); ctx.moveTo(x0, y0); ctx.lineTo(x1, y1); ctx.stroke(); }
   function frame(t) {
     ctx.clearRect(0, 0, W, H);
     var ca = Math.cos(ang), sa = Math.sin(ang), cx = W / 2, cy = H / 2, pr = [];
+    hole += (holeT - hole) * 0.12;
+    var holeR = Math.max(80, R * 0.72), holeMax = holeR * 0.62, holing = hole > 0.002;
     for (var i = 0; i < N; i++) {
       var p = pts[i], x1 = p.x*ca - p.z*sa, z1 = p.x*sa + p.z*ca, y1 = p.y*ct - z1*st, z2 = p.y*st + z1*ct;
-      pr.push({ sx: cx + x1*R, sy: cy + y1*R, depth: (z2 + 1) / 2, accent: p.accent, ph: p.ph });
+      var dep = (z2 + 1) / 2, sx = cx + x1*R, sy = cy + y1*R;
+      if (holing) {
+        var dxm = sx - mX, dym = sy - mY, dm = Math.sqrt(dxm*dxm + dym*dym);
+        if (dm < holeR) {
+          var f = 1 - dm / holeR, push = hole * holeMax * f * f * (0.45 + dep * 0.55);
+          if (dm > 0.001) { sx += (dxm / dm) * push; sy += (dym / dm) * push; } else { sx += push; }
+        }
+      }
+      pr.push({ sx: sx, sy: sy, depth: dep, accent: p.accent, ph: p.ph });
     }
     ctx.lineWidth = 1;
     for (var e = 0; e < edges.length; e++) {
@@ -402,24 +416,31 @@ footer.site .in { display: flex; flex-wrap: wrap; justify-content: space-between
       ctx.strokeStyle = "rgba(150,156,174," + (0.015 + d * 0.05).toFixed(3) + ")";
       ctx.beginPath(); ctx.moveTo(A.sx, A.sy); ctx.lineTo(B.sx, B.sy); ctx.stroke();
     }
+    ctx.lineCap = "round";
+    var SEG = 0.55, ACTIVE = 0.6;
     for (var e2 = 0; e2 < edges.length; e2++) {
-      var eg = edges[e2], EA = pr[eg.a], EB = pr[eg.b], ed = (EA.depth + EB.depth) / 2, rev;
-      if (reduce) { rev = 1; }
+      var eg = edges[e2], EA = pr[eg.a], EB = pr[eg.b], ed = (EA.depth + EB.depth) / 2, u0, u1, inten;
+      if (reduce) { u0 = 0; u1 = 1; inten = 1; }
       else {
         var cyc = (t * 0.00016 * eg.sp + eg.ph) % 1; if (cyc < 0) cyc += 1;
-        rev = (Math.sin(cyc * Math.PI) - 0.32) / 0.68; if (rev <= 0) continue;
-        rev = rev * rev * (3 - 2 * rev);
+        if (cyc > ACTIVE) continue;
+        var prog = cyc / ACTIVE, head = prog * (1 + SEG);
+        u1 = Math.min(1, head); u0 = Math.max(0, head - SEG); if (u1 <= u0) continue;
+        inten = Math.sin(prog * Math.PI);
       }
-      var mx = (EA.sx + EB.sx) / 2, my = (EA.sy + EB.sy) / 2, al = rev * (0.12 + ed * 0.5);
+      var S = eg.dir ? EA : EB, E = eg.dir ? EB : EA;
+      var lx0 = S.sx + (E.sx - S.sx) * u0, ly0 = S.sy + (E.sy - S.sy) * u0;
+      var lx1 = S.sx + (E.sx - S.sx) * u1, ly1 = S.sy + (E.sy - S.sy) * u1, al = inten * (0.12 + ed * 0.5);
       if (eg.accent) {
         ctx.globalCompositeOperation = "lighter";
-        ctx.strokeStyle = "rgba(124,100,255," + (al * 0.5).toFixed(3) + ")"; ctx.lineWidth = 3.4; reach(EA, EB, mx, my, rev);
-        ctx.strokeStyle = "rgba(176,164,255," + al.toFixed(3) + ")"; ctx.lineWidth = 1.3; reach(EA, EB, mx, my, rev);
+        ctx.strokeStyle = "rgba(124,100,255," + (al * 0.5).toFixed(3) + ")"; ctx.lineWidth = 3.4; line(lx0, ly0, lx1, ly1);
+        ctx.strokeStyle = "rgba(176,164,255," + al.toFixed(3) + ")"; ctx.lineWidth = 1.3; line(lx0, ly0, lx1, ly1);
         ctx.globalCompositeOperation = "source-over";
       } else {
-        ctx.strokeStyle = "rgba(220,225,236," + (al * 0.8).toFixed(3) + ")"; ctx.lineWidth = 1.1; reach(EA, EB, mx, my, rev);
+        ctx.strokeStyle = "rgba(220,225,236," + (al * 0.8).toFixed(3) + ")"; ctx.lineWidth = 1.1; line(lx0, ly0, lx1, ly1);
       }
     }
+    ctx.lineCap = "butt";
     for (var n = 0; n < N; n++) {
       var q = pr[n];
       if (q.accent) {
