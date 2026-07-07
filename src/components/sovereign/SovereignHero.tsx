@@ -52,8 +52,8 @@ export function SovereignHero() {
 				<div className="text-[8.5px] tracking-[0.24em] text-dim mt-1.5">ONLINE · ATTESTED</div>
 			</div>
 
-			{/* copy */}
-			<div className="relative z-[2] max-w-7xl mx-auto px-6 md:px-10 min-h-screen flex flex-col justify-center">
+			{/* copy — layer lets pointer events fall through to the network behind it */}
+			<div className="relative z-[2] pointer-events-none max-w-7xl mx-auto px-6 md:px-10 min-h-screen flex flex-col justify-center">
 				<div className="max-w-[660px]">
 					<div className="hero-fade flex items-center gap-3 sv-mono mb-8" style={{ "--d": "80ms" } as CSSProperties}>
 						<span className="inline-block w-6 h-px bg-purple-bright" aria-hidden="true" />
@@ -83,7 +83,10 @@ export function SovereignHero() {
 						GLM-5.2 and the leading open models on one private endpoint. Nothing stored. Nothing trained on you.
 					</p>
 
-					<div className="hero-fade flex flex-wrap items-center gap-4" style={{ "--d": "420ms" } as CSSProperties}>
+					<div
+						className="hero-fade flex flex-wrap items-center gap-4 pointer-events-auto"
+						style={{ "--d": "420ms" } as CSSProperties}
+					>
 						<a
 							href={LINKS.console}
 							target="_blank"
@@ -105,9 +108,18 @@ export function SovereignHero() {
 			</div>
 
 			{/* scroll cue */}
-			<div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-[2] flex flex-col items-center gap-3">
+			<div className="absolute bottom-7 left-1/2 -translate-x-1/2 z-[2] flex flex-col items-center gap-3 pointer-events-none">
 				<span className="sv-mono text-[8.5px]">Scroll</span>
 				<span className="sv-cue" aria-hidden="true" />
+			</div>
+
+			{/* interactivity hint (desktop) */}
+			<div
+				className="absolute bottom-8 right-8 z-[2] hidden md:flex items-center gap-2 sv-mono text-[8.5px] pointer-events-none"
+				style={{ color: "var(--faint)" }}
+			>
+				<span className="inline-block w-1 h-1 rounded-full bg-purple-bright" aria-hidden="true" />
+				Drag · hover · click the network
 			</div>
 		</section>
 	);
