@@ -14,8 +14,6 @@
   --dark: #0f1113; --dark-2: #16181b;
   --acc: #644df9; --acc-c: #ffffff; --acc-soft: rgba(100,77,249,.10);
 }
-body[data-acc="lime"] { --acc: #beff8b; --acc-c: #0f1113; --acc-soft: rgba(190,255,139,.28); }
-body[data-acc="steel"] { --acc: #9dbbc5; --acc-c: #0f1113; --acc-soft: rgba(157,187,197,.24); }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
@@ -253,13 +251,7 @@ footer.site .word { font-family: "Satoshi", sans-serif; font-weight: 500; font-s
 footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; padding-top: 28px; border-top: 1px solid var(--line); font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
 @media (max-width: 860px) { footer.site .cols { grid-template-columns: 1fr 1fr; } }
 
-/* accent switcher + ribbon */
-.acc-sw { position: fixed; bottom: 16px; right: 16px; z-index: 60; display: flex; align-items: center; gap: 10px; background: rgba(255,255,255,.9); backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 999px; padding: 8px 12px; box-shadow: 0 10px 30px rgba(15,17,19,.08); }
-.acc-sw span { font-family: "IBM Plex Mono", monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
-.acc-sw button { width: 20px; height: 20px; border-radius: 50%; border: 2px solid #fff; box-shadow: 0 0 0 1px var(--line-strong); cursor: pointer; transition: transform .2s; }
-.acc-sw button:hover { transform: scale(1.15); }
-.acc-sw button.on { box-shadow: 0 0 0 2px var(--ink); }
-.acc-sw .purple { background: #644df9; } .acc-sw .lime { background: #beff8b; } .acc-sw .steel { background: #9dbbc5; }
+/* ribbon */
 .ribbon { position: fixed; bottom: 16px; left: 16px; z-index: 60; background: rgba(255,255,255,.9); backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
 .ribbon b { color: var(--ink); font-weight: 500; }
 @media (max-width: 700px) { .ribbon { display: none; } }
@@ -274,7 +266,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 <!-- NAV -->
 <nav class="top"><div class="pill">
   <a class="brand" href="#top">Libert<span class="ai">AI</span></a>
-  <div class="links"><a href="#privacy">Private AI</a><a href="preview-api.html">API</a><a href="#stack">Search</a><a href="#credits">Credits</a><a href="#stack">Docs</a></div>
+  <div class="links"><a href="#privacy">Private AI</a><a href="preview-api.html">API</a><a href="preview-search.html">Search</a><a href="#credits">Credits</a><a href="#stack">Docs</a></div>
   <div class="cta"><a class="chat" href="#">Chat</a><a class="key" href="#">Get API key</a></div>
 </div></nav>
 
@@ -460,7 +452,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
       <div class="brand">Libert<span class="ai">AI</span></div>
       <p style="font-size:13px;color:var(--dim);max-width:30ch">Decentralized, confidential AI on Aleph Cloud. Liberty · Community · Privacy.</p>
     </div>
-    <div><div class="h">Platform</div><a href="#">Chat</a><a href="#models">API</a><a href="#stack">Agents</a><a href="#stack">Search</a></div>
+    <div><div class="h">Platform</div><a href="#">Chat</a><a href="#models">API</a><a href="#stack">Agents</a><a href="preview-search.html">Search</a></div>
     <div><div class="h">Resources</div><a href="#">Docs</a><a href="#credits">Credits</a><a href="#">Status</a><a href="#">Brand</a></div>
     <div><div class="h">Explore</div><a href="#">Aleph Cloud</a><a href="#">GitHub</a><a href="#">X / Twitter</a><a href="#">Telegram</a></div>
   </div>
@@ -468,13 +460,8 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   <div class="legal"><span>© 2026 LibertAI · Powered by Aleph Cloud</span><span>Nothing stored · Nothing trained on you</span></div>
 </div></footer>
 
-<!-- ACCENT SWITCHER + RIBBON -->
-<div class="acc-sw"><span>Accent</span>
-  <button class="purple on" data-a="purple" aria-label="Purple accent"></button>
-  <button class="lime" data-a="lime" aria-label="Lime accent"></button>
-  <button class="steel" data-a="steel" aria-label="Steel accent"></button>
-</div>
-<div class="ribbon">Light direction · <b>preview</b> · figures illustrative</div>
+<!-- RIBBON -->
+<div class="ribbon">Preview · <b>figures illustrative</b></div>
 
 <script>
 (function () {
@@ -503,20 +490,8 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   }, { threshold: 0.6 });
   document.querySelectorAll("[data-n]").forEach(function (el) { cio.observe(el); });
 
-  // accent switcher
-  var ACC = {
-    purple: { main: "124,100,255", bright: "176,164,255", node: "190,178,255" },
-    lime:   { main: "158,235,110", bright: "190,255,139", node: "214,255,178" },
-    steel:  { main: "125,165,182", bright: "157,187,197", node: "196,219,228" }
-  };
-  var cur = ACC.purple;
-  document.querySelectorAll(".acc-sw button").forEach(function (b) {
-    b.addEventListener("click", function () {
-      document.body.dataset.acc = b.dataset.a;
-      cur = ACC[b.dataset.a];
-      document.querySelectorAll(".acc-sw button").forEach(function (x) { x.classList.toggle("on", x === b); });
-    });
-  });
+  // fixed purple accent for the network
+  var cur = { main: "124,100,255", bright: "176,164,255", node: "190,178,255" };
 
   // network view - globe + orbiting data streams (centered in dark frame)
   var canvas = document.getElementById("net");
