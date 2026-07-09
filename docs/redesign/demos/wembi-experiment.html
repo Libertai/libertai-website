@@ -142,20 +142,28 @@ nav.top .key:hover { background: #26292d; }
 .frame:not(.b) .ntip .t2 { color: #ff9d9d; }
 .hoverhint { position: absolute; z-index: 3; right: 26px; bottom: 116px; font-family: "IBM Plex Mono", monospace; font-size: 8.5px; letter-spacing: .16em; text-transform: uppercase; color: rgba(255,255,255,.35); }
 @media (max-width: 860px) {
-  .media .frame { height: 88vh; max-height: 780px; min-height: 660px; }
-  .media .scrimA, .media .scrimB { background: linear-gradient(180deg, rgba(15,17,19,.94) 0%, rgba(15,17,19,.5) 38%, transparent 62%), linear-gradient(0deg, rgba(15,17,19,.9), transparent 34%); opacity: 1 !important; }
-  .media .say { top: 64px; transform: none; left: 24px; right: 24px; max-width: none; transition: transform .8s cubic-bezier(.65,0,.22,1), opacity .6s ease; }
+  /* fit the whole card inside the viewport so the headline (top) and the
+     switch + strip (bottom) are on screen together - the reveal is never
+     stranded above the fold when the worlds flip */
+  .media { padding: 30px 0 0; }
+  .media .frame { height: 80vh; min-height: 490px; max-height: 600px; }
+  .media .scrimA, .media .scrimB { background: linear-gradient(180deg, rgba(15,17,19,.95) 0%, rgba(15,17,19,.58) 34%, rgba(15,17,19,.1) 55%, transparent 66%), linear-gradient(0deg, rgba(9,10,13,.92) 0%, rgba(9,10,13,.45) 22%, transparent 42%); opacity: 1 !important; }
+  .media .say { top: 30px; transform: none; left: 22px; right: 22px; max-width: none; transition: transform .8s cubic-bezier(.65,0,.22,1), opacity .6s ease; }
   .media .sayA { transform: translateX(0); }
   .media .sayB { transform: translateX(calc(100% + 60px)); }
   .media .frame.b .sayA { transform: translateX(calc(-100% - 60px)); }
   .media .frame.b .sayB { transform: translateX(0); }
-  .media .say h3 { font-size: 27px; }
-  .media .say p { font-size: 14.5px; max-width: none; }
+  .media .say .ey { margin-bottom: 12px; }
+  .media .say h3 { font-size: 25px; margin-bottom: 10px; }
+  .media .say p { font-size: 13.5px; line-height: 1.5; max-width: none; }
   .media .corner.tr, .media .corner.br, .hoverhint { display: none; }
+  .media .corner.tl { top: 16px; left: 20px; }
   .wswitch { bottom: 178px; width: max-content; }
   .media .strip { flex-direction: column; }
-  .media .strip .c { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); padding: 11px 20px; }
+  .media .strip .c { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); padding: 7px 18px; }
   .media .strip .c:last-child { border-bottom: 0; }
+  .media .strip .k { font-size: 8px; }
+  .media .strip .v { font-size: 12.5px; margin-top: 2px; }
 }
 
 /* ticker */
@@ -807,19 +815,27 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     setWorld(target === 0, true);
   });
 
-  // auto-flip: once the panel's center rises past the viewport center on the
-  // way down, the switch flips to LibertAI. Scrolling is never intercepted.
-  var lastY = window.scrollY;
-  if (!reduce) addEventListener("scroll", function () {
-    var down = window.scrollY > lastY;
-    lastY = window.scrollY;
-    if (autoDone || target !== 0 || !down) return;
-    var r = frameEl.getBoundingClientRect();
-    if (r.top + r.height / 2 < window.innerHeight / 2 + 40) {
-      autoDone = true;
-      setWorld(true, false);
+  // auto-flip: only once the whole panel is comfortably on screen do we dwell
+  // briefly on the closed-world state, then reveal LibertAI - so the headline
+  // and strip are always in view when they change. Scrolling is never captured.
+  if (!reduce && "IntersectionObserver" in window) {
+    var dwell = null;
+    function seenEnough(e) {
+      return e.intersectionRatio >= 0.7 || e.intersectionRect.height >= window.innerHeight * 0.82;
     }
-  }, { passive: true });
+    var flipIO = new IntersectionObserver(function (es) {
+      es.forEach(function (e) {
+        if (autoDone || target !== 0) { flipIO.disconnect(); return; }
+        if (e.isIntersecting && seenEnough(e)) {
+          if (!dwell) dwell = setTimeout(function () {
+            if (!autoDone && target === 0) { autoDone = true; setWorld(true, false); }
+            flipIO.disconnect();
+          }, 700);
+        } else if (dwell) { clearTimeout(dwell); dwell = null; }
+      });
+    }, { threshold: [0, 0.5, 0.7, 0.9] });
+    flipIO.observe(frameEl);
+  }
 
   // pointer for hover
   var lx = -1e4, ly = -1e4;
