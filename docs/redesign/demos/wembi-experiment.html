@@ -822,26 +822,28 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     setWorld(target === 0, true);
   });
 
-  // auto-flip: only once the whole panel is comfortably on screen do we dwell
-  // briefly on the closed-world state, then reveal LibertAI - so the headline
-  // and strip are always in view when they change. Scrolling is never captured.
-  if (!reduce && "IntersectionObserver" in window) {
+  // auto-flip: hold off until the closed "Their models" headline has risen to
+  // around the middle of the screen and settled there, then dwell and switch.
+  // Arms only while the headline sits in the middle band and cancels if the
+  // user scrolls on past - so the flip lands while they are reading it, not the
+  // moment the panel edges into view. Scrolling is never captured.
+  if (!reduce) {
     var dwell = null;
-    function seenEnough(e) {
-      return e.intersectionRatio >= 0.7 || e.intersectionRect.height >= window.innerHeight * 0.82;
+    var saH = frameEl.querySelector(".sayA h3");
+    function maybeFlip() {
+      if (autoDone || target !== 0) { removeEventListener("scroll", maybeFlip); return; }
+      var r = saH.getBoundingClientRect();
+      var vh = window.innerHeight;
+      var hc = (r.top + r.height / 2) / vh;
+      if (hc > 0.30 && hc < 0.58) {
+        if (!dwell) dwell = setTimeout(function () {
+          if (!autoDone && target === 0) { autoDone = true; setWorld(true, false); }
+          removeEventListener("scroll", maybeFlip);
+        }, 550);
+      } else if (dwell) { clearTimeout(dwell); dwell = null; }
     }
-    var flipIO = new IntersectionObserver(function (es) {
-      es.forEach(function (e) {
-        if (autoDone || target !== 0) { flipIO.disconnect(); return; }
-        if (e.isIntersecting && seenEnough(e)) {
-          if (!dwell) dwell = setTimeout(function () {
-            if (!autoDone && target === 0) { autoDone = true; setWorld(true, false); }
-            flipIO.disconnect();
-          }, 700);
-        } else if (dwell) { clearTimeout(dwell); dwell = null; }
-      });
-    }, { threshold: [0, 0.5, 0.7, 0.9] });
-    flipIO.observe(frameEl);
+    addEventListener("scroll", maybeFlip, { passive: true });
+    maybeFlip();
   }
 
   // pointer for hover
