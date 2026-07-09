@@ -791,16 +791,19 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   function engageLock() {
     locked = true; lockDone = true;
     var armed = false;
-    // controlled centering tween, then freeze, then arm after a beat
-    var y0 = window.scrollY, y1 = y0 + centerDelta(), t0 = performance.now(), DUR = 480;
+    // stop in place: input is swallowed by the listeners below; the page only
+    // drifts a whisper toward center (capped), ease-out, then freezes fully
+    var y0 = window.scrollY;
+    var y1 = y0 + Math.max(-140, Math.min(140, centerDelta()));
+    var t0 = performance.now(), DUR = 700;
     (function tween(now) {
       var p2 = Math.min(1, (now - t0) / DUR);
-      var e2 = p2 < 0.5 ? 2 * p2 * p2 : 1 - Math.pow(-2 * p2 + 2, 2) / 2;
+      var e2 = 1 - Math.pow(1 - p2, 3);
       window.scrollTo(0, y0 + (y1 - y0) * e2);
       if (p2 < 1 && locked) requestAnimationFrame(tween);
       else if (locked) {
         document.documentElement.style.overflow = "hidden";
-        setTimeout(function () { armed = true; }, 420);
+        setTimeout(function () { armed = true; }, 300);
       }
     })(t0);
     var freezeT = setTimeout(function () {}, 0);
@@ -851,7 +854,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     if (r.bottom < 0) { autoDone = true; setWorld(true, false); return; }
     if (lockDone || !down) return;
     var d = centerDelta();
-    if (d < 320 && d > -320) engageLock();
+    if (d < 170 && d > -230) engageLock();
   }, { passive: true });
 
   // pointer for hover
