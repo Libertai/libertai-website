@@ -19,7 +19,7 @@ const steps = [
 		number: 1,
 		title: "Open-Weight Models",
 		description:
-			"The intelligence layer is open. LibertAI serves open-weight models with full weights you can download: Qwen3.6-35B-A3B and Qwen3.6-27B for long context, tool use, vision, and reasoning; Gemma 4 31B with a 262K context window and function calling; DeepSeek V4 Flash for fast reasoning; Hermes 3 8B; plus Qwen3 Coder, GLM-4.7, and Qwen3.5 122B. No black-box endpoints, no hidden model behind an API.",
+			"The intelligence layer is open. LibertAI serves open-weight models with full weights you can download: Qwen3.6-35B-A3B and Qwen3.6-27B for long context, tool use, vision, and reasoning; Gemma 4 31B with a 262K context window and function calling; DeepSeek V4 Flash for fast reasoning; Hermes 3 8B; plus Qwen3 Coder, GLM-5.2, and Qwen3.5 122B. No black-box endpoints, no hidden model behind an API.",
 	},
 	{
 		number: 2,
@@ -52,7 +52,7 @@ const features = [
 		icon: Boxes,
 		title: "Open-Weight Models, Not Black Boxes",
 		description:
-			"Every model is open-weight: Qwen3.6, Gemma 4, DeepSeek V4 Flash, Hermes 3, GLM-4.7, and more. You know exactly what is answering you, you can download the weights, and you can run them anywhere a proprietary API never lets you go.",
+			"Every model is open-weight: Qwen3.6, Gemma 4, DeepSeek V4 Flash, Hermes 3, GLM-5.2, and more. You know exactly what is answering you, you can download the weights, and you can run them anywhere a proprietary API never lets you go.",
 	},
 	{
 		icon: GitFork,
@@ -104,7 +104,7 @@ const faqs = [
 		id: 2,
 		question: "Are open-source models as good as GPT-4-class models?",
 		answer:
-			"For most real workloads, yes. Top open models such as Qwen3.6, Gemma 4, DeepSeek V4 Flash, and GLM-4.7 are competitive with proprietary models on everyday chat, coding, reasoning, and tool use. To be honest about it: frontier proprietary models still lead on some of the hardest tasks. The trade-off is what openness buys you — auditability, no lock-in, and verifiable privacy — which matters more than a few benchmark points for many use cases.",
+			"For most real workloads, yes. Top open models such as Qwen3.6, Gemma 4, DeepSeek V4 Flash, and GLM-5.2 are competitive with proprietary models on everyday chat, coding, reasoning, and tool use. To be honest about it: frontier proprietary models still lead on some of the hardest tasks. The trade-off is what openness buys you — auditability, no lock-in, and verifiable privacy — which matters more than a few benchmark points for many use cases.",
 	},
 	{
 		id: 3,

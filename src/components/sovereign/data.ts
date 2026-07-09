@@ -1,9 +1,12 @@
 /**
  * Homepage display data.
  *
- * Pricing/throughput figures are ILLUSTRATIVE placeholders pending internal
- * confirmation (see docs/redesign/REDESIGN_PLAN.md §10). Live per-model
- * pricing is served on /api from the Aleph aggregate.
+ * Pricing figures here are FALLBACKS. StatusStrip, ModelsShowcase and
+ * ComparisonSection hydrate the live per-token prices from the same Aleph
+ * LTAI_PRICING aggregate that /api uses (see usePricing.ts), so the homepage
+ * cannot disagree with /api; these constants only show until that resolves or
+ * if the fetch fails. Context window / throughput are not in the aggregate and
+ * stay constant.
  */
 
 export const LINKS = {

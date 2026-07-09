@@ -71,7 +71,7 @@ const features = [
 		icon: KeyRound,
 		title: "No API Keys Needed",
 		description:
-			"Inference is included through LibertAI using open models such as Qwen3.6, Qwen3.5 122B, Gemma 4, DeepSeek V4 Flash, Qwen3 Coder, and GLM-4.7. No OpenAI or Anthropic key to configure, no third-party usage tracking.",
+			"Inference is included through LibertAI using open models such as Qwen3.6, Qwen3.5 122B, Gemma 4, DeepSeek V4 Flash, Qwen3 Coder, and GLM-5.2. No OpenAI or Anthropic key to configure, no third-party usage tracking.",
 	},
 	{
 		icon: Code,
@@ -151,7 +151,7 @@ const faqs = [
 		id: 3,
 		question: "Do I need an OpenAI API key to run an AI agent?",
 		answer:
-			"No. LiberClaw agents use LibertAI for inference, which runs open models such as Qwen3.6, Qwen3.5 122B, Gemma 4, DeepSeek V4 Flash, Qwen3 Coder, and GLM-4.7. The inference is included, so you do not need an API key from OpenAI, Anthropic, or any other provider.",
+			"No. LiberClaw agents use LibertAI for inference, which runs open models such as Qwen3.6, Qwen3.5 122B, Gemma 4, DeepSeek V4 Flash, Qwen3 Coder, and GLM-5.2. The inference is included, so you do not need an API key from OpenAI, Anthropic, or any other provider.",
 	},
 	{
 		id: 4,

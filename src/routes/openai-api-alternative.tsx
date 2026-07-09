@@ -63,7 +63,7 @@ const features = [
 		icon: Cpu,
 		title: "Open-Weight Models",
 		description:
-			"Run current open models such as Qwen3.6-35B-A3B, Gemma 4 31B with a 262K context window, DeepSeek V4 Flash, GLM-4.7, and Qwen3 Coder. Plus image generation, embeddings, text-to-speech, and a private web search API.",
+			"Run current open models such as Qwen3.6-35B-A3B, Gemma 4 31B with a 262K context window, DeepSeek V4 Flash, GLM-5.2, and Qwen3 Coder. Plus image generation, embeddings, text-to-speech, and a private web search API.",
 	},
 	{
 		icon: ShieldCheck,
@@ -134,7 +134,7 @@ const faqs = [
 		id: 3,
 		question: "Which open-source models can replace GPT-4 class models?",
 		answer:
-			"LibertAI serves open-weight models including Qwen3.6-35B-A3B and Qwen3.6-27B for long-context, tool use, vision, and reasoning, Gemma 4 31B with a 262K context window and multimodal support, DeepSeek V4 Flash for fast reasoning, GLM-4.7, Qwen3 Coder, and Qwen3.5 122B. There are also image generation, embeddings, text-to-speech, and a private web search API.",
+			"LibertAI serves open-weight models including Qwen3.6-35B-A3B and Qwen3.6-27B for long-context, tool use, vision, and reasoning, Gemma 4 31B with a 262K context window and multimodal support, DeepSeek V4 Flash for fast reasoning, GLM-5.2, Qwen3 Coder, and Qwen3.5 122B. There are also image generation, embeddings, text-to-speech, and a private web search API.",
 	},
 	{
 		id: 4,

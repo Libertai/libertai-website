@@ -58,7 +58,7 @@ const steps = [
 		number: 1,
 		title: "Open-Weight Models",
 		description:
-			"The freedom stack starts with models whose weights are public: Qwen3.6, Gemma 4 31B, DeepSeek V4 Flash, Hermes 3 8B, GLM-4.7, and Qwen3.5 122B. Because the weights are open, no single company can deprecate them out from under you. If a model serves you well, it can keep running anywhere, on LibertAI or on your own hardware, long after a vendor would have retired it. This is what protects you from silent model deprecation and lock-in.",
+			"The freedom stack starts with models whose weights are public: Qwen3.6, Gemma 4 31B, DeepSeek V4 Flash, Hermes 3 8B, GLM-5.2, and Qwen3.5 122B. Because the weights are open, no single company can deprecate them out from under you. If a model serves you well, it can keep running anywhere, on LibertAI or on your own hardware, long after a vendor would have retired it. This is what protects you from silent model deprecation and lock-in.",
 	},
 	{
 		number: 2,

@@ -1,8 +1,13 @@
 import type { CSSProperties } from "react";
 import { Reveal } from "@/components/sovereign/Reveal.tsx";
 import { COMPARISON } from "@/components/sovereign/data.ts";
+import { usePricing } from "@/components/sovereign/usePricing.ts";
 
 export function ComparisonSection() {
+	const { flagship } = usePricing();
+	// our own figure comes from live data; the competitor bars stay illustrative
+	const rows = COMPARISON.map((row) => (row.us && flagship ? { ...row, price: flagship.output } : row));
+
 	return (
 		<section className="border-y border-line bg-panel/40">
 			<div className="max-w-7xl mx-auto px-6 md:px-10 py-28 md:py-32 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] gap-12 lg:gap-24 items-center">
@@ -21,7 +26,7 @@ export function ComparisonSection() {
 						<span className="text-faint">Illustrative</span>
 					</div>
 					<div className="flex flex-col gap-5">
-						{COMPARISON.map((row) => (
+						{rows.map((row) => (
 							<div
 								key={row.who}
 								className="grid grid-cols-[150px_1fr_64px] md:grid-cols-[200px_1fr_72px] items-center gap-4"

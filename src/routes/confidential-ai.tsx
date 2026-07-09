@@ -119,7 +119,7 @@ const faqs = [
 		id: 5,
 		question: "Which models run in a TEE?",
 		answer:
-			"Hermes 3 8B is served inside a TEE today. The platform also serves a range of larger open models, including Qwen3.6-35B-A3B, Qwen3.6-27B, Gemma 4 31B with 262K context, DeepSeek V4 Flash, Qwen3 Coder, GLM-4.7, and Qwen3.5 122B, all with no logging and no training on user data.",
+			"Hermes 3 8B is served inside a TEE today. The platform also serves a range of larger open models, including Qwen3.6-35B-A3B, Qwen3.6-27B, Gemma 4 31B with 262K context, DeepSeek V4 Flash, Qwen3 Coder, GLM-5.2, and Qwen3.5 122B, all with no logging and no training on user data.",
 	},
 ];
 

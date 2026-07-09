@@ -515,7 +515,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     <div class="rows">
       <div class="hd"><span>Cost &amp; benchmark · flagship models</span><span>$ / 1M · index</span></div>
       <div class="r us"><span class="who">LIBERTAI · GLM-5.2</span><div class="bars">
-        <div class="ln"><span class="lbl">Cost</span><span class="track price"><i style="--w:15%"></i></span><span class="val">$2.20</span></div>
+        <div class="ln"><span class="lbl">Cost</span><span class="track price"><i style="--w:15%"></i></span><span class="val" id="cmpUsVal">$2.20</span></div>
         <div class="ln"><span class="lbl">Bench</span><span class="track pw"><i class="lt" style="--w:92%"></i></span><span class="val">92</span></div>
       </div></div>
       <div class="r"><span class="who">OPENAI · FLAGSHIP</span><div class="bars">
@@ -638,6 +638,10 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   document.querySelectorAll("[data-n]").forEach(function (el) { cio.observe(el); });
 
 
+  // live flagship price, shared across the billboard, two-worlds strip and the
+  // comparison bar so every GLM figure on the page comes from one source
+  var flagIn = "$0.60", flagOut = "$2.20";
+
   // live price hydration from the Aleph LTAI_PRICING aggregate (same source as production)
   try {
     var pctl = new AbortController();
@@ -659,6 +663,17 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
           else if (el.dataset.k === "out") el.innerHTML = "<i>$</i>" + p.price_per_million_output_tokens.toFixed(2);
           else el.textContent = pin + " / " + pout;
         });
+        // flagship figure feeds the parts of the page that are not data-mid driven
+        var glm = byId["glm-5.2"];
+        if (glm) {
+          flagIn = "$" + glm.price_per_million_input_tokens.toFixed(2);
+          flagOut = "$" + glm.price_per_million_output_tokens.toFixed(2);
+          var cmpUs = document.getElementById("cmpUsVal");
+          if (cmpUs) cmpUs.textContent = flagOut;
+          var f = document.getElementById("worlds");
+          var s3 = document.getElementById("stV3");
+          if (f && s3 && f.classList.contains("b")) s3.innerHTML = "<b>" + flagIn + "</b> in / <b>" + flagOut + "</b> out";
+        }
         var note = document.getElementById("priceNote");
         if (hit > 0 && note) note.textContent = "Live pricing · synced from Aleph";
       }).catch(function () {});
@@ -762,7 +777,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
       stV1.textContent = "0 bytes";
       stV2.textContent = "TEE-attested";
       stK3.textContent = "GLM-5.2 · 1M tokens";
-      stV3.innerHTML = "<b>$0.60</b> in / <b>$2.20</b> out";
+      stV3.innerHTML = "<b>" + flagIn + "</b> in / <b>" + flagOut + "</b> out";
       hoverhint.textContent = realData ? "Hover the nodes · live Aleph Cloud CRNs" : "Hover the nodes";
     } else {
       stV2.textContent = "None · logged & profiled";

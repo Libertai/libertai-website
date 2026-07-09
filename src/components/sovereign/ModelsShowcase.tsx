@@ -1,8 +1,18 @@
 import { Link } from "@tanstack/react-router";
 import { Reveal } from "@/components/sovereign/Reveal.tsx";
 import { FLAGSHIP, LINKS, MODELS } from "@/components/sovereign/data.ts";
+import { usePricing } from "@/components/sovereign/usePricing.ts";
 
 export function ModelsShowcase() {
+	const { flagship, priceFor, loaded } = usePricing();
+
+	// flagship spec: input/output come from live data, context/throughput stay constant
+	const flagshipRows = FLAGSHIP.rows.map((r) => {
+		if (flagship && r.label.startsWith("Input")) return { ...r, value: flagship.input };
+		if (flagship && r.label.startsWith("Output")) return { ...r, value: flagship.output };
+		return r;
+	});
+
 	return (
 		<section className="max-w-7xl mx-auto px-6 md:px-10 py-28 md:py-36">
 			<div className="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.15fr)] gap-14 lg:gap-20 items-start">
@@ -27,7 +37,7 @@ export function ModelsShowcase() {
 								<span className="font-mono text-[10px] tracking-[0.18em] text-purple-bright">[ FLAGSHIP ]</span>
 							</header>
 							<div className="px-6 py-2">
-								{FLAGSHIP.rows.map((r) => (
+								{flagshipRows.map((r) => (
 									<div
 										key={r.label}
 										className="flex justify-between items-center py-3 border-b border-white/5 last:border-b-0"
@@ -57,9 +67,9 @@ export function ModelsShowcase() {
 							</footer>
 						</div>
 						<p className="sv-mono text-[8.5px] text-faint mt-3">
-							*Illustrative —{" "}
+							{loaded ? "Live pricing, synced from Aleph" : "*Illustrative"}{" "}
 							<Link to="/api" className="underline underline-offset-2 hover:text-dim">
-								live pricing on the API page
+								full catalog on the API page
 							</Link>
 						</p>
 					</Reveal>
@@ -73,7 +83,9 @@ export function ModelsShowcase() {
 							<p className="text-[12.5px] leading-snug text-dim mb-5">{m.use}</p>
 							<div className="flex items-baseline justify-between">
 								<span className="sv-mono text-[8.5px]">In / out · 1M</span>
-								<span className="font-mono text-[11.5px] text-foreground tabular-nums">{m.price}</span>
+								<span className="font-mono text-[11.5px] text-foreground tabular-nums">
+									{priceFor(m.name) ?? m.price}
+								</span>
 							</div>
 						</Reveal>
 					))}
