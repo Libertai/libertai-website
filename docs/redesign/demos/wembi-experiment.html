@@ -252,7 +252,7 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .mfold .pr { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--body); font-variant-numeric: tabular-nums; white-space: nowrap; }
 @media (max-width: 900px) {
   .bill .stats { grid-template-columns: 1fr 1fr; }
-  .bill .s { border-bottom: 1px solid var(--line); }
+  .bill .s { border-bottom: 1px solid var(--line); text-align: center; padding: 34px 18px 30px; }
   .bill .s:nth-child(even) { border-right: 0; }
   .bill .s:nth-child(3), .bill .s:nth-child(4) { border-bottom: 0; }
 }
@@ -287,8 +287,17 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .cmpf .leg i { width: 14px; height: 4px; border-radius: 999px; display: inline-block; }
 .cmpf .leg i.lt { background: #EA7AF4; } .cmpf .leg i.oa { background: #eef0f2; } .cmpf .leg i.an { background: #E8894A; }
 .cmpf .leg .note { margin-left: auto; color: #5f656d; }
-@media (max-width: 620px) { .cmpf .r { grid-template-columns: 108px 1fr; gap: 12px; } .cmpf .ln { grid-template-columns: 36px 1fr 46px; gap: 8px; } .cmpf .leg .note { margin-left: 0; width: 100%; } }
-@media (max-width: 560px) { .cmpf .r { grid-template-columns: 104px 1fr 58px; gap: 10px; } }
+/* mobile: stack each model onto its own block so the name shows in full and
+   the cost/bench bars span the card - where the comparison's impact lives */
+@media (max-width: 620px) {
+  .cmpf .hd { display: none; }
+  .cmpf .r { grid-template-columns: 1fr; gap: 11px; margin-bottom: 30px; padding-bottom: 22px; border-bottom: 1px solid rgba(255,255,255,.07); }
+  .cmpf .r:last-of-type { border-bottom: 0; }
+  .cmpf .r .who { white-space: normal; font-size: 11.5px; letter-spacing: .1em; }
+  .cmpf .ln { grid-template-columns: 46px 1fr 60px; gap: 12px; }
+  .cmpf .track.price { height: 13px; } .cmpf .track.pw { height: 7px; }
+  .cmpf .leg .note { margin-left: 0; width: 100%; }
+}
 
 /* migration */
 .mig { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); gap: 48px; align-items: center; }
