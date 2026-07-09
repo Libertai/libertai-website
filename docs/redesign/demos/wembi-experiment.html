@@ -58,7 +58,7 @@ nav.top .chat { font-size: 13.5px; color: var(--body); padding: 8px 12px; }
 nav.top .chat:hover { color: var(--ink); }
 nav.top .key { font-family: "Satoshi", sans-serif; font-size: 13.5px; background: var(--ink); color: #fff; border-radius: 999px; padding: 10px 18px; }
 nav.top .key:hover { background: #26292d; }
-@media (max-width: 900px) { nav.top .links { display: none; } }
+@media (max-width: 900px) { nav.top .links { display: none; } nav.top { top: 8px; } }
 
 /* hero */
 .hero { padding: 168px 0 26px; }
@@ -76,7 +76,7 @@ nav.top .key:hover { background: #26292d; }
 .hero .usr { margin-top: 18px; font-size: 14px; color: var(--dim); }
 .hero .usr a { color: var(--acc); font-weight: 500; border-bottom: 1px solid rgba(100,77,249,.35); }
 .hero .usr a:hover { border-bottom-color: var(--acc); }
-@media (max-width: 900px) { .hero { padding-top: 136px; } .hero .meta { display: none; } .hero h1 .enc::after { display: none; } }
+@media (max-width: 900px) { .hero { padding-top: 92px; } .hero .meta { display: none; } .hero h1 .enc::after { display: none; } .hero .ctas { gap: 10px; margin-top: 28px; } .hero .ctas .btn { flex: 1 1 0; justify-content: center; font-size: 14px; padding: 14px 14px; white-space: nowrap; } }
 
 /* media panel - the two worlds (A: centralized/red, B: decentralized/purple) */
 .media { padding: 44px 0 0; }
@@ -148,7 +148,7 @@ nav.top .key:hover { background: #26292d; }
   .media { padding: 30px 0 0; }
   .media .frame { height: 80vh; min-height: 490px; max-height: 600px; }
   .media .scrimA, .media .scrimB { background: linear-gradient(180deg, rgba(15,17,19,.95) 0%, rgba(15,17,19,.58) 34%, rgba(15,17,19,.1) 55%, transparent 66%), linear-gradient(0deg, rgba(9,10,13,.92) 0%, rgba(9,10,13,.45) 22%, transparent 42%); opacity: 1 !important; }
-  .media .say { top: 30px; transform: none; left: 22px; right: 22px; max-width: none; transition: transform .8s cubic-bezier(.65,0,.22,1), opacity .6s ease; }
+  .media .say { top: 58px; transform: none; left: 22px; right: 22px; max-width: none; transition: transform .8s cubic-bezier(.65,0,.22,1), opacity .6s ease; }
   .media .sayA { transform: translateX(0); }
   .media .sayB { transform: translateX(calc(100% + 60px)); }
   .media .frame.b .sayA { transform: translateX(calc(-100% - 60px)); }
@@ -158,12 +158,12 @@ nav.top .key:hover { background: #26292d; }
   .media .say p { font-size: 13.5px; line-height: 1.5; max-width: none; }
   .media .corner.tr, .media .corner.br, .hoverhint { display: none; }
   .media .corner.tl { top: 16px; left: 20px; }
-  .wswitch { bottom: 178px; width: max-content; }
+  .wswitch { bottom: 150px; width: max-content; }
   .media .strip { flex-direction: column; }
   .media .strip .c { border-right: 0; border-bottom: 1px solid rgba(255,255,255,.08); padding: 7px 18px; }
   .media .strip .c:last-child { border-bottom: 0; }
-  .media .strip .k { font-size: 8px; }
-  .media .strip .v { font-size: 12.5px; margin-top: 2px; }
+  .media .strip .k { font-size: 8px; line-height: 1.25; }
+  .media .strip .v { font-size: 12.5px; margin-top: 2px; line-height: 1.25; }
 }
 
 /* ticker */
@@ -399,7 +399,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
       <span class="mono" style="font-size:8.5px">0 bytes retained</span>
     </div>
   </div>
-  <div class="hero-fade ctas" style="--d:400ms"><a class="btn solid" href="https://console.libertai.io" target="_blank" rel="noopener">Deploy GLM-5.2</a><a class="btn ghost" href="#privacy">See how privacy works</a></div>
+  <div class="hero-fade ctas" style="--d:400ms"><a class="btn solid" href="https://console.libertai.io" target="_blank" rel="noopener">Deploy GLM-5.2</a><a class="btn ghost" href="#privacy">How privacy works</a></div>
   <p class="hero-fade usr" style="--d:480ms">Not a developer? <a href="https://chat.libertai.io" target="_blank" rel="noopener">Open the private chat</a> · free, no account.</p>
 </div></header>
 
@@ -899,7 +899,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     var mob = isMob.matches;
     R = Math.min(W, H) * (mob ? 0.30 : 0.32);
     cx = mob ? 0.5 * W : (0.63 + (0.35 - 0.63) * e) * W;
-    cy = mob ? 0.56 * H : 0.5 * H;
+    cy = mob ? 0.50 * H : 0.5 * H;
     ca = Math.cos(ang); sa = Math.sin(ang);
 
     var MAIN = mixc(COL_A.main, COL_B.main, e);
