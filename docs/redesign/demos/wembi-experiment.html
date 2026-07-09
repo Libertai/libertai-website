@@ -778,88 +778,22 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     wsw.setAttribute("aria-pressed", String(b));
     setStrip(b);
   }
-  var releaseLock = null;
   wsw.addEventListener("click", function () {
     setWorld(target === 0, true);
-    if (releaseLock) releaseLock(false);
   });
 
-
-  // scroll lock: freeze once the panel centers; the next scroll-down flips the
-  // switch, then scrolling releases. Engages once, never traps scroll-up.
-  var lockDone = false, locked = false, lastY = window.scrollY;
-  function centerDelta() {
-    var r = frameEl.getBoundingClientRect();
-    return (r.top + r.height / 2) - window.innerHeight / 2;
-  }
-  function engageLock() {
-    locked = true; lockDone = true;
-    var armed = false;
-    // stop in place: input is swallowed by the listeners below; the page only
-    // drifts a whisper toward center (capped), ease-out, then freezes fully
-    var y0 = window.scrollY;
-    var y1 = y0 + Math.max(-140, Math.min(140, centerDelta()));
-    var t0 = performance.now(), DUR = 700;
-    (function tween(now) {
-      var p2 = Math.min(1, (now - t0) / DUR);
-      var e2 = 1 - Math.pow(1 - p2, 3);
-      window.scrollTo(0, y0 + (y1 - y0) * e2);
-      if (p2 < 1 && locked) requestAnimationFrame(tween);
-      else if (locked) {
-        document.documentElement.style.overflow = "hidden";
-        setTimeout(function () { armed = true; }, 300);
-      }
-    })(t0);
-    var freezeT = setTimeout(function () {}, 0);
-    var t0 = 0;
-    function onWheel(e) { e.preventDefault(); attempt(e.deltaY); }
-    function onTS(e) { t0 = e.touches[0].clientY; }
-    function onTM(e) {
-      e.preventDefault();
-      var dy = t0 - e.touches[0].clientY;
-      if (Math.abs(dy) > 24) attempt(dy);
-    }
-    function onKey(e) {
-      if (["ArrowDown", "PageDown", " ", "Enter"].indexOf(e.key) >= 0) { e.preventDefault(); attempt(1); }
-      else if (["ArrowUp", "PageUp", "Escape"].indexOf(e.key) >= 0) { e.preventDefault(); attempt(-1); }
-    }
-    function attempt(dir) {
-      if (!armed) return;
-      release(dir > 0);
-    }
-    function release(flip) {
-      if (!locked) return;
-      locked = false;
-      clearTimeout(freezeT);
-      removeEventListener("wheel", onWheel, { passive: false });
-      removeEventListener("touchstart", onTS, { passive: true });
-      removeEventListener("touchmove", onTM, { passive: false });
-      removeEventListener("keydown", onKey);
-      releaseLock = null;
-      if (flip && target === 0) {
-        autoDone = true;
-        setWorld(true, false);
-        setTimeout(function () { document.documentElement.style.overflow = ""; }, 1050);
-      } else {
-        document.documentElement.style.overflow = "";
-      }
-    }
-    releaseLock = release;
-    addEventListener("wheel", onWheel, { passive: false });
-    addEventListener("touchstart", onTS, { passive: true });
-    addEventListener("touchmove", onTM, { passive: false });
-    addEventListener("keydown", onKey);
-  }
-  var touchDev = matchMedia("(hover: none)").matches;
+  // auto-flip: once the panel's center rises past the viewport center on the
+  // way down, the switch flips to LibertAI. Scrolling is never intercepted.
+  var lastY = window.scrollY;
   if (!reduce) addEventListener("scroll", function () {
     var down = window.scrollY > lastY;
     lastY = window.scrollY;
-    if (locked || autoDone || target !== 0) return;
+    if (autoDone || target !== 0 || !down) return;
     var r = frameEl.getBoundingClientRect();
-    if (r.bottom < window.innerHeight * 0.3) { autoDone = true; setWorld(true, false); return; }
-    if (touchDev || lockDone || !down) return;
-    var d = centerDelta();
-    if (d < 170 && d > -230) engageLock();
+    if (r.top + r.height / 2 < window.innerHeight / 2 + 40) {
+      autoDone = true;
+      setWorld(true, false);
+    }
   }, { passive: true });
 
   // pointer for hover
