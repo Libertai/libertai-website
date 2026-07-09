@@ -224,6 +224,15 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .bill .s .num { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: clamp(38px, 4.4vw, 64px); letter-spacing: -0.035em; color: var(--ink); line-height: 1; }
 .bill .s .num i { font-style: normal; color: var(--acc); }
 .bill .s .lb { font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); margin-top: 12px; }
+.bill .pay { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--line); }
+.bill .pay .o { display: flex; gap: 14px; align-items: flex-start; padding: 18px 28px; border-right: 1px solid var(--line); }
+.bill .pay .o:last-child { border-right: 0; }
+.bill .pay .ic { flex: none; width: 34px; height: 34px; border-radius: 10px; background: var(--acc-soft); display: grid; place-items: center; }
+.bill .pay .ic svg { width: 17px; height: 17px; stroke: var(--acc); }
+.bill .pay h4 { font-size: 15px; margin-bottom: 3px; }
+.bill .pay h4 span { font-family: "IBM Plex Mono", monospace; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: var(--acc); background: var(--acc-soft); border-radius: 999px; padding: 3px 8px; margin-left: 8px; vertical-align: 2px; }
+.bill .pay p { font-size: 13px; color: var(--dim); line-height: 1.55; }
+@media (max-width: 760px) { .bill .pay { grid-template-columns: 1fr; } .bill .pay .o { border-right: 0; border-bottom: 1px solid var(--line); } .bill .pay .o:last-child { border-bottom: 0; } }
 .mfold { margin-top: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; }
 .mfold summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 14px; padding: 16px 24px; font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 15px; color: var(--ink); }
 .mfold summary::-webkit-details-marker { display: none; }
@@ -463,24 +472,34 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
       <a class="go" href="#">Try GLM-5.2</a>
     </div>
     <div class="stats">
-      <div class="s"><div class="num"><i>$</i>0.60</div><div class="lb">Input · 1M tokens</div></div>
-      <div class="s"><div class="num"><i>$</i>2.20</div><div class="lb">Output · 1M tokens</div></div>
+      <div class="s"><div class="num" data-mid="glm-5.2" data-k="in"><i>$</i>0.60</div><div class="lb">Input · 1M tokens</div></div>
+      <div class="s"><div class="num" data-mid="glm-5.2" data-k="out"><i>$</i>2.20</div><div class="lb">Output · 1M tokens</div></div>
       <div class="s"><div class="num">200K</div><div class="lb">Context window</div></div>
       <div class="s"><div class="num">~120</div><div class="lb">Tokens / second</div></div>
+    </div>
+    <div class="pay">
+      <div class="o">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        <div><h4>Subscribe<span>Fixed price</span></h4><p>A flat monthly price for steady usage. Predictable bills, same private endpoint.</p></div>
+      </div>
+      <div class="o">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><h4>Credits<span>Pay per token</span></h4><p>No commitment: pay per million tokens. Overflow past your subscription bills at the same per-token rate.</p></div>
+      </div>
     </div>
   </div>
   <details class="mfold reveal">
     <summary>Six more open models on the same endpoint<span class="u">Output $ / 1M</span><span class="plus">+</span></summary>
     <div class="inner">
-      <div class="r"><span class="nm">Hermes 3 8B · TEE</span><span class="bar"><i style="--w:10%"></i></span><span class="pr">$0.08 / $0.30</span></div>
-      <div class="r"><span class="nm">DeepSeek V4 Flash</span><span class="bar"><i style="--w:18%"></i></span><span class="pr">$0.14 / $0.55</span></div>
-      <div class="r"><span class="nm">Gemma 4 31B</span><span class="bar"><i style="--w:23%"></i></span><span class="pr">$0.18 / $0.70</span></div>
-      <div class="r"><span class="nm">Qwen3.6-35B-A3B</span><span class="bar"><i style="--w:26%"></i></span><span class="pr">$0.20 / $0.80</span></div>
-      <div class="r"><span class="nm">Qwen3 Coder</span><span class="bar"><i style="--w:32%"></i></span><span class="pr">$0.25 / $1.00</span></div>
-      <div class="r"><span class="nm">Qwen3.5 122B</span><span class="bar"><i style="--w:100%"></i></span><span class="pr">$0.90 / $3.10</span></div>
+      <div class="r"><span class="nm">Hermes 3 8B · TEE</span><span class="bar"><i style="--w:10%"></i></span><span class="pr" data-mid="hermes-3-8b-tee" data-k="pair">$0.08 / $0.30</span></div>
+      <div class="r"><span class="nm">DeepSeek V4 Flash</span><span class="bar"><i style="--w:18%"></i></span><span class="pr" data-mid="deepseek-v4-flash" data-k="pair">$0.14 / $0.55</span></div>
+      <div class="r"><span class="nm">Gemma 4 31B</span><span class="bar"><i style="--w:23%"></i></span><span class="pr" data-mid="gemma-4-31b" data-k="pair">$0.18 / $0.70</span></div>
+      <div class="r"><span class="nm">Qwen3.6-35B-A3B</span><span class="bar"><i style="--w:26%"></i></span><span class="pr" data-mid="qwen3.6-35b-a3b" data-k="pair">$0.20 / $0.80</span></div>
+      <div class="r"><span class="nm">Qwen3 Coder</span><span class="bar"><i style="--w:32%"></i></span><span class="pr" data-mid="qwen3-coder" data-k="pair">$0.25 / $1.00</span></div>
+      <div class="r"><span class="nm">Qwen3.5 122B</span><span class="bar"><i style="--w:100%"></i></span><span class="pr" data-mid="qwen3.5-122b" data-k="pair">$0.90 / $3.10</span></div>
     </div>
   </details>
-  <p class="mono" style="font-size:8.5px;color:var(--faint);margin-top:12px">*Illustrative. Live pricing on the API page</p>
+  <p class="mono" id="priceNote" style="font-size:8.5px;color:var(--faint);margin-top:12px">*Illustrative. Live pricing on the API page</p>
 </div></section>
 
 <!-- COMPARISON -->
@@ -615,6 +634,32 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   document.querySelectorAll("[data-n]").forEach(function (el) { cio.observe(el); });
 
 
+  // live price hydration from the Aleph LTAI_PRICING aggregate (same source as production)
+  try {
+    var pctl = new AbortController();
+    setTimeout(function () { pctl.abort(); }, 5000);
+    fetch("https://api2.aleph.im/api/v0/aggregates/0xe1F7220D201C64871Cefb25320a8a588393eE508.json?keys=LTAI_PRICING", { signal: pctl.signal })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        var models = ((j.data || {}).LTAI_PRICING || {}).models || [];
+        var byId = {};
+        models.forEach(function (m) { if (m && m.id && m.pricing && m.pricing.text) byId[m.id.toLowerCase()] = m.pricing.text; });
+        var hit = 0;
+        document.querySelectorAll("[data-mid]").forEach(function (el) {
+          var p = byId[el.dataset.mid.toLowerCase()];
+          if (!p) return;
+          hit++;
+          var pin = "$" + p.price_per_million_input_tokens.toFixed(2);
+          var pout = "$" + p.price_per_million_output_tokens.toFixed(2);
+          if (el.dataset.k === "in") el.innerHTML = "<i>$</i>" + p.price_per_million_input_tokens.toFixed(2);
+          else if (el.dataset.k === "out") el.innerHTML = "<i>$</i>" + p.price_per_million_output_tokens.toFixed(2);
+          else el.textContent = pin + " / " + pout;
+        });
+        var note = document.getElementById("priceNote");
+        if (hit > 0 && note) note.textContent = "Live pricing · synced from Aleph";
+      }).catch(function () {});
+  } catch (ep) {}
+
   // ---- the two worlds: centralized/red (A) vs decentralized/purple (B) ----
   var frameEl = document.getElementById("worlds");
   var canvas = document.getElementById("net");
@@ -729,13 +774,85 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     wsw.setAttribute("aria-pressed", String(b));
     setStrip(b);
   }
-  wsw.addEventListener("click", function () { setWorld(target === 0, true); });
-  var tickEl = document.querySelector(".tick");
-  if (tickEl) new IntersectionObserver(function (es) {
-    es.forEach(function (e) {
-      if (e.isIntersecting && !autoDone && target === 0) { autoDone = true; setWorld(true, false); }
-    });
-  }, { threshold: 0.25 }).observe(tickEl);
+  var releaseLock = null;
+  wsw.addEventListener("click", function () {
+    setWorld(target === 0, true);
+    if (releaseLock) releaseLock(false);
+  });
+
+
+  // scroll lock: freeze once the panel centers; the next scroll-down flips the
+  // switch, then scrolling releases. Engages once, never traps scroll-up.
+  var lockDone = false, locked = false, lastY = window.scrollY;
+  function centerDelta() {
+    var r = frameEl.getBoundingClientRect();
+    return (r.top + r.height / 2) - window.innerHeight / 2;
+  }
+  function engageLock() {
+    locked = true; lockDone = true;
+    var armed = false;
+    // controlled centering tween, then freeze, then arm after a beat
+    var y0 = window.scrollY, y1 = y0 + centerDelta(), t0 = performance.now(), DUR = 480;
+    (function tween(now) {
+      var p2 = Math.min(1, (now - t0) / DUR);
+      var e2 = p2 < 0.5 ? 2 * p2 * p2 : 1 - Math.pow(-2 * p2 + 2, 2) / 2;
+      window.scrollTo(0, y0 + (y1 - y0) * e2);
+      if (p2 < 1 && locked) requestAnimationFrame(tween);
+      else if (locked) {
+        document.documentElement.style.overflow = "hidden";
+        setTimeout(function () { armed = true; }, 420);
+      }
+    })(t0);
+    var freezeT = setTimeout(function () {}, 0);
+    var t0 = 0;
+    function onWheel(e) { e.preventDefault(); attempt(e.deltaY); }
+    function onTS(e) { t0 = e.touches[0].clientY; }
+    function onTM(e) {
+      e.preventDefault();
+      var dy = t0 - e.touches[0].clientY;
+      if (Math.abs(dy) > 24) attempt(dy);
+    }
+    function onKey(e) {
+      if (["ArrowDown", "PageDown", " ", "Enter"].indexOf(e.key) >= 0) { e.preventDefault(); attempt(1); }
+      else if (["ArrowUp", "PageUp", "Escape"].indexOf(e.key) >= 0) { e.preventDefault(); attempt(-1); }
+    }
+    function attempt(dir) {
+      if (!armed) return;
+      release(dir > 0);
+    }
+    function release(flip) {
+      if (!locked) return;
+      locked = false;
+      clearTimeout(freezeT);
+      removeEventListener("wheel", onWheel, { passive: false });
+      removeEventListener("touchstart", onTS, { passive: true });
+      removeEventListener("touchmove", onTM, { passive: false });
+      removeEventListener("keydown", onKey);
+      releaseLock = null;
+      if (flip && target === 0) {
+        autoDone = true;
+        setWorld(true, false);
+        setTimeout(function () { document.documentElement.style.overflow = ""; }, 1050);
+      } else {
+        document.documentElement.style.overflow = "";
+      }
+    }
+    releaseLock = release;
+    addEventListener("wheel", onWheel, { passive: false });
+    addEventListener("touchstart", onTS, { passive: true });
+    addEventListener("touchmove", onTM, { passive: false });
+    addEventListener("keydown", onKey);
+  }
+  if (!reduce) addEventListener("scroll", function () {
+    var down = window.scrollY > lastY;
+    lastY = window.scrollY;
+    if (locked || autoDone || target !== 0) return;
+    var r = frameEl.getBoundingClientRect();
+    if (r.bottom < 0) { autoDone = true; setWorld(true, false); return; }
+    if (lockDone || !down) return;
+    var d = centerDelta();
+    if (d < 320 && d > -320) engageLock();
+  }, { passive: true });
 
   // pointer for hover
   var lx = -1e4, ly = -1e4;

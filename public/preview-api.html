@@ -199,7 +199,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   <div class="wrap">
     <div class="hero-fade eyebrow" style="--d:60ms"><span class="dot"></span><span class="mono" style="color:var(--ink)">LibertAI API</span></div>
     <h1 class="hero-fade" style="--d:150ms">The private<br>inference <em>API</em>.</h1>
-    <p class="hero-fade sub" style="--d:250ms">A drop-in, <b>OpenAI-compatible</b> endpoint for GLM-5.2 and the leading open models. Confidential by design, pay-per-token, no KYC. Keep your SDK, change one line.</p>
+    <p class="hero-fade sub" style="--d:250ms">A drop-in, <b>OpenAI-compatible</b> endpoint for GLM-5.2 and the leading open models. Confidential by design, with subscriptions or pay-per-token credits, no KYC. Keep your SDK, change one line.</p>
     <div class="hero-fade ctas" style="--d:350ms">
       <a class="btn acc" href="https://console.libertai.io">Get an API key</a>
       <a class="btn ghost" href="https://docs.libertai.io/apis/">Read the docs</a>
@@ -319,18 +319,18 @@ stream <span class="pn">=</span> client.chat.completions.<span class="fn">create
     <div class="txt">
       <span class="mono k">The catalog</span>
       <h3>The leading open models, one key.</h3>
-      <p>GLM-5.2 leads, and the rest of the catalog is one parameter away. Text, vision, reasoning, embeddings, speech and search, all behind the same endpoint.</p>
+      <p>GLM-5.2 leads, and the rest of the catalog is one parameter away. Prices shown are per-token credit rates; subscriptions cover steady usage at a fixed price.</p>
       <a class="more" href="https://docs.libertai.io/apis/text/#available-models">Browse all models</a>
     </div>
     <div class="shot">
       <div class="mock">
         <div class="mh"><span class="g"></span>models</div>
         <div class="mm">
-          <div class="r"><span class="nm">GLM-5.2 <span>FLAGSHIP</span></span><span class="pr">$0.60 / $2.20</span></div>
-          <div class="r"><span class="nm">Qwen3.5 122B</span><span class="pr">$0.90 / $3.10</span></div>
-          <div class="r"><span class="nm">Gemma 4 31B</span><span class="pr">$0.18 / $0.70</span></div>
-          <div class="r"><span class="nm">DeepSeek V4 Flash</span><span class="pr">$0.14 / $0.55</span></div>
-          <div class="r"><span class="nm">Hermes 3 8B · TEE</span><span class="pr">$0.08 / $0.30</span></div>
+          <div class="r"><span class="nm">GLM-5.2 <span>FLAGSHIP</span></span><span class="pr" data-mid="glm-5.2" data-k="pair">$0.60 / $2.20</span></div>
+          <div class="r"><span class="nm">Qwen3.5 122B</span><span class="pr" data-mid="qwen3.5-122b" data-k="pair">$0.90 / $3.10</span></div>
+          <div class="r"><span class="nm">Gemma 4 31B</span><span class="pr" data-mid="gemma-4-31b" data-k="pair">$0.18 / $0.70</span></div>
+          <div class="r"><span class="nm">DeepSeek V4 Flash</span><span class="pr" data-mid="deepseek-v4-flash" data-k="pair">$0.14 / $0.55</span></div>
+          <div class="r"><span class="nm">Hermes 3 8B · TEE</span><span class="pr" data-mid="hermes-3-8b-tee" data-k="pair">$0.08 / $0.30</span></div>
         </div>
       </div>
     </div>
@@ -339,19 +339,20 @@ stream <span class="pn">=</span> client.chat.completions.<span class="fn">create
   <!-- FEATURE 4 -->
   <div class="feat rev reveal">
     <div class="txt">
-      <span class="mono k">Simple pricing</span>
-      <h3>Pay only for the tokens you use.</h3>
-      <p>No seats, no minimums, no KYC. Open models on distributed infrastructure cost a fraction of the closed flagships, so you can ship more for less.</p>
-      <a class="more" href="#">Estimate your cost</a>
+      <span class="mono k">Two ways to pay</span>
+      <h3>Subscribe, or pay per token.</h3>
+      <p>A subscription gives you a fixed monthly price for steady usage. Direct credits bill per million tokens, and overflow past your subscription is charged at the same per-token rate. No seats, no KYC.</p>
+      <a class="more" href="https://docs.libertai.io/apis/">Pricing details</a>
     </div>
     <div class="shot">
       <div class="mock">
-        <div class="mh"><span class="g"></span>usage · this month</div>
+        <div class="mh"><span class="g"></span>billing · this month</div>
         <div class="us">
-          <div class="big">$0.60</div>
-          <div class="lbl">per 1M input tokens · glm-5.2</div>
-          <div class="bar"><i></i></div>
-          <div class="fine">a fraction of closed-flagship pricing · figures illustrative</div>
+          <div class="lbl" style="margin-bottom:6px">Subscription · fixed price</div>
+          <div class="bar" style="margin-bottom:16px"><i style="width:100%"></i></div>
+          <div class="lbl" style="margin-bottom:6px">Overflow · credits, per 1M tokens</div>
+          <div class="bar"><i style="width:22%"></i></div>
+          <div class="fine" style="margin-top:12px">flat monthly price, then <b style="color:var(--ink);font-weight:500">$0.60 in / $2.20 out</b> per 1M · figures illustrative</div>
         </div>
       </div>
     </div>
@@ -452,6 +453,23 @@ client.chat.completions.<span class="fn">create</span>(tools<span class="pn">=</
       blocks.forEach(function (p) { p.classList.toggle("on", p.dataset.l === t.dataset.l); });
     });
   });
+
+  try {
+    var pctl = new AbortController();
+    setTimeout(function () { pctl.abort(); }, 5000);
+    fetch("https://api2.aleph.im/api/v0/aggregates/0xe1F7220D201C64871Cefb25320a8a588393eE508.json?keys=LTAI_PRICING", { signal: pctl.signal })
+      .then(function (r) { return r.json(); })
+      .then(function (j) {
+        var models = ((j.data || {}).LTAI_PRICING || {}).models || [];
+        var byId = {};
+        models.forEach(function (m) { if (m && m.id && m.pricing && m.pricing.text) byId[m.id.toLowerCase()] = m.pricing.text; });
+        document.querySelectorAll("[data-mid]").forEach(function (el) {
+          var p = byId[el.dataset.mid.toLowerCase()];
+          if (!p) return;
+          el.textContent = "$" + p.price_per_million_input_tokens.toFixed(2) + " / $" + p.price_per_million_output_tokens.toFixed(2);
+        });
+      }).catch(function () {});
+  } catch (ep) {}
 
   var resp = document.getElementById("resp");
   if (resp) {
