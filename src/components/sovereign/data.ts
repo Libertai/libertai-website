@@ -20,8 +20,8 @@ export const FLAGSHIP = {
 	name: "GLM-5.2",
 	tagline: "Frontier-class reasoning, coding and agent workflows",
 	rows: [
-		{ label: "Input · 1M tokens", value: "$0.60" },
-		{ label: "Output · 1M tokens", value: "$2.20" },
+		{ label: "Input · 1M tokens", value: "$1.40" },
+		{ label: "Output · 1M tokens", value: "$4.40" },
 		{ label: "Context window", value: "200K" },
 		{ label: "Throughput", value: "~120 tok/s" },
 	],
@@ -37,7 +37,7 @@ export const MODELS = [
 ];
 
 export const COMPARISON = [
-	{ who: "LibertAI · GLM-5.2", price: "$2.20", width: 15, us: true },
+	{ who: "LibertAI · GLM-5.2", price: "$4.40", width: 29, us: true },
 	{ who: "OpenAI · flagship", price: "$10.00", width: 67, us: false },
 	{ who: "Anthropic · flagship", price: "$15.00", width: 100, us: false },
 ];

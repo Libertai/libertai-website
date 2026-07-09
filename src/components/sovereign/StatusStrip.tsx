@@ -5,7 +5,7 @@ import { usePricing } from "@/components/sovereign/usePricing.ts";
 export function StatusStrip() {
 	const { flagship } = usePricing();
 	const live = flagship !== null;
-	const glmPrice = flagship ? `${flagship.input} / ${flagship.output}` : "$0.60 / $2.20";
+	const glmPrice = flagship ? `${flagship.input} / ${flagship.output}` : "$1.40 / $4.40";
 
 	const stats = [
 		{ label: "Network", value: "Distributed" },
