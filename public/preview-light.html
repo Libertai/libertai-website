@@ -147,10 +147,17 @@ nav.top .key:hover { background: #26292d; }
      stranded above the fold when the worlds flip */
   .media { padding: 30px 0 0; }
   .media .frame { height: 80vh; min-height: 490px; max-height: 600px; }
-  .media .scrimA, .media .scrimB { background: linear-gradient(180deg, rgba(15,17,19,.95) 0%, rgba(15,17,19,.58) 34%, rgba(15,17,19,.1) 55%, transparent 66%), linear-gradient(0deg, rgba(9,10,13,.92) 0%, rgba(9,10,13,.45) 22%, transparent 42%); opacity: 1 !important; }
+  /* scrims crossfade with the flip: the closed world darkens the top (copy
+     sits up there); LibertAI darkens the lower half (copy drops down there),
+     so each state's text stays legible while the globe shows through the
+     other half. No !important here, so the base opacity crossfade runs. */
+  .media .scrimA { background: linear-gradient(180deg, rgba(15,17,19,.95) 0%, rgba(15,17,19,.6) 30%, rgba(15,17,19,.12) 54%, transparent 68%), linear-gradient(0deg, rgba(9,10,13,.86) 0%, transparent 24%); }
+  .media .scrimB { background: linear-gradient(0deg, rgba(9,10,13,.95) 0%, rgba(9,10,13,.7) 30%, rgba(9,10,13,.24) 54%, transparent 70%), linear-gradient(180deg, rgba(15,17,19,.7) 0%, transparent 20%); }
   .media .say { top: 58px; transform: none; left: 22px; right: 22px; max-width: none; transition: transform .8s cubic-bezier(.65,0,.22,1), opacity .6s ease; }
   .media .sayA { transform: translateX(0); }
-  .media .sayB { transform: translateX(calc(100% + 60px)); }
+  /* LibertAI copy drops to the lower part of the frame - last thing to leave
+     the screen on a fast down-scroll, so the reveal still gets read */
+  .media .sayB { top: auto; bottom: 224px; transform: translateX(calc(100% + 60px)); }
   .media .frame.b .sayA { transform: translateX(calc(-100% - 60px)); }
   .media .frame.b .sayB { transform: translateX(0); }
   .media .say .ey { margin-bottom: 12px; }
@@ -899,7 +906,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     var mob = isMob.matches;
     R = Math.min(W, H) * (mob ? 0.30 : 0.32);
     cx = mob ? 0.5 * W : (0.63 + (0.35 - 0.63) * e) * W;
-    cy = mob ? 0.50 * H : 0.5 * H;
+    cy = mob ? (0.50 + (0.34 - 0.50) * e) * H : 0.5 * H;
     ca = Math.cos(ang); sa = Math.sin(ang);
 
     var MAIN = mixc(COL_A.main, COL_B.main, e);
