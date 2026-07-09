@@ -235,8 +235,7 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .bill .top .fl { font-family: "IBM Plex Mono", monospace; font-size: 8.5px; letter-spacing: .14em; background: var(--acc); color: #fff; border-radius: 999px; padding: 4px 11px; text-transform: uppercase; }
 .bill .top .caps { display: flex; gap: 8px; flex-wrap: wrap; }
 .bill .top .caps span { font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--body); background: rgba(15,17,19,.05); border-radius: 7px; padding: 5px 10px; }
-.bill .top .go { font-family: "Satoshi", sans-serif; font-size: 14px; background: var(--ink); color: #fff; border-radius: 999px; padding: 10px 20px; }
-.bill .top .go:hover { background: #26292d; }
+.bill .top .on { display: inline-flex; align-items: center; gap: 8px; font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
 .bill .stats { display: grid; grid-template-columns: repeat(4, 1fr); }
 .bill .s { padding: 42px 28px 38px; border-right: 1px solid var(--line); }
 .bill .s:last-child { border-right: 0; }
@@ -252,6 +251,18 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .bill .pay h4 span { font-family: "IBM Plex Mono", monospace; font-size: 8px; letter-spacing: .12em; text-transform: uppercase; color: var(--acc); background: var(--acc-soft); border-radius: 999px; padding: 3px 8px; margin-left: 8px; vertical-align: 2px; }
 .bill .pay p { font-size: 13px; color: var(--dim); line-height: 1.55; }
 @media (max-width: 760px) { .bill .pay { grid-template-columns: 1fr; } .bill .pay .o { border-right: 0; border-bottom: 1px solid var(--line); } .bill .pay .o:last-child { border-bottom: 0; } }
+/* dominant closing CTA on the flagship card */
+.bill .cta { display: flex; align-items: center; justify-content: space-between; gap: 18px 30px; flex-wrap: wrap; padding: 24px 28px; border-top: 1px solid var(--line); background: linear-gradient(100deg, var(--acc-soft) 0%, rgba(100,77,249,.03) 72%); }
+.bill .cta .ct h4 { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 20px; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 4px; }
+.bill .cta .ct p { font-size: 13.5px; color: var(--body); max-width: 44ch; }
+.bill .cta .cb { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.bill .cta .go2 { display: inline-flex; align-items: center; gap: 9px; font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 15.5px; background: var(--acc); color: #fff; border-radius: 999px; padding: 15px 28px; box-shadow: 0 12px 30px rgba(100,77,249,.34); transition: transform .16s ease, box-shadow .16s ease; }
+.bill .cta .go2:hover { transform: translateY(-1px); box-shadow: 0 16px 40px rgba(100,77,249,.46); }
+.bill .cta .go2 span { transition: transform .16s ease; }
+.bill .cta .go2:hover span { transform: translateX(3px); }
+.bill .cta .doc { font-size: 14px; color: var(--body); border-bottom: 1px solid var(--line-strong); padding-bottom: 2px; }
+.bill .cta .doc:hover { color: var(--ink); border-bottom-color: var(--ink); }
+@media (max-width: 620px) { .bill .cta { flex-direction: column; align-items: stretch; gap: 16px; } .bill .cta .cb { width: 100%; flex-direction: column; align-items: stretch; gap: 13px; } .bill .cta .go2 { justify-content: center; padding: 16px 20px; } .bill .cta .doc { align-self: flex-start; } }
 .mfold { margin-top: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; }
 .mfold summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 14px; padding: 16px 24px; font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 15px; color: var(--ink); }
 .mfold summary::-webkit-details-marker { display: none; }
@@ -498,7 +509,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   <div class="reveal bill">
     <div class="top">
       <div class="l"><span class="name">GLM-5.2</span><span class="fl">Flagship</span><div class="caps"><span>Tools</span><span>Vision</span><span>Reasoning</span></div></div>
-      <a class="go" href="https://console.libertai.io" target="_blank" rel="noopener">Try GLM-5.2</a>
+      <span class="on"><span class="dot"></span>Online</span>
     </div>
     <div class="stats">
       <div class="s"><div class="num" data-mid="glm-5.2" data-k="in"><i>$</i>1.40</div><div class="lb">Input · 1M tokens</div></div>
@@ -514,6 +525,16 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
       <div class="o">
         <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
         <div><h4>Credits<span>Pay per token</span></h4><p>No commitment: pay per million tokens. Overflow past your subscription bills at the same per-token rate.</p></div>
+      </div>
+    </div>
+    <div class="cta">
+      <div class="ct">
+        <h4>Deploy GLM-5.2 in a minute.</h4>
+        <p>Free to start. No card, no KYC. Keep your OpenAI SDK, change one line.</p>
+      </div>
+      <div class="cb">
+        <a class="go2" href="https://console.libertai.io" target="_blank" rel="noopener">Get your API key <span aria-hidden="true">&rarr;</span></a>
+        <a class="doc" href="https://docs.libertai.io" target="_blank" rel="noopener">Read the docs</a>
       </div>
     </div>
   </div>
@@ -822,24 +843,22 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     setWorld(target === 0, true);
   });
 
-  // auto-flip: hold off until the closed "Their models" headline has risen to
-  // around the middle of the screen and settled there, then dwell and switch.
-  // Arms only while the headline sits in the middle band and cancels if the
-  // user scrolls on past - so the flip lands while they are reading it, not the
+  // auto-flip: hold off until the whole closed panel is framed near the top of
+  // the screen - its doom stats visible at the bottom - and the reader settles
+  // there, then switch. Arms only in that framing and cancels if they scroll on
+  // past, so the flip lands once the full picture has been taken in, not the
   // moment the panel edges into view. Scrolling is never captured.
   if (!reduce) {
     var dwell = null;
-    var saH = frameEl.querySelector(".sayA h3");
     function maybeFlip() {
       if (autoDone || target !== 0) { removeEventListener("scroll", maybeFlip); return; }
-      var r = saH.getBoundingClientRect();
+      var r = frameEl.getBoundingClientRect();
       var vh = window.innerHeight;
-      var hc = (r.top + r.height / 2) / vh;
-      if (hc > 0.30 && hc < 0.58) {
+      if (r.top <= vh * 0.15 && r.top > -vh * 0.06) {
         if (!dwell) dwell = setTimeout(function () {
           if (!autoDone && target === 0) { autoDone = true; setWorld(true, false); }
           removeEventListener("scroll", maybeFlip);
-        }, 550);
+        }, 500);
       } else if (dwell) { clearTimeout(dwell); dwell = null; }
     }
     addEventListener("scroll", maybeFlip, { passive: true });
