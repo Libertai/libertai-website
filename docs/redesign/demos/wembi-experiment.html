@@ -102,8 +102,8 @@ nav.top .key:hover { background: #26292d; }
 .redtx { color: #ff9d9d !important; }
 /* copy blocks: A exits left, B slides in from the right */
 .media .say { pointer-events: none; position: absolute; z-index: 2; top: 42%; transform: translateY(-50%); max-width: 420px; transition: transform .9s cubic-bezier(.65,0,.22,1), opacity .65s ease; }
-.media .sayA { left: clamp(24px, 5%, 60px); }
-.media .sayB { right: clamp(24px, 5%, 60px); opacity: 0; transform: translate(calc(100% + 120px), -50%); pointer-events: none; }
+.media .sayA { left: clamp(24px, 5%, 60px); top: 32%; }
+.media .sayB { right: clamp(24px, 5%, 60px); top: 61%; opacity: 0; transform: translate(calc(100% + 120px), -50%); pointer-events: none; }
 .media .frame.b .sayA { opacity: 0; transform: translate(calc(-100% - 120px), -50%); pointer-events: none; }
 .media .frame.b .sayB { opacity: 1; transform: translate(0, -50%); }
 .media .say .ey { display: flex; align-items: center; gap: 9px; font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .22em; text-transform: uppercase; color: rgba(255,255,255,.55); margin-bottom: 18px; }
@@ -304,14 +304,14 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .cmpf .track.price i { background: rgba(255,255,255,.22); }
 .cmpf .r.us .track.price i { background: var(--acc); }
 .cmpf .track.pw i.lt { background: #EA7AF4; }
-.cmpf .track.pw i.oa { background: #eef0f2; }
-.cmpf .track.pw i.an { background: #E8894A; }
+.cmpf .track.pw i.oa { background: #777879; }
+.cmpf .track.pw i.an { background: #744525; }
 .cmpf .val { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; text-align: right; color: #878d94; font-variant-numeric: tabular-nums; }
 .cmpf .r.us .val { color: #f4f5f6; }
 .cmpf .leg { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08); font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: #6d737a; }
 .cmpf .leg > span { display: flex; align-items: center; gap: 7px; }
 .cmpf .leg i { width: 14px; height: 4px; border-radius: 999px; display: inline-block; }
-.cmpf .leg i.lt { background: #EA7AF4; } .cmpf .leg i.oa { background: #eef0f2; } .cmpf .leg i.an { background: #E8894A; }
+.cmpf .leg i.lt { background: #EA7AF4; } .cmpf .leg i.oa { background: #777879; } .cmpf .leg i.an { background: #744525; }
 .cmpf .leg .note { margin-left: auto; color: #5f656d; }
 /* mobile: stack each model onto its own block so the name shows in full and
    the cost/bench bars span the card - where the comparison's impact lives */
