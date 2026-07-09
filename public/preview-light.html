@@ -205,32 +205,45 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .stats .l { font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
 @media (max-width: 860px) { .stats .in { grid-template-columns: 1fr 1fr; } .stats .s { border-right: 0; border-bottom: 1px solid var(--line); padding-left: 0 !important; } }
 
-/* models */
-.mods { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.25fr); gap: 48px; align-items: start; }
-.spec { background: var(--card); border: 1px solid var(--line-strong); border-radius: 20px; overflow: hidden; box-shadow: 0 18px 44px rgba(15,17,19,.06); }
-.spec header { display: flex; justify-content: space-between; align-items: center; padding: 16px 22px; border-bottom: 1px solid var(--line); font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .16em; color: var(--ink); }
-.spec header .fl { color: var(--acc-c); background: var(--acc); border-radius: 999px; padding: 3px 10px; font-size: 8.5px; }
-.spec .row { display: flex; justify-content: space-between; padding: 13px 22px; border-bottom: 1px solid rgba(15,17,19,.05); }
-.spec .row:last-of-type { border-bottom: 0; }
-.spec .k { font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
-.spec .v { font-family: "IBM Plex Mono", monospace; font-size: 12.5px; color: var(--ink); font-variant-numeric: tabular-nums; }
-.spec footer { display: flex; gap: 20px; padding: 15px 22px; border-top: 1px solid var(--line); font-size: 13.5px; }
-.spec footer a:first-child { color: var(--ink); font-weight: 500; }
-.spec footer a.d { color: var(--dim); }
-.catgraph { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 22px 24px 18px; align-self: start; }
-.catgraph .h { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
-.catgraph .h .t { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 16px; color: var(--ink); }
-.catgraph .h .u { font-family: "IBM Plex Mono", monospace; font-size: 8.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
-.catgraph .r { display: grid; grid-template-columns: 132px 1fr auto; gap: 14px; align-items: center; padding: 11px 0; border-top: 1px solid rgba(15,17,19,.06); }
-.catgraph .r:first-of-type { border-top: 0; }
-.catgraph .nm { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 13.5px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.catgraph .bar { height: 8px; border-radius: 999px; background: rgba(15,17,19,.05); overflow: hidden; }
-.catgraph .bar i { display: block; height: 100%; width: 0; border-radius: 999px; background: var(--acc); transition: width 1s cubic-bezier(.2,.65,.25,1); }
-.catgraph.in .bar i { width: var(--w); }
-.catgraph .pr { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--body); font-variant-numeric: tabular-nums; white-space: nowrap; }
-.catgraph .foot { margin-top: 16px; font-family: "IBM Plex Mono", monospace; font-size: 8.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--faint); }
-@media (max-width: 520px) { .catgraph .r { grid-template-columns: 92px 1fr auto; gap: 8px; } .catgraph .pr { font-size: 10.5px; } }
-@media (max-width: 960px) { .mods { grid-template-columns: 1fr; } }
+/* models: flagship billboard + folding catalog */
+.mhead { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 30px; margin-bottom: 40px; flex-wrap: wrap; }
+.mhead h2 { margin-bottom: 0; }
+.mhead p.lead { max-width: 40ch; }
+.bill { background: var(--card); border: 1px solid var(--line-strong); border-radius: 24px; overflow: hidden; box-shadow: 0 24px 60px rgba(100,77,249,.08); }
+.bill .top { display: flex; align-items: center; justify-content: space-between; gap: 14px 18px; padding: 18px 28px; border-bottom: 1px solid var(--line); flex-wrap: wrap; }
+.bill .top .l { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+.bill .top .name { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 22px; color: var(--ink); }
+.bill .top .fl { font-family: "IBM Plex Mono", monospace; font-size: 8.5px; letter-spacing: .14em; background: var(--acc); color: #fff; border-radius: 999px; padding: 4px 11px; text-transform: uppercase; }
+.bill .top .caps { display: flex; gap: 8px; flex-wrap: wrap; }
+.bill .top .caps span { font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .08em; text-transform: uppercase; color: var(--body); background: rgba(15,17,19,.05); border-radius: 7px; padding: 5px 10px; }
+.bill .top .go { font-family: "Satoshi", sans-serif; font-size: 14px; background: var(--ink); color: #fff; border-radius: 999px; padding: 10px 20px; }
+.bill .top .go:hover { background: #26292d; }
+.bill .stats { display: grid; grid-template-columns: repeat(4, 1fr); }
+.bill .s { padding: 42px 28px 38px; border-right: 1px solid var(--line); }
+.bill .s:last-child { border-right: 0; }
+.bill .s .num { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: clamp(38px, 4.4vw, 64px); letter-spacing: -0.035em; color: var(--ink); line-height: 1; }
+.bill .s .num i { font-style: normal; color: var(--acc); }
+.bill .s .lb { font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); margin-top: 12px; }
+.mfold { margin-top: 14px; background: var(--card); border: 1px solid var(--line); border-radius: 18px; }
+.mfold summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 14px; padding: 16px 24px; font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 15px; color: var(--ink); }
+.mfold summary::-webkit-details-marker { display: none; }
+.mfold summary .u { font-family: "IBM Plex Mono", monospace; font-size: 8.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); font-weight: 400; }
+.mfold summary .plus { margin-left: auto; color: var(--dim); font-size: 19px; transition: transform .3s; }
+.mfold[open] summary .plus { transform: rotate(45deg); }
+.mfold .inner { padding: 2px 24px 18px; }
+.mfold .r { display: grid; grid-template-columns: 150px 1fr auto; gap: 14px; align-items: center; padding: 11px 0; border-top: 1px solid rgba(15,17,19,.06); }
+.mfold .nm { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 13.5px; color: var(--ink); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.mfold .bar { height: 8px; border-radius: 999px; background: rgba(15,17,19,.05); overflow: hidden; }
+.mfold .bar i { display: block; height: 100%; width: 0; border-radius: 999px; background: var(--acc); transition: width .9s cubic-bezier(.2,.65,.25,1) .12s; }
+.mfold[open] .bar i { width: var(--w); }
+.mfold .pr { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; color: var(--body); font-variant-numeric: tabular-nums; white-space: nowrap; }
+@media (max-width: 900px) {
+  .bill .stats { grid-template-columns: 1fr 1fr; }
+  .bill .s { border-bottom: 1px solid var(--line); }
+  .bill .s:nth-child(even) { border-right: 0; }
+  .bill .s:nth-child(3), .bill .s:nth-child(4) { border-bottom: 0; }
+}
+@media (max-width: 520px) { .mfold .r { grid-template-columns: 104px 1fr auto; gap: 8px; } .mfold .pr { font-size: 10.5px; } }
 @media (max-width: 560px) { .cat { grid-template-columns: 1fr; } }
 
 /* comparison - dark moment */
@@ -440,31 +453,34 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 <!-- MODELS -->
 <section class="blk" id="models"><div class="wrap">
   <div class="reveal head"><span class="mono">( 02 ) · The models</span><span class="mono" style="color:var(--faint)">OpenAI-compatible</span></div>
-  <div class="mods">
-    <div>
-      <div class="reveal"><h2 class="big">One endpoint.<br>The leading open&nbsp;models.</h2>
-      <p class="lead" style="margin-bottom:36px">Pay-per-token, no KYC. GLM-5.2 leads; the rest of the catalog is one parameter away.</p></div>
-      <div class="reveal spec">
-        <header><span>SPEC // GLM-5.2</span><span class="fl">FLAGSHIP</span></header>
-        <div class="row"><span class="k">Input · 1M tokens</span><span class="v">$0.60</span></div>
-        <div class="row"><span class="k">Output · 1M tokens</span><span class="v">$2.20</span></div>
-        <div class="row"><span class="k">Context window</span><span class="v">200K</span></div>
-        <div class="row"><span class="k">Throughput</span><span class="v">~120 tok/s</span></div>
-        <footer><a href="#">Try GLM-5.2 →</a><a class="d" href="#">API docs</a></footer>
-      </div>
-      <p class="mono" style="font-size:8.5px;color:var(--faint);margin-top:12px">*Illustrative. Live pricing on the API page</p>
+  <div class="reveal mhead">
+    <h2 class="big">One endpoint.<br>The leading open&nbsp;models.</h2>
+    <p class="lead">Pay-per-token, no KYC. GLM-5.2 leads; the rest of the catalog is one parameter away.</p>
+  </div>
+  <div class="reveal bill">
+    <div class="top">
+      <div class="l"><span class="name">GLM-5.2</span><span class="fl">Flagship</span><div class="caps"><span>Tools</span><span>Vision</span><span>Reasoning</span></div></div>
+      <a class="go" href="#">Try GLM-5.2</a>
     </div>
-    <div class="catgraph reveal">
-      <div class="h"><span class="t">The rest of the catalog</span><span class="u">Output $ / 1M</span></div>
+    <div class="stats">
+      <div class="s"><div class="num"><i>$</i>0.60</div><div class="lb">Input · 1M tokens</div></div>
+      <div class="s"><div class="num"><i>$</i>2.20</div><div class="lb">Output · 1M tokens</div></div>
+      <div class="s"><div class="num">200K</div><div class="lb">Context window</div></div>
+      <div class="s"><div class="num">~120</div><div class="lb">Tokens / second</div></div>
+    </div>
+  </div>
+  <details class="mfold reveal">
+    <summary>Six more open models on the same endpoint<span class="u">Output $ / 1M</span><span class="plus">+</span></summary>
+    <div class="inner">
       <div class="r"><span class="nm">Hermes 3 8B · TEE</span><span class="bar"><i style="--w:10%"></i></span><span class="pr">$0.08 / $0.30</span></div>
       <div class="r"><span class="nm">DeepSeek V4 Flash</span><span class="bar"><i style="--w:18%"></i></span><span class="pr">$0.14 / $0.55</span></div>
       <div class="r"><span class="nm">Gemma 4 31B</span><span class="bar"><i style="--w:23%"></i></span><span class="pr">$0.18 / $0.70</span></div>
       <div class="r"><span class="nm">Qwen3.6-35B-A3B</span><span class="bar"><i style="--w:26%"></i></span><span class="pr">$0.20 / $0.80</span></div>
       <div class="r"><span class="nm">Qwen3 Coder</span><span class="bar"><i style="--w:32%"></i></span><span class="pr">$0.25 / $1.00</span></div>
       <div class="r"><span class="nm">Qwen3.5 122B</span><span class="bar"><i style="--w:100%"></i></span><span class="pr">$0.90 / $3.10</span></div>
-      <div class="foot">Six more models · one parameter away · figures illustrative</div>
     </div>
-  </div>
+  </details>
+  <p class="mono" style="font-size:8.5px;color:var(--faint);margin-top:12px">*Illustrative. Live pricing on the API page</p>
 </div></section>
 
 <!-- COMPARISON -->
