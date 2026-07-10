@@ -64,9 +64,12 @@ nav.top .key:hover { background: #26292d; }
 .hero { padding: 150px 0 26px; text-align: center; }
 .hero .keyhint { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 26px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
 .hero h1 { font-size: clamp(42px, 5.6vw, 80px); line-height: 1.0; letter-spacing: -0.03em; }
-/* the cipher mark: "Private" in purple with a static hex whisper beneath it */
+/* "Private" in purple, sharp in the middle and blurred out at both edges -
+   a blurred copy sits behind and the sharp copy fades to transparent at the
+   left/right so the blur reads through */
 .hero h1 .enc { position: relative; display: inline-block; color: var(--acc); }
-.hero h1 .enc::after { content: "a7·f2·9c·1e·b4·6d"; position: absolute; left: 0; top: 108%; white-space: nowrap; font-family: "IBM Plex Mono", monospace; font-weight: 400; letter-spacing: .06em; font-size: .12em; color: var(--acc); opacity: .34; pointer-events: none; }
+.hero h1 .enc .blur { position: absolute; inset: 0; z-index: 0; filter: blur(9px); opacity: .82; pointer-events: none; }
+.hero h1 .enc .sharp { position: relative; z-index: 1; -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%); mask-image: linear-gradient(90deg, transparent 0%, #000 20%, #000 80%, transparent 100%); }
 .hero .row { display: flex; align-items: flex-end; justify-content: center; gap: 40px; margin-top: 34px; }
 .hero .sub { font-size: 19px; line-height: 1.6; max-width: 54ch; margin: 0 auto; }
 .hero .sub b { color: var(--ink); font-weight: 500; }
@@ -439,7 +442,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 <!-- HERO -->
 <header class="hero" id="top"><div class="wrap">
   <div class="hero-fade keyhint" style="--d:60ms"><span class="dot"></span>End-to-end confidential · TEE-attested</div>
-  <h1 class="hero-fade" style="--d:160ms"><span class="enc">Private</span> intelligence<br>you own.</h1>
+  <h1 class="hero-fade" style="--d:160ms"><span class="enc"><span class="blur" aria-hidden="true">Private</span><span class="sharp">Private</span></span><br>intelligence<br>you own.</h1>
   <div class="hero-fade row" style="--d:280ms">
     <p class="sub">Your prompts run inside a sealed enclave and leave nothing behind. <b>GLM-5.2</b> and 70+ open models, <b>OpenAI-compatible</b>, no KYC.</p>
     <div class="meta">
