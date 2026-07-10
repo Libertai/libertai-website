@@ -357,13 +357,13 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .mod.dark .foot .go { color: rgba(255,255,255,.5); }
 .mod.dark:hover .foot .go { color: #9d8fff; }
 /* chat mockup */
-.viz.chat { display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 22px 18px 58px; background: linear-gradient(180deg, #f3f4f7, var(--card)); }
+.viz.chat { display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 22px 18px 58px; background: linear-gradient(180deg, #efecfb, var(--card)); }
 .viz.chat::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 66px; background: linear-gradient(180deg, var(--card), transparent); z-index: 2; }
 .viz.chat .b { max-width: 84%; font-size: 11.5px; line-height: 1.42; padding: 8px 12px; border-radius: 13px; position: relative; z-index: 1; }
-.viz.chat .u { align-self: flex-end; background: var(--ink); color: #fff; border-bottom-right-radius: 4px; }
+.viz.chat .u { align-self: flex-end; background: var(--acc); color: #fff; border-bottom-right-radius: 4px; }
 .viz.chat .a { align-self: flex-start; background: #fff; border: 1px solid var(--line); color: var(--body); border-bottom-left-radius: 4px; }
 /* agents mockup */
-.viz.agents { padding: 20px 16px 58px; font-family: "IBM Plex Mono", monospace; }
+.viz.agents { padding: 20px 16px 58px; font-family: "IBM Plex Mono", monospace; background: radial-gradient(130% 90% at 100% 0%, rgba(100,77,249,.18), transparent 55%); }
 .viz.agents .ln { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 10px; color: rgba(255,255,255,.6); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
 .viz.agents .ln .t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .viz.agents .st { flex: none; letter-spacing: .04em; }
@@ -373,13 +373,13 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 /* image mockup */
 .viz.image { padding: 16px 16px 54px; display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
 .viz.image .t { border-radius: 12px; }
-.viz.image .t1 { grid-row: 1 / 3; background: radial-gradient(120% 100% at 25% 15%, #ffe0b0, #ec6f9e 42%, #6b4bd6 88%); }
-.viz.image .t2 { background: conic-gradient(from 210deg at 60% 45%, #a7c7ff, #d3a7ff, #ffc4e1, #a7d8ff, #a7c7ff); }
-.viz.image .t3 { background: radial-gradient(120% 120% at 75% 85%, #bff0dc, #4a9de0 58%, #2a2c66); }
+.viz.image .t1 { grid-row: 1 / 3; background: radial-gradient(120% 100% at 28% 18%, #cbbcff, #644df9 48%, #241461 92%); }
+.viz.image .t2 { background: conic-gradient(from 205deg at 58% 42%, #EA7AF4, #b592ff, #644df9, #e79df3, #EA7AF4); }
+.viz.image .t3 { background: radial-gradient(130% 120% at 72% 82%, #f6c9ff, #9b6bff 52%, #351f7a); }
 /* voice mockup */
-.viz.voice { display: grid; place-items: center; padding-bottom: 34px; background: linear-gradient(180deg, #f1f2f6, var(--card)); }
-.viz.voice .orb { position: relative; width: 56%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(58% 58% at 38% 30%, #423b5c, #14121d 56%, #050509 100%); box-shadow: 0 22px 50px rgba(18,16,38,.45), inset -8px -12px 34px rgba(140,110,255,.30), inset 5px 7px 20px rgba(255,255,255,.07); animation: orbpulse 4.2s ease-in-out infinite; }
-.viz.voice .orb::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(42% 30% at 66% 74%, rgba(157,143,255,.55), transparent 62%); }
+.viz.voice { display: grid; place-items: center; padding-bottom: 34px; background: linear-gradient(180deg, #efecfb, var(--card)); }
+.viz.voice .orb { position: relative; width: 56%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(58% 58% at 38% 30%, #4a3f78, #171233 55%, #060512 100%); box-shadow: 0 22px 58px rgba(100,77,249,.34), inset -8px -12px 38px rgba(130,100,255,.46), inset 5px 7px 20px rgba(255,255,255,.08); animation: orbpulse 4.2s ease-in-out infinite; }
+.viz.voice .orb::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(42% 30% at 66% 74%, rgba(157,143,255,.68), transparent 62%); }
 @keyframes orbpulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
 @media (max-width: 960px) { .stack { grid-template-columns: 1fr 1fr; } .mod { aspect-ratio: 1 / 0.92; } }
 @media (max-width: 560px) { .stack { grid-template-columns: 1fr; } .mod { aspect-ratio: 1 / 0.72; } }
