@@ -67,11 +67,11 @@ nav.top .key:hover { background: #26292d; }
 /* sui.io-style focus pull: the middle line is razor sharp while the lines
    above and below blur out and glow. Two stacked copies - a blurred one shown
    only at the top/bottom, a sharp one shown only through the middle band. */
-.hero h1.focus { position: relative; }
-.hero h1.focus .ly { display: block; }
-.hero h1.focus .sharp { position: relative; z-index: 1; -webkit-mask-image: linear-gradient(180deg, transparent 17%, #000 34%, #000 66%, transparent 83%); mask-image: linear-gradient(180deg, transparent 17%, #000 34%, #000 66%, transparent 83%); }
-.hero h1.focus .blur { position: absolute; inset: 0; z-index: 0; filter: blur(6px); opacity: .9; pointer-events: none; -webkit-mask-image: linear-gradient(180deg, #000 16%, transparent 35%, transparent 65%, #000 84%); mask-image: linear-gradient(180deg, #000 16%, transparent 35%, transparent 65%, #000 84%); }
-.hero h1.focus .p { color: var(--acc); }
+/* focus pull confined to the word "Private": its vertical middle stays sharp
+   while the top and bottom blur out and glow. Rest of the headline is sharp. */
+.hero h1 .enc { position: relative; display: inline-block; color: var(--acc); }
+.hero h1 .enc .sharp { position: relative; z-index: 1; -webkit-mask-image: linear-gradient(180deg, transparent 6%, #000 38%, #000 62%, transparent 94%); mask-image: linear-gradient(180deg, transparent 6%, #000 38%, #000 62%, transparent 94%); }
+.hero h1 .enc .blur { position: absolute; inset: 0; z-index: 0; filter: blur(6px); opacity: .9; pointer-events: none; -webkit-mask-image: linear-gradient(180deg, #000 4%, transparent 38%, transparent 62%, #000 96%); mask-image: linear-gradient(180deg, #000 4%, transparent 38%, transparent 62%, #000 96%); }
 .hero .row { display: flex; align-items: flex-end; justify-content: center; gap: 40px; margin-top: 34px; }
 .hero .sub { font-size: 19px; line-height: 1.6; max-width: 54ch; margin: 0 auto; }
 .hero .sub b { color: var(--ink); font-weight: 500; }
@@ -81,7 +81,7 @@ nav.top .key:hover { background: #26292d; }
 .hero .usr { margin-top: 18px; font-size: 14px; color: var(--dim); }
 .hero .usr a { color: var(--acc); font-weight: 500; border-bottom: 1px solid rgba(100,77,249,.35); }
 .hero .usr a:hover { border-bottom-color: var(--acc); }
-@media (max-width: 900px) { .hero { padding-top: 92px; } .hero .meta { display: none; } .hero h1.focus .blur { filter: blur(4px); } .hero .ctas { gap: 10px; margin-top: 28px; } .hero .ctas .btn { flex: 1 1 0; justify-content: center; font-size: 14px; padding: 14px 14px; white-space: nowrap; } }
+@media (max-width: 900px) { .hero { padding-top: 92px; } .hero .meta { display: none; } .hero h1 .enc .blur { filter: blur(4px); }.hero .ctas { gap: 10px; margin-top: 28px; } .hero .ctas .btn { flex: 1 1 0; justify-content: center; font-size: 14px; padding: 14px 14px; white-space: nowrap; } }
 
 /* media panel - the two worlds (A: centralized/red, B: decentralized/purple) */
 .media { padding: 44px 0 0; }
@@ -444,7 +444,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 <!-- HERO -->
 <header class="hero" id="top"><div class="wrap">
   <div class="hero-fade keyhint" style="--d:60ms"><span class="dot"></span>End-to-end confidential · TEE-attested</div>
-  <h1 class="hero-fade focus" style="--d:160ms"><span class="ly blur" aria-hidden="true"><span class="p">Private</span><br>intelligence<br>you own.</span><span class="ly sharp"><span class="p">Private</span><br>intelligence<br>you own.</span></h1>
+  <h1 class="hero-fade" style="--d:160ms"><span class="enc"><span class="blur" aria-hidden="true">Private</span><span class="sharp">Private</span></span><br>intelligence<br>you own.</h1>
   <div class="hero-fade row" style="--d:280ms">
     <p class="sub">Your prompts run inside a sealed enclave and leave nothing behind. <b>GLM-5.2</b> and 70+ open models, <b>OpenAI-compatible</b>, no KYC.</p>
     <div class="meta">
