@@ -64,9 +64,6 @@ nav.top .key:hover { background: #26292d; }
 .hero { padding: 150px 0 26px; text-align: center; }
 .hero .keyhint { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 26px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
 .hero h1 { font-size: clamp(42px, 5.6vw, 80px); line-height: 1.0; letter-spacing: -0.03em; }
-/* sui.io-style focus pull: the middle line is razor sharp while the lines
-   above and below blur out and glow. Two stacked copies - a blurred one shown
-   only at the top/bottom, a sharp one shown only through the middle band. */
 .hero h1 .enc { color: var(--acc); }
 .hero .row { display: flex; align-items: flex-end; justify-content: center; gap: 40px; margin-top: 34px; }
 .hero .sub { font-size: 19px; line-height: 1.6; max-width: 54ch; margin: 0 auto; }
@@ -77,7 +74,7 @@ nav.top .key:hover { background: #26292d; }
 .hero .usr { margin-top: 18px; font-size: 14px; color: var(--dim); }
 .hero .usr a { color: var(--acc); font-weight: 500; border-bottom: 1px solid rgba(100,77,249,.35); }
 .hero .usr a:hover { border-bottom-color: var(--acc); }
-@media (max-width: 900px) { .hero { padding-top: 92px; } .hero .meta { display: none; }.hero .ctas { gap: 10px; margin-top: 28px; } .hero .ctas .btn { flex: 1 1 0; justify-content: center; font-size: 14px; padding: 14px 14px; white-space: nowrap; } }
+@media (max-width: 900px) { .hero { padding-top: 92px; } .hero .meta { display: none; } .hero h1 { font-size: clamp(30px, 9vw, 42px); } .hero .ctas { gap: 10px; margin-top: 28px; } .hero .ctas .btn { flex: 1 1 0; justify-content: center; font-size: 14px; padding: 14px 14px; white-space: nowrap; } }
 
 /* media panel - the two worlds (A: centralized/red, B: decentralized/purple) */
 .media { padding: 44px 0 0; }
@@ -440,7 +437,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 <!-- HERO -->
 <header class="hero" id="top"><div class="wrap">
   <div class="hero-fade keyhint" style="--d:60ms"><span class="dot"></span>End-to-end confidential · TEE-attested</div>
-  <h1 class="hero-fade" style="--d:160ms"><span class="enc">Private</span><br>intelligence<br>you own.</h1>
+  <h1 class="hero-fade" style="--d:160ms"><span class="enc">Private</span><br>intelligence you own.</h1>
   <div class="hero-fade row" style="--d:280ms">
     <p class="sub">Your prompts run inside a sealed enclave and leave nothing behind. <b>GLM-5.2</b> and 70+ open models, <b>OpenAI-compatible</b>, no KYC.</p>
     <div class="meta">
