@@ -210,14 +210,6 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 @media (max-width: 860px) { .pxp { grid-template-columns: 1fr; gap: 40px; } }
 
 /* stats */
-.stats { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-.stats .in { display: grid; grid-template-columns: repeat(4, 1fr); }
-.stats .s { padding: 44px 28px 44px 0; border-right: 1px solid var(--line); }
-.stats .s:last-child { border-right: 0; } .stats .s:not(:first-child) { padding-left: 28px; }
-.stats .v { font-family: "Satoshi", sans-serif; font-size: clamp(34px, 3.6vw, 52px); letter-spacing: -0.03em; color: var(--ink); line-height: 1; margin-bottom: 10px; font-variant-numeric: tabular-nums; }
-.stats .v i { font-style: normal; color: var(--acc); filter: saturate(1.4) brightness(.9); }
-.stats .l { font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
-@media (max-width: 860px) { .stats .in { grid-template-columns: 1fr 1fr; } .stats .s { border-right: 0; border-bottom: 1px solid var(--line); padding-left: 0 !important; } }
 
 /* models: flagship billboard + folding catalog */
 .mhead { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px 30px; margin-bottom: 40px; flex-wrap: wrap; }
@@ -427,7 +419,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 <!-- NAV -->
 <nav class="top"><div class="pill">
   <a class="brand" href="#top">Libert<span class="ai">AI</span></a>
-  <div class="links"><a href="#privacy">Private AI</a><a href="preview-api.html">API</a><a href="preview-search.html">Search</a><a href="#credits">Credits</a><a href="https://docs.libertai.io" target="_blank" rel="noopener">Docs</a></div>
+  <div class="links"><a href="#privacy">Private AI</a><a href="#models">Models</a><a href="preview-api.html">API</a><a href="preview-search.html">Search</a><a href="#credits">Credits</a><a href="https://docs.libertai.io" target="_blank" rel="noopener">Docs</a></div>
   <div class="cta"><a class="chat" href="https://chat.libertai.io" target="_blank" rel="noopener">Chat</a><a class="key" href="https://console.libertai.io" target="_blank" rel="noopener">Get API key</a></div>
 </div></nav>
 
@@ -515,14 +507,6 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     </div>
   </div>
 </div></section>
-
-<!-- STATS -->
-<div class="stats"><div class="wrap in reveal">
-  <div class="s"><div class="v"><span data-n="0">0</span> bytes</div><div class="l">of prompts stored</div></div>
-  <div class="s"><div class="v"><span data-n="70">0</span>+</div><div class="l">open models, one endpoint</div></div>
-  <div class="s"><div class="v"><i>~</i><span data-n="7">0</span>×</div><div class="l">cheaper than closed flagships*</div></div>
-  <div class="s"><div class="v"><span data-n="1">0</span> line</div><div class="l">of code to migrate</div></div>
-</div></div>
 
 <!-- MODELS -->
 <section class="blk" id="models"><div class="wrap">
@@ -711,23 +695,6 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   document.querySelectorAll(".reveal").forEach(function (el) { io.observe(el); });
 
   var reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  // stat count-up
-  var cio = new IntersectionObserver(function (es) {
-    es.forEach(function (e) {
-      if (!e.isIntersecting) return;
-      cio.unobserve(e.target);
-      var el = e.target, n = +el.getAttribute("data-n");
-      if (reduce || n === 0) { el.textContent = n; return; }
-      var t0 = performance.now();
-      (function tick(t) {
-        var p = Math.min(1, (t - t0) / 1100), ease = 1 - Math.pow(1 - p, 3);
-        el.textContent = Math.round(n * ease);
-        if (p < 1) requestAnimationFrame(tick);
-      })(t0);
-    });
-  }, { threshold: 0.6 });
-  document.querySelectorAll("[data-n]").forEach(function (el) { cio.observe(el); });
 
 
   // live flagship price, shared across the billboard, two-worlds strip and the
