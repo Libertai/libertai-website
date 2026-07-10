@@ -207,6 +207,15 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .pcol summary .plus { margin-left: auto; color: var(--dim); font-size: 20px; transition: transform .3s ease; }
 .pcol details[open] summary .plus { transform: rotate(45deg); }
 .pcol .body { padding: 0 0 22px 39px; font-size: 14.5px; color: var(--dim); line-height: 1.62; max-width: 46ch; }
+/* FAQ - same accordion language as the privacy columns */
+.faq { max-width: 860px; margin: 46px auto 0; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 16px; padding: 20px 0; font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 16.5px; color: var(--ink); }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary .plus { margin-left: auto; flex: none; color: var(--dim); font-size: 20px; transition: transform .3s ease; }
+.faq details[open] summary .plus { transform: rotate(45deg); }
+.faq .body { padding: 0 0 22px; font-size: 14.5px; color: var(--dim); line-height: 1.62; max-width: 68ch; }
 @media (max-width: 860px) { .pxp { grid-template-columns: 1fr; gap: 40px; } }
 
 /* stats */
@@ -656,6 +665,33 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
       <div class="t"><span class="k">Use</span><span class="v">Inference credits</span></div>
       <div class="t"><span class="k">Review</span><span class="v">Case-by-case</span></div>
     </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section style="padding:0 0 116px" id="faq"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 07 ) · FAQ</span><span class="mono" style="color:var(--faint)">Answers up front</span></div>
+  <div class="faq reveal">
+    <details open>
+      <summary>How do I know it is actually private?<span class="plus">+</span></summary>
+      <div class="body">You do not have to take our word for it. Inference runs inside trusted execution environments (TEEs) on Aleph Cloud's distributed network: hardware-sealed enclaves that even the node operator cannot inspect, with cryptographic attestation you can verify yourself. Nothing is stored, nothing is trained on you.</div>
+    </details>
+    <details>
+      <summary>Will my existing code work?<span class="plus">+</span></summary>
+      <div class="body">Yes. The API is OpenAI-compatible: keep your SDK, change the base URL and key, and your code talks to LibertAI. Migration is one line, and the docs cover streaming, tool use and vision.</div>
+    </details>
+    <details>
+      <summary>How does billing work?<span class="plus">+</span></summary>
+      <div class="body">Two modes. Subscribe for a flat monthly price that covers steady usage, or buy credits and pay per million tokens. Usage past your subscription simply bills at the same per-token rate. No seats, no KYC.</div>
+    </details>
+    <details>
+      <summary>What happens if a node goes down?<span class="plus">+</span></summary>
+      <div class="body">Workloads reschedule across the network. Your endpoint is not one company's datacenter: it is a distributed pool of Aleph Cloud nodes, so no single machine, provider or jurisdiction can take it offline.</div>
+    </details>
+    <details>
+      <summary>Which models can I run?<span class="plus">+</span></summary>
+      <div class="body">GLM-5.2 leads, with 70+ open models behind the same endpoint: Qwen, Gemma, DeepSeek, Hermes and more, plus image generation, embeddings, speech and private web search. All open-weight, so nothing can be deprecated out from under you.</div>
+    </details>
   </div>
 </div></section>
 
