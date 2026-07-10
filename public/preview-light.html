@@ -343,15 +343,46 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 @media (max-width: 960px) { .mig { grid-template-columns: 1fr; } }
 
 /* stack */
-.stack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin-top: 50px; }
-.stack a { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 24px; display: flex; flex-direction: column; min-height: 190px; transition: transform .3s, box-shadow .3s; }
-.stack a:hover { transform: translateY(-5px); box-shadow: 0 16px 36px rgba(15,17,19,.07); }
-.stack .idx { font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); margin-bottom: 34px; }
-.stack h3 { font-size: 18px; margin-bottom: 8px; }
-.stack p { font-size: 14px; color: var(--dim); line-height: 1.55; }
-.stack .o { margin-top: auto; padding-top: 16px; font-size: 13px; color: var(--ink); font-weight: 500; }
-@media (max-width: 960px) { .stack { grid-template-columns: 1fr 1fr; } }
-@media (max-width: 560px) { .stack { grid-template-columns: 1fr; } }
+/* the sovereign stack - product showcase cards, x.ai-style mockups in squares */
+.stack { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 50px; }
+.mod { position: relative; aspect-ratio: 1 / 1.06; border-radius: 22px; overflow: hidden; border: 1px solid var(--line); background: var(--card); display: block; transition: transform .3s, box-shadow .3s; }
+.mod:hover { transform: translateY(-5px); box-shadow: 0 20px 44px rgba(15,17,19,.10); }
+.mod .viz { position: absolute; inset: 0; }
+.mod .foot { position: absolute; left: 20px; right: 18px; bottom: 17px; display: flex; align-items: center; justify-content: space-between; z-index: 4; }
+.mod .foot .nm { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 17px; letter-spacing: -0.01em; color: var(--ink); }
+.mod .foot .go { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .06em; color: var(--dim); transition: color .2s; }
+.mod:hover .foot .go { color: var(--acc); }
+.mod.dark { background: var(--dark); border-color: rgba(255,255,255,.10); }
+.mod.dark .foot .nm { color: #f5f6f7; }
+.mod.dark .foot .go { color: rgba(255,255,255,.5); }
+.mod.dark:hover .foot .go { color: #9d8fff; }
+/* chat mockup */
+.viz.chat { display: flex; flex-direction: column; justify-content: flex-end; gap: 8px; padding: 22px 18px 58px; background: linear-gradient(180deg, #f3f4f7, var(--card)); }
+.viz.chat::before { content: ""; position: absolute; inset: 0 0 auto 0; height: 66px; background: linear-gradient(180deg, var(--card), transparent); z-index: 2; }
+.viz.chat .b { max-width: 84%; font-size: 11.5px; line-height: 1.42; padding: 8px 12px; border-radius: 13px; position: relative; z-index: 1; }
+.viz.chat .u { align-self: flex-end; background: var(--ink); color: #fff; border-bottom-right-radius: 4px; }
+.viz.chat .a { align-self: flex-start; background: #fff; border: 1px solid var(--line); color: var(--body); border-bottom-left-radius: 4px; }
+/* agents mockup */
+.viz.agents { padding: 20px 16px 58px; font-family: "IBM Plex Mono", monospace; }
+.viz.agents .ln { display: flex; align-items: center; justify-content: space-between; gap: 8px; font-size: 10px; color: rgba(255,255,255,.6); padding: 7px 0; border-bottom: 1px solid rgba(255,255,255,.06); }
+.viz.agents .ln .t { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.viz.agents .st { flex: none; letter-spacing: .04em; }
+.viz.agents .run { color: #9d8fff; } .viz.agents .done { color: #7bdcb5; }
+.viz.agents .th { font-size: 9.5px; color: rgba(255,255,255,.42); margin-top: 13px; display: flex; align-items: center; gap: 7px; }
+.viz.agents .th .dt { width: 6px; height: 6px; border-radius: 2px; background: var(--acc); box-shadow: 0 0 8px rgba(100,77,249,.8); }
+/* image mockup */
+.viz.image { padding: 16px 16px 54px; display: grid; grid-template-columns: 1.3fr 1fr; grid-template-rows: 1fr 1fr; gap: 8px; }
+.viz.image .t { border-radius: 12px; }
+.viz.image .t1 { grid-row: 1 / 3; background: radial-gradient(120% 100% at 25% 15%, #ffe0b0, #ec6f9e 42%, #6b4bd6 88%); }
+.viz.image .t2 { background: conic-gradient(from 210deg at 60% 45%, #a7c7ff, #d3a7ff, #ffc4e1, #a7d8ff, #a7c7ff); }
+.viz.image .t3 { background: radial-gradient(120% 120% at 75% 85%, #bff0dc, #4a9de0 58%, #2a2c66); }
+/* voice mockup */
+.viz.voice { display: grid; place-items: center; padding-bottom: 34px; background: linear-gradient(180deg, #f1f2f6, var(--card)); }
+.viz.voice .orb { position: relative; width: 56%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(58% 58% at 38% 30%, #423b5c, #14121d 56%, #050509 100%); box-shadow: 0 22px 50px rgba(18,16,38,.45), inset -8px -12px 34px rgba(140,110,255,.30), inset 5px 7px 20px rgba(255,255,255,.07); animation: orbpulse 4.2s ease-in-out infinite; }
+.viz.voice .orb::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(42% 30% at 66% 74%, rgba(157,143,255,.55), transparent 62%); }
+@keyframes orbpulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+@media (max-width: 960px) { .stack { grid-template-columns: 1fr 1fr; } .mod { aspect-ratio: 1 / 0.92; } }
+@media (max-width: 560px) { .stack { grid-template-columns: 1fr; } .mod { aspect-ratio: 1 / 0.72; } }
 
 /* credits */
 .cred { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 48px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 26px; padding: clamp(32px, 4.5vw, 64px); }
@@ -604,10 +635,31 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 <section style="padding:0 0 116px" id="stack"><div class="wrap">
   <div class="reveal head"><span class="mono">( 05 ) · The sovereign stack</span><span class="mono" style="color:var(--faint)">04 modules</span></div>
   <div class="stack">
-    <a class="reveal" href="https://chat.libertai.io" target="_blank" rel="noopener"><span class="idx">01 / Chat</span><h3>Private Assistant</h3><p>Free, encrypted chat. No account, no logs, no training on your conversations.</p><span class="o">Open →</span></a>
-    <a class="reveal" href="preview-api.html"><span class="idx">02 / API</span><h3>Confidential Inference</h3><p>GLM-5.2 and open models over one OpenAI-compatible endpoint.</p><span class="o">Open →</span></a>
-    <a class="reveal" href="https://console.libertai.io/agents" target="_blank" rel="noopener"><span class="idx">03 / Agents</span><h3>Autonomous Agents</h3><p>Always-on agents with persistent memory on dedicated private machines.</p><span class="o">Open →</span></a>
-    <a class="reveal" href="preview-search.html"><span class="idx">04 / Search</span><h3>Private Web Search</h3><p>Multi-engine consensus with no profiling and no stored history.</p><span class="o">Open →</span></a>
+    <a class="mod reveal" href="https://chat.libertai.io" target="_blank" rel="noopener">
+      <div class="viz chat">
+        <span class="b a">Two particles become linked, so measuring one instantly determines the other.</span>
+        <span class="b u">Why is the sky blue?</span>
+        <span class="b a">Shorter blue wavelengths scatter more off air molecules than red.</span>
+      </div>
+      <div class="foot"><span class="nm">Chat</span><span class="go">Explore →</span></div>
+    </a>
+    <a class="mod dark reveal" href="https://console.libertai.io/agents" target="_blank" rel="noopener">
+      <div class="viz agents">
+        <div class="ln"><span class="t">Audit auth middleware</span><span class="st run">[running]</span></div>
+        <div class="ln"><span class="t">Rotate session tokens</span><span class="st run">[running]</span></div>
+        <div class="ln"><span class="t">Find stale references</span><span class="st done">[done]</span></div>
+        <div class="th"><span class="dt"></span>Thought for 4.1s · persistent memory</div>
+      </div>
+      <div class="foot"><span class="nm">Agents</span><span class="go">Explore →</span></div>
+    </a>
+    <a class="mod reveal" href="https://console.libertai.io" target="_blank" rel="noopener">
+      <div class="viz image"><span class="t t1"></span><span class="t t2"></span><span class="t t3"></span></div>
+      <div class="foot"><span class="nm">Image</span><span class="go">Explore →</span></div>
+    </a>
+    <a class="mod reveal" href="https://console.libertai.io" target="_blank" rel="noopener">
+      <div class="viz voice"><span class="orb"></span></div>
+      <div class="foot"><span class="nm">Voice</span><span class="go">Explore →</span></div>
+    </a>
   </div>
 </div></section>
 
