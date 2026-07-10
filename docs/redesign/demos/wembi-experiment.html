@@ -61,18 +61,18 @@ nav.top .key:hover { background: #26292d; }
 @media (max-width: 900px) { nav.top .links { display: none; } nav.top { top: 8px; } }
 
 /* hero */
-.hero { padding: 168px 0 26px; }
-.hero .keyhint { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 30px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
-.hero h1 { font-size: clamp(52px, 7.6vw, 116px); line-height: .98; letter-spacing: -0.035em; }
+.hero { padding: 150px 0 26px; text-align: center; }
+.hero .keyhint { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 26px; font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.hero h1 { font-size: clamp(42px, 5.6vw, 80px); line-height: 1.0; letter-spacing: -0.03em; }
 /* the cipher mark: "Private" in purple with a static hex whisper beneath it */
 .hero h1 .enc { position: relative; display: inline-block; color: var(--acc); }
 .hero h1 .enc::after { content: "a7·f2·9c·1e·b4·6d"; position: absolute; left: 0; top: 108%; white-space: nowrap; font-family: "IBM Plex Mono", monospace; font-weight: 400; letter-spacing: .06em; font-size: .12em; color: var(--acc); opacity: .34; pointer-events: none; }
-.hero .row { display: flex; align-items: flex-end; justify-content: space-between; gap: 40px; margin-top: 40px; }
-.hero .sub { font-size: 19px; line-height: 1.6; max-width: 46ch; }
+.hero .row { display: flex; align-items: flex-end; justify-content: center; gap: 40px; margin-top: 34px; }
+.hero .sub { font-size: 19px; line-height: 1.6; max-width: 54ch; margin: 0 auto; }
 .hero .sub b { color: var(--ink); font-weight: 500; }
-.hero .meta { text-align: right; display: flex; flex-direction: column; gap: 6px; }
+.hero .meta { display: none; }
 .hero .meta .n { font-family: "IBM Plex Mono", monospace; font-size: 11px; letter-spacing: .18em; color: var(--ink); }
-.hero .ctas { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 36px; }
+.hero .ctas { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; margin-top: 34px; }
 .hero .usr { margin-top: 18px; font-size: 14px; color: var(--dim); }
 .hero .usr a { color: var(--acc); font-weight: 500; border-bottom: 1px solid rgba(100,77,249,.35); }
 .hero .usr a:hover { border-bottom-color: var(--acc); }
