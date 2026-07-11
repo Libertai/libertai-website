@@ -37,7 +37,7 @@ export const MODELS = [
 ];
 
 export const COMPARISON = [
-	{ who: "LibertAI · GLM-5.2", price: "$4.40", width: 29, us: true },
-	{ who: "OpenAI · flagship", price: "$10.00", width: 67, us: false },
-	{ who: "Anthropic · flagship", price: "$15.00", width: 100, us: false },
+	{ who: "LibertAI · GLM-5.2", price: "$4.40", width: 15, us: true },
+	{ who: "OpenAI · GPT-5.5", price: "$30.00", width: 100, us: false },
+	{ who: "Anthropic · Opus 4.8", price: "$25.00", width: 83, us: false },
 ];

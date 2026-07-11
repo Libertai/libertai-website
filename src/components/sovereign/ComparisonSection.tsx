@@ -5,7 +5,7 @@ import { usePricing } from "@/components/sovereign/usePricing.ts";
 
 export function ComparisonSection() {
 	const { flagship } = usePricing();
-	// our own figure comes from live data; the competitor bars stay illustrative
+	// our own figure comes from live data; competitor figures are list prices
 	const rows = COMPARISON.map((row) => (row.us && flagship ? { ...row, price: flagship.output } : row));
 
 	return (
@@ -15,15 +15,15 @@ export function ComparisonSection() {
 					<div className="sv-mono mb-5">[ Cost ]</div>
 					<h2 className="text-[clamp(34px,4vw,52px)] mb-4">A fraction of the price.</h2>
 					<p className="text-[16px] text-foreground max-w-[44ch]">
-						Open models on distributed infrastructure — without a hyperscaler margin. Same class of output, an order of
-						magnitude less per token.
+						Open models on distributed infrastructure — without a hyperscaler margin. Same class of output, up to 85%
+						less per token.
 					</p>
 				</Reveal>
 
 				<Reveal delay={140}>
 					<div className="flex justify-between sv-mono text-[9px] pb-4">
 						<span>Output price / 1M tokens</span>
-						<span className="text-faint">Illustrative</span>
+						<span className="text-faint">List prices · Jul 2026</span>
 					</div>
 					<div className="flex flex-col gap-5">
 						{rows.map((row) => (
