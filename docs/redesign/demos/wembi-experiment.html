@@ -35,6 +35,7 @@ a { color: inherit; text-decoration: none; transition: color .2s, background .2s
   .tick .row { animation: none !important; }
   .final > * { opacity: 1 !important; transform: none !important; transition: none !important; }
   .catgraph .bar i, .cmpf .track i, .cmpf .stick i { transition: none !important; }
+  .viz.voice .orb, .viz.voice .orb i, .viz.voice .vring { animation: none !important; }
 }
 
 /* buttons */
@@ -386,12 +387,24 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .viz.image .t2 { background: conic-gradient(from 205deg at 58% 42%, #EA7AF4, #b592ff, #644df9, #e79df3, #EA7AF4); }
 .viz.image .t3 { background: radial-gradient(130% 120% at 72% 82%, #f6c9ff, #9b6bff 52%, #351f7a); }
 /* voice mockup */
-.viz.voice { display: grid; place-items: center; padding-bottom: 34px; background: linear-gradient(180deg, #efecfb, var(--card)); }
-.viz.voice .orb { position: relative; width: 56%; aspect-ratio: 1; border-radius: 50%; background: radial-gradient(58% 58% at 38% 30%, #4a3f78, #171233 55%, #060512 100%); box-shadow: 0 22px 58px rgba(100,77,249,.34), inset -8px -12px 38px rgba(130,100,255,.46), inset 5px 7px 20px rgba(255,255,255,.08); animation: orbpulse 4.2s ease-in-out infinite; }
-.viz.voice .orb::after { content: ""; position: absolute; inset: 0; border-radius: 50%; background: radial-gradient(42% 30% at 66% 74%, rgba(157,143,255,.68), transparent 62%); }
+.viz.voice { position: relative; display: grid; place-items: center; padding-bottom: 34px; background: linear-gradient(180deg, #efecfb, var(--card)); --ringmax: 1.7; }
+.viz.voice .orb { position: relative; width: 52%; aspect-ratio: 1; border-radius: 50%; overflow: hidden; background: #0b081d; box-shadow: 0 22px 58px rgba(100,77,249,.34); animation: orbpulse 4.2s ease-in-out infinite; z-index: 2; }
+.viz.voice .orb i { position: absolute; border-radius: 50%; }
+.viz.voice .orb .fl { filter: blur(14px); }
+.viz.voice .orb .fa { width: 78%; height: 64%; left: -12%; top: 8%; background: radial-gradient(closest-side, #7c5cff, transparent 72%); animation: vdrA 9s ease-in-out infinite alternate; }
+.viz.voice .orb .fb { width: 70%; height: 58%; right: -10%; top: 30%; background: radial-gradient(closest-side, #EA7AF4, transparent 72%); animation: vdrB 12s ease-in-out infinite alternate; }
+.viz.voice .orb .fc { width: 84%; height: 60%; left: 6%; bottom: -16%; background: radial-gradient(closest-side, #3b2bb3, transparent 74%); animation: vdrC 15s ease-in-out infinite alternate; }
+.viz.voice .orb .sh { inset: 0; background: radial-gradient(58% 46% at 36% 26%, rgba(255,255,255,.16), transparent 58%), radial-gradient(120% 120% at 50% 50%, transparent 52%, rgba(6,5,18,.62) 98%); }
+.viz.voice .vring { position: absolute; inset: 0 0 34px; margin: auto; width: 52%; aspect-ratio: 1; border-radius: 50%; border: 1.5px solid rgba(100,77,249,.5); opacity: 0; animation: vring 3.9s cubic-bezier(.2,.5,.4,1) infinite; }
+.viz.voice .vring.r2 { animation-delay: 1.3s; border-color: rgba(234,122,244,.45); }
+.viz.voice .vring.r3 { animation-delay: 2.6s; border-color: rgba(100,77,249,.35); }
 @keyframes orbpulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.035); } }
+@keyframes vring { 0% { transform: scale(1); opacity: 0; } 12% { opacity: .85; } 100% { transform: scale(var(--ringmax)); opacity: 0; } }
+@keyframes vdrA { from { transform: translate(0,0) rotate(0deg); } to { transform: translate(26%,18%) rotate(40deg); } }
+@keyframes vdrB { from { transform: translate(0,0) scale(1); } to { transform: translate(-30%,-14%) scale(1.25); } }
+@keyframes vdrC { from { transform: translate(0,0) rotate(0deg) scale(1); } to { transform: translate(-10%,-24%) rotate(-30deg) scale(1.12); } }
 @media (max-width: 960px) { .stack { grid-template-columns: 1fr 1fr; } .mod { aspect-ratio: 1 / 0.92; } }
-@media (max-width: 560px) { .stack { grid-template-columns: 1fr; } .mod { aspect-ratio: 1 / 0.72; } }
+@media (max-width: 560px) { .stack { grid-template-columns: 1fr; } .mod { aspect-ratio: 1 / 0.72; } .viz.voice { --ringmax: 1.4; } .viz.voice .orb { width: 44%; } .viz.voice .vring { width: 44%; } }
 
 /* credits */
 .cred { display: grid; grid-template-columns: minmax(0,1.2fr) minmax(0,1fr); gap: 48px; align-items: center; background: var(--card); border: 1px solid var(--line); border-radius: 26px; padding: clamp(32px, 4.5vw, 64px); }
@@ -665,7 +678,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
       <div class="foot"><span class="nm">Image</span><span class="go">Explore →</span></div>
     </a>
     <a class="mod reveal" href="https://console.libertai.io" target="_blank" rel="noopener">
-      <div class="viz voice"><span class="orb"></span></div>
+      <div class="viz voice"><span class="vring"></span><span class="vring r2"></span><span class="vring r3"></span><span class="orb"><i class="fl fa"></i><i class="fl fb"></i><i class="fl fc"></i><i class="sh"></i></span></div>
       <div class="foot"><span class="nm">Voice</span><span class="go">Explore →</span></div>
     </a>
   </div>
