@@ -14,7 +14,7 @@ const POINTS = [
 	{
 		idx: "03",
 		title: "Attested in hardware",
-		body: "Inference runs in Trusted Execution Environments with remote attestation. Verify the enclave — don't trust a policy.",
+		body: "Sensitive workloads run in Trusted Execution Environments with remote attestation. Verify the enclave, don't trust a policy.",
 	},
 ];
 
