@@ -286,54 +286,26 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .cmpf { background: var(--dark); border-radius: 26px; padding: clamp(36px, 5vw, 72px); color: #b9bec4; }
 .cmpf h2 { color: #f4f5f6; }
 .cmpf .lead { color: #9aa0a6; }
-.cmpf .rows { margin-top: 44px; }
-.cmpf .hd { display: flex; justify-content: space-between; font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: #6d737a; padding-bottom: 14px; }
-.cmpf .r { display: grid; grid-template-columns: 180px 1fr; gap: 22px; align-items: center; margin-bottom: 24px; }
-.cmpf .r .who { font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .08em; color: #878d94; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-.cmpf .r.us .who { color: #f4f5f6; }
-.cmpf .bars { display: flex; flex-direction: column; gap: 9px; }
-.cmpf .ln { display: grid; grid-template-columns: 50px 1fr 58px; gap: 12px; align-items: center; }
-.cmpf .ln .lbl { font-family: "IBM Plex Mono", monospace; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #5f656d; }
-.cmpf .track { border-radius: 999px; background: rgba(255,255,255,.07); overflow: hidden; }
-.cmpf .track.price { height: 11px; } .cmpf .track.pw { height: 6px; }
-.cmpf .track i { display: block; height: 100%; width: 0; border-radius: 999px; transition: width 1.1s cubic-bezier(.2,.65,.25,1) .15s; }
-.cmpf.in .track i { width: var(--w); }
-.cmpf .track.price i { background: rgba(255,255,255,.22); }
-.cmpf .r.us .track.price i { background: var(--acc); }
-.cmpf .track.pw i.lt { background: #EA7AF4; }
-.cmpf .track.pw i.oa { background: #777879; }
-.cmpf .track.pw i.an { background: #744525; }
-.cmpf .val { font-family: "IBM Plex Mono", monospace; font-size: 11.5px; text-align: right; color: #878d94; font-variant-numeric: tabular-nums; }
-.cmpf .r.us .val { color: #f4f5f6; }
-.cmpf .leg { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 20px; margin-top: 28px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,.08); font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: #6d737a; }
-.cmpf .leg > span { display: flex; align-items: center; gap: 7px; }
-.cmpf .leg i { width: 14px; height: 4px; border-radius: 999px; display: inline-block; }
-.cmpf .leg i.lt { background: #EA7AF4; } .cmpf .leg i.oa { background: #777879; } .cmpf .leg i.an { background: #744525; }
-.cmpf .leg .note { margin-left: auto; color: #5f656d; }
-.cmpf .cmpm { display: none; }
-/* mobile: swap the bar rows for a three-column snapshot - provider cards with
-   the price big, a vertical cost stick, and bench as a chip */
-@media (max-width: 620px) {
-  .cmpf { padding: 30px 22px 28px; }
-  .cmpf .rows { display: none; }
-  .cmpf .cmpm { display: block; margin-top: 30px; }
-  .cmpm .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-  .cmpm .col { border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 13px 11px 12px; display: flex; flex-direction: column; align-items: flex-start; }
-  .cmpm .col.us { border-color: rgba(100,77,249,.55); background: rgba(100,77,249,.08); }
-  .cmpm .nm { font-family: "IBM Plex Mono", monospace; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #878d94; }
-  .cmpm .col.us .nm { color: #cfc7ff; }
-  .cmpm .sub { font-family: "IBM Plex Mono", monospace; font-size: 7px; letter-spacing: .08em; text-transform: uppercase; color: #5f656d; margin-top: 2px; }
-  .cmpm .big { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 21px; letter-spacing: -.01em; color: #f4f5f6; margin: 10px 0 12px; font-variant-numeric: tabular-nums; }
-  .cmpm .col.us .big { color: #fff; }
-  .cmpm .stick { width: 100%; height: 64px; border-radius: 8px; background: rgba(255,255,255,.05); position: relative; overflow: hidden; }
-  .cmpm .stick i { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: rgba(255,255,255,.16); transition: height 1.1s cubic-bezier(.2,.65,.25,1) .15s; }
-  .cmpf.in .cmpm .stick i { height: var(--h); }
-  .cmpm .col.us .stick i { background: var(--acc); }
-  .cmpm .bn { margin-top: 10px; font-family: "IBM Plex Mono", monospace; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #5f656d; }
-  .cmpm .bn b { font-weight: 400; color: #b9bec4; }
-  .cmpm .col.us .bn b { color: #EA7AF4; }
-  .cmpm .note { margin-top: 14px; font-family: "IBM Plex Mono", monospace; font-size: 8px; letter-spacing: .1em; text-transform: uppercase; color: #5f656d; }
-}
+/* comparison snapshot - three provider cards, one design at every width */
+.cmpf .rows { display: none; }
+.cmpf .cmpm { display: block; margin-top: clamp(30px, 3.4vw, 50px); }
+.cmpm .cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(8px, 1vw, 14px); }
+.cmpm .col { border: 1px solid rgba(255,255,255,.08); border-radius: clamp(16px, 1.5vw, 20px); padding: clamp(13px, 1.9vw, 28px) clamp(11px, 1.7vw, 26px) clamp(12px, 1.6vw, 24px); display: flex; flex-direction: column; align-items: flex-start; }
+.cmpm .col.us { border-color: rgba(100,77,249,.55); background: rgba(100,77,249,.08); }
+.cmpm .nm { font-family: "IBM Plex Mono", monospace; font-size: clamp(8px, .9vw, 10.5px); letter-spacing: .1em; text-transform: uppercase; color: #878d94; }
+.cmpm .col.us .nm { color: #cfc7ff; }
+.cmpm .sub { font-family: "IBM Plex Mono", monospace; font-size: clamp(7px, .7vw, 9px); letter-spacing: .08em; text-transform: uppercase; color: #5f656d; margin-top: 3px; }
+.cmpm .big { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: clamp(21px, 3.3vw, 46px); letter-spacing: -.015em; color: #f4f5f6; margin: clamp(10px, 1.3vw, 18px) 0 clamp(12px, 1.5vw, 20px); font-variant-numeric: tabular-nums; }
+.cmpm .col.us .big { color: #fff; }
+.cmpm .stick { width: 100%; height: clamp(64px, 8.6vw, 124px); border-radius: clamp(8px, 1vw, 12px); background: rgba(255,255,255,.05); position: relative; overflow: hidden; }
+.cmpm .stick i { position: absolute; left: 0; right: 0; bottom: 0; height: 0; background: rgba(255,255,255,.16); transition: height 1.1s cubic-bezier(.2,.65,.25,1) .15s; }
+.cmpf.in .cmpm .stick i { height: var(--h); }
+.cmpm .col.us .stick i { background: var(--acc); }
+.cmpm .bn { margin-top: clamp(10px, 1.1vw, 15px); font-family: "IBM Plex Mono", monospace; font-size: clamp(8px, .8vw, 9.5px); letter-spacing: .1em; text-transform: uppercase; color: #5f656d; }
+.cmpm .bn b { font-weight: 400; color: #b9bec4; }
+.cmpm .col.us .bn b { color: #EA7AF4; }
+.cmpm .note { margin-top: clamp(14px, 1.5vw, 22px); font-family: "IBM Plex Mono", monospace; font-size: clamp(8px, .8vw, 9.5px); letter-spacing: .1em; text-transform: uppercase; color: #5f656d; }
+@media (max-width: 620px) { .cmpf { padding: 30px 22px 28px; } }
 
 /* migration */
 .mig { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1.1fr); gap: 48px; align-items: center; }
@@ -602,22 +574,6 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     <div class="head" style="margin-bottom:14px"><span class="mono" style="color:#6d737a">( 03 ) · Cost vs. benchmark</span><span class="mono" style="color:#4a5056">Jul 2026</span></div>
     <h2 class="big">A fraction of the price.</h2>
     <p class="lead">Open models on distributed infrastructure, without a hyperscaler margin. Comparable benchmarks, up to 85% less per token.</p>
-    <div class="rows">
-      <div class="hd"><span>Cost &amp; benchmark · flagship models</span><span>$ / 1M · GPQA %</span></div>
-      <div class="r us"><span class="who">LIBERTAI · GLM-5.2</span><div class="bars">
-        <div class="ln"><span class="lbl">Cost</span><span class="track price"><i style="--w:15%"></i></span><span class="val" id="cmpUsVal">$4.40</span></div>
-        <div class="ln"><span class="lbl">Bench</span><span class="track pw"><i class="lt" style="--w:91%"></i></span><span class="val">91</span></div>
-      </div></div>
-      <div class="r"><span class="who">OPENAI · GPT-5.5</span><div class="bars">
-        <div class="ln"><span class="lbl">Cost</span><span class="track price"><i style="--w:100%"></i></span><span class="val">$30.00</span></div>
-        <div class="ln"><span class="lbl">Bench</span><span class="track pw"><i class="oa" style="--w:94%"></i></span><span class="val">94</span></div>
-      </div></div>
-      <div class="r"><span class="who">ANTHROPIC · OPUS 4.8</span><div class="bars">
-        <div class="ln"><span class="lbl">Cost</span><span class="track price"><i style="--w:83%"></i></span><span class="val">$25.00</span></div>
-        <div class="ln"><span class="lbl">Bench</span><span class="track pw"><i class="an" style="--w:93%"></i></span><span class="val">93</span></div>
-      </div></div>
-      <div class="leg"><span><i class="lt"></i>LibertAI</span><span><i class="oa"></i>OpenAI</span><span><i class="an"></i>Anthropic</span><span class="note">Benchmark: GPQA Diamond, % correct · Jul 2026</span></div>
-    </div>
     <div class="cmpm">
       <div class="cols">
         <div class="col us"><span class="nm">LibertAI</span><span class="sub">GLM-5.2</span><span class="big" id="cmpUsValM">$4.40</span><span class="stick"><i style="--h:15%"></i></span><span class="bn">Bench <b>91</b></span></div>
