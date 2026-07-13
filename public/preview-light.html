@@ -35,7 +35,7 @@ a { color: inherit; text-decoration: none; transition: color .2s, background .2s
   .tick .row { animation: none !important; }
   .final > * { opacity: 1 !important; transform: none !important; transition: none !important; }
   .catgraph .bar i, .cmpf .track i, .cmpf .stick i { transition: none !important; }
-  .viz.voice .orb, .viz.voice .orb i, .viz.voice .vring { animation: none !important; }
+  .viz.voice .orb, .viz.voice .orb i, .viz.voice .vring, .viz.codebox .cur { animation: none !important; }
 }
 
 /* buttons */
@@ -401,6 +401,28 @@ h2.big { font-size: clamp(38px, 4.6vw, 64px); letter-spacing: -0.03em; line-heig
 .final.in > div:nth-of-type(2) { transition-delay: .42s; }
 
 /* footer */
+/* access & pricing cells */
+.acc3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 46px; }
+.acc3 .cell { background: var(--card); border: 1px solid var(--line); border-radius: 20px; padding: 26px 26px 24px; display: flex; flex-direction: column; gap: 10px; }
+.acc3 .cell.hi { border-color: rgba(100,77,249,.45); box-shadow: 0 14px 34px rgba(100,77,249,.10); }
+.acc3 .k { font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); }
+.acc3 .t { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 24px; color: var(--ink); letter-spacing: -.01em; }
+.acc3 p { font-size: 14.5px; line-height: 1.6; color: var(--dim); flex: 1; }
+.acc3 a { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 14.5px; color: var(--acc); }
+@media (max-width: 760px) { .acc3 { grid-template-columns: 1fr; } }
+/* code + search ecosystem tiles */
+.viz.codebox { padding: 22px 18px; font-family: "IBM Plex Mono", monospace; background: radial-gradient(130% 90% at 0% 100%, rgba(100,77,249,.16), transparent 55%); }
+.viz.codebox pre { font-size: 10.5px; line-height: 2.05; color: rgba(255,255,255,.66); white-space: pre-wrap; }
+.viz.codebox .ok { color: #9d8fff; }
+.viz.codebox .cur { display: inline-block; color: #9d8fff; animation: curblink 1.1s steps(1) infinite; }
+@keyframes curblink { 50% { opacity: 0; } }
+.viz.srch { padding: 18px 16px 54px; display: flex; flex-direction: column; gap: 10px; }
+.viz.srch .bar { display: flex; align-items: center; gap: 8px; background: #fff; border: 1px solid var(--line); border-radius: 999px; padding: 9px 14px; font-family: "IBM Plex Mono", monospace; font-size: 10px; color: var(--dim); }
+.viz.srch .bar .dt { width: 7px; height: 7px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 8px rgba(100,77,249,.7); flex: none; }
+.viz.srch .res { display: flex; flex-direction: column; gap: 9px; margin-top: 6px; }
+.viz.srch .res i { display: block; height: 9px; border-radius: 999px; background: rgba(15,17,19,.08); }
+.viz.srch .res i:nth-child(2) { width: 82%; } .viz.srch .res i:nth-child(3) { width: 64%; }
+.viz.srch .px { margin-top: auto; font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); }
 footer.site { padding: 96px 0 36px; }
 footer.site .cols { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 32px; padding-bottom: 72px; }
 footer.site .h { font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--faint); margin-bottom: 16px; }
@@ -492,32 +514,9 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   <div class="it"><span>OpenAI-compatible</span><i>✦</i><span>No KYC</span><i>✦</i><span>TEE-attested</span><i>✦</i><span>Nothing stored</span><i>✦</i><span>Subscribe or pay per token</span><i>✦</i><span>Leading open models</span><i>✦</i><span>Powered by Aleph Cloud</span><i>✦</i></div>
 </div></div>
 
-<!-- PRIVACY -->
-<section class="blk" id="privacy"><div class="wrap">
-  <div class="reveal head"><span class="mono">( 01 ) · Built for developers</span><span class="mono" style="color:var(--faint)">Proof &gt; policy</span></div>
-  <div class="reveal"><h2 class="big">Private by proof.</h2>
-  <p class="lead">Most providers ask you to trust a policy. LibertAI is built so there's nothing to trust. Drop-in, OpenAI-compatible APIs where the infrastructure literally can't remember you.</p></div>
-  <div class="pxp">
-    <div class="pcol do reveal">
-      <div class="ph"><span class="tag yes">Commitments</span>What we do</div>
-      <p class="sub">Built by developers, for developers, with the open ecosystem in mind.</p>
-      <details open><summary><span class="pmk">✓</span>Support developers<span class="plus">+</span></summary><div class="body">Drop-in OpenAI-compatible APIs, honest docs, and open models you can actually inspect. Keep your SDK, prompts and stack. Point one base URL at us and you're running.</div></details>
-      <details><summary><span class="pmk">✓</span>Help startups save money<span class="plus">+</span></summary><div class="body">Open models on distributed infrastructure cost a fraction of the closed flagships, plus up to $10,000 in credits to help early teams build private from day one.</div></details>
-      <details><summary><span class="pmk">✓</span>Keep you in control<span class="plus">+</span></summary><div class="body">No lock-in and no gatekeeping. Your choice of model, pay-per-token, no KYC, and everything runs on a decentralized network you can verify.</div></details>
-    </div>
-    <div class="pcol dont reveal">
-      <div class="ph"><span class="tag no">Guarantees</span>What we don't do</div>
-      <p class="sub">The privacy comes from the architecture, not a promise.</p>
-      <details open><summary><span class="pmk">✕</span>No data collection<span class="plus">+</span></summary><div class="body">Requests are processed and forgotten. No account requirement, no profile, and nothing to subpoena.</div></details>
-      <details><summary><span class="pmk">✕</span>No training on your data<span class="plus">+</span></summary><div class="body">Your prompts never become weights, and are never used to train, tune or evaluate any model.</div></details>
-      <details><summary><span class="pmk">✕</span>No blind trust<span class="plus">+</span></summary><div class="body">Sensitive workloads run in Trusted Execution Environments with remote attestation. Verify the enclave; you don't have to trust a policy.</div></details>
-    </div>
-  </div>
-</div></section>
-
 <!-- MODELS -->
 <section style="padding:0 0 116px" id="models"><div class="wrap">
-  <div class="reveal head"><span class="mono">( 02 ) · The models</span><span class="mono" style="color:var(--faint)">OpenAI-compatible</span></div>
+  <div class="reveal head"><span class="mono">( 01 ) · The models</span><span class="mono" style="color:var(--faint)">OpenAI-compatible</span></div>
   <div class="reveal mhead">
     <h2 class="big">One endpoint.<br>The leading open&nbsp;models.</h2>
     <p class="lead">Pay-per-token, no KYC. GLM-5.2 leads; the rest of the catalog is one parameter away.</p>
@@ -568,6 +567,31 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   <p class="mono" id="priceNote" style="font-size:8.5px;color:var(--faint);margin-top:12px">*Illustrative. Live pricing on the API page</p>
 </div></section>
 
+<!-- ACCESS -->
+<section style="padding:0 0 116px" id="access"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 02 ) · Access &amp; pricing</span><span class="mono" style="color:var(--faint)">Start free · pay as you go</span></div>
+  <div class="acc3 reveal">
+    <div class="cell">
+      <div class="k">Chat</div>
+      <div class="t">Free</div>
+      <p>Open the private chat and start talking. No account, no email, no logging.</p>
+      <a href="https://chat.libertai.io" target="_blank" rel="noopener">Open chat →</a>
+    </div>
+    <div class="cell hi">
+      <div class="k">API</div>
+      <div class="t">Pay as you go</div>
+      <p>Plans for steady usage, or credits per token. Pay by card or crypto (ETH, USDC); LTAI holders get 20% off.</p>
+      <a href="https://console.libertai.io" target="_blank" rel="noopener">Get an API key →</a>
+    </div>
+    <div class="cell">
+      <div class="k">Agents</div>
+      <div class="t">Free tier</div>
+      <p>Two always-on agents on their own VMs, no card required. Plans from €7/mo.</p>
+      <a href="https://liberclaw.ai" target="_blank" rel="noopener">Meet LiberClaw →</a>
+    </div>
+  </div>
+</div></section>
+
 <!-- COMPARISON -->
 <section style="padding:0 0 116px"><div class="wrap">
   <div class="cmpf reveal">
@@ -585,9 +609,32 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
   </div>
 </div></section>
 
+<!-- PRIVACY -->
+<section class="blk" id="privacy"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 04 ) · Built for developers</span><span class="mono" style="color:var(--faint)">Proof &gt; policy</span></div>
+  <div class="reveal"><h2 class="big">Private by proof.</h2>
+  <p class="lead">Most providers ask you to trust a policy. LibertAI is built so there's nothing to trust. Drop-in, OpenAI-compatible APIs where the infrastructure literally can't remember you.</p></div>
+  <div class="pxp">
+    <div class="pcol do reveal">
+      <div class="ph"><span class="tag yes">Commitments</span>What we do</div>
+      <p class="sub">Built by developers, for developers, with the open ecosystem in mind.</p>
+      <details open><summary><span class="pmk">✓</span>Support developers<span class="plus">+</span></summary><div class="body">Drop-in OpenAI-compatible APIs, honest docs, and open models you can actually inspect. Keep your SDK, prompts and stack. Point one base URL at us and you're running.</div></details>
+      <details><summary><span class="pmk">✓</span>Help startups save money<span class="plus">+</span></summary><div class="body">Open models on distributed infrastructure cost a fraction of the closed flagships, plus up to $10,000 in credits to help early teams build private from day one.</div></details>
+      <details><summary><span class="pmk">✓</span>Keep you in control<span class="plus">+</span></summary><div class="body">No lock-in and no gatekeeping. Your choice of model, pay-per-token, no KYC, and everything runs on a decentralized network you can verify.</div></details>
+    </div>
+    <div class="pcol dont reveal">
+      <div class="ph"><span class="tag no">Guarantees</span>What we don't do</div>
+      <p class="sub">The privacy comes from the architecture, not a promise.</p>
+      <details open><summary><span class="pmk">✕</span>No data collection<span class="plus">+</span></summary><div class="body">Requests are processed and forgotten. No account requirement, no profile, and nothing to subpoena.</div></details>
+      <details><summary><span class="pmk">✕</span>No training on your data<span class="plus">+</span></summary><div class="body">Your prompts never become weights, and are never used to train, tune or evaluate any model.</div></details>
+      <details><summary><span class="pmk">✕</span>No blind trust<span class="plus">+</span></summary><div class="body">Sensitive workloads run in Trusted Execution Environments with remote attestation. Verify the enclave; you don't have to trust a policy.</div></details>
+    </div>
+  </div>
+</div></section>
+
 <!-- MIGRATION -->
 <section style="padding:0 0 116px"><div class="wrap">
-  <div class="reveal head"><span class="mono">( 04 ) · Migration</span><span class="mono" style="color:var(--faint)">Keep your stack</span></div>
+  <div class="reveal head"><span class="mono">( 05 ) · Migration</span><span class="mono" style="color:var(--faint)">Keep your stack</span></div>
   <div class="mig">
     <div>
       <div class="reveal"><h2 class="big">Start, or switch,<br>in a minute.</h2>
@@ -610,7 +657,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 
 <!-- STACK -->
 <section style="padding:0 0 116px" id="stack"><div class="wrap">
-  <div class="reveal head"><span class="mono">( 05 ) · The sovereign stack</span><span class="mono" style="color:var(--faint)">04 modules</span></div>
+  <div class="reveal head"><span class="mono">( 06 ) · The sovereign stack</span><span class="mono" style="color:var(--faint)">Chat · Agents · Code · Search</span></div>
   <div class="stack">
     <a class="mod reveal" href="https://chat.libertai.io" target="_blank" rel="noopener">
       <div class="viz chat">
@@ -620,7 +667,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
       </div>
       <div class="foot"><span class="nm">Chat</span><span class="go">Explore →</span></div>
     </a>
-    <a class="mod dark reveal" href="https://console.libertai.io/agents" target="_blank" rel="noopener">
+    <a class="mod dark reveal" href="https://liberclaw.ai" target="_blank" rel="noopener">
       <div class="viz agents">
         <div class="ln"><span class="t">Audit auth middleware</span><span class="st run">[running]</span></div>
         <div class="ln"><span class="t">Rotate session tokens</span><span class="st run">[running]</span></div>
@@ -629,13 +676,21 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
       </div>
       <div class="foot"><span class="nm">Agents</span><span class="go">Explore →</span></div>
     </a>
-    <a class="mod reveal" href="https://console.libertai.io" target="_blank" rel="noopener">
-      <div class="viz image"><span class="t t1"></span><span class="t t2"></span><span class="t t3"></span></div>
-      <div class="foot"><span class="nm">Image</span><span class="go">Explore →</span></div>
+    <a class="mod dark reveal" href="https://code.libertai.io" target="_blank" rel="noopener">
+      <div class="viz codebox"><pre>$ libertai code
+<span class="ok">→</span> launching claude-code
+<span class="ok">→</span> backend api.libertai.io · glm-5.2
+<span class="ok">→</span> private session · 0 logs
+<span class="cur">▌</span></pre></div>
+      <div class="foot"><span class="nm">Code</span><span class="go">Explore →</span></div>
     </a>
-    <a class="mod reveal" href="https://console.libertai.io" target="_blank" rel="noopener">
-      <div class="viz voice"><span class="vring"></span><span class="vring r2"></span><span class="vring r3"></span><span class="orb"><i class="fl fa"></i><i class="fl fb"></i><i class="fl fc"></i><i class="sh"></i></span></div>
-      <div class="foot"><span class="nm">Voice</span><span class="go">Explore →</span></div>
+    <a class="mod reveal" href="preview-search.html">
+      <div class="viz srch">
+        <div class="bar"><span class="dt"></span>search the live web, privately</div>
+        <div class="res"><i></i><i></i><i></i></div>
+        <div class="px">From $0.002 / query · pays via x402</div>
+      </div>
+      <div class="foot"><span class="nm">Search</span><span class="go">Explore →</span></div>
     </a>
   </div>
 </div></section>
@@ -644,7 +699,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 <section style="padding:0 0 116px" id="credits"><div class="wrap">
   <div class="cred reveal">
     <div>
-      <div class="mono" style="margin-bottom:18px">( 06 ) · Sovereign program</div>
+      <div class="mono" style="margin-bottom:18px">( 07 ) · Sovereign program</div>
       <h2 class="big">$10,000 to build private.</h2>
       <p class="lead" style="margin-bottom:30px">Startup credits for selected companies building on private inference. GLM-5.2 and the full catalog, plus migration support from our team.</p>
       <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px"><a class="btn solid" href="https://t.me/libertai" target="_blank" rel="noopener">Apply for credits</a><span class="mono" style="font-size:8.5px;color:var(--faint)">Reply within 48h</span></div>
@@ -660,7 +715,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 
 <!-- FAQ -->
 <section style="padding:0 0 116px" id="faq"><div class="wrap">
-  <div class="reveal head"><span class="mono">( 07 ) · FAQ</span><span class="mono" style="color:var(--faint)">Answers up front</span></div>
+  <div class="reveal head"><span class="mono">( 08 ) · FAQ</span><span class="mono" style="color:var(--faint)">Answers up front</span></div>
   <div class="faq reveal">
     <details open>
       <summary>How do I know it is actually private?<span class="plus">+</span></summary>
@@ -672,7 +727,11 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
     </details>
     <details>
       <summary>How does billing work?<span class="plus">+</span></summary>
-      <div class="body">Two modes. Subscribe for a flat monthly price that covers steady usage, or buy credits and pay per million tokens. Usage past your subscription simply bills at the same per-token rate. No seats, no KYC.</div>
+      <div class="body">Two ways. Subscribe to a plan that covers steady usage, or buy credits and pay per million tokens; past a plan's allowance, usage bills at the same per-token rate. Top up with a card or crypto (ETH, USDC), and the LTAI token gives a 20% discount. No seats, no KYC.</div>
+    </details>
+    <details>
+      <summary>Is there a free way to try it?<span class="plus">+</span></summary>
+      <div class="body">Yes. The private chat at chat.libertai.io is free with no account. LiberClaw's free tier runs two always-on agents with no card required. And the API has no minimum: top up a few dollars and pay only for the tokens you use.</div>
     </details>
     <details>
       <summary>What happens if a node goes down?<span class="plus">+</span></summary>
