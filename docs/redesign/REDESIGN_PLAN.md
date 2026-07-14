@@ -194,18 +194,18 @@ Interactive file: **`docs/redesign/demos/hero-concepts-2.html`** — keys `1–4
 
 Light modes are designed, not inverted: text tiers re-derived for contrast (ink ≈13:1, body ≈8.5:1), grain flips to `multiply`, and the accent switches from the brightened `#9D8FFF` to a darkened `#5334E6` (≈6:1 on the light grounds) — the same two-job accent logic as the dark system, mirrored. Round-2 screenshots live in `docs/redesign/screenshots/` (`r2-*`).
 
-### Round 3 — Concept 09 "Transmission" (Marathon-inspired HUD, dark only)
+### Round 3 — Concept 09 "Transmission" (HUD, dark only)
 
-A translation of Bungie's *Marathon* "graphic realism" into LibertAI's world: private inference as a secure transmission. File: **`docs/redesign/demos/hero-concepts-3.html`**; screenshots `r3-*`.
+A "graphic realism" HUD treatment for LibertAI's world: private inference as a secure transmission. File: **`docs/redesign/demos/hero-concepts-3.html`**; screenshots `r3-*`.
 
 - **Type:** Anton (ultra-condensed display — solid line + outlined line, purple square full-stops), Archivo (UI), Fragment Mono (HUD data).
 - **Motifs:** top/bottom HUD bars with live status (`SYS.STATUS: ENCRYPTED — 0 BYTES LOGGED`), vertical protocol rails, registration crosses, a spec **readout panel** for GLM-5.2 with segmented bars (privacy row fully lit in purple, scan-sweep animation), CSS barcode + ID plate, ghost outlined "5.2" numeral, hazard stripe, model ticker, glitch-slice hover on the headline (reduced-motion safe).
 - **Copy voice:** "ALL SIGNAL. / ZERO TRACE." — the trust claims as system status rather than marketing; credits reframed as a "supply drop."
-- **Accent use:** deliberately more signal-active than rounds 1–2 (Marathon grammar) while surfaces stay monochrome: CTA fill, status dots, privacy bar, ghost stroke in purple; the logo-gradient pink reserved for the credits line and one ticker item.
+- **Accent use:** deliberately more signal-active than rounds 1–2 while surfaces stay monochrome: CTA fill, status dots, privacy bar, ghost stroke in purple; the logo-gradient pink reserved for the credits line and one ticker item.
 
-### Round 4 — Concept 10 "Sovereign" (Palantir-inspired, dark only)
+### Round 4 — Concept 10 "Sovereign" (dark only)
 
-An institutional translation of Palantir's *Sovereign AIOS*: austere framing, engineered type, schematic data-viz, near-monochrome with color as signal — mapped onto LibertAI's genuine "sovereign AI" thesis (own your data and weights; run on infrastructure no single company controls). File: **`docs/redesign/demos/hero-concepts-4.html`**; screenshots `r4-*`.
+An institutional treatment: austere framing, engineered type, schematic data-viz, near-monochrome with color as signal — mapped onto LibertAI's genuine "sovereign AI" thesis (own your data and weights; run on infrastructure no single company controls). File: **`docs/redesign/demos/hero-concepts-4.html`**; screenshots `r4-*`.
 
 - **Type:** IBM Plex Sans (display + body — the governmental/engineered neo-grotesque, distinct from every prior round) + IBM Plex Mono (all technical scaffolding: eyebrows, telemetry, module indices).
 - **Signature visual:** a live **canvas wireframe node-globe** — a Fibonacci sphere of ~118 nodes with proximity-edge wireframe, slow rotation, orthographic depth shading. It literally depicts LibertAI's decentralized Aleph compute: most nodes cool-white, ~1-in-7 pulsing purple ("active inference"), faint edges. Reduced-motion renders a static frame.
@@ -215,7 +215,7 @@ An institutional translation of Palantir's *Sovereign AIOS*: austere framing, en
 
 ### Implemented — Sovereign homepage (this branch)
 
-The Sovereign direction is now the live homepage implementation (`src/components/sovereign/`, composed in `src/routes/index.tsx`), refined per feedback: **Satoshi stays the primary face** (display/nav/buttons) with Inter body and IBM Plex Mono for the technical layer; the hero was decluttered (eyebrow + "Intelligence you own." + one line + two CTAs + the node-globe) with telemetry relocated to a **StatusStrip** below the fold and the stack modules to their own section. Palantir-style motion: staggered hero entrance, IntersectionObserver scroll reveals, animated comparison bars, canvas globe (all disabled under `prefers-reduced-motion`; Lenis smooth scroll already global). Tokens from §4 are live in `src/styles.css` (cool ground `#08090C`, raised-brightness tiers, `--purple`/`--purple-bright`, hairlines) and exposed as Tailwind colors (`text-ink`, `text-dim`, `border-line`, …). Section order per §6: Hero → Status → Privacy → Credits → Models → Comparison → Migration → Stack → Final CTA → existing footer. Navbar: hairline bottom, ghost Chat + solid "Get API key". All pricing remains illustrative pending §10.3; the credits form endpoint remains §10.1 (CTA routes to Telegram meanwhile). Verified: tsc, ESLint, full build + prerender (20 routes), Playwright desktop/mobile, and existing routes on the new tokens.
+The Sovereign direction is now the live homepage implementation (`src/components/sovereign/`, composed in `src/routes/index.tsx`), refined per feedback: **Satoshi stays the primary face** (display/nav/buttons) with Inter body and IBM Plex Mono for the technical layer; the hero was decluttered (eyebrow + "Intelligence you own." + one line + two CTAs + the node-globe) with telemetry relocated to a **StatusStrip** below the fold and the stack modules to their own section. Institutional motion: staggered hero entrance, IntersectionObserver scroll reveals, animated comparison bars, canvas globe (all disabled under `prefers-reduced-motion`; Lenis smooth scroll already global). Tokens from §4 are live in `src/styles.css` (cool ground `#08090C`, raised-brightness tiers, `--purple`/`--purple-bright`, hairlines) and exposed as Tailwind colors (`text-ink`, `text-dim`, `border-line`, …). Section order per §6: Hero → Status → Privacy → Credits → Models → Comparison → Migration → Stack → Final CTA → existing footer. Navbar: hairline bottom, ghost Chat + solid "Get API key". All pricing remains illustrative pending §10.3; the credits form endpoint remains §10.1 (CTA routes to Telegram meanwhile). Verified: tsc, ESLint, full build + prerender (20 routes), Playwright desktop/mobile, and existing routes on the new tokens.
 
 ## 10. Open items to confirm internally (from the brief + this work)
 
