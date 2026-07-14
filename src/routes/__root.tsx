@@ -1,11 +1,13 @@
-import { createRootRoute, Outlet } from "@tanstack/react-router";
+import { createRootRoute, Outlet, useRouterState } from "@tanstack/react-router";
 import { Navbar } from "@/components/Navbar.tsx";
 import { NotFound } from "@/components/NotFound.tsx";
 import { TooltipProvider } from "@/components/ui/tooltip.tsx";
 import ReactLenis from "lenis/react";
 
-export const Route = createRootRoute({
-	component: () => (
+function RootLayout() {
+	// The light homepage ("/") ships its own pill nav, so suppress the global one there.
+	const isHome = useRouterState({ select: (s) => s.location.pathname === "/" });
+	return (
 		<TooltipProvider>
 			<ReactLenis
 				root
@@ -14,10 +16,14 @@ export const Route = createRootRoute({
 					duration: 1.4,
 				}}
 			>
-				<Navbar />
+				{!isHome && <Navbar />}
 				<Outlet />
 			</ReactLenis>
 		</TooltipProvider>
-	),
+	);
+}
+
+export const Route = createRootRoute({
+	component: RootLayout,
 	notFoundComponent: NotFound,
 });

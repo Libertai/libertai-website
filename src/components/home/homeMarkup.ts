@@ -1,0 +1,341 @@
+/* Auto-generated from the locked static preview (wembi-body.html) body markup.
+ * The nav is rendered separately as React (HomeNav) for client-side routing.
+ * Regenerate via scratchpad/gen-markup.cjs. Do not hand-edit. */
+export const HOME_BODY_HTML = `<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<linearGradient id="lg1" x1="59.56" y1="95.96" x2="155.52" y2="-0.31" gradientUnits="userSpaceOnUse"><stop stop-color="#644DF9"/><stop offset="1" stop-color="#FCCBFF"/></linearGradient>
+<linearGradient id="lg2" x1="59.56" y1="154.93" x2="93.09" y2="81.91" gradientUnits="userSpaceOnUse"><stop stop-color="#644DF9"/><stop offset="1" stop-color="#FCCBFF"/></linearGradient>
+<linearGradient id="lg3" x1="0.61" y1="154.75" x2="131.17" y2="83.09" gradientUnits="userSpaceOnUse"><stop stop-color="#644DF9"/><stop offset="1" stop-color="#FCCBFF"/></linearGradient>
+</defs></svg>
+
+<!-- HERO -->
+<header class="hero" id="top"><div class="wrap">
+  <div class="hero-fade keyhint" style="--d:60ms"><span class="dot"></span>End-to-end confidential · TEE-attested</div>
+  <h1 class="hero-fade" style="--d:160ms"><span class="enc">Private</span><br>intelligence you&nbsp;own.</h1>
+  <div class="hero-fade row" style="--d:280ms">
+    <p class="sub">Your prompts leave nothing behind: no logs, no training, verifiable in hardware. <b>GLM-5.2</b> and the leading open models, <b>OpenAI-compatible</b>, no KYC.</p>
+    <div class="meta">
+      <span class="mono">Confidentiality</span>
+      <span class="n">TEE · SEALED</span>
+      <span class="mono" style="font-size:8.5px">0 bytes retained</span>
+    </div>
+  </div>
+  <div class="hero-fade ctas" style="--d:400ms"><a class="btn solid" href="https://console.libertai.io" target="_blank" rel="noopener">Deploy GLM-5.2</a><a class="btn ghost" href="#privacy">How privacy works</a></div>
+</div></header>
+
+<!-- MEDIA PANEL · THE TWO WORLDS -->
+<div class="media"><div class="wrap"><div class="hero-fade frame" id="worlds" style="--d:520ms">
+  <canvas id="net"></canvas>
+  <div class="scrimA"></div><div class="scrimB"></div>
+
+  <span class="corner tl">
+    <span class="sa urgent"><i></i>Urgent · the state of AI</span>
+    <span class="sb calm"><i></i>Network view · live</span>
+  </span>
+  <span class="corner tr">
+    <span class="sa redtx">Closed // centralized</span>
+    <span class="sb">Aleph Cloud // distributed</span>
+  </span>
+  <span class="corner br">[ figures illustrative ]</span>
+
+  <div class="say sayA">
+    <div class="ey"><span>⚠</span>AI today · closed and centralized</div>
+    <h3>Their models.<br>Their <em>rules</em>.</h3>
+    <p>A handful of closed labs run the AI you depend on. Prompts are stored, profiled and trained on. Access can be re-priced, revoked, or handed to a government overnight.</p>
+  </div>
+  <div class="say sayB">
+    <div class="ey"><span class="dot"></span>Your data, your keys</div>
+    <h3>Your data is <em>yours</em>.</h3>
+    <p>Lower cost, top performance and speed. Private inference on a distributed network that never holds your data.</p>
+  </div>
+
+  <button class="wswitch" id="wsw" type="button" aria-pressed="false">
+    <span class="lab"><span class="la">Switch to LibertAI</span><span class="lb">LibertAI · decentralized</span></span>
+    <span class="track"><span class="knob"></span></span>
+  </button>
+  <span class="hoverhint" id="hoverhint">Hover the nodes</span>
+
+  <div class="strip">
+    <div class="c"><div class="k" id="stK1">Prompts stored</div><div class="v" id="stV1">4,271,882,090,113 bytes</div></div>
+    <div class="c"><div class="k" id="stK2">Confidentiality</div><div class="v" id="stV2">None · logged &amp; profiled</div></div>
+    <div class="c"><div class="k" id="stK3">Flagship model · price</div><div class="v" id="stV3">$27.40 / 1M · unstable</div></div>
+  </div>
+
+  <div class="ntip" id="ntip"><div class="t1" id="ntipT1"></div><div class="t2" id="ntipT2"></div></div>
+</div></div></div>
+
+<!-- TICKER -->
+<div class="tick"><div class="row">
+  <div class="it"><span>OpenAI-compatible</span><i>✦</i><span>No KYC</span><i>✦</i><span>TEE-attested</span><i>✦</i><span>Nothing stored</span><i>✦</i><span>Subscribe or pay per token</span><i>✦</i><span>Leading open models</span><i>✦</i><span>Powered by Aleph Cloud</span><i>✦</i></div>
+  <div class="it"><span>OpenAI-compatible</span><i>✦</i><span>No KYC</span><i>✦</i><span>TEE-attested</span><i>✦</i><span>Nothing stored</span><i>✦</i><span>Subscribe or pay per token</span><i>✦</i><span>Leading open models</span><i>✦</i><span>Powered by Aleph Cloud</span><i>✦</i></div>
+</div></div>
+
+<!-- MODELS -->
+<section style="padding:0 0 116px" id="models"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 01 ) · The models</span></div>
+  <div class="reveal mhead">
+    <h2 class="big">One endpoint.<br>The leading open&nbsp;models.</h2>
+    <p class="lead">Pay-per-token, no KYC. GLM-5.2 leads; the rest of the catalog is one parameter away.</p>
+  </div>
+  <div class="reveal bill">
+    <div class="top">
+      <div class="l"><span class="name">GLM-5.2</span><span class="fl">Flagship</span><div class="caps"><span>Tools</span><span>Vision</span><span>Reasoning</span></div></div>
+      <span class="on"><span class="dot"></span>Online</span>
+    </div>
+    <div class="stats">
+      <div class="s"><div class="num" data-mid="glm-5.2" data-k="in"><i>$</i>1.40</div><div class="lb">Input · 1M tokens</div></div>
+      <div class="s"><div class="num" data-mid="glm-5.2" data-k="out"><i>$</i>4.40</div><div class="lb">Output · 1M tokens</div></div>
+      <div class="s"><div class="num">200K</div><div class="lb">Context window</div></div>
+      <div class="s"><div class="num">~120</div><div class="lb">Tokens / second</div></div>
+    </div>
+    <div class="pay">
+      <div class="o">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg></span>
+        <div><h4>Subscribe<span>Fixed price</span></h4><p>A flat monthly price for steady usage. Predictable bills, same private endpoint.</p></div>
+      </div>
+      <div class="o">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><h4>Credits<span>Pay per token</span></h4><p>No commitment: pay per million tokens. Overflow past your subscription bills at the same per-token rate.</p></div>
+      </div>
+    </div>
+    <div class="cta">
+      <div class="ct">
+        <h4>Deploy GLM-5.2 in a minute.</h4>
+        <p>Free to start. No card, no KYC. Keep your OpenAI SDK, change one line.</p>
+      </div>
+      <div class="cb">
+        <a class="go2" href="https://console.libertai.io" target="_blank" rel="noopener">Get your API key <span aria-hidden="true">&rarr;</span></a>
+        <a class="doc" href="https://docs.libertai.io" target="_blank" rel="noopener">Read the docs</a>
+      </div>
+    </div>
+  </div>
+  <details class="mfold reveal">
+    <summary>Six more open models on the same endpoint<span class="u">Output $ / 1M</span><span class="plus">+</span></summary>
+    <div class="inner">
+      <div class="r"><span class="nm">Hermes 3 8B · TEE</span><span class="bar"><i style="--w:10%"></i></span><span class="pr" data-mid="hermes-3-8b-tee" data-k="pair">$0.08 / $0.30</span></div>
+      <div class="r"><span class="nm">DeepSeek V4 Flash</span><span class="bar"><i style="--w:18%"></i></span><span class="pr" data-mid="deepseek-v4-flash" data-k="pair">$0.14 / $0.55</span></div>
+      <div class="r"><span class="nm">Gemma 4 31B</span><span class="bar"><i style="--w:23%"></i></span><span class="pr" data-mid="gemma-4-31b" data-k="pair">$0.18 / $0.70</span></div>
+      <div class="r"><span class="nm">Qwen3.6-35B-A3B</span><span class="bar"><i style="--w:26%"></i></span><span class="pr" data-mid="qwen3.6-35b-a3b" data-k="pair">$0.20 / $0.80</span></div>
+      <div class="r"><span class="nm">Qwen3 Coder</span><span class="bar"><i style="--w:32%"></i></span><span class="pr" data-mid="qwen3-coder" data-k="pair">$0.25 / $1.00</span></div>
+      <div class="r"><span class="nm">Qwen3.5 122B</span><span class="bar"><i style="--w:100%"></i></span><span class="pr" data-mid="qwen3.5-122b" data-k="pair">$0.90 / $3.10</span></div>
+    </div>
+  </details>
+</div></section>
+
+<!-- ACCESS -->
+<section style="padding:0 0 116px" id="pricing"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 02 ) · Plans &amp; pricing</span></div>
+  <div class="reveal mhead">
+    <h2 class="big">Start free. Scale when you do.</h2>
+    <p class="lead">Subscribe for steady usage, or pay per token with credits. Card or crypto, and the LTAI token takes 20% off.</p>
+  </div>
+  <div class="plans reveal">
+    <div class="tier">
+      <div class="tn">Free</div><div class="td">To try it out</div>
+      <div class="tp">€0</div>
+      <a class="tcta ghost" href="https://chat.libertai.io" target="_blank" rel="noopener">Open chat →</a>
+      <div class="carry">Included</div>
+      <ul><li>The private chat, no account</li><li>Open models</li><li>No card required</li></ul>
+    </div>
+    <div class="tier">
+      <div class="tn">Go</div><div class="td">For regular, everyday use</div>
+      <div class="tp">€8<span>/mo</span></div>
+      <a class="tcta" href="https://console.libertai.io/billing" target="_blank" rel="noopener">Subscribe →</a>
+      <div class="carry">Everything in Free, plus</div>
+      <ul><li>Access to all models</li><li>Much higher usage than Free</li><li>Longer sessions before a cooldown</li></ul>
+    </div>
+    <div class="tier hi">
+      <div class="tn">Plus</div><div class="td">For heavy, daily workloads</div>
+      <div class="tp">€20<span>/mo</span></div>
+      <a class="tcta solid" href="https://console.libertai.io/billing" target="_blank" rel="noopener">Subscribe →</a>
+      <div class="carry">Everything in Go, plus</div>
+      <ul><li>3× higher weekly limit than Go</li><li>Comfortable for all-day work</li><li>Great for long documents and coding</li></ul>
+    </div>
+    <div class="tier">
+      <div class="tn">Max</div><div class="td">For power users and automation</div>
+      <div class="tp">€100<span>/mo</span></div>
+      <a class="tcta" href="https://console.libertai.io/billing" target="_blank" rel="noopener">Subscribe →</a>
+      <div class="carry">Everything in Plus, plus</div>
+      <ul><li>10× higher weekly limit than Plus</li><li>Built for intensive, sustained use</li><li>Ideal for automation and agents</li></ul>
+    </div>
+  </div>
+  <p class="pnote reveal">Prices incl. VAT. Beyond your plan you pay per token with prepaid credits · card or crypto (ETH, USDC) · 20% off with the LTAI token. Chat is free to start, and LiberClaw agents have their own free tier.</p>
+</div></section>
+
+<!-- COMPARISON -->
+<section style="padding:0 0 116px" id="compare"><div class="wrap">
+  <div class="cmpf reveal">
+    <div class="head" style="margin-bottom:14px"><span class="mono" style="color:#6d737a">( 03 ) · Cost vs. benchmark</span><span class="mono" style="color:#4a5056">Jul 2026</span></div>
+    <h2 class="big">A fraction of the price.</h2>
+    <p class="lead">Open models on distributed infrastructure, without a hyperscaler margin. Comparable benchmarks, up to 85% less per token.</p>
+    <div class="cmpm">
+      <div class="cols">
+        <div class="col us"><span class="meta"><span class="nm">LibertAI</span><span class="sub">GLM-5.2</span></span><span class="big" id="cmpUsValM">$4.40</span><span class="stick"><i style="--h:15%"></i></span><span class="bn">Bench <b>91</b></span></div>
+        <div class="col"><span class="meta"><span class="nm">Anthropic</span><span class="sub">Opus 4.8</span></span><span class="big">$25.00</span><span class="stick"><i style="--h:83%"></i></span><span class="bn">Bench <b>93</b></span></div>
+        <div class="col"><span class="meta"><span class="nm">OpenAI</span><span class="sub">GPT-5.5</span></span><span class="big">$30.00</span><span class="stick"><i style="--h:100%"></i></span><span class="bn">Bench <b>94</b></span></div>
+      </div>
+      <div class="note">$ / 1M output tokens · bench: GPQA Diamond, % correct</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- PRIVACY -->
+<section class="blk" id="privacy"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 04 ) · Built for developers</span></div>
+  <div class="reveal"><h2 class="big">Private by proof.</h2>
+  <p class="lead">Most providers ask you to trust a policy. LibertAI is built so there's nothing to trust. Drop-in, OpenAI-compatible APIs where the infrastructure literally can't remember you.</p></div>
+  <div class="pxp">
+    <div class="pcol do reveal">
+      <div class="ph"><span class="tag yes">Commitments</span>What we do</div>
+      <p class="sub">Built by developers, for developers, with the open ecosystem in mind.</p>
+      <details><summary><span class="pmk">✓</span>Support developers<span class="plus">+</span></summary><div class="body">Drop-in OpenAI-compatible APIs, honest docs, and open models you can actually inspect. Keep your SDK, prompts and stack. Point one base URL at us and you're running.</div></details>
+      <details><summary><span class="pmk">✓</span>Help startups save money<span class="plus">+</span></summary><div class="body">Open models on distributed infrastructure cost a fraction of the closed flagships, plus up to $10,000 in credits to help early teams build private from day one.</div></details>
+      <details><summary><span class="pmk">✓</span>Keep you in control<span class="plus">+</span></summary><div class="body">No lock-in and no gatekeeping. Your choice of model, pay-per-token, no KYC, and everything runs on a decentralized network you can verify.</div></details>
+    </div>
+    <div class="pcol dont reveal">
+      <div class="ph"><span class="tag no">Guarantees</span>What we don't do</div>
+      <p class="sub">The privacy comes from the architecture, not a promise.</p>
+      <details><summary><span class="pmk">✕</span>No data collection<span class="plus">+</span></summary><div class="body">Requests are processed and forgotten. No account requirement, no profile, and nothing to subpoena.</div></details>
+      <details><summary><span class="pmk">✕</span>No training on your data<span class="plus">+</span></summary><div class="body">Your prompts never become weights, and are never used to train, tune or evaluate any model.</div></details>
+      <details><summary><span class="pmk">✕</span>No blind trust<span class="plus">+</span></summary><div class="body">Sensitive workloads run in Trusted Execution Environments with remote attestation. Verify the enclave; you don't have to trust a policy.</div></details>
+    </div>
+  </div>
+</div></section>
+
+<!-- MIGRATION -->
+<section style="padding:0 0 116px"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 05 ) · Migration</span></div>
+  <div class="mig">
+    <div>
+      <div class="reveal"><h2 class="big">Start, or switch,<br>in a minute.</h2>
+      <p class="lead" style="margin-bottom:40px">The API is OpenAI-compatible. Fresh project or existing stack, your code already works. It just talks to a different address.</p></div>
+      <div class="steps">
+        <div class="s reveal"><span class="i">01</span><div><h3>Create an account</h3> <p>Email or wallet, no KYC.</p></div></div>
+        <div class="s reveal"><span class="i">02</span><div><h3>Generate an API key</h3> <p>One click in the console.</p></div></div>
+        <div class="s reveal"><span class="i">03</span><div><h3>Pick GLM-5.2</h3> <p>Or any model in the catalog.</p></div></div>
+        <div class="s reveal"><span class="i">04</span><div><h3>Point your client here</h3> <p>Keep your SDK and prompts.</p></div></div>
+      </div>
+    </div>
+    <div class="reveal codep">
+      <header><span>THE ENTIRE MIGRATION</span><span style="color:#6d737a">diff</span></header>
+      <pre><span class="del">- base_url="https://api.openai.com/v1"</span>
+<span class="add"><span class="pl">+ </span>base_url="https://api.libertai.io/v1"</span></pre>
+      <footer><a href="https://docs.libertai.io/apis/" target="_blank" rel="noopener">Migration guide →</a></footer>
+    </div>
+  </div>
+</div></section>
+
+<!-- STACK -->
+<section style="padding:0 0 116px" id="stack"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 06 ) · The sovereign stack</span></div>
+  <div class="stack">
+    <a class="mod reveal" href="https://chat.libertai.io" target="_blank" rel="noopener">
+      <div class="viz chat">
+        <span class="b a">Two particles become linked, so measuring one instantly determines the other.</span>
+        <span class="b u">Why is the sky blue?</span>
+        <span class="b a">Shorter blue wavelengths scatter more off air molecules than red.</span>
+      </div>
+      <div class="foot"><span class="nm">Chat</span><span class="go">Explore →</span></div>
+    </a>
+    <a class="mod dark reveal" href="https://liberclaw.ai" target="_blank" rel="noopener">
+      <div class="viz agents">
+        <div class="ln"><span class="t">Audit auth middleware</span><span class="st run">[running]</span></div>
+        <div class="ln"><span class="t">Rotate session tokens</span><span class="st run">[running]</span></div>
+        <div class="ln"><span class="t">Find stale references</span><span class="st done">[done]</span></div>
+        <div class="th"><span class="dt"></span>Thought for 4.1s · persistent memory</div>
+      </div>
+      <div class="foot"><span class="nm">Agents</span><span class="go">Explore →</span></div>
+    </a>
+    <a class="mod dark reveal" href="https://code.libertai.io" target="_blank" rel="noopener">
+      <div class="viz codebox"><pre>$ libertai code
+<span class="ok">→</span> launching claude-code
+<span class="ok">→</span> backend api.libertai.io · glm-5.2
+<span class="ok">→</span> private session · 0 logs
+<span class="cur">▌</span></pre></div>
+      <div class="foot"><span class="nm">Code</span><span class="go">Explore →</span></div>
+    </a>
+    <a class="mod reveal" href="preview-search.html">
+      <div class="viz srch">
+        <div class="bar"><span class="dt"></span>search the live web, privately</div>
+        <div class="res"><i></i><i></i><i></i></div>
+        <div class="px">From $0.002 / query · pays via x402</div>
+      </div>
+      <div class="foot"><span class="nm">Search</span><span class="go">Explore →</span></div>
+    </a>
+  </div>
+</div></section>
+
+<!-- CREDITS -->
+<section style="padding:0 0 116px" id="credits"><div class="wrap">
+  <div class="cred reveal">
+    <div>
+      <div class="mono" style="margin-bottom:18px">( 07 ) · Sovereign program</div>
+      <h2 class="big">$10,000 to build private.</h2>
+      <p class="lead" style="margin-bottom:30px">Startup credits for selected companies building on private inference. GLM-5.2 and the full catalog, plus migration support from our team.</p>
+      <div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px"><a class="btn solid" href="https://t.me/libertai" target="_blank" rel="noopener">Apply for credits</a><span class="mono" style="font-size:8.5px;color:var(--faint)">Reply within 48h</span></div>
+    </div>
+    <div class="terms">
+      <div class="t"><span class="k">Amount</span><span class="v">Up to $10,000</span></div>
+      <div class="t"><span class="k">Eligibility</span><span class="v">Early-stage teams</span></div>
+      <div class="t"><span class="k">Use</span><span class="v">Inference credits</span></div>
+      <div class="t"><span class="k">Review</span><span class="v">Case-by-case</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- FAQ -->
+<section style="padding:0 0 116px" id="faq"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 08 ) · FAQ</span></div>
+  <div class="faq reveal">
+    <details>
+      <summary>How do I know it is actually private?<span class="plus">+</span></summary>
+      <div class="body">You do not have to take our word for it. Every model runs with nothing stored and nothing trained on you. For sensitive workloads, TEE-served models like Hermes 3 8B run inside hardware-sealed enclaves on Aleph Cloud's distributed network that even the node operator cannot inspect, with cryptographic attestation you can verify yourself.</div>
+    </details>
+    <details>
+      <summary>Will my existing code work?<span class="plus">+</span></summary>
+      <div class="body">Yes. The API is OpenAI-compatible: keep your SDK, change the base URL and key, and your code talks to LibertAI. Migration is one line, and the docs cover streaming, tool use and vision.</div>
+    </details>
+    <details>
+      <summary>How does billing work?<span class="plus">+</span></summary>
+      <div class="body">Two ways. Subscribe to a plan that covers steady usage, or buy credits and pay per million tokens; past a plan's allowance, usage bills at the same per-token rate. Top up with a card or crypto (ETH, USDC), and the LTAI token gives a 20% discount. No seats, no KYC.</div>
+    </details>
+    <details>
+      <summary>Is there a free way to try it?<span class="plus">+</span></summary>
+      <div class="body">Yes. The private chat at chat.libertai.io is free with no account. LiberClaw's free tier runs two always-on agents with no card required. And the API has no minimum: top up a few dollars and pay only for the tokens you use.</div>
+    </details>
+    <details>
+      <summary>What happens if a node goes down?<span class="plus">+</span></summary>
+      <div class="body">Workloads reschedule across the network. Your endpoint is not one company's datacenter: it is a distributed pool of Aleph Cloud nodes, so no single machine, provider or jurisdiction can take it offline.</div>
+    </details>
+    <details>
+      <summary>Which models can I run?<span class="plus">+</span></summary>
+      <div class="body">GLM-5.2 leads, with open models behind the same endpoint: Qwen, Gemma, DeepSeek, Hermes and more, plus image generation, embeddings, speech and private web search. All open-weight, so nothing can be deprecated out from under you.</div>
+    </details>
+  </div>
+</div></section>
+
+<!-- FINAL -->
+<section style="padding:0 0 8px"><div class="wrap">
+  <div class="final reveal">
+    <h2>Own your<br>intelligence.</h2>
+    <div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px"><a class="btn" href="https://console.libertai.io" target="_blank" rel="noopener">Deploy GLM-5.2</a><a class="btn" style="background:transparent;border:1px solid currentColor;color:inherit" href="https://docs.libertai.io" target="_blank" rel="noopener">Read the docs</a></div>
+    <div class="note">Break free. Join the liberation.</div>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="site"><div class="wrap">
+  <div class="cols">
+    <div>
+      <div class="brand">Libert<span class="ai">AI</span></div>
+      <p style="font-size:13px;color:var(--dim);max-width:30ch">Decentralized, confidential AI on Aleph Cloud. Liberty · Community · Privacy.</p>
+    </div>
+    <div><div class="h">Platform</div><a href="https://chat.libertai.io" target="_blank" rel="noopener">Chat</a><a href="preview-api.html">API</a><a href="https://console.libertai.io/agents" target="_blank" rel="noopener">Agents</a><a href="preview-search.html">Search</a></div>
+    <div><div class="h">Resources</div><a href="https://docs.libertai.io" target="_blank" rel="noopener">Docs</a><a href="#credits">Credits</a><a href="https://blog.libertai.io" target="_blank" rel="noopener">Blog</a><a href="litepaper.pdf" target="_blank" rel="noopener">Litepaper</a></div>
+    <div><div class="h">Explore</div><a href="https://aleph.cloud" target="_blank" rel="noopener">Aleph Cloud</a><a href="https://github.com/libertai" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/Libertai_DAI" target="_blank" rel="noopener">X / Twitter</a><a href="https://t.me/libertai" target="_blank" rel="noopener">Telegram</a></div>
+  </div>
+  <div class="word reveal">Libert<span class="ai">AI</span></div>
+  <div class="legal"><span>© 2026 LibertAI · Powered by Aleph Cloud</span><span>Private by design</span></div>
+</div></footer>
+
+<!-- RIBBON -->
+<div class="ribbon">Preview · <b>figures illustrative</b></div>`;
