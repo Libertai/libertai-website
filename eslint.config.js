@@ -33,4 +33,13 @@ export default tseslint.config(
 			"react/jsx-curly-brace-presence": ["warn", { props: "never", children: "never" }],
 		},
 	},
+	{
+		// Ported vendored engine (two-worlds globe + live pricing + reveals) — verbatim
+		// imperative canvas code from the locked preview; type-checking is suppressed
+		// with @ts-nocheck, so allow that one directive here.
+		files: ["src/components/home/homeEngine.ts"],
+		rules: {
+			"@typescript-eslint/ban-ts-comment": "off",
+		},
+	},
 );
