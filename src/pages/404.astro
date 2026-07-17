@@ -1,0 +1,106 @@
+---
+import heroImage from "../assets/404/hero.webp";
+import heroImageMobile from "../assets/404/hero-mobile.png";
+import "../styles/fonts.css";
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<link href="/favicon.ico" rel="icon" />
+		<meta content="width=device-width, initial-scale=1.0" name="viewport" />
+		<title>Page Not Found | LibertAI</title>
+		<meta name="robots" content="noindex" />
+	</head>
+	<body>
+		<section class="nf">
+			<img class="bg desktop" src={heroImage.src} alt="" />
+			<img class="bg mobile" src={heroImageMobile.src} alt="" />
+			<div class="shade"></div>
+			<div class="content">
+				<h1>404</h1>
+				<p>Lost in life's vast landscape, find freedom in the journey, where courage and self-discovery intertwine.</p>
+				<a class="home" href="/">← Back to Home</a>
+			</div>
+		</section>
+	</body>
+</html>
+
+<style>
+	:root {
+		color-scheme: dark;
+	}
+	* {
+		margin: 0;
+		box-sizing: border-box;
+	}
+	body {
+		background: #0e0f18;
+		color: #fff;
+		font-family: "Satoshi", "Inter", system-ui, sans-serif;
+	}
+	.nf {
+		position: relative;
+		min-height: 100vh;
+		display: flex;
+		align-items: center;
+		overflow: hidden;
+	}
+	.bg {
+		position: absolute;
+		inset: 0;
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+	}
+	.bg.mobile {
+		display: none;
+	}
+	.shade {
+		position: absolute;
+		inset: 0;
+		background: linear-gradient(to right, #0e0f18 15%, transparent 75%);
+	}
+	.content {
+		position: relative;
+		z-index: 1;
+		width: min(1200px, 100%);
+		margin: 0 auto;
+		padding: 0 24px;
+	}
+	h1 {
+		font-size: clamp(72px, 12vw, 128px);
+		font-weight: 700;
+		line-height: 1.1;
+	}
+	p {
+		max-width: 32rem;
+		font-size: 18px;
+		line-height: 1.6;
+		margin: 24px 0 32px;
+	}
+	.home {
+		display: inline-block;
+		color: #fff;
+		text-decoration: none;
+		border: 1px solid rgba(255, 255, 255, 0.4);
+		border-radius: 999px;
+		padding: 12px 24px;
+		transition: border-color 0.2s;
+	}
+	.home:hover {
+		border-color: #fff;
+	}
+	@media (max-width: 768px) {
+		.bg.desktop {
+			display: none;
+		}
+		.bg.mobile {
+			display: block;
+		}
+		.shade {
+			background: linear-gradient(to bottom, transparent 0%, #0e0f18 100%);
+		}
+	}
+</style>

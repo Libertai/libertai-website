@@ -1,0 +1,33 @@
+---
+// The pill nav shared by all light pages. Styled by each page's own
+// stylesheet (`nav.top` rules are identical across the three).
+interface Props {
+	active: "home" | "api" | "search";
+}
+const { active } = Astro.props;
+const home = active === "home";
+const docs =
+	active === "api"
+		? "https://docs.libertai.io/apis/"
+		: active === "search"
+			? "https://docs.libertai.io/apis/search/"
+			: "https://docs.libertai.io";
+---
+
+<nav class="top">
+	<div class="pill">
+		<a class="brand" href={home ? "#top" : "/"}>Libert<span class="ai">AI</span></a>
+		<div class="links">
+			<a href={home ? "#models" : "/#models"}>Models</a>
+			<a href={home ? "#pricing" : "/#pricing"}>Pricing</a>
+			<a href={home ? "#compare" : "/#compare"}>Compare</a>
+			<a class:list={[{ on: active === "api" }]} href={active === "api" ? "#top" : "/api"}>API</a>
+			<a class:list={[{ on: active === "search" }]} href={active === "search" ? "#top" : "/search"}>Search</a>
+			<a href={docs} target="_blank" rel="noopener">Docs ↗</a>
+		</div>
+		<div class="cta">
+			<a class="chat" href="https://chat.libertai.io" target="_blank" rel="noopener">Chat</a>
+			<a class="key" href="https://console.libertai.io" target="_blank" rel="noopener">Get API key</a>
+		</div>
+	</div>
+</nav>

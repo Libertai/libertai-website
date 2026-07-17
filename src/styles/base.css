@@ -1,0 +1,6 @@
+@import "./fonts.css";
+
+/* Anchor targets stop short of the fixed pill nav. */
+html {
+	scroll-padding-top: 96px;
+}
