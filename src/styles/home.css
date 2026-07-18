@@ -450,7 +450,6 @@ footer.site .h { font-family: "IBM Plex Mono", monospace; font-size: 9px; letter
 footer.site .cols a { display: block; font-size: 14.5px; color: var(--body); padding: 6px 0; }
 footer.site .cols a:hover { color: var(--ink); }
 footer.site .brand { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 19px; color: var(--ink); margin-bottom: 14px; }
-footer.site .word { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: clamp(84px, 19.5vw, 292px); line-height: .8; letter-spacing: -0.04em; color: transparent; -webkit-text-stroke: 1px rgba(15,17,19,.16); user-select: none; white-space: nowrap; text-align: center; }
 footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; padding-top: 28px; border-top: 1px solid var(--line); font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
 @media (max-width: 860px) { footer.site .cols { grid-template-columns: 1fr 1fr; } }
 

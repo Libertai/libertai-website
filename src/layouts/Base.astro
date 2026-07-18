@@ -9,7 +9,7 @@ interface Props {
 const { title, description, path } = Astro.props;
 
 const BASE_URL = "https://libertai.io";
-const fullTitle = path === "/" ? "LibertAI — Private AI, Unleashed" : `${title} | LibertAI`;
+const fullTitle = path === "/" ? "LibertAI - Private intelligence you own" : `${title} | LibertAI`;
 const url = `${BASE_URL}${path}`;
 const ogImage = `${BASE_URL}/og.png`;
 
@@ -55,7 +55,7 @@ const orgSchema = {
 		<meta property="og:image" content={ogImage} />
 		<meta property="og:image:width" content="1200" />
 		<meta property="og:image:height" content="630" />
-		<meta property="og:image:alt" content="LibertAI — Private AI, Unleashed" />
+		<meta property="og:image:alt" content="LibertAI - Private intelligence you own" />
 
 		<!-- Twitter -->
 		<meta name="twitter:card" content="summary_large_image" />
