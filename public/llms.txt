@@ -4,41 +4,19 @@
 
 LibertAI offers three core products: Private Chat, a Confidential Inference API, and autonomous AI Agents (LiberClaw). All run on decentralized infrastructure with no data logging and no model training on user data. Privacy is cryptographically enforced through TEEs (Trusted Execution Environments) and fully auditable open-source code.
 
-- LTAI is the native utility token powering the ecosystem, offering 20% discounts on premium features and governance rights.
-- Payment accepted via crypto (ETH, USDC) or credit/debit card. Basic access is free.
+- Payment accepted via card or crypto, or with the LTAI token for a 20% discount. Basic access is free.
 
 ## Products
 
 - [Private AI Chat](https://chat.libertai.io): Free, encrypted AI chat with custom personas, image generation, and knowledge bases. No sign-up required, no data collection.
-- [Confidential Inference API](https://console.libertai.io): OpenAI-compatible, pay-per-token API with open-source models on decentralized infrastructure. No data logging.
-- [LiberClaw Agents](https://console.libertai.io/agents): Autonomous AI agents running 24/7 on their own VMs. Persistent memory, no external API keys needed. Free tier: 2 agents.
+- [Confidential Inference API](https://libertai.io/api): OpenAI-compatible, pay-per-token API with open-source models on decentralized infrastructure. No data logging.
+- [LiberClaw Agents](https://liberclaw.ai): Autonomous AI agents running 24/7 on their own VMs. Persistent memory, no external API keys needed. Free tier: 2 agents.
 - [Private Web Search API](https://libertai.io/search): Privacy-preserving web search API for AI agents. Multi-engine consensus results from Google, Bing, and DuckDuckGo, from $2 per 1,000 queries. No profiling, no stored history.
-
-## Learn
-
-- [Private ChatGPT Alternative](https://libertai.io/private-chatgpt-alternative): Free, encrypted AI chat with no account, no logging, and no training on conversations — compared honestly against ChatGPT and local LLMs.
-- [OpenAI API Alternative](https://libertai.io/openai-api-alternative): Drop-in OpenAI-compatible API — switch the base URL to https://api.libertai.io/v1, keep your code, lose the logging.
-- [Confidential AI](https://libertai.io/confidential-ai): How Trusted Execution Environments and remote attestation make AI privacy verifiable instead of policy-based.
-- [Autonomous AI Agents](https://libertai.io/agents): Deploy always-on agents on dedicated VMs with persistent memory — no API keys needed, open source, free tier of 2 agents.
-- [Uncensored AI](https://libertai.io/uncensored-ai): Open-weight models served as released — no extra corporate filter layer, no surveillance, your system prompt is in control.
-- [AI Freedom](https://libertai.io/ai-freedom): Why user-owned, decentralized AI matters — no lock-in, no surveillance, no single company deciding what you can ask.
-- [Decentralized LLMs](https://libertai.io/decentralized-llm): LLM inference on Aleph Cloud's decentralized network — no single point of failure or control.
-- [Open-Source AI](https://libertai.io/open-source-ai): Open-weight models on an open-source platform — auditable end to end, with a built-in exit.
-
-## Use Cases
-
-- [Ubisoft — Captain Laserhawk](https://libertai.io/use-cases/ubisoft): Decentralized AI governance and player-driven narratives in Ubisoft's Captain Laserhawk: The G.A.M.E.
-- [GenLayer](https://libertai.io/use-cases/genlayer): Confidential inference for intelligent smart contracts with decentralized, private AI processing.
-- [AI Code Review Agent](https://libertai.io/use-cases/liberclaw-code-review): Open-source AI code review agent that reviews every PR 24/7. Uses Qwen3 Coder, GLM-4.7. Deploys in under 1 minute.
-- [AI Personal Assistant](https://libertai.io/use-cases/liberclaw-personal-assistant): Always-on AI personal assistant with research, task management, monitoring, and Telegram integration.
-- [AI Research Agent](https://libertai.io/use-cases/liberclaw-research-agent): Autonomous research agent for deep web research, competitor monitoring, academic paper tracking, and change detection.
 
 ## Documentation & Resources
 
 - [Developer Docs](https://docs.libertai.io): Technical documentation, API reference, and integration guides.
 - [API Console](https://console.libertai.io): Dashboard for API keys, usage, and agent management.
-- [Tokenomics](https://libertai.io/tokenomics): LTAI token distribution, contract addresses, burn mechanism, and governance details.
-- [Roadmap](https://libertai.io/roadmap): Upcoming features for chat, API, agents, and the LTAI ecosystem.
 - [Blog](https://blog.libertai.io): Updates, announcements, and technical deep dives.
 
 ## Community

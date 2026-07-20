@@ -1,0 +1,91 @@
+@import "./fonts.css";
+
+/* Anchor targets stop short of the fixed pill nav. */
+html {
+	scroll-padding-top: 96px;
+}
+
+/* ---------------------------------------------------------------------------
+ * Responsive pill nav — shared across all light pages.
+ * Desktop `.links`/`.cta` styling lives in each page stylesheet; below 940px
+ * those collapse into a burger-toggled dropdown panel.
+ * ------------------------------------------------------------------------ */
+nav.top .burger {
+	display: none;
+	margin-left: auto;
+	flex-direction: column;
+	justify-content: center;
+	gap: 4px;
+	width: 40px;
+	height: 40px;
+	padding: 0 9px;
+	border: none;
+	background: transparent;
+	cursor: pointer;
+}
+nav.top .burger span {
+	display: block;
+	height: 1.5px;
+	width: 100%;
+	background: var(--ink);
+	border-radius: 2px;
+	transition:
+		transform 0.24s ease,
+		opacity 0.2s ease;
+}
+nav.top .burger.open span:nth-child(1) {
+	transform: translateY(5.5px) rotate(45deg);
+}
+nav.top .burger.open span:nth-child(2) {
+	opacity: 0;
+}
+nav.top .burger.open span:nth-child(3) {
+	transform: translateY(-5.5px) rotate(-45deg);
+}
+
+nav.top .mobilemenu {
+	max-width: 1240px;
+	width: calc(100% - 32px);
+	margin: 10px auto 0;
+	display: flex;
+	flex-direction: column;
+	padding: 8px;
+	border-radius: 20px;
+	background: rgba(255, 255, 255, 0.9);
+	backdrop-filter: blur(14px);
+	-webkit-backdrop-filter: blur(14px);
+	border: 1px solid var(--line);
+	box-shadow: 0 12px 40px rgba(15, 17, 19, 0.1);
+}
+nav.top .mobilemenu[hidden] {
+	display: none;
+}
+nav.top .mobilemenu a {
+	font-family: "Satoshi", sans-serif;
+	font-size: 16px;
+	color: var(--ink);
+	padding: 13px 14px;
+	border-radius: 12px;
+	text-decoration: none;
+}
+nav.top .mobilemenu a:hover {
+	background: rgba(15, 17, 19, 0.04);
+}
+nav.top .mobilemenu a.mkey {
+	margin-top: 6px;
+	background: var(--ink);
+	color: #fff;
+	text-align: center;
+}
+
+/* !important overrides the per-page `nav.top .links/.cta { display:flex }` base
+ * rules, which load after base.css and would otherwise win on equal specificity. */
+@media (max-width: 940px) {
+	nav.top .links,
+	nav.top .cta {
+		display: none !important;
+	}
+	nav.top .burger {
+		display: flex;
+	}
+}

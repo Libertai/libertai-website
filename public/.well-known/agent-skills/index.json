@@ -7,7 +7,7 @@
       "type": "skill",
       "description": "Call LibertAI's OpenAI-compatible confidential inference API (chat completions, search, image generation) on decentralized infrastructure with TEE-backed privacy and no data logging.",
       "url": "https://libertai.io/.well-known/agent-skills/libertai-api/SKILL.md",
-      "sha256": "fde96659163f72805e6a3cab5a0db859ade8a0c8bd01d3c07e975460ea5c3f33"
+      "sha256": "93e19e79b5afbbad9df34e874e9a82de33e78dc3693b910922427c588c217a1f"
     }
   ]
 }
