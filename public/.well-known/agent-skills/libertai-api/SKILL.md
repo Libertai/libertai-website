@@ -12,7 +12,7 @@ This skill teaches agents how to call LibertAI's confidential inference API. Lib
 - You need a private, decentralized LLM backend instead of OpenAI/Anthropic.
 - You want OpenAI-compatible calls with no vendor lock-in.
 - Your workload must not be logged, trained on, or exposed to a centralized provider.
-- You need open-source models (e.g. Qwen3 Coder, GLM-4.7) with transparent pricing.
+- You need open-source models (e.g. GLM-5.2, Qwen3 Coder) with transparent pricing.
 
 ## Base URL and authentication
 
@@ -28,7 +28,7 @@ curl https://api.libertai.io/v1/chat/completions \
   -H "Authorization: Bearer $LIBERTAI_API_KEY" \
   -H "Content-Type: application/json" \
   -d '{
-    "model": "gemma-4-31b-it",
+    "model": "glm-5.2",
     "messages": [
       {"role": "user", "content": "Say hello"}
     ]
@@ -46,7 +46,7 @@ client = OpenAI(
 )
 
 resp = client.chat.completions.create(
-    model="gemma-4-31b-it",
+    model="glm-5.2",
     messages=[{"role": "user", "content": "Say hello"}],
 )
 print(resp.choices[0].message.content)
@@ -54,7 +54,7 @@ print(resp.choices[0].message.content)
 
 ## Models
 
-Current text models include `gemma-4-31b-it` and `qwen3.5-27b`. Image generation and search are also available. See the live list and pricing at https://docs.libertai.io/apis/text/#pricing.
+Current text models include `glm-5.2` (flagship), `qwen3.5-122b`, `gemma-4-31b`, `deepseek-v4-flash`, `qwen3-coder`, and `hermes-3-8b-tee` (TEE-served). Image generation and search are also available. See the live list and pricing at https://docs.libertai.io/apis/text/#pricing.
 
 ## References
 

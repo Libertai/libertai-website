@@ -4,14 +4,13 @@
 
 LibertAI offers three core products: Private Chat, a Confidential Inference API, and autonomous AI Agents (LiberClaw). All run on decentralized infrastructure with no data logging and no model training on user data. Privacy is cryptographically enforced through TEEs (Trusted Execution Environments) and fully auditable open-source code.
 
-- LTAI is the native utility token powering the ecosystem, offering 20% discounts on premium features and governance rights.
-- Payment accepted via crypto (ETH, USDC) or credit/debit card. Basic access is free.
+- Payment accepted via card or crypto, or with the LTAI token for a 20% discount. Basic access is free.
 
 ## Products
 
 - [Private AI Chat](https://chat.libertai.io): Free, encrypted AI chat with custom personas, image generation, and knowledge bases. No sign-up required, no data collection.
 - [Confidential Inference API](https://libertai.io/api): OpenAI-compatible, pay-per-token API with open-source models on decentralized infrastructure. No data logging.
-- [LiberClaw Agents](https://console.libertai.io/agents): Autonomous AI agents running 24/7 on their own VMs. Persistent memory, no external API keys needed. Free tier: 2 agents.
+- [LiberClaw Agents](https://liberclaw.ai): Autonomous AI agents running 24/7 on their own VMs. Persistent memory, no external API keys needed. Free tier: 2 agents.
 - [Private Web Search API](https://libertai.io/search): Privacy-preserving web search API for AI agents. Multi-engine consensus results from Google, Bing, and DuckDuckGo, from $2 per 1,000 queries. No profiling, no stored history.
 
 ## Documentation & Resources

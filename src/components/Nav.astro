@@ -1,6 +1,7 @@
 ---
-// The pill nav shared by all light pages. Styled by each page's own
-// stylesheet (`nav.top` rules are identical across the three).
+// The pill nav shared by all light pages. Base styling (`nav.top` …) lives in
+// each page's stylesheet; the responsive burger/mobile-menu rules are global in
+// base.css. Desktop links and the mobile panel render from one `links` array.
 interface Props {
 	active: "home" | "api" | "search";
 }
@@ -12,22 +13,53 @@ const docs =
 		: active === "search"
 			? "https://docs.libertai.io/apis/search/"
 			: "https://docs.libertai.io";
+
+const links = [
+	{ label: "Models", href: home ? "#models" : "/#models" },
+	{ label: "Pricing", href: home ? "#pricing" : "/#pricing" },
+	{ label: "Compare", href: home ? "#compare" : "/#compare" },
+	{ label: "API", href: active === "api" ? "#top" : "/api", on: active === "api" },
+	{ label: "Search", href: active === "search" ? "#top" : "/search", on: active === "search" },
+	{ label: "Docs ↗", href: docs, external: true },
+];
+const ext = (external?: boolean) => (external ? { target: "_blank", rel: "noopener" } : {});
 ---
 
 <nav class="top">
 	<div class="pill">
 		<a class="brand" href={home ? "#top" : "/"}>Libert<span class="ai">AI</span></a>
 		<div class="links">
-			<a href={home ? "#models" : "/#models"}>Models</a>
-			<a href={home ? "#pricing" : "/#pricing"}>Pricing</a>
-			<a href={home ? "#compare" : "/#compare"}>Compare</a>
-			<a class:list={[{ on: active === "api" }]} href={active === "api" ? "#top" : "/api"}>API</a>
-			<a class:list={[{ on: active === "search" }]} href={active === "search" ? "#top" : "/search"}>Search</a>
-			<a href={docs} target="_blank" rel="noopener">Docs ↗</a>
+			{links.map((l) => <a class:list={[{ on: l.on }]} href={l.href} {...ext(l.external)}>{l.label}</a>)}
 		</div>
 		<div class="cta">
 			<a class="chat" href="https://chat.libertai.io" target="_blank" rel="noopener">Chat</a>
 			<a class="key" href="https://console.libertai.io/api-keys" target="_blank" rel="noopener">Get API key</a>
 		</div>
+		<button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+			<span></span><span></span><span></span>
+		</button>
+	</div>
+	<div class="mobilemenu" id="mobile-menu" hidden>
+		{links.map((l) => <a href={l.href} {...ext(l.external)}>{l.label}</a>)}
+		<a href="https://chat.libertai.io" target="_blank" rel="noopener">Chat</a>
+		<a class="mkey" href="https://console.libertai.io/api-keys" target="_blank" rel="noopener">Get API key</a>
 	</div>
 </nav>
+
+<script>
+	const burger = document.querySelector<HTMLButtonElement>("nav.top .burger");
+	const menu = document.getElementById("mobile-menu");
+	if (burger && menu) {
+		const setOpen = (open: boolean) => {
+			burger.setAttribute("aria-expanded", String(open));
+			burger.classList.toggle("open", open);
+			menu.hidden = !open;
+		};
+		burger.addEventListener("click", () => setOpen(menu.hidden));
+		menu.querySelectorAll("a").forEach((a) => a.addEventListener("click", () => setOpen(false)));
+		// collapse if the viewport grows back to the desktop nav
+		matchMedia("(min-width: 941px)").addEventListener("change", (e) => {
+			if (e.matches) setOpen(false);
+		});
+	}
+</script>
