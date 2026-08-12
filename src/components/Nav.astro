@@ -32,8 +32,7 @@ const ext = (external?: boolean) => (external ? { target: "_blank", rel: "noopen
 			{links.map((l) => <a class:list={[{ on: l.on }]} href={l.href} {...ext(l.external)}>{l.label}</a>)}
 		</div>
 		<div class="cta">
-			<a class="chat" href="https://chat.libertai.io" target="_blank" rel="noopener">Chat</a>
-			<a class="key" href="https://console.libertai.io/api-keys" target="_blank" rel="noopener">Get API key</a>
+			<a class="key" href="https://chat.libertai.io" target="_blank" rel="noopener">Chat privately</a>
 		</div>
 		<button class="burger" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
 			<span></span><span></span><span></span>
