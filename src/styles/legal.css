@@ -1,0 +1,87 @@
+/* Page styles from the locked static preview (preview-api). Unscoped: each page
+   loads only its own stylesheet. Fonts are declared globally in fonts.css. */
+
+:root {
+  --bg: #eef0f1; --card: #ffffff; --ink: #0f1113; --body: #43494e; --dim: #5f656d; --faint: #949aa2;
+  --line: rgba(15,17,19,.10); --line-strong: rgba(15,17,19,.2);
+  --dark: #0f1113;
+  --acc: #644df9; --acc-c: #ffffff; --acc-soft: rgba(100,77,249,.10);
+  --grad-a: #efeaff; --grad-b: #b9a6ff;
+  --e-bg: #0e1013; --e-txt: #d7dae0; --e-cm: #6b7280; --e-kw: #c9a2ff; --e-st: #9ce2ad; --e-fn: #8fb7ff; --e-nu: #f0b57a; --e-pn: #9aa0a6;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--body); font-family: "Inter", system-ui, sans-serif; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+h1, h2, h3, h4 { font-family: "Satoshi", sans-serif; font-weight: 500; color: var(--ink); }
+.ai { font-style: italic; }
+a { color: inherit; text-decoration: none; transition: color .2s, background .2s, border-color .2s, transform .3s; }
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+.mono { font-family: "IBM Plex Mono", monospace; font-size: 10.5px; letter-spacing: .16em; text-transform: uppercase; color: var(--dim); }
+.dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--acc); box-shadow: 0 0 0 3px var(--acc-soft); }
+
+.reveal { opacity: 0; transform: translateY(26px); transition: opacity .8s cubic-bezier(.2,.65,.25,1), transform .8s cubic-bezier(.2,.65,.25,1); }
+.reveal.in { opacity: 1; transform: none; }
+.hero-fade { opacity: 0; transform: translateY(22px); animation: hf .9s cubic-bezier(.2,.65,.25,1) forwards; animation-delay: var(--d, 0ms); }
+@keyframes hf { to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .reveal, .hero-fade { opacity: 1 !important; transform: none !important; animation: none !important; transition: none !important; } .caret { animation: none !important; } }
+
+/* buttons */
+.btn { display: inline-flex; align-items: center; gap: 9px; font-family: "Satoshi", sans-serif; font-size: 15px; padding: 13px 24px; border-radius: 999px; border: 1px solid transparent; cursor: pointer; }
+.btn.solid { background: var(--ink); color: #fff; } .btn.solid:hover { background: #26292d; }
+.btn.ghost { border-color: var(--line-strong); color: var(--ink); background: transparent; } .btn.ghost:hover { border-color: var(--ink); }
+.btn.acc { background: var(--acc); color: var(--acc-c); } .btn.acc:hover { filter: brightness(1.06); }
+.btn.dark { background: #17191d; color: #fff; } .btn.dark:hover { background: #26292d; }
+.btn svg { width: 15px; height: 15px; }
+
+/* nav */
+nav.top { position: fixed; top: 14px; left: 0; right: 0; z-index: 50; }
+nav.top .pill { max-width: 1200px; margin: 0 auto; width: calc(100% - 32px); display: flex; align-items: center; gap: 26px; height: 58px; padding: 0 10px 0 24px; border-radius: 999px; background: rgba(255,255,255,.78); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--line); box-shadow: 0 8px 30px rgba(15,17,19,.05); }
+nav.top .brand { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 18px; color: var(--ink); letter-spacing: -0.01em; }
+nav.top .links { display: flex; gap: 22px; font-size: 14.5px; color: var(--body); margin: 0 auto; }
+nav.top .links a:hover { color: var(--ink); } nav.top .links a.on { color: var(--ink); font-weight: 500; }
+nav.top .cta { display: flex; align-items: center; gap: 6px; }
+nav.top .chat { font-size: 14px; color: var(--body); padding: 8px 12px; } nav.top .chat:hover { color: var(--ink); }
+nav.top .key { font-family: "Satoshi", sans-serif; font-size: 13.5px; background: var(--ink); color: #fff; border-radius: 999px; padding: 10px 18px; } nav.top .key:hover { background: #26292d; }
+@media (max-width: 940px) { nav.top .links { display: none; } }
+/* footer */
+footer.site { padding: 80px 0 36px; }
+footer.site .cols { display: grid; grid-template-columns: 1.4fr repeat(3, 1fr); gap: 32px; padding-bottom: 60px; }
+footer.site .h { font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .18em; text-transform: uppercase; color: var(--faint); margin-bottom: 16px; }
+footer.site .cols a { display: block; font-size: 14.5px; color: var(--body); padding: 6px 0; } footer.site .cols a:hover { color: var(--ink); }
+footer.site .brand { font-family: "Satoshi", sans-serif; font-weight: 500; font-size: 19px; color: var(--ink); margin-bottom: 14px; }
+footer.site p.d { font-size: 14px; color: var(--dim); max-width: 30ch; }
+footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; padding-top: 28px; border-top: 1px solid var(--line); font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
+@media (max-width: 860px) { footer.site .cols { grid-template-columns: 1fr 1fr; } }
+
+
+/* ---- legal / prose pages ---- */
+.legal-page { padding: 140px 0 40px; }
+.legal-page .doc { max-width: 760px; margin: 0 auto; }
+.legal-page h1 { font-size: clamp(34px, 5vw, 54px); letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 14px; }
+.legal-page .updated { font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .16em; text-transform: uppercase; color: var(--faint); margin-bottom: 56px; }
+.legal-page h2 { font-size: 22px; letter-spacing: -0.015em; margin: 52px 0 16px; padding-top: 26px; border-top: 1px solid var(--line); }
+.legal-page h2:first-of-type { border-top: 0; padding-top: 0; }
+.legal-page h3 { font-size: 16px; font-weight: 500; margin: 28px 0 10px; color: var(--ink); }
+.legal-page p, .legal-page li { font-size: 15.5px; line-height: 1.7; color: var(--body); }
+.legal-page p { margin-bottom: 16px; }
+.legal-page ul { margin: 0 0 18px; padding-left: 20px; }
+.legal-page li { margin-bottom: 8px; }
+.legal-page a { color: var(--ink); text-decoration: underline; text-underline-offset: 2px; }
+.legal-page a:hover { color: var(--acc); }
+.legal-page strong { color: var(--ink); font-weight: 500; }
+.legal-page dl { margin: 0 0 20px; }
+.legal-page dt { font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); margin-top: 14px; }
+.legal-page dd { margin: 3px 0 0; font-size: 15.5px; color: var(--body); }
+.legal-page table { width: 100%; border-collapse: collapse; margin: 0 0 22px; font-size: 14.5px; }
+.legal-page th, .legal-page td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--line); color: var(--body); vertical-align: top; }
+.legal-page th { font-family: "IBM Plex Mono", monospace; font-size: 9.5px; letter-spacing: .14em; text-transform: uppercase; color: var(--faint); font-weight: 400; }
+.legal-page .note { border: 1px solid var(--line); border-left: 2px solid var(--acc); padding: 16px 18px; margin: 0 0 22px; font-size: 14.5px; color: var(--body); }
+.legal-page .toc { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-bottom: 48px; }
+.legal-page .toc a { font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .1em; text-transform: uppercase; color: var(--dim); text-decoration: none; }
+.legal-page .toc a:hover { color: var(--ink); }
+.legal-page .back { display: inline-block; margin-bottom: 34px; font-family: "IBM Plex Mono", monospace; font-size: 10px; letter-spacing: .14em; text-transform: uppercase; color: var(--dim); text-decoration: none; }
+.legal-page .back:hover { color: var(--ink); }
+footer.site .legal a { color: var(--dim); text-decoration: none; }
+footer.site .legal a:hover { color: var(--ink); }
+footer.site .legal .links { display: flex; flex-wrap: wrap; gap: 14px; }

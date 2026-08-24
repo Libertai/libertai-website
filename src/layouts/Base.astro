@@ -5,8 +5,9 @@ interface Props {
 	title: string;
 	description: string;
 	path: string;
+	lang?: string;
 }
-const { title, description, path } = Astro.props;
+const { title, description, path, lang = "en" } = Astro.props;
 
 const BASE_URL = "https://libertai.io";
 const fullTitle = path === "/" ? "LibertAI - Private intelligence you own" : `${title} | LibertAI`;
@@ -37,7 +38,7 @@ const orgSchema = {
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
 	<head>
 		<meta charset="UTF-8" />
 		<link href="/favicon.ico" rel="icon" />
