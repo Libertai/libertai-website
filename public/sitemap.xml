@@ -18,16 +18,22 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
-	<url>
-		<loc>https://libertai.io/mentions-legales</loc>
-		<priority>0.3</priority>
-	</url>
-	<url>
-		<loc>https://libertai.io/politique-de-confidentialite</loc>
-		<priority>0.3</priority>
-	</url>
-	<url>
-		<loc>https://libertai.io/cgv</loc>
-		<priority>0.3</priority>
-	</url>
+  <url>
+    <loc>https://libertai.io/mentions-legales</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://libertai.io/politique-de-confidentialite</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://libertai.io/cgv</loc>
+    <lastmod>2026-08-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
