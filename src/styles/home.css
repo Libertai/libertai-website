@@ -457,3 +457,7 @@ footer.site .legal { display: flex; flex-wrap: wrap; justify-content: space-betw
 .ribbon { position: fixed; bottom: 16px; left: 16px; z-index: 60; background: rgba(255,255,255,.9); backdrop-filter: blur(10px); border: 1px solid var(--line); border-radius: 999px; padding: 9px 16px; font-family: "IBM Plex Mono", monospace; font-size: 9px; letter-spacing: .12em; text-transform: uppercase; color: var(--dim); }
 .ribbon b { color: var(--ink); font-weight: 500; }
 @media (max-width: 700px) { .ribbon { display: none; } }
+
+footer.site .legal a { color: var(--dim); text-decoration: none; }
+footer.site .legal a:hover { color: var(--ink); }
+footer.site .legal .links { display: flex; flex-wrap: wrap; gap: 14px; }

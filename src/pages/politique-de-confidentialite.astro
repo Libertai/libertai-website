@@ -1,0 +1,398 @@
+---
+import Base from "../layouts/Base.astro";
+import "../styles/legal.css";
+
+const updated = "24 août 2026";
+---
+
+<Base
+	title="Politique de confidentialité"
+	description="Politique de confidentialité de LibertAI — quelles données sont traitées, pourquoi, combien de temps, et comment exercer vos droits."
+	path="/politique-de-confidentialite"
+	lang="fr"
+>
+	<section class="legal-page">
+		<div class="wrap">
+			<div class="doc">
+				<a class="back" href="/">← libertai.io</a>
+				<h1>Politique de confidentialité</h1>
+				<div class="updated">Dernière mise à jour : {updated}</div>
+
+				<div class="toc">
+					<a href="#responsable">Responsable</a>
+					<a href="#principe">Principe</a>
+					<a href="#donnees">Données traitées</a>
+					<a href="#nontraitees">Ce que nous ne traitons pas</a>
+					<a href="#local">Stockage local</a>
+					<a href="#finalites">Finalités</a>
+					<a href="#destinataires">Destinataires</a>
+					<a href="#transferts">Transferts</a>
+					<a href="#durees">Durées</a>
+					<a href="#droits">Vos droits</a>
+					<a href="#securite">Sécurité</a>
+					<a href="#traceurs">Traceurs</a>
+					<a href="#modifications">Modifications</a>
+				</div>
+
+				<h2 id="responsable">1. Responsable du traitement</h2>
+				<p>
+					<strong>Intelligence Artificielle Générale SAS</strong> (« LibertAI »), 76 Promenade des Anglais, 94210 Saint-Maur-des-Fossés,
+					France — SIREN 985 392 356.
+				</p>
+				<p>
+					Pour toute question ou pour exercer vos droits :
+					<a href="mailto:privacy@libertai.io">privacy@libertai.io</a>.
+				</p>
+
+				<h2 id="principe">2. Principe</h2>
+				<div class="note">
+					<p style="margin:0">
+						<strong
+							>LibertAI n'enregistre pas en base de données le contenu de vos échanges avec les modèles d'IA.</strong
+						> Vos requêtes sont relayées vers les serveurs d'inférence puis la réponse vous est retransmise ; ni les requêtes
+						ni les réponses ne sont enregistrées en base de données. Seuls des compteurs d'usage — nombre de jetons, nombre
+						d'images, modèle appelé, horodatage — sont conservés pour la facturation.
+					</p>
+				</div>
+
+				<h2 id="donnees">3. Données que nous traitons</h2>
+
+				<h3>Compte créé par e-mail ou via Google / GitHub</h3>
+				<ul>
+					<li>adresse e-mail et statut de vérification ;</li>
+					<li>nom d'affichage et image de profil, lorsqu'ils sont fournis ;</li>
+					<li>
+						identifiant et adresse e-mail communiqués par le fournisseur d'identité (Google ou GitHub) lors de la
+						connexion ;
+					</li>
+					<li>
+						jetons de connexion à usage unique (« magic links »), conservés sous forme d'empreinte et non en clair.
+					</li>
+				</ul>
+
+				<h3>Compte créé par portefeuille (wallet)</h3>
+				<ul>
+					<li>adresse publique du portefeuille et réseau concerné ;</li>
+					<li>défi cryptographique temporaire utilisé pour vérifier la signature.</li>
+				</ul>
+				<p>Un compte créé par portefeuille ne comporte ni adresse e-mail ni identité civile.</p>
+
+				<h3>Sessions et sécurité</h3>
+				<ul>
+					<li>empreinte du jeton de rafraîchissement, date d'expiration et de révocation ;</li>
+					<li>informations techniques sur l'appareil utilisé pour la session (type de client) ;</li>
+					<li>jetons de notification push, plateforme et version de l'application.</li>
+				</ul>
+
+				<h3>Clés d'API</h3>
+				<ul>
+					<li>nom donné à la clé, dates de création, d'expiration et de suppression.</li>
+				</ul>
+
+				<h3>Paiements et abonnements</h3>
+				<ul>
+					<li>
+						<strong>Paiement par carte ou virement :</strong> identifiants de client et d'abonnement attribués par notre prestataire
+						de paiement, devise, périodes de facturation, formule souscrite. <strong
+							>Nous ne recevons ni ne stockons vos données de carte bancaire</strong
+						> — elles sont traitées exclusivement par le prestataire.
+					</li>
+					<li>
+						<strong>Paiement en cryptoactifs :</strong> adresse du portefeuille, référence de transaction, numéro de bloc,
+						montant et statut. Ces informations figurent par nature sur une chaîne de blocs publique.
+					</li>
+				</ul>
+
+				<h3>Usage du service</h3>
+				<ul>
+					<li>
+						par appel : clé d'API concernée, nombre de jetons en entrée et en sortie, nombre d'images, nom du modèle,
+						horodatage. <strong>Sans le contenu</strong>.
+					</li>
+					<li>compteurs de limitation de débit, conservés de façon éphémère.</li>
+				</ul>
+
+				<h2 id="nontraitees">4. Ce que nous ne traitons pas</h2>
+				<ul>
+					<li>
+						<strong>Le contenu de vos conversations et de vos requêtes</strong> — aucune conservation en base de données.
+					</li>
+					<li>
+						<strong>Vos adresses IP ne sont associées à aucun compte</strong> : aucune table de notre base de données ne comporte
+						de champ d'adresse IP. L'adresse IP est utilisée de manière transitoire, en mémoire, pour limiter les abus et
+						déterminer la devise d'affichage. Comme tout service en ligne, nos serveurs et répartiteurs de charge produisent
+						des journaux techniques susceptibles de contenir des adresses IP ; ils sont conservés pour une durée limitée aux
+						seules fins de sécurité et de diagnostic.
+					</li>
+					<li>
+						<strong>Vos données de carte bancaire</strong> — elles ne transitent pas par nos serveurs.
+					</li>
+					<li>
+						Nous n'utilisons pas vos données pour entraîner des modèles, et nous ne les vendons ni ne les louons à
+						quiconque.
+					</li>
+				</ul>
+
+				<h2 id="local">5. Données conservées sur votre appareil</h2>
+				<p>
+					L'application de chat conserve <strong>localement, dans votre navigateur</strong>
+					et non sur nos serveurs : l'historique de vos conversations et les pièces jointes associées, vos assistants, projets
+					et mémoires, vos images générées, et vos préférences d'affichage.
+				</p>
+				<p>
+					Ces données ne nous sont jamais transmises. Vider les données de site de votre navigateur les supprime
+					définitivement — nous n'en détenons aucune copie et ne pouvons pas les restaurer.
+				</p>
+
+				<h2 id="finalites">6. Finalités et bases légales</h2>
+				<table>
+					<thead>
+						<tr><th>Finalité</th><th>Base légale</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Création et gestion du compte, fourniture du service</td>
+							<td>Exécution du contrat — art. 6.1.b RGPD</td>
+						</tr>
+						<tr>
+							<td>Facturation, abonnements, comptabilisation de l'usage</td>
+							<td>Exécution du contrat et obligations légales — art. 6.1.b et 6.1.c</td>
+						</tr>
+						<tr>
+							<td>Sécurité, prévention des abus, limitation de débit</td>
+							<td
+								>Intérêt légitime — art. 6.1.f : protéger l'infrastructure contre la fraude et le détournement, et
+								garantir un accès équitable au service</td
+							>
+						</tr>
+						<tr>
+							<td>E-mails de connexion et messages liés au service</td>
+							<td>Exécution du contrat — art. 6.1.b</td>
+						</tr>
+						<tr>
+							<td>Mesure d'audience agrégée du site</td>
+							<td
+								>Intérêt légitime — art. 6.1.f : comprendre la fréquentation pour améliorer le service, sans profilage
+								individuel</td
+							>
+						</tr>
+						<tr>
+							<td>Conservation des pièces comptables</td>
+							<td>Obligation légale — art. 6.1.c</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p>
+					<strong>Caractère nécessaire des données.</strong> Les données du compte sont nécessaires à la conclusion et à l'exécution
+					du contrat : sans elles, le service ne peut être fourni. Les autres informations que vous choisissez de renseigner,
+					comme le nom d'affichage, sont facultatives et leur absence est sans conséquence.
+				</p>
+				<p>
+					<strong>Origine des données.</strong> Lorsque vous vous connectez via Google ou GitHub, nous recevons de ce fournisseur
+					votre identifiant et votre adresse e-mail. Le pays de facturation est déduit d'une base de géolocalisation d'adresses
+					IP fournie par un tiers. Les autres données proviennent de vous ou de votre usage du service.
+				</p>
+				<p>
+					<strong>Décision automatisée.</strong> Aucune décision produisant des effets juridiques à votre égard, ou vous affectant
+					de manière significative, n'est prise sur le seul fondement d'un traitement automatisé. Les mécanismes automatiques
+					de limitation de débit et de prévention des abus peuvent restreindre temporairement l'accès ; toute suspension durable
+					d'un compte fait l'objet d'un examen humain et peut être contestée à l'adresse indiquée à l'article 1.
+				</p>
+				<p>
+					<strong>Délégué à la protection des données.</strong> Aucun délégué n'est désigné, la nature et le volume des traitements
+					ne l'imposant pas. Vos demandes sont traitées à l'adresse indiquée à l'article 1.
+				</p>
+
+				<h2 id="destinataires">7. Destinataires et sous-traitants</h2>
+				<p>Nous faisons appel aux prestataires suivants, chacun pour la finalité indiquée :</p>
+				<table>
+					<thead>
+						<tr><th>Prestataire</th><th>Rôle</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>Aleph.IM SAS</td><td>Hébergement et infrastructure de calcul confidentiel</td></tr>
+						<tr><td>Revolut</td><td>Encaissement des paiements par carte et virement</td></tr>
+						<tr><td>thirdweb</td><td>Traitement des paiements en cryptoactifs</td></tr>
+						<tr><td>Google, GitHub</td><td>Connexion par fournisseur d'identité, si vous l'utilisez</td></tr>
+						<tr><td>Prestataire d'envoi d'e-mails</td><td>Acheminement des e-mails de connexion</td></tr>
+						<tr><td>MaxMind (GeoLite2)</td><td>Détermination du pays pour la devise et la TVA</td></tr>
+						<tr
+							><td>Mesure d'audience auto-hébergée</td><td>Statistiques de fréquentation du site et des applications</td
+							></tr
+						>
+						<tr><td>effigy.im</td><td>Génération de l'image de profil à partir de l'adresse de portefeuille</td></tr>
+						<tr><td>CoinGecko</td><td>Cours des cryptoactifs affichés lors d'un paiement</td></tr>
+						<tr><td>Nœuds RPC Base, Solana et Aleph</td><td>Lecture et envoi des transactions on-chain</td></tr>
+						<tr
+							><td>jsDelivr, esm.sh</td><td
+								>Distribution des composants exécutés dans l'interpréteur de code et l'aperçu d'artefacts</td
+							></tr
+						>
+					</tbody>
+				</table>
+				<p>
+					Lorsque votre navigateur contacte l'un de ces services, celui-ci reçoit techniquement votre adresse IP, comme
+					pour toute ressource chargée depuis un domaine tiers. Aucun de ces appels ne poursuit une finalité
+					publicitaire.
+				</p>
+				<p>
+					Les serveurs d'inférence reçoivent le contenu de vos requêtes le temps de produire la réponse. Lorsque vous
+					utilisez la recherche web intégrée, votre requête de recherche est transmise à notre service de recherche.
+				</p>
+				<p>
+					Dans l'application de chat, l'affichage des icônes des sites cités dans les résultats de recherche fait appel
+					à un service tiers de récupération de favicons, qui reçoit de ce fait le nom de domaine des sites concernés.
+				</p>
+
+				<h2 id="transferts">8. Transferts hors Union européenne</h2>
+				<p>
+					Certains prestataires mentionnés ci-dessus sont établis hors de l'Union européenne, notamment aux États-Unis.
+					Ces transferts sont encadrés par les garanties appropriées prévues au chapitre V du RGPD, en particulier les
+					clauses contractuelles types de la Commission européenne.
+				</p>
+				<p>
+					Les paiements en cryptoactifs sont inscrits sur des chaînes de blocs publiques, accessibles mondialement et
+					par nature non modifiables : cette publicité est inhérente à la technologie et échappe à notre maîtrise.
+				</p>
+
+				<h2 id="durees">9. Durées de conservation</h2>
+				<table>
+					<thead>
+						<tr><th>Donnée</th><th>Durée</th></tr>
+					</thead>
+					<tbody>
+						<tr
+							><td>Compte et données associées</td><td
+								>Jusqu'à la suppression du compte, ou après 3 ans sans connexion</td
+							></tr
+						>
+						<tr><td>Jetons de connexion à usage unique</td><td>15 minutes, puis suppression</td></tr>
+						<tr><td>Défis de signature (wallet)</td><td>Supprimés dès utilisation</td></tr>
+						<tr><td>Sessions</td><td>Jusqu'à expiration ou révocation</td></tr>
+						<tr><td>Compteurs d'usage et d'appels</td><td>13 mois</td></tr>
+						<tr><td>Pièces comptables et de facturation</td><td>10 ans (art. L.123-22 du Code de commerce)</td></tr>
+						<tr><td>Mesure d'audience</td><td>13 mois maximum</td></tr>
+					</tbody>
+				</table>
+
+				<h2 id="droits">10. Vos droits</h2>
+				<p>
+					Vous disposez des droits d'accès, de rectification, d'effacement, de limitation, de portabilité et
+					d'opposition, ainsi que du droit de retirer votre consentement à tout moment lorsque le traitement repose sur
+					celui-ci.
+				</p>
+				<p>
+					Pour les exercer, écrivez à
+					<a href="mailto:privacy@libertai.io">privacy@libertai.io</a>. Nous répondons dans un délai d'un mois,
+					prolongeable de deux mois en cas de demande complexe. Nous pouvons être amenés à vous demander un élément
+					permettant de vérifier que la demande émane bien de vous.
+				</p>
+				<p>
+					Certaines données ne peuvent être effacées : les pièces comptables, que la loi nous impose de conserver, et
+					les transactions inscrites sur une chaîne de blocs publique, qui sont techniquement immuables.
+				</p>
+				<p>
+					Lorsque le traitement repose sur notre intérêt légitime, vous pouvez
+					<strong>vous y opposer à tout moment</strong> pour des raisons tenant à votre situation particulière (art. 21 RGPD),
+					à la même adresse.
+				</p>
+				<p>
+					Conformément à l'article 85 de la loi Informatique et Libertés, vous pouvez définir des <strong
+						>directives relatives au sort de vos données après votre décès</strong
+					>, et désigner une personne chargée de leur exécution. Ces directives peuvent nous être communiquées à
+					<a href="mailto:privacy@libertai.io">privacy@libertai.io</a>.
+				</p>
+				<p>
+					Vous pouvez introduire une réclamation auprès de la
+					<strong>Commission nationale de l'informatique et des libertés (CNIL)</strong>, 3 place de Fontenoy, TSA
+					80715, 75334 Paris Cedex 07 —
+					<a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr</a>.
+				</p>
+
+				<h2 id="securite">11. Sécurité</h2>
+				<ul>
+					<li>chiffrement des échanges en transit (HTTPS) ;</li>
+					<li>chiffrement au repos des jetons d'authentification sensibles ;</li>
+					<li>stockage des jetons de session et des codes de connexion sous forme d'empreintes irréversibles ;</li>
+					<li>
+						cookie d'authentification inaccessible au JavaScript de la page (<span class="mono">httpOnly</span>),
+						transmis uniquement en HTTPS ;
+					</li>
+					<li>vérification cryptographique des notifications de nos prestataires de paiement ;</li>
+					<li>
+						exécution de certains modèles en environnement d'exécution de confiance (TEE), attesté matériellement ;
+						cette caractéristique est indiquée modèle par modèle dans l'interface.
+					</li>
+				</ul>
+
+				<h2 id="traceurs">12. Cookies et traceurs</h2>
+				<p>Le site et les applications déposent uniquement :</p>
+				<table>
+					<thead>
+						<tr><th>Nom</th><th>Rôle</th><th>Nature</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>libertai_auth</td><td>Maintien de votre session</td><td>Strictement nécessaire</td></tr>
+						<tr
+							><td>oauth_state</td><td>Protection de la connexion par Google / GitHub</td><td>Strictement nécessaire</td
+							></tr
+						>
+						<tr
+							><td>oauth_redirect</td><td>Retour vers la page d'origine après connexion</td><td
+								>Strictement nécessaire</td
+							></tr
+						>
+						<tr
+							><td>preferred_instances</td><td>Continuité d'acheminement des appels d'inférence</td><td
+								>Strictement nécessaire</td
+							></tr
+						>
+						<tr
+							><td>sidebar_state</td><td>État du panneau latéral</td><td>Confort d'usage, demandé par l'utilisateur</td
+							></tr
+						>
+					</tbody>
+				</table>
+				<p>
+					Le thème d'affichage et vos données de conversation sont conservés dans le stockage local du navigateur, et
+					non dans des cookies. Les portefeuilles crypto que vous connectez peuvent également écrire leurs propres clés
+					techniques dans ce stockage local.
+				</p>
+				<p>Ces traceurs sont indispensables au fonctionnement du service et ne requièrent pas votre consentement.</p>
+				<p>
+					La mesure d'audience du site et des applications est assurée par une solution
+					<strong>auto-hébergée, sans cookie publicitaire et sans suivi entre sites</strong>. Les données sont
+					strictement statistiques, ne sont pas recoupées avec d'autres traitements et ne sont transmises à aucun tiers.
+					À ce titre, elle relève de l'exemption de consentement prévue par la CNIL pour les mesures d'audience.
+				</p>
+				<p>
+					<strong
+						>Aucun cookie publicitaire, aucun pixel de réseau social et aucun traceur de mesure comportementale tiers</strong
+					> n'est déposé. Les appels aux services techniques listés à l'article 7 ne servent ni au profilage ni au suivi entre
+					sites.
+				</p>
+
+				<h2 id="modifications">13. Modifications</h2>
+				<p>
+					Cette politique peut être mise à jour. La date figurant en tête indique la dernière révision ; en cas de
+					modification substantielle, les utilisateurs titulaires d'un compte en sont informés.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<!-- FOOTER -->
+	<footer class="site">
+		<div class="wrap">
+			<div class="legal">
+				<span>© 2026 LibertAI · Intelligence Artificielle Générale SAS</span>
+				<span class="links">
+					<a href="/mentions-legales">Mentions légales</a>
+					<a href="/politique-de-confidentialite">Confidentialité</a>
+					<a href="/cgv">CGV</a>
+				</span>
+			</div>
+		</div>
+	</footer>
+</Base>
