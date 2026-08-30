@@ -2,6 +2,10 @@ name: Production deployment
 
 on:
   workflow_dispatch:
+  # prices and the model list are baked in at build time, so redeploy weekly to
+  # keep the static HTML in step with the LTAI_PRICING aggregate
+  schedule:
+    - cron: "0 6 * * 1"
 
 jobs:
   deploy:

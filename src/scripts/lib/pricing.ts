@@ -1,50 +1,51 @@
-/** Live model prices from the Aleph LTAI_PRICING aggregate (same source as the console). */
+/**
+ * Client-side price refresh. The markup already carries build-time prices, so
+ * this only corrects drift since the last deploy.
+ */
+import { fetchPricing, usd, type TextPricing } from "../../lib/pricing.ts";
 
-export interface TextPricing {
-	price_per_million_input_tokens: number;
-	price_per_million_output_tokens: number;
-}
+export { fetchPricing, usd };
 
-interface PricingAggregate {
-	data?: {
-		LTAI_PRICING?: {
-			models?: Array<{ id?: string; pricing?: { text?: TextPricing } }>;
-		};
-	};
-}
+/** Rows for models the aggregate no longer serves, so a retired model disappears. */
+const dropRow = (el: HTMLElement): void => {
+	const row = el.closest<HTMLElement>("[data-price-row]");
+	if (row) row.remove();
+	else console.warn(`[pricing] "${el.dataset.mid}" is gone from LTAI_PRICING; showing its build-time price`);
+};
 
-const PRICING_URL =
-	"https://api2.aleph.im/api/v0/aggregates/0xe1F7220D201C64871Cefb25320a8a588393eE508.json?keys=LTAI_PRICING";
+/** Bars are scaled against the priciest row still on the page. */
+const refreshBars = (byId: Map<string, TextPricing>): void => {
+	const rows = [...document.querySelectorAll<HTMLElement>("[data-price-row] .bar i")];
+	const priceOf = (el: HTMLElement): number =>
+		byId.get(el.closest<HTMLElement>("[data-price-row]")?.dataset.priceRow ?? "")?.price_per_million_output_tokens ?? 0;
+	const max = Math.max(...rows.map(priceOf), 0);
+	if (max <= 0) return;
+	for (const el of rows) el.style.setProperty("--w", `${Math.round((priceOf(el) / max) * 100)}%`);
+};
 
-export const usd = (n: number): string => `$${n.toFixed(2)}`;
-
-export async function fetchPricing(timeoutMs = 5000): Promise<Map<string, TextPricing>> {
-	const ctl = new AbortController();
-	const timer = setTimeout(() => ctl.abort(), timeoutMs);
-	try {
-		const res = await fetch(PRICING_URL, { signal: ctl.signal });
-		const json = (await res.json()) as PricingAggregate;
-		const byId = new Map<string, TextPricing>();
-		for (const m of json.data?.LTAI_PRICING?.models ?? []) {
-			if (m?.id && m.pricing?.text) byId.set(m.id.toLowerCase(), m.pricing.text);
-		}
-		return byId;
-	} finally {
-		clearTimeout(timer);
-	}
-}
+const refreshCount = (): void => {
+	const count = document.querySelector<HTMLElement>("[data-model-count]");
+	if (count) count.textContent = String(document.querySelectorAll("[data-price-row]").length);
+};
 
 /**
- * Hydrate every `[data-mid]` element with live prices. `data-k="in"`/`"out"`
- * render a single figure with a muted $ prefix; anything else renders the
- * "$in / $out" pair.
+ * Fill every `[data-mid]` from `byId`. `data-k="in"`/`"out"` render a single
+ * figure with a muted $ prefix; anything else renders the "$in / $out" pair.
+ * An empty map means the fetch came back with nothing — left alone so a bad
+ * response cannot blank the page.
  */
 export function hydratePriceElements(byId: Map<string, TextPricing>): void {
+	if (byId.size === 0) return;
 	for (const el of document.querySelectorAll<HTMLElement>("[data-mid]")) {
 		const p = byId.get((el.dataset.mid ?? "").toLowerCase());
-		if (!p) continue;
+		if (!p) {
+			dropRow(el);
+			continue;
+		}
 		if (el.dataset.k === "in") el.innerHTML = `<i>$</i>${p.price_per_million_input_tokens.toFixed(2)}`;
 		else if (el.dataset.k === "out") el.innerHTML = `<i>$</i>${p.price_per_million_output_tokens.toFixed(2)}`;
 		else el.textContent = `${usd(p.price_per_million_input_tokens)} / ${usd(p.price_per_million_output_tokens)}`;
 	}
+	refreshBars(byId);
+	refreshCount();
 }

@@ -28,16 +28,20 @@ const stK3 = document.getElementById("stK3");
 const stV3 = document.getElementById("stV3");
 
 if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && stV1 && stV2 && stK3 && stV3) {
-	// live flagship price, shared across the billboard, two-worlds strip and the
-	// comparison bar so every GLM figure on the page comes from one source
-	let flagIn = "$1.40";
-	let flagOut = "$4.40";
+	// the flagship price is shared across the billboard, the two-worlds strip and
+	// the comparison bar, so every figure on the page comes from one source
+	const bill = document.querySelector<HTMLElement>("[data-flagship]");
+	const flagshipId = bill?.dataset.flagship ?? "";
+	const flagshipName = bill?.querySelector(".name")?.textContent?.trim() ?? "Flagship";
+	let flagIn = document.querySelector<HTMLElement>(`[data-mid="${flagshipId}"][data-k="in"]`)?.textContent?.trim() ?? "";
+	let flagOut =
+		document.querySelector<HTMLElement>(`[data-mid="${flagshipId}"][data-k="out"]`)?.textContent?.trim() ?? "";
 
 	fetchPricing()
 		.then((byId) => {
 			hydratePriceElements(byId);
 			// flagship figure feeds the parts of the page that are not data-mid driven
-			const glm = byId.get("glm-5.3");
+			const glm = byId.get(flagshipId);
 			if (!glm) return;
 			flagIn = usd(glm.price_per_million_input_tokens);
 			flagOut = usd(glm.price_per_million_output_tokens);
@@ -218,7 +222,7 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 		if (b) {
 			stV1.textContent = "0 bytes";
 			stV2.textContent = "TEE-attested";
-			stK3.textContent = "GLM-5.3 · 1M tokens";
+			stK3.textContent = `${flagshipName} · 1M tokens`;
 			stV3.innerHTML = `<b>${flagIn}</b> in / <b>${flagOut}</b> out`;
 			hoverhint.textContent = realData ? "Hover the nodes · live Aleph Cloud CRNs" : "Hover the nodes";
 		} else {

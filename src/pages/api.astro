@@ -2,6 +2,10 @@
 import Base from "../layouts/Base.astro";
 import Nav from "../components/Nav.astro";
 import "../styles/api.css";
+import { loadCatalog } from "../lib/catalog.ts";
+const { flagship, others } = await loadCatalog();
+// the mock is a fixed-height window; only the priciest few fit
+const shown = [...others].sort((a, b) => b.output - a.output).slice(0, 4);
 ---
 
 <Base title="Confidential Inference API" description="Private and confidential AI inference API. OpenAI-compatible, pay-per-token, with open-source models running on decentralized infrastructure. No data logging." path="/api">
@@ -12,7 +16,7 @@ import "../styles/api.css";
   <div class="wrap">
     <div class="hero-fade eyebrow" style="--d:60ms"><span class="dot"></span><span class="mono" style="color:var(--ink)">LibertAI API</span></div>
     <h1 class="hero-fade" style="--d:150ms">The private<br>inference <em>API</em>.</h1>
-    <p class="hero-fade sub" style="--d:250ms">A drop-in, <b>OpenAI-compatible</b> endpoint for GLM-5.3 and the leading open models. Confidential by design, with subscriptions or pay-per-token credits, no KYC. Keep your SDK, change one line.</p>
+    <p class="hero-fade sub" style="--d:250ms">A drop-in, <b>OpenAI-compatible</b> endpoint for {flagship.name} and the leading open models. Confidential by design, with subscriptions or pay-per-token credits, no KYC. Keep your SDK, change one line.</p>
     <div class="hero-fade ctas" style="--d:350ms">
       <a class="btn acc" href="https://console.libertai.io/api-keys" target="_blank" rel="noopener">Get an API key</a>
       <a class="btn ghost" href="https://docs.libertai.io/apis/" target="_blank" rel="noopener">Read the docs</a>
@@ -31,7 +35,7 @@ curl https<span class="pn">:</span>//api.libertai.io/v1/chat/completions <span c
   -H <span class="st">"Authorization: Bearer $LIBERTAI_API_KEY"</span> <span class="pn">\</span>
   -H <span class="st">"Content-Type: application/json"</span> <span class="pn">\</span>
   -d <span class="st">'&#123;
-    "model": "glm-5.3",
+    "model": "{flagship.id}",
     "messages": [&#123;"role": "user", "content": "Explain confidential inference."&#125;],
     "stream": true
   &#125;'</span></pre>
@@ -43,7 +47,7 @@ client <span class="pn">=</span> <span class="fn">OpenAI</span>(
 )
 
 stream <span class="pn">=</span> client.chat.completions.<span class="fn">create</span>(
-    model<span class="pn">=</span><span class="st">"glm-5.3"</span>,
+    model<span class="pn">=</span><span class="st">"{flagship.id}"</span>,
     messages<span class="pn">=</span>[&#123;<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"Explain confidential inference."</span>&#125;],
     stream<span class="pn">=</span><span class="kw">True</span>,
 )
@@ -57,7 +61,7 @@ stream <span class="pn">=</span> client.chat.completions.<span class="fn">create
 &#125;);
 
 <span class="kw">const</span> stream <span class="pn">=</span> <span class="kw">await</span> client.chat.completions.<span class="fn">create</span>(&#123;
-  model<span class="pn">:</span> <span class="st">"glm-5.3"</span>,
+  model<span class="pn">:</span> <span class="st">"{flagship.id}"</span>,
   messages<span class="pn">:</span> [&#123; role<span class="pn">:</span> <span class="st">"user"</span>, content<span class="pn">:</span> <span class="st">"Explain confidential inference."</span> &#125;],
   stream<span class="pn">:</span> <span class="kw">true</span>,
 &#125;);
@@ -65,7 +69,7 @@ stream <span class="pn">=</span> client.chat.completions.<span class="fn">create
   process.stdout.<span class="fn">write</span>(chunk.choices[<span class="nu">0</span>]?.delta?.content ?? <span class="st">""</span>);
 &#125;</pre>
         <div class="out">
-          <div class="rowh"><span class="g"></span>Response · streaming · glm-5.3</div>
+          <div class="rowh"><span class="g"></span>Response · streaming · {flagship.id}</div>
           <div class="resp" id="resp"></div>
         </div>
       </div>
@@ -132,18 +136,17 @@ stream <span class="pn">=</span> client.chat.completions.<span class="fn">create
     <div class="txt">
       <span class="mono k">The catalog</span>
       <h3>The leading open models, one key.</h3>
-      <p>GLM-5.3 leads, and the rest of the catalog is one parameter away. Prices shown are per-token credit rates; subscriptions cover steady usage at a fixed price.</p>
+      <p>{flagship.name} leads, and the rest of the catalog is one parameter away. Prices shown are per-token credit rates; subscriptions cover steady usage at a fixed price.</p>
       <a class="more" href="https://docs.libertai.io/apis/text/#available-models">Browse all models</a>
     </div>
     <div class="shot">
       <div class="mock">
         <div class="mh"><span class="g"></span>models</div>
         <div class="mm">
-          <div class="r"><span class="nm">GLM-5.3 <span>FLAGSHIP</span></span><span class="pr" data-mid="glm-5.3" data-k="pair">$1.40 / $4.40</span></div>
-          <div class="r"><span class="nm">Qwen3.5 122B</span><span class="pr" data-mid="qwen3.5-122b" data-k="pair">$0.90 / $3.10</span></div>
-          <div class="r"><span class="nm">Gemma 4 31B</span><span class="pr" data-mid="gemma-4-31b" data-k="pair">$0.18 / $0.70</span></div>
-          <div class="r"><span class="nm">DeepSeek V4 Flash</span><span class="pr" data-mid="deepseek-v4-flash" data-k="pair">$0.14 / $0.55</span></div>
-          <div class="r"><span class="nm">Hermes 3 8B · TEE</span><span class="pr" data-mid="hermes-3-8b-tee" data-k="pair">$0.08 / $0.30</span></div>
+          <div class="r" data-price-row={flagship.id}><span class="nm">{flagship.name} <span>FLAGSHIP</span></span><span class="pr" data-mid={flagship.id} data-k="pair">{flagship.pair}</span></div>
+          {shown.map((m) => (
+            <div class="r" data-price-row={m.id}><span class="nm">{m.name}</span><span class="pr" data-mid={m.id} data-k="pair">{m.pair}</span></div>
+          ))}
         </div>
       </div>
     </div>
@@ -183,7 +186,7 @@ stream <span class="pn">=</span> client.chat.completions.<span class="fn">create
     <div class="c reveal">
       <div class="shot"><div class="mock dark"><div class="mh"><span class="g"></span>terminal</div><pre>curl api.libertai.io/v1<span class="pn">/</span>chat<span class="pn">/</span>completions <span class="pn">\</span>
   -H <span class="st">"Authorization: Bearer …"</span> <span class="pn">\</span>
-  -d <span class="st">'&#123;"model":"glm-5.3", …&#125;'</span></pre></div></div>
+  -d <span class="st">'&#123;"model":"{flagship.id}", …&#125;'</span></pre></div></div>
       <h4>From the terminal</h4>
       <p>One curl call and you're streaming tokens. Great for scripts and quick tests.</p>
       <div class="row"><a class="btn dark" href="https://docs.libertai.io/apis/">cURL reference</a></div>
