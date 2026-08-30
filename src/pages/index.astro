@@ -121,13 +121,13 @@ const faqSchema = {
   </div>
   <div class="reveal bill" data-flagship={flagship.id}>
     <div class="top">
-      <div class="l"><span class="name">{flagship.name}</span><span class="fl">Flagship</span><div class="caps"><span>Tools</span><span>Vision</span><span>Reasoning</span></div></div>
+      <div class="l"><span class="name">{flagship.name}</span><span class="fl">Flagship</span><div class="caps">{flagship.caps.map((c) => <span>{c}</span>)}</div></div>
       <span class="on"><span class="dot"></span>Online</span>
     </div>
     <div class="stats">
       <div class="s"><div class="num" data-mid={flagship.id} data-k="in"><i>$</i>{flagship.input.toFixed(2)}</div><div class="lb">Input · 1M tokens</div></div>
       <div class="s"><div class="num" data-mid={flagship.id} data-k="out"><i>$</i>{flagship.output.toFixed(2)}</div><div class="lb">Output · 1M tokens</div></div>
-      <div class="s"><div class="num">200K</div><div class="lb">Context window</div></div>
+      <div class="s"><div class="num">{flagship.context}</div><div class="lb">Context window</div></div>
       <div class="s"><div class="num">~120</div><div class="lb">Tokens / second</div></div>
     </div>
     <div class="pay">
@@ -152,7 +152,7 @@ const faqSchema = {
     </div>
   </div>
   <details class="mfold reveal">
-    <summary><span data-model-count>{others.length}</span> more open models on the same endpoint<span class="u">Output $ / 1M</span><span class="plus">+</span></summary>
+    <summary><span><span data-model-count>{others.length}</span> more open models on the same endpoint</span><span class="u">Output $ / 1M</span><span class="plus">+</span></summary>
     <div class="inner">
       {others.map((m) => (
         <div class="r" data-price-row={m.id}><span class="nm">{m.name}</span><span class="bar"><i style={`--w:${barWidth(m, others)}%`}></i></span><span class="pr" data-mid={m.id} data-k="pair">{m.pair}</span></div>

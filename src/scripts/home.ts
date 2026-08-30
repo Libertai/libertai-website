@@ -5,7 +5,7 @@
  * Math and tuning are ported unchanged from the locked static preview.
  */
 import { initReveals } from "./lib/reveals.ts";
-import { fetchPricing, hydratePriceElements, usd } from "./lib/pricing.ts";
+import { fetchTextModels, hydratePriceElements, usd } from "./lib/pricing.ts";
 
 type Vec3 = [number, number, number];
 type Rgb = [number, number, number];
@@ -37,14 +37,14 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 	let flagOut =
 		document.querySelector<HTMLElement>(`[data-mid="${flagshipId}"][data-k="out"]`)?.textContent?.trim() ?? "";
 
-	fetchPricing()
+	fetchTextModels()
 		.then((byId) => {
 			hydratePriceElements(byId);
 			// flagship figure feeds the parts of the page that are not data-mid driven
 			const glm = byId.get(flagshipId);
 			if (!glm) return;
-			flagIn = usd(glm.price_per_million_input_tokens);
-			flagOut = usd(glm.price_per_million_output_tokens);
+			flagIn = usd(glm.pricing.price_per_million_input_tokens);
+			flagOut = usd(glm.pricing.price_per_million_output_tokens);
 			const cmpUs = document.getElementById("cmpUsVal");
 			if (cmpUs) cmpUs.textContent = flagOut;
 			const cmpUsM = document.getElementById("cmpUsValM");

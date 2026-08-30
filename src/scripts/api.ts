@@ -3,7 +3,7 @@
  * and the streaming-response typing demo.
  */
 import { initReveals } from "./lib/reveals.ts";
-import { fetchPricing, hydratePriceElements } from "./lib/pricing.ts";
+import { fetchTextModels, hydratePriceElements } from "./lib/pricing.ts";
 
 initReveals(0.12);
 
@@ -19,7 +19,9 @@ for (const tab of tabs) {
 	});
 }
 
-fetchPricing().then(hydratePriceElements).catch(() => {});
+fetchTextModels()
+	.then(hydratePriceElements)
+	.catch(() => {});
 
 // streaming-response typing demo, started when the editor scrolls into view
 const resp = document.getElementById("resp");

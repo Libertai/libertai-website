@@ -2,9 +2,9 @@
  * Client-side price refresh. The markup already carries build-time prices, so
  * this only corrects drift since the last deploy.
  */
-import { fetchPricing, usd, type TextPricing } from "../../lib/pricing.ts";
+import { fetchTextModels, usd, type AggregateModel } from "../../lib/pricing.ts";
 
-export { fetchPricing, usd };
+export { fetchTextModels, usd };
 
 /** Rows for models the aggregate no longer serves, so a retired model disappears. */
 const dropRow = (el: HTMLElement): void => {
@@ -14,10 +14,11 @@ const dropRow = (el: HTMLElement): void => {
 };
 
 /** Bars are scaled against the priciest row still on the page. */
-const refreshBars = (byId: Map<string, TextPricing>): void => {
+const refreshBars = (byId: Map<string, AggregateModel>): void => {
 	const rows = [...document.querySelectorAll<HTMLElement>("[data-price-row] .bar i")];
 	const priceOf = (el: HTMLElement): number =>
-		byId.get(el.closest<HTMLElement>("[data-price-row]")?.dataset.priceRow ?? "")?.price_per_million_output_tokens ?? 0;
+		byId.get(el.closest<HTMLElement>("[data-price-row]")?.dataset.priceRow ?? "")?.pricing
+			.price_per_million_output_tokens ?? 0;
 	const max = Math.max(...rows.map(priceOf), 0);
 	if (max <= 0) return;
 	for (const el of rows) el.style.setProperty("--w", `${Math.round((priceOf(el) / max) * 100)}%`);
@@ -34,7 +35,7 @@ const refreshCount = (): void => {
  * An empty map means the fetch came back with nothing — left alone so a bad
  * response cannot blank the page.
  */
-export function hydratePriceElements(byId: Map<string, TextPricing>): void {
+export function hydratePriceElements(byId: Map<string, AggregateModel>): void {
 	if (byId.size === 0) return;
 	for (const el of document.querySelectorAll<HTMLElement>("[data-mid]")) {
 		const p = byId.get((el.dataset.mid ?? "").toLowerCase());
@@ -42,9 +43,10 @@ export function hydratePriceElements(byId: Map<string, TextPricing>): void {
 			dropRow(el);
 			continue;
 		}
-		if (el.dataset.k === "in") el.innerHTML = `<i>$</i>${p.price_per_million_input_tokens.toFixed(2)}`;
-		else if (el.dataset.k === "out") el.innerHTML = `<i>$</i>${p.price_per_million_output_tokens.toFixed(2)}`;
-		else el.textContent = `${usd(p.price_per_million_input_tokens)} / ${usd(p.price_per_million_output_tokens)}`;
+		if (el.dataset.k === "in") el.innerHTML = `<i>$</i>${p.pricing.price_per_million_input_tokens.toFixed(2)}`;
+		else if (el.dataset.k === "out") el.innerHTML = `<i>$</i>${p.pricing.price_per_million_output_tokens.toFixed(2)}`;
+		else
+			el.textContent = `${usd(p.pricing.price_per_million_input_tokens)} / ${usd(p.pricing.price_per_million_output_tokens)}`;
 	}
 	refreshBars(byId);
 	refreshCount();
