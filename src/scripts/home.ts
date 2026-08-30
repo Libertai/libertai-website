@@ -37,7 +37,7 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 		.then((byId) => {
 			hydratePriceElements(byId);
 			// flagship figure feeds the parts of the page that are not data-mid driven
-			const glm = byId.get("glm-5.2");
+			const glm = byId.get("glm-5.3");
 			if (!glm) return;
 			flagIn = usd(glm.price_per_million_input_tokens);
 			flagOut = usd(glm.price_per_million_output_tokens);
@@ -218,7 +218,7 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 		if (b) {
 			stV1.textContent = "0 bytes";
 			stV2.textContent = "TEE-attested";
-			stK3.textContent = "GLM-5.2 · 1M tokens";
+			stK3.textContent = "GLM-5.3 · 1M tokens";
 			stV3.innerHTML = `<b>${flagIn}</b> in / <b>${flagOut}</b> out`;
 			hoverhint.textContent = realData ? "Hover the nodes · live Aleph Cloud CRNs" : "Hover the nodes";
 		} else {
