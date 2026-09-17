@@ -171,34 +171,34 @@ const faqSchema = {
   <div class="plans reveal">
     <div class="tier">
       <div class="tn">Free</div><div class="td">To try it out</div>
-      <div class="tp">€0</div>
+      <div class="tp"><span class="cur">€</span>0</div>
       <a class="tcta ghost" href="https://chat.libertai.io" target="_blank" rel="noopener">Open chat →</a>
       <div class="carry">Included</div>
       <ul><li>The private chat, no account</li><li>Open models</li><li>No card required</li></ul>
     </div>
     <div class="tier">
       <div class="tn">Go</div><div class="td">For regular, everyday use</div>
-      <div class="tp">€8<span>/mo</span></div>
+      <div class="tp"><span class="cur">€</span>8<span>/mo</span></div>
       <a class="tcta" href="https://chat.libertai.io/plans" target="_blank" rel="noopener">Subscribe →</a>
       <div class="carry">Everything in Free, plus</div>
       <ul><li>Access to all models</li><li>Much higher usage than Free</li><li>Longer sessions before a cooldown</li></ul>
     </div>
     <div class="tier hi">
       <div class="tn">Plus</div><div class="td">For heavy, daily workloads</div>
-      <div class="tp">€20<span>/mo</span></div>
+      <div class="tp"><span class="cur">€</span>20<span>/mo</span></div>
       <a class="tcta solid" href="https://chat.libertai.io/plans" target="_blank" rel="noopener">Subscribe →</a>
       <div class="carry">Everything in Go, plus</div>
       <ul><li>3× higher weekly limit than Go</li><li>Comfortable for all-day work</li><li>Great for long documents and coding</li></ul>
     </div>
     <div class="tier">
       <div class="tn">Max</div><div class="td">For power users and automation</div>
-      <div class="tp">€100<span>/mo</span></div>
+      <div class="tp"><span class="cur">€</span>100<span>/mo</span></div>
       <a class="tcta" href="https://chat.libertai.io/plans" target="_blank" rel="noopener">Subscribe →</a>
       <div class="carry">Everything in Plus, plus</div>
       <ul><li>10× higher weekly limit than Plus</li><li>Built for intensive, sustained use</li><li>Ideal for automation and agents</li></ul>
     </div>
   </div>
-  <p class="pnote reveal">Prices incl. VAT. Beyond your plan you pay per token with prepaid credits · card or crypto. Chat is free to start, and LiberClaw agents have their own free tier.</p>
+  <p class="pnote reveal"><span class="vatnote">Prices incl. VAT.</span> Beyond your plan you pay per token with prepaid credits · card or crypto. Chat is free to start, and LiberClaw agents have their own free tier.</p>
 </div></section>
 
 <!-- COMPARISON -->
@@ -359,5 +359,25 @@ const faqSchema = {
 </div></footer>
   <script>
     import "../scripts/home.ts";
+  </script>
+  <script>
+    const REGION_URL = "https://inference.api.libertai.io/payments/region";
+    const SYMBOLS: Record<string, string> = { EUR: "€", USD: "$" };
+
+    fetch(REGION_URL)
+      .then((r) => (r.ok ? r.json() : null))
+      .then((region) => {
+        const symbol = region && SYMBOLS[region.currency];
+        if (!symbol) return;
+        document.querySelectorAll<HTMLElement>("#pricing .cur").forEach((el) => {
+          el.textContent = symbol;
+        });
+        const vat = document.querySelector<HTMLElement>("#pricing .vatnote");
+        if (vat) {
+          vat.textContent =
+            region.currency === "EUR" && region.vat_rate > 0 ? "Prices incl. VAT." : "Prices exclude tax.";
+        }
+      })
+      .catch(() => {});
   </script>
 </Base>
