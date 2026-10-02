@@ -1,0 +1,143 @@
+---
+import Base from "../layouts/Base.astro";
+import Nav from "../components/Nav.astro";
+import AlephLogo from "../components/AlephLogo.astro";
+import "../styles/claim.css";
+
+// Event page behind the booth QR code (/claim?e=<code>). The static HTML is the
+// default offer; scripts/claim.ts carries the code into the console link and
+// adjusts the card to the campaign's live status. Not in the nav or sitemap.
+const CLAIM_URL = "https://console.libertai.io/claim";
+---
+
+<Base title="Claim your event credits" description="$20 of LibertAI credits and $20 of Aleph Cloud credits to build private AI agents. Scan the QR code at our booth to claim." path="/claim">
+  <meta slot="head" name="robots" content="noindex" />
+  <Nav />
+
+<!-- HERO -->
+<header class="hero" id="top"><div class="wrap">
+  <div class="grid">
+    <div class="copy">
+      <div class="hero-fade duo" style="--d:60ms"><span class="lt">Libert<span class="ai">AI</span></span><span class="x" aria-label="and">×</span><AlephLogo class="al" /></div>
+      <h1 class="hero-fade" style="--d:160ms">Free credits for <span class="enc">private</span> agents.</h1>
+    </div>
+    <p class="hero-fade sub" style="--d:260ms">LibertAI's <b>private, OpenAI-compatible</b> inference API for the leading open models, plus <b>Aleph Cloud</b> compute to host your agents. No logs, no training on your data.</p>
+
+    <div class="hero-fade bill" id="offer" style="--d:340ms">
+      <div class="top">
+        <span class="name" data-event-name>Event credits</span>
+        <span class="on" data-status hidden><span class="dot"></span><span data-status-text></span></span>
+      </div>
+      <div class="stats">
+        <div class="s"><div class="num"><i>$</i><span data-amt="libertai">20</span></div><div class="lb">LibertAI credits</div><p>Private inference API</p></div>
+        <div class="s"><div class="num"><i>$</i><span data-amt="aleph">20</span></div><div class="lb">Aleph Cloud credits</div><p>Compute for agents</p></div>
+      </div>
+      <div class="cta">
+        <div class="msg" data-msg hidden><h4 data-msg-title></h4><p data-msg-text></p></div>
+        <div class="acts">
+          <a class="go2" href={CLAIM_URL} data-primary><span data-label>Claim your credits</span> <span aria-hidden="true">&rarr;</span></a>
+          <a class="doc" href="#how" data-secondary>How it works</a>
+        </div>
+        <div class="fine" data-fine>Valid <span data-days>60</span> days · No card · No KYC</div>
+      </div>
+    </div>
+  </div>
+</div></header>
+
+<!-- WHAT YOU GET -->
+<section class="blk" id="get"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 01 ) · What you get</span></div>
+  <div class="reveal mhead">
+    <h2 class="big">Inference and compute<br class="dbr"> for your agents.</h2>
+    <p class="lead">One balance for the models your agents call, one for the machines they run on.</p>
+  </div>
+  <div class="prods">
+    <article class="prod reveal">
+      <div class="ph"><span class="brand">Libert<span class="ai">AI</span></span><span class="amt">$<span data-amt="libertai">20</span> credits</span></div>
+      <h3>The private inference API.</h3>
+      <p>A drop-in, OpenAI-compatible endpoint for the leading open models, running on a decentralized network.</p>
+      <ul>
+        <li>Keep your SDK, change one line</li>
+        <li>No logs, no training on your data</li>
+        <li>Open models: Qwen, Gemma, DeepSeek, Hermes and more</li>
+        <li>Function calling and JSON output for your agent frameworks</li>
+      </ul>
+      <a class="more" href="/api">Explore the API</a>
+    </article>
+    <article class="prod reveal">
+      <div class="ph"><AlephLogo class="al" /><span class="amt">$<span data-amt="aleph">20</span> credits</span></div>
+      <h3>The decentralized cloud.</h3>
+      <p>Host your agents on Aleph Cloud, the distributed network LibertAI runs on.</p>
+      <ul>
+        <li>VPS instances with full root access via SSH</li>
+        <li>GPU instances for AI inference, ML training and rendering</li>
+        <li>Confidential VMs with enhanced privacy features</li>
+        <li>Sent to the Ethereum/Base or Solana wallet you add</li>
+      </ul>
+      <a class="more" href="https://aleph.cloud" target="_blank" rel="noopener">Explore Aleph Cloud</a>
+    </article>
+  </div>
+</div></section>
+
+<!-- HOW IT WORKS -->
+<section class="blk" id="how"><div class="wrap">
+  <div class="reveal head"><span class="mono">( 02 ) · How it works</span></div>
+  <div class="mig">
+    <div>
+      <div class="reveal"><h2 class="big">Three steps,<br>then build.</h2>
+      <p class="lead" style="margin-bottom:36px">Claim from your phone now, write the code later. The API is OpenAI-compatible, so your agent only needs a new address.</p></div>
+      <div class="steps">
+        <div class="s reveal"><span class="i">01</span><div><h3>Sign in</h3> <p>With your email and a 6-digit code, or with GitHub.</p></div></div>
+        <div class="s reveal"><span class="i">02</span><div><h3>Add a wallet, if you like</h3> <p>An Ethereum/Base or Solana address receives the Aleph Cloud credits. You can add it later.</p></div></div>
+        <div class="s reveal"><span class="i">03</span><div><h3>Get an API key and build</h3> <p>Your LibertAI credits land on your account right away. Create a key and point your client here.</p></div></div>
+      </div>
+    </div>
+    <div class="reveal codep">
+      <header><span>THE ENTIRE MIGRATION</span><span style="color:#6d737a">diff</span></header>
+      <pre><span class="del">- base_url="https://api.openai.com/v1"</span>
+<span class="add"><span class="pl">+ </span>base_url="https://api.libertai.io/v1"</span></pre>
+      <footer><a href="https://docs.libertai.io/quickstart.html" target="_blank" rel="noopener">Quickstart →</a></footer>
+    </div>
+  </div>
+</div></section>
+
+<!-- PRIVACY -->
+<section class="blk" id="privacy"><div class="wrap">
+  <div class="proof reveal">
+    <div class="head" style="margin-bottom:14px"><span class="mono" style="color:#6d737a">( 03 ) · Why private</span></div>
+    <h2 class="big">Private by proof.</h2>
+    <p class="lead">Most providers ask you to trust a policy. LibertAI is built so there's nothing to trust.</p>
+    <div class="pts">
+      <div class="pt"><span class="pmk">✓</span><h4>Nothing stored</h4><p>Requests are processed and forgotten.</p></div>
+      <div class="pt"><span class="pmk">✓</span><h4>Nothing trained on you</h4><p>Your prompts never become weights, and are never used to train, tune or evaluate any model.</p></div>
+      <div class="pt"><span class="pmk">✓</span><h4>No blind trust</h4><p>Sensitive workloads run in Trusted Execution Environments with remote attestation.</p></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- FINAL -->
+<section class="blk"><div class="wrap">
+  <div class="final reveal">
+    <h2>Build private<br>agents.</h2>
+    <div class="ctas"><a class="btn" href={CLAIM_URL} data-primary><span data-label>Claim your credits</span></a></div>
+    <div class="note">LibertAI × Aleph Cloud</div>
+  </div>
+</div></section>
+
+<!-- FOOTER -->
+<footer class="site"><div class="wrap">
+  <div class="cols">
+    <div>
+      <div class="brand">Libert<span class="ai">AI</span></div>
+      <p style="font-size:13px;color:var(--dim);max-width:30ch">Decentralized, confidential AI on Aleph Cloud. Liberty · Community · Privacy.</p>
+    </div>
+    <div><div class="h">Platform</div><a href="https://chat.libertai.io" target="_blank" rel="noopener">Chat</a><a href="/api">API</a><a href="https://liberclaw.ai" target="_blank" rel="noopener">Agents</a><a href="/search">Search</a></div>
+    <div><div class="h">Resources</div><a href="https://docs.libertai.io" target="_blank" rel="noopener">Docs</a><a href="/#credits">Credits</a><a href="https://blog.libertai.io" target="_blank" rel="noopener">Blog</a><a href="/litepaper.pdf" target="_blank" rel="noopener">Litepaper</a></div>
+    <div><div class="h">Explore</div><a href="https://aleph.cloud" target="_blank" rel="noopener">Aleph Cloud</a><a href="https://github.com/libertai" target="_blank" rel="noopener">GitHub</a><a href="https://x.com/Libertai_DAI" target="_blank" rel="noopener">X / Twitter</a><a href="https://t.me/libertai" target="_blank" rel="noopener">Telegram</a></div>
+  </div>
+  <div class="legal"><span>© 2026 LibertAI · Powered by Aleph Cloud</span><span>Private by design</span><span class="links"><a href="/mentions-legales">Mentions légales</a><a href="/politique-de-confidentialite">Confidentialité</a><a href="/cgv">CGV</a></span></div>
+</div></footer>
+  <script>
+    import "../scripts/claim.ts";
+  </script>
+</Base>

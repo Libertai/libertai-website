@@ -2,8 +2,9 @@
 // The pill nav shared by all light pages. Base styling (`nav.top` …) lives in
 // each page's stylesheet; the responsive burger/mobile-menu rules are global in
 // base.css. Desktop links and the mobile panel render from one `links` array.
+// Pages outside the main nav (e.g. /claim) omit `active`.
 interface Props {
-	active: "home" | "api" | "search";
+	active?: "home" | "api" | "search";
 }
 const { active } = Astro.props;
 const home = active === "home";
