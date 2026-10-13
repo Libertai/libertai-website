@@ -12,6 +12,26 @@ type Rgb = [number, number, number];
 
 initReveals(0.14);
 
+// user-visible strings of the two-worlds panel, per document language
+const FR = document.documentElement.lang === "fr";
+const S = {
+	hoverLive: FR ? "Survolez les nœuds · CRN Aleph Cloud en direct" : "Hover the nodes · live Aleph Cloud CRNs",
+	hover: FR ? "Survolez les nœuds" : "Hover the nodes",
+	zero: FR ? "0 octet" : "0 bytes",
+	tee: FR ? "Attesté par TEE" : "TEE-attested",
+	tokens: FR ? "jetons" : "tokens",
+	in: FR ? "entrée" : "in",
+	out: FR ? "sortie" : "out",
+	noneLogged: FR ? "Aucune · journalisée & profilée" : "None · logged & profiled",
+	flagshipPrice: FR ? "Modèle phare · prix" : "Flagship model · price",
+	unstable: FR ? "instable" : "unstable",
+	crnLive: FR ? "Aleph Cloud · CRN actif · en direct" : "Aleph Cloud · active CRN · live",
+	crn: FR ? "Aleph Cloud · CRN actif" : "Aleph Cloud · active CRN",
+	closed: FR ? "Source fermée · journalisée · accès des états" : "Closed source · logged · gov access",
+	bytes: FR ? "octets" : "bytes",
+	numLocale: FR ? "fr-FR" : "en-US",
+};
+
 const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
 const frameEl = document.getElementById("worlds");
@@ -33,7 +53,8 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 	const bill = document.querySelector<HTMLElement>("[data-flagship]");
 	const flagshipId = bill?.dataset.flagship ?? "";
 	const flagshipName = bill?.querySelector(".name")?.textContent?.trim() ?? "Flagship";
-	let flagIn = document.querySelector<HTMLElement>(`[data-mid="${flagshipId}"][data-k="in"]`)?.textContent?.trim() ?? "";
+	let flagIn =
+		document.querySelector<HTMLElement>(`[data-mid="${flagshipId}"][data-k="in"]`)?.textContent?.trim() ?? "";
 	let flagOut =
 		document.querySelector<HTMLElement>(`[data-mid="${flagshipId}"][data-k="out"]`)?.textContent?.trim() ?? "";
 
@@ -49,7 +70,7 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 			if (cmpUs) cmpUs.textContent = flagOut;
 			const cmpUsM = document.getElementById("cmpUsValM");
 			if (cmpUsM) cmpUsM.textContent = flagOut;
-			if (frameEl.classList.contains("b")) stV3.innerHTML = `<b>${flagIn}</b> in / <b>${flagOut}</b> out`;
+			if (frameEl.classList.contains("b")) stV3.innerHTML = `<b>${flagIn}</b> ${S.in} / <b>${flagOut}</b> ${S.out}`;
 		})
 		.catch(() => {});
 
@@ -175,7 +196,11 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 	const ringPt = (rg: Ring, an: number): Vec3 => {
 		const c = Math.cos(an);
 		const s = Math.sin(an);
-		return [(rg.u[0] * c + rg.v[0] * s) * rg.rr, (rg.u[1] * c + rg.v[1] * s) * rg.rr, (rg.u[2] * c + rg.v[2] * s) * rg.rr];
+		return [
+			(rg.u[0] * c + rg.v[0] * s) * rg.rr,
+			(rg.u[1] * c + rg.v[1] * s) * rg.rr,
+			(rg.u[2] * c + rg.v[2] * s) * rg.rr,
+		];
 	};
 	const line = (x0: number, y0: number, x1: number, y1: number): void => {
 		ctx.beginPath();
@@ -186,10 +211,24 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 
 	// node identities: fallback names, replaced by live Aleph CRNs when reachable
 	let namesB = [
-		"aleph-crn-par-01", "hetzner-fsn-crn", "ovh-gra-worker-07", "contabo-nue-04", "scaleway-ams-crn",
-		"crn.libertai.eu", "node.twentysix.cloud", "crn-lon-stakeplus", "aleph-crn-nyc-02", "gcs-frankfurt-crn",
-		"crn.okeso.fr", "aleph-node-mtl-01", "crn-sgp-atlas", "baremetal-hel-09", "crn.decentrahost.io",
-		"aleph-crn-mad-03", "rackline-waw-crn", "crn-syd-southern",
+		"aleph-crn-par-01",
+		"hetzner-fsn-crn",
+		"ovh-gra-worker-07",
+		"contabo-nue-04",
+		"scaleway-ams-crn",
+		"crn.libertai.eu",
+		"node.twentysix.cloud",
+		"crn-lon-stakeplus",
+		"aleph-crn-nyc-02",
+		"gcs-frankfurt-crn",
+		"crn.okeso.fr",
+		"aleph-node-mtl-01",
+		"crn-sgp-atlas",
+		"baremetal-hel-09",
+		"crn.decentrahost.io",
+		"aleph-crn-mad-03",
+		"rackline-waw-crn",
+		"crn-syd-southern",
 	];
 	let realData = false;
 	const CLNAMES = ["US-WEST MEGACLUSTER", "GOV-PARTNER REGION", "HYPERSCALER AZ-1", "CLOSED LAB DC-4"];
@@ -207,7 +246,7 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 				if (rn.length > 6) {
 					namesB = rn.slice(0, 90);
 					realData = true;
-					if (frameEl.classList.contains("b")) hoverhint.textContent = "Hover the nodes · live Aleph Cloud CRNs";
+					if (frameEl.classList.contains("b")) hoverhint.textContent = S.hoverLive;
 				}
 			})
 			.catch(() => {});
@@ -220,16 +259,16 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 	let bytes = 4271882090113;
 	const setStrip = (b: boolean): void => {
 		if (b) {
-			stV1.textContent = "0 bytes";
-			stV2.textContent = "TEE-attested";
-			stK3.textContent = `${flagshipName} · 1M tokens`;
-			stV3.innerHTML = `<b>${flagIn}</b> in / <b>${flagOut}</b> out`;
-			hoverhint.textContent = realData ? "Hover the nodes · live Aleph Cloud CRNs" : "Hover the nodes";
+			stV1.textContent = S.zero;
+			stV2.textContent = S.tee;
+			stK3.textContent = `${flagshipName} · 1M ${S.tokens}`;
+			stV3.innerHTML = `<b>${flagIn}</b> ${S.in} / <b>${flagOut}</b> ${S.out}`;
+			hoverhint.textContent = realData ? S.hoverLive : S.hover;
 		} else {
-			stV2.textContent = "None · logged & profiled";
-			stK3.textContent = "Flagship model · price";
-			stV3.textContent = "$27.40 / 1M · unstable";
-			hoverhint.textContent = "Hover the nodes";
+			stV2.textContent = S.noneLogged;
+			stK3.textContent = S.flagshipPrice;
+			stV3.textContent = `$27.40 / 1M · ${S.unstable}`;
+			hoverhint.textContent = S.hover;
 		}
 	};
 	const setWorld = (b: boolean, fromUser: boolean): void => {
@@ -502,10 +541,10 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 			ctx.stroke();
 			if (sT > 0.5) {
 				ntipT1.textContent = namesB[hover % namesB.length];
-				ntipT2.textContent = realData ? "Aleph Cloud · active CRN · live" : "Aleph Cloud · active CRN";
+				ntipT2.textContent = realData ? S.crnLive : S.crn;
 			} else {
 				ntipT1.textContent = `${CLNAMES[meta[hover].cluster]} · N${String(hover).padStart(3, "0")}`;
-				ntipT2.textContent = "Closed source · logged · gov access";
+				ntipT2.textContent = S.closed;
 			}
 			ntip.style.left = `${hq.sx}px`;
 			ntip.style.top = `${hq.sy}px`;
@@ -558,8 +597,8 @@ if (frameEl && canvas && ctx && wsw && ntip && ntipT1 && ntipT2 && hoverhint && 
 		// dystopia counters
 		if (target === 0 && !reduce) {
 			bytes += 41 + Math.random() * 520;
-			if (fcount % 4 === 0) stV1.textContent = `${Math.floor(bytes).toLocaleString("en-US")} bytes`;
-			if (fcount % 44 === 0) stV3.textContent = `$${(18 + Math.random() * 22).toFixed(2)} / 1M · unstable`;
+			if (fcount % 4 === 0) stV1.textContent = `${Math.floor(bytes).toLocaleString(S.numLocale)} ${S.bytes}`;
+			if (fcount % 44 === 0) stV3.textContent = `$${(18 + Math.random() * 22).toFixed(2)} / 1M · ${S.unstable}`;
 		}
 
 		if (!reduce) {

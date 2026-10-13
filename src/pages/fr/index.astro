@@ -1,0 +1,641 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/home.css";
+import { loadCatalog, barWidth } from "../../lib/catalog.ts";
+const { flagship, others } = await loadCatalog();
+const faqs = [
+	{
+		q: "Comment savoir que c'est vraiment confidentiel ?",
+		a: "Chaque modèle fonctionne sans rien conserver et sans entraînement sur vos données. Pour les charges sensibles, inutile de nous croire sur parole : les modèles servis en TEE, comme Hermes 3 8B, s'exécutent dans des enclaves scellées au niveau matériel sur Aleph Cloud, que même l'opérateur du nœud ne peut pas inspecter, avec une attestation cryptographique que vous pouvez vérifier vous-même.",
+	},
+	{
+		q: "Mon code existant fonctionnera-t-il ?",
+		a: "Oui. L'API est OpenAI-compatible : gardez votre SDK, changez la base URL et la clé. La documentation couvre le streaming, l'utilisation d'outils et la vision.",
+	},
+	{
+		q: "Comment fonctionne la facturation ?",
+		a: "De deux façons : un abonnement pour un usage régulier, ou des crédits prépayés facturés par million de jetons. L'usage au-delà de l'allocation d'un forfait est facturé au même tarif par jeton. Carte ou crypto, sans licence par poste, sans KYC.",
+	},
+	{
+		q: "Peut-on utiliser LibertAI en entreprise ?",
+		a: "Oui. Même API, mêmes garanties, avec des contrats sur mesure sur demande : conditions de volume, limites de débit plus élevées, support direct et facturation européenne. Voir la page Services.",
+	},
+	{
+		q: "Peut-on l'essayer gratuitement ?",
+		a: "Oui. Le chat sur chat.libertai.io est gratuit, sans compte. L'offre gratuite de LiberClaw fait tourner deux agents permanents, sans carte bancaire. L'API n'impose aucun minimum : rechargez quelques dollars et ne payez que les jetons que vous utilisez.",
+	},
+	{
+		q: "Que se passe-t-il si un nœud tombe ?",
+		a: "Les charges sont replanifiées sur le réseau. Votre endpoint n'est pas le datacenter d'une seule entreprise : c'est un pool distribué de nœuds Aleph Cloud, si bien qu'aucune machine, aucun fournisseur ni aucune juridiction ne peut à lui seul le mettre hors ligne.",
+	},
+	{
+		q: "Quels modèles puis-je utiliser ?",
+		a: `${flagship.name} en tête, avec d'autres modèles à poids ouverts derrière le même endpoint : Qwen, Gemma, DeepSeek, Hermes et d'autres, plus la génération d'images, les embeddings, la voix et la recherche web privée. Tous sont à poids ouverts : aucun ne peut vous être retiré du jour au lendemain.`,
+	},
+];
+const faqSchema = {
+	"@context": "https://schema.org",
+	"@type": "FAQPage",
+	mainEntity: faqs.map((f) => ({
+		"@type": "Question",
+		name: f.q,
+		acceptedAnswer: { "@type": "Answer", text: f.a },
+	})),
+};
+---
+
+<Base
+	title="L'intelligence qui vous appartient"
+	description={`${flagship.name} et les principaux modèles à poids ouverts sur un endpoint privé et OpenAI-compatible. Rien de conservé, aucun entraînement sur vos données — attesté au niveau matériel, propulsé par Aleph Cloud.`}
+	path="/fr"
+	lang="fr"
+	alt="/"
+>
+	<script slot="head" type="application/ld+json" set:html={JSON.stringify(faqSchema)} is:inline />
+	<Nav active="home" lang="fr" alt="/" />
+	<svg width="0" height="0" style="position:absolute" aria-hidden="true"
+		><defs>
+			<linearGradient id="lg1" x1="59.56" y1="95.96" x2="155.52" y2="-0.31" gradientUnits="userSpaceOnUse"
+				><stop stop-color="#644DF9"></stop><stop offset="1" stop-color="#FCCBFF"></stop></linearGradient
+			>
+			<linearGradient id="lg2" x1="59.56" y1="154.93" x2="93.09" y2="81.91" gradientUnits="userSpaceOnUse"
+				><stop stop-color="#644DF9"></stop><stop offset="1" stop-color="#FCCBFF"></stop></linearGradient
+			>
+			<linearGradient id="lg3" x1="0.61" y1="154.75" x2="131.17" y2="83.09" gradientUnits="userSpaceOnUse"
+				><stop stop-color="#644DF9"></stop><stop offset="1" stop-color="#FCCBFF"></stop></linearGradient
+			>
+		</defs></svg
+	>
+
+	<header class="hero" id="top">
+		<div class="wrap">
+			<div class="hero-fade keyhint" style="--d:60ms">
+				<span class="dot"></span>Confidentiel de bout en bout · Attesté par TEE
+			</div>
+			<h1 class="hero-fade" style="--d:160ms">Une IA <span class="enc">privée</span><br />qui vous&nbsp;appartient.</h1>
+			<div class="hero-fade row" style="--d:280ms">
+				<p class="sub">
+					Vos prompts ne laissent aucune trace&#8239;: ni conservés, ni utilisés pour l'entraînement, et c'est
+					vérifiable au niveau matériel. <b>{flagship.name}</b> et les principaux modèles à poids ouverts, <b
+						>OpenAI-compatible</b
+					>. Libre-service pour les développeurs. Confidentialité auditable pour les entreprises.
+				</p>
+				<div class="meta">
+					<span class="mono">Confidentialité</span>
+					<span class="n">TEE · SCELLÉ</span>
+					<span class="mono" style="font-size:8.5px">0 octet conservé</span>
+				</div>
+			</div>
+			<div class="hero-fade ctas" style="--d:400ms">
+				<a class="btn solid" href="https://console.libertai.io" target="_blank" rel="noopener"
+					>Déployer {flagship.name}</a
+				><a class="btn ghost" href="https://chat.libertai.io" target="_blank" rel="noopener">Essayer le chat privé</a
+				><a class="btn ghost" href="/fr/services">Pour les entreprises →</a>
+			</div>
+		</div>
+	</header>
+
+	<div class="media">
+		<div class="wrap">
+			<div class="hero-fade frame" id="worlds" style="--d:520ms">
+				<canvas id="net"></canvas>
+				<div class="scrimA"></div><div class="scrimB"></div>
+
+				<span class="corner tl">
+					<span class="sa urgent"><i></i>Urgent · l'état de l'IA</span>
+					<span class="sb calm"><i></i>Vue réseau · en direct</span>
+				</span>
+				<span class="corner tr">
+					<span class="sa redtx">Fermé // centralisé</span>
+					<span class="sb">Aleph Cloud // distribué</span>
+				</span>
+				<span class="corner br">[ chiffres illustratifs ]</span>
+
+				<div class="say sayA">
+					<div class="ey"><span>⚠</span>L'IA aujourd'hui · fermée et centralisée</div>
+					<h3>Leurs modèles.<br />Leurs <em>règles</em>.</h3>
+					<p>
+						Une poignée de laboratoires fermés exploitent l'IA dont vous dépendez. Les prompts sont conservés, profilés
+						et utilisés pour l'entraînement. L'accès peut être renchéri ou révoqué du jour au lendemain, et tout ce
+						qu'ils conservent peut être réquisitionné par la justice.
+					</p>
+				</div>
+				<div class="say sayB">
+					<div class="ey"><span class="dot"></span>Modèles à poids ouverts · rien de conservé</div>
+					<h3>Vos données sont <em>à vous</em>.</h3>
+					<p>
+						Une inférence sur un réseau distribué qui ne détient jamais vos données. Modèles à poids ouverts, prix plus
+						bas, aucun verrouillage.
+					</p>
+				</div>
+
+				<button class="wswitch" id="wsw" type="button" aria-pressed="false">
+					<span class="lab"
+						><span class="la">Passer à LibertAI</span><span class="lb">LibertAI · décentralisé</span></span
+					>
+					<span class="track"><span class="knob"></span></span>
+				</button>
+				<span class="hoverhint" id="hoverhint">Survolez les nœuds</span>
+
+				<div class="strip">
+					<div class="c">
+						<div class="k" id="stK1">Requêtes conservées</div><div class="v" id="stV1">
+							4&#8239;271&#8239;882&#8239;090&#8239;113 octets
+						</div>
+					</div>
+					<div class="c">
+						<div class="k" id="stK2">Confidentialité</div><div class="v" id="stV2">
+							Aucune · journalisée &amp; profilée
+						</div>
+					</div>
+					<div class="c">
+						<div class="k" id="stK3">Modèle phare · prix</div><div class="v" id="stV3">$27.40 / 1M · instable</div>
+					</div>
+				</div>
+
+				<div class="ntip" id="ntip"><div class="t1" id="ntipT1"></div><div class="t2" id="ntipT2"></div></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="tick">
+		<div class="row">
+			<div class="it">
+				<span>OpenAI-compatible</span><i>✦</i><span>Sans KYC</span><i>✦</i><span>Attesté par TEE</span><i>✦</i><span
+					>Rien de conservé</span
+				><i>✦</i><span>Abonnement ou paiement au jeton</span><i>✦</i><span>Contrats entreprise</span><i>✦</i><span
+					>Propulsé par Aleph Cloud</span
+				><i>✦</i>
+			</div>
+			<div class="it">
+				<span>OpenAI-compatible</span><i>✦</i><span>Sans KYC</span><i>✦</i><span>Attesté par TEE</span><i>✦</i><span
+					>Rien de conservé</span
+				><i>✦</i><span>Abonnement ou paiement au jeton</span><i>✦</i><span>Contrats entreprise</span><i>✦</i><span
+					>Propulsé par Aleph Cloud</span
+				><i>✦</i>
+			</div>
+		</div>
+	</div>
+
+	<section style="padding:0 0 116px" id="models">
+		<div class="wrap">
+			<div class="reveal head"><span class="mono">( 01 ) · Les modèles</span></div>
+			<div class="reveal mhead">
+				<h2 class="big">Un seul endpoint.<br />Les principaux modèles à poids&nbsp;ouverts.</h2>
+				<p class="lead">
+					{flagship.name} en tête&#8239;; le reste du catalogue n'est qu'à un paramètre, avec la même clé.
+				</p>
+			</div>
+			<div class="reveal bill" data-flagship={flagship.id}>
+				<div class="top">
+					<div class="l">
+						<span class="name">{flagship.name}</span><span class="fl">PHARE</span><div class="caps">
+							{flagship.caps.map((c) => <span>{c}</span>)}
+						</div>
+					</div>
+					<span class="on"><span class="dot"></span>En ligne</span>
+				</div>
+				<div class="stats">
+					<div class="s">
+						<div class="num" data-mid={flagship.id} data-k="in"><i>$</i>{flagship.input.toFixed(2)}</div><div
+							class="lb"
+						>
+							Entrée · 1M jetons
+						</div>
+					</div>
+					<div class="s">
+						<div class="num" data-mid={flagship.id} data-k="out"><i>$</i>{flagship.output.toFixed(2)}</div><div
+							class="lb"
+						>
+							Sortie · 1M jetons
+						</div>
+					</div>
+					<div class="s"><div class="num">{flagship.context}</div><div class="lb">Fenêtre de contexte</div></div>
+					<div class="s"><div class="num">~120</div><div class="lb">Jetons / seconde</div></div>
+				</div>
+				<div class="pay">
+					<div class="o">
+						<span class="ic"
+							><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+								><rect x="3" y="4" width="18" height="18" rx="2"></rect><path d="M16 2v4M8 2v4M3 10h18"></path></svg
+							></span
+						>
+						<div>
+							<h4>Abonnement<span>Prix fixe</span></h4><p>
+								Un forfait mensuel, une facture prévisible. Même endpoint, mêmes modèles.
+							</p>
+						</div>
+					</div>
+					<div class="o">
+						<span class="ic"
+							><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+								><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg
+							></span
+						>
+						<div>
+							<h4>Crédits<span>Paiement au jeton</span></h4><p>
+								Sans engagement, sans minimum. Au-delà d'un abonnement, l'usage est facturé au même tarif par jeton.
+							</p>
+						</div>
+					</div>
+				</div>
+				<div class="cta">
+					<div class="ct">
+						<h4>Déployez {flagship.name} en une minute.</h4>
+						<p>Gratuit pour commencer. Sans carte, sans KYC. Gardez votre SDK OpenAI, changez une ligne.</p>
+					</div>
+					<div class="cb">
+						<a class="go2" href="https://console.libertai.io/api-keys" target="_blank" rel="noopener"
+							>Obtenir une clé API <span aria-hidden="true">&rarr;</span></a
+						>
+						<a class="doc" href="https://docs.libertai.io" target="_blank" rel="noopener">Lire la documentation</a>
+					</div>
+				</div>
+			</div>
+			<details class="mfold reveal">
+				<summary
+					><span><span data-model-count>{others.length}</span> autres modèles à poids ouverts sur le même endpoint</span
+					><span class="u">Sortie $ / 1M</span><span class="plus">+</span></summary
+				>
+				<div class="inner">
+					{
+						others.map((m) => (
+							<div class="r" data-price-row={m.id}>
+								<>
+									<span class="nm">{m.name}</span>
+									<span class="bar">
+										<i style={`--w:${barWidth(m, others)}%`} />
+									</span>
+									<span class="pr" data-mid={m.id} data-k="pair">
+										{m.pair}
+									</span>
+								</>
+							</div>
+						))
+					}
+				</div>
+			</details>
+		</div>
+	</section>
+
+	<section style="padding:0 0 116px" id="pricing">
+		<div class="wrap">
+			<div class="reveal head"><span class="mono">( 02 ) · Offres &amp; tarifs</span></div>
+			<div class="reveal mhead">
+				<h2 class="big">Commencez gratuitement. Passez à l'échelle à votre rythme.</h2>
+				<p class="lead">Abonnez-vous pour un usage régulier, ou payez au jeton avec des crédits. Carte ou crypto.</p>
+			</div>
+			<div class="plans reveal">
+				<div class="tier">
+					<div class="tn">Gratuit</div><div class="td">Pour essayer</div>
+					<div class="tp"><span class="cur">€</span>0</div>
+					<a class="tcta ghost" href="https://chat.libertai.io" target="_blank" rel="noopener">Ouvrir le chat →</a>
+					<div class="carry">Inclus</div>
+					<ul><li>Le chat privé, sans compte</li><li>Modèles à poids ouverts</li><li>Aucune carte requise</li></ul>
+				</div>
+				<div class="tier">
+					<div class="tn">Go</div><div class="td">Pour un usage quotidien</div>
+					<div class="tp"><span class="cur">€</span>8<span>/mois</span></div>
+					<a class="tcta" href="https://chat.libertai.io/plans" target="_blank" rel="noopener">S'abonner →</a>
+					<div class="carry">Tout le forfait Gratuit, et&#8239;:</div>
+					<ul>
+						<li>Accès à tous les modèles</li><li>Un usage bien plus élevé qu'en Gratuit</li><li>
+							Des sessions plus longues avant une pause
+						</li>
+					</ul>
+				</div>
+				<div class="tier hi">
+					<div class="tn">Plus</div><div class="td">Pour des charges lourdes et quotidiennes</div>
+					<div class="tp"><span class="cur">€</span>20<span>/mois</span></div>
+					<a class="tcta solid" href="https://chat.libertai.io/plans" target="_blank" rel="noopener">S'abonner →</a>
+					<div class="carry">Tout le forfait Go, et&#8239;:</div>
+					<ul>
+						<li>Limite hebdomadaire 3× plus élevée qu'en Go</li><li>Tient une journée entière de travail</li><li>
+							Documents longs et sessions de code
+						</li>
+					</ul>
+				</div>
+				<div class="tier">
+					<div class="tn">Max</div><div class="td">Pour les utilisateurs intensifs et l'automatisation</div>
+					<div class="tp"><span class="cur">€</span>100<span>/mois</span></div>
+					<a class="tcta" href="https://chat.libertai.io/plans" target="_blank" rel="noopener">S'abonner →</a>
+					<div class="carry">Tout le forfait Plus, et&#8239;:</div>
+					<ul>
+						<li>Limite hebdomadaire 10× plus élevée qu'en Plus</li><li>Conçu pour un usage intensif et soutenu</li><li>
+							De la marge pour les agents de longue durée
+						</li>
+					</ul>
+				</div>
+			</div>
+			<p class="pnote reveal">
+				<span class="vatnote">TVA incluse.</span> Au-delà de votre forfait, payez au jeton avec des crédits prépayés. Le chat
+				est gratuit pour commencer&#8239;; les agents LiberClaw ont leur propre offre gratuite.
+			</p>
+		</div>
+	</section>
+
+	<section style="padding:0 0 116px" id="compare">
+		<div class="wrap">
+			<div class="cmpf reveal">
+				<div class="head" style="margin-bottom:14px">
+					<span class="mono" style="color:#6d737a">( 03 ) · Coût vs benchmark</span><span
+						class="mono"
+						style="color:#4a5056">Juil. 2026</span
+					>
+				</div>
+				<h2 class="big">Une fraction du prix.</h2>
+				<p class="lead">
+					Des modèles à poids ouverts sur une infrastructure distribuée, sans la marge d'un hyperscaler. Des benchmarks
+					comparables, jusqu'à 85&#8239;% moins cher par jeton.
+				</p>
+				<div class="cmpm">
+					<div class="cols">
+						<div class="col us">
+							<span class="meta"><span class="nm">LibertAI</span><span class="sub">{flagship.name}</span></span><span
+								class="big"
+								id="cmpUsValM">{`$${flagship.output.toFixed(2)}`}</span
+							><span class="stick"><i style="--h:15%"></i></span><span class="bn">Bench <b>91</b></span>
+						</div>
+						<div class="col">
+							<span class="meta"><span class="nm">Anthropic</span><span class="sub">Opus 4.8</span></span><span
+								class="big">$25.00</span
+							><span class="stick"><i style="--h:83%"></i></span><span class="bn">Bench <b>93</b></span>
+						</div>
+						<div class="col">
+							<span class="meta"><span class="nm">OpenAI</span><span class="sub">GPT-5.5</span></span><span class="big"
+								>$30.00</span
+							><span class="stick"><i style="--h:100%"></i></span><span class="bn">Bench <b>94</b></span>
+						</div>
+					</div>
+					<div class="note">$ / 1M jetons de sortie · bench&#8239;: GPQA Diamond, % de bonnes réponses</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="blk" id="privacy">
+		<div class="wrap">
+			<div class="reveal head"><span class="mono">( 04 ) · Modèle de confiance</span></div>
+			<div class="reveal">
+				<h2 class="big">La confidentialité, prouvée.</h2>
+				<p class="lead">
+					La plupart des fournisseurs vous demandent de faire confiance à une politique. LibertAI est conçu pour qu'il
+					n'y ait rien à croire sur parole&#8239;: l'infrastructure ne peut pas se souvenir de vous. Les mêmes garanties
+					valent pour un projet personnel comme pour une entreprise réglementée.
+				</p>
+			</div>
+			<div class="pxp">
+				<div class="pcol do reveal">
+					<div class="ph"><span class="tag yes">Engagements</span>Ce que nous faisons</div>
+					<p class="sub">Conçu par des développeurs, sur des modèles à poids ouverts et des standards ouverts.</p>
+					<details>
+						<summary><span class="pmk">✓</span>Soutenir les développeurs<span class="plus">+</span></summary><div
+							class="body"
+						>
+							Des API OpenAI-compatible, une documentation honnête et des modèles à poids ouverts que vous pouvez
+							inspecter. Gardez votre SDK, vos prompts et votre stack.
+						</div>
+					</details>
+					<details>
+						<summary><span class="pmk">✓</span>Réduire les coûts d'inférence<span class="plus">+</span></summary><div
+							class="body"
+						>
+							Des prix par jeton inférieurs à ceux des modèles phares fermés, et jusqu'à $10,000 de crédits pour les
+							équipes en phase d'amorçage.
+						</div>
+					</details>
+					<details>
+						<summary><span class="pmk">✓</span>Vous laisser le contrôle<span class="plus">+</span></summary><div
+							class="body"
+						>
+							Aucun verrouillage, aucun contrôle d'accès arbitraire, aucun KYC. Repartir tient en une ligne, comme
+							arriver, et tout s'exécute sur un réseau décentralisé que vous pouvez vérifier.
+						</div>
+					</details>
+				</div>
+				<div class="pcol dont reveal">
+					<div class="ph"><span class="tag no">Garanties</span>Ce que nous ne faisons pas</div>
+					<p class="sub">La confidentialité vient de l'architecture, pas d'une promesse.</p>
+					<details>
+						<summary><span class="pmk">✕</span>Aucune conservation<span class="plus">+</span></summary><div
+							class="body"
+						>
+							Les requêtes sont traitées puis oubliées. Aucun prompt, aucune réponse, aucune adresse IP dans notre base
+							de données, et rien à réquisitionner.
+						</div>
+					</details>
+					<details>
+						<summary><span class="pmk">✕</span>Aucun entraînement sur vos données<span class="plus">+</span></summary
+						><div class="body">
+							Vos prompts ne deviennent jamais des poids et ne servent jamais à entraîner, ajuster ou évaluer un modèle.
+						</div>
+					</details>
+					<details>
+						<summary><span class="pmk">✕</span>Aucune confiance aveugle<span class="plus">+</span></summary><div
+							class="body"
+						>
+							Les charges sensibles s'exécutent dans des environnements d'exécution de confiance (TEE) avec attestation
+							à distance. Vérifiez l'enclave vous-même, ou confiez l'attestation à votre équipe sécurité.
+						</div>
+					</details>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section style="padding:0 0 116px">
+		<div class="wrap">
+			<div class="reveal head"><span class="mono">( 05 ) · Migration</span></div>
+			<div class="mig">
+				<div>
+					<div class="reveal">
+						<h2 class="big">Démarrez, ou migrez,<br />en une minute.</h2>
+						<p class="lead" style="margin-bottom:40px">
+							Nouveau projet ou stack existante, votre code OpenAI fonctionne déjà. Il parle simplement à une autre
+							adresse.
+						</p>
+					</div>
+					<div class="steps">
+						<div class="s reveal">
+							<span class="i">01</span><div><h3>Créez un compte</h3> <p>E-mail ou wallet, sans KYC.</p></div>
+						</div>
+						<div class="s reveal">
+							<span class="i">02</span><div><h3>Générez une clé API</h3> <p>Un clic dans la console.</p></div>
+						</div>
+						<div class="s reveal">
+							<span class="i">03</span><div>
+								<h3>Choisissez {flagship.name}</h3>
+								<p>Ou n'importe quel modèle du catalogue.</p>
+							</div>
+						</div>
+						<div class="s reveal">
+							<span class="i">04</span><div>
+								<h3>Pointez votre client ici</h3>
+								<p>Gardez votre SDK et vos prompts.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="reveal codep">
+					<header><span>TOUTE LA MIGRATION</span><span style="color:#6d737a">diff</span></header>
+					<pre><span class="del">- base_url="https://api.openai.com/v1"</span>
+<span class="add"><span class="pl">+ </span>base_url="https://api.libertai.io/v1"</span></pre>
+					<footer>
+						<a href="https://docs.libertai.io/apis/" target="_blank" rel="noopener">Guide de migration →</a>
+					</footer>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section style="padding:0 0 116px" id="stack">
+		<div class="wrap">
+			<div class="reveal head"><span class="mono">( 06 ) · La stack souveraine</span></div>
+			<div class="stack">
+				<a class="mod reveal" href="https://chat.libertai.io" target="_blank" rel="noopener">
+					<div class="viz chat">
+						<span class="b a">Deux particules sont liées&#8239;: mesurer l'une détermine instantanément l'autre.</span>
+						<span class="b u">Pourquoi le ciel est-il bleu&#8239;?</span>
+						<span class="b a">Les courtes longueurs d'onde bleues sont plus diffusées par l'air que le rouge.</span>
+					</div>
+					<div class="foot"><span class="nm">Chat</span><span class="go">Découvrir →</span></div>
+				</a>
+				<a class="mod dark reveal" href="https://liberclaw.ai" target="_blank" rel="noopener">
+					<div class="viz agents">
+						<div class="ln">
+							<span class="t">Auditer le middleware d'auth</span><span class="st run">[en cours]</span>
+						</div>
+						<div class="ln">
+							<span class="t">Renouveler les jetons de session</span><span class="st run">[en cours]</span>
+						</div>
+						<div class="ln">
+							<span class="t">Trouver les références obsolètes</span><span class="st done">[terminé]</span>
+						</div>
+						<div class="th"><span class="dt"></span>Réflexion 4,1 s · mémoire persistante</div>
+					</div>
+					<div class="foot"><span class="nm">Agents</span><span class="go">Découvrir →</span></div>
+				</a>
+				<a class="mod dark reveal" href="https://code.libertai.io" target="_blank" rel="noopener">
+					<div class="viz codebox">
+						<pre>$ libertai code
+<span class="ok">→</span> lancement de claude-code
+<span class="ok">→</span> backend api.libertai.io · {flagship.id}
+<span class="ok">→</span> session privée · 0 log
+<span class="cur">▌</span></pre>
+					</div>
+					<div class="foot"><span class="nm">Code</span><span class="go">Découvrir →</span></div>
+				</a>
+				<a class="mod reveal" href="/fr/search">
+					<div class="viz srch">
+						<div class="bar"><span class="dt"></span>cherchez sur le web en direct, en privé</div>
+						<div class="res"><i></i><i></i><i></i></div>
+						<div class="px">À partir de $0.002 / requête · paiement via x402</div>
+					</div>
+					<div class="foot"><span class="nm">Recherche</span><span class="go">Découvrir →</span></div>
+				</a>
+			</div>
+			<a class="mod svc reveal" href="/fr/services">
+				<div class="svc-in">
+					<div>
+						<span class="mono k">Pour les entreprises</span>
+						<h3>Une IA privée pour votre entreprise.</h3>
+						<p>
+							Pilotes, accords sur mesure, volumes et facturation UE — la même stack confidentielle, avec notre
+							équipe à vos côtés.
+						</p>
+					</div>
+					<span class="go">Contactez-nous pour être accompagnés →</span>
+				</div>
+			</a>
+		</div>
+	</section>
+
+	<section style="padding:0 0 116px" id="credits">
+		<div class="wrap">
+			<div class="cred reveal">
+				<div>
+					<div class="mono" style="margin-bottom:18px">( 07 ) · Programme startups</div>
+					<h2 class="big">$10,000 pour construire en privé.</h2>
+					<p class="lead" style="margin-bottom:30px">
+						Pour les startups qui livrent sur {flagship.name} et tout le catalogue, avec l'aide de notre équipe pour la migration.
+						Entreprise plus grande&#8239;? <a href="/fr/services">Voir les contrats sur mesure →</a>
+					</p>
+					<div style="display:flex;flex-wrap:wrap;align-items:center;gap:16px">
+						<a class="btn solid" href="https://t.me/libertai" target="_blank" rel="noopener">Demander des crédits</a
+						><span class="mono" style="font-size:8.5px;color:var(--faint)">Réponse sous 48 h</span>
+					</div>
+				</div>
+				<div class="terms">
+					<div class="t"><span class="k">Montant</span><span class="v">Jusqu'à $10,000</span></div>
+					<div class="t"><span class="k">Éligibilité</span><span class="v">Équipes en phase d'amorçage</span></div>
+					<div class="t"><span class="k">Usage</span><span class="v">Crédits d'inférence</span></div>
+					<div class="t"><span class="k">Examen</span><span class="v">Au cas par cas</span></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section style="padding:0 0 116px" id="faq">
+		<div class="wrap">
+			<div class="reveal head"><span class="mono">( 08 ) · FAQ</span></div>
+			<div class="faq reveal">
+				{
+					faqs.map((f) => (
+						<details>
+							<summary>
+								{f.q}
+								<span class="plus">+</span>
+							</summary>
+							<div class="body">{f.a}</div>
+						</details>
+					))
+				}
+			</div>
+		</div>
+	</section>
+
+	<section style="padding:0 0 8px">
+		<div class="wrap">
+			<div class="final reveal">
+				<h2>Reprenez la main<br />sur votre IA.</h2>
+				<div style="display:flex;justify-content:center;flex-wrap:wrap;gap:12px">
+					<a class="btn" href="https://console.libertai.io" target="_blank" rel="noopener">Déployer {flagship.name}</a
+					><a
+						class="btn"
+						style="background:transparent;border:1px solid currentColor;color:inherit"
+						href="https://docs.libertai.io"
+						target="_blank"
+						rel="noopener">Lire la documentation</a
+					>
+				</div>
+				<div class="note">Rien de conservé. Aucun entraînement sur vos données. Une seule ligne à changer.</div>
+			</div>
+		</div>
+	</section>
+
+	<Footer lang="fr" />
+	<script>
+		import "../../scripts/home.ts";
+	</script>
+	<script>
+		const REGION_URL = "https://inference.api.libertai.io/payments/region";
+		const SYMBOLS: Record<string, string> = { EUR: "€", USD: "$" };
+
+		fetch(REGION_URL)
+			.then((r) => (r.ok ? r.json() : null))
+			.then((region) => {
+				const symbol = region && SYMBOLS[region.currency];
+				if (!symbol) return;
+				document.querySelectorAll<HTMLElement>("#pricing .cur").forEach((el) => {
+					el.textContent = symbol;
+				});
+				const vat = document.querySelector<HTMLElement>("#pricing .vatnote");
+				if (vat) {
+					vat.textContent = region.currency === "EUR" && region.vat_rate > 0 ? "TVA incluse." : "Hors taxes.";
+				}
+			})
+			.catch(() => {});
+	</script>
+</Base>

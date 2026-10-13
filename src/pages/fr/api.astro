@@ -1,0 +1,334 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/api.css";
+import { loadCatalog } from "../../lib/catalog.ts";
+const { flagship, others } = await loadCatalog();
+// the mock is a fixed-height window; only the priciest few fit
+const shown = [...others].sort((a, b) => b.output - a.output).slice(0, 4);
+---
+
+<Base
+	title="API d'inférence confidentielle"
+	description="API d'inférence IA privée et confidentielle. OpenAI-compatible, facturée au jeton, avec des modèles open source exécutés sur une infrastructure décentralisée. Aucune journalisation des données."
+	path="/fr/api"
+	lang="fr"
+	alt="/api"
+>
+	<Nav active="api" lang="fr" alt="/api" />
+	<!-- HERO -->
+	<header class="hero" id="top">
+		<div class="glow"></div>
+		<div class="wrap">
+			<div class="hero-fade eyebrow" style="--d:60ms">
+				<span class="dot"></span><span class="mono" style="color:var(--ink)">API LibertAI</span>
+			</div>
+			<h1 class="hero-fade" style="--d:150ms">L'API d'inférence<br /><em>privée</em>.</h1>
+			<p class="hero-fade sub" style="--d:250ms">
+				Un endpoint <b>OpenAI-compatible</b> en remplacement direct, pour {flagship.name} et les principaux modèles ouverts.
+				Confidentiel par conception, sur abonnement ou en crédits facturés au jeton, sans KYC. Gardez votre SDK, changez une
+				ligne.
+			</p>
+			<div class="hero-fade ctas" style="--d:350ms">
+				<a class="btn acc" href="https://console.libertai.io/api-keys" target="_blank" rel="noopener"
+					>Obtenir une clé API</a
+				>
+				<a class="btn ghost" href="https://docs.libertai.io/apis/" target="_blank" rel="noopener"
+					>Lire la documentation</a
+				>
+			</div>
+			<div class="hero-fade avail" style="--d:430ms">
+				Compatible avec le <b>SDK OpenAI</b> · cURL · Python · JavaScript
+			</div>
+
+			<div class="hero-fade stage" style="--d:540ms">
+				<div class="editor">
+					<div class="bar">
+						<div class="lights"><i></i><i></i><i></i></div>
+						<div class="tabs">
+							<button data-l="curl" class="on">cURL</button><button data-l="py">Python</button><button data-l="js"
+								>JavaScript</button
+							>
+						</div>
+						<div class="file">chat.completions</div>
+					</div>
+					<pre
+						class="code on"
+						data-l="curl"><span class="cm"># la même requête que vous envoyez déjà à OpenAI</span>
+curl https<span class="pn">:</span>//api.libertai.io/v1/chat/completions <span class="pn">\</span>
+  -H <span class="st">"Authorization: Bearer $LIBERTAI_API_KEY"</span> <span class="pn">\</span>
+  -H <span class="st">"Content-Type: application/json"</span> <span class="pn">\</span>
+  -d <span class="st">'&#123;
+    "model": "{flagship.id}",
+    "messages": [&#123;"role": "user", "content": "Explain confidential inference."&#125;],
+    "stream": true
+  &#125;'</span></pre>
+					<pre
+						class="code"
+						data-l="py"><span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+
+client <span class="pn">=</span> <span class="fn">OpenAI</span>(
+    base_url<span class="pn">=</span><span class="st">"https://api.libertai.io/v1"</span>,
+    api_key<span class="pn">=</span><span class="st">"ltai-••••"</span>,
+)
+
+stream <span class="pn">=</span> client.chat.completions.<span class="fn">create</span>(
+    model<span class="pn">=</span><span class="st">"{flagship.id}"</span>,
+    messages<span class="pn">=</span>[&#123;<span class="st">"role"</span>: <span class="st">"user"</span>, <span class="st">"content"</span>: <span class="st">"Explain confidential inference."</span>&#125;],
+    stream<span class="pn">=</span><span class="kw">True</span>,
+)
+<span class="kw">for</span> chunk <span class="kw">in</span> stream<span class="pn">:</span>
+    <span class="fn">print</span>(chunk.choices[<span class="nu">0</span>].delta.content <span class="kw">or</span> <span class="st">""</span>, end<span class="pn">=</span><span class="st">""</span>)</pre>
+					<pre
+						class="code"
+						data-l="js"><span class="kw">import</span> OpenAI <span class="kw">from</span> <span class="st">"openai"</span>;
+
+<span class="kw">const</span> client <span class="pn">=</span> <span class="kw">new</span> <span class="fn">OpenAI</span>(&#123;
+  baseURL<span class="pn">:</span> <span class="st">"https://api.libertai.io/v1"</span>,
+  apiKey<span class="pn">:</span> process.env.LIBERTAI_API_KEY,
+&#125;);
+
+<span class="kw">const</span> stream <span class="pn">=</span> <span class="kw">await</span> client.chat.completions.<span class="fn">create</span>(&#123;
+  model<span class="pn">:</span> <span class="st">"{flagship.id}"</span>,
+  messages<span class="pn">:</span> [&#123; role<span class="pn">:</span> <span class="st">"user"</span>, content<span class="pn">:</span> <span class="st">"Explain confidential inference."</span> &#125;],
+  stream<span class="pn">:</span> <span class="kw">true</span>,
+&#125;);
+<span class="kw">for await</span> (<span class="kw">const</span> chunk <span class="kw">of</span> stream) &#123;
+  process.stdout.<span class="fn">write</span>(chunk.choices[<span class="nu">0</span>]?.delta?.content ?? <span class="st">""</span>);
+&#125;</pre>
+					<div class="out">
+						<div class="rowh"><span class="g"></span>Réponse · streaming · {flagship.id}</div>
+						<div class="resp" id="resp"></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- TRUST -->
+	<div class="trust">
+		<div class="wrap reveal">
+			<p>Compatible avec les outils que vous utilisez déjà</p>
+			<div class="row">
+				<span>OpenAI SDK</span><span>LangChain</span><span>LlamaIndex</span><span>Vercel AI SDK</span><span>curl</span
+				><span>Python</span>
+			</div>
+		</div>
+	</div>
+
+	<!-- INTRO -->
+	<section class="blk" style="padding-bottom:40px">
+		<div class="wrap">
+			<div class="center reveal">
+				<span class="mono k">La meilleure façon de bâtir en privé</span>
+				<h2 class="big">Un endpoint. Le catalogue des modèles ouverts. Confidentiel par conception.</h2>
+				<p class="lead">
+					Toute la surface de l'API OpenAI-compatible, sur un réseau décentralisé incapable de conserver vos données.
+					Tout ce que vous attendez d'une API d'inférence moderne, avec la confidentialité inscrite dans l'architecture.
+				</p>
+			</div>
+
+			<!-- FEATURE 1 -->
+			<div class="feat reveal">
+				<div class="txt">
+					<span class="mono k">Compatible sans modification</span>
+					<h3>Votre code fonctionne déjà.</h3>
+					<p>
+						L'API reprend la spécification OpenAI : chat, outils, vision, embeddings et streaming. Pointez votre client
+						vers une nouvelle base URL et conservez tout le reste : SDK, prompts et stack.
+					</p>
+					<a class="more" href="https://docs.libertai.io/apis/">Lire le guide de migration</a>
+				</div>
+				<div class="shot">
+					<div class="mock dark">
+						<div class="mh"><span class="g"></span>toute la migration</div>
+						<pre><span class="cm"># une seule ligne change</span>
+<span class="del">- base_url = "https://api.openai.com/v1"</span>
+<span class="add"><span class="pl">+ </span>base_url = "https://api.libertai.io/v1"</span></pre>
+					</div>
+				</div>
+			</div>
+
+			<!-- FEATURE 2 -->
+			<div class="feat rev reveal">
+				<div class="txt">
+					<span class="mono k">Confidentiel par conception</span>
+					<h3>L'infrastructure ne peut pas se souvenir de vous.</h3>
+					<p>
+						Les requêtes sont traitées puis oubliées. Les charges sensibles s'exécutent dans des environnements
+						d'exécution de confiance (TEE) avec attestation à distance : vous vérifiez l'enclave au lieu de vous fier à
+						une politique.
+					</p>
+					<a class="more" href="/fr/#privacy">Comprendre notre modèle de confidentialité</a>
+				</div>
+				<div class="shot">
+					<div class="mock">
+						<div class="mh"><span class="g"></span>enclave · attestée</div>
+						<div class="att">
+							<div class="lock">
+								<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"
+									></path></svg
+								>
+							</div>
+							<div class="hash">sha256:9f2c…a17e · vérifié</div>
+							<div class="chk"><span class="c">✓</span>Aucune conservation</div>
+							<div class="chk"><span class="c">✓</span>Aucun entraînement sur vos données</div>
+							<div class="chk"><span class="c">✓</span>Attestation matérielle</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- FEATURE 3 -->
+			<div class="feat reveal">
+				<div class="txt">
+					<span class="mono k">Le catalogue</span>
+					<h3>Les principaux modèles ouverts, une seule clé.</h3>
+					<p>
+						{flagship.name} en tête, et le reste du catalogue à un paramètre près. Les prix affichés sont les tarifs des crédits
+						au jeton ; les abonnements couvrent un usage régulier à prix fixe.
+					</p>
+					<a class="more" href="https://docs.libertai.io/apis/text/#available-models">Parcourir tous les modèles</a>
+				</div>
+				<div class="shot">
+					<div class="mock">
+						<div class="mh"><span class="g"></span>modèles</div>
+						<div class="mm">
+							<div class="r" data-price-row={flagship.id}>
+								<span class="nm">{flagship.name} <span>PHARE</span></span><span
+									class="pr"
+									data-mid={flagship.id}
+									data-k="pair">{flagship.pair}</span
+								>
+							</div>
+							{
+								shown.map((m) => (
+									<div class="r" data-price-row={m.id}>
+										<>
+											<span class="nm">{m.name}</span>
+											<span class="pr" data-mid={m.id} data-k="pair">
+												{m.pair}
+											</span>
+										</>
+									</div>
+								))
+							}
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- FEATURE 4 -->
+			<div class="feat rev reveal">
+				<div class="txt">
+					<span class="mono k">Deux façons de payer</span>
+					<h3>Abonnez-vous, ou payez au jeton.</h3>
+					<p>
+						L'abonnement vous donne un prix mensuel fixe pour un usage régulier. Les crédits directs sont facturés au
+						million de jetons, et le dépassement au-delà de l'abonnement est facturé au même tarif par jeton. Pas de
+						facturation par utilisateur, pas de KYC.
+					</p>
+					<a class="more" href="https://docs.libertai.io/apis/">Détails des tarifs</a>
+				</div>
+				<div class="shot">
+					<div class="mock">
+						<div class="mh"><span class="g"></span>facturation · ce mois-ci</div>
+						<div class="us">
+							<div class="lbl" style="margin-bottom:6px">Abonnement · prix fixe</div>
+							<div class="bar" style="margin-bottom:16px"><i style="width:100%"></i></div>
+							<div class="lbl" style="margin-bottom:6px">Dépassement · crédits, par million de jetons</div>
+							<div class="bar"><i style="width:22%"></i></div>
+							<div class="fine" style="margin-top:12px">
+								prix mensuel fixe, puis <b style="color:var(--ink);font-weight:500">$1.40 en entrée / $4.40 en sortie</b
+								> par million · chiffres indicatifs
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- SAME API EVERYWHERE -->
+	<section class="blk" style="padding-top:40px">
+		<div class="wrap">
+			<div class="center reveal">
+				<span class="mono k">La même API, quelle que soit votre façon de développer</span>
+				<h2 class="big">Appelez-la de partout.</h2>
+				<p class="lead">
+					Un simple endpoint HTTPS qui parle le dialecte OpenAI. Utilisez le terminal, les SDK officiels, ou branchez-le
+					directement sur vos agents.
+				</p>
+			</div>
+			<div class="trio">
+				<div class="c reveal">
+					<div class="shot">
+						<div class="mock dark">
+							<div class="mh">
+								<span class="g"></span>terminal
+							</div><pre>curl api.libertai.io/v1<span class="pn">/</span>chat<span class="pn">/</span>completions <span class="pn">\</span>
+  -H <span class="st">"Authorization: Bearer …"</span> <span class="pn">\</span>
+  -d <span class="st">'&#123;"model":"{flagship.id}", …&#125;'</span></pre>
+						</div>
+					</div>
+					<h4>Depuis le terminal</h4>
+					<p>Un seul appel curl et les jetons arrivent en streaming. Idéal pour les scripts et les tests rapides.</p>
+					<div class="row"><a class="btn dark" href="https://docs.libertai.io/apis/">Référence cURL</a></div>
+				</div>
+				<div class="c reveal">
+					<div class="shot">
+						<div class="mock dark">
+							<div class="mh">
+								<span class="g"></span>sdk
+							</div><pre><span class="kw">from</span> openai <span class="kw">import</span> OpenAI
+client <span class="pn">=</span> <span class="fn">OpenAI</span>(base_url<span class="pn">=</span><span class="st">"…libertai.io/v1"</span>)
+client.chat.completions.<span class="fn">create</span>(…)</pre>
+						</div>
+					</div>
+					<h4>Avec le SDK OpenAI</h4>
+					<p>Utilisez les clients officiels Python ou JavaScript. Seule la base URL change.</p>
+					<div class="row"><a class="btn dark" href="https://docs.libertai.io/apis/">Guide SDK</a></div>
+				</div>
+				<div class="c reveal">
+					<div class="shot">
+						<div class="mock dark">
+							<div class="mh">
+								<span class="g"></span>agents
+							</div><pre>tools <span class="pn">=</span> [&#123;<span class="st">"type"</span>: <span class="st">"function"</span>,
+  <span class="st">"function"</span>: &#123;<span class="st">"name"</span>: <span class="st">"search"</span>&#125;&#125;]
+client.chat.completions.<span class="fn">create</span>(tools<span class="pn">=</span>tools)</pre>
+						</div>
+					</div>
+					<h4>Dans vos agents</h4>
+					<p>L'appel de fonctions et la sortie JSON s'intègrent aux frameworks d'agents que vous utilisez déjà.</p>
+					<div class="row"><a class="btn dark" href="https://docs.libertai.io/apis/">Appel d'outils</a></div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FINAL -->
+	<section style="padding:40px 0 8px">
+		<div class="wrap">
+			<div class="final reveal">
+				<h2>Passez au privé, dès aujourd'hui.</h2>
+				<p>Créez une clé, changez une ligne, déployez.</p>
+				<div class="ctas">
+					<a class="btn acc" href="https://console.libertai.io/api-keys" target="_blank" rel="noopener"
+						>Obtenir une clé API</a
+					><a class="btn ghost" href="https://docs.libertai.io/apis/" target="_blank" rel="noopener"
+						>Lire la documentation</a
+					>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FOOTER -->
+	<Footer lang="fr" />
+	<script>
+		import "../../scripts/api.ts";
+	</script>
+</Base>

@@ -1,14 +1,16 @@
 ---
 import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
 import "../styles/legal.css";
 
-const updated = "24 août 2026";
+const updated = "13 octobre 2026";
 ---
 
 <Base
 	title="Conditions générales"
 	description="Conditions générales d'utilisation et de vente des services LibertAI — abonnements, crédits, paiement, rétractation et responsabilité."
 	path="/cgv"
+	alt="/terms"
 	lang="fr"
 >
 	<section class="legal-page">
@@ -35,6 +37,7 @@ const updated = "24 août 2026";
 					<a href="#resiliation">Résiliation</a>
 					<a href="#modification">Modifications</a>
 					<a href="#litiges">Litiges</a>
+					<a href="#divers">Dispositions diverses</a>
 				</div>
 
 				<h2 id="objet">1. Objet et acceptation</h2>
@@ -138,6 +141,17 @@ const updated = "24 août 2026";
 						montant et l'adresse avant de valider. Les fonds envoyés à une adresse erronée, sur un réseau non pris en charge,
 						ou au moyen d'un actif non accepté, sont définitivement perdus. La valeur des cryptoactifs est volatile ; le montant
 						crédité correspond à la contre-valeur constatée au moment de la confirmation de la transaction.
+					</p>
+				</div>
+				<div class="note">
+					<p style="margin:0">
+						<strong>LibertAI n'est pas un prestataire de services sur crypto-actifs.</strong> LibertAI ne fournit aucun des
+						services sur crypto-actifs définis à l'article 3, paragraphe 1, point 16, du règlement (UE) 2023/1114 (MiCA),
+						notamment la garde et la conservation pour le compte de tiers, l'exploitation d'une plateforme de négociation,
+						l'échange de crypto-actifs contre des fonds, l'exécution d'ordres pour le compte de tiers, le conseil en investissement
+						en crypto-actifs ou la gestion de portefeuille. LibertAI n'est pas enregistrée au titre de ce règlement et n'y
+						est pas tenue. Les paiements en cryptoactifs s'effectuent directement depuis votre portefeuille vers le réseau
+						; LibertAI n'a à aucun moment accès à vos clés privées ni à la garde de vos actifs.
 					</p>
 				</div>
 				<p>
@@ -286,6 +300,11 @@ const updated = "24 août 2026";
 					respectives peuvent comporter des restrictions d'usage qu'il vous appartient de respecter. LibertAI ne
 					garantit pas qu'un contenu généré soit original ni qu'il ne porte pas atteinte aux droits d'un tiers.
 				</p>
+				<p>
+					Afin d'exécuter votre requête, vous accordez à LibertAI une licence limitée, non exclusive et sans redevance,
+					portant sur les contenus que vous soumettez. Cette licence est strictement limitée à la durée technique de
+					traitement nécessaire à la production de la réponse, et expire à l'issue de celle-ci.
+				</p>
 
 				<h2 id="disponibilite">11. Disponibilité</h2>
 				<p>
@@ -381,21 +400,36 @@ const updated = "24 août 2026";
 					juridiction du lieu de son domicile ou du lieu d'exécution de la prestation. Pour les professionnels,
 					compétence est attribuée au Tribunal de commerce de Créteil.
 				</p>
+
+				<h2 id="divers">17. Dispositions diverses</h2>
+				<h3>Force majeure</h3>
+				<p>
+					Aucune des parties n'est responsable de la non-exécution de ses obligations lorsque cette non-exécution
+					résulte d'un cas de force majeure au sens de l'article 1218 du Code civil. L'obligation suspendue reprend dès
+					que l'événement cesse ; si celui-ci se prolonge plus de deux mois, chaque partie peut résilier sans frais et
+					les crédits non consommés sont remboursés.
+				</p>
+				<h3>Divisibilité</h3>
+				<p>
+					Si l'une quelconque des stipulations des présentes conditions est déclarée nulle ou inapplicable, les autres
+					stipulations conservent toute leur force et leur portée. La stipulation invalidée est remplacée par une
+					stipulation économiquement équivalente et conforme au droit applicable.
+				</p>
+				<h3>Cession</h3>
+				<p>
+					Vous ne pouvez céder les droits et obligations issus des présentes conditions sans l'accord écrit préalable de
+					LibertAI. LibertAI peut céder son contrat, notamment en cas de cession de tout ou partie de son activité, sous
+					réserve d'en informer préalablement les utilisateurs concernés, sans que cela n'affecte les garanties légales
+					du consommateur.
+				</p>
+				<h3>Langue</h3>
+				<p>
+					Les présentes conditions sont rédigées en français. Une traduction en anglais est fournie à titre purement
+					informatif ; en cas de divergence d'interprétation, la version française prévaut.
+				</p>
 			</div>
 		</div>
 	</section>
 
-	<!-- FOOTER -->
-	<footer class="site">
-		<div class="wrap">
-			<div class="legal">
-				<span>© 2026 LibertAI · Intelligence Artificielle Générale SAS</span>
-				<span class="links">
-					<a href="/mentions-legales">Mentions légales</a>
-					<a href="/politique-de-confidentialite">Confidentialité</a>
-					<a href="/cgv">CGV</a>
-				</span>
-			</div>
-		</div>
-	</footer>
+	<Footer lang="fr" variant="legal" />
 </Base>

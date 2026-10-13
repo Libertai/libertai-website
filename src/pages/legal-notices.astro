@@ -1,0 +1,143 @@
+---
+import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/legal.css";
+
+const updated = "24 August 2026";
+---
+
+<Base
+	title="Legal notices"
+	description="Legal notices for the libertai.io website — publisher, hosting provider and company information for Intelligence Artificielle Générale SAS."
+	path="/legal-notices"
+	lang="en"
+	alt="/mentions-legales"
+>
+	<section class="legal-page">
+		<div class="wrap">
+			<div class="doc">
+				<a class="back" href="/">← libertai.io</a>
+				<h1>Legal notices</h1>
+				<div class="updated">Last updated: {updated}</div>
+
+				<div class="note">
+					<p style="margin:0">
+						<strong>English translation.</strong> This page is a translation provided for information only. The French version
+						at <a href="/mentions-legales">/mentions-legales</a> is the legally binding text.
+					</p>
+				</div>
+
+				<div class="toc">
+					<a href="#editeur">Publisher</a>
+					<a href="#publication">Publication director</a>
+					<a href="#hebergeur">Hosting provider</a>
+					<a href="#pi">Intellectual property</a>
+					<a href="#responsabilite">Liability</a>
+					<a href="#donnees">Personal data</a>
+					<a href="#droit">Governing law</a>
+				</div>
+
+				<h2 id="editeur">1. Website publisher</h2>
+				<p>
+					The <strong>libertai.io</strong> website and its subdomains (chat.libertai.io, console.libertai.io, code.libertai.io,
+					blog.libertai.io, docs.libertai.io) are published by:
+				</p>
+				<dl>
+					<dt>Company name</dt>
+					<dd>INTELLIGENCE ARTIFICIELLE GÉNÉRALE</dd>
+					<dt>Trade name</dt>
+					<dd>LibertAI</dd>
+					<dt>Legal form</dt>
+					<dd>SAS, société par actions simplifiée (simplified joint-stock company)</dd>
+					<dt>Share capital</dt>
+					<dd>€10,000.00</dd>
+					<dt>Registered office</dt>
+					<dd>76 Promenade des Anglais, 94210 Saint-Maur-des-Fossés, France</dd>
+					<dt>SIREN</dt>
+					<dd>985 392 356</dd>
+					<dt>SIRET (head office)</dt>
+					<dd>985 392 356 00012</dd>
+					<dt>RCS</dt>
+					<dd>985 392 356 R.C.S. Créteil</dd>
+					<dt>Intra-Community VAT number</dt>
+					<dd>FR36985392356</dd>
+					<dt>APE code</dt>
+					<dd>58.29C — Application software publishing</dd>
+					<dt>Contact</dt>
+					<dd>
+						<a href="mailto:contact@libertai.io">contact@libertai.io</a>
+					</dd>
+				</dl>
+
+				<h2 id="publication">2. Publication director</h2>
+				<p>
+					Mr <strong>Jonathan Schemoul</strong>, acting as President of Intelligence Artificielle Générale.
+				</p>
+
+				<h2 id="hebergeur">3. Hosting provider</h2>
+				<dl>
+					<dt>Company name</dt>
+					<dd>ALEPH.IM SAS</dd>
+					<dt>Address</dt>
+					<dd>242 boulevard Voltaire, 75011 Paris, France</dd>
+					<dt>Website</dt>
+					<dd><a href="https://aleph.cloud" rel="noopener" target="_blank">aleph.cloud</a></dd>
+				</dl>
+
+				<h2 id="pi">4. Intellectual property</h2>
+				<p>
+					<strong>LibertAI</strong> is the trade name of Intelligence Artificielle Générale SAS, registered with the Registre
+					national des entreprises (French National Business Register). The “LibertAI” sign is the subject of a French trademark
+					filing with the INPI (French National Institute of Industrial Property) under no. 5290539, in classes 9, 35, 38
+					and 42.
+				</p>
+				<p>
+					The structure of the website, its visual identity, its texts and its graphic elements are protected by the
+					French Intellectual Property Code. Any reproduction or representation, in whole or in part, for purposes other
+					than individual and private consultation, is prohibited without prior written authorization.
+				</p>
+				<p>
+					Software published by LibertAI as open source remains governed by its respective licenses, which can be
+					consulted at
+					<a href="https://github.com/libertai" rel="noopener" target="_blank">github.com/libertai</a>. The artificial
+					intelligence models made available are third-party models, subject to their own licenses; it is the user's
+					responsibility to review them before any use.
+				</p>
+
+				<h2 id="responsabilite">5. Limitation of liability</h2>
+				<p>
+					The information published on the website is provided for information purposes only and may be changed at any
+					time. LibertAI uses reasonable means to ensure its accuracy, without being able to guarantee that it is
+					error-free or exhaustive.
+				</p>
+				<p>
+					Content produced by the artificial intelligence systems accessible through the service is generated
+					automatically and may be inaccurate. It constitutes neither legal, medical, financial or professional advice,
+					nor a recommendation. It is the user's responsibility to verify any information before relying on it.
+				</p>
+
+				<h2 id="donnees">6. Personal data and trackers</h2>
+				<p>
+					The processing of personal data is described in our
+					<a href="/privacy-policy">privacy policy</a>.
+				</p>
+				<p>
+					The website uses a self-hosted audience measurement solution, without cookies and without cross-site tracking.
+					The terms of this measurement and the rights available to you are detailed in the privacy policy.
+				</p>
+
+				<h2 id="droit">7. Governing law</h2>
+				<p>
+					These legal notices are governed by French law. Contractual relations with users are governed by the
+					<a href="/terms">Terms and Conditions</a>.
+				</p>
+				<p>
+					For any question relating to this website:
+					<a href="mailto:contact@libertai.io">contact@libertai.io</a>.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<Footer lang="en" variant="legal" />
+</Base>

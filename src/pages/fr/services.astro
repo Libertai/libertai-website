@@ -1,0 +1,297 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/services.css";
+---
+
+<Base
+	title="IA privée pour les entreprises"
+	description="IA confidentielle pour les entreprises : inférence attestée en TEE, agents privés, outils pour les équipes et recherche web privée. OpenAI-compatible, modèles à poids ouverts, par une entreprise européenne. Aucune conservation, aucun entraînement sur vos données."
+	path="/fr/services"
+	lang="fr"
+	alt="/services"
+>
+	<Nav active="services" lang="fr" alt="/services" />
+	<header class="hero" id="top">
+		<div class="wrap">
+			<div class="hero-fade eyebrow" style="--d:60ms">
+				<span class="dot"></span><span class="mono" style="color:var(--ink)">LibertAI pour les entreprises</span>
+			</div>
+			<h1 class="hero-fade" style="--d:150ms">Une IA privée<br />pour votre <em>entreprise</em>.</h1>
+			<p class="hero-fade sub" style="--d:250ms">
+				Vos équipes veulent de l'IA. Vos données ne peuvent pas partir chez des laboratoires qui journalisent les
+				prompts et s'entraînent dessus. LibertAI exécute des modèles à poids ouverts derrière une API <b
+					>OpenAI-compatible</b
+				>, confidentielle par conception et <b>attestée au niveau matériel</b>.
+			</p>
+			<div class="hero-fade ctas" style="--d:350ms">
+				<a class="btn acc" href="mailto:contact@libertai.io">Nous contacter</a>
+				<a class="btn ghost" href="#offer">Voir notre offre</a>
+			</div>
+			<div class="hero-fade avail" style="--d:430ms">
+				Aucune conservation · Aucun entraînement · <b>Entreprise européenne</b>
+			</div>
+
+			<div class="hero-fade stage" style="--d:540ms">
+				<div class="stk">
+					<div class="hd">
+						<span class="g"></span>votre entreprise · stack privée<span class="rt">TEE · attestation à distance</span>
+					</div>
+					<div class="r">
+						<span class="nm">Inférence confidentielle</span><span class="ep">api.libertai.io/v1</span><span class="tag"
+							>OpenAI-compatible</span
+						>
+					</div>
+					<div class="r">
+						<span class="nm">Agents privés</span><span class="ep">liberclaw.ai</span><span class="tag"
+							>Toujours actifs</span
+						>
+					</div>
+					<div class="r">
+						<span class="nm">Chat &amp; Code</span><span class="ep">chat · code.libertai.io</span><span class="tag"
+							>Endpoint privé</span
+						>
+					</div>
+					<div class="r">
+						<span class="nm">Recherche web</span><span class="ep">api.libertai.io/v1/search</span><span class="tag"
+							>Classement par consensus</span
+						>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<div class="trust">
+		<div class="wrap reveal">
+			<p>Conçu pour les données qui ne doivent pas fuiter</p>
+			<div class="row">
+				<span>Code source</span><span>Contrats</span><span>Données clients</span><span>Documents internes</span><span
+					>Données financières</span
+				>
+			</div>
+		</div>
+	</div>
+
+	<section class="blk" id="offer" style="padding-bottom:40px">
+		<div class="wrap">
+			<div class="center reveal">
+				<span class="mono k">Notre offre</span>
+				<h2 class="big">Une stack privée, de l'API aux agents.</h2>
+				<p class="lead">
+					Utilisez une brique ou les quatre. Les mêmes garanties valent pour toute la stack : aucune conservation, aucun
+					entraînement sur vos données, aucun profil constitué sur vos équipes.
+				</p>
+			</div>
+
+			<div class="feat reveal">
+				<div class="txt">
+					<span class="mono k">API d'inférence confidentielle</span>
+					<h3>Envoyez des données sensibles. Elles restent à vous.</h3>
+					<p>
+						Les principaux modèles à poids ouverts derrière un endpoint OpenAI-compatible, en remplacement direct. Les
+						requêtes sont traitées puis oubliées. Les charges sensibles s'exécutent dans des environnements d'exécution
+						de confiance (TEE) sur Aleph Cloud, avec une attestation à distance que votre équipe sécurité peut vérifier.
+					</p>
+					<a class="more" href="/fr/api">Découvrir l'API</a>
+				</div>
+				<div class="shot">
+					<div class="mock">
+						<div class="mh"><span class="g"></span>enclave · attestée</div>
+						<div class="pad">
+							<div class="lock">
+								<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"
+									></path></svg
+								>
+							</div>
+							<div class="hash">sha256:9f2c…a17e · vérifié</div>
+							<div class="chk"><span class="c">✓</span>Aucune conservation</div>
+							<div class="chk"><span class="c">✓</span>Aucun entraînement</div>
+							<div class="chk"><span class="c">✓</span>Attestation matérielle</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="feat rev reveal">
+				<div class="txt">
+					<span class="mono k">Agents privés</span>
+					<h3>Des agents qui travaillent sur vos données sans les exposer.</h3>
+					<p>
+						LiberClaw fait tourner des agents permanents dotés d'une mémoire persistante, propulsés par l'inférence
+						privée de LibertAI. Confiez-leur documents internes, tickets ou code : les modèles ne conservent jamais ce
+						qu'ils lisent et ne s'entraînent jamais dessus.
+					</p>
+					<a class="more" href="https://liberclaw.ai" target="_blank" rel="noopener">Découvrir LiberClaw</a>
+				</div>
+				<div class="shot">
+					<div class="mock dark">
+						<div class="mh"><span class="g"></span>liberclaw · agents</div>
+						<div class="ag">
+							<div class="ln"><span>Résumer les contrats fournisseurs</span><span class="run">[en cours]</span></div>
+							<div class="ln"><span>Trier la boîte support</span><span class="run">[en cours]</span></div>
+							<div class="ln"><span>Relire le middleware d'auth</span><span class="done">[terminé]</span></div>
+							<div class="ft">mémoire persistante · inférence privée</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="feat reveal">
+				<div class="txt">
+					<span class="mono k">Outils privés pour les équipes</span>
+					<h3>Chat et code, sur un endpoint privé.</h3>
+					<p>
+						Donnez à chaque équipe un assistant privé sur chat.libertai.io, et à vos développeurs LibertAI Code, un
+						agent de code branché sur un endpoint privé. Le même flux de travail au quotidien, sans verser votre code
+						dans le jeu d'entraînement d'un tiers.
+					</p>
+					<a class="more" href="https://code.libertai.io" target="_blank" rel="noopener">Essayer LibertAI Code</a>
+				</div>
+				<div class="shot">
+					<div class="mock dark">
+						<div class="mh"><span class="g"></span>code.libertai.io</div>
+						<pre>$ libertai code
+<span class="ok">→</span> backend api.libertai.io
+<span class="ok">→</span> session privée · aucune conservation
+<span class="ok">▌</span></pre>
+					</div>
+				</div>
+			</div>
+
+			<div class="feat rev reveal">
+				<div class="txt">
+					<span class="mono k">API de recherche web privée</span>
+					<h3>Ancrez vos modèles dans le web en direct, en toute confidentialité.</h3>
+					<p>
+						Google, Bing et DuckDuckGo interrogés en parallèle, résultats dédoublonnés et classés par consensus. Aucun
+						profilage, aucun historique de recherche lié à votre identité. À partir de $0.002 par requête, sur les mêmes
+						crédits que l'inférence.
+					</p>
+					<a class="more" href="/fr/search">Découvrir la recherche</a>
+				</div>
+				<div class="shot">
+					<div class="mock">
+						<div class="mh"><span class="g"></span>recherche · consensus</div>
+						<div class="pad">
+							<div class="qb">
+								<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+									><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.3-4.3"></path></svg
+								>Obligations de l'AI Act pour les déployeurs
+							</div>
+							<div class="chk"><span class="c">✓</span>Trois moteurs, une réponse classée</div>
+							<div class="chk"><span class="c">✓</span>Ni profilage, ni historique</div>
+							<div class="chk"><span class="c">✓</span>Du JSON propre pour vos agents</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="blk" style="padding-top:40px">
+		<div class="wrap">
+			<div class="center reveal">
+				<span class="mono k">Pourquoi les entreprises nous choisissent</span>
+				<h2 class="big">Une confiance auditable, pas une promesse.</h2>
+			</div>
+			<div class="why">
+				<div class="c reveal">
+					<span class="mono k">01 · Réglementation</span>
+					<h4>L'AI Act européen s'applique.</h4>
+					<p>
+						Depuis août 2026, les obligations de l'AI Act s'appliquent et la maîtrise des données relève de l'audit, pas
+						d'une présentation. Notre réponse est courte : traitées, jamais conservées, jamais utilisées pour
+						l'entraînement.
+					</p>
+				</div>
+				<div class="c reveal">
+					<span class="mono k">02 · Juridiction</span>
+					<h4>Une entreprise européenne, une facture européenne.</h4>
+					<p>
+						LibertAI est exploité par Intelligence Artificielle Générale SAS, en France. Vous contractez avec une entité
+						européenne et recevez une facture européenne.
+					</p>
+				</div>
+				<div class="c reveal">
+					<span class="mono k">03 · Portabilité</span>
+					<h4>Aucun verrouillage fournisseur.</h4>
+					<p>
+						Des modèles à poids ouverts derrière une API OpenAI-compatible. Migrer vers LibertAI tient en une ligne de
+						configuration, en repartir aussi. Vos prompts et votre code restent portables.
+					</p>
+				</div>
+				<div class="c reveal">
+					<span class="mono k">04 · Vérification</span>
+					<h4>Vérifiez, ne faites pas confiance.</h4>
+					<p>
+						Les charges sensibles s'exécutent dans des environnements d'exécution de confiance (TEE) sur Aleph Cloud.
+						L'attestation à distance permet à votre équipe sécurité de vérifier l'enclave au niveau matériel, plutôt que
+						de lire une politique.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="blk" style="padding-top:0">
+		<div class="wrap">
+			<div class="center reveal">
+				<span class="mono k">Notre façon de travailler avec vous</span>
+				<h2 class="big">Commencez petit. Passez à l'échelle à votre rythme.</h2>
+			</div>
+			<div class="steps">
+				<div class="s reveal">
+					<span class="i">01</span><h4>D'abord un pilote</h4><p>
+						Une équipe, un cas d'usage délimité. Nous vous aidons à le mettre en place, vous mesurez les résultats, puis
+						vous décidez.
+					</p>
+				</div>
+				<div class="s reveal">
+					<span class="i">02</span><h4>Accompagnement à la migration</h4><p>
+						Votre stack parle déjà OpenAI. Changez la base URL en une ligne ; nous vous aidons à faire correspondre les
+						modèles et à vérifier que vos outils fonctionnent toujours.
+					</p>
+				</div>
+				<div class="s reveal">
+					<span class="i">03</span><h4>Crédits startups</h4><p>
+						Les équipes en phase d'amorçage peuvent demander jusqu'à $10,000 de crédits d'inférence, attribués au cas
+						par cas.
+					</p>
+				</div>
+				<div class="s reveal">
+					<span class="i">04</span><h4>Contrats sur mesure</h4><p>
+						Un volume engagé ouvre des limites de débit plus élevées, un support direct et une facturation adaptée à vos
+						processus d'achat. Sur mesure, sur demande.
+					</p>
+				</div>
+			</div>
+			<p class="pnote reveal">
+				Le libre-service reste ouvert : tarification au jeton, sans KYC · contrats entreprise sur demande · <a
+					href="/fr/#pricing">Voir les tarifs publics</a
+				>
+			</p>
+		</div>
+	</section>
+
+	<section style="padding:40px 0 8px">
+		<div class="wrap">
+			<div class="final reveal">
+				<h2>Mettez l'IA privée au travail.</h2>
+				<p>Pilote, migration, agents ou contrat sur mesure : tout commence par un e-mail à contact@libertai.io.</p>
+				<div class="ctas">
+					<a class="btn acc" href="mailto:contact@libertai.io">Contactez-nous pour être accompagnés</a>
+				</div>
+				<p class="note">Réponse sous 48 heures. Dites-nous votre cas d'usage et vos contraintes.</p>
+			</div>
+		</div>
+	</section>
+
+	<Footer lang="fr" />
+	<script>
+		import { initReveals } from "../../scripts/lib/reveals.ts";
+		initReveals(0.12);
+	</script>
+</Base>

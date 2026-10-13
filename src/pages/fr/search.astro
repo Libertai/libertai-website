@@ -1,0 +1,343 @@
+---
+import Base from "../../layouts/Base.astro";
+import Nav from "../../components/Nav.astro";
+import Footer from "../../components/Footer.astro";
+import "../../styles/search.css";
+---
+
+<Base
+	title="API de recherche web privée"
+	description="API de recherche web respectueuse de la vie privée pour agents IA. Résultats par consensus multi-moteurs issus de Google, Bing et DuckDuckGo, à partir de $2 les 1 000 requêtes. Aucun profilage, aucun historique conservé."
+	path="/fr/search"
+	lang="fr"
+	alt="/search"
+>
+	<Nav active="search" lang="fr" alt="/search" />
+	<!-- HERO -->
+	<header class="hero" id="top">
+		<div class="glow"></div>
+		<div class="wrap">
+			<div class="hero-fade eyebrow" style="--d:60ms">
+				<span class="dot"></span><span class="mono" style="color:var(--ink)">Recherche LibertAI</span>
+			</div>
+			<h1 class="hero-fade" style="--d:150ms">Recherche web privée<br />pour vos <em>agents</em>.</h1>
+			<p class="hero-fade sub" style="--d:250ms">
+				Interrogez Google, Bing et DuckDuckGo en parallèle et obtenez une réponse unique, dédoublonnée et classée par
+				consensus. À partir de $2 les 1 000 requêtes, sans profilage ni historique de recherche lié à votre identité.
+			</p>
+			<div class="hero-fade ctas" style="--d:350ms">
+				<a class="btn acc" href="https://console.libertai.io/api-keys" target="_blank" rel="noopener"
+					>Obtenir une clé API</a
+				>
+				<a class="btn ghost" href="https://docs.libertai.io/apis/search/" target="_blank" rel="noopener"
+					>Lire la documentation</a
+				>
+			</div>
+			<div class="hero-fade avail" style="--d:430ms">
+				Web · Actualités · Images · Académique · <b>un format de réponse unique</b>
+			</div>
+
+			<div class="hero-fade stage" style="--d:540ms">
+				<div class="srp">
+					<div class="bar2">
+						<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+							><circle cx="11" cy="11" r="8"></circle><path d="M21 21l-4.3-4.3"></path></svg
+						>
+						<span class="q">meilleure API d'inférence privée 2026</span>
+						<span class="ck"><span class="g"></span>Consensus · 3 moteurs</span>
+					</div>
+					<div class="res">
+						<div class="r">
+							<div class="u">libertai.io/api</div>
+							<div class="t">LibertAI · L'API d'inférence privée</div>
+							<div class="m">
+								<span class="eng"><b class="g">G</b><b class="b">B</b><b class="d">D</b></span><span class="cons"
+									><i style="width:98%"></i></span
+								><span class="score">0.98</span>
+							</div>
+						</div>
+						<div class="r">
+							<div class="u">docs.libertai.io/apis</div>
+							<div class="t">Référence de l'API OpenAI-compatible</div>
+							<div class="m">
+								<span class="eng"><b class="g">G</b><b class="b">B</b><b class="d">D</b></span><span class="cons"
+									><i style="width:91%"></i></span
+								><span class="score">0.91</span>
+							</div>
+						</div>
+						<div class="r">
+							<div class="u">news.example.com/private-ai</div>
+							<div class="t">L'inférence confidentielle se généralise</div>
+							<div class="m">
+								<span class="eng"><b class="g">G</b><b class="b">B</b><b class="off">D</b></span><span class="cons"
+									><i style="width:64%"></i></span
+								><span class="score">0.64</span>
+							</div>
+						</div>
+						<div class="r">
+							<div class="u">blog.example.com/seo-post</div>
+							<div class="t">Top 10 des API d'IA (sponsorisé)</div>
+							<div class="m">
+								<span class="eng"><b class="g">G</b><b class="off">B</b><b class="off">D</b></span><span class="cons"
+									><i style="width:22%"></i></span
+								><span class="score">0.22</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- TRUST -->
+	<div class="trust">
+		<div class="wrap reveal">
+			<p>Chaque requête part en parallèle vers</p>
+			<div class="row"><span>Google</span><span>Bing</span><span>DuckDuckGo</span></div>
+		</div>
+	</div>
+
+	<!-- INTRO + FEATURES -->
+	<section class="blk" style="padding-bottom:40px">
+		<div class="wrap">
+			<div class="center reveal">
+				<span class="mono k">Une requête, trois moteurs, une réponse</span>
+				<h2 class="big">Une recherche qui respecte la personne derrière la requête.</h2>
+				<p class="lead">
+					Les mêmes garanties de confidentialité que l'inférence LibertAI, appliquées à la recherche web. Des workers
+					répartis géographiquement effectuent les recherches, le consensus établit le classement, et vos requêtes
+					restent les vôtres.
+				</p>
+			</div>
+
+			<!-- FEATURE 1 -->
+			<div class="feat reveal">
+				<div class="txt">
+					<span class="mono k">Classement par consensus</span>
+					<h3>Trois moteurs concordent, le classement ne se manipule pas.</h3>
+					<p>
+						Chaque requête part en parallèle vers Google, Bing et DuckDuckGo. Les résultats sont dédoublonnés par URL et
+						classés selon la concordance entre moteurs : un lien remonté par les trois passe devant le premier résultat
+						d'un seul moteur, obtenu à coups de SEO.
+					</p>
+					<a class="more" href="https://docs.libertai.io/apis/search/">Fonctionnement du classement</a>
+				</div>
+				<div class="shot">
+					<div class="mock">
+						<div class="mh"><span class="g"></span>consensus</div>
+						<div class="res" style="padding:6px 18px 14px">
+							<div class="r" style="padding:12px 0">
+								<div class="t" style="font-size:14px">Les trois moteurs concordent</div><div class="m">
+									<span class="eng"><b class="g">G</b><b class="b">B</b><b class="d">D</b></span><span class="cons"
+										><i style="width:96%"></i></span
+									>
+								</div>
+							</div>
+							<div class="r" style="padding:12px 0">
+								<div class="t" style="font-size:14px">Deux sur trois</div><div class="m">
+									<span class="eng"><b class="g">G</b><b class="b">B</b><b class="off">D</b></span><span class="cons"
+										><i style="width:62%"></i></span
+									>
+								</div>
+							</div>
+							<div class="r" style="padding:12px 0">
+								<div class="t" style="font-size:14px">Résultat SEO d'un seul moteur</div><div class="m">
+									<span class="eng"><b class="g">G</b><b class="off">B</b><b class="off">D</b></span><span class="cons"
+										><i style="width:20%"></i></span
+									>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- FEATURE 2 -->
+			<div class="feat rev reveal">
+				<div class="txt">
+					<span class="mono k">Privé par architecture</span>
+					<h3>Rien ne vous relie à la requête.</h3>
+					<p>
+						Votre requête atteint les moteurs depuis des workers renouvelés, répartis sur trois continents, sans aucun
+						lien avec votre identité. Aucun profilage, aucune publicité, aucun historique de recherche rattaché à une
+						personne.
+					</p>
+					<a class="more" href="/fr/#privacy">Comprendre notre modèle de confidentialité</a>
+				</div>
+				<div class="shot">
+					<div class="mock">
+						<div class="mh"><span class="g"></span>workers · rotation</div>
+						<div class="dw">
+							<div class="globe">
+								<span class="n" style="left:22%;top:44%"></span><span class="n" style="left:48%;top:30%"></span><span
+									class="n"
+									style="left:70%;top:52%"></span><span class="n" style="left:38%;top:64%"></span><span
+									class="n"
+									style="left:82%;top:38%"></span>
+							</div>
+							<div class="chk"><span class="c">✓</span>Ni profilage, ni publicité</div>
+							<div class="chk"><span class="c">✓</span>Renouvelés toutes les 12 heures</div>
+							<div class="chk"><span class="c">✓</span>Aucun historique lié à une personne</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- FEATURE 3 -->
+			<div class="feat reveal">
+				<div class="txt">
+					<span class="mono k">Conçu pour les agents</span>
+					<h3>Du JSON propre, prêt à ancrer un LLM.</h3>
+					<p>
+						Un seul POST renvoie des résultats structurés et dédoublonnés. Un endpoint de récupération complémentaire
+						renvoie le texte lisible de n'importe quelle page : votre agent cite ses sources sans toucher au HTML.
+					</p>
+					<a class="more" href="https://docs.libertai.io/apis/search/">Référence de l'API</a>
+				</div>
+				<div class="shot">
+					<div class="mock dark">
+						<div class="mh"><span class="g"></span>response.json</div>
+						<pre>&#123;
+  <span class="st">"query"</span><span class="pn">:</span> <span class="st">"private inference API"</span>,
+  <span class="st">"results"</span><span class="pn">:</span> [&#123;
+    <span class="st">"title"</span><span class="pn">:</span> <span class="st">"LibertAI"</span>,
+    <span class="st">"url"</span><span class="pn">:</span> <span class="st">"libertai.io/api"</span>,
+    <span class="st">"engines"</span><span class="pn">:</span> [<span class="st">"google"</span>,<span class="st">"bing"</span>,<span class="st">"ddg"</span>],
+    <span class="st">"consensus"</span><span class="pn">:</span> <span class="nu">0.98</span>
+  &#125;]
+&#125;</pre>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- MORE CAPABILITIES -->
+	<section class="blk" style="padding-top:40px">
+		<div class="wrap">
+			<div class="center reveal">
+				<span class="mono k">Également inclus</span>
+				<h2 class="big">Un endpoint, quatre types de recherche.</h2>
+			</div>
+			<div class="trio">
+				<div class="c reveal">
+					<div class="ic">
+						<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+							><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path><path
+								d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path></svg
+						>
+					</div>
+					<h4>Web, actualités, images, académique</h4>
+					<p>
+						Quatre types de recherche derrière un même endpoint. Un seul paramètre de requête suffit pour passer de l'un
+						à l'autre, avec le même format de réponse unifié.
+					</p>
+				</div>
+				<div class="c reveal">
+					<div class="ic">
+						<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+							><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg
+						>
+					</div>
+					<h4>Paiement à la requête avec x402</h4>
+					<p>
+						À partir de $0.002 par requête, sur les mêmes crédits que l'inférence. Avec les micropaiements x402, un
+						agent peut payer une seule recherche : sans compte, sans carte, sans clé.
+					</p>
+				</div>
+				<div class="c reveal">
+					<div class="ic">
+						<svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+							><path d="M23 4v6h-6"></path><path d="M1 20v-6h6"></path><path
+								d="M3.5 9a9 9 0 0 1 14.9-3.4L23 10M1 14l4.6 4.4A9 9 0 0 0 20.5 15"></path></svg
+						>
+					</div>
+					<h4>Une infrastructure toujours renouvelée</h4>
+					<p>
+						Les workers de recherche tournent sur des VM éphémères sur Aleph Cloud, contrôlées toutes les 30 secondes et
+						renouvelées toutes les 12 heures, pour la diversité des adresses IP et la fiabilité.
+					</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- PRICING -->
+	<section class="blk" style="padding-top:0">
+		<div class="wrap">
+			<div class="center reveal">
+				<span class="mono k">Tarification simple à la requête</span>
+				<h2 class="big">Facturé par requête, par moteur.</h2>
+				<p class="lead">
+					Facturé sur les mêmes crédits que l'API d'inférence. Vous choisissez les moteurs à interroger, et seuls ceux
+					qui renvoient des résultats sont facturés.
+				</p>
+			</div>
+			<div class="price reveal">
+				<div class="c">
+					<div class="e"><b style="background:#4285F4">G</b><span class="nm">Google</span></div><div class="big">
+						$0.002
+					</div><div class="per">par requête · $2.00 / 1 000</div>
+				</div>
+				<div class="c">
+					<div class="e"><b style="background:#17a08a">B</b><span class="nm">Bing</span></div><div class="big">
+						$0.002
+					</div><div class="per">par requête · $2.00 / 1 000</div>
+				</div>
+				<div class="c">
+					<div class="e"><b style="background:#de5833">D</b><span class="nm">DuckDuckGo</span></div><div class="big">
+						$0.002
+					</div><div class="per">par requête · $2.00 / 1 000</div>
+				</div>
+			</div>
+			<p class="price note">
+				Une requête de consensus complète cumule les prix par moteur · récupération de pages et x402 détaillées dans la
+				documentation développeur · chiffres indicatifs
+			</p>
+		</div>
+	</section>
+
+	<!-- QUICKSTART -->
+	<section class="blk" style="padding-top:0">
+		<div class="wrap">
+			<div class="center reveal">
+				<span class="mono k">Démarrage rapide</span>
+				<h2 class="big">Un POST, des résultats structurés.</h2>
+			</div>
+			<div class="editor reveal">
+				<div class="bar"><div class="lights"><i></i><i></i><i></i></div><div class="file">search.sh</div></div>
+				<pre><span class="cm"># interroge les trois moteurs, renvoie une seule liste classée</span>
+curl https<span class="pn">:</span>//api.libertai.io/v1/search <span class="pn">\</span>
+  -H <span class="st">"Authorization: Bearer $LIBERTAI_API_KEY"</span> <span class="pn">\</span>
+  -d <span class="st">'&#123;
+    "query": "private inference API",
+    "engines": ["google", "bing", "ddg"],
+    "type": "web"
+  &#125;'</span></pre>
+			</div>
+		</div>
+	</section>
+
+	<!-- FINAL -->
+	<section style="padding:40px 0 8px">
+		<div class="wrap">
+			<div class="final reveal">
+				<h2>La recherche, sans la surveillance.</h2>
+				<p>L'ancrage de vos agents dans le web, facturé à la requête, privé par conception.</p>
+				<div class="ctas">
+					<a class="btn acc" href="https://console.libertai.io/api-keys" target="_blank" rel="noopener"
+						>Obtenir une clé API</a
+					><a class="btn ghost" href="https://docs.libertai.io/apis/search/" target="_blank" rel="noopener"
+						>Lire la documentation</a
+					>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- FOOTER -->
+	<Footer lang="fr" />
+	<script>
+		import "../../scripts/search.ts";
+	</script>
+</Base>

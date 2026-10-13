@@ -1,0 +1,375 @@
+---
+import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/legal.css";
+
+const updated = "24 August 2026";
+---
+
+<Base
+	title="Privacy policy"
+	description="LibertAI privacy policy — what data is processed, why, for how long, and how to exercise your rights."
+	path="/privacy-policy"
+	lang="en"
+	alt="/politique-de-confidentialite"
+>
+	<section class="legal-page">
+		<div class="wrap">
+			<div class="doc">
+				<a class="back" href="/">← libertai.io</a>
+				<h1>Privacy policy</h1>
+				<div class="updated">Last updated: {updated}</div>
+
+				<div class="note">
+					<p style="margin:0">
+						<strong>English translation.</strong> This page is a translation provided for information only. The French version
+						at <a href="/politique-de-confidentialite">/politique-de-confidentialite</a> is the legally binding text.
+					</p>
+				</div>
+
+				<div class="toc">
+					<a href="#responsable">Controller</a>
+					<a href="#principe">Principle</a>
+					<a href="#donnees">Data processed</a>
+					<a href="#nontraitees">What we do not process</a>
+					<a href="#local">Local storage</a>
+					<a href="#finalites">Purposes</a>
+					<a href="#destinataires">Recipients</a>
+					<a href="#transferts">Transfers</a>
+					<a href="#durees">Retention periods</a>
+					<a href="#droits">Your rights</a>
+					<a href="#securite">Security</a>
+					<a href="#traceurs">Trackers</a>
+					<a href="#modifications">Changes</a>
+				</div>
+
+				<h2 id="responsable">1. Data controller</h2>
+				<p>
+					<strong>Intelligence Artificielle Générale SAS</strong> (“LibertAI”), 76 Promenade des Anglais, 94210 Saint-Maur-des-Fossés,
+					France — SIREN 985 392 356.
+				</p>
+				<p>
+					For any question or to exercise your rights:
+					<a href="mailto:privacy@libertai.io">privacy@libertai.io</a>.
+				</p>
+
+				<h2 id="principe">2. Principle</h2>
+				<div class="note">
+					<p style="margin:0">
+						<strong>LibertAI does not store the content of your exchanges with AI models in a database.</strong> Your requests
+						are relayed to the inference servers and the response is then sent back to you; neither the requests nor the responses
+						are stored in a database. Only usage counters — number of tokens, number of images, model called, timestamp —
+						are retained for billing.
+					</p>
+				</div>
+
+				<h2 id="donnees">3. Data we process</h2>
+
+				<h3>Account created by email or via Google / GitHub</h3>
+				<ul>
+					<li>email address and verification status;</li>
+					<li>display name and profile picture, where provided;</li>
+					<li>identifier and email address provided by the identity provider (Google or GitHub) at sign-in;</li>
+					<li>single-use sign-in tokens (“magic links”), stored as a hash and not in plain text.</li>
+				</ul>
+
+				<h3>Account created with a wallet</h3>
+				<ul>
+					<li>public wallet address and the network concerned;</li>
+					<li>temporary cryptographic challenge used to verify the signature.</li>
+				</ul>
+				<p>An account created with a wallet contains neither an email address nor any legal identity.</p>
+
+				<h3>Sessions and security</h3>
+				<ul>
+					<li>refresh token hash, expiry date and revocation date;</li>
+					<li>technical information about the device used for the session (client type);</li>
+					<li>push notification tokens, platform and app version.</li>
+				</ul>
+
+				<h3>API keys</h3>
+				<ul>
+					<li>name given to the key, creation, expiry and deletion dates.</li>
+				</ul>
+
+				<h3>Payments and subscriptions</h3>
+				<ul>
+					<li>
+						<strong>Payment by card or bank transfer:</strong> customer and subscription identifiers assigned by our payment
+						provider, currency, billing periods, plan subscribed to.
+						<strong>We neither receive nor store your bank card data</strong> — it is processed exclusively by the provider.
+					</li>
+					<li>
+						<strong>Payment in crypto-assets:</strong> wallet address, transaction reference, block number, amount and status.
+						This information is, by its nature, recorded on a public blockchain.
+					</li>
+				</ul>
+
+				<h3>Use of the service</h3>
+				<ul>
+					<li>
+						per call: API key concerned, number of input and output tokens, number of images, model name, timestamp.
+						<strong>Without the content</strong>.
+					</li>
+					<li>rate-limiting counters, retained ephemerally.</li>
+				</ul>
+
+				<h2 id="nontraitees">4. What we do not process</h2>
+				<ul>
+					<li>
+						<strong>The content of your conversations and requests</strong> — no storage in a database.
+					</li>
+					<li>
+						<strong>Your IP addresses are not linked to any account</strong>: no table in our database contains an IP
+						address field. The IP address is used transiently, in memory, to limit abuse and to determine the display
+						currency. Like any online service, our servers and load balancers produce technical logs that may contain IP
+						addresses; these are retained for a limited period solely for security and diagnostic purposes.
+					</li>
+					<li>
+						<strong>Your bank card data</strong> — it does not pass through our servers.
+					</li>
+					<li>We do not use your data to train models, and we neither sell nor rent it to anyone.</li>
+				</ul>
+
+				<h2 id="local">5. Data stored on your device</h2>
+				<p>
+					The chat application stores <strong>locally, in your browser</strong>
+					and not on our servers: your conversation history and associated attachments, your assistants, projects and memories,
+					your generated images, and your display preferences.
+				</p>
+				<p>
+					This data is never transmitted to us. Clearing your browser's site data deletes it permanently — we hold no
+					copy of it and cannot restore it.
+				</p>
+
+				<h2 id="finalites">6. Purposes and legal bases</h2>
+				<table>
+					<thead>
+						<tr><th>Purpose</th><th>Legal basis</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Account creation and management, provision of the service</td>
+							<td>Performance of the contract — Art. 6(1)(b) GDPR</td>
+						</tr>
+						<tr>
+							<td>Billing, subscriptions, usage accounting</td>
+							<td>Performance of the contract and legal obligations — Art. 6(1)(b) and 6(1)(c)</td>
+						</tr>
+						<tr>
+							<td>Security, abuse prevention, rate limiting</td>
+							<td>
+								Legitimate interest — Art. 6(1)(f): protecting the infrastructure against fraud and misuse, and ensuring
+								fair access to the service
+							</td>
+						</tr>
+						<tr>
+							<td>Sign-in emails and service-related messages</td>
+							<td>Performance of the contract — Art. 6(1)(b)</td>
+						</tr>
+						<tr>
+							<td>Aggregated website audience measurement</td>
+							<td>
+								Legitimate interest — Art. 6(1)(f): understanding traffic in order to improve the service, without
+								individual profiling
+							</td>
+						</tr>
+						<tr>
+							<td>Retention of accounting records</td>
+							<td>Legal obligation — Art. 6(1)(c)</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<p>
+					<strong>Whether the data is required.</strong> Account data is necessary for entering into and performing the contract:
+					without it, the service cannot be provided. Any other information you choose to provide, such as a display name,
+					is optional and not providing it has no consequence.
+				</p>
+				<p>
+					<strong>Source of the data.</strong> When you sign in via Google or GitHub, we receive your identifier and email
+					address from that provider. The billing country is inferred from an IP address geolocation database provided by
+					a third party. All other data comes from you or from your use of the service.
+				</p>
+				<p>
+					<strong>Automated decision-making.</strong> No decision producing legal effects concerning you, or significantly
+					affecting you, is taken based solely on automated processing. Automated rate-limiting and abuse-prevention mechanisms
+					may temporarily restrict access; any lasting suspension of an account is subject to human review and may be challenged
+					at the address given in Section 1.
+				</p>
+				<p>
+					<strong>Data protection officer.</strong> No data protection officer has been appointed, as the nature and volume
+					of the processing do not require one. Your requests are handled at the address given in Section 1.
+				</p>
+
+				<h2 id="destinataires">7. Recipients and processors</h2>
+				<p>We use the following providers, each for the purpose indicated:</p>
+				<table>
+					<thead>
+						<tr><th>Provider</th><th>Role</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>Aleph.IM SAS</td><td>Hosting and confidential computing infrastructure</td></tr>
+						<tr><td>Revolut</td><td>Collection of card and bank transfer payments</td></tr>
+						<tr><td>thirdweb</td><td>Processing of crypto-asset payments</td></tr>
+						<tr><td>Google, GitHub</td><td>Sign-in via identity provider, if you use it</td></tr>
+						<tr><td>Email delivery provider</td><td>Delivery of sign-in emails</td></tr>
+						<tr><td>MaxMind (GeoLite2)</td><td>Determining the country for currency and VAT purposes</td></tr>
+						<tr
+							><td>Self-hosted audience measurement</td><td>Traffic statistics for the website and applications</td></tr
+						>
+						<tr><td>effigy.im</td><td>Generating the profile picture from the wallet address</td></tr>
+						<tr><td>CoinGecko</td><td>Crypto-asset prices displayed during a payment</td></tr>
+						<tr><td>Base, Solana and Aleph RPC nodes</td><td>Reading and sending on-chain transactions</td></tr>
+						<tr>
+							<td>jsDelivr, esm.sh</td><td
+								>Delivery of components run in the code interpreter and the artifact preview</td
+							>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					When your browser contacts one of these services, that service technically receives your IP address, as with
+					any resource loaded from a third-party domain. None of these calls serves an advertising purpose.
+				</p>
+				<p>
+					The inference servers receive the content of your requests for the time needed to produce the response. When
+					you use the built-in web search, your search query is sent to our search service.
+				</p>
+				<p>
+					In the chat application, displaying the icons of the sites cited in search results relies on a third-party
+					favicon retrieval service, which therefore receives the domain name of the sites concerned.
+				</p>
+
+				<h2 id="transferts">8. Transfers outside the European Union</h2>
+				<p>
+					Some of the providers mentioned above are established outside the European Union, in particular in the United
+					States. These transfers are subject to the appropriate safeguards provided for in Chapter V of the GDPR, in
+					particular the European Commission's standard contractual clauses.
+				</p>
+				<p>
+					Crypto-asset payments are recorded on public blockchains, which are accessible worldwide and by nature cannot
+					be modified: this public nature is inherent to the technology and beyond our control.
+				</p>
+
+				<h2 id="durees">9. Retention periods</h2>
+				<table>
+					<thead>
+						<tr><th>Data</th><th>Period</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Account and associated data</td><td>Until the account is deleted, or after 3 years without sign-in</td
+							>
+						</tr>
+						<tr><td>Single-use sign-in tokens</td><td>15 minutes, then deleted</td></tr>
+						<tr><td>Signature challenges (wallet)</td><td>Deleted upon use</td></tr>
+						<tr><td>Sessions</td><td>Until expiry or revocation</td></tr>
+						<tr><td>Usage and call counters</td><td>13 months</td></tr>
+						<tr>
+							<td>Accounting and billing records</td><td>10 years (Article L.123-22 of the French Commercial Code)</td>
+						</tr>
+						<tr><td>Audience measurement</td><td>13 months maximum</td></tr>
+					</tbody>
+				</table>
+
+				<h2 id="droits">10. Your rights</h2>
+				<p>
+					You have the rights of access, rectification, erasure, restriction of processing, portability and objection,
+					as well as the right to withdraw your consent at any time where the processing is based on consent.
+				</p>
+				<p>
+					To exercise them, write to
+					<a href="mailto:privacy@libertai.io">privacy@libertai.io</a>. We respond within one month, which may be
+					extended by two months for complex requests. We may ask you for information allowing us to verify that the
+					request does come from you.
+				</p>
+				<p>
+					Certain data cannot be erased: accounting records, which the law requires us to retain, and transactions
+					recorded on a public blockchain, which are technically immutable.
+				</p>
+				<p>
+					Where the processing is based on our legitimate interest, you may
+					<strong>object to it at any time</strong> on grounds relating to your particular situation (Art. 21 GDPR), at the
+					same address.
+				</p>
+				<p>
+					In accordance with Article 85 of the French Data Protection Act (loi Informatique et Libertés), you may set
+					<strong>directives regarding what happens to your data after your death</strong>, and designate a person
+					responsible for carrying them out. These directives may be sent to us at
+					<a href="mailto:privacy@libertai.io">privacy@libertai.io</a>.
+				</p>
+				<p>
+					You may lodge a complaint with the
+					<strong>Commission nationale de l'informatique et des libertés (CNIL)</strong>, the French data protection
+					authority, 3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 —
+					<a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr</a>.
+				</p>
+
+				<h2 id="securite">11. Security</h2>
+				<ul>
+					<li>encryption of data in transit (HTTPS);</li>
+					<li>encryption at rest of sensitive authentication tokens;</li>
+					<li>storage of session tokens and sign-in codes as irreversible hashes;</li>
+					<li>
+						authentication cookie inaccessible to the page's JavaScript (<span class="mono">httpOnly</span>),
+						transmitted over HTTPS only;
+					</li>
+					<li>cryptographic verification of notifications from our payment providers;</li>
+					<li>
+						execution of certain models in a hardware-attested trusted execution environment (TEE); this feature is
+						indicated model by model in the interface.
+					</li>
+				</ul>
+
+				<h2 id="traceurs">12. Cookies and trackers</h2>
+				<p>The website and applications set only:</p>
+				<table>
+					<thead>
+						<tr><th>Name</th><th>Role</th><th>Type</th></tr>
+					</thead>
+					<tbody>
+						<tr><td>libertai_auth</td><td>Maintaining your session</td><td>Strictly necessary</td></tr>
+						<tr>
+							<td>oauth_state</td><td>Protection of sign-in via Google / GitHub</td><td>Strictly necessary</td>
+						</tr>
+						<tr>
+							<td>oauth_redirect</td><td>Return to the original page after sign-in</td><td>Strictly necessary</td>
+						</tr>
+						<tr>
+							<td>preferred_instances</td><td>Routing continuity for inference calls</td><td>Strictly necessary</td>
+						</tr>
+						<tr>
+							<td>sidebar_state</td><td>State of the side panel</td><td>User convenience, requested by the user</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					The display theme and your conversation data are stored in the browser's local storage, not in cookies. Crypto
+					wallets that you connect may also write their own technical keys to this local storage.
+				</p>
+				<p>These trackers are essential to the operation of the service and do not require your consent.</p>
+				<p>
+					Audience measurement for the website and applications is provided by a
+					<strong>self-hosted solution, without advertising cookies and without cross-site tracking</strong>. The data
+					is strictly statistical, is not cross-referenced with other processing and is not shared with any third party.
+					As such, it falls within the consent exemption provided by the CNIL for audience measurement.
+				</p>
+				<p>
+					<strong
+						>No advertising cookies, no social network pixels and no third-party behavioral measurement trackers</strong
+					> are set. Calls to the technical services listed in Section 7 are used neither for profiling nor for cross-site
+					tracking.
+				</p>
+
+				<h2 id="modifications">13. Changes</h2>
+				<p>
+					This policy may be updated. The date at the top indicates the latest revision; in the event of a substantial
+					change, users with an account will be informed.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<Footer lang="en" variant="legal" />
+</Base>

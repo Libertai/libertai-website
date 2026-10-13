@@ -1,0 +1,105 @@
+---
+// Shared site footer. Styling lives in each page's stylesheet under the
+// `footer.site` selectors; only class names matter here. `lang` switches the
+// column labels and the legal links; `variant="legal"` renders the compact
+// form used by the legal pages (SAS copyright line, no middle span).
+interface Props {
+	lang?: "en" | "fr";
+	variant?: "marketing" | "legal";
+}
+const { lang = "en", variant = "marketing" } = Astro.props;
+const fr = lang === "fr";
+const root = fr ? "/fr" : "";
+
+const platform = [
+	{ label: "Chat", href: "https://chat.libertai.io" },
+	{ label: "API", href: `${root}/api` },
+	{ label: "Agents", href: "https://liberclaw.ai" },
+	{ label: fr ? "Recherche" : "Search", href: `${root}/search` },
+	{ label: "Services", href: `${root}/services` },
+];
+const resources = [
+	{ label: "Docs", href: "https://docs.libertai.io" },
+	{ label: fr ? "Crédits" : "Credits", href: `${root}/#credits` },
+	{ label: "Blog", href: "https://blog.libertai.io" },
+	{ label: "Litepaper", href: "/litepaper.pdf" },
+];
+const explore = [
+	{ label: "Aleph Cloud", href: "https://aleph.cloud" },
+	{ label: "GitHub", href: "https://github.com/libertai" },
+	{ label: "X / Twitter", href: "https://x.com/Libertai_DAI" },
+	{ label: "Telegram", href: "https://t.me/libertai" },
+];
+const legal = fr
+	? [
+			{ label: "Mentions légales", href: "/mentions-legales" },
+			{ label: "Confidentialité", href: "/politique-de-confidentialite" },
+			{ label: "CGV", href: "/cgv" },
+		]
+	: [
+			{ label: "Legal notices", href: "/legal-notices" },
+			{ label: "Privacy", href: "/privacy-policy" },
+			{ label: "Terms of sale", href: "/terms" },
+		];
+const ext = (href: string) => (/^https?:/.test(href) ? { target: "_blank", rel: "noopener" } : {});
+---
+
+<footer class="site">
+	<div class="wrap">
+		{
+			variant === "marketing" && (
+				<div class="cols">
+					<div>
+						<div class="brand">
+							Libert<span class="ai">AI</span>
+						</div>
+						<p class="d">
+							{fr
+								? "IA décentralisée et confidentielle sur Aleph Cloud. Liberté · Communauté · Vie privée."
+								: "Decentralized, confidential AI on Aleph Cloud. Liberty · Community · Privacy."}
+						</p>
+					</div>
+					<div>
+						<div class="h">Platform</div>
+						{platform.map((l) => (
+							<a href={l.href} {...ext(l.href)}>
+								{l.label}
+							</a>
+						))}
+					</div>
+					<div>
+						<div class="h">{fr ? "Ressources" : "Resources"}</div>
+						{resources.map((l) => (
+							<a href={l.href} {...ext(l.href)}>
+								{l.label}
+							</a>
+						))}
+					</div>
+					<div>
+						<div class="h">{fr ? "Explorer" : "Explore"}</div>
+						{explore.map((l) => (
+							<a href={l.href} {...ext(l.href)}>
+								{l.label}
+							</a>
+						))}
+					</div>
+				</div>
+			)
+		}
+		<div class="legal">
+			<span
+				>{
+					variant === "legal"
+						? "© 2026 LibertAI · Intelligence Artificielle Générale SAS"
+						: `© 2026 LibertAI · ${fr ? "Propulsé par Aleph Cloud" : "Powered by Aleph Cloud"}`
+				}</span
+			>
+			{
+				variant === "marketing" && (
+					<span>{fr ? "Privé par conception" : "Nothing stored · Nothing trained on you"}</span>
+				)
+			}
+			<span class="links">{legal.map((l) => <a href={l.href}>{l.label}</a>)}</span>
+		</div>
+	</div>
+</footer>

@@ -1,0 +1,426 @@
+---
+import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/legal.css";
+
+const updated = "13 October 2026";
+---
+
+<Base
+	title="Terms of sale"
+	description="General terms of use and sale for LibertAI services — subscriptions, credits, payment, withdrawal and liability."
+	path="/terms"
+	lang="en"
+	alt="/cgv"
+>
+	<section class="legal-page">
+		<div class="wrap">
+			<div class="doc">
+				<a class="back" href="/">← libertai.io</a>
+				<h1>Terms and Conditions</h1>
+				<div class="updated">Last updated: {updated}</div>
+
+				<div class="note">
+					<p style="margin:0">
+						<strong>English translation.</strong> This page is a translation provided for information only. The French version
+						at <a href="/cgv">/cgv</a> is the legally binding text.
+					</p>
+				</div>
+
+				<div class="toc">
+					<a href="#objet">Purpose</a>
+					<a href="#compte">Account</a>
+					<a href="#services">Services</a>
+					<a href="#prix">Prices</a>
+					<a href="#paiement">Payment</a>
+					<a href="#abonnements">Subscriptions</a>
+					<a href="#credits">Credits</a>
+					<a href="#retractation">Withdrawal</a>
+					<a href="#usage">Acceptable use</a>
+					<a href="#ia">Generated content</a>
+					<a href="#disponibilite">Availability</a>
+					<a href="#responsabilite">Liability</a>
+					<a href="#garantie">Legal guarantee</a>
+					<a href="#resiliation">Termination</a>
+					<a href="#modification">Changes</a>
+					<a href="#litiges">Disputes</a>
+					<a href="#divers">Miscellaneous</a>
+				</div>
+
+				<h2 id="objet">1. Purpose and acceptance</h2>
+				<p>
+					These terms govern access to and use of the LibertAI services, provided by
+					<strong>Intelligence Artificielle Générale SAS</strong>, an SAS with share capital of €10,000, 76 Promenade
+					des Anglais, 94210 Saint-Maur-des-Fossés, RCS Créteil 985 392 356, VAT FR36985392356 (hereinafter “LibertAI”,
+					“we”).
+				</p>
+				<p>
+					The services comprise the libertai.io website, the chat application (chat.libertai.io), the console
+					(console.libertai.io), the inference API and the search service.
+				</p>
+				<p>
+					The <strong>LiberClaw</strong> agent platform is subject to separate terms, available at
+					<a href="https://liberclaw.ai" rel="noopener" target="_blank">liberclaw.ai</a>.
+				</p>
+				<p>Creating an account or making any payment constitutes acceptance of these terms.</p>
+
+				<h2 id="compte">2. Account and eligibility</h2>
+				<p>An account can be created in two ways:</p>
+				<ul>
+					<li>
+						<strong>with an email address</strong>, directly or via Google or GitHub;
+					</li>
+					<li><strong>with a wallet</strong>, by means of a signature.</li>
+				</ul>
+				<p>
+					You must be at least 18 years old, or have the authorization of your legal representative, and have the legal
+					capacity to enter into contracts. You are responsible for keeping your credentials, your API keys and your
+					wallet confidential.
+					<strong
+						>Loss of access to a wallet is irreversible and cannot be remedied by any restoration on LibertAI's part.</strong
+					>
+				</p>
+
+				<h2 id="services">3. Description of the services</h2>
+				<ul>
+					<li>
+						<strong>Inference</strong> — access to open-weight artificial intelligence models via an OpenAI-compatible API
+						and via the chat interface, billed on a usage basis.
+					</li>
+					<li>
+						<strong>Subscription plans</strong> — usage allowances renewed over rolling periods, according to the plan subscribed
+						to.
+					</li>
+					<li>
+						<strong>Prepaid credits</strong> — a balance denominated in United States dollars, consumed as calls are made.
+					</li>
+					<li>
+						<strong>Pay-per-request</strong> — payment for a single call, without an account.
+					</li>
+					<li>
+						<strong>Search</strong> — web search service accessible via API.
+					</li>
+				</ul>
+				<p>
+					The model catalog, the models' unit prices and their characteristics change over time; they are published in
+					the console and the documentation. A model may be withdrawn, in particular when its publisher changes the
+					terms applicable to it.
+				</p>
+
+				<h2 id="prix">4. Prices</h2>
+				<p>
+					The applicable prices are those displayed at the time of the order. Prices displayed to consumers residing in
+					the European Union are
+					<strong>inclusive of all taxes</strong>, the applicable VAT being shown at checkout. Prices displayed outside
+					the European Union are exclusive of any taxes that may be due in your country of residence.
+				</p>
+				<p>
+					Inference rates are expressed per million tokens processed or per image generated, and vary by model. They may
+					change for an objective reason: a change in the cost of computing resources, a change in licensing or pricing
+					by a model's publisher, or a change in applicable taxes. Any change
+					<strong>has no effect on credits already purchased or on the current subscription period</strong>. You are
+					notified of it before it takes effect; if it does not suit you, you may terminate free of charge before that
+					date.
+				</p>
+
+				<h2 id="paiement">5. Payment</h2>
+				<p>Two payment methods are offered:</p>
+				<ul>
+					<li>
+						<strong>Bank card or bank transfer</strong>, through our payment service provider. Card data does not pass
+						through our servers.
+					</li>
+					<li>
+						<strong>Crypto-assets</strong>, for accounts created with a wallet. Payment is made by an on-chain
+						transaction, part of which is destroyed (<em>burn</em>) and the remainder transferred to LibertAI.
+					</li>
+				</ul>
+				<p>Accounts created with a wallet cannot pay by card; accounts created by email cannot pay in crypto-assets.</p>
+				<div class="note">
+					<p style="margin:0">
+						<strong>Crypto-asset transactions.</strong> A transaction recorded on a blockchain is
+						<strong>irreversible</strong>: it cannot be cancelled by LibertAI or by any third party. It is your
+						responsibility to check the network, the amount and the address before confirming. Funds sent to an
+						incorrect address, on an unsupported network, or by means of an asset that is not accepted are permanently
+						lost. The value of crypto-assets is volatile; the amount credited corresponds to the equivalent value
+						observed at the time the transaction is confirmed.
+					</p>
+				</div>
+				<div class="note">
+					<p style="margin:0">
+						<strong>LibertAI is not a crypto-asset service provider.</strong> LibertAI does not provide any of the crypto-asset
+						services defined in Article 3(1), point (16), of Regulation (EU) 2023/1114 (MiCA), including providing custody
+						and administration of crypto-assets on behalf of clients, operating a trading platform for crypto-assets, exchanging
+						crypto-assets for funds, executing orders for crypto-assets on behalf of clients, providing advice on crypto-assets
+						or providing portfolio management on crypto-assets. LibertAI is not registered under that Regulation and is not
+						required to be. Crypto-asset payments are made directly from your wallet to the network; LibertAI at no time has
+						access to your private keys or custody of your assets.
+					</p>
+				</div>
+				<p>
+					The service is credited once payment is confirmed. In the event of non-payment, rejection or chargeback,
+					access may be suspended until the situation is remedied.
+				</p>
+
+				<h2 id="abonnements">6. Subscriptions</h2>
+				<p>
+					Subscriptions are taken out for a term of one month and renew automatically, with payment collected by the
+					payment provider, until terminated.
+				</p>
+				<ul>
+					<li>
+						<strong>Termination:</strong> possible at any time from your account. It takes effect at the end of the current
+						period; the service remains accessible until that date and no further payment is collected.
+					</li>
+					<li>
+						<strong>Change of plan:</strong> an upgrade takes effect immediately, with the unused portion of the previous
+						plan credited as prepaid credits. A downgrade takes effect at the end of the current period.
+					</li>
+					<li>
+						<strong>Only one active subscription</strong> per account.
+					</li>
+					<li>
+						The usage allowances attached to a plan are valid over rolling periods and
+						<strong>cannot be carried over</strong> from one period to the next. Once the allowance is used up, consumption
+						is charged against the prepaid credit balance.
+					</li>
+				</ul>
+				<p>
+					A free tier, with limited allowances, is offered. It may be modified or discontinued at any time and is not
+					subject to any availability commitment.
+				</p>
+
+				<h2 id="credits">7. Prepaid credits</h2>
+				<ul>
+					<li>
+						Credits are denominated in United States dollars and constitute neither electronic money nor a means of
+						payment usable outside the LibertAI services.
+					</li>
+					<li>
+						Purchased credits <strong>do not expire</strong>. Free or promotional credits may have a validity date,
+						indicated when they are granted; they are consumed first.
+					</li>
+					<li>
+						Credits are neither assignable, nor transferable, nor redeemable for cash, subject to the provisions of
+						Section 8.
+					</li>
+				</ul>
+
+				<h2 id="retractation">8. Right of withdrawal (consumers)</h2>
+				<p>
+					Consumers have a period of fourteen days from the conclusion of the contract in which to exercise their right
+					of withdrawal, in accordance with Article L.221-18 of the French Consumer Code.
+				</p>
+				<p>
+					The LibertAI services constitute a supply of digital content and digital services whose performance begins
+					immediately. In accordance with Article L.221-28, 13° of the same Code, by confirming your order you
+					<strong>expressly request immediate performance</strong> of the service and
+					<strong>waive your right of withdrawal</strong> for the part of the service already performed. This consent is explicitly
+					requested from you at the time of payment.
+				</p>
+				<p>
+					The unperformed part — a subscription not yet started, credits purchased and not consumed — remains refundable
+					during the fourteen-day period. Requests should be sent to
+					<a href="mailto:contact@libertai.io">contact@libertai.io</a> and the refund is made within fourteen days of receipt
+					of the request, using the same means of payment.
+				</p>
+				<h3>Model withdrawal form</h3>
+				<p>
+					You may use the template below, without any formal requirement, and send it to
+					<a href="mailto:contact@libertai.io">contact@libertai.io</a>:
+				</p>
+				<div class="note">
+					<p style="margin:0">
+						To Intelligence Artificielle Générale SAS, 76 Promenade des Anglais, 94210 Saint-Maur-des-Fossés —
+						contact@libertai.io:<br /><br />
+						I hereby give notice that I withdraw from my contract for the provision of the following service:<br />
+						— Ordered on: ………………<br />
+						— Name of consumer: ………………<br />
+						— Address of consumer: ………………<br />
+						— Date: ………………<br />
+						— Signature (only if this form is notified on paper): ………………
+					</p>
+				</div>
+
+				<div class="note">
+					<p style="margin:0">
+						<strong>Crypto-asset payments.</strong> As an on-chain transaction is technically irreversible, a refund under
+						the right of withdrawal cannot be made by reversing the transaction. A consumer exercising this right is refunded
+						by another means agreed between the parties. The exchange-rate risk between the date of payment and the date of
+						refund is not borne by LibertAI.
+					</p>
+				</div>
+
+				<h2 id="usage">9. Acceptable use</h2>
+				<p>It is prohibited to use the services to:</p>
+				<ul>
+					<li>
+						produce or disseminate unlawful content, in particular child sexual abuse material or content inciting
+						hatred, terrorism or violence;
+					</li>
+					<li>infringe the rights of third parties, in particular intellectual property rights and image rights;</li>
+					<li>
+						generate content intended to deceive as to the identity of a real person, for purposes of fraud,
+						impersonation or manipulation;
+					</li>
+					<li>
+						circumvent technical limitations, quotas or billing mechanisms, or resell access without written consent;
+					</li>
+					<li>undermine the security or availability of the infrastructure.</li>
+				</ul>
+				<p>
+					In the event of a breach, LibertAI may suspend or terminate access, without prejudice to any other remedy.
+					Serious breaches may be reported to the competent authorities.
+				</p>
+				<p>
+					You remain responsible for the use of the autonomous agents you configure and for the actions they perform,
+					including with respect to third parties.
+				</p>
+
+				<h2 id="ia">10. Content generated by artificial intelligence</h2>
+				<p>
+					The services provide access to artificial intelligence models. The content produced is generated automatically
+					and
+					<strong>may be inaccurate, incomplete or misleading</strong>. It does not constitute professional advice. It
+					is your responsibility to verify it before any use, in particular for an important decision.
+				</p>
+				<p>
+					You are hereby informed that you are interacting with an artificial intelligence system and not with a natural
+					person.
+				</p>
+				<p>
+					To the extent permitted by applicable law and by the licenses of the models used, LibertAI claims no rights in
+					the content you generate. As the models are third-party models, their respective licenses may contain usage
+					restrictions with which you are responsible for complying. LibertAI does not guarantee that generated content
+					is original or that it does not infringe the rights of a third party.
+				</p>
+				<p>
+					In order to process your request, you grant LibertAI a limited, non-exclusive, royalty-free license to the
+					content you submit. This license is strictly limited to the technical processing time needed to produce the
+					response, and expires at the end of that time.
+				</p>
+
+				<h2 id="disponibilite">11. Availability</h2>
+				<p>
+					The services are provided on a best-efforts basis (obligation de moyens). They may be interrupted for
+					maintenance or updates, or as a result of an incident affecting the underlying decentralized infrastructure or
+					a third-party provider. No contractual service level is guaranteed in the absence of a specific written
+					agreement.
+				</p>
+
+				<h2 id="responsabilite">12. Liability</h2>
+				<h3>Consumers</h3>
+				<p>
+					<strong>No limitation or exclusion of liability may be invoked against consumers.</strong> LibertAI is liable under
+					the conditions of ordinary law and the statutory guarantees, in particular the legal guarantee of conformity provided
+					for in Section 13 below.
+				</p>
+				<h3>Business users</h3>
+				<p>
+					With respect to users acting for professional purposes, LibertAI is liable for direct and foreseeable damage
+					resulting from a breach attributable to it. Its liability is capped at the amounts actually paid in respect of
+					the twelve months preceding the event giving rise to the claim.
+				</p>
+				<p>
+					For these business users only, indirect damage is excluded, in particular loss of business, data, revenue or
+					opportunity, as well as the consequences of decisions made in reliance on generated content.
+				</p>
+				<p>
+					These limitations shall in no event apply to gross negligence or willful misconduct, or to personal injury.
+				</p>
+
+				<h2 id="garantie">13. Legal guarantee of conformity</h2>
+				<p>
+					Consumers benefit from the <strong>legal guarantee of conformity</strong> for digital content and digital services
+					provided for in Articles L.224-25-12 et seq. of the French Consumer Code. LibertAI is required to supply a service
+					that conforms to the contract and is liable for any lack of conformity existing at the time of supply.
+				</p>
+				<ul>
+					<li>
+						For a <strong>one-off</strong> supply — purchase of credits — the guarantee applies to defects that appear within
+						<strong>two years</strong> of supply.
+					</li>
+					<li>
+						For a <strong>continuous</strong> supply — subscription — the guarantee applies throughout
+						<strong>the entire period of supply</strong>.
+					</li>
+					<li>
+						In the event of a lack of conformity, the consumer may require the service to be brought into conformity
+						free of charge or, failing that, a price reduction or termination of the contract, under the conditions of
+						Articles L.224-25-16 et seq.
+					</li>
+					<li>
+						LibertAI provides the updates necessary to keep the service in conformity for the period mentioned above
+						(Art. L.224-25-25).
+					</li>
+				</ul>
+				<p>
+					These guarantees apply independently of any commercial guarantee and without prejudice to the legal guarantee
+					against hidden defects (Articles 1641 et seq. of the French Civil Code).
+				</p>
+
+				<h2 id="resiliation">14. Termination and account deletion</h2>
+				<p>
+					You may stop using the services and request deletion of your account at any time by writing to
+					<a href="mailto:privacy@libertai.io">privacy@libertai.io</a>. You may request a refund of your unused credits
+					at that time; if no such request is made, they are forfeited when the account is closed.
+				</p>
+				<p>
+					LibertAI may terminate access in the event of a breach of these terms, after a formal notice that has remained
+					without effect, except in the case of a serious breach justifying immediate suspension. Where termination is
+					not attributable to the user, <strong>unused credits are refunded to the user</strong>.
+				</p>
+
+				<h2 id="modification">15. Changes to the terms</h2>
+				<p>
+					These terms may be amended for an objective reason: legal or regulatory developments, technical developments
+					in the service, or a change of our providers. Users with an account are informed of substantial changes
+					<strong>at least thirty days before</strong>
+					they take effect; they may then <strong>terminate free of charge</strong>
+					and obtain a refund of unused credits. The terms applicable to an order are those in force on the date of that order.
+				</p>
+
+				<h2 id="litiges">16. Complaints, mediation and disputes</h2>
+				<p>
+					Any complaint may be sent to
+					<a href="mailto:contact@libertai.io">contact@libertai.io</a>. We endeavor to respond within thirty days.
+				</p>
+				<p>
+					These terms are governed by <strong>French law</strong>. Failing an amicable resolution, the dispute shall
+					fall within the jurisdiction of the competent French courts. Consumers retain the right to bring proceedings
+					before the court of their place of residence or of the place where the service is performed. For business
+					users, jurisdiction is conferred on the Tribunal de commerce de Créteil (Créteil Commercial Court).
+				</p>
+
+				<h2 id="divers">17. Miscellaneous</h2>
+				<h3>Force majeure</h3>
+				<p>
+					Neither party shall be liable for any failure to perform its obligations where such failure results from a
+					force majeure event within the meaning of Article 1218 of the French Civil Code. The suspended obligation
+					resumes as soon as the event ceases; if the event continues for more than two months, either party may
+					terminate free of charge and unused credits are refunded.
+				</p>
+				<h3>Severability</h3>
+				<p>
+					If any provision of these terms is held to be void or unenforceable, the remaining provisions shall retain
+					their full force and effect. The invalidated provision shall be replaced by an economically equivalent
+					provision that complies with applicable law.
+				</p>
+				<h3>Assignment</h3>
+				<p>
+					You may not assign the rights and obligations arising under these terms without the prior written consent of
+					LibertAI. LibertAI may assign its contract, in particular in the event of a transfer of all or part of its
+					business, provided that it informs the users concerned in advance, without this affecting the consumer's
+					statutory guarantees.
+				</p>
+				<h3>Language</h3>
+				<p>
+					These terms are drafted in French. An English translation is provided for information purposes only; in the
+					event of any discrepancy in interpretation, the French version shall prevail.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<Footer lang="en" variant="legal" />
+</Base>
