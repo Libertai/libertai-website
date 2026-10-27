@@ -1,0 +1,272 @@
+---
+import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/legal.css";
+
+const updated = "27 octobre 2026";
+---
+
+<Base
+	title="Conformité RGPD"
+	description="Comment LibertAI applique le RGPD : données minimisées, bases légales, droits des personnes, sous-traitants, transferts et sécurité. Une entreprise européenne, un hébergement européen."
+	path="/rgpd"
+	alt="/gdpr"
+	lang="fr"
+>
+	<section class="legal-page">
+		<div class="wrap">
+			<div class="doc">
+				<a class="back" href="/">← libertai.io</a>
+				<h1>Conformité RGPD</h1>
+				<div class="updated">Dernière mise à jour : {updated}</div>
+
+				<div class="note">
+					<p style="margin:0">
+						<strong>LibertAI applique le règlement (UE) 2016/679 (RGPD) et la loi Informatique et Libertés.</strong> Nous
+						traitons le minimum de données nécessaire, nous ne conservons pas le contenu de vos échanges et nous ne
+						l'utilisons jamais pour entraîner un modèle. Cette page résume nos engagements ; le détail figure dans notre
+						<a href="/politique-de-confidentialite">politique de confidentialité</a>.
+					</p>
+				</div>
+
+				<div class="toc">
+					<a href="#engagement">Notre engagement</a>
+					<a href="#principe">Minimisation</a>
+					<a href="#bases">Bases légales</a>
+					<a href="#droits">Vos droits</a>
+					<a href="#soustraitants">Sous-traitants</a>
+					<a href="#transferts">Transferts</a>
+					<a href="#securite">Sécurité</a>
+					<a href="#traceurs">Traceurs</a>
+					<a href="#entreprises">Entreprises</a>
+					<a href="#autorite">Autorité de contrôle</a>
+					<a href="#contact">Contact</a>
+					<a href="#modifications">Modifications</a>
+				</div>
+
+				<h2 id="engagement">1. Notre engagement</h2>
+				<p>
+					Le responsable du traitement est <strong>Intelligence Artificielle Générale SAS</strong> (« LibertAI »),
+					76 Promenade des Anglais, 94210 Saint-Maur-des-Fossés, France — SIREN 985 392 356.
+				</p>
+				<p>
+					LibertAI est une société européenne, soumise au RGPD pour l'ensemble de ses traitements : site web, chat, API,
+					console, agents et services associés. La protection des données n'est pas une couche ajoutée après coup : c'est
+					le produit. Nos choix techniques — aucune conservation du contenu, aucun entraînement sur vos données, une
+					infrastructure vérifiable — découlent directement des principes de minimisation et de protection dès la
+					conception (art. 25 RGPD).
+				</p>
+				<ul>
+					<li><strong>Données minimisées</strong> : nous ne collectons que ce qui est nécessaire au service et à la facturation.</li>
+					<li><strong>Aucun contenu conservé</strong> : prompts et réponses ne sont pas enregistrés en base de données.</li>
+					<li><strong>Aucun entraînement</strong> : vos données ne servent jamais à entraîner, ajuster ou évaluer un modèle.</li>
+					<li><strong>Aucune revente</strong> : vos données ne sont ni vendues, ni louées, ni échangées.</li>
+					<li><strong>Aucune publicité</strong> : pas de cookie publicitaire, pas de pixel social, pas de profilage marketing.</li>
+					<li><strong>Hébergement européen</strong> : notre hébergeur, Aleph.IM SAS, est établi à Paris, en France.</li>
+					<li><strong>Droits exerçables</strong> : une adresse unique, une réponse sous un mois.</li>
+				</ul>
+
+				<h2 id="principe">2. Un traitement réduit au minimum</h2>
+				<p>
+					Concrètement, voici ce que nous traitons et ce que nous ne traitons pas. Cette synthèse reprend la politique de
+					confidentialité, qui fait foi.
+				</p>
+				<table>
+					<thead>
+						<tr><th>Nous traitons</th><th>Nous ne traitons pas</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Compte, e-mail ou adresse de portefeuille, sessions et clés d'API</td>
+							<td>Le contenu de vos conversations et de vos requêtes, en base de données</td>
+						</tr>
+						<tr>
+							<td>Compteurs d'usage : jetons, images, modèle appelé, horodatage</td>
+							<td>Vos données de carte bancaire, qui ne passent jamais par nos serveurs</td>
+						</tr>
+						<tr>
+							<td>Références de paiement et pièces comptables</td>
+							<td>Un profilage publicitaire ou un historique de navigation revendu</td>
+						</tr>
+						<tr>
+							<td>Journaux techniques limités, pour la sécurité et le diagnostic</td>
+							<td>Une adresse IP rattachée à un compte dans nos bases</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					Les adresses IP sont utilisées de façon transitoire, en mémoire, pour limiter les abus et déterminer la devise
+					d'affichage. Comme tout service en ligne, nos serveurs et répartiteurs de charge produisent des journaux
+					techniques pouvant contenir des adresses IP ; ils sont conservés pour une durée limitée, à des fins de sécurité
+					et de diagnostic uniquement.
+				</p>
+
+				<h2 id="bases">3. Finalités et bases légales</h2>
+				<p>
+					Chaque traitement repose sur une base légale identifiée à l'article 6 du RGPD. Aucun traitement n'est fondé sur
+					le consentement lorsque le service ne peut pas fonctionner sans lui : dans ce cas, la base est l'exécution du
+					contrat.
+				</p>
+				<table>
+					<thead>
+						<tr><th>Finalité</th><th>Base légale</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Création et gestion du compte, fourniture du service</td>
+							<td>Exécution du contrat — art. 6.1.b</td>
+						</tr>
+						<tr>
+							<td>Facturation, abonnements, comptabilité</td>
+							<td>Exécution du contrat et obligation légale — art. 6.1.b et 6.1.c</td>
+						</tr>
+						<tr>
+							<td>Sécurité, prévention des abus, limitation de débit</td>
+							<td>Intérêt légitime — art. 6.1.f</td>
+						</tr>
+						<tr>
+							<td>Mesure d'audience agrégée</td>
+							<td>Intérêt légitime — art. 6.1.f, sans profilage individuel</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					Les durées de conservation, les destinataires et le détail des données traitées sont décrits dans la
+					<a href="/politique-de-confidentialite#finalites">politique de confidentialité</a>.
+				</p>
+
+				<h2 id="droits">4. Vos droits</h2>
+				<p>Vous disposez des droits suivants, pour l'ensemble des traitements :</p>
+				<ul>
+					<li><strong>accès</strong> à vos données et aux informations sur leur traitement ;</li>
+					<li><strong>rectification</strong> des données inexactes ou incomplètes ;</li>
+					<li><strong>effacement</strong> de vos données, sous réserve des obligations légales de conservation ;</li>
+					<li><strong>limitation</strong> du traitement ;</li>
+					<li><strong>portabilité</strong> des données que vous nous avez fournies ;</li>
+					<li><strong>opposition</strong> aux traitements fondés sur notre intérêt légitime, pour des raisons tenant à votre situation particulière ;</li>
+					<li><strong>retrait du consentement</strong> à tout moment, lorsque le traitement repose sur celui-ci ;</li>
+					<li>
+						<strong>directives post-mortem</strong> sur le sort de vos données, conformément à l'article 85 de la loi
+						Informatique et Libertés.
+					</li>
+				</ul>
+				<p>
+					Pour exercer ces droits, écrivez à <a href="mailto:privacy@libertai.io">privacy@libertai.io</a>. Nous répondons
+					dans un délai d'un mois, prolongeable de deux mois pour les demandes complexes. Nous pouvons vous demander les
+					informations nécessaires pour vérifier que la demande émane bien de vous.
+				</p>
+				<p>
+					Certaines données ne peuvent pas être effacées : les pièces comptables, que la loi nous oblige à conserver, et
+					les transactions inscrites sur une blockchain publique, techniquement immuables.
+				</p>
+
+				<h2 id="soustraitants">5. Sous-traitants</h2>
+				<p>
+					Nous faisons appel à des prestataires identifiés, chacun pour une finalité précise et sur nos instructions.
+					L'hébergement et l'infrastructure de calcul confidentiel sont assurés par <strong>Aleph.IM SAS</strong>, établi à
+					Paris. Les autres prestataires — paiement, connexion via Google ou GitHub, livraison des e-mails, géolocalisation
+					pour la devise et la TVA, mesure d'audience auto-hébergée — sont listés dans la
+					<a href="/politique-de-confidentialite#destinataires">politique de confidentialité</a>.
+				</p>
+				<p>
+					Aucun de ces prestataires n'utilise vos données à des fins publicitaires. Lorsque votre navigateur contacte l'un
+					d'entre eux, ce service reçoit techniquement votre adresse IP, comme pour toute ressource chargée depuis un
+					domaine tiers.
+				</p>
+
+				<h2 id="transferts">6. Transferts hors Union européenne</h2>
+				<p>
+					Certains prestataires sont établis en dehors de l'Union européenne, notamment aux États-Unis. Ces transferts sont
+					encadrés par les garanties appropriées prévues au chapitre V du RGPD, en particulier les clauses contractuelles
+					types de la Commission européenne.
+				</p>
+				<p>
+					Les paiements en crypto-actifs sont inscrits sur des blockchains publiques, accessibles dans le monde entier et
+					immuables par nature. Cette publicité est inhérente à la technologie et ne dépend pas de nous.
+				</p>
+
+				<h2 id="securite">7. Sécurité</h2>
+				<ul>
+					<li>chiffrement des données en transit (HTTPS) ;</li>
+					<li>chiffrement au repos des jetons d'authentification sensibles ;</li>
+					<li>stockage des jetons de session et des codes de connexion sous forme d'empreintes irréversibles ;</li>
+					<li>cookie d'authentification inaccessible au JavaScript de la page (<span class="mono">httpOnly</span>), transmis uniquement en HTTPS ;</li>
+					<li>vérification cryptographique des notifications de nos prestataires de paiement ;</li>
+					<li>
+						exécution de certains modèles dans un environnement d'exécution de confiance (TEE) attesté au niveau
+						matériel, signalé modèle par modèle dans l'interface.
+					</li>
+				</ul>
+				<p>
+					La minimisation est notre première mesure de sécurité : moins de données conservées, c'est moins de données à
+					protéger. Le fonctionnement de l'attestation est décrit dans le
+					<a href="https://docs.libertai.io/concepts/trust-model.html" rel="noopener" target="_blank">modèle de confiance</a>.
+				</p>
+
+				<h2 id="traceurs">8. Traceurs et consentement</h2>
+				<p>
+					Le site et les applications ne déposent que des traceurs strictement nécessaires au service : session,
+					protection de la connexion via Google ou GitHub, continuité de routage et état du panneau latéral. Ces traceurs
+					ne requièrent pas de consentement.
+				</p>
+				<p>
+					La mesure d'audience est assurée par une solution <strong>auto-hébergée, sans cookie publicitaire et sans suivi
+					inter-sites</strong>. Les données sont strictement statistiques, ne sont pas recoupées avec d'autres traitements
+					et ne sont partagées avec aucun tiers. Elle relève donc de l'exemption de consentement prévue par la CNIL pour
+					la mesure d'audience. Le détail des cookies figure dans la
+					<a href="/politique-de-confidentialite#traceurs">politique de confidentialité</a>.
+				</p>
+				<p>
+					<strong>Aucun cookie publicitaire, aucun pixel de réseau social et aucun traceur comportemental tiers</strong>
+					n'est déposé. C'est pourquoi le site n'affiche pas de bandeau de consentement.
+				</p>
+
+				<h2 id="entreprises">9. Entreprises et sous-traitance</h2>
+				<p>
+					Pour les clients professionnels, LibertAI contracte en tant qu'entreprise européenne et émet une facture
+					européenne. Sur demande, nous fournissons :
+				</p>
+				<ul>
+					<li>un <strong>accord de traitement des données</strong> (DPA) conforme à l'article 28 du RGPD ;</li>
+					<li>la <strong>liste des sous-traitants</strong> et les garanties de transfert applicables ;</li>
+					<li>la <strong>documentation de sécurité</strong> et les éléments d'attestation des environnements confidentiels ;</li>
+					<li>les réponses à vos <strong>questionnaires de sécurité et de conformité</strong>.</li>
+				</ul>
+				<p>
+					Pour engager ces échanges : <a href="mailto:contact@libertai.io">contact@libertai.io</a>.
+				</p>
+
+				<h2 id="autorite">10. Autorité de contrôle</h2>
+				<p>
+					Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez introduire une
+					réclamation auprès de la <strong>Commission nationale de l'informatique et des libertés (CNIL)</strong>,
+					3 place de Fontenoy, TSA 80715, 75334 Paris Cedex 07 —
+					<a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr</a>.
+				</p>
+
+				<h2 id="contact">11. Contact</h2>
+				<dl>
+					<dt>Données personnelles et droits</dt>
+					<dd><a href="mailto:privacy@libertai.io">privacy@libertai.io</a></dd>
+					<dt>Questions générales et entreprises</dt>
+					<dd><a href="mailto:contact@libertai.io">contact@libertai.io</a></dd>
+					<dt>Responsable du traitement</dt>
+					<dd>Intelligence Artificielle Générale SAS, 76 Promenade des Anglais, 94210 Saint-Maur-des-Fossés, France</dd>
+				</dl>
+				<p>
+					Documents associés : <a href="/politique-de-confidentialite">politique de confidentialité</a>,
+					<a href="/mentions-legales">mentions légales</a>, <a href="/cgv">conditions générales de vente</a>.
+				</p>
+
+				<h2 id="modifications">12. Modifications</h2>
+				<p>
+					Cette page peut être mise à jour pour refléter une évolution de nos traitements ou de la réglementation. La date
+					en tête indique la dernière révision ; en cas de changement substantiel, les utilisateurs disposant d'un compte
+					en sont informés.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<Footer lang="fr" variant="legal" />
+</Base>

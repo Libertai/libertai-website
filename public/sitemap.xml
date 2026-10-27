@@ -73,6 +73,18 @@
     <priority>0.3</priority>
   </url>
   <url>
+    <loc>https://libertai.io/rgpd</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://libertai.io/gdpr</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
     <loc>https://libertai.io/cgv</loc>
     <lastmod>2026-10-13</lastmod>
     <changefreq>yearly</changefreq>

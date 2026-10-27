@@ -1,0 +1,264 @@
+---
+import Base from "../layouts/Base.astro";
+import Footer from "../components/Footer.astro";
+import "../styles/legal.css";
+
+const updated = "27 October 2026";
+---
+
+<Base
+	title="GDPR compliance"
+	description="How LibertAI applies the GDPR: minimised data, legal bases, data subject rights, processors, transfers and security. A European company, European hosting."
+	path="/gdpr"
+	alt="/rgpd"
+	lang="en"
+>
+	<section class="legal-page">
+		<div class="wrap">
+			<div class="doc">
+				<a class="back" href="/">← libertai.io</a>
+				<h1>GDPR compliance</h1>
+				<div class="updated">Last updated: {updated}</div>
+
+				<div class="note">
+					<p style="margin:0">
+						<strong>English translation.</strong> This page is a translation provided for information only. The French version
+						at <a href="/rgpd">/rgpd</a> is the reference text.
+					</p>
+				</div>
+
+				<div class="toc">
+					<a href="#commitment">Our commitment</a>
+					<a href="#principle">Minimisation</a>
+					<a href="#bases">Legal bases</a>
+					<a href="#rights">Your rights</a>
+					<a href="#processors">Processors</a>
+					<a href="#transfers">Transfers</a>
+					<a href="#security">Security</a>
+					<a href="#trackers">Trackers</a>
+					<a href="#companies">Companies</a>
+					<a href="#authority">Supervisory authority</a>
+					<a href="#contact">Contact</a>
+					<a href="#changes">Changes</a>
+				</div>
+
+				<h2 id="commitment">1. Our commitment</h2>
+				<p>
+					The data controller is <strong>Intelligence Artificielle Générale SAS</strong> (“LibertAI”), 76 Promenade des Anglais,
+					94210 Saint-Maur-des-Fossés, France — SIREN 985 392 356.
+				</p>
+				<p>
+					LibertAI is a European company, subject to the GDPR for all of its processing: website, chat, API, console, agents
+					and related services. Data protection is not a layer added afterwards: it is the product. Our technical choices — no
+					content retention, no training on your data, verifiable infrastructure — follow directly from the principles of
+					minimisation and data protection by design (Art. 25 GDPR).
+				</p>
+				<ul>
+					<li><strong>Minimised data</strong>: we collect only what the service and billing require.</li>
+					<li><strong>No content stored</strong>: prompts and responses are not recorded in a database.</li>
+					<li><strong>No training</strong>: your data is never used to train, tune or evaluate a model.</li>
+					<li><strong>No resale</strong>: your data is never sold, rented or traded.</li>
+					<li><strong>No advertising</strong>: no advertising cookies, no social pixels, no marketing profiling.</li>
+					<li><strong>European hosting</strong>: our hosting provider, Aleph.IM SAS, is established in Paris, France.</li>
+					<li><strong>Exercisable rights</strong>: one address, an answer within one month.</li>
+				</ul>
+
+				<h2 id="principle">2. Processing kept to a minimum</h2>
+				<p>
+					In practice, here is what we process and what we do not. This summary mirrors the privacy policy, which is the
+					authoritative text.
+				</p>
+				<table>
+					<thead>
+						<tr><th>We process</th><th>We do not process</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Account, email or wallet address, sessions and API keys</td>
+							<td>The content of your conversations and requests, in a database</td>
+						</tr>
+						<tr>
+							<td>Usage counters: tokens, images, model called, timestamp</td>
+							<td>Your bank card data, which never passes through our servers</td>
+						</tr>
+						<tr>
+							<td>Payment references and accounting records</td>
+							<td>Advertising profiling or a browsing history sold on</td>
+						</tr>
+						<tr>
+							<td>Limited technical logs, for security and diagnostics</td>
+							<td>An IP address linked to an account in our databases</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					IP addresses are used transiently, in memory, to limit abuse and determine the display currency. Like any online
+					service, our servers and load balancers produce technical logs that may contain IP addresses; these are retained
+					for a limited period, solely for security and diagnostic purposes.
+				</p>
+
+				<h2 id="bases">3. Purposes and legal bases</h2>
+				<p>
+					Each processing operation relies on an identified legal basis under Article 6 of the GDPR. No processing relies on
+					consent where the service cannot work without it: in that case, the basis is performance of the contract.
+				</p>
+				<table>
+					<thead>
+						<tr><th>Purpose</th><th>Legal basis</th></tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td>Account creation and management, provision of the service</td>
+							<td>Performance of the contract — Art. 6(1)(b)</td>
+						</tr>
+						<tr>
+							<td>Billing, subscriptions, accounting</td>
+							<td>Performance of the contract and legal obligation — Art. 6(1)(b) and 6(1)(c)</td>
+						</tr>
+						<tr>
+							<td>Security, abuse prevention, rate limiting</td>
+							<td>Legitimate interest — Art. 6(1)(f)</td>
+						</tr>
+						<tr>
+							<td>Aggregated audience measurement</td>
+							<td>Legitimate interest — Art. 6(1)(f), without individual profiling</td>
+						</tr>
+					</tbody>
+				</table>
+				<p>
+					Retention periods, recipients and the detail of the data processed are described in the
+					<a href="/privacy-policy#finalites">privacy policy</a>.
+				</p>
+
+				<h2 id="rights">4. Your rights</h2>
+				<p>You have the following rights, across all processing:</p>
+				<ul>
+					<li><strong>access</strong> to your data and to information about how it is processed;</li>
+					<li><strong>rectification</strong> of inaccurate or incomplete data;</li>
+					<li><strong>erasure</strong> of your data, subject to statutory retention obligations;</li>
+					<li><strong>restriction</strong> of processing;</li>
+					<li><strong>portability</strong> of the data you provided to us;</li>
+					<li><strong>objection</strong> to processing based on our legitimate interest, on grounds relating to your particular situation;</li>
+					<li><strong>withdrawal of consent</strong> at any time, where processing is based on consent;</li>
+					<li>
+						<strong>post-mortem directives</strong> on what happens to your data, in accordance with Article 85 of the French
+						Data Protection Act.
+					</li>
+				</ul>
+				<p>
+					To exercise these rights, write to <a href="mailto:privacy@libertai.io">privacy@libertai.io</a>. We respond within
+					one month, extendable by two months for complex requests. We may ask you for the information needed to verify that
+					the request does come from you.
+				</p>
+				<p>
+					Certain data cannot be erased: accounting records, which the law requires us to retain, and transactions recorded
+					on a public blockchain, which are technically immutable.
+				</p>
+
+				<h2 id="processors">5. Processors</h2>
+				<p>
+					We use identified providers, each for a specific purpose and acting on our instructions. Hosting and confidential
+					computing infrastructure are provided by <strong>Aleph.IM SAS</strong>, established in Paris. The other providers —
+					payments, sign-in via Google or GitHub, email delivery, geolocation for currency and VAT, self-hosted audience
+					measurement — are listed in the
+					<a href="/privacy-policy#destinataires">privacy policy</a>.
+				</p>
+				<p>
+					None of these providers uses your data for advertising. When your browser contacts one of them, that service
+					technically receives your IP address, as with any resource loaded from a third-party domain.
+				</p>
+
+				<h2 id="transfers">6. Transfers outside the European Union</h2>
+				<p>
+					Some providers are established outside the European Union, in particular in the United States. These transfers are
+					covered by the appropriate safeguards provided for in Chapter V of the GDPR, in particular the European
+					Commission's standard contractual clauses.
+				</p>
+				<p>
+					Crypto-asset payments are recorded on public blockchains, accessible worldwide and immutable by nature. This
+					publicity is inherent to the technology and beyond our control.
+				</p>
+
+				<h2 id="security">7. Security</h2>
+				<ul>
+					<li>encryption of data in transit (HTTPS);</li>
+					<li>encryption at rest of sensitive authentication tokens;</li>
+					<li>storage of session tokens and sign-in codes as irreversible hashes;</li>
+					<li>authentication cookie inaccessible to the page's JavaScript (<span class="mono">httpOnly</span>), transmitted over HTTPS only;</li>
+					<li>cryptographic verification of notifications from our payment providers;</li>
+					<li>
+						execution of certain models in a hardware-attested trusted execution environment (TEE), indicated model by
+						model in the interface.
+					</li>
+				</ul>
+				<p>
+					Minimisation is our first security measure: less data retained means less data to protect. How attestation works
+					is described in the
+					<a href="https://docs.libertai.io/concepts/trust-model.html" rel="noopener" target="_blank">trust model</a>.
+				</p>
+
+				<h2 id="trackers">8. Trackers and consent</h2>
+				<p>
+					The website and applications set only trackers strictly necessary for the service: session, protection of
+					sign-in via Google or GitHub, routing continuity and the state of the side panel. These trackers do not require
+					consent.
+				</p>
+				<p>
+					Audience measurement is provided by a <strong>self-hosted solution, without advertising cookies and without
+					cross-site tracking</strong>. The data is strictly statistical, is not cross-referenced with other processing and
+					is not shared with any third party. It therefore falls within the consent exemption provided by the CNIL for
+					audience measurement. The list of cookies is in the
+					<a href="/privacy-policy#traceurs">privacy policy</a>.
+				</p>
+				<p>
+					<strong>No advertising cookies, no social network pixels and no third-party behavioural trackers</strong> are set.
+					That is why the website shows no consent banner.
+				</p>
+
+				<h2 id="companies">9. Companies and data processing</h2>
+				<p>
+					For business customers, LibertAI contracts as a European company and issues a European invoice. On request, we
+					provide:
+				</p>
+				<ul>
+					<li>a <strong>data processing agreement</strong> (DPA) compliant with Article 28 of the GDPR;</li>
+					<li>the <strong>list of processors</strong> and the applicable transfer safeguards;</li>
+					<li>the <strong>security documentation</strong> and attestation material for confidential environments;</li>
+					<li>answers to your <strong>security and compliance questionnaires</strong>.</li>
+				</ul>
+				<p>
+					To start these conversations: <a href="mailto:contact@libertai.io">contact@libertai.io</a>.
+				</p>
+
+				<h2 id="authority">10. Supervisory authority</h2>
+				<p>
+					If, after contacting us, you believe your rights are not being respected, you may lodge a complaint with the
+					<strong>Commission nationale de l'informatique et des libertés (CNIL)</strong>, 3 place de Fontenoy, TSA 80715,
+					75334 Paris Cedex 07 — <a href="https://www.cnil.fr" rel="noopener" target="_blank">cnil.fr</a>.
+				</p>
+
+				<h2 id="contact">11. Contact</h2>
+				<dl>
+					<dt>Personal data and rights</dt>
+					<dd><a href="mailto:privacy@libertai.io">privacy@libertai.io</a></dd>
+					<dt>General and business enquiries</dt>
+					<dd><a href="mailto:contact@libertai.io">contact@libertai.io</a></dd>
+					<dt>Data controller</dt>
+					<dd>Intelligence Artificielle Générale SAS, 76 Promenade des Anglais, 94210 Saint-Maur-des-Fossés, France</dd>
+				</dl>
+				<p>
+					Related documents: <a href="/privacy-policy">privacy policy</a>,
+					<a href="/legal-notices">legal notices</a>, <a href="/terms">terms of sale</a>.
+				</p>
+
+				<h2 id="changes">12. Changes</h2>
+				<p>
+					This page may be updated to reflect a change in our processing or in the regulations. The date at the top
+					indicates the latest revision; in the event of a substantial change, users with an account will be informed.
+				</p>
+			</div>
+		</div>
+	</section>
+
+	<Footer lang="en" variant="legal" />
+</Base>
