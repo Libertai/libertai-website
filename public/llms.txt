@@ -4,7 +4,7 @@
 
 LibertAI offers three core products: Private Chat, a Confidential Inference API, and autonomous AI Agents (LiberClaw). All run on decentralized infrastructure with no data logging and no model training on user data. Privacy is cryptographically enforced through TEEs (Trusted Execution Environments) and fully auditable open-source code.
 
-- Payment accepted via card or crypto, or with the LTAI token for a 20% discount. Basic access is free.
+- Payment accepted via card or crypto, including the LTAI token. Basic access is free.
 
 ## Products
 
